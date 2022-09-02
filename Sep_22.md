@@ -1,6 +1,10 @@
 # September 2022
 
 ## Fri 2nd
+
+- Decided to start keeping a journal
+
+### Odin Project - Ruby Foundations
 - Spent even more time debugging the load function for my chess project
     - Tests were failing due to a YAML.load_file call returning nil despite the file existing and containing valid YAML
     - Tests passed when the files were present prior to the test being run
