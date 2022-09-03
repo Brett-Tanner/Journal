@@ -20,4 +20,18 @@
     - Will come back with a fresh perspective to fix it though, as being unable to delete saves is not ideal
 
 ## Sat 3rd
--
+### Odin Project - Ruby Foundations
+- Finally fixed the tests for Game#from_yaml
+    - It was something to do with creating a file and reading it in the same test
+    - So I added the actual file I wanted to read to a new test directory, and prevented it from being deleted with an unless? check on the File.delete
+    - Then still created two dummy files so it still printed the expected list of files, but didn't read them since that seemed to be the problem
+    - In future, either have a separate directory for test files so they won't show in normal use and don't need to be created/read during the test
+    - Or just figure out why being created/read in the same test is a problem at some point
+- Started building the possible move constants for each piece
+    - For Knight, just copied it from Knight's Travails project
+    - But did also learn you can't call a class' function to initialize a constant of that class if the constant is defined before the function
+    - You are, helpfully, free to put constants at the end of the class and make them private. Otherwise I'd need to do a lot of scrolling to get past the list of possible moves
+    - I decided to hardcode the list after figuring out how to generate it as that seemed like it would perform better than generating it once per instance for 32 pieces, especially the same one 16 times just for the pawns. 
+        - May or may not be best practice though, maybe you're supposed to put it in a separate file and require it? 
+        - But that kinda feels like it defeats the purpose of making it perform better, and makes the code less readable
+        - On a related note having the list there is much more readable than a bunch of generating functions which never actually print it anywhere
