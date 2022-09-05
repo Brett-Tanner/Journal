@@ -44,3 +44,11 @@
     - King: Also straightforward once I remembered it moves horizontally and vertically as well as diagonally
     - Pawn: Have to make sure Piece#legal? is the last check before a move, otherwise Pawns could prune their move list before they actually move. 
         - Did not actually finish making the logic for it
+
+## Mon 5th
+### Odin Project - Ruby Foundations
+- Wrote tests for then drafted my first version of Pawn#legal?, since it won't really rely on a Possible_moves like the others. 
+    - Checking possible moves of a pawn seems better suited to a bunch of true/false tests than an adjacency matrix since there are a bunch of different scenarios but very few possible moves
+    - Remembered you can have two different subjects, rather than manually setting the subject to a white or black pawn each time
+    - I finished all the pawn tests except those which need to check if there's a piece to take on the diagonal
+        - For some reason my doubles don't seem to have a color attribute, despite me definitely defining one. I finished work too late to start debugging such an unintuitive problem so I'll finish writing the tests tomorrow
