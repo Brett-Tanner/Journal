@@ -35,3 +35,12 @@
         - May or may not be best practice though, maybe you're supposed to put it in a separate file and require it? 
         - But that kinda feels like it defeats the purpose of making it perform better, and makes the code less readable
         - On a related note having the list there is much more readable than a bunch of generating functions which never actually print it anywhere
+
+## Sun 4th
+### Odin Project - Ruby Foundations
+- Realised my knight move list was for an 8x8 array, and now I'm using a 9x9 hash. Adjusted the generating methods to match by just making the array it uses to generate 9x9, then going next whenever there's a 0 in the order then compacting the resulting hash of moves
+- Created move lists for
+    - Bishop: Fairly straight(diagonally)forward
+    - King: Also straightforward once I remembered it moves horizontally and vertically as well as diagonally
+    - Pawn: Have to make sure Piece#legal? is the last check before a move, otherwise Pawns could prune their move list before they actually move. 
+        - Did not actually finish making the logic for it
