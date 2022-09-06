@@ -52,3 +52,19 @@
     - Remembered you can have two different subjects, rather than manually setting the subject to a white or black pawn each time
     - I finished all the pawn tests except those which need to check if there's a piece to take on the diagonal
         - For some reason my doubles don't seem to have a color attribute, despite me definitely defining one. I finished work too late to start debugging such an unintuitive problem so I'll finish writing the tests tomorrow
+
+## Tues 6th
+### Odin Project - Ruby Foundations
+- Finished the tests for Pawn#legal
+    - Realised in hindsight I should have just generated the board double the same way I do for the actual board to make it more intuitive, after about 10min carefully flipping the board in my head because it's an array rather than a hash
+- Created move lists for
+    - Queen
+    - Rook
+- Tomorrow is testing and writing the #legal? method for the Piece parent class
+    - Write in Piece parent class, then test each individual piece to make sure the move list I generated is correct
+    - Remember this is not checking if the piece is blocked or anything like that, checking for blocks will likely need to be a separate method
+        - When I do write the #blocked? method, probably put it on Piece parent class then just overwrite it on Knight to always just return false
+        - Can I even do that with the move_list? Probably, I did it for Knight's Travails. 
+        - Just need to remember that I'm not looking for shortest path, I'm checking if there's an unblocked path of one move
+    - Thinking of pathing makes me wonder if I should make the CPU player randomly select a piece to move, then have it figure out the shortest path to the enemy king and make the first move from that
+        - Might be more interesting that just random valid moves, but also might just be a waste of time for no benefit
