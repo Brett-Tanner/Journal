@@ -68,3 +68,8 @@
         - Just need to remember that I'm not looking for shortest path, I'm checking if there's an unblocked path of one move
     - Thinking of pathing makes me wonder if I should make the CPU player randomly select a piece to move, then have it figure out the shortest path to the enemy king and make the first move from that
         - Might be more interesting that just random valid moves, but also might just be a waste of time for no benefit
+
+## Wed 7th
+### Odin Project - Ruby Foundations
+- Testing Piece#legal? turned out to be very straightforward, honestly might be pointless but still good to check I didn't miss anything
+- Lots of writing tests, no big issues
