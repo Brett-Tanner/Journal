@@ -73,3 +73,11 @@
 ### Odin Project - Ruby Foundations
 - Testing Piece#legal? turned out to be very straightforward, honestly might be pointless but still good to check I didn't miss anything
 - Lots of writing tests, no big issues
+
+## Thurs 8th
+### Odin Project - Ruby Foundations
+- Started work on Piece#clear_path?
+    - Realised the possible_moves lists aren't actually useful for checking a path, since they don't give any info on the path between start and destination
+    - But that's fine since Knights can't be blocked, and everything else moves in a straight line
+    - So just find the difference, then increment through and check each space by looking at its class
+- Honestly I got distracted by a bunch of stuff today/the last few days, need to focus back up and actually get this done
