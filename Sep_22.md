@@ -81,3 +81,23 @@
     - But that's fine since Knights can't be blocked, and everything else moves in a straight line
     - So just find the difference, then increment through and check each space by looking at its class
 - Honestly I got distracted by a bunch of stuff today/the last few days, need to focus back up and actually get this done
+
+## Fri 9th
+### Odin Project - Ruby Foundations
+- Continued work on Piece#clear_path?
+    - Wrote the special case for Pawn#clear_path cos he just has to be special
+        - insta-true if it's a diagonal move (#legal? should stop diagonal moves to empty spaces anyway)
+        - gets the move length, then returns true unless either square it would move forward through is occupied
+    - Got it working using nested if statements to deal with down and backward movement on the x and y axes, feel like there should be a more elegant way to do it but maybe I'll revisit once I've got everything else working
+- Tidied up State a bit since I have't looked at it in ages
+- Started planning out State#check?
+    - Right now it seems unnecessarily long and complex, I'm doing a lot of searching through the whole board
+    - Remembered that Ruby does shallow copies, meaning my copy of the board I used to test if the change caused check was actually changing the original board, causing an infinite loop
+    - Finally found the King after remembering that #class does not return a string, it returns the actual class
+    - Finally realized that my very early decision to have different capitalization for the colors in different places was stupid
+    - I think I've got it working now, at least for when the King isn't in check. Tomorrow I'll write the tests that make sure it knows when the King is actually in check
+- Testing State#move with all the new checks it has to pass broke my old tests, but that's ok cos I know a lot more about doubles and mocking and also when not to do those things now, so I should re-write the old tests anyway
+
+## Sat 10th
+### Odin Project - Ruby Foundations
+- 
