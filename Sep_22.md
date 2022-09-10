@@ -100,4 +100,15 @@
 
 ## Sat 10th
 ### Odin Project - Ruby Foundations
+- Test State#check?
+- Refactor State tests to work now that all the move checks are actually made
+- Modularized some parts of State#move
+- Scaffolded and tested State#checkmate?, no issues other than a few typos and variable naming mistakes which were quickly solved
+- In my breaks tomorrow I'll work on State#promote, and once that's done the game should be ready to actually play! Assuming I didn't forget any features. 
+    - This'll be my first time trying to run a completed program after only TDDing it, I've never actually run the Game file and seen what happens. 
+    - So hopefully it all goes perfectly or nearly so and TDD as an approach is validated, because there were a lot of great things about automated testing
+    - Ofc even if it fails that probably just means I didn't write my tests well or didn't test enough/the right stuff
+
+## Sun 11th
+### Odin Project - Ruby Foundations
 - 
