@@ -111,4 +111,24 @@
 
 ## Sun 11th
 ### Odin Project - Ruby Foundations
+- Tested and implemented State#promote
+    - Only issue was me not thinking about order of operations, which lead to me promoting the enemy piece then moving my pawn over the top of it
+- Now we try playing it and see if all the testing worked!
+- It almost worked perfectly! 
+    - There was an errant error message displaying from the State#check? method being called from valid_move? in checkmate, I removed it from #valid_move? and called it separately in move, as it's not necessary to check for check when already checking for checkmate
+    - I quickly realised I'd never actually added a way to trigger State#save, so I did that
+- Also, by finished I mean the core functionality. I still need to give the computer players the ability to make random moves, and add a replay feature if I still feel like doing that
+- For now though, pretty thrilled! Only two things got through my testing, one which is kinda hard to notice in a test since I receive all #puts by default and one which was just kinda a silly thing I forgot to do. Pretty fantastic for my first big, complex project!
+- Ok turned out there were some issues with loading saves that my testing didn't catch cos I didn't save an actual State
+    - You need to explicitly allow non-standard classes be loaded with the permitted_classes: option
+    - There's some compatibility thing involving aliases which is solved by toggling aliases: true
+- I've decided I'll come back and add Computer players and the replay function when I'm tired of reading stuff in the next course and want to code something. For now, onward!
+
+### Odin Project - Intermediate HTML & CSS
+- Looked through the different kinds of HTML elements and a CSS cheatsheet, saved both to the appropriate folders in Useful Ref
+- Emmet! I remember discovering this existed from a YT video or something and learning a few shortcuts, it seems incredibly useful
+    - But I'm tired so I'll read it tomorrow
+
+## Mon 12th
+### Odin Project - Intermediate HTML & CSS
 - 
