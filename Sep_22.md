@@ -128,7 +128,32 @@
 - Looked through the different kinds of HTML elements and a CSS cheatsheet, saved both to the appropriate folders in Useful Ref
 - Emmet! I remember discovering this existed from a YT video or something and learning a few shortcuts, it seems incredibly useful
     - But I'm tired so I'll read it tomorrow
+    - Actually I stayed up to watch LEC
+        - Wrap with abbreviation is bound to "cmd+e"
+        - Remove tag is bound to "cmd+r"
 
 ## Mon 12th
+### Odin Project - Intermediate HTML & CSS
+- Read about SVGs
+    - They scale like a vector, because they're mathematically defined rather than using pixels
+    - Very good for simple, geometric designs or visualising data, not so much for photo-realism or busy designs
+    - Usually smaller than an equivalent JPG, and file size doesn't increase with image size 
+    - Have a series of properties which can directly be altered/created in HTML and CSS
+    - They can be embedded inline to be made interactive, but that will slow down your load times
+    - Or linked like a regular image, which still lets them scale but you can't interact with their contents
+- Got some useful sites for free icons and saved them in my Resources folder
+- Read about HTML table elements
+    - You can manually set each cell in the table to take up a certain number of rows/columns using the row/colspan attributes
+    - You can style whole columns using col and colgroups
+        - col goes inside colgroup just below the opening table tag
+        - create a self-closing col element for each column, it styles the corresponding column
+        - Remember to include empty cols (at least before the one you want to style) or it'll just style the first one
+        - If you wanna apply the style to a certain number of cols from the start, use the span attribute
+        - thead, tfoot and tbody are used for formatting, e.g. when you want a table header and footer to stick to the top and bottom of the screen while the body scrolls past
+            - tfoot can be included at the start just below thead but will still be rendered at the end
+            - tbody wraps everything else in the table (added implicitly even if you don't use it)
+- Started working on the assessment for the table section, but its late and more complicated than expected/I don't remember that much from isolated bits of reading scattered throughout the day
+
+## Tue 13th
 ### Odin Project - Intermediate HTML & CSS
 - 
