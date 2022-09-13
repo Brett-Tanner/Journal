@@ -156,4 +156,49 @@
 
 ## Tue 13th
 ### Odin Project - Intermediate HTML & CSS
-- 
+- Finished off the table assessment, was actually easy. Key takeaways:
+    - th exists
+    - If you want a header to span multiple rows, you need to actually create the rows
+- Read about default styles (applied by the browser)
+    - You can use a file called a 'CSS Reset' to remove the default styles for your project
+    - The main two options are the Meyer Reset, which completely removes default styles applied by browsers and normalize.css, which keeps the useful defaults and makes the the same across browsers
+    - I went with normalize.css, as I don't always want to have to manually style everything. I'm not a graphic designer
+- Read "CSS units"
+    - Only use px for absolute units, in and cm are only for printing
+    - em and rem relate to font size, though they're used to size other things too
+        - em is the font size of the element (or its parent if parent sets font size)
+            - This means you can chain 1.3em for example to make list items progressively larger
+            - em is mostly used for media queries
+        - rem is preferred as it is the same but with the font size of the root element (:root or html)
+            - set :root font-size to **6.25%** and font-size to **16rem**
+            - e.g. 20px would be equivalent to 2rem, 1px would be 0.1rem
+    - Also have viewport units, vh and vw, which are each 1% of the relevant dimension of your viewport
+        - vmin and vmax use the smaller or larger of the viewport dimensions
+        - for text, you usually don't want to use plain vh or vw because the scaling can be extreme
+            - instead use calc(base size + vh or vw scaling)
+    - Can use % for a percentage of the container instead
+- Read "More text styles"
+    - Added links to online font sources to my resources folder
+- Read "More CSS properties"
+    - Just bookmarked it after reading in Useful Ref, I've seen them all before
+- Read "Advanced selectors"
+    - Again just bookmarked after reading, it's either review or I ended up already finding it anyway
+- Read "Positioning"
+    - 
+
+### Odin Project - Ruby Foundations
+- Went back and added replay functionality, went exceptionally smoothly.
+    - Probably cos I had a long walk to the shops to think about it
+- However, upon trying to show Viktoria the replay function by replaying a game where I lost as fast as possible, I didn't lose
+    - Got a "well, that was unexpected, which I traced to Piece#find_path 
+        - I remember thinking I didn't need an else there, good thing I ignored that feeling
+    - Fixed that by making the row_diff and col_diff values absolute values for their comparison, which allowed me to catch previously uncaught cases of a positive row diff and negative col diff or vice versa
+    - However the game now insists the black queen is blocked, when it clearly isn't
+        - I printed the path found by find_path, and it turns out the queen is going down left rather than than right in the path?????
+        - Because I'm only using row diff to increment, so it's going -1, -1 on each move rather than -1, 1 which it should be doing
+        - Ended up fixing that by just using the abs val of row diff with times, then adding the row and col diff, then adding or subtracting 1 to them depending on whether they're positive or negative
+        - Applied the same improvement to h and v movement as it significantly reduces nested if statements
+    - So now the Black Queen can move again, however State#check? doesn't think the King is in check after she moves to d8
+        - In fact it seems to print the warning, but not actually stop the move, every time other than the time the King is actually in check
+        - It always prints that warning after checking whether the Queen can take the King
+        - I'll come back to this tomorrow, there's other stuff I need to do irl
