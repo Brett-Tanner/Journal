@@ -184,7 +184,6 @@
 - Read "Advanced selectors"
     - Again just bookmarked after reading, it's either review or I ended up already finding it anyway
 - Read "Positioning"
-    - 
 
 ### Odin Project - Ruby Foundations
 - Went back and added replay functionality, went exceptionally smoothly.
