@@ -200,6 +200,10 @@
     - So now the Black Queen can move again, however State#check? doesn't think the King is in check after she moves to d8
         - In fact it seems to print the warning, but not actually stop the move, every time other than the time the King is actually in check
         - It always prints that warning after checking whether the Queen can take the King
+        - This doesn't seem like an easy fix, so time to write some more detailed tests for #checkmate?
+            - Specifically for when the King is only put in checkmate after a certain move
+            - And for when the King would be in checkmate but can be saved by another piece
+                - For that one, is it enough if the piece which puts the King in check can be taken? Probably not, I need to check for multiple pieces that have the King in check and see if they can all be taken/blocked
         - I'll come back to this tomorrow, there's other stuff I need to do irl
     - Also, remember your realisation that #check? doesn't account for other pieces rescuing the King, and do something about that once you fix the current functionality
 
