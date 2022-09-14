@@ -183,7 +183,6 @@
     - Just bookmarked it after reading in Useful Ref, I've seen them all before
 - Read "Advanced selectors"
     - Again just bookmarked after reading, it's either review or I ended up already finding it anyway
-- Read "Positioning"
 
 ### Odin Project - Ruby Foundations
 - Went back and added replay functionality, went exceptionally smoothly.
@@ -210,8 +209,67 @@
 
 ## Wed 14th
 ### Odin Project - Intermediate HTML & CSS
-- 
+- Finished CSS diner
+- Read "Positioning"
+    - Static positioning: default positioning, top, bot, l and r don't affect position
+    - Relative positioning: the properties above do in fact change the position of the element relative to where it would normally be
+    - Absolute positioning: removes element from the normal flow, put it wherever you want on the page without disturbing other elements
+        - positioned relative to an ancestor element (but only if the ancestor isn't static, otherwise positions relative to html element)
+        - use t, b, l, r
+        - useful for modals, captioned images and icons on top of other elements
+    - Fixed positioning: like absolute, but relative to the viewport. Useful for stuff you want to stick as you scroll like nav bars and floating chat
+    - Sticky positioning: act normally until you scroll past them, then act like fixed positioning
+- Read "CSS Functions"
+    - calc(): Used for mixing units, can nest. Calculates the math expression inside the brackets
+    - min(): Will use whichever is smaller of the given arguments. Can do basic math inside. Ensures sets the maximum size of something.
+    - max(): Will use whichever is larger of the given arguments. Can also do math. Ensures a minimum size.
+    - clamp(): Takes 3 arguments; smallest, ideal and largest values.
+- Read "CSS variables"
+    - declare like --what-a-variable: value, can also set it to calc() etc.
+    - to access, use var(--what-a-variable)
+        - can also pass a second argument as a fallback value
+        - or any number of arguments, can pass another variable then another fallback for example
+    - they have scope, much like JS scope they're only accessible from the selector they're declared on or children of that selector
+    - when you want it to be available to everything, declare it on :root
+        - can use this to make a dark mode
+            - declare variables for root.light and root.dark, set a default class on html and add js to switch the type
+        - can also just set light as default, and use @media (prefers-color-scheme: dark) {root {rules}}
+            - but then it's just gonna use the browser/OS default, user can't change it themselves
+- Read "Browser compatibility"
+    - Reminded that W3 schools is scummy for aping the W3C organisation's name
+    - Apparently every browser on iOS uses webkit, even if it's called Chrome or Firefox???? Didn't know that
+        - Chrome and FF are just skins for Safari
+- Read "Frameworks and pre-processors"
+    - For CSS, frameworks are usually just a bundle of CSS that implements common styles/feature like dropdown menus or what buttons look like
+        - Pros:
+            - Good documentation
+            - Easy to find help
+            - Easy to create MVP (or a backend system like an admin dashboard)
+            - Saves you from making design decisions like color palette
+        - Cons:
+            - Can be difficult to customise framework code
+            - Can be limited by the need to support old stuff
+            - May have performance issues as not optimised for your specific use case
+    - Pre-processors extend the functionality of CSS, allowing you to do stuff like write loops, join stylesheets and nest classes
+        - Then converts to vanilla CSS when you import to your project
+        - Apparently many useful features have been implemented in vanilla CSS now tho, so maybe not worth the overhead
+        - Pros:
+            - Makes it easier to write complex CSS
+            - Nesting rules stops you having to repeat yourself
+        - Cons:
+            - Debugging is harder as line numbers mean nothing due to the compilation step
+            - Compilation can take quite a while
+            - CSS files could be huge
+            - Most of the features they add can be duplicated in vanilla CSS now
+    - Both can save time by quickly creating something which can be iterated on rather than starting from a blank project
+    
+
+
 
 ### Odin Project - Ruby Foundations
-- 
+- When making a move
+    - 
+
+- When checking for checkmate
+    - 
 
