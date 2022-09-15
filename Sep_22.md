@@ -264,7 +264,50 @@
     - Both can save time by quickly creating something which can be iterated on rather than starting from a blank project
     
 
-
+## Thurs 15th
+### Odin Project - Intermediate HTML & CSS
+- Read "Forms"
+    - Forms are container elements like divs, they wrap all the inputs that can be interacted with on a form
+    - Action attribute gives the URL data should be sent for processing, and method attribute specifies the HTTP request method
+        - e.g. GET to retrieve something from the server, POST to modify something on a server
+    - Input elements take a type attribute and accept input/are formatted depending on that type
+        - can also have a placeholder attribute which specifies the placeholder text
+        - should have a name attribute, which serves as the variable name when it goes to backend. If no name, input will be ignored
+        - input types include
+            - Email: displays a diff keyboard including @ symbol on mobile, checks a valid email was entered
+            - Password: masks the input
+            - Number: only accepts numbers
+            - Date: renders simple date-picker calendar
+    - Label elements label inputs, they take a for attribute which is the id of the input they're labelling
+    - If you're not using a backend server and just wanna get an input that affects/displays something on the page directly, you can use form controls outside the form element
+    - textarea is not technically an input element, allows input of multiple lines of text in a resizable element.
+        - has a closing tag, so you can enter initial text to display between tags
+        - has rows and cols attributes which set the initial size of the text area
+    - Selection elements:
+        - select element wraps the option elements like a list, and takes a name attribute
+        - each option has a value attribute which is the value that'll be submitted when the option is chosen
+        - can set one as default by giving it the 'selected' attribute
+        - can split options into groups using optgroup wrapper, which takes a label attribute
+    - Radio buttons:
+        - just input element with type = radio
+        - each have a name attribute, selecting a button deselects all others with that name attribute
+        - can set a default radio button by adding 'checked' to it
+    - Checkboxes:
+        - Input element with type 'checkbox'
+        - Like radio boxes, but multiple options can be selected at once
+        - Single checkbox can be used to agree to T&C for example
+        - Can be checked by default by adding 'checked' attribute
+    - Buttons
+        - Its own element type, with text between the tags
+        - Three types (set by type attribute):
+            - Submit - Default if none specified. Submits the form it's contained in
+            - Reset - clears the form of all user input
+            - Button - just lets you click it, used to make stuff interactive with JS
+    - Containers
+        - Fieldset element: Groups related elements it contains into groups
+        - Legend element: Goes right after opening fieldset tag and acts as a title for the fieldset. Text goes between the tags
+    - Can't style certain form controls like the pop-up date pickers, have to build your own or use frameworks for that
+    - **Finished the 2 MDN introductory guides**
 
 ### Odin Project - Ruby Foundations
 - When making a move
