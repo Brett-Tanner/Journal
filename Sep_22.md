@@ -309,6 +309,43 @@
     - Can't style certain form controls like the pop-up date pickers, have to build your own or use frameworks for that
     - **Finished the 2 MDN introductory guides**
 
+## Fri 16th
+### Odin Project - Intermediate HTML & CSS
+- Continued the form code-alongs from MDN, for styling this time
+    - Most form elements are easy to style now, though wasn't always the case 
+        - mild exceptions are checkboxes, radio buttons and input type 'search'
+        - almost impossible to thoroughly style input type color, date controls, it range, it file, anything involving dropdown widgets and progress/meter elements
+        - for the almost impossible ones you may have to build your own to be able to style them
+    - Some form elements won't inherit in some browsers, so make sure you set them to do that (and font-size 100%) manually in your css (font-family: inherit)
+    - Can use appearance: none property to stop the OS styling some elements (as much as possible anyway)
+        - necessary as some browsers restrict changing some elements like search boxes
+        - especially useful for checkboxes/radio buttons as they disappear completely until you restyle them
+            - can use :checked and :disabled pseudo-classes (disabled applies when user can't select that option)
+    - File picker buttons (e.g. 'upload file') can't be styled at all, but you can hide them using {height: 0 opacity: 0 padding: 0}, which is delightfully janky
+        - Then you simply add a label and style it as a button, because clicking the label activates the form control, in this case our now invisible button
+    - :hover, :focus and :active pseudoclasses still exist
+    - There's also:
+        - :required/:optional - target the relevant category of form control (depends on whether required attribute is set)
+        - :valid/:invalid and :in-range/:out-of-range - target form controls that are valid/invalid according to the validation constraints
+            - If no constraint validation, will match with valid
+            - If they have the required attribute and are empty, will match with :invalid and :required
+            - If the input has built-in validation but is empty, will still match :valid
+            - the range ones are for numeric inputs with min and max
+            - they have both because the extra specificity might be useful when providing better error messages 
+        - :enabled and :disabled, and :read-only and :read-write
+            - read only is set with an attribute (readonly), default is read-write
+        - :checked, :indeterminate and :default - for radio buttons/checkboxes in those states/with those attributes
+            - indeterminate means its neither checked or unchecked
+        - ::before and ::after add a pseudo-element that is the first/last child of the selected element
+            - often used to insert content before/after a certain thing, like emoji before all instances of a certain heading (or those hashes on bookmark-able headings)
+            - is invisible to screen readers, so don't use it for stuff needed for accessibility
+            - since you can't put generated content on a form input, add an empty span to hang it on
+            - need to make the span position: relative so you can position: absolute the ::before/::after
+
+## Sat 17th
+### Odin Project - Intermediate HTML & CSS   
+- 
+
 ### Odin Project - Ruby Foundations
 - When making a move
     - 
