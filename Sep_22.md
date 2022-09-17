@@ -170,7 +170,7 @@
             - This means you can chain 1.3em for example to make list items progressively larger
             - em is mostly used for media queries
         - rem is preferred as it is the same but with the font size of the root element (:root or html)
-            - set :root font-size to **6.25%** and font-size to **16rem**
+            - set :root font-size to **6.25%** to make it base 10 in relation to pixels
             - e.g. 20px would be equivalent to 2rem, 1px would be 0.1rem
     - Also have viewport units, vh and vw, which are each 1% of the relevant dimension of your viewport
         - vmin and vmax use the smaller or larger of the viewport dimensions
@@ -344,7 +344,30 @@
 
 ## Sat 17th
 ### Odin Project - Intermediate HTML & CSS   
+- Read "Form Validation"
+    - When an input is required, just add the 'required' attribute and put an asterisk/required label with ::before/::after
+    - minlength and maxlength attributes set the allowed length of input
+    - can use min/max attributes on number based inputs like number, date and time
+    - can check it matches a pattern with 'pattern' attribute and regex argument
+        - some input types already pattern validate, e.g. email and url
+    - 'title' attribute can be used to provide a custom, more descriptive error message
+    - 'placeholder' attribute can be used to set an example, placeholder value
+    - You can validate inputs with custom JS as well, but the attributes are faster
+    - Bookmarked a cheatsheet for form attributes, and a example for styling forms to help validation
+- Finally finished reading, started working on the sign-up form project but for my ESL site, not the one they gave me
+    - Reorganised my old ESL games site project that I made the landing page for, adding folders etc.
+    - I really forgot a lot of HTML/CSS stuff haha, do still remember quite a bit though
+    - Spent far too long being confused about why my styles weren't applying, turns out if you're in a child folder you need ../, not just / to go back one level
+    - Created the basic components of the form
+    - Eventually ended up setting up the two sections, with everything I currently have on the left in the correct place.
+    - Added the site logo to the sidebar and fixed the lack of space in the attribution by putting it in a p, not div
+
+
+## Sat 17th
+### Odin Project - Intermediate HTML & CSS  
 - 
+
+
 
 ### Odin Project - Ruby Foundations
 - When making a move
