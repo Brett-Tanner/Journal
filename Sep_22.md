@@ -363,11 +363,21 @@
     - Added the site logo to the sidebar and fixed the lack of space in the attribution by putting it in a p, not div
 
 
-## Sat 17th
+## Sun 18th
+### Odin Project - Intermediate HTML & CSS  
+- Decided to actually read the project specs, added a background to the sidebar image and cleaned up some CSS rules which were handled in the site-wide.css or elsewhere
+- Finished styling the form and button
+    - figured out that you can chain :focus:valid to make required fields not red all the time/when empty
+        - maybe another style for :empty?
+    - but how do you make them red after something's been entered and it's invalid?
+- Didn't validate the passwords being the same with JS as that's in a later lessons and I'll just do it then
+- Called the project finished for now, though obviously I'll come back to the page as I continue to work on the site
+- Started reading about CSS Grid, which is exciting because I've heard a lot of good things. Current belief before reading any of the Odin stuff is that Grid is best for overall page layout, flex for laying stuff out inside individual elements
+- Yep the intro confirms those early impressions. Will continue on tomorrow. 
+
+## Mon 19th
 ### Odin Project - Intermediate HTML & CSS  
 - 
-
-
 
 ### Odin Project - Ruby Foundations
 - When making a move
