@@ -377,7 +377,35 @@
 
 ## Mon 19th
 ### Odin Project - Intermediate HTML & CSS  
-- 
+- Grid is better at overlapping, and more consistent
+- Most of Grid is defined on the parent element, but most of Flex is on the children
+- Read 'Creating a Grid'
+    - Can turn an element into a grid container by setting display: grid/inline-grid
+    - each child element automatically becomes a grid item (only direct children)
+    - Grid track is the space between lines in the grid. Column track is space between columns, row track between rows
+        - explicitly define rows and columns with grid-template or grid-template-row/grid-template-column and a space separated list of sizes
+        - names are automatically set to numbers from left to right and top to bottom, and from -1 from right to left or bottom to top
+        - you can also name the row/column lines using [ name ] 50px
+            - can have two names, just separate with a space inside the brackets
+        - can avoid typing the same value repeatedly with repeat(times, values)
+        - if multiple items have the same name, they can be referenced by the name followed by its name and count
+        - fr unit lets you set track size as a fraction of total grid size (calculated after any non flexible items are added)
+    - Extra rows can be implicitly defined for elements outside the explicitly defined rows/columns using grid-auto-rows and grid-auto-columns
+        - you can define a pattern of implicit row/col sizes by separating the sizes with a space, same as for explicit
+        - by default extra content is added below in new rows, so you won't need auto-columns
+        - but you can set grid-auto-slow: column and they'll flow into new columns, so you need to set auto-column
+    - Can set gap with row-gap, column-gap or the combined gap
+- Read 'Positioning grid elements'
+    - Grid tracks are what we create (the actual rows/cols), lines are implicitly created
+    - Each track has a start and end line, e.g. 1 and 2 for the first row/col
+    - Grid lines are used to position grid items
+        - by using grid-column/row-start and the grid line number
+        - also short-hand grid-row and grid-column, separated by a /
+        - grid-area combines both col and row, all 4 separated by /
+        - you can also set a name for the grid area, then lay them out with grid-template-areas in addition to the grid-template which creates the grid
+            - grid-template-areas takes a string for each row, separated by spaces internally and lines externally of the items in the row
+            - use a . to indicate empty cells
+    - Did practise exercises from the old CSS exercises repo
 
 ### Odin Project - Ruby Foundations
 - When making a move
