@@ -385,6 +385,7 @@
     - Grid track is the space between lines in the grid. Column track is space between columns, row track between rows
         - explicitly define rows and columns with grid-template or grid-template-row/grid-template-column and a space separated list of sizes
         - names are automatically set to numbers from left to right and top to bottom, and from -1 from right to left or bottom to top
+            - so you can span a whole row/col using start: 1, end: -1 
         - you can also name the row/column lines using [ name ] 50px
             - can have two names, just separate with a space inside the brackets
         - can avoid typing the same value repeatedly with repeat(times, values)
@@ -405,7 +406,39 @@
         - you can also set a name for the grid area, then lay them out with grid-template-areas in addition to the grid-template which creates the grid
             - grid-template-areas takes a string for each row, separated by spaces internally and lines externally of the items in the row
             - use a . to indicate empty cells
-    - Did practise exercises from the old CSS exercises repo
+    
+
+## Tues 20th
+### Odin Project - Intermediate HTML & CSS  
+- Did 01 folder practise exercises from the old CSS exercises repo
+- Read 'Advanced grid properties'
+    - Grid area can still only make rectangular areas
+    - Officially learned about repeat(num, size [ name ]) for setting the grid template
+        - you can set auto-fit and auto-fill as the number, which will return the largest number which won't cause your grid to overflow its container
+        - works especially well with minmax etc. so you can have a dynamic number of rows/cols which is calculated using the min value, then they're resized up to the max value to fill the space
+        - **only diff between auto-fit and auto-fill is when there aren't enough items to fill a single row. Auto fit will expand to the max size and attempt to fill the row, while auto-fill will fill the row with invisible columns**
+    - Also fr, which allocates 1 fractional unit of the **remaining** space in the container after any fixed space is allocated
+        - When you resize the grid to be as small as possible, individual cells won't become smaller than their content due to the grid item's min-content value
+    - min() and max() (which return the min or max of a set of provided values) can be used with a collection of fixed and relative values to ensure minimum and maximum row/col sizes
+    - minmax() is used specifically with CSS grid on template-rows/cols and auto-rows/cols to set a minimum and maximum row or col size
+        - unlike with min() or max() it makes sense to use two fixed values
+    - similarly, clamp(min, ideal, max) can be used
+        - but here we use a relative value for ideal and fixed for min/max
+- Did practice exercises 02 and 03
+    - learned that you shouldn't define rows unless you have to, let the grid figure it out itself.
+    - Also if you need elements in the grid to be a fixed height, just set it on the elements. Don't make the rows that height, it can lead to overflow
+- Read "Using Flexbox & Grid"
+    - Main point seems to be that you can use them both together, depending on which is better suited to a certain part of your page
+    - Generally though, grid is better for the overall layout and flex is better for positioning stuff within cells of that overall layout
+    - 1D vs 2D layouts is the most commonly cited differentiator, as Grid lets you explicitly define both while flex only lets you define one explicitly
+    - Grid is more for precise placement, and if you want predictable behaviour at different viewport sizes. Also broken or asymmetrical layouts
+    - Flex is for when you're more focused on the flow of the content, and want sizes to be defined by the size of the contents of the flex items
+- Made it to the Admin Dashboard project, so I set up the files in the ESL site repo. Will start working on it tomorrow
+
+## Wed 21st
+### Odin Project - Intermediate HTML & CSS  
+- Admin Dashboard project
+    - 
 
 ### Odin Project - Ruby Foundations
 - When making a move
