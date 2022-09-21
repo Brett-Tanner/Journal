@@ -436,9 +436,32 @@
 - Made it to the Admin Dashboard project, so I set up the files in the ESL site repo. Will start working on it tomorrow
 
 ## Wed 21st
-### Odin Project - Intermediate HTML & CSS  
+### Odin Project - Intermediate HTML & CSS
+- Finished the CSS Garden browser game 
 - Admin Dashboard project
-    - 
+    - Created the overall layout using grid
+        - There seem to be 7 rows even though I explicitly only defined 4 and there's no excess content?
+        - Doesn't actually affect the layout though
+    - Styled the header using site_wide.css
+        - should look into a way of including the header and footer on each page without copying the whole thing
+        - clamp doesn't seem to work on font-size?
+        - one problem is that when I have a really narrow viewport the text doesn't resize, and it eventually stops shrinking/leaves content off the side of the screen
+    - Styled the footer, also using site_wide.css
+    - Styled the sidebar, using uls since it should look like a list
+        - got the icons from feather, only history and home actually have live links
+    - Styled the welcome bar
+    - Styled the cards
+        - after much confusion, realised that only direct children will span across the whole grid area. If there's a div with another div inside it, that div inside will stay stuck in a single cell
+        - when you use auto-fit/auto-fill you have to use minmax() as well or it's invalid 
+    - Does not look great on mobile, I used too many fixed sizes 
+    - Is completely non-functional on Safari lol
+    - But, it's done and looks good on Firefox/Chrome
+- Finished Int HTML & CSS, plus I did the project in one day. Wooo!
+- On to databases tomorrow
+
+## Thurs 22nd
+### Odin Project - Databases
+- 
 
 ### Odin Project - Ruby Foundations
 - When making a move
