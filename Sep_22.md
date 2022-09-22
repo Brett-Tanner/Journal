@@ -461,7 +461,31 @@
 
 ## Thurs 22nd
 ### Odin Project - Databases
-- 
+- Read 'Databases'
+    - used to store persistent data from your site, there's also caching but that's covered later
+    - SQL underpins all relational databases, while stuff like MongoDB use a document model
+        - relational databases are more "3D" than a simple table
+        - forms data into well-defined units and relates them using 'keys'
+        - primary keys **must** be unique, so they are usually equal to the primary key of the previous row/record incremented by one
+        - Primary keys referred to in other tables are known as 'foreign keys', e.g. the keys for publisher and platform in a table of video games
+    - did the Khan tutorial on SQL
+        - create a table with "CREATE TABLE table_name (id INTEGER PRIMARY KEY, col_name DATA_TYPE, col_name DATA_TYPE);"
+        - insert with "INSERT INTO table_name VALUES (values in order of table columns, comma separated);"
+        - query with "SELECT col_name FROM table_name;"
+            - can use * in place of col_name to select whole table
+                - if you want to select multiple col_name but not the whole table separate with commas
+                    - also works with aggregate functions, just separate with commas
+            - can append WHERE (col_name <=>) to filter out results
+            - can append ORDER BY col_name to order by the data in that column
+            - can add an aggregate function (like SUM(col_name)) after SELECT to aggregate data from that column
+                - can append GROUP BY col_name to get an aggregate for each row in that col_name
+                - when you're selecting a col_name to display next to your grouped aggregates you wanna select the one you're grouping by
+
+## Fri 23rd
+### Odin Project - Databases
+- Read "Databases and SQL"
+    - 
+     
 
 ### Odin Project - Ruby Foundations
 - When making a move
