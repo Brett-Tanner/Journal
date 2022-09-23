@@ -482,9 +482,67 @@
                 - when you're selecting a col_name to display next to your grouped aggregates you wanna select the one you're grouping by
 
 ## Fri 23rd
+Had to do some paperwork for the new job, cook for my date with Viktoria and go on said date today, so probably won't get much done. I'm writing this at 11:11, but I'll make sure to wake up early tomorrow and study hard. 
+
+Yeah JOIN is too complicated for after 11pm, I'll continue tomorrow.
+
 ### Odin Project - Databases
 - Read "Databases and SQL"
+    - SQL likes lines to end with a ';' and '' over ""
+    - CRUD is Create, Read, Update, Destroy; not sure I've ever actually heard that before
+    - Schema:
+        - The file which stores the layout info for your database
+        - updates whenever you change the structure of your database
+        - possible to
+            - only allow unique names in certain columns
+            - use CREATE INDEX to index a col so you can search it faster later
+
+## Sat 24th
+### Odin Project - Databases
+#### Statements 
+- SELECT:
+    - best practice to specify table name for the col like users.name or users.email
+    - also have SELECT DISTINCT to get a list of all different usernames e.g. SELECT DISTINCT users.name FROM users
+- COMMIT
+- CREATE DATABASE
+- CREATE TABLE:
+- DELETE:
+    - Make sure you use a WHERE clause, or you end up deleting all your users
+    - can chain WHERE clauses with AND/OR/NOT and use the usual comparison operators
+- DROP DATABASE
+- DROP INDEX
+- DROP TABLE:
+- INSERT INTO
+- JOIN:
+    - Used to zip tables together
+    - ON specifies the column to zip on
     - 
+- ROLLBACK
+- UPDATE
+    - make sure your WHERE is unique if you only wanna update one thing, or it'll update everything that matches
+
+#### Clauses
+- AND
+- BETWEEN
+- COUNT
+- DISTINCT
+- IN
+- LIKE
+- OR
+- ORDER BY
+- WHERE
+
+
+#### Functions 
+- AVG
+- COUNT
+- GROUP BY
+- HAVING
+- MIN
+- MAX
+- SUM
+
+
      
 
 ### Odin Project - Ruby Foundations
