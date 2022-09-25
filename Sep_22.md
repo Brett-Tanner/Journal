@@ -539,21 +539,43 @@ If an order is specified by the ORDER BY clause, the rows are then sorted by the
 Finally, the rows that fall outside the range specified by the LIMIT and OFFSET are discarded, leaving the final set of rows to be returned from the query.
 
 #### Statements 
-- SELECT:
-    - best practice to specify table name for the col like users.name or users.email
-    - also have SELECT DISTINCT to get a list of all different usernames e.g. SELECT DISTINCT users.name FROM users
-        - you actually prepend DISTINCT to the column name you want distinct values for, it's not a modifier on SELECT
+- ALTER TABLE
+    - ALTER TABLE table_name 
+        - ADD column DataType OptionalTableConstraint DEFAULT default_value
+        - DROP column
+        - RENAME TO new_name to rename the table
 - COMMIT
 - CREATE DATABASE
-- CREATE TABLE:
+- CREATE TABLE
+    - CREATE TABLE table_name (col_name DATA_TYPE TABLE_CONSTRAINT(opt) DEFAULT default_value(opt), ...)
+    - IF NOT EXISTS skips creating the table and suppresses the error if the table already exists
+    - Data types are all the usual suspects plus blobs, but those are difficult to find without the right metadata since they're opaque to the database
+        - INT, BOOLEAN, FLOAT, DOUBLE, REAL
+        - CHAR(num) and VARCHAR(num) are specified with the number of characters they can contain, making them more performant
+        - DATE/DATETIME store timestamps, as expected can be tricky to work with, especially across timezones
+    - Table constraints limit the values which can be inserted
+        - PRIMARY KEY - values must be unique and are used to identify rows
+        - AUTOINCREMENT - for ints, value is automatically incremented and filled in when a new row is created. Not universally supported
+        - UNIQUE - doesn't allow duplicates, diff from PK because it doesn't have to be a key for a row in the table
+        - NOT NULL - inserted value can't be null
+        - CHECK(expression) - allows you to store a complex expression which checks if the values are valid
+        - FOREIGN KEY - Checks each value in this column corresponds to a value in another table
 - DELETE:
+    - DELETE FROM table WHERE condition
     - Make sure you use a WHERE clause, or you end up deleting all your users
     - can chain WHERE clauses with AND/OR/NOT and use the usual comparison operators
 - DROP DATABASE
 - DROP INDEX
-- DROP TABLE:
+- DROP TABLE
+    - Different from DELETE because it deletes the table schema as well
+    - Use IF EXISTS to suppress the error if the table doesn't exist
+    - If the table you're dropping has foreign keys in other tables, you'll need to alter them to remove that column or drop them entirely too
+    - I think you have to update the columns in the other tables **before** dropping the table
 - INSERT INTO
-- JOIN:
+    - can insert multiple rows at once by putting them one after the other in brackets, separated by commas
+    - can use math and string expressions on the data you're inserting, e.g. divide by 1 million for "millions of dollars" col
+    - You can title the columns explicitly after the table name and before VALUES in case you only want to insert values for certain columns
+- JOIN
     - Used to zip tables together
     - You can chain joins to get data from relational tables in a database e.g.
     ```
@@ -573,7 +595,12 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
     - RIGHT OUTER JOIN is the opposite of left
     - CROSS JOIN joins everything to everything, so very dangerous to run on large tables
 - ROLLBACK
+- SELECT:
+    - best practice to specify table name for the col like users.name or users.email
+    - also have SELECT DISTINCT to get a list of all different usernames e.g. SELECT DISTINCT users.name FROM users
+        - you actually prepend DISTINCT to the column name you want distinct values for, it's not a modifier on SELECT
 - UPDATE
+    - UPDATE table_name SET col = value, ... WHERE condition
     - make sure your WHERE is unique if you only wanna update one thing, or it'll update everything that matches
 
 #### Clauses
@@ -631,8 +658,12 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 
 ## Sun 25th
 ### Odin Project - Databases
-- Finished [SQL Bolt](http://sqlbolt.com/) and SQL Course [beginner](https://www.sqlcourse.com/beginner-course/)/[advanced](https://www.sqlcourse.com/advanced-course/). Notes from them are above to avoid fragmentation
+- Finished [SQL Bolt](http://sqlbolt.com/). Notes from them are above to avoid fragmentation
+    - Remember **no spaces in numbers** in SQL
      
+## Mon 26th
+### Odin Project - Databases
+- Finished SQL Course [beginner](https://www.sqlcourse.com/beginner-course/)/[advanced](https://www.sqlcourse.com/advanced-course/). Notes from them are above to avoid fragmentation
 
 ### Odin Project - Ruby Foundations
 - When making a move
