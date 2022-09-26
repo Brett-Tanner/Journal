@@ -488,7 +488,8 @@ Yeah JOIN is too complicated for after 11pm, I'll continue tomorrow.
 
 ### Odin Project - Databases
 - Read "Databases and SQL"
-    - SQL likes lines to end with a ';' and '' over ""
+    - SQL likes lines to end with a ';' 
+    - Use single quotes '' for strings
     - CRUD is Create, Read, Update, Destroy; not sure I've ever actually heard that before
     - Schema:
         - The file which stores the layout info for your database
@@ -549,10 +550,15 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 - CREATE TABLE
     - CREATE TABLE table_name (col_name DATA_TYPE TABLE_CONSTRAINT(opt) DEFAULT default_value(opt), ...)
     - IF NOT EXISTS skips creating the table and suppresses the error if the table already exists
+    - col names must start with a letter and can contain letters, numbers and underscores. Don't use SQL keywords like 'select'
+    - must be less than 30 characters long
     - Data types are all the usual suspects plus blobs, but those are difficult to find without the right metadata since they're opaque to the database
         - INT, BOOLEAN, FLOAT, DOUBLE, REAL
         - CHAR(num) and VARCHAR(num) are specified with the number of characters they can contain, making them more performant
+            - CHAR sets a fixed length
+            - VARCHAR sets the max length
         - DATE/DATETIME store timestamps, as expected can be tricky to work with, especially across timezones
+        - NUMBER(size, d) size is max total digits, d is decimals
     - Table constraints limit the values which can be inserted
         - PRIMARY KEY - values must be unique and are used to identify rows
         - AUTOINCREMENT - for ints, value is automatically incremented and filled in when a new row is created. Not universally supported
@@ -631,6 +637,9 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 - OR
 - ORDER BY
 - WHERE
+    - adds conditions to your query
+- XOR 
+    - like or, but only selects rows where one of the conditions is true, not both
 
 
 #### Functions 
@@ -644,6 +653,8 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 - COUNT
 - HAVING
     - is WHERE for aggregate functions, you use the AS name you gave the aggregate function in the conditional (but maybe not? Didn't work in the example)
+- LENGTH
+    - LENGTH(col) returns the length of the values in col
 - MIN
 - MAX
 - ORDER BY
@@ -664,6 +675,22 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 ## Mon 26th
 ### Odin Project - Databases
 - Finished SQL Course [beginner](https://www.sqlcourse.com/beginner-course/)/[advanced](https://www.sqlcourse.com/advanced-course/). Notes from them are above to avoid fragmentation
+- Did the first 4 sets from SQLZOO, the project for the database section
+    - Notes on each task from that project are (here)[https://github.com/Brett-Tanner/SQLZOO/blob/main/README.md]
+
+## Tue 27th
+### Odin Project - Databases
+- Finished SQLZOO, the project for the database section
+    - Notes on each task from that project are (here)[https://github.com/Brett-Tanner/SQLZOO/blob/main/README.md]
+
+
+
+
+
+
+
+
+
 
 ### Odin Project - Ruby Foundations
 - When making a move
