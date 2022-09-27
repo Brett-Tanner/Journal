@@ -610,6 +610,8 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
     - make sure your WHERE is unique if you only wanna update one thing, or it'll update everything that matches
 
 #### Clauses
+- ALL
+    - if you put it on the right side of the operator, lets your compare the left side to a list of values on the right side
 - AS
     - lets you rename columns or aggregate functions or tables to call them later, e.g. "SELECT MAX(users.age) AS highest_age FROM users" returns a column called highest_age
     - goes directly after the thing you want to rename
@@ -651,6 +653,7 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 - COALESCE
     - takes a list of columns as arguments and returns the first non-null value
 - COUNT
+    - does not count NULL values
 - HAVING
     - is WHERE for aggregate functions, you use the AS name you gave the aggregate function in the conditional (but maybe not? Didn't work in the example)
 - LENGTH
@@ -680,10 +683,13 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 
 ## Tue 27th
 ### Odin Project - Databases
-- Finished SQLZOO, the project for the database section
+- Finished up to set 9 from SQLZOO, the project for the database section
     - Notes on each task from that project are (here)[https://github.com/Brett-Tanner/SQLZOO/blob/main/README.md]
 
-
+## Wed 28th
+### Odin Project - Databases
+- Finished SQLZOO, the project for the database section
+    - Notes on each task from that project are (here)[https://github.com/Brett-Tanner/SQLZOO/blob/main/README.md]
 
 
 
