@@ -654,14 +654,27 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
     - takes a list of columns as arguments and returns the first non-null value
 - COUNT
     - does not count NULL values
+- You can use DAY(col), MONTH(col) and YEAR(col) to extract those values from a date value in a col
+ - WEEKDAY(col) = 0 for Monday
+- DATE_ADD(date, INTERVAL num week/day/month/yr)
+    - Allows you to add number of interval to date
+- DATE_FORMAT(date, template)
+    - lets you format the date using the template
 - HAVING
     - is WHERE for aggregate functions, you use the AS name you gave the aggregate function in the conditional (but maybe not? Didn't work in the example)
+- LAG(col to lag, lag amount) OVER (PARTITION BY col ORDER BY col)
+    - used to show data from preceding rows of the table
+- LEAD(col to lead, lead amount) OVER (PARTITION BY col ORDER BY col)
+    - used to show data from following rows of the table
 - LENGTH
     - LENGTH(col) returns the length of the values in col
 - MIN
 - MAX
 - ORDER BY
     - add a DESC to the end of the query to put in descending rather than the default ascending order
+- RANK() OVER(PARTITION BY col ORDER BY col) AS col_name
+    - ranks the rows by the ORDER BY value in a new col
+    - PARTITION BY groups by the col you provide
 - SUBSTR
     - syntax is SUBSTR(col_name, index, num_of_characters) which returns a string from the index for the number of characters
     - index can be negative to indicate distance from the end of the string
@@ -690,6 +703,14 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 ### Odin Project - Databases
 - Finished SQLZOO, the project for the database section
     - Notes on each task from that project are (here)[https://github.com/Brett-Tanner/SQLZOO/blob/main/README.md]
+
+### Odin Project - Ruby on Rails
+- Started looking at deploy options
+    - Since Heroku free tier is gone (RIP) and that's what the materials are based on, I'll have to find my own
+    - Shortlisted Supabase, Fly.io, Render and Railway
+    - Cut it down to Render and Railway as they seem the most helpful/explicitly support Rails
+        - will try both for a while and see which is easier/better, then pick one
+- Installed Rails and created the test project. Got up to deploying it but it's after midnight and this could get complicated since I'm not using Heroku, so I'll continue tomorrow.
 
 
 
