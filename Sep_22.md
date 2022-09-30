@@ -747,8 +747,12 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
             put "/posts/:id", to: "posts#update" # usually a submitted form
             delete "/posts/:id", to: "posts#destroy"
             ```
-                - :id means save anything here as the id in the params hash
-                - several submit to the same URL, but because the HTTP verb is different they're submitted to different controllers
+            - :id means save anything here as the id in the params hash
+                - can make it an optional parameter by putting it in ()
+                - can add more dynamic segments by separating the symbols with '/'
+                - static segments are just text separated by '/'
+                - query string (?) will also be passed as a param
+            - several submit to the same URL, but because the HTTP verb is different they're submitted to different controllers
             - but in Rails, there's a shortcut to do all these common routes
             ```
              # in config/routes.rb
@@ -757,13 +761,28 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
             ...
 
             ```
+            - The 'resources' is not a filler name, that's actually what you have to type
+            - You can define 'resources' for multiple controllers at once by chaining them with commas
+            - You can specify only some of the RESTful routes by appending "only: [:index, :show]"
+                - limiting the routes like this can cut down on memory use and speed up routing
+            - You can exclude some of those 7 routes by appending "except: [:index, :destroy]"
+                - limiting the routes like this can cut down on memory use and speed up routing
+            - if you're applying the same options to a bunch of different routes, you can combine them with
+            ```
+            with_options only:/except: :(options to list) do |list_only|
+                list_only.resources :controller_name
+                list_only.resources :controller_name
+                list_only.resources :controller_name
+                ...
+            end              
+            ```
     - Words in quotes correspond to Rails controller actions
     - In a URL, path is everything after the /, and parameters are the key/value pairs in the path
     - MVC
         - When a request comes from a client comes in
             1. The router (server) figures out which controller to send it to
             2. The controller asks the model for data
-            3. The controller gets the data and passes it off to the views
+            3. The controller gets the data (as instance variables) and passes it off to the views
                 - views are just HTML templates waiting for the values
             4. Once the correct view has been filled with the data, it's sent to the client
         - So for the individual components
@@ -786,9 +805,13 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
     - will throw an error if it can't find a route that matches the request
     - Makes parameters from the request available in a special hash called 'params' that can be used in the controller
     - the routes file in config/routes.rb has a link to the Rails Guide routing section
-    - typing $ rails routes into cmd line will give you a list of all routes available to your app
+    - typing rails routes (or maybe bin/rails routes) into cmd line will give you a list of all routes available to your app
         - they show in the format "route name   HTTP verb   URL    controller action"
             - (.:format) just means it's ok to specifiy a file extension at the end of the route
+        - can also use --expanded to format it nicely in a table
+        - use -g (grep option) to search routes using the next argument
+            - it outputs any routes that partially match the the URL helper method name, the HTTP verb, or the URL path
+        - use -c option to find routes mapping to a specific controller
     - map the root URL (homepage) with 'root to: "controller, action(the method called action in controller)"
     - route helpers are automatically created for all your routes using the route name e.g. for edit_post
         - edit_post_path provides the path to the edit post link
@@ -799,20 +822,180 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 ## Fri 30th
 ### Odin Project - Ruby on Rails
 - Continued reading 'Routing'
-    -
+    - Remember controllers are just classes, with methods named index, show, destroy etc. that contain code to fulfill those functions
+    - It's not uncommon to use the same Rails codebase for a site and API, so you need to use constraints and a separate namespace to separate routes
+        - this puts the API stuff in a separate folder, and means you'll need to include the module 'api' in your API controllers
+        - e.g. 
+        ```
+            constraints subdomain: 'api' do
+                namespace :api, path: '/' do
+                    resources :controller_name
+                    resources :controller_name
+                    resources :controller_name
+                    ...
+                end
+            end              
+        ```
+        - the path: '/' option removes duplication of api in the URL
+- Started reading 'Controllers'
+    - Routing, which the last lesson was about, decides which controller to send a request to
+    - The controller then contacts the model to get the necessary data as instance variables, feeds those variables to the view so it can populate the HTML, then sends the HTML back to the router so it can be returned to the client as a response
+    - When the controller sends variables to the view file, it'll send it to the file named the same thing as the controller action which is in a folder named after the controller, which itself is in the views folder
+        - if you want the variables sent somewhere else, you'll need to explicitly specify where
+        - apparently lots of reasons to do this, like when you want to redirect the user to a different page rather than rendering the content on the current page
+        - when naming controllers, the last word before the word controller should be a plural (this is important for using the default route generators, and consistency)
+    - When you're doing something like submitting a post, successful submissions should go to a new view/page because you don't need the instance variables anymore
+        - on the other hand, if there's some kind of error you should refresh the content on the same page cos then you can re-use the instance variables to show the user where they went wrong e.g.
+        ```
+        # app/controllers/posts_controller.rb
+        class PostsController < ApplicationController
+          ...
+          # Make (but don't save) an empty Post so the form we render
+          # knows which fields to use and where to submit the form
+          # This action will render app/views/posts/new.html.erb once
+          # it's done
+          def new
+              @post = Post.new
+          end
+          
+          # We know this will get run once we receive the submitted
+          # form from our NEW action above (remember your REST actions??)
+          def create
+            @post = Post.new(allowed_post_params) # see method below
+            if @post.save
+              flash[:success] = "Great! Your post has been created!"
+              redirect_to post_path(@post.id) # go to show page for @post
+            else
+              flash.now[:error] = "Rats! Fix your mistakes, please."
+              render :new, status: :unprocessable_entity
+            end
+          end
 
+          private  # Best to make helper methods like this one private
 
+          # gives us back just the hash containing the params we need to
+          # to create or update a post
+          def allowed_post_params
+            params.require(:post).permit(:title,:body,:author_id)
+          end
+        end
+        ```
+        - A commonly used shortcut for "redirect_to post_path(@post.id)" is "redirect_to @post"
+    - Important to note that 'render' and 'redirect_to' do not stop execution of the controller method like return would
+        - If you try to render/redirect twice you'll get a multiple render error
+    - Values in the params hash can be accessed with params[:id] like a normal hash as long as they're scalar values (anything 'flat')
+        - However you can also submit individual values of the params hash as as hashes or arrays themselves, which can make them much more convenient to pass to your methods
+            - These are called 'strong parameters'
+            - The type of data sent by the form depends on the HTML 'name' attribute
+        - Some forms submit everything as a top level scalar entry, you can control this though
+        - you can 'prettify' URLs by routing them to set a parameter without using the params hash e.g.
+            - get '/clients/:status', to: 'clients#index', foo: 'bar' will set foo to bar, and also especially set status to active??
+    - Strong parameters
+        - send an array by appending [] to the id name, values will always be strings
+        - send a hash by putting the key in square brackets after the name of the param e.g. name="user[phone]"
+        - can also accept JSON if Content-Type header of your request is set to 'application/json'
+            - will be auto-converted to a hash in params and accessed as normal
+        - For security reasons (so someone can't set themselves as an admin when they create an account) you need to explicitly allow receiving each parameter from a hash or array
+        - 'Require' the name of your array or hash to be in the params, then 'allow' individual attributes from that array/hash to be used 
+            - If the strong param is required, you'll get an 400 bad request error for submitting without it
+            - Only the attributes you explicitly permit will be returned e.g.
+        ```
+        def allowed_post_params
+          params.require(:post).permit(:title,:body,:author_id)
+        end
+        ```
+        - Can also permit nested values
+        ```
+        params.permit(:name, { emails: [] },
+              friends: [ :name,
+                         { family: [ :name ], hobbies: [] }])
 
+        ```
+    - Flash
+        - built into Rails as a way of displaying error/success messages
+        - it's like a hash storing different messages, and you can display messages by accessing their key
+        - you can have any number of keys, but usually only 3 are used; :success, :error and :notice
+        - it erases itself after use, so you don't need to worry about it displaying each time you visit a page
+        - though redirects usually completely destroy the application you were in, flashes are an exception. They travel along in the HTTP for the redirect so you have access to it on the next page
+        - to use flash in a render, you need to use flash.now instead
+- Started reading 'Views'
+    - Views are the actual HTML served to the browser
+    - Usually has code inserted to properly display variables it receives, for example looping over a list of posts to display them
+    - They live in 'app/views/controller_name/action_name.html.erb' (this is the one that will implicitly render)
+        - you can tell the controller to render a different view by passing it to the render function on your controller
+    - Call instance variables the same way you would in the controller
+    - Views won't have DOCTYPE or header stuff, that's in app/views/layouts.
+        - If you wanna put stuff like a header/footer code for displaying a flash on each page, put it in the layout
+        - Layout is inserted by the yield statement on each view
+    - <%= %>, <% %>, <%# %> contain EMbedded Ruby (ERB). The = version actually displays whatever's inside the tags, # version is used to comment, plain version executes but doesn't display anything returned (but can still be used to make something display as a side effect)
+        - remember to close statements with <% end %>, seems you need to wrap each line individually
+        - e.g. an if statement could wrap a ul element to decide if it will be spawned, then inside you could have the = version displaying values for each li
+        ```
+        <% if current_user.signed_in? %>
+            <ul>
+              <% @users.each do |user| %>
+                <li><%= user.first_name %></li>
+              <% end %>
+            </ul>
+        <% else %>
+            <strong>You must sign in!</strong>
+        <% end %>
+        ```
+    -Yield
+        - You can use yield to insert a view, usually just one yield for the whole view but it's possible to 
+        - you can also yield :symbol and content_for to yield multiple things
+        ```
+        <% content_for :head do %>
+          <title>A simple page</title>
+        <% end %>
+        ```
+    - View partials
+        - Allow you to break your view up into components, which can be used and re-used across multiple views e.g. basically the same form is needed for creating and editing users
+        - You can combine a bunch of partials into one complete view
+        - partials are named with a leading underscore, but called without said underscore e.g. <%= render "user_form" %> will render _user_form.html.erb
+            - this will only look in the same directory, so if you want a partial to be shared across multiple directories put it in app/views/shared and render them using <%= render "shared/some_partial"%>
+        - Passing local variables
+            - partials have access to all the variables the calling template does, but you shouldn't rely on them because they could be different if called by a different partial
+            - you should pass them explicitly instead using render and an options hash
+                - an options hash is an optional hash which is passed as the last argument and contains a bunch of key/value pairs that are optional arguments to the function
+            - you can pass them using :locals, which contains a hash storing the variables you want to pass
+                - when calling them in the partial, you can drop the @ and just call them as a local variable
+                - can also pass without using :locals like this: <%= render "shared/your_partial", :user => user %>
+        - Implicit partials
+            - you can make a partial for something as simple as displaying a username e.g. <%= "#{user.first_name} #{user.last_name}, #{user.email}" %> (in app/views/_user.html.erb)
+            - you can render that using the shortcut <%= render user %>, or the long way <%= render "user", :locals => {:user => user} %>
+            - if there's a list of users to render, rather than just one, you can do this: <%= render @users %> which also saves you having to make a loop by automatically looping over everything in your @user collection
+        - link_to: creates an anchor tag
+            - <%= link_to "See All Users", users_path %>
+        - Asset tags
+            - searches for assets and creates a link to them
+            - This
+            ```
+            <%= stylesheet_link_tag "your_stylesheet" %>
+            <%= javascript_include_tag "your_javascript" %>
+            <%= image_tag "happy_cat.jpg" %>
+            ```
+            - creates something like this
+            ```
+            <link href="/assets/your_stylesheet.css" media="all" rel="stylesheet">
+            <script src="/assets/your_javascript.js"></script>
+            <img src="/assets/happy_cat.jpg">
+            ```
+    - Ways to generate a HTTP response
+        - Call render to tell your app what to use when constructing a response to use on the same page
+            - All of these would correctly render the edit.html.erb template in the views/books directory:
+            ```
+            render :edit
+            render action: :edit
+            render "edit"
+            render action: "edit"
+            render "books/edit"
+            render template: "books/edit"
 
-
-
-
-
-
-
-### Odin Project - Ruby Foundations
-- When making a move
-    - 
-
-- When checking for checkmate
-    - 
+            ```
+        - Call redirect_to to tell the browser to send a new request for a different URL
+            - use redirect_back(fallback_location: root_path) to link back to the previous page
+        - Call head to create a response consisting solely of HTTP headers to send back to the browser
+- Read 'Deployment'
+    - It's about Heroku and I'm forced to use Render, so only helpful in a general sense
+    - Good localhost tip though, if you use 'rails server -p 3001' (or any other port number) you can run multiple Rails apps at once
