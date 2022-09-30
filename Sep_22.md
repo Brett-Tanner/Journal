@@ -712,6 +712,97 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
         - will try both for a while and see which is easier/better, then pick one
 - Installed Rails and created the test project. Got up to deploying it but it's after midnight and this could get complicated since I'm not using Heroku, so I'll continue tomorrow.
 
+## Thurs 29th
+### Odin Project - Ruby on Rails
+- Yep deploying to other hosting services is tricky when all the instructions are for Heroku
+    - had some issues with how to migrate a PG database to Railway when the gem isn't installed in my local env
+    - tried Render next
+        - internal database url: (postgres://my_first_rails_app:IWf0odHWEPxRMXVlYtOloTyLQl4Uv0rU@dpg-ccqg44sgqg4cmrh60c20-a/my_first_rails_app)[postgres://my_first_rails_app:IWf0odHWEPxRMXVlYtOloTyLQl4Uv0rU@dpg-ccqg44sgqg4cmrh60c20-a/my_first_rails_app]
+        - seems Render is easier, you just follow directions from the (Rails Deployment tutorial)[https://render.com/docs/deploy-rails]
+        - Finally got it working after being more thorough about the environment variables I added in database.yaml and the Render dashboard
+- Read 'A Railsy Web Refresher'
+    - The main 4 HTTP request verbs are GET, SET, PUT and DELETE but there are others. These days almost everything is done through GET or SET.
+        - GET fetches a resource
+        - SET creates a resource
+        - PUT modifies
+        - DELETE deletes
+    - HTTP requests and responses both have header and body components
+        - header contains meta-info about the request/response
+        - body contains stuff like data submitted by a form or cookies for a request or the HTML you're trying to access for a response
+    - REST (representational state transfer) is the idea there are only 7 things you really want to do to an individual web resource, and they can all be done with the HTTP verbs
+        1. GET all the posts (aka “index” the posts)
+        2. GET just one specific post (aka “show” that post)
+        3. GET the page that lets you create a new post (aka view the “new” post page)
+        4. POST the data you just filled out for a new post back to the server so it can create that post (aka “create” the post)
+        5. GET the page that lets you edit an existing post (aka view the “edit” post page)
+        6. PUT (or PATCH) the data you just filled out for editing the post back to the server so it can actually perform the update (aka “update” the post)
+        7. DELETE one specific post by sending a delete request to the server (aka “destroy” the post)
+            - the long way of implementing that for a controller would be:
+            ```
+            get "/posts", to: "posts#index"
+            get "/posts/new", to: "posts#new"
+            get "/posts/:id", to: "posts#show"
+            post "/posts", to: "posts#create"  # usually a submitted form
+            get "/posts/:id/edit", to: "posts#edit"
+            put "/posts/:id", to: "posts#update" # usually a submitted form
+            delete "/posts/:id", to: "posts#destroy"
+            ```
+                - :id means save anything here as the id in the params hash
+                - several submit to the same URL, but because the HTTP verb is different they're submitted to different controllers
+            - but in Rails, there's a shortcut to do all these common routes
+            ```
+             # in config/routes.rb
+            ...
+            resources :posts
+            ...
+
+            ```
+    - Words in quotes correspond to Rails controller actions
+    - In a URL, path is everything after the /, and parameters are the key/value pairs in the path
+    - MVC
+        - When a request comes from a client comes in
+            1. The router (server) figures out which controller to send it to
+            2. The controller asks the model for data
+            3. The controller gets the data and passes it off to the views
+                - views are just HTML templates waiting for the values
+            4. Once the correct view has been filled with the data, it's sent to the client
+        - So for the individual components
+            - Controller receives requests from the client, gets the data and shuttles it around
+            - Model has all the data, it communicates with the database
+            - View is what the client sees/gets, is stored in your project as templates
+        - API
+            - how two applications talk to each other
+            - usually doesn't return HTML, it's JSON or something instead
+            - still uses HTTP, in fact that's how Rails components communicate with each other
+            - to create an API mostly just tell your controller to respond to server requests and what you want it to respond with
+        - Cookies
+            - basically a way to remember who you are from one request to another, since HTTP requests are stateless
+            - your browser sends the cookie each time it communicates with the site, so the site can preserve the state of your interactions
+            - also stores login info, user preferences
+        - Authentication tells you who the user is, authorisation tells you what the authenticated user can do
+- Started reading 'Routing'
+    - Router is the 'doorman' of your app
+    - Looks at the HTTP request and matches it with the appropriate controller action to run
+    - will throw an error if it can't find a route that matches the request
+    - Makes parameters from the request available in a special hash called 'params' that can be used in the controller
+    - the routes file in config/routes.rb has a link to the Rails Guide routing section
+    - typing $ rails routes into cmd line will give you a list of all routes available to your app
+        - they show in the format "route name   HTTP verb   URL    controller action"
+            - (.:format) just means it's ok to specifiy a file extension at the end of the route
+    - map the root URL (homepage) with 'root to: "controller, action(the method called action in controller)"
+    - route helpers are automatically created for all your routes using the route name e.g. for edit_post
+        - edit_post_path provides the path to the edit post link
+        - edit_post_url provides the full URL
+        - can put any parameters in () after either
+    - link_to "text" name_path/_url creates a link using the text and the generated path/URL
+
+## Fri 30th
+### Odin Project - Ruby on Rails
+- Continued reading 'Routing'
+    -
+
+
+
 
 
 
@@ -725,4 +816,3 @@ Finally, the rows that fall outside the range specified by the LIMIT and OFFSET 
 
 - When checking for checkmate
     - 
-
