@@ -77,8 +77,28 @@
     - **Probably stop pushing my commits so often, it makes it really hard to redo stuff. I should only do it when a major feature is complete and tested**
 
 
-## Sun 2st
+## Sun 2nd
 ### Odin Project - Ruby on Rails
+Slow day, I was at work til late with spaced out breaks, then board games at night
+
+#### What I did
+- Added a page for individual articles that shows the title, body and post/update date
+- Made the article list on the index page link to individual articles
+
+#### What I learned
+- You can pass a model object as the second argument to link_to and it'll generate the link, rather than putting article_path for example
+
+
+## Mon 3rd
+### Odin Project - Ruby on Rails
+
+#### What I did
+
+
+#### What I learned
+
+
+
 
 
 
