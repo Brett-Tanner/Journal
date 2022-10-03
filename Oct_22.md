@@ -91,12 +91,33 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 
 ## Mon 3rd
 ### Odin Project - Ruby on Rails
-
 #### What I did
-
+- Added the ability to create new articles, update them and delete them.
+- 
 
 #### What I learned
-
+- It's better to redirect_to rather than render when you alter the database or state of the application, otherwise refreshing the page will resend the same request
+- Rails has a form builder
+  - instantiate it with form_with
+  - pass the thing you want to build a form from using 'model: @thing'
+  - to create elements you call the element on form e.g. form.label or form.text_area and append a symbol to show what value of the object you're trying to set e.g. :title
+  - more details on form builders in Rails [here](https://guides.rubyonrails.org/form_helpers.html)
+- You can validate form inputs using the corresponding Ruby file in models
+  - validates :value_to_validate, presence: true/false, length: { minimum: 10 }, etc..
+  - show errors in the view file using
+  ```
+  <% @article.errors.full_messages_for(:title).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  ```
+  - full_messages_for returns an array of error messages for the form value passed
+- Seems that if you call a method like #save or #update in an if statement, it actually puts the method into action. Seems logical, but I was calling it elsewhere then checking if the result was as expected in the past
+- You can use turbo_method and turbo_confirm as arguments passed to the data: attribute of link_to to set the type of the request and require confirmation before it's completed, respectively
+- When you rails generate a model, you get a migration file, a model file, testing harness for the model and a file that stores test data in the form of your model 
+  - not sure if the test data is immediately usable though, it seems to be as variables rather than in the correct form
+  - this is a framework tho, those variables could link to something of the correct type
+  - if you use ':references' when generating, the new model will belong to the model prior
+  - it will also include a new col that's the name of the model you're relating it to + '_id' and contains the foreign keys
 
 
 
