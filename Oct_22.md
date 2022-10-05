@@ -44,37 +44,37 @@
     - set the thumbnail/waiting image for a video using poster='path'
 
 - Started working on the blog app
+
 #### What I did
-    - in case I forget in the future, I eventually want to automatically populate the blog posts with my daily journal entries
-    - created a MVC which handles articles, and used it to display a list of article titles in the db
-    - set the homepage of the site to that article list
+- in case I forget in the future, I eventually want to automatically populate the blog posts with my daily journal entries
+- created a MVC which handles articles, and used it to display a list of article titles in the db
+- set the homepage of the site to that article list
 
 
 #### What I learned
-    - Rails autoloads things, so DO NOT use require as a general rule
-        - exceptions for files in the lib directory
-        - and gem dependencies with require: false in the gemfile
-    - Model creation
-        - create a model with 'bin/rails generate model Article title:string body:text'
-            - an auto-incrementing numerical id is added by default
-            - bin/rails accesses the scripts, generate model is the command
-            - Article is the title of the model (always singular) which will be used to create the db table (in plural, so Articles)
-            - title and body are the columns of the table, followed by their data types
-            - I assume the |t| in the table creation method is the auto-incrementing id?
-            - the t.timestamps call at the end creates two additional tables 'created_at' and 'updated_at'
-        - Database migrations are used to alter the database. They're written in Ruby so they can be used with any type of database
-            - after creating the model, you can create the table it describes by running bin/rails db:migrate
-            - after that you can interact with your new table
-    - Rails console
-        - Rails has a console, kinda like irb, which allows you to interact with your application code directly
-        - launch with bin/rails console
-    - Database methods
-        - you can initialize new objects just like vanilla Ruby, but this doesn't add them to the database
-        - to do that you have to call #save on the object
-        - #find(id) on the database returns the record with id as the id
-        - #all on the db returns all records in the db as an ActiveRecord::Relation object, which is basically a super array
-
-    - **Probably stop pushing my commits so often, it makes it really hard to redo stuff. I should only do it when a major feature is complete and tested**
+- Rails autoloads things, so DO NOT use require as a general rule
+    - exceptions for files in the lib directory
+    - and gem dependencies with require: false in the gemfile
+- Model creation
+    - create a model with 'bin/rails generate model Article title:string body:text'
+        - an auto-incrementing numerical id is added by default
+        - bin/rails accesses the scripts, generate model is the command
+        - Article is the title of the model (always singular) which will be used to create the db table (in plural, so Articles)
+        - title and body are the columns of the table, followed by their data types
+        - I assume the |t| in the table creation method is the auto-incrementing id?
+        - the t.timestamps call at the end creates two additional tables 'created_at' and 'updated_at'
+    - Database migrations are used to alter the database. They're written in Ruby so they can be used with any type of database
+        - after creating the model, you can create the table it describes by running bin/rails db:migrate
+        - after that you can interact with your new table
+- Rails console
+    - Rails has a console, kinda like irb, which allows you to interact with your application code directly
+    - launch with bin/rails console
+- Database methods
+    - you can initialize new objects just like vanilla Ruby, but this doesn't add them to the database
+    - to do that you have to call #save on the object
+    - #find(id) on the database returns the record with id as the id
+    - #all on the db returns all records in the db as an ActiveRecord::Relation object, which is basically a super arra
+- **Probably stop pushing my commits so often, it makes it really hard to redo stuff. I should only do it when a major feature is complete and tested**
 
 
 ## Sun 2nd
@@ -93,7 +93,7 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 ### Odin Project - Ruby on Rails
 #### What I did
 - Added the ability to create new articles, update them and delete them.
-- 
+
 
 #### What I learned
 - It's better to redirect_to rather than render when you alter the database or state of the application, otherwise refreshing the page will resend the same request
@@ -117,7 +117,76 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
   - not sure if the test data is immediately usable though, it seems to be as variables rather than in the correct form
   - this is a framework tho, those variables could link to something of the correct type
   - if you use ':references' when generating, the new model will belong to the model prior
+    - the flip side is adding has_many :object to the model for the thing it belongs to, which allows you to retrieve the 'many' using parent.many 
   - it will also include a new col that's the name of the model you're relating it to + '_id' and contains the foreign keys
+
+
+## Tues 4th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- Added comment functionality
+- Used partials to clean up the article show view
+- Finished the 'paint by numbers' part of the project, time to add my own stuff
+  - start by styling the homepage/article list
+
+
+#### What I learned
+- You can nest routes like by putting them inside a do/end block where resources :controller_name takes the place of the method name
+  - This allows you to capture the relationship between two models in your routing
+  - For example in this project, every comment requires a post in the URL to access
+  - also creates routing helpers like article_comments_url and edit_article_comment_path, which take an instance of @article as the first param
+- "rails generate controller name" creates the controller .rb file, a views folder, a test.rb file and a helper.rb file
+- When you 'render' a list of things, it iterates over the collection and assigns each member to a local variable named the same as the partial
+  - somehow rendering 'comments' uses the view called "comment", I assume rails fixes that for me
+  - ah, maybe because the folder is comments, then each individual comment is rendered using the actual view partial called _comment
+
+- Assets like stylesheets and images are recommended to go in the 'app/assets' directory these days, so they can be combined and minified
+  - if you're using a pre-processor like Sass, you'll need to put those files in /assets
+  - in production, the files in app/assets are compiled tp public/assets
+
+
+## Wed 5th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- Decided how to style the blog
+  - [x] Header with the site name as a link to the article list and new post button
+  - [x] Use grid for the homepage
+    - [x] Style the articles/cards like notes written on old paper
+    - [] Small icons on the bottom for comments/edit/expand to its own page (still need to add the links)
+    - [] Expand slightly on hover
+    - [] When clicked, move to the top of the grid and take up the whole width of the container
+      - [] how do I minimize it? either have an 'X' to click which returns it to normal (clears the classes I'd have to apply to make it big)
+  - [] Articles on a navy/grey background (or the top of a desk?)
+  - [] Edit button maybe on the letter element for the single article page if I can make it not look terrible
+  - [] Add a loading animation when moving between pages
+  - [] Use variants to have different layouts for mobile and desktop
+
+#### What I learned
+- You can limit the number of records printed/processed by inserting #limit(num) between the model and method being called
+
+## Thurs 6th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- Decided how to style the blog
+  - [x] Use grid for the homepage
+    - [x] Style the articles/cards like notes written on old paper
+    - [] Small icons on the bottom for comments/edit/expand to its own page (still need to add the links)
+    - [] Expand slightly on hover
+    - [] When clicked, move to the top of the grid and take up the whole width of the container
+      - [] how do I minimize it? either have an 'X' to click which returns it to normal (clears the classes I'd have to apply to make it big)
+  - [] Articles on a navy/grey background (or the top of a desk?)
+  - [] Edit button maybe on the letter element for the single article page if I can make it not look terrible
+  - [] Add a loading animation when moving between pages
+  - [] Use variants to have different layouts for mobile and desktop
+
+#### What I learned
+
+
+
+
 
 
 
