@@ -170,20 +170,26 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 ### Odin Project - Ruby on Rails
 
 #### What I did
-- Decided how to style the blog
-  - [x] Use grid for the homepage
-    - [x] Style the articles/cards like notes written on old paper
-    - [] Small icons on the bottom for comments/edit/expand to its own page (still need to add the links)
-    - [] Expand slightly on hover
-    - [] When clicked, move to the top of the grid and take up the whole width of the container
-      - [] how do I minimize it? either have an 'X' to click which returns it to normal (clears the classes I'd have to apply to make it big)
-  - [] Articles on a navy/grey background (or the top of a desk?)
-  - [] Edit button maybe on the letter element for the single article page if I can make it not look terrible
-  - [] Add a loading animation when moving between pages
-  - [] Use variants to have different layouts for mobile and desktop
+- [x] Header with the site name as a link to the article list and new post button
+- [x] Use grid for the homepage
+  - [x] Style the articles/cards like notes written on old paper
+  - [x] Small icons on the bottom for comments/edit/expand to its own page
+  - [x] Expand slightly on hover
+  - [x] When clicked, move to the top of the grid and take up the whole width of the container
+    - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
+- [] First thing tomorrow is making the cols responsive so I don't have 3 columns on mobile
+- [] Add a loading animation when moving between pages
+- [] Use variants to have different layouts for mobile and desktop
 
 #### What I learned
-
+- You can (in theory, my pages aren't long enough to test yet) link to an id on a page by using the 'anchor: id' element
+- You set the z-index of an element with the z-index property, not order
+  - higher numbers are closer to the surface
+- Contrary to what RailsGuides says, JS goes in the javascript folder in app, not app/assets
+- Had a fun time remembering 'defer' is an important attribute when you're generating your html
+  - in Rails you add it with defer: "defer" after the link
+- In CSS, you can use :not(class or id) to exclude classes or ids from the selector
+- Ended up using scale3d() to transition the articles, since the transition looks more fluid and it resizes better when the window does
 
 
 
