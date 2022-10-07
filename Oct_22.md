@@ -191,7 +191,13 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 - In CSS, you can use :not(class or id) to exclude classes or ids from the selector
 - Ended up using scale3d() to transition the articles, since the transition looks more fluid and it resizes better when the window does
 
+## Thurs 6th
+### Odin Project - Ruby on Rails
 
+#### What I did
+- tried a branch to tile the articles on the homepage using flex rather than grid, in an attempt to allow them to collapse to one/two columns when in half screen/on a mobile device
+  - also considered solving it with media queries that reduce the number of rows in the grid, but I vaguely remember media queries making your page slower
+- Also was first day of the worlds pass/new patch and I expected to have two free units at work, which didn't pan out. So I did barely anything today tbh other than some thinking on the train. Do have all tomorrow and Mon to work on stuff though
 
 
 
