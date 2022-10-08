@@ -94,7 +94,6 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 #### What I did
 - Added the ability to create new articles, update them and delete them.
 
-
 #### What I learned
 - It's better to redirect_to rather than render when you alter the database or state of the application, otherwise refreshing the page will resend the same request
 - Rails has a form builder
@@ -166,6 +165,7 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 #### What I learned
 - You can limit the number of records printed/processed by inserting #limit(num) between the model and method being called
 
+
 ## Thurs 6th
 ### Odin Project - Ruby on Rails
 
@@ -178,8 +178,6 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
   - [x] When clicked, move to the top of the grid and take up the whole width of the container
     - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
 - [] First thing tomorrow is making the cols responsive so I don't have 3 columns on mobile
-- [] Add a loading animation when moving between pages
-- [] Use variants to have different layouts for mobile and desktop
 
 #### What I learned
 - You can (in theory, my pages aren't long enough to test yet) link to an id on a page by using the 'anchor: id' element
@@ -191,13 +189,62 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 - In CSS, you can use :not(class or id) to exclude classes or ids from the selector
 - Ended up using scale3d() to transition the articles, since the transition looks more fluid and it resizes better when the window does
 
-## Thurs 6th
+
+## Fri 7th
 ### Odin Project - Ruby on Rails
 
 #### What I did
 - tried a branch to tile the articles on the homepage using flex rather than grid, in an attempt to allow them to collapse to one/two columns when in half screen/on a mobile device
   - also considered solving it with media queries that reduce the number of rows in the grid, but I vaguely remember media queries making your page slower
 - Also was first day of the worlds pass/new patch and I expected to have two free units at work, which didn't pan out. So I did barely anything today tbh other than some thinking on the train. Do have all tomorrow and Mon to work on stuff though
+
+
+## Sat 8th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- [x] Header with the site name as a link to the article list and new post button
+- [x] Use grid for the homepage
+  - [x] Style the articles/cards like notes written on old paper
+  - [x] Small icons on the bottom for comments/edit/expand to its own page
+  - [x] Expand slightly on hover
+  - [x] When clicked, move to the top of the grid and take up the whole width of the container
+    - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
+- [x] Make the cols responsive so I don't have 3 columns on mobile
+- [] Style the other pages to match
+- [] Figure out why the comment count text is so annoying to make scale with its image
+
+#### What I learned
+- Not having a random h1 in the grid with all the divs makes it much easier to make a responsive grid
+- Googling things is still a good idea if I can't figure something out at this stage, I did a lot of complex things including media queries when this [CSS Tricks article](https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/) would have helped me do it with 3 lines of code and just grid
+  - summary is to use a combo of repeat, auto-fit and minmax on template-columns, **do not define rows**
+
+
+## Sun 9th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- [x] Header with the site name as a link to the article list and new post button
+- [x] Use grid for the homepage
+  - [x] Style the articles/cards like notes written on old paper
+  - [x] Small icons on the bottom for comments/edit/expand to its own page
+  - [x] Expand slightly on hover
+  - [x] When clicked, move to the top of the grid and take up the whole width of the container
+    - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
+- [x] Make the cols responsive so I don't have 3 columns on mobile
+- [] Style the other pages to match
+- [] Figure out why the comment count text is so annoying to make scale with its image
+
+#### What I learned
+- 
+
+
+
+
+
+
+
+
 
 
 
