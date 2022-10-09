@@ -232,14 +232,31 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
   - [x] When clicked, move to the top of the grid and take up the whole width of the container
     - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
 - [x] Make the cols responsive so I don't have 3 columns on mobile
+- [] Style the other pages to match **(started this but late at night, so I just scaffolded until I ran into the stylesheet problem)**
+- [] Figure out why the comment count text is so annoying to make scale with its image
+
+#### What I learned
+- Styles in the show.css are somehow applying to index.css despite not being linked to that view
+- You can order results from your model by a column using #order('col_name' DESC(opt))
+
+
+## Mon 10th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- [x] Header with the site name as a link to the article list and new post button
+- [x] Use grid for the homepage
+  - [x] Style the articles/cards like notes written on old paper
+  - [x] Small icons on the bottom for comments/edit/expand to its own page
+  - [x] Expand slightly on hover
+  - [x] When clicked, move to the top of the grid and take up the whole width of the container
+    - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
+- [x] Make the cols responsive so I don't have 3 columns on mobile
 - [] Style the other pages to match
 - [] Figure out why the comment count text is so annoying to make scale with its image
 
 #### What I learned
-- 
-
-
-
+- Styles in the show.css are somehow applying to index.css despite not being linked to that view
 
 
 
