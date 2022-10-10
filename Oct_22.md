@@ -253,14 +253,66 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
     - [x] how do I minimize it? either have an 'X' to click which returns it to normal (you can just click on it again)
 - [x] Make the cols responsive so I don't have 3 columns on mobile
 - [] Style the other pages to match
+  - [] Show page (scaffolded)
+  - Edit/new pages (probably same stylesheet since they're the same)
 - [] Figure out why the comment count text is so annoying to make scale with its image
 
 #### What I learned
-- Styles in the show.css are somehow applying to index.css despite not being linked to that view
+- The issue with CSS for certain views applying to others was caused by sprocket, per this exceptionally helpful [Stack Overflow answer](https://stackoverflow.com/questions/33189474/my-stylesheets-in-rails-seem-to-be-overlapping)
+  - The 'require_tree' setting in application.css (despite being commented out) combines all your css
+    - one way to fix my issue is by removing that setting (deleting, not commenting out) then linking the stylesheets manually with 'stylesheet_link_tag'
+      - not recommended because you will likely have to duplicate CSS, and will have completely different CSS for different parts of your app
+    - the second, recommended way, is to structure your CSS with classes for the different views, then select them with both that class and the one you'd normally use
+      - you do it like this
+      ```
+       div {
+          background: green;
+
+          p {
+              background: red;
+
+              &:hover {
+                  background: blue;
+              }
+
+              &:active {
+                 background: blue; 
+              }
+          }   
+      }
+      ```
+      - which produces a result like this (but maybe only in SASS etc.)
+      ```
+      div {
+          background: green;
+      }
+
+      div p {
+          background: red;
+      }
+
+      div p:hover {
+          background: blue;
+      }
+
+      div p:active {
+          background: blue;
+      }
+      ```
+  - I think I'll be manually linking them for this project to avoid redoing all my CSS, but I'll try to remember the correct way to do it in the future
+    - actually, it seems that when you go from page to page the stylesheets persist, probably get added to the asset pipeline and kept there. 
+    - So it's best to use the different classes for different views solution at all times 
 
 
+## Mon 10th
+### Odin Project - Ruby on Rails
+
+#### What I did
+- 
 
 
+#### What I learned
+- 
 
 
 
