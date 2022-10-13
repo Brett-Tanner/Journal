@@ -430,9 +430,42 @@ end
 ### Odin Project - Ruby on Rails - Micro-Reddit Project
 
 #### What I did
+- [x] Data model warmup
+  1.  course_id PRIMARY KEY, title STRING, description TEXT
+      lesson_title STRING lesson_body TEXT course_id FOREIGN KEY
+    Lessons belong_to courses, and a course has_many lessons
+    Validations
+      - title and description/body must be present
+  2.  u_id PRIMARY KEY, username STRING, email STRING, others FOREIGN KEY
+    Have tables for all the demo info that are just a primary key and the city/age etc.
+    Validations
+      - username and email must be present
+      - the demo data should be included in the current table if you're gonna do it that way (cities, states etc.)
+      - Ages must be greater than 0 and less than 150 or so
+  3.  u_id PRIMARY KEY, username STRING, pwd STRING
+      pin_id PRIMARY KEY, url STRING, u_id FOREIGN KEY
+      comment_text TEXT, c_id FOREIGN KEY, u_id FOREIGN KEY
+    Pins and comments belong_to users, comments belong to pins as well
+    Validations
+      - Pins must have a URL and a u_id (if that's not already enforced by needing to be logged in to post one)
+      - Comments must have a pin_id
+  4. Only difference to 3 is comments have ids and can belong to other comments, so each comment has a foreign key which can point to the comment it replied to or be null
+    - would it be better to just change the existing foreign key to accept comment ids as well, then just rebuild the comment tree by following it up like a linked list? Probably depends on use cases/how well that would perform in certain situations
+- [] Plan out the micro-reddit models
+
+
+
+## Fri 14th
+### Odin Project - Ruby on Rails - Micro-Reddit Project
+
+#### What I did
+- [] Plan out the micro-reddit models
 
 
 #### What I learned
+
+
+
 
 
 
