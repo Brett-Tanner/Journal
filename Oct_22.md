@@ -115,7 +115,7 @@ Slow day, I was at work til late with spaced out breaks, then board games at nig
 - When you rails generate a model, you get a migration file, a model file, testing harness for the model and a file that stores test data in the form of your model 
   - not sure if the test data is immediately usable though, it seems to be as variables rather than in the correct form
   - this is a framework tho, those variables could link to something of the correct type
-  - if you use ':references' when generating, the new model will belong to the model prior
+  - if you use 'model_name:references' when generating, the new model will belong to the model prior
     - the flip side is adding has_many :object to the model for the thing it belongs to, which allows you to retrieve the 'many' using parent.many 
   - it will also include a new col that's the name of the model you're relating it to + '_id' and contains the foreign keys
 
@@ -459,14 +459,83 @@ end
 ### Odin Project - Ruby on Rails - Micro-Reddit Project
 
 #### What I did
-- [] Plan out the micro-reddit models
+- [x] Plan out the micro-reddit models
+  - Users table
+    - id PRIMARY KEY
+    - username STRING
+      - Validations
+        - presence
+        - uniqueness
+        - length: between 3 and 20 characters
+        - format: only allow alphanumeric characters
+    - password STRING
+      - Validations
+        - presence
+        - length: more than 8 characters
+        - confirmation: must match the value from the confirm password field
+        - format: use the regex to check it's not all letters or numbers
+  - Posts table
+    - id PRIMARY KEY
+    - title STRING
+      - Validations
+        - Max length: 50 characters
+        - presence
+    - body TEXT
+      - Validations
+        - presence
+    - author FOREIGN KEY
+      - Validations
+        - presence
+  - Comments table
+    - id PRIMARY KEY
+    - author FOREIGN KEY
+      - Validations
+        - presence
+    - body TEXT
+      - Validations
+        - presence
+    - post FOREIGN KEY
+      - Validations
+        - presence
 
+- [x] Generate User model
+  - [x] apply validations
+  - [x] check they work
+
+- [x] Generate Post model
+  - [] apply validations
+  - [] check they work
+
+- [] Generate Comment model
+  - [] apply validations
+  - [] check they work
 
 #### What I learned
+- Remembered I have a Useful Ref bookmark for common Regex patterns and used that to validate passwords
+- Some regex modifiers like $ and ^ require you to set the option "multiline: true" as they apparently pose a security risk
+  - should probably look into why that is when I get to making something people may actually use
+- In SQL, STRING is limited to 255 characters while TEXT is 30 000
+- Struggled with adding a foreign key to the Post table linking to a user
+  - from some quick testing it seems primary keys aren't being auto-generated for the users table
+  - honestly I think I overthought it and messed around with too much stuff, just doing it using user:references and adding a has_many :posts to the User model did the trick
+  - also remember that to create a new post you wanna call @user.posts.create(), not just Post.new. 
+    - Not realizing that may also be why I had issues before
 
 
 
+## Sat 15th
+### Odin Project - Ruby on Rails - Micro-Reddit Project
 
+#### What I did
+- [x] Generate Post model
+  - [] apply validations
+  - [] check they work
+
+- [] Generate Comment model
+  - [] apply validations
+  - [] check they work
+
+#### What I learned
 
 
 
