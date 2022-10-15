@@ -483,20 +483,14 @@ end
     - body TEXT
       - Validations
         - presence
-    - author FOREIGN KEY
-      - Validations
-        - presence
   - Comments table
     - id PRIMARY KEY
-    - author FOREIGN KEY
-      - Validations
-        - presence
     - body TEXT
       - Validations
         - presence
     - post FOREIGN KEY
-      - Validations
-        - presence
+    - author FOREIGN KEY
+
 
 - [x] Generate User model
   - [x] apply validations
@@ -525,15 +519,89 @@ end
 
 ## Sat 15th
 ### Odin Project - Ruby on Rails - Micro-Reddit Project
+- [x] Generate Post model
+  - [x] apply validations
+  - [x] check they work
+
+- [x] Generate Comment model
+  - [x] apply validations
+  - [x] check they work
+
+Finished the project
+
+### Odin Project - Ruby on Rails - The Asset Pipeline
+- Asset pipeline feeds any assets in after the initial load of HTML is received by the browser
+  - Reason for existing is that you want separate files for human readability, but one file to minimize the number of http requests
+    - also minifies them into one file for each type (e.g. application.css), which can remove whitespace and apply other optimisations
+      - As I discovered in the last project, require_tree in that file includes all the files of that type in the directory (other commented out lines also do stuff)
+      - Could use require_directory for only a specific directory, tree is recursive but directory only does the one
+  - Apparently it's now best practice to include JS with the Webpack gem now, rather than the asset pipeline
+  - The solution I ended up using to have different styles for the same class in different views by adding a class named the same as the view is called namespacing
+  - To render HTML in strings that are part of your view, tell the view it's safe with 'raw' before the string
+
+### Odin Project - Ruby on Rails - Importmaps
+- Importmaps are new in Rails 7, used to include 3rd party JS packages in your Rails application
+  - Allow you to import JS modules using 'bare module specifiers' like "import React from 'react'" and 'pin' them to their name
+    - this doesn't work without importmap because you need to provide a local path or URL, the importmap_rails gem does the mapping for you
+    - config is found in config/importmap.rb
+      - but usually you'd use ./bin/importmap package_name to pin, unpin or update packages in your importmap
+        - you can append --download to download the package to your vendor folder, rather than using a CDN in production
+          - or --download to the unpin command
+  - Can append preload: true to the pin to load it before the contents of the importmap
+- They work best when you're using minimal 3rd party packages. Dependency management can be tricky as it'll lock dependencies for packages you use as the version required by that package, and adding subsequent packages which depend on different versions of that dependency will cause errors
+- Also makes it more difficult to keep your packages up to date automatically
+- Finally, it's not good for asset bundling as it can't transpile or bundle code, so you only want to use it when directly importing 3rd party code
+- **Basically importmaps are the easy, default solution to including packages; if you need something more complex go back to using webpack** 
+
+### Odin Project - Ruby on Rails - Turbo Drive
+- Turbo Drive handles page navigation, it allows you to update your page without a full reload
+  - defines page navigation as a visit to a location (URL) with an action
+  - There are 2 kinds of visits
+    - Application visit - a visit with a Drive action of advance or replace (set with data: { turbo_action: "replace/advance" })
+      - Begins when a user clicks a TD enabled link (TD is enabled by default)
+      - TD receives the HTTP request and renders the HTML
+      - If possible, will be rendered using cache of a previous visit to the same URL
+      - The browser history is updated to reflect the navigation
+        - if an advance action, a new entry is added to the history
+        - if a replace action, the previous entry is replaced by the new location
+    - Restoration visit - a visit with a Drive action of restore, handles navigation with forward/back buttons (do not manually set an action of restore, TD does this internally)
+      - Tries to render a copy of the page from browser cache, if unavailable retrieves a fresh copy
+      - Saves scroll position before navigating away, and will return to that position if you return to the page
+  - You can set a link to something other than a GET request using data: { turbo_method: "type of request" }
+  - can set "data: { turbo: "true/false" }" to enable/disable
+    - if on a parent container, will set for all children
+    - but can be overridden by attributes on those children
+- Forms
+  - Turbo receives all form submissions by default, and expects to receive at HTTP status 303 (redirect) in return
+    - will also accept a 4xx code which indicates you made a mistake with your data, or a 5xx code which indicates an internal error
+    - responds to anything else, including a 2xx 'ok' request, by staying on the same page
+- Turbolinks was the predecessor of Turbo, didn't work with form submissions but also allowed you to refresh the page by changing the content between the body tags
+
+- [Turboframes](https://turbo.hotwired.dev/handbook/introduction)
+  - Allow you to structure a page as a series of lazy loaded sections which can be refreshed independently and don't affect each other
+  - You wrap these sections inside a turbo-frame element
+    - if you add a src attribute to this element, the element will have its loading deferred and be filled by content from the src
+  - Turbostreams does the same thing but updates automatically in response to an external resource changing
+
+- Preloading
+  - TD can preload links into its cache with "data-turbo-preload"
+
+
+
+## Sun 16th
+### Odin Project - Ruby on Rails - Form Basics
+- 
+
+
+
+
+
+
+
 
 #### What I did
-- [x] Generate Post model
-  - [] apply validations
-  - [] check they work
 
-- [] Generate Comment model
-  - [] apply validations
-  - [] check they work
+
 
 #### What I learned
 
