@@ -590,20 +590,60 @@ Finished the project
 
 ## Sun 16th
 ### Odin Project - Ruby on Rails - Form Basics
-- 
+- Rails server output will tell you what a form submitted to your application
+- If you just create your own form it won't work, you need a form authenticity token to protect you from cross-site requests
+  - can manually add it to a form with "input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>""
+  - automatically created by Rails when you use form_with
+- If you wanna pass values from the form to params nested in a hash, just make the name attribute for those for elements something like hash_name[value_name]
+- Basic structure for creating a form with helpers is form_with wrapping a bunch of tag helpers
+  - IDs of inputs will also be their names
+  - All forms are submitted by turbo drive by default so the whole page doesn't have to reload, if you want to cancel that set data: {turbo: false} on the form_with element
+- Creating with a model is almost the same, just use form_with model: @model_name and pass |form| to the block
+  - fields are generated in the block with "form.text_field :field_name" for example
+  - when created this way, the form will automatically know if you're submitting a new or previously saved object and send it to create or update as appropriate
+  - errors are displayed in a created div with class "field_with_errors"
+  - can manually display them like
+  ```
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  ```
+  - can make your form submit a PATCH or DELETE rather then GET or POST using method: "path/delete" in the form_with options
+    - you can also make a button in your form that has a different method to the overall form method by attaching the 'formethod: :method' option
+  - the "unprocessable entity" bit in the controller ensures your server returns a 400 error rather than 200, which would cause no response
+  - Rails has helpers for generating select boxes and checkboxes from your collections
+  - You can do some really [funky stuff](https://guides.rubyonrails.org/form_helpers.html#understanding-parameter-naming-conventions) with the params hash like nesting hashes in an array or allowing a user to insert multiple phone numbers in an array
 
 
-
-
-
-
-
+## Mon 17th
+### Odin Project - Ruby on Rails - Forms Project
 
 #### What I did
 
 
 
 #### What I learned
+
+
+
+
+## Tues 18th
+### Odin Project - Ruby on Rails - Forms Project
+
+#### What I did
+
+
+
+#### What I learned
+
 
 
 
