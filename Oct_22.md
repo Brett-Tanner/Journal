@@ -627,12 +627,16 @@ Finished the project
 ### Odin Project - Ruby on Rails - Forms Project
 
 #### What I did
-
-
-
-#### What I learned
-
-
+- [x] Created the 're-former' app
+- [x] Added MVC for User
+- [x] Create a HTML form, without the Rails helpers
+  - [x] pass values to params hash as a hash
+  - [] build the #create controller method
+    - [] filter with user_params private method (on #new)
+- [] Change the form to use Rails form_tags (maybe save the old version somewhere for comparison)
+- [] Create it one final time using form_with and the model
+  - [] allow the form to also update users
+  - [] show any errors at the top of your form
 
 
 ## Tues 18th
