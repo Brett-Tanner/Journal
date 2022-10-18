@@ -623,6 +623,7 @@ Finished the project
   - You can do some really [funky stuff](https://guides.rubyonrails.org/form_helpers.html#understanding-parameter-naming-conventions) with the params hash like nesting hashes in an array or allowing a user to insert multiple phone numbers in an array
 
 
+
 ## Mon 17th
 ### Odin Project - Ruby on Rails - Forms Project
 
@@ -639,17 +640,28 @@ Finished the project
   - [] show any errors at the top of your form
 
 
+
 ## Tues 18th
 ### Odin Project - Ruby on Rails - Forms Project
 
 #### What I did
-
+- [x] Create a HTML form, without the Rails helpers
+  - [x] pass values to params hash as a hash
+  - [x] build the #create controller method
+    - [x] filter with user_params private method (on #new)
+- [x] Change the form to use Rails form_tags (saved other versions in branches)
+- [x] Create it one final time using form_with and the model
+  - [x] allow the form to also update users
+  - [x] show any errors at the top of your form
 
 
 #### What I learned
+- Form_with bound to a model is wayyyyy easier than the other ways of making a form
 
 
-
+## Wed 19th
+### Odin Project - Ruby on Rails - Sessions, Cookies and Authentication
+- 
 
 
 
