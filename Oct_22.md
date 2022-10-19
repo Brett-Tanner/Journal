@@ -660,8 +660,99 @@ Finished the project
 
 
 ## Wed 19th
-### Odin Project - Ruby on Rails - Sessions, Cookies and Authentication
-- 
+### Odin Project - Ruby on Rails - [Sessions, Cookies and Authentication](https://www.theodinproject.com/lessons/ruby-on-rails-sessions-cookies-and-authentication)
+**Both sessions and cookies are treated like hashes, but they're not really hashes. Also size limited to 4kb (ideally you wanna make them much smaller than that tho ). if no expiry is specified, they expire when browser is closed**
+- Sessions
+  - **Store references to objects in sessions, not the object itself**
+  - Sessions are similar to cookies, but a session is stored as a single tamper-proof hash rather than a separate cookie for each key/value
+    - by default decrypts to JSON, but you can change this and also regenerate a new key 
+  - works basically the same as a regular hash, but reset_session will... reset the session
+  - sessions expire when the browser is closed by default, but you can set other expiry times
+  - handled by a sessions controller
+    - usually has new, create and destroy routes
+    - credentials checked with an #authenticate
+  - Storing actual data in cookies opens you up to a lot of problems, like:
+    - cookie sniffing, where attackers can intercept cookies if not over HTTPS
+    - replay attacks, where the same cookie is submitted over and over to infinitely increase a resource 
+  - Alternative methods of storing sessions include in ActiveRecord, Redis or MemCache
+    - you send only the sessionID to the cookie, all other session info lives in your table
+      - you can change this by changing the gem used for session_store in config to :active_record_store and use of activerecord-session_store gem and creating a table with "rails g active_record:session_migration"
+      - keep in a db if you want it to persist
+        - but not cleaned up automatically, and might be privacy/legal concerns
+      - keep in cache for speed and you don't mind sessions potentially expiring early so much
+        - sessions will have to compete for space with normal cached data 
+  - Sessions are lazy loaded, so you'll never need to disable them, just don't use them
+
+- Cookies
+  - Key/value pairs stored in the browser until a specified expiration date
+  - Can be used for many things, but not for anything that needs to be secure or persist across browser sessions
+  - Rails deals with cookies by giving you cookies hash, where each key/value pair is stored as a separate cookie in the browser
+    - save with cookies[:key] = value
+    - delete with cookies.delete(:key)
+    - cookies are included in each request to your server, and can be accessed in controllers/views like a normal hash
+    - expiration dates can be set like "cookies[:name] = { value: "cookies YUM", expires: Time.now + 3600}"
+  - To stop people stealing your cookies, use HTTPS
+    - config.force_ssl = true in config/environments/production.rb 
+
+- Flashes
+  - A flash persists only from one request to the next, like a session hash that self-destructs when opened
+  - commonly used to send messages from the controller to the view so user can see success/failure messages for forms
+  - remember Flash.now[] if you want to display the error on the current view
+
+- Controller filters
+  - Runs code (usually to check the action a user is trying to take is allowed) before a specified action
+  - e.g. "before_action" will run a check before any of the controller code is called. All _action methods accept a block as well, not just another method to run
+    - after_action runs after a successful action and will have access to the result
+    - around_action runs the associated actions by yielding
+  - can use only/accept [symbols for the actions you want it to check] to limit it to/exclude those actions from checking
+  - make your filters private
+  - they're inherited, so if you want a filter to apply to every action put it in application_controller.rb
+
+- Authentication
+  - Don't store passwords in plaintext lol
+    - instead store as a 'password digest' and compare that to the password digest created when a user submits their password in a form
+    - digests are one way encryption, ez to encrypt a string to digest form but difficult to decrypt a digest to a string
+  - adding #has_secure_password to your User model will intercept password and password confirmation values without persisting them, then convert them to digests and compare with the database
+  - to remember users between sessions (like the remember me check box) you add a col to your users table for an encrypted token representing the user, then drop the unencrypted token as a string into the user's browser as a cookie with cookies.permanent
+    - best practice to reset the token on sign in if the user signs out
+  - Commonly used helper methods are signing in a user, checking if they're signed in and comparing them to another user (e.g. if they look at a profile page should they be able to edit it or not)
+- Generic overview for adding auth
+  1. Add a column to your Users table to contain the user’s password_digest.
+  2. When the user signs up, turn the password they submitted into digest form and then store THAT in the new database column by adding the has_secure_password method to your User model.
+  3. Don’t forget any necessary validations for password and password confirmation length.
+  4. Build a sessions controller (and corresponding routes) and use the #authenticate method to sign in the user when the user has submitted the proper credentials using the signin form.
+  5. Allow the user to be remembered by creating a remember_token column in the Users table and saving that token as a permanent cookie in the user’s browser. Reset on each new signin.
+  6. On each page load that requires authentication (and using a #before_action in the appropriate controller(s)), first check the user’s cookie remember_token against the database to see if he’s already signed in. If not, redirect to the signin page.
+  7. Make helper methods as necessary to let you do things like easily determine if a user is signed in or compare another user to the currently signed in user.
+
+- Devise
+  - Gem that handles auth for you, almost always better than rolling your own auth as it handles a lot of edge cases you haven't thought of
+  - Also ez integration with OAuth etc
+  - Basically packages a bunch of sign-in/up forms and methods to help implement them
+  - Made up of 10 modules, you can choose which to use
+  - Will need to run a db:migrate after install to add the extra cols to your User table
+  - Modules do things like allow you to require email confirmation, or make passwords recoverable
+
+
+## Thurs 20th
+### Odin Project - Ruby on Rails - [Members Only Project](https://www.theodinproject.com/lessons/ruby-on-rails-members-only)
+
+#### What I did
+- [] Plan/create models for users and posts
+- [] Add and install Devise
+- [] Restrict access to Posts #new and #create to only logged in users
+- [] Auto-populate user_id field of Post record with the signed in user
+- [] Display author name only if user is signed in
+- [] Add infinite scroll to the index
+
+
+#### What I learned
+
+
+
+
+
+
 
 
 
