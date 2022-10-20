@@ -700,7 +700,7 @@ Finished the project
   - remember Flash.now[] if you want to display the error on the current view
 
 - Controller filters
-  - Runs code (usually to check the action a user is trying to take is allowed) before a specified action
+  - Runs code (usually to check the action a user is trying to take is allowed) before a specified action (but goes at the top and is limited by options)
   - e.g. "before_action" will run a check before any of the controller code is called. All _action methods accept a block as well, not just another method to run
     - after_action runs after a successful action and will have access to the result
     - around_action runs the associated actions by yielding
@@ -738,16 +738,26 @@ Finished the project
 ### Odin Project - Ruby on Rails - [Members Only Project](https://www.theodinproject.com/lessons/ruby-on-rails-members-only)
 
 #### What I did
-- [] Plan/create models for users and posts
-- [] Add and install Devise
-- [] Restrict access to Posts #new and #create to only logged in users
-- [] Auto-populate user_id field of Post record with the signed in user
-- [] Display author name only if user is signed in
-- [] Add infinite scroll to the index
-
+- [x] Plan/create models for users and posts
+- [x] Add and install Devise
+- [x] Restrict access to Posts #new and #create to only logged in users
+- [x] Set up the #new action
+  - [x] set up a form to create new posts
+  - [x] show current user's name on new post page
+- [x] set up the #create action with auto-populated user id
+- [] Display author name (in index view) only if user is signed in
+- [] Styling
+  - [] for the index, have a list of actions in a sidebar on the left
+  - [] when you click on a post, the sidebar instead becomes populated with the index of posts and the clicked on post expands to fill the remaining space (show view)
+  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
 
 #### What I learned
-
+- You can't use validates_associated on anything that has a confirmation field, those aren't stored in the table so it'll say it's invalid despite being successfully saved
+- Devise has some issues with Turbo, either generate the views and disable Turbo on all Devise forms or follow the instructions [here](https://gorails.com/episodes/devise-hotwire-turbo)
+  - but you need to create the turbo_controller in the controllers folder, not just put it in the Devise config file. Otherwise you get a nameerror for ApplicationController
+- Remember you can generate a controller, model and routes all at once with 'rails generate resource Name col:type col:type etc...'
+- Probably best to generate model with Devise first, then add any extra fields you need to the migration file. Otherwise you end up with dup fields for email, pwd etc.
+- You can auto-add current user's id by using "current_user.posts.new(post_params)", just like you would in rails console, in the #create action
 
 
 
