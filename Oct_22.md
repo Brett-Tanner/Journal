@@ -758,7 +758,49 @@ Finished the project
 - Remember you can generate a controller, model and routes all at once with 'rails generate resource Name col:type col:type etc...'
 - Probably best to generate model with Devise first, then add any extra fields you need to the migration file. Otherwise you end up with dup fields for email, pwd etc.
 - You can auto-add current user's id by using "current_user.posts.new(post_params)", just like you would in rails console, in the #create action
+- **Git 'bad object' errors can be caused by a 2 randomly being added to a file in git. If that occurs, renaming that file to remove the random 2 allows the error to be resolved**
 
+
+## Fri 21st
+### Odin Project - Ruby on Rails - Members Only Project
+
+#### What I did
+- [x] Display author name (in index view) only if user is signed in
+- [] Styling
+  - [x] figure out why it's printing a list of all the post objects in the index view
+    - it was because I had an = on the tag for @posts.each, so it was displaying the return value
+  - [x] style global layout
+    - [x] header with site name centered
+    - [x] drop shadow marking transition to body of the page
+    - [x] style the sidebar
+      - [x] for the index, have a list of actions like new post, sign in, sign up
+      - [x] for the show view, instead becomes populated with the index of posts and the clicked on post fills the main tag
+      - [x] fix the sign out button (delete method not being sent for some reason)
+        - see "what I learned" section for solution
+  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
+  - [] add details to make stuff pretty
+    - [] gradient on the sidebar
+    - [] revisit the sidebar expanding and hiding (maybe use :hover?)
+
+#### What I learned
+- Devise helpers like "user_signed_in?" can be used in your views as well, not just controllers
+- If you wanna make an image a link in rails you can go "link_to image_tag(""), _path" inside the erb bit
+- Devise and Rails have a problem where using the destroy session path sends a get method rather than a delete method
+  - tried manually setting the method to delete on the link, that didn't work
+  - found the solution [here](https://chimkan.com/rails-7-and-devise-issue-with-sign-out/), it's a turbo-related issue. Rather than just method: delete, you need to set "data: {turbo_method: :delete}"
+
+
+## Sat 22nd
+### Odin Project - Ruby on Rails - Members Only Project
+
+#### What I did
+- [] Styling
+  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
+  - [] add details to make stuff pretty
+    - [] gradient on the sidebar
+    - [] revisit the sidebar expanding and hiding (maybe use :hover?)
+
+#### What I learned
 
 
 
