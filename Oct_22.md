@@ -792,25 +792,92 @@ Finished the project
 
 ## Sat 22nd
 ### Odin Project - Ruby on Rails - Members Only Project
+- Project requirements are finished, so I'll just keep doing this from time to time as a break from reading
 
 #### What I did
 - [] Styling
   - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
-  - [] add details to make stuff pretty
+  - [x] Index page
+    - [x] scrollable, responsive grid of posts on index page
+    - [x] figure out what to set list container height as to stop it clipping posts (see what I learned section)
+  - [] Sidebar
     - [] gradient on the sidebar
+    - [] make post list scrollable
     - [] revisit the sidebar expanding and hiding (maybe use :hover?)
+  - [] Forms
+    - [] center them
+    - [] add some kind of styling to the input fields (:valid and :invalid)
+    - [] figure out how to make all the tiny links below the form readable (or go into Devise and remove them since they're not needed)
+  - [] Show view
+    - [] style the article
+    - [] add delete, edit buttons if current_user == post.user
+
 
 #### What I learned
+- Scroll needed to be set on the main element, not the list container
+  - setting grid-auto-rows to 1fr fixed the differently sized boxes with only a little text
 
 
+### Odin Project - Ruby on Rails - [Installing PostgreSQL](https://www.theodinproject.com/lessons/ruby-on-rails-installing-postgresql)
+- Environments & Pipelines
+  - 4 main environments are dev, test, staging and prod, grouped in the production pipeline
+    - dev: safely make changes, usually on dev's local machine, without impacting users
+    - test: uses different tools and settings (like increased logging) to identify bugs with automated testing
+    - staging: mirrors prod but deployments are not public
+    - prod: user-facing
+- [Environment Variables](https://www.rubyguides.com/2019/01/ruby-environment-variables/)
+  - key/value pairs
+  - Environment variables aren't permanent, when you reboot your computer, or even when you close your terminal, changes to environment variables are lost
+  - list all environment variables with env
+    - access them within Ruby with ENV.[ "key" ]
+    - or a list with ENV.keys
+  - set a new ENV variable in cmd using "export API_KEY=1"
+  - Only accessible in a given environment
+  - Used so that when you push your code to Github etc. it doesn't have any sensitive info
+  - Rails has a RAILS_ENV environment variable it looks for, and if not found it assumes it's in a dev environment
+- PostgreSQL
+  - check if active with "brew services info postgresql@14"
+  - need to restart after updating with "brew services restart postgresql@14"
+  - your role should be your username, and you need to create a db to match it
+  - open the console?? with "psql postgres" (just psql once you set up your role)
+    - quit with \q
+  - ENV for password is DATABASE_PASSWORD
+  - can make a new Rails app using pg with "rails new < app_name > --database=postgresql"
+    - set it up by going to database.yml and adding the following code, then rails db:create
+    ```
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      # For details on connection pooling, see Rails configuration guide
+      # http://guides.rubyonrails.org/configuring.html#database-pooling
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      +  username: <role_name> # role previously added
+      +  password: <%= ENV['DATABASE_PASSWORD'] %> # variable previously added
+    ```
 
 
+## Sat 22nd
+### Odin Project - Ruby on Rails - Members Only Project
+
+#### What I did
+- [] Styling
+  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
+  - [] Sidebar
+    - [] gradient on the sidebar
+    - [] make post list scrollable
+    - [] revisit the sidebar expanding and hiding (maybe use :hover?)
+  - [] Forms
+    - [] center them
+    - [] add some kind of styling to the input fields (:valid and :invalid)
+    - [] figure out how to make all the tiny links below the form readable (or go into Devise and remove them since they're not needed)
+  - [] Show view
+    - [] style the article
+    - [] add delete, edit buttons if current_user == post.user
 
 
+#### What I learned
+- 
 
-### Odin Project - Ruby Foundations
-- When making a move
-    - 
 
-- When checking for checkmate
-    - 
+### Odin Project - Ruby on Rails - [Active Record Queries](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-queries)
+- 
