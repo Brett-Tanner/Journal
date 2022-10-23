@@ -856,9 +856,100 @@ Finished the project
     ```
 
 
-## Sat 22nd
-### Odin Project - Ruby on Rails - Members Only Project
+## Sun 23rd
+### Odin Project - Ruby on Rails - [Active Record Queries](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-queries)
+- Active Record gives you the ability to do anything you can do with SQL, plus some more useful methods and concepts like relations
+- [List of methods](https://guides.rubyonrails.org/active_record_querying.html#retrieving-objects-from-the-database)
+  - Useful notes
+    - find can be passed an array of :id values
+    - first/last can be passed an int 'x' to take the first/last x records
+    - #find_each and #find_in_batches are for use with very large tables, > 1000 records
+    - if using params in a where method, pass them using ? where the param needs to go and make a list of the params to be substituted as later arguments
+      - this is to prevent SQL injection
+      - you can also do it explicitly by matching symbols in the where string with symbols in the options
+      - when using LIKE searches with % and _ you need to use #santitize_sql_like on the option you're passing to prevent unexpected behaviour
+    - you can override conditions with #unscope, #only, #reselect, #reorder, #reverse_order and #rewhere
+      - unsure why you'd do that rather than just not including the thing you override though, maybe to do with scopes?
+    - You can make the returned relation #readonly
+    - You can use locking to help prevent race conditions
+    - if you want to search for a record then create if it doesn't exist, condense that with #find_or_create_by 
+      - or initialize with #find_or_initialize_by
 
+- Relations
+  - #find() returns an actual Ruby object, but most AR queries actually return an instance of AR::Relation
+    - other AR::FinderMethods also return an instance of a Ruby object (#find_by, #first, #last) or list of them (#take)
+    - relations look like Arrays, but there's more going on and they can do more
+    - relations are used to be lazy, the query is not actually executed and turned into a Ruby object until it absolutely must be to be displayed etc.
+    - when I did stuff like .limit(5).order(created_at: :desc) chaining methods like that is enabled by them being AR::relations; rather than chaining SQL queries it links all the methods into a single optimised query
+    - if you need a relation to be an array you can always just #to_a
+
+- New Queries
+  - Check for existence (can all be run on a model, relation, association or scope)
+    - exists?: same as in Ruby, queries the same way as #find
+      - if given multiple values, will return true if any exist
+    - any?: checks if there are any records matching the preceding conditions, returns true if so
+    - many?: checks if all records match the preceding conditions, returns true if so
+
+- Assorted Knowledge
+  - Complex queries can be chunked for performance benefits using #find_each
+  - You can apply filters with #where to find an exact value, range of values or several values
+    - remember #where returns a relation unlike #find, so you still need to go into the relation and get the record you want as a Ruby object
+  - you can build your own finder method with #find_by like "User.find_by(email: 'foo@bar.com')"
+  - you can #select just like in SQL, using symbols for col_names unless you want to use an alias, in which case it's like "User.select("users.id AS user_id")", creating a new attribute of User called user_id
+
+- Aggregations
+  - can group with #group
+  - user #having rather than #where in that case
+
+- Joins
+  - can join with #joins or #left_outer_joins
+  - remember you'll want to be explicit about which table the cols are coming from in this case
+
+- Optimisation
+  - Ok to grab the same info multiple times, first result is cached anyway
+  - want to avoid a relation immediately executing itself then running queries on each member of the collection (this is an N+1 query, e.g. getting all users then calling an association on each to find the city they live in)
+  - therefore you wanna take advantage of eager loading with the #include method, takes a col as a symbol and only makes one additional query to link that col to the table you're getting all data from
+    - brings that association into memory so you don't have to do any more queries
+    - can be chained with #where and #order for example
+  - you can get all entries from a given column straight into an array with #pluck(:col_name)
+
+- Scopes
+  - kind of like a class method, a custom chain of AR methods you can call on an instance of that model like a normal method
+  - e.g. in your Post model
+  ```
+   scope :important, -> { where(is_important: true) }
+  ```
+  - which then allows you to cal Post.important
+  - scopes return relations
+  - they can be passed variables to search for/otherwise use
+  - you can set a default scope to be applied to all queries across the model
+  - you can use a class method instead like this, also in your model
+  ```
+  def self.important
+    self.where(is_important: true)
+  end
+  ```
+  - apparently there are advantages and disadvantages to each
+    - scopes maybe evaluated when class is loaded, whereas if you use a lambda/class method it's lazy evaluated
+    - scopes are better for one liners
+      - and always chainable as they always return a relation
+    - class methods are better for complex stuff where you're using lambdas, detailed logic or multiple lines
+    - but these days there's not much real diff between them apparently, just personal pref
+
+- Bare-metal SQL
+  - if you really can't get AR to do what you want, you can use #find_by_sql to just write SQL code directly
+  - will always return an array of objects even if there's only one record
+
+
+
+
+## Mon 24th
+### Odin Project - Ruby on Rails - [Active Record Associations](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-associations)
+- 
+
+
+
+### Odin Project - Ruby on Rails - Members Only Project
 #### What I did
 - [] Styling
   - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
@@ -874,10 +965,5 @@ Finished the project
     - [] style the article
     - [] add delete, edit buttons if current_user == post.user
 
-
 #### What I learned
-- 
-
-
-### Odin Project - Ruby on Rails - [Active Record Queries](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-queries)
 - 
