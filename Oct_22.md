@@ -941,13 +941,46 @@ Finished the project
   - will always return an array of objects even if there's only one record
 
 
-
-
 ## Mon 24th
 ### Odin Project - Ruby on Rails - [Active Record Associations](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-associations)
-- 
+- By default Rails assumes your model/class name matches the name of the association (e.g. has_many :users links to the User model)
+  - however if you want to name them, for examples two user relations for author and editor of a post, you can make the desired association name a symbol, and use the class_name: "User" option
+    - it will then look for the foreign keys "author_id" and "editor_id" in the Posts table
+  - you need to then have different names for the other side too
+    - in addition to class_name you'll need to specify the name of the foreign key like "foreign_key: author_id"
+  - also need some extra options when using has_many :through (for example if posts can have many authors)
+    - you need to set source (on the table with the renamed column), like "source: :post-author", otherwise it would look for author_id in the post table
 
+- Polymorphic Associations
+  - Used to allow a single model to belong to a bunch of different types of models
+    - rather than making a hundred different foreign_key columns for a hundred different relations to other models
+  - Specifies a type (as a col) for the association in addition to the foreign key (Rails auto does this for you if it knows you're using polymorphic associations)
+  - when using PA you should name the id col with an "-able" suffix like "commentable_id" and "commentable_type"
+    - then you set "belongs_to :commentable, polymorphic: true" on the comment model
+    - on models that have many comments you set "has_many :comments, as: :commentable"
 
+- Self Joins
+  - When you do a self join you need to set class_name on both sides of the relationship
+  - you need to set the foreign key name on the has_many side
+
+- Useful Methods
+  - user.posts.create()
+  - user.posts << post
+  - if you want to replace all the posts with a new collection
+    - user.posts = [post1, post2...]
+  - destroy any dependents when parent is destroyed with the dependent: :destroy option on the belongs_to side
+
+- Extra info
+  - results of queries are cached, if you need to refresh the cache to make sure it hasn't changed use #reload
+  - make sure you don't use reserved names like attributes or connection for association names
+  - if you create a has_and_belongs_to_many association you need to explicitly create the joining table
+    - its name should be the pluralized names of the joined tables separated by an underscore, in alphabetical order
+    - the join table should not have a primary key, and obviously the foreign keys should be the id type
+  - by default associations only look within their own modules
+    - if you want to link to a model from another namespace you need to put the whole path in the class_name option
+  - when you provide custom names for the columns used in an association Rails can't automatically create a bi-directional association
+    - so you need to add :inverse_of to the has_many side, referencing the association symbol on the belongs_to side 
+  - [A variety of methods are added when you create each type of association](https://guides.rubyonrails.org/association_basics.html#detailed-association-reference)
 
 ### Odin Project - Ruby on Rails - Members Only Project
 #### What I did
@@ -958,12 +991,49 @@ Finished the project
     - [] make post list scrollable
     - [] revisit the sidebar expanding and hiding (maybe use :hover?)
   - [] Forms
-    - [] center them
+    - [x] make it possible for people to sign up by adding a name field to that form
+    - [] center them, otherwise make the views prettier
     - [] add some kind of styling to the input fields (:valid and :invalid)
-    - [] figure out how to make all the tiny links below the form readable (or go into Devise and remove them since they're not needed)
+    - [x] figure out how to make all the tiny links below the form readable (just set the font size on the main container it's being yielded to, also I have the views now so could remove if I wanted)
   - [] Show view
     - [] style the article
     - [] add delete, edit buttons if current_user == post.user
+
+#### What I learned
+- Can generate your Devise views so they can be edited with "Rails generate devise:views"
+  - can then make the form accept additional parameters by adding this to your application_controller as per [the README](https://github.com/heartcombo/devise/blob/main/README.md#strong-parameters)
+  ```
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation])
+  end
+  ```
+
+
+## Tues 25th
+
+### Odin Project - Ruby on Rails - Members Only Project
+#### What I did
+- [] Styling
+  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
+  - [] Sidebar
+    - [] gradient on the sidebar
+    - [] make post list scrollable
+    - [] revisit the sidebar expanding and hiding (maybe use :hover?)
+  - [] Forms
+    - [] center them, otherwise make the views prettier
+    - [] add some kind of styling to the input fields (:valid and :invalid)
+  - [] Show view
+    - [] style the article
+    - [] add delete, edit buttons if current_user == post.user
+
+
+### Odin Project - Ruby on Rails - [Private Events Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events)
+#### What I did
+- 
 
 #### What I learned
 - 
