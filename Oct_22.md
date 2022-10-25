@@ -1014,23 +1014,21 @@ Finished the project
 
 
 ## Tues 25th
-
 ### Odin Project - Ruby on Rails - Members Only Project
 #### What I did
-- [] Styling
-  - [] make notices a green or red box that fades out over a period of time then becomes hidden (on a higher z-axis so it doesn't shift content)
-  - [] Sidebar
-    - [] gradient on the sidebar
-    - [] make post list scrollable
-    - [] revisit the sidebar expanding and hiding (maybe use :hover?)
-  - [] Forms
-    - [] center them, otherwise make the views prettier
-    - [] add some kind of styling to the input fields (:valid and :invalid)
-  - [] Show view
-    - [] style the article
-    - [] add delete, edit buttons if current_user == post.user
+- [x] Styling
+  - [x] Sidebar
+    - [x] gradient on the sidebar
+    - [x] make post list scrollable
+  - [x] Forms
+    - [x] center them, otherwise make the views prettier
+  - [x] Show view
+    - [x] style the post
+    - [x] add delete, edit buttons if current_user == post.user
+      - [x] create the edit view by taking the form from new and making it a partial
 
 
+## Wed 26th
 ### Odin Project - Ruby on Rails - [Private Events Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events)
 #### What I did
 - 
