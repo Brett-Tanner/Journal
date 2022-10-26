@@ -962,6 +962,14 @@ Finished the project
 - Self Joins
   - When you do a self join you need to set class_name on both sides of the relationship
   - you need to set the foreign key name on the has_many side
+  ```
+  class Employee < ActiveRecord::Base
+    has_many :subordinates, class_name: "Employee",
+                            foreign_key: "manager_id"
+
+    belongs_to :manager, class_name: "Employee"
+  end
+  ```
 
 - Useful Methods
   - user.posts.create()
@@ -1031,7 +1039,77 @@ Finished the project
 ## Wed 26th
 ### Odin Project - Ruby on Rails - [Private Events Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events)
 #### What I did
-- 
+- [x] Plan out the warmup database relationships [here](https://github.com/Brett-Tanner/odin_private_events/blob/main/README.md)
+- [x] Plan out the database for the project [also here](https://github.com/Brett-Tanner/odin_private_events/blob/main/README.md)
+
+- [] Build the Event model (without reference yet, add in a future migration)
+- [] Create an #index action and corresponding view for the Events, set your root path to that view
+
+- [] Use Devise to setup your User model
+- [] Add the "organiser" association between User and Event
+- [] Make User's show page list all Events the User has created
+- [] Set up a #create action on Event that uses the organiser association to create a new event with the organiser field auto-populated
+  - [] Make a form for creating the event
+- [] Have the Event's show page display the details of the event
+
+- [] Add the event/attendee association
+- [] Create and migrate the necessary tables/foreign keys (should be a through association)
+- [] Create controller/routes for the through table which allows a user to become an attendee of an event
+  - [] add something on the event page that allows the user to indicate they want to attend
+- [] Update Event page to show a list of attendees and User page to show a list of attended events
+  - [] Separate the "attended events" list into past and future events, using only code in the view
+
+- [] Separate past and coming events on the homepage using class methods on the event model
+  - [] refactor those into scopes
+- [] Add nav-links to common functions
+- [] Allow users to delete and edit their events
+- [] Allow users to remove themselves as an attendee
+
+- [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
+  - [] invite by username/email
+  - [] invite by showing searchable list of users
+  - [] show notification on the user's page when logged in
+  - [] send an email
+
+
+#### What I learned
+- This is going to be a big project lol
+- Definitely need the practise this will give me with AR relationships
+
+
+
+## Thurs 27th
+### Odin Project - Ruby on Rails - Private Events Project
+#### What I did
+- [] Build the Event model (without reference yet, add in a future migration)
+- [] Create an #index action and corresponding view for the Events, set your root path to that view
+
+- [] Use Devise to setup your User model
+- [] Add the "organiser" association between User and Event
+- [] Make User's show page list all Events the User has created
+- [] Set up a #create action on Event that uses the organiser association to create a new event with the organiser field auto-populated
+  - [] Make a form for creating the event
+- [] Have the Event's show page display the details of the event
+
+- [] Add the event/attendee association
+- [] Create and migrate the necessary tables/foreign keys (should be a through association)
+- [] Create controller/routes for the through table which allows a user to become an attendee of an event
+  - [] add something on the event page that allows the user to indicate they want to attend
+- [] Update Event page to show a list of attendees and User page to show a list of attended events
+  - [] Separate the "attended events" list into past and future events, using only code in the view
+
+- [] Separate past and coming events on the homepage using class methods on the event model
+  - [] refactor those into scopes
+- [] Add nav-links to common functions
+- [] Allow users to delete and edit their events
+- [] Allow users to remove themselves as an attendee
+
+- [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
+  - [] invite by username/email
+  - [] invite by showing searchable list of users
+  - [] show notification on the user's page when logged in
+  - [] send an email
+
 
 #### What I learned
 - 
