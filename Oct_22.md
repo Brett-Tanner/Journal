@@ -1081,16 +1081,70 @@ Finished the project
 ## Thurs 27th
 ### Odin Project - Ruby on Rails - Private Events Project
 #### What I did
-- [] Build the Event model (without reference yet, add in a future migration)
-- [] Create an #index action and corresponding view for the Events, set your root path to that view
+- [x] Build the Event model (without reference yet, add in a future migration)
+- [x] Create an #index action and corresponding view for the Events, set your root path to that view
 
-- [] Use Devise to setup your User model
-- [] Add the "organiser" association between User and Event
-- [] Make User's show page list all Events the User has created
-- [] Set up a #create action on Event that uses the organiser association to create a new event with the organiser field auto-populated
-  - [] Make a form for creating the event
-- [] Have the Event's show page display the details of the event
+- [x] Use Devise to setup your User model
+- [x] Add the "organiser" association between User and Event
+- [x] Make User's show page list all Events the User has created
+- [x] Set up a #create action on Event that uses the organiser association to create a new event with the organiser field auto-populated
+  - [x] Make a form for creating the event
+- [x] Have the Event's show page display the details of the event
 
+- [] Add the event/attendee association
+- [] Create and migrate the necessary tables/foreign keys (should be a through association)
+- [] Create controller/routes for the through table which allows a user to become an attendee of an event
+  - [] add something on the event page that allows the user to indicate they want to attend
+- [] Update Event page to show a list of attendees and User page to show a list of attended events
+  - [] Separate the "attended events" list into past and future events, using only code in the view
+
+- [] Separate past and coming events on the homepage using class methods on the event model
+  - [] refactor those into scopes
+- [] Add nav-links to common functions
+- [] Allow users to delete and edit their events
+- [] Allow users to remove themselves as an attendee
+
+- [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
+  - [] invite by username/email
+  - [] invite by showing searchable list of users
+  - [] show notification on the user's page when logged in
+  - [] send an email
+
+
+#### What I learned
+- In addition to the fixes in my link, you also need to add this to the Devise config to make redirects work per [Stack Overflow](https://stackoverflow.com/questions/36646226/undefined-method-user-url-for-devise-sessionscontrollercreate)
+```
+config.navigational_formats = ['*/*', :html, :turbo_stream]
+```
+- Detailed examples for creating a named has_many/belongs_to association cos my notes are kinda shit
+  - belongs_to side
+  ```
+  belongs_to :organiser, class_name: "User",
+                         foreign_key: "id"
+  ```
+  - has_many side
+  ```
+  has_many :events, inverse_of: "organiser", 
+                    foreign_key: "organiser_id"
+  ```
+  - so you need to set the foreign_key of each to the col you're referring to in the other table
+  - class_name on the belongs_to side so it knows which table
+  - inverse_of on the has_many side so it knows which association to use
+  - for the migration (when adding to existing table)
+  ```
+  add_reference :events, :organiser, index: true
+  add_foreign_key :events, :users, column: :id
+  ```
+  - put the name of the ref on add_reference, then specify what it's referring to on add_foreign_key
+- Remembered that if you want to use "render 'list of stuff to render'" with a partial, you need to name that partial the singular form of whatever you're rendering
+  - e.g. in this case I wanted to "render @events", so the partial had to be named "_event"
+  - this also works with AR associations, e.g. because I have an _event partial and there's an organiser/event association I can "render @user.events" with the event partial
+  - can also be used to render a single event with "render @event" on its show page
+- When allowing params in the model, date can just be allowed as :date when using Rails form helpers despite it being a set of params
+
+## Fri 28th
+### Odin Project - Ruby on Rails - Private Events Project
+#### What I did
 - [] Add the event/attendee association
 - [] Create and migrate the necessary tables/foreign keys (should be a through association)
 - [] Create controller/routes for the through table which allows a user to become an attendee of an event
