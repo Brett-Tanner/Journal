@@ -1145,12 +1145,60 @@ config.navigational_formats = ['*/*', :html, :turbo_stream]
 ## Fri 28th
 ### Odin Project - Ruby on Rails - Private Events Project
 #### What I did
-- [] Add the event/attendee association
-- [] Create and migrate the necessary tables/foreign keys (should be a through association)
-- [] Create controller/routes for the through table which allows a user to become an attendee of an event
-  - [] add something on the event page that allows the user to indicate they want to attend
-- [] Update Event page to show a list of attendees and User page to show a list of attended events
-  - [] Separate the "attended events" list into past and future events, using only code in the view
+- [x] Add the event/attendee association
+- [x] Create and migrate the necessary tables/foreign keys (should be a through association)
+- [x] Create controller/routes for the through table which allows a user to become an attendee of an event
+  - [x] add something on the event page that allows the user to indicate they want to attend
+  - [x] and to change their mind
+- [x] Update Event page to show a list of attendees and User page to show a list of attended events
+  - [x] Separate the "attended events" list into past and future events, using only code in the view
+
+- [] Figure out why creating an event does so using the current_user id as primary key for the event
+
+- [] Separate past and coming events on the homepage using class methods on the event model
+  - [] refactor those into scopes
+- [] Add nav-links to common functions
+- [] Allow users to delete and edit their events
+- [] Allow users to remove themselves as an attendee
+
+- [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
+  - [] invite by username/email
+  - [] invite by showing searchable list of users
+  - [] show notification on the user's page when logged in
+  - [] send an email
+
+
+#### What I learned
+- When using a has_many :through association
+  - On the models being associated
+    - You need two relationships, one has_many to the associating model and one has_many :through
+      - If the name of the :through association is not the name of the table you're associating to, you'll need to set source: to the name of that table
+  - On the model that associates them
+    - You need a belongs_to for each of the models being associated
+      - This can be generated with "rails generate model Participants user:references event:references" for example
+    - **NO NEED TO NAME ANY OF THE ASSOCIATIONS ON THIS MODEL, IT'S THE MODELS BEING ASSOCIATED WHICH NEED THEIR ASSOCIATIONS NAMED**
+
+- If you want users to have a profile page when using devise, in addition to adding the resourceful routes you need to set a path_prefix: on the devise_for routes, otherwise the path for creating a new user will be interpreted as you trying to visit the page of a user with id "sign_up"
+
+- button_to is probably better than link_to if you just want to let someone click a button to attend an event for example, as it issues a POST request
+  - can also use for deleting
+    - set plain old method: :delete, no turbo as it's not a form
+    - to get a confirmation message, use "form: { data: { turbo_confirm: 'Are you sure?' } }"
+
+- when you pass stuff to a _path helper, you can just pass the params in the order they appear in the path you're generating
+  - e.g. if you want /events/:event_id/participants/:id just do "event_participant_path(@event, current_user)"
+
+- need to figure out why it's using the current_user's id as the primary key for events rather than setting ti automatically
+  - the auto-fill is definitely being caused by the "inverse_of: :organiser" in the User model
+  - it is not auto-filled if I put the inverse_of on the Event model instead
+  - but I'm then confronted with "Organiser must exist" as an error preventing saving, despite the organiser_id being correctly populated
+    - e.g. User.find(a.organiser_id) works fine, but a.organiser is nil
+  - very, very possible I just give up on this for today and revisit it, I can still create one event per user if I revert to the last commit as each user creates a new user_id correctly, which gives me a unique id for the event even though it's not being auto-generated
+
+## Sat 29th
+### Odin Project - Ruby on Rails - Private Events Project
+#### What I did
+- [] Figure out why creating an event does so using the current_user id as primary key for the event
 
 - [] Separate past and coming events on the homepage using class methods on the event model
   - [] refactor those into scopes
