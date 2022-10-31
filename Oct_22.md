@@ -1238,3 +1238,37 @@ config.navigational_formats = ['*/*', :html, :turbo_stream]
 - However it's better to use scopes for Models, like 
   - "scope :future, -> {where("date > ?", Time.now)}"
   - called the same way as methods are
+
+## Mon 31st
+### Odin Project - Ruby on Rails - Private Events Project
+#### What I did
+- [x] Allow users to delete and edit their events
+- [x] Make events private (in terms of location/guest list)
+- [x] add functionality for the organiser to invite specific users
+
+- [] Style it all 
+  - [x] Site-wide stuff
+  - [x] Homepage
+    - [] Event partials
+  - [] Forms
+  - [] Event pages
+  - [] User profiles
+    - [] User partials
+- [] and host so I can show Viktoria
+
+
+#### What I learned
+- Remembered editing is split into #edit and #update to finish it
+  - Also remembered you have an event_params filter that needs to be passed to use strong params in an update/new
+- When trying to add ability to invite/remove attendees, realised my controller was always applying it to the current_user :/
+  - fixed it by just using the :id already in params when deleting, and adding an :id to the creation params by just adding "id: user.id" in the options for the create path
+- If I was doing this for real definitely want a separate model for invites, but this'll do for this project
+- Partials really are incredibly useful
+  - Reminder, probably once again, that if you have a _user partial it'll be used when you call render on any list of users objects, even if they're called something else like "attendees"
+- Can normalise link styles like this 
+```
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+```
