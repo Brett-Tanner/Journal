@@ -1159,7 +1159,7 @@ config.navigational_formats = ['*/*', :html, :turbo_stream]
   - [] refactor those into scopes
 - [] Add nav-links to common functions
 - [] Allow users to delete and edit their events
-- [] Allow users to remove themselves as an attendee
+- [x] Allow users to remove themselves as an attendee
 
 - [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
   - [] invite by username/email
@@ -1195,23 +1195,46 @@ config.navigational_formats = ['*/*', :html, :turbo_stream]
     - e.g. User.find(a.organiser_id) works fine, but a.organiser is nil
   - very, very possible I just give up on this for today and revisit it, I can still create one event per user if I revert to the last commit as each user creates a new user_id correctly, which gives me a unique id for the event even though it's not being auto-generated
 
+
 ## Sat 29th
+- Enoshima trip
+
+
+## Sun 30th
 ### Odin Project - Ruby on Rails - Private Events Project
 #### What I did
-- [] Figure out why creating an event does so using the current_user id as primary key for the event
+- [x] Figure out why creating an event does so using the current_user id as primary key for the event
 
-- [] Separate past and coming events on the homepage using class methods on the event model
-  - [] refactor those into scopes
-- [] Add nav-links to common functions
+- [x] Separate past and coming events on the homepage using class methods on the event model
+  - [x] refactor those into scopes
+
 - [] Allow users to delete and edit their events
-- [] Allow users to remove themselves as an attendee
-
 - [] Make events private (in terms of location at least) and add functionality for the organiser to invite specific users
   - [] invite by username/email
   - [] invite by showing searchable list of users
   - [] show notification on the user's page when logged in
   - [] send an email
 
+- [] Style it all 
+  - [] Site-wide stuff
+  - [] Homepage
+  - [] Forms
+  - [] User profiles
+- [] and host so I can show Viktoria
+
 
 #### What I learned
-- 
+- When you're removing a foreign_key through migration, you can just remove the integer column and the index will be auto-removed
+
+- It's possible my db is so messed up from all the messing around I've done that I just need to drop the whole thing and re-make it the right way
+  - the organiser/event association really shouldn't be this hard, I should have checked more thoroughly to pick up on stuff like the error that's happening
+- Finally got it right after resetting the whole db and removing the migrations related to organiser/event so I could redo them
+  - I'm, fairly sure my issue was in adding the foreign_key to Events, I had the column set to id so it was taken the User.id for Event.id rather than Event.organiser_id
+  - There were also some unnecessary associations in the event/user models but they were symptoms of trying to solve the first problem
+  - Also had a minor scare when my through table seemed to stop working, but that was because I moved the has_many associations into alphabetical order. Need to remember the main has_many on participants must be defined before the :through version
+
+- You can define class methods on the model itself using def self.method_name
+  - for example I did Event.past/future using #where and Time.now
+- However it's better to use scopes for Models, like 
+  - "scope :future, -> {where("date > ?", Time.now)}"
+  - called the same way as methods are
