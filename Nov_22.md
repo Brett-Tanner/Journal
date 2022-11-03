@@ -39,12 +39,21 @@
 ## Thurs 3rd
 ### Odin Project - Ruby on Rails - Private Events Project
 #### What I did
-- [] Style it all 
-  - [] Event pages
-  - [] User profiles
-    - [] User partials
-- [] and host so I can show Viktoria
+- [x] Style it all 
+  - [x] Event pages
+  - [x] User profiles
+    - [x] User partials
+  - [x] Notices
+- [x] and host so I can show Viktoria
 
 
 #### What I learned
+- I needed to remove the anchor element around the event details on the show page so people can select the text
+  - so needed to render something slightly different in the event partial for Event#show compared to Event#index where it's in tiles that are links
+  - You can set "name: true" as an option on render calls, then use "if local_assigns[ :name ]" to render a given chunk of html if called by a render with that option set
+- Should specify "--database=postgresql" in future so there are less issues when hosting
+
+
+## Fri 4th
+### Odin Project - Ruby on Rails - [Active Record Callbacks](https://www.theodinproject.com/lessons/ruby-on-rails-active-record-callbacks)
 - 
