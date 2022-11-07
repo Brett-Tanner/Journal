@@ -197,4 +197,46 @@ This is gonna be about handling multiple models with a single form, as well as p
 
 ## Mon 7th
 ### Odin Project - Ruby on Rails - [Flight Booker](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker)
+
+#### What I did
+- [x] Plan out the db architecture
+
+- [] Screen 1 - Search
+  - [x] Create Airport model
+    - [x] Use the seeds.rb file to create a bunch of airports
+  - [x] Create Flight model
+  - [] Set up Flight/Airport associations
+    - [] Seed the Flights
+  - [] Make the Flights index page the root
+  - [] Create a search form on that page which uses a GET request back to the same URL
+    - [] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+
+- [] Screen 3 - Passenger Info
+
+#### What I learned
+- You can use db/seeds.rb to fill in dummy data
+  - you can also use delete_all as part of the seeds file (only in dev/test) to refresh the data in your db every time you run rails db:seed
+
+- Seems when using pg for your db you need to create the db before migrating it
+
+
+## Tues 8th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [] Screen 1 - Search
+  - [] Set up Flight/Airport associations
+    - [] Seed the Flights
+  - [] Make the Flights index page the root
+  - [] Create a search form on that page which uses a GET request back to the same URL
+    - [] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+
+- [] Screen 3 - Passenger Info
+
+#### What I learned
 - 
