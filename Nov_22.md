@@ -226,6 +226,30 @@ This is gonna be about handling multiple models with a single form, as well as p
 ### Odin Project - Ruby on Rails - Flight Booker
 
 #### What I did
+Mostly had to study for my training exam at the new job this morning, and too tired tonight to get much done
+
+- [] Screen 1 - Search
+  - [] Set up Flight/Airport associations
+    - [] Seed the Flights
+  - [] Make the Flights index page the root
+  - [] Create a search form on that page which uses a GET request back to the same URL
+    - [] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+
+- [] Screen 3 - Passenger Info
+
+#### What I learned
+- Figured out that I only need to set a foreign key on the airport model, flights can just refer to the airport id once you set class_name
+  - realised that arriving flights are linked to the destination airport, and departing flights are linked to the origin, so used them as the foreign keys
+- Struggling to write the migrations for this one, will continue trying in the morning after a good night's sleep
+  - Which ones do I need an explicit foreign key for and which can I just add_reference with the foreign key option?
+  - I need two separate refs for the origin/destination airports, do I name them differently in the migration or just let the model handle it? If so how
+
+## Wed 9th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
 
 - [] Screen 1 - Search
   - [] Set up Flight/Airport associations
