@@ -252,8 +252,8 @@ Mostly had to study for my training exam at the new job this morning, and too ti
 #### What I did
 
 - [] Screen 1 - Search
-  - [] Set up Flight/Airport associations
-    - [] Seed the Flights
+  - [x] Set up Flight/Airport associations
+    - [x] Seed the Flights
   - [] Make the Flights index page the root
   - [] Create a search form on that page which uses a GET request back to the same URL
     - [] Add dropdowns
@@ -263,4 +263,23 @@ Mostly had to study for my training exam at the new job this morning, and too ti
 - [] Screen 3 - Passenger Info
 
 #### What I learned
-- 
+- When you manually set the foreign key in a migration, the column option is for the name of the column in the originating table
+- db:reset resets the ids so you can have static ones in your seed file
+
+
+## Thurs 10th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [] Screen 1 - Search
+  - [] Make the Flights index page the root
+  - [] Create a search form on that page which uses a GET request back to the same URL
+    - [] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+
+- [] Screen 3 - Passenger Info
+
+#### What I learned
+-
