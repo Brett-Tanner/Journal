@@ -273,7 +273,8 @@ Mostly had to study for my training exam at the new job this morning, and too ti
 #### What I did
 
 - [] Screen 1 - Search
-  - [] Make the Flights index page the root
+  - [x] Make the Flights index page the root
+    - [x] generate corresponding views/controllers
   - [] Create a search form on that page which uses a GET request back to the same URL
     - [] Add dropdowns
 
@@ -282,4 +283,21 @@ Mostly had to study for my training exam at the new job this morning, and too ti
 - [] Screen 3 - Passenger Info
 
 #### What I learned
--
+- Controllers are named with the plural version
+
+
+## Fri 11th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [] Screen 1 - Search
+  - [] Create a search form on that page which uses a GET request back to the same URL
+    - [] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+
+- [] Screen 3 - Passenger Info
+
+#### What I learned
+- 
