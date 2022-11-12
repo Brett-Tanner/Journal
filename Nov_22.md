@@ -166,11 +166,11 @@ This is gonna be about handling multiple models with a single form, as well as p
     - can combine these two concepts as follows to create an array of hashes
     ```
     <input name="person[addresses][][line1]" type="text"/>
-  <input name="person[addresses][][line2]" type="text"/>
-  <input name="person[addresses][][city]" type="text"/>
-  <input name="person[addresses][][line1]" type="text"/>
-  <input name="person[addresses][][line2]" type="text"/>
-  <input name="person[addresses][][city]" type="text"/>
+    <input name="person[addresses][][line2]" type="text"/>
+    <input name="person[addresses][][city]" type="text"/>
+    <input name="person[addresses][][line1]" type="text"/>
+    <input name="person[addresses][][line2]" type="text"/>
+    <input name="person[addresses][][city]" type="text"/>
 
     ```
 
@@ -293,11 +293,80 @@ Mostly had to study for my training exam at the new job this morning, and too ti
 
 - [] Screen 1 - Search
   - [] Create a search form on that page which uses a GET request back to the same URL
+    - Created the scaffold, but didn't connect it to anything
     - [] Add dropdowns
 
 - [] Screen 2 - Pick a Flight
 
 - [] Screen 3 - Passenger Info
+
+#### What I learned
+- Working 9 hour days is annoying
+
+## Sat 12th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [x] Screen 1 - Search
+  - [x] Create a search form on that page which uses a GET request back to the same URL
+    - [x] Add dropdowns
+
+- [] Screen 2 - Pick a Flight
+  - [] Render search results in their own form
+    - [] radio button next to each flight that lets them select it
+    - [] submits to the #new action of BookingsController using GET
+    - [] include hidden field storing the number of passengers
+
+- [] Screen 3 - Passenger Info
+  - [] Create Booking model
+  - [] Create Passenger model
+  - [] Set up associations between Bookings, Passengers and Flights
+  - [] Create BookingsController and routes
+    - [] Create #new action
+      - [] displays currently chosen flight, airports and dates
+      - [] fields to enter info for each passenger 
+        - so need to create blank passenger object for each
+        - use fields_for
+    - [] set up #create to create both a new Booking and new Passengers
+    - [] render booking's show page after the form is successfully submitted
+
+#### What I learned
+- Best way to populate select boxes is
+```
+form.collection_select :input_id/name, Model.order(), value to submit, value to display in list
+```
+
+- If you only want a certain column from your model, you can use ::select(:symbol)
+  - can append ::distinct
+
+- You can format the dates in a select box by creating a method on the model you're getting the dates from
+  - the method can be named anything you want, but it must act on one of the values you're passing to collection_select
+    - e.g. in my case I got a list of departure_time values, so my method was "departure_time.strftime("%d/%m/%Y")"
+
+## Sun 13th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [] Screen 2 - Pick a Flight
+  - [] Render search results in their own form
+    - [] radio button next to each flight that lets them select it
+    - [] submits to the #new action of BookingsController using GET
+    - [] include hidden field storing the number of passengers
+
+- [] Screen 3 - Passenger Info
+  - [] Create Booking model
+  - [] Create Passenger model
+  - [] Set up associations between Bookings, Passengers and Flights
+  - [] Create BookingsController and routes
+    - [] Create #new action
+      - [] displays currently chosen flight, airports and dates
+      - [] fields to enter info for each passenger 
+        - so need to create blank passenger object for each
+        - use fields_for
+    - [] set up #create to create both a new Booking and new Passengers
+    - [] render booking's show page after the form is successfully submitted
 
 #### What I learned
 - 
