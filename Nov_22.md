@@ -344,20 +344,50 @@ form.collection_select :input_id/name, Model.order(), value to submit, value to 
   - the method can be named anything you want, but it must act on one of the values you're passing to collection_select
     - e.g. in my case I got a list of departure_time values, so my method was "departure_time.strftime("%d/%m/%Y")"
 
-## Sun 13th
+## Mon 14th
 ### Odin Project - Ruby on Rails - Flight Booker
 
 #### What I did
 
 - [] Screen 2 - Pick a Flight
   - [] Render search results in their own form
-    - [] radio button next to each flight that lets them select it
+    - [x] radio button next to each flight that lets them select it
     - [] submits to the #new action of BookingsController using GET
-    - [] include hidden field storing the number of passengers
+    - [x] include hidden field storing the number of passengers
 
 - [] Screen 3 - Passenger Info
-  - [] Create Booking model
-  - [] Create Passenger model
+  - [x] Create Booking model
+  - [x] Create Passenger model
+  - [] Set up associations between Bookings, Passengers and Flights
+  - [] Create BookingsController and routes
+    - [] Create #new action
+      - [] displays currently chosen flight, airports and dates
+      - [] fields to enter info for each passenger 
+        - so need to create blank passenger object for each
+        - use fields_for
+    - [] set up #create to create both a new Booking and new Passengers
+    - [] render booking's show page after the form is successfully submitted
+
+#### What I learned
+- You can pass variables through a render call by appending them as symbol options
+  - e.g. to pass the "form" variable for a form_with, append "form: form"
+
+- Hidden fields are added with form.hidden_field
+  - first argument sets the id and name, you can set the value with the value: option
+
+- My seeds file has not been creating passengers (I think, may have before I added this relation) and is not creating bookings
+  - works fine when I create a Booking/Passenger manually in console though
+
+## Tues 15th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
+
+- [] Screen 2 - Pick a Flight
+  - [] Render search results in their own form
+    - [] submits to the #new action of BookingsController using GET
+
+- [] Screen 3 - Passenger Info
   - [] Set up associations between Bookings, Passengers and Flights
   - [] Create BookingsController and routes
     - [] Create #new action
