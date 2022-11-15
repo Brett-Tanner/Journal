@@ -383,9 +383,44 @@ form.collection_select :input_id/name, Model.order(), value to submit, value to 
 
 #### What I did
 
-- [] Screen 2 - Pick a Flight
-  - [] Render search results in their own form
-    - [] submits to the #new action of BookingsController using GET
+- [x] Screen 2 - Pick a Flight
+  - [x] Render search results in their own form
+    - [x] submits to the #new action of BookingsController using GET
+
+- [] Screen 3 - Passenger Info
+  - [] Set up associations between Bookings, Passengers and Flights
+  - [x] Add the ability to check available seats
+  - [] Create BookingsController and routes
+    - [] Create #new action
+      - [] displays currently chosen flight, airports and dates
+      - [] fields to enter info for each passenger 
+        - so need to create blank passenger object for each
+        - use fields_for
+    - [] set up #create to create both a new Booking and new Passengers
+    - [] render booking's show page after the form is successfully submitted
+
+#### What I learned
+- #create on a model uses () before the array of hashes you dum dum
+
+- You can use sum/count etc. by calling it on a Class or an AR relation (e.g. results of a #where/#order)
+  - can pass it a col to work on or just the whole relation/Class
+
+- Create blank passengers in an Array (since you can't increment variable names) then submit their values as an array as well using the passenger[][name]... etc. trick
+
+- Probably need to change the Passenger/Booking association to be has_and_belongs_to_many
+  - I don't see how else you can link multiple passengers to a single booking, there's no foreign key for bookings in the passenger table
+  - On my first attempt, finding the flights/bookings for a passenger turns up nothing
+    - Two initial theories
+      - The passenger_id foreign key in Bookings is causing problems (Not this, but it's unnecessary anyway)
+      - I need to add something to the has_many flights through bookings now there's a join table in the middle
+    - **Tomorrow I'll try editing the migrations to do it this way from the start, then running db:reset**
+
+- To remove an index for a foreign key, you can just remove the foreign key
+
+## Wed 16th
+### Odin Project - Ruby on Rails - Flight Booker
+
+#### What I did
 
 - [] Screen 3 - Passenger Info
   - [] Set up associations between Bookings, Passengers and Flights
@@ -399,4 +434,3 @@ form.collection_select :input_id/name, Model.order(), value to submit, value to 
     - [] render booking's show page after the form is successfully submitted
 
 #### What I learned
-- 
