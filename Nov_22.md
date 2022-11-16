@@ -423,14 +423,22 @@ form.collection_select :input_id/name, Model.order(), value to submit, value to 
 #### What I did
 
 - [] Screen 3 - Passenger Info
-  - [] Set up associations between Bookings, Passengers and Flights
+  - [x] Set up associations between Bookings, Passengers and Flights
   - [] Create BookingsController and routes
-    - [] Create #new action
-      - [] displays currently chosen flight, airports and dates
-      - [] fields to enter info for each passenger 
-        - so need to create blank passenger object for each
-        - use fields_for
-    - [] set up #create to create both a new Booking and new Passengers
-    - [] render booking's show page after the form is successfully submitted
+    - [x] Create #new action
+      - [x] displays currently chosen flight, airports and dates
+      - [x] fields to enter info for each passenger 
+    - [x] set up #create to create both a new Booking and new Passengers
+    - [x] render booking's show page after the form is successfully submitted
 
 #### What I learned
+- Figured out why the HABTM relationship wasn't showing anything
+  - My seeds file was creating the Booking table with a Passenger_id, but that does nothing with a HABTM model
+  - So there was nothing linking the Bookings and Passengers
+  - I have to update my seeds file to have the passengers created by a booking
+
+- When you use fields_for and have already generated the new objects you need, it'll automatically create the correct number of fields. No iterating needed
+
+## Thurs 17th
+### Odin Project - Ruby on Rails - [APIs](https://www.theodinproject.com/lessons/ruby-on-rails-apis-and-building-your-own)
+- 
