@@ -441,4 +441,69 @@ form.collection_select :input_id/name, Model.order(), value to submit, value to 
 
 ## Thurs 17th
 ### Odin Project - Ruby on Rails - [APIs](https://www.theodinproject.com/lessons/ruby-on-rails-apis-and-building-your-own)
-- 
+APIs are two programs communicating with each other, often largely without user input, and exchanging only data rather than HTML and CSS
+
+- You can set up an existing Rails application as an API by making the controller return JSON/XML etc. if the client requests it
+  - Client can request a certain format by appending .json or .xml to the URL
+  - You do this using #respond_to, which takes a format argument
+  - You add formats to be returned with format.json {render :json => @users} or format.xml {render :xml => @users}
+    - remember to include format.html
+    - the symbol calls #to_json on the object, which calls #as_json to retrieve the values then converts using ActiveSupport::json.encode
+  - If you wanna constrict the info returned by your API, modify #as_json on your model
+    - You can do this by overriding the model, or extending it with super
+    ```
+      # app/models/user.rb
+    class User < ActiveRecord::Base
+
+      # Option 1: Purely overriding the #as_json method
+      def as_json(options={})
+        { :name => self.name }  # NOT including the email field
+      end
+
+      # Option 2: Working with the default #as_json method
+      def as_json(options={})
+        super(:only => [:name])
+      end
+
+    end
+
+    ```
+    - See [#as_json docs](https://api.rubyonrails.org/classes/ActiveModel/Serializers/JSON.html#method-i-as_json) for more details/options
+
+- The head method can be used to return just a header with an error message, for examples "head :not_found"
+  - [Custom error pages are also possible](https://web-crunch.com/posts/custom-error-page-ruby-on-rails)
+
+- Existing Devise auth will handle authentication, but since client is likely not a browser you can't use cookies
+  - use custom tokens instead
+
+- Service Oriented Architecture
+  - Break individual services within your app out into separate applications on separate servers and have them communicate through internal APIs
+    - Makes it easy to make major changes within a service, so long as the endpoints are the same
+    - Can mix languages
+    - Can mix internal and external apps
+
+
+## Fri 18th
+### Odin Project - Ruby on Rails - [External APIs](https://www.theodinproject.com/lessons/ruby-on-rails-working-with-external-apis)
+- First steps
+  - First you need to register with the API provider
+    - will likely have some form of rate limiting before you need to pay
+  - They'll give you an API key (fine to expose in your app) and sometimes a secret key (which you need to keep secret using environment variables or a gem like figaro)
+
+- API rates & security tokens
+  - There are different types of authorisation required for different requests e.g.
+    - Showing tweets might require no authentication, but be heavily rate limited
+    - Some other requests for public data will require your API key, and be limited by pricing tiers
+    - Things like getting data on a specific user or modifying/deleting stuff will likely require your private key as well for auth
+    - When you want to make requests on behalf of a user, you get them to sign in and the API provider sends you a token which you can use to identify the requests as coming from them
+      - this puts their requests into a per-user bucket, which can lead to better rates
+
+- OAuth Basics
+  1. User tries to access a page on your app and you ask the user to login
+  2. User chooses the “Login With Facebook” option
+  3. User is redirected to a Facebook page asking them to review the permissions you are asking for and telling them to sign in. The URI will contain parameters that tell Facebook who your application is and possibly which URI they should submit their response to (or maybe you specified this as a part of your API registration process with them).
+  4. User decides you seem like a fun application so they’ll allow you to see their email address and post to their timeline. User signs in to their Facebook account. Facebook creates an authorization code and sends it back to your application’s callback URI.
+  5. The user waits while your application takes that authorization code and uses it to ask Facebook for the real good stuff. Facebook makes sure your application is the same one the user authorized, then POSTs back to you a unique authentication token for the user (which likely expires in 90 days) and any data you asked for up front (like email address).
+  6. You store the user’s unique token in your database and use it, along with your application key(s), to make any subsequent requests on the user’s behalf.
+
+
