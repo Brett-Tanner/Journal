@@ -506,4 +506,63 @@ APIs are two programs communicating with each other, often largely without user 
   5. The user waits while your application takes that authorization code and uses it to ask Facebook for the real good stuff. Facebook makes sure your application is the same one the user authorized, then POSTs back to you a unique authentication token for the user (which likely expires in 90 days) and any data you asked for up front (like email address).
   6. You store the user’s unique token in your database and use it, along with your application key(s), to make any subsequent requests on the user’s behalf.
 
+  - In rails we use the [omniauth](https://github.com/omniauth/omniauth) gem for this
+  - there are also individual gems which provide [authentication strategies for each major API](https://github.com/omniauth/omniauth/wiki/List-of-Strategies)
+    - those are the ones you actually install I think
 
+- SDKs
+  - provide all the code necessary to access a company's API, usually in JS
+  - makes it easier to access their API with simple JS methods but
+  - enforces their conventions for any interaction with it and expands your codebase
+
+
+#### What I learned
+- When you define a method with self.method_name, any method inside it will be called on self
+  - that's why the date formatting I was confused about worked, I think
+
+
+
+### Odin Project - Ruby on Rails - [Beaver API](https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api)
+
+#### What I did
+
+- HTML
+  - [x] Generate Beaver resource
+    - [x] Seed the beavers
+  - [] Build basic controller methods and views
+    - [] Add a "Delete Beaver" button to show/edit pages, as well as each beaver on the index page
+  - [] Use flash hash to congratulate successful beaver creation/edits
+    - [] Also to make fun of you for errors in the forms (like setting cuteness below 10)
+
+- API
+  - [] Install REST client
+  - [] Make #index respond_to JSON
+  - [] test using IRB
+  - [] also make #show respond_to JSON
+
+#### What I learned
+- How are update and edit REST actions different again??
+  - Edit renders the view, update performs the update
+  - Like new/create
+
+
+
+## Sat 19th
+### Odin Project - Ruby on Rails - [Beaver API](https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api)
+
+#### What I did
+
+- HTML
+  - [] Build basic controller methods and views
+    - [] Add a "Delete Beaver" button to show/edit pages, as well as each beaver on the index page
+  - [] Use flash hash to congratulate successful beaver creation/edits
+    - [] Also to make fun of you for errors in the forms (like setting cuteness below 10)
+
+- API
+  - [] Install REST client
+  - [] Make #index respond_to JSON
+  - [] test using IRB
+  - [] also make #show respond_to JSON
+
+#### What I learned
+- 
