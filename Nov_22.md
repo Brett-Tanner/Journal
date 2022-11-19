@@ -546,23 +546,42 @@ APIs are two programs communicating with each other, often largely without user 
   - Like new/create
 
 
-
 ## Sat 19th
 ### Odin Project - Ruby on Rails - [Beaver API](https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api)
-
 #### What I did
 
 - HTML
-  - [] Build basic controller methods and views
-    - [] Add a "Delete Beaver" button to show/edit pages, as well as each beaver on the index page
-  - [] Use flash hash to congratulate successful beaver creation/edits
-    - [] Also to make fun of you for errors in the forms (like setting cuteness below 10)
+  - [x] Build basic controller methods and views
+    - [x] Add a "Delete Beaver" button to show/edit pages, as well as each beaver on the index page
+  - [x] Use flash hash to congratulate successful beaver creation/edits
+    - [x] Also to make fun of you for errors in the forms (like setting cuteness below 10)
 
 - API
-  - [] Install REST client
-  - [] Make #index respond_to JSON
-  - [] test using IRB
-  - [] also make #show respond_to JSON
+  - [x] Install REST client
+  - [x] Make #index respond_to JSON
+  - [x] test using IRB
+  - [x] also make #show respond_to JSON
+
+
+### Odin Project - Ruby on Rails - [Flickr API](https://www.theodinproject.com/lessons/ruby-on-rails-flickr-api)
+#### What I did
+I'm adding functionality to the previous project rather than following the requirements strictly for this one 
+
+- [x] Register an app with Flickr
+- [x] Add a gem for the Flickr API
+- [x] Store your secret key in an ENV
+- [x] Figure out how to get a random Beaver photo
+- [x] Include that beaver photo in the create form
 
 #### What I learned
+- Environment Variables
+  - View all currently assigned ENV with printenv
+  - set a new one with "export KEY=value"
+    - but you may need to do that in your ~/zprofile to make it stick, not sure
+    - or at least reboot the terminal if you have other windows open
+
+- You can convert an .xml response from an API to a hash (and you need to) using Hash.from_xml(xml_response)
+
+## Sun 20th
+### Odin Project - Ruby on Rails - [CSS Bundling](https://www.theodinproject.com/lessons/ruby-on-rails-css-bundling)
 - 
