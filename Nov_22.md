@@ -582,6 +582,43 @@ I'm adding functionality to the previous project rather than following the requi
 
 - You can convert an .xml response from an API to a hash (and you need to) using Hash.from_xml(xml_response)
 
+- If you want to evaluate Ruby/Rails code in your .css, you need to make the file .css.erb
+  - but this'll stop autocomplete for css, so do it last/only when you need to test that part
+
 ## Sun 20th
 ### Odin Project - Ruby on Rails - [CSS Bundling](https://www.theodinproject.com/lessons/ruby-on-rails-css-bundling)
+The cssbundling-rails gem provides a way of installing the most commonly used CSS pre-processors/bundlers. There are individual gems for these but this way is apparently easier.
+
+- Requires node.js to work
+  - build script handles processing your CSS, eg. for Tailwind it makes sure only the T classes you actually used in you project are built
+    - is found in package.json
+  - make sure the build script is running when needed by starting your app with ./bin/dev
+    - runs rails server and JS/CSS watch commands
+
+- Installs tools and files needed to get the option you chose running
+- Adds required import statements
+- Gives you instructions on the build script needed
+
+- Has installation support for 5 of the most common CSS tools
+    1. [Bootstrap](https://getbootstrap.com/) This is probably one of the most famous libraries used to get going with the look and feel of a new application when you need a proof of concept.
+
+    2. [Bulma](https://bulma.io/) An alternative to Bootstrap. Has opinionated styling to get you up and running when you don’t have good CSS knowledge to design your own sites.
+
+    3. [Dart Sass](https://sass-lang.com/dart-sass) The current hot flavour of processing sass files. A way to add additional CSS features to extend what you can do.
+
+    4. [PostCSS](https://postcss.org/) A tool for transforming CSS by using Javascript. It allows you to do things like use future CSS features not supported in all browsers or use one of the many PostCSS plugins to enhance your CSS.
+
+    5. [Tailwind](https://tailwindcss.com/) A utility-first CSS framework. It works similarly to Bootstrap in that you add CSS to your application by adding classes to your HTML. Where it differs is Tailwind is not a way to avoid understanding CSS but instead allows you to build up your design by using reusable classes that do only one thing. It’s moving the CSS to the markup instead of under a class name in your CSS files. You’ll either love it or hate it.
+
+- Installation
+  - For a new Rails app
+    - rails new myapp --css [tailwind|bootstrap|bulma|postcss|sass]
+  - For an existing app
+    - add gem 'cssbundling-rails'
+    - run bundle install
+    - use the generator like "rails css:install:[tailwind|bootstrap|bulma|postcss|sass]"
+
+
+## Mon 21st
+### Odin Project - Ruby on Rails - [JS Bundling](https://www.theodinproject.com/lessons/ruby-on-rails-js-bundling)
 - 
