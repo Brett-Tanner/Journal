@@ -621,4 +621,91 @@ The cssbundling-rails gem provides a way of installing the most commonly used CS
 
 ## Mon 21st
 ### Odin Project - Ruby on Rails - [JS Bundling](https://www.theodinproject.com/lessons/ruby-on-rails-js-bundling)
-- 
+Provides installers to setup esbuild, rollup or webpack to allow bundling, which is then stored in app/assets/builds
+
+- Bundling seems to be mostly used for compatibility with frameworks, modules etc. that require it. With HTTP2 making a lot of small requests is not as much of a performance problem as it used to be.
+
+- In the absence of those compatibility issues, importmaps are better because you don't have to redownload/parse the bundle every time something changes
+
+- [esbuild](https://esbuild.github.io/)
+  - lightweight/fast
+  - lacks features compared to others
+- [Rollup](https://rollupjs.org/guide/en/#introduction)
+  - uses JS syntax for importing/exporting functions
+- [Webpack](https://webpack.js.org/concepts/)
+  - static module bundler
+  - creates a dependency graph and uses it to make 1 or more bundles of everything your app needs
+
+- Also use ./bin/dev to watch for JS changes
+- Install bundler with "./bin/rails javascript:install:webpack|esbuild|rollup"
+  - but better to just do it from the start with "rails new app_name -j webpack|esbuild|rollup"
+  - with esbuild you need to add this "./bin/rails stimulus:manifest:update" to index.js or controllers won't be bundled
+
+### Odin Project - Ruby on Rails - [Turbo](https://www.theodinproject.com/lessons/ruby-on-rails-turbo)
+- Single Page Applications
+  - A web app that loads only a single document. The page is dynamically rewritten with new info.
+  - Rails has a built-in way of creating SPAs with Hotwire, itself comprised of Turbo, Stimulus and Strada (Strada is unreleased and deals with mobile responsiveness)
+
+- Turbo
+  - Uses 4 techniques to create the appearance of a speedy SPA without JS
+    - **Turbo Drive:** Handles page navigation without full reloads, as I learned [here on the 15th](https://github.com/Brett-Tanner/Journal/blob/2227706add12e50687b9228851a1cc478a857ecd/Oct_22.md)
+    - **Turbo Frames:** Let you update content within only defined region of your page
+    - **Turbo Streams:** Automatically inserts new posts etc. at the start of a feed without needing a refresh
+    - **Turbo Native:** Lets you do the same stuff on mobile
+
+- Turbo Frames
+  - One or multiple regions of the page which can be changed in response to a request
+  - Any links or forms inside the frame will make a special request that only affects the contents of the frame
+  - Designated by wrapping the area in a turbo-frame HTML tag
+    - which can be done with turbo_frame_tag, taking a string argument which becomes the id of the HTML tag
+    - can auto increment the ids by putting them in an each block and making the variable the name you want to increment
+      - it'll name each frame that variable with an incremented number appended
+  - One benefit over just using partials is you don't have to duplicate stuff in controllers, you can just have the frame make a call to the controller action you need in the src attribute
+  
+  - You can update the data in a frame by putting a link inside it that points at another page with a frame that has the same id
+    - the current contents of the frame will be replaced by the contents of the frame on the other page
+    - by default, anything outside the frame will not change at all during this process
+      - but it's possible to change that using data-turbo-action to advance the browser history and update the url
+    - You can break out of a frame and reload the whole page by adding data-turbo-frame: "_top" to the link
+    - You can also do the opposite, update the frame with a link outside it, by including data-turbo-frame: "frame_id" on the link
+
+  - If frames are given a "src" attribute they'll be loaded from that source after main content of the page has loaded
+    - A placeholder can be wrapped inside this frame to be displayed until the real content is loaded from the src link
+    - an src frame (and only that type of frame) can have the loading: lazy option set, so that it loads only when it comes into view
+
+- Turbo Stream
+  - Sends new content to the page wrapped in a turbo-stream element
+    - the element takes 2 main options, action and target
+      - target gives the id of the element it's going to update in the DOM
+      - action determines how it updates that element. There are 7 choices:     
+        1. Append
+        2. Prepend
+        3. Before
+        4. After
+        5. Replace
+        6. Update
+        7. Remove
+  - streams can be sent in response to a browser request or broadcast over a websocket connection
+    - for browser requests, can be delivered as "view_name.turbo_stream.erb" files
+
+  - You can add turbo-streams to a controller like this, similar to how you add json/xml responses for an API
+  ```
+  def create
+    @post = Post.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.turbo_stream
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+  ```
+    - the corresponding turbo-stream view could then be as simple as <%= turbo_stream.append "posts", @post %>
+    - You could also chain multiple turbo-stream actions in a single view, to affect multiple areas of the page (like post list and count)
+
+
+## Tues 22nd
+### Odin Project - Ruby on Rails - [Stimulus](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus)
+-     
