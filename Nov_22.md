@@ -708,4 +708,63 @@ Provides installers to setup esbuild, rollup or webpack to allow bundling, which
 
 ## Tues 22nd
 ### Odin Project - Ruby on Rails - [Stimulus](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus)
--     
+Stimulus gives you a way of creating and using reusable controllers that add a bit of extra interactivity to your page. It is a HTML first framework which does not typically render HTML, rather attaches behaviour to your existing HTML.
+
+- Uses data-attributes to attach to and configure behaviour on your HTML, eg.
+```
+<div data-controller="clipboard">
+  PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
+  <button data-action="click->clipboard#copy">Copy to Clipboard</button>
+</div>
+```
+  - data-controller lets Stimulus know which controller you want to use
+  - data-clipboard-target lets Stimulus know where the input for the controller action is coming from
+    - first you have to add it to the controller by adding it to the "static targets" array, which will create three references to it
+      - you can access the target in your action using this.nameTarget
+      - or multiple with this.nameTargets
+      - or ask if they're available with this.hasNameTarget
+  - data-action has the equivalent of an event listener in click, followed by controller#action
+
+- Stimulus Controllers
+  - To create a new controller, create a file in the app/js/controllers folder with a filename like name_controller.js
+  - An empty controller looks like this, actions are written between the last curly braces
+  ```
+  import { Controller } from "@hotwired/stimulus"
+  export default class extends Controller {}
+  ```
+
+- State
+  - the controller can have its own state, though you usually want to avoid this
+    - anything you define on "this" is available to any action in the controller
+    - you can also declare specific value attributes to listen to for changes like "static values = { count: {type: Number, default: 0} }"
+      - then you can define a function to be called on any change in the form "countValueChanged"
+
+- Class Attributes
+  - If you want to use the same controller to toggle different classes based on the element, set them on the element with "data-toggle-change-class="class_name""
+    - the call them in the #toggle action with this.changeClass
+
+- Lifecycle functions
+  - connect() {} is called whenever an element with data-controller attribute matching the controller's name appears in the DOM
+  - initialize() {} is called once when the controller is first instantiated
+  - disconnect() {} is called when the controller is disconnected from the DOM
+
+- camelCase v kebab-case example
+```
+<div data-controller="reset-input">
+  <input 
+    data-reset-input-target="twoWords"
+    data-action="keyup->reset-input#updateButton"
+  >
+</div>
+```
+
+## Wed 23rd
+### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
+- [] Example controller
+- [] Toggle controller (make it reusable in the following ways)
+  - [] Make it like a dropdown menu
+  - [] Make it hide itself and show another element when clicked
+  - [] Clicking a checkbox highlights the element containing the checkbox
+- [] Controller for text inputs with a limited length that warns them when close/over
+
+- [] Project: In a new Rails app, create a car model that :has_many variants; make up some attributes. Then create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for and a Stimulus controller (that adds the form fields you need for a new variant entry). Bonus points for destroying existing records when submitting.
