@@ -760,7 +760,18 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
 
 ## Wed 23rd
 ### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
-- [] Example controller
+- [x] Example controller
+- [] Toggle controller (make it reusable in the following ways)
+  - [] Make it like a dropdown menu
+  - [] Make it hide itself and show another element when clicked
+  - [] Clicking a checkbox highlights the element containing the checkbox
+- [] Controller for text inputs with a limited length that warns them when close/over
+
+- [] Project: In a new Rails app, create a car model that :has_many variants; make up some attributes. Then create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for and a Stimulus controller (that adds the form fields you need for a new variant entry). Bonus points for destroying existing records when submitting.
+
+
+## Thurs 24th
+### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
 - [] Toggle controller (make it reusable in the following ways)
   - [] Make it like a dropdown menu
   - [] Make it hide itself and show another element when clicked
