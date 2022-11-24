@@ -724,6 +724,7 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
       - or multiple with this.nameTargets
       - or ask if they're available with this.hasNameTarget
   - data-action has the equivalent of an event listener in click, followed by controller#action
+    - [full list of events you can listen for](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 - Stimulus Controllers
   - To create a new controller, create a file in the app/js/controllers folder with a filename like name_controller.js
@@ -738,6 +739,7 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
     - anything you define on "this" is available to any action in the controller
     - you can also declare specific value attributes to listen to for changes like "static values = { count: {type: Number, default: 0} }"
       - then you can define a function to be called on any change in the form "countValueChanged"
+    - if you want to declare a constant for use in the controller, do it between the import and export using const
 
 - Class Attributes
   - If you want to use the same controller to toggle different classes based on the element, set them on the element with "data-toggle-change-class="class_name""
@@ -762,7 +764,7 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
 ### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
 - [x] Example controller
 - [] Toggle controller (make it reusable in the following ways)
-  - [] Make it like a dropdown menu
+  - [] Make it show another element, like a dropdown menu
   - [] Make it hide itself and show another element when clicked
   - [] Clicking a checkbox highlights the element containing the checkbox
 - [] Controller for text inputs with a limited length that warns them when close/over
@@ -772,10 +774,19 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
 
 ## Thurs 24th
 ### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
-- [] Toggle controller (make it reusable in the following ways)
-  - [] Make it like a dropdown menu
-  - [] Make it hide itself and show another element when clicked
-  - [] Clicking a checkbox highlights the element containing the checkbox
-- [] Controller for text inputs with a limited length that warns them when close/over
+- [x] Toggle controller (make it reusable in the following ways)
+  - [x] Make it like a dropdown menu
+  - [x] Make it hide itself and show another element when clicked
+  - [x] Clicking a checkbox highlights the element containing the checkbox
+- [x] Controller for text inputs with a limited length that warns them when close/over
 
-- [] Project: In a new Rails app, create a car model that :has_many variants; make up some attributes. Then create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for and a Stimulus controller (that adds the form fields you need for a new variant entry). Bonus points for destroying existing records when submitting.
+- [] Project
+  - [] create a car model that :has_many variants; make up some attributes
+  - [] create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for 
+  - [] and a Stimulus controller (that adds the form fields you need for a new variant entry, presumably a button for when the current ones are full)
+  - [] Bonus points for destroying existing records when submitting.
+
+### What I learned
+- You can have an element be both action and target
+
+- Input listens when you type, change listens when you submit the change
