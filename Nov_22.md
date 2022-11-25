@@ -790,3 +790,29 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
 - You can have an element be both action and target
 
 - Input listens when you type, change listens when you submit the change
+
+## Fri 25th
+### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
+- [] Project
+  - [x] create a car model that :has_many variants; make up some attributes
+  - [x] create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for 
+    - [] and a Stimulus controller (that adds the form fields you need for a new variant entry, presumably a button for when the current ones are full)
+    - [] bonus points for destroying existing records when submitting (with blank fields for a variant)
+
+### What I learned
+- You can't name columns type, it's reserved for storing classes in case of inheritance
+- I forgot the form builder automatically names the submit button to something appropriate, so no need to override it
+
+- Located [this]() which I can steal ideas from for the "add variant" button
+  - was struggling with how to setup the targets, my best idea without looking at it was to make fields_for a target, count how many variant forms were in it and use that number to generate the ids for the next one
+
+
+## Sat 26th
+### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
+- [] Project
+  - [x] create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for 
+    - [] and a Stimulus controller (that adds the form fields you need for a new variant entry, presumably a button for when the current ones are full)
+    - [] bonus points for destroying existing records when submitting (with blank fields for a variant)
+
+### What I learned
+- 
