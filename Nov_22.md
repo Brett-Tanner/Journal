@@ -803,16 +803,97 @@ Stimulus gives you a way of creating and using reusable controllers that add a b
 - You can't name columns type, it's reserved for storing classes in case of inheritance
 - I forgot the form builder automatically names the submit button to something appropriate, so no need to override it
 
-- Located [this]() which I can steal ideas from for the "add variant" button
+- Located [this](https://www.stimulus-components.com/docs/stimulus-rails-nested-form/) which I can steal ideas from for the "add variant" button
   - was struggling with how to setup the targets, my best idea without looking at it was to make fields_for a target, count how many variant forms were in it and use that number to generate the ids for the next one
 
 
 ## Sat 26th
 ### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-stimulus#exercises)
-- [] Project
+- [x] Project
   - [x] create a form to edit a car in which you can dynamically add more variants using :accepts_nested_attributes_for 
-    - [] and a Stimulus controller (that adds the form fields you need for a new variant entry, presumably a button for when the current ones are full)
-    - [] bonus points for destroying existing records when submitting (with blank fields for a variant)
+    - [x] and a Stimulus controller (that adds the form fields you need for a new variant entry, presumably a button for when the current ones are full)
+    - [x] bonus points for destroying existing records when submitting
 
 ### What I learned
-- 
+- How the stimulus component I shamelessly copied works
+
+  - To add variants
+    - The form itself has the controller defined
+    - You make a template wrapper around your fields_for, set the options like "form.fields_for :variants, Variant.new, child_index: 'VARIANT'", and make it the templateTarget
+      - I think Variant.new is the object to use
+      - child_index specifies the name used to increment them
+        - then the controller uses the current time to ensure it's unique
+      - render the actual fields as a partial
+      - Then because a template isn't rendered (it's instead used as a template to be inserted later, duh) you need to do the fields_for again without the extra options to actually render any existing variants
+    - You need an empty div as the targetTarget
+      - controller inserts the new fields (from your template) before that
+  
+  - To remove variants 
+    - it searches for the nearest wrapper (which goes around a set of variant fields)
+    - if it's a newly created one, it simply removes it
+    - if it was a pre-existing variant, it hides it and sets its destroy hidden field to "1", meaning the variant will be destroyed
+
+- **Remember you need to allow the :id and :_destroy attributes in your params hash if you don't want exponential duplicates/an inability to delete respectively**
+
+### Odin Project - Ruby on Rails - [Stimulus Exercises](https://www.theodinproject.com/lessons/ruby-on-rails-mailers)
+Email in Rails is conceptually pretty similar to rendering views
+
+- Overview
+  - Uses ActionMailer gem
+  - Mailer is similar to a model and controller baked into one
+    - can generate with "rails generate mailer ..."
+    - set up methods for each type of email you wanna send
+      - in those, you identify the key fields/variables to be used in the email
+  - Email itself is a view, in app/views but ina folder named after the mailer
+    - needs two versions, HTML and text as a fallback/to get past spam filters
+  - Sending mail is a two step process, first build with the mailer method then send with #deliver_now pr #deliver_now!
+
+- Callbacks exist, and are run in relation to the generation of the email rather than when it's sent (before/after/around_action)
+
+- You'll want to use an addon to handle sending your mail, all the ones they list are for Heroku tho
+
+- The [Letter Opener](https://github.com/ryanb/letter_opener) gem displays emails in the browser when they would be sent (in dev) so you don't spam people
+
+- Email Wisdom
+  - It's SLOW, like 1-2 seconds per email. Don't have your main app do it if you're sending a bunch
+  - Make sure to use full urls (not _path helper) since users'll be accessing externally, specify the host as a variable
+  - No access to stylesheets, so styling must be inline or in style tags
+  - Attaching images can be a pain
+  - [You can preview emails](https://guides.rubyonrails.org/action_mailer_basics.html#previewing-emails)
+
+- Mailer
+  - default sets the default values for all emails sent from this mailer
+  - mail() specifies headers like subject and recipients     
+    - there is also attachments(), which can be made #inline
+  - to send an email with the name as well as address, use email_address_with_name(address, name) in your to: 
+
+- Integration
+  - You can send an email to a new user by adding "UserMailer.with(user: @user).welcome_email" in the User.create action
+    - any key/value pair passed to #with become params for the mailer action
+  - can be added to queue using #deliver_later
+
+- Can send via your own Gmail with this in your "config/environments/$RAILS_ENV.rb"
+```
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            '<username>',
+  password:             '<password>',
+  authentication:       'plain',
+  enable_starttls_auto: true,
+  open_timeout:         5,
+  read_timeout:         5 }
+```
+
+- [Mailer testing guide](https://guides.rubyonrails.org/testing.html#testing-your-mailers)
+
+
+## Sun 27th
+### Odin Project - Ruby on Rails - [Project: Confirmation Emails](https://www.theodinproject.com/lessons/ruby-on-rails-sending-confirmation-emails)
+#### What I did
+-
+
+#### What I learned
+-
