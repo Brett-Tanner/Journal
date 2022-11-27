@@ -893,7 +893,25 @@ config.action_mailer.smtp_settings = {
 ## Sun 27th
 ### Odin Project - Ruby on Rails - [Project: Confirmation Emails](https://www.theodinproject.com/lessons/ruby-on-rails-sending-confirmation-emails)
 #### What I did
--
+- [x] Generate the mailer
+- [x] Install the letter-opener gem
+- [] Create the action to send the confirmation email (RailsGuide steps [here](http://guides.rubyonrails.org/action_mailer_basics.html))
+- [] Build HTML and plaintext views
+- [] Test by making a new Event on the site
+  - [] and from rails c
 
 #### What I learned
--
+- It's really hard to have a gf, a social life and be productive
+
+
+## Mon 28th
+### Odin Project - Ruby on Rails - [Project: Confirmation Emails](https://www.theodinproject.com/lessons/ruby-on-rails-sending-confirmation-emails)
+#### What I did
+- [] Generate the mailer
+- [] Install the letter-opener gem
+- [] Create the action to send the confirmation email (RailsGuide steps [here](http://guides.rubyonrails.org/action_mailer_basics.html))
+- [] Build HTML and plaintext views
+- [] Test by making a new Event on the site
+  - [] and from rails c
+
+#### What I learned
