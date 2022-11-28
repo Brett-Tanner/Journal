@@ -904,14 +904,96 @@ config.action_mailer.smtp_settings = {
 - It's really hard to have a gf, a social life and be productive
 
 
+
 ## Mon 28th
 ### Odin Project - Ruby on Rails - [Project: Confirmation Emails](https://www.theodinproject.com/lessons/ruby-on-rails-sending-confirmation-emails)
 #### What I did
-- [] Generate the mailer
-- [] Install the letter-opener gem
-- [] Create the action to send the confirmation email (RailsGuide steps [here](http://guides.rubyonrails.org/action_mailer_basics.html))
-- [] Build HTML and plaintext views
-- [] Test by making a new Event on the site
-  - [] and from rails c
+- [x] Create the action to send the confirmation email (RailsGuide steps [here](http://guides.rubyonrails.org/action_mailer_basics.html))
+- [x] Build HTML and plaintext views
+- [x] Test by making a new Event on the site
 
-#### What I learned
+### Odin Project - Ruby on Rails - [Advanced Topics](https://www.theodinproject.com/lessons/ruby-on-rails-advanced-topics)
+- Advanced Routing
+  - Turns out if you wanna link to the #show of a certain resource, you can just put the object itself rather than a _path helper in link_to
+
+  - Singular resources
+    - Unlike resources :posts for example, sometimes it makes sense for there to only be one of a resource
+    - You create it with "resource :dashboard" for example, both singular
+    - Only generates 6 routes since you don't need an index anymore, and doesn't include an id param because there's only one resource
+  
+  - Nested Resources
+    - Some resources make sense to have nested inside another resource, for example lessons could be nested in courses
+    - You need to include ids for both in the url
+    - Code for it in routes.rb looks like this
+    ```
+      # config/routes.rb
+    TestApp::Application.routes.draw do
+      resources :courses do
+        resources :lessons
+      end
+    end
+    ```
+    - You will be taken to the controller of the deepest nested resource, and it's that id which will simply be id in params
+    - You can choose to nest only certain routes and have others not nested
+      - Simple rule for deciding this is if you need the parent's id in your action you should probably nest
+
+  - Member and collection routes
+    - If you want to add a non-REST route to an individual member of your model (:id delineated) then use a member block inside the resources block
+      - and define the route itself with the HTTP verb and action like you would without resources
+    - If you want to add a non-REST route to the collection as a whole, same thing but with collection inside the resources block
+
+  - Redirects/Wildcard routes
+    - If you wanna have a simple URL that redirects to a more complex route, you can use redirect as follows
+    ```
+      # config/routes.rb
+    TestApp::Application.routes.draw do
+      get 'courses/:course_name' => redirect('/courses/%{course_name}/lessons'), :as => "course"
+    end
+    ```
+    - Using single quotes is important
+    - Capture params from the original url using %{}
+    - can use as: => "" to set the alias for use with helpers
+    - [There are lots of fun ways to make non-resourceful routes](https://guides.rubyonrails.org/routing.html#non-resourceful-routes)
+
+  - Namespacing
+    - You can group controllers by type, for example all the controllers that relate only to admin duties, using namespacing
+    - you do this by putting the resources declarations for those controllers inside a namespace :admin block
+      - if you want to still route the action to the admin controller but without prepending admin, use "scope module: admin" instead and specify only the actions you want namespaced
+      - to not route it to the admin controller but still have the prefix, instead use a "scope '/admin'" block
+    - has the effect of prepending admin to all the routes for those controllers, and routing them to Admin::OtherController
+
+  - Concerns
+    - Can be used to add a collection of routes to multiple different parents, for example you can use commentable as below within articles and posts
+    ```
+    concern :commentable do
+      resources :comments
+    end
+
+    concern :image_attachable do
+      resources :images, only: :index
+    end
+
+    ```
+
+- [Metaprogramming Rails](https://www.theodinproject.com/lessons/ruby-on-rails-advanced-topics#metaprogramming-rails)
+  - Seems a bit beyond anything I'll need for now, but basically lets you rewrite parts of Ruby/rails or do weird stuff like send variables to a method that doesn't exist
+  - For example, you can use it to [DRY](https://rails-bestpractices.com/posts/2010/07/24/dry-metaprogramming/) your code
+
+- Design Patterns
+  - Can be useful as a set of best practices, but also considered overly prescriptive by some
+  - SOLID is a common one
+    - Single Responsibility Principle: classes should only have a single responsibility
+    - Open/Closed Principle: Objects should be open to extension but closed to modification
+    - Liskov Substitution Principle (replacing an object with one of its sub-types shouldn’t break anything)
+    - Interface Segregation Principle (writing many client-specific interfaces is better than one behemoth general-use interface… think APIs)
+    - Dependency Inversion Principle (instead of high level constructs depending on lower level ones, make them rely on abstractions instead)
+  - [Gang of Four](http://www.blackwasp.co.uk/GofPatterns.aspx) are also common
+
+
+- I18n: Internationalization
+  - [Tutorial here](http://www.sitepoint.com/go-global-rails-i18n/) if it ever becomes relevant
+
+
+## Tues 29th
+### Odin Project - Ruby on Rails - [Websocket & Actioncable](https://www.theodinproject.com/lessons/ruby-on-rails-websockets-and-actioncable)
+- 
