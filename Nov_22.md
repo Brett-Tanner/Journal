@@ -995,5 +995,87 @@ config.action_mailer.smtp_settings = {
 
 
 ## Tues 29th
-### Odin Project - Ruby on Rails - [Websocket & Actioncable](https://www.theodinproject.com/lessons/ruby-on-rails-websockets-and-actioncable)
-- 
+### Odin Project - Ruby on Rails - [Websocket & Action Cable](https://www.theodinproject.com/lessons/ruby-on-rails-websockets-and-actioncable)
+Usually a client/server interaction consists of request, response, then the connection closing. Websockets allow you to keep that connection open so the client can be updated with relevant information, and Action Cable brings Websockets to Rails.
+- Action Cable creates a separate server within your app for Websocket
+- Connection is kept open so server can send info without it being specifically requested
+- Before Websockets we used
+  - polling: making requests at set intervals to check for new content, then immediately returning a blank response if nothing
+  - long polling: making requests for new content, which the server keeps open until there is new content to send. Once received, the client immediately makes a new request which is a again kept open until new content appears
+
+- Action Cable
+  - The client of an Action Cable connection is a "consumer", they have one connection which just deals with authentication/authorisation
+  - Through their connection they can subscribe to multiple channels, containing one logical piece of work
+  - They then become known as a subscriber, and the connection is a subscription
+  - Once subscribed, each channel can stream "broadcastings" to the subscriber, the content you want them to get in real time
+
+- Server-side Concerns
+  - Auth/Connection
+    - You put the logic for authenticating/authorising users in "app/channels/application_cable/connection.rb"
+    - Set how to auth with identified_by :variable_to_identify_by
+    - For example with Devise, though you can't access its methods directly (it's on a different server), you can through Warden's ENV
+    ```
+    def find_verified_user
+      if verified_user == env['warden'].user
+        verified_user
+      else
+        reject_unauthorized_connection
+      end
+    end
+    ```
+  - Channels
+    - Similar to what a controller does, but over Websockets
+    - "app/channels/application_cable/channel.rb" is the parent class they all inherit from, so put logic they all need in here
+  - Subscriptions
+    - Clients can subscribe to one or more channels
+    - You can broadcast updates to those channels, which the channels with forward to their subscribers
+
+- Client-side Concerns
+  - You need an instance of the connection on client-side too, boilerplate for this is in "app/javascript/channels"
+  - "app/javascript/channels/consumer.js" is imported to each channel, and used to create subscribers
+
+- Creating Channels
+  - use "rails generate channel", there're a lot of files that get modified
+  - will generate with subscribe (to set up the stream) and unsubscribe (for cleanup) methods
+
+- Client/Server Interactions
+  - Streams
+    - Can set up streams with stream_for or stream_from
+      - stream_from identifies the stream from a string, while stream_for identifies it from a model
+    - You can also pass params to generate a stream like so
+    ```
+    def subscribed
+      stream_from "room_#{params[:room]}"
+    end
+
+    def subscribed
+      room = Room.find(params[:id])
+      stream_for room
+    end
+    ```
+
+  - Broadcasting
+    - Once the Websocket server is set up, you just need to broadcast to it from wherever is appropriate, usually a controller
+    - If you used stream_for you can broadcast like "NameChannel.broadcast_to(object the channel was created from, data to be broadcast)"
+      - The data can be a list of key/value pairs, or anything that responds to #to_json since that's how it's sent
+    - However if you used a string with stream_from, you need to use "ActionCable.server.broadcast('message', @message)"
+
+  - Client Subscriptions
+    - In "app/javascript/channels/room_channel.js", consumer.subscriptions.create is called
+      - this is where you can pass any params you want to use as key/value pairs, e.g. "consumer.subscriptions.create({channel: 'RoomChannel', room: 1}"
+        - the first must always be channel: 'ChannelName'
+        - the params are useful for having different streams within the same channel, e.g. different languages in a programming channel
+      - the second argument to create is an object containing connect, disconnect and received(data) functions
+        - You'll usually modify received(data) to do something like appending the data to the DOM 
+
+  - Other details
+    - You commonly want to [rebroadcast](https://guides.rubyonrails.org/action_cable_overview.html#rebroadcasting-a-message) a message sent by one client to all clients, including the sender
+    - You need to be careful when sending dynamic parameters from the client or you might end up subscribing to the same stream multiple times, as detailed in this [Stack Overflow](https://guides.rubyonrails.org/action_cable_overview.html#rebroadcasting-a-message) post
+    - Action Cable needs Redis to run on a hosting service
+    - Connection only remains active while the HTTP request is unbroken, refreshing the page or navigating to a new one will break it and require re-establishment
+    - [Full-stack examples can be found here](https://guides.rubyonrails.org/action_cable_overview.html#full-stack-examples) 
+    - And [full walkthrough](https://github.com/TheOdinProject/curriculum/blob/main/ruby_on_rails/mailers_advanced_topics/actioncable_lesson.md)
+
+
+## Wed 30th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
