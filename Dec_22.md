@@ -137,7 +137,32 @@
 ## Fri 2nd
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
-- 
+- Generated User model
+  - Seed some parents, SMs and an Admin
+  - And REST controller
+  - And basic views
+- Generated School model
+  - Added User association
+- Generated Child model
+  - Added user association
+- Generated Event model
+  - Added School association
+
+#### What I learned
+- Different views for different roles is fairly easy to do in your controller, per [this SO answer](https://stackoverflow.com/questions/39970314/how-do-i-create-multiple-views-for-different-users-by-role)
+
+
+## Sat 3rd
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+
+- Generated Event model
+  - Added Child association through Registrations
+- Generated Event_day model
+  - 
+- Generated Emergency_contact model
+  - 
+- Set up controllers to render different views for different User roles
 
 
 #### What I learned
