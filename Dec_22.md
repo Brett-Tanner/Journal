@@ -159,11 +159,13 @@
 - Generated Event model
   - Added Child association through Registrations
 - Generated Event_day model
-  - 
+  - Added associations
+- Generated Registration model
+  - Added associations
 - Generated Emergency_contact model
-  - 
-- Set up controllers to render different views for different User roles
-
+  - Added child association
 
 #### What I learned
-- 
+- Decided I actually want to have registrations be on event_days, not events
+
+- Learned why it's important to not make dumb typos in migrations (registration_table_table) and not proofread them before running them
