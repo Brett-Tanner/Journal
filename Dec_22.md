@@ -169,3 +169,29 @@
 - Decided I actually want to have registrations be on event_days, not events
 
 - Learned why it's important to not make dumb typos in migrations (registration_table_table) and not proofread them before running them
+
+
+## Sun 4th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- Finalized the tricky associations
+- Changed the Devise after_login redirect to point at the current_user's show page
+- Create views for:
+  - Events (and the required partials)
+
+#### What I learned
+- You can change where Devise redirects after a successful login with
+```
+def after_sign_in_path_for(resource)
+  user_path(current_user)
+end
+```
+- You can have partials for models the don't have a controller, and you can call them with render through their relationship to another model
+
+## Mon 5th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- 
+
+#### What I learned
+- 
