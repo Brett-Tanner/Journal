@@ -171,7 +171,7 @@
 - Learned why it's important to not make dumb typos in migrations (registration_table_table) and not proofread them before running them
 
 
-## Sun 4th
+## Mon 5th
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
 - Finalized the tricky associations
@@ -188,10 +188,25 @@ end
 ```
 - You can have partials for models the don't have a controller, and you can call them with render through their relationship to another model
 
-## Mon 5th
+## Tues 6th
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
-- 
+- Finally set up editing registrations per child on the event page
+  - Then finished another epic journey to only show registrations for the actual event, rather than all a child's registrations
+- Added some basic logic for filtering views to the child list, event list and list of children on the event page
+- Applied basic styling to events/show
+- Styled the nav_bar
+
+#### What I learned
+- form_with a model gets angry if you're missing REST resources like index
+
+- when using fields_for, you can filter the model you use down with the second argument, like "child.registrations.where(event_day_id: event_days)"
+  - event_days was an array of the event_days for the current event, cos looking for the actual event was a hassle
+
+## Wed 7th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- Set it up so you can also change a kid's registration status on their own page
 
 #### What I learned
 - 
