@@ -207,6 +207,18 @@ end
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
 - Set it up so you can also change a kid's registration status on their own page
+- And on their parent's page
+- Filled in the missing parts to create a new event
+  - also put a mini-form at the top of the event#index page that lets you generate a new event form with the correct number of event days
+
+#### What I learned
+- 
+
+
+## Thurs 8th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- 
 
 #### What I learned
 - 
