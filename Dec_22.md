@@ -218,7 +218,24 @@ end
 ## Thurs 8th
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
-- 
+- Register newly created kids for all events at their school
+- Add admin forms for creating new 
+  - [x] kids
+  - [x] parents
+    - [x] with a stimulus controller to add kids
 
 #### What I learned
 - 
+
+## Fri 9th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- Add admin forms for creating new 
+  - [] school managers
+  - [] schools
+  - []  
+- Fix the count of kids attending for events/their days
+
+#### What I learned
+- If you want logged in users to create new users, you need to namespace the devise_for routes like "devise_for :users, path: 'u'", otherwise they interfere with your controller
+  - since they require the client to not be logged in to register/log in
