@@ -221,6 +221,7 @@ end
 - Register newly created kids for all events at their school
 - Add admin forms for creating new 
   - [x] kids
+  - [x] school managers
   - [x] parents
     - [x] with a stimulus controller to add kids
 
@@ -230,12 +231,54 @@ end
 ## Fri 9th
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
+- [x] Add a school#show view
 - Add admin forms for creating new 
-  - [] school managers
-  - [] schools
-  - []  
-- Fix the count of kids attending for events/their days
+  - [x] schools
+    - [x] create a school manager at the same time
+- [x] Fix the count of kids attending for events/their days
+- [x] Record a video explaining how to add fields to a model for Leroy
 
 #### What I learned
 - If you want logged in users to create new users, you need to namespace the devise_for routes like "devise_for :users, path: 'u'", otherwise they interfere with your controller
   - since they require the client to not be logged in to register/log in
+- There is a [better way](https://github.com/heartcombo/devise/wiki/How-To:-Require-authentication-for-all-pages) of requiring authentication for your whole site
+- You can override add to the methods that your associations give you by defining them in the model and using super to give you access to the result of the unaltered method e.g.
+```
+def events
+  super.distinct
+end
+```
+
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+
+#### What I did
+- Continued learning about/setting up testing from [here](#thurs-1st)
+
+#### What I learned
+- Testing
+  - use the -b option to provide a full backtrace for any errors
+  - ignore errors by using this rather than the standard assert
+  ```
+  assert_raises(NameError) do
+    some_undefined_variable
+  end
+  ```
+  - [Rails comes with these default assertions](https://guides.rubyonrails.org/testing.html#available-assertions)
+    - flunk(msg) is my favourite, it just fails the test under all circumstances
+    - [Rails also adds some of its own, more complex assertions](https://guides.rubyonrails.org/testing.html#rails-specific-assertions)
+    - Enable multi-core parallelization with this in test_helper.rb 
+    ```
+    class ActiveSupport::TestCase
+      parallelize(workers: 2)
+    end
+
+    ```
+
+
+## Sat 10th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [] 
+
+#### What I learned
+- 
