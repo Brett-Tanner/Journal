@@ -283,3 +283,21 @@ end
 #### What I learned
 - You don't need password_confirmation when you're creating Users in seeds/console/tests
 - Can use [ActiveText](https://guides.rubyonrails.org/action_text_overview.html) for text posts 
+
+
+## Sun 11th
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [x] Fixed a bug caused by not updating old Child records with the new Category field
+
+#### What I learned
+- If you're adding a new field to old tables/records, it seems including a default value in the migration will update all the old records without that value to have the default you set
+  - If you're setting a ore complex default that uses a conditional for example, better to use after_initialize though
+
+
+## Mon 12th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+#### What I did
+
+#### What I learned
+
