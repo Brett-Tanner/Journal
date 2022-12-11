@@ -276,9 +276,10 @@ end
 
 
 ## Sat 10th
-### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
 #### What I did
-- [] 
+- [x] Generated and tested User model
 
 #### What I learned
-- 
+- You don't need password_confirmation when you're creating Users in seeds/console/tests
+- Can use [ActiveText](https://guides.rubyonrails.org/action_text_overview.html) for text posts 
