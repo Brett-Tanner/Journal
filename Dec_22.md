@@ -298,6 +298,40 @@ end
 ## Mon 12th
 ### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
 #### What I did
+- [x] Switched to RSpec for testing
+- [x] Rewrote User tests for RSpec
+- [x] Generated Friendship model
+  - [x] Tested basic functionality
+  - [x] Added/tested associations to User
 
 #### What I learned
+- How to [set up Rspec with Rails](https://medium.com/@amliving/my-rails-rspec-set-up-6451269847f9)
+  - but remember it's factory_bot now, not factory_girl
+- Faker is not only the GOAT, but a very useful Ruby gem
 
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [x] Fixed a bug where children created by creating a new parent wouldn't be registered
+- [x] Fixed a typo which was submitting the SM's details as the school's details when creating a new school
+
+#### What I learned
+- You define before_save, before_action etc. and the methods they call/code they run on the model, not the controller
+  - I wanted after_create, not after_save in this case, as _save is triggered when the record is updated as well
+
+
+## Tues 13th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+#### What I did
+- []
+
+#### What I learned
+- 
+
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [] 
+
+#### What I learned
+- 
