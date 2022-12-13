@@ -323,15 +323,36 @@ end
 ## Tues 13th
 ### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
 #### What I did
-- []
+- [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
+  - [] Integration tests
+    - []
+  - [] Unit tests (model associations/controllers)
+    - [x] Users
+    - [x] Friendships
+    - [x] Notifications
+    - [] Posts
+    - [] Comments
+    - [] Likes
+
+- [x] Install Devise & generate Users resource
+  - [x] Redirect all to login page if not logged in
+  - [x] Create friend requests
+- [x] Create notifications
+- [] Create Posts resource
+  - [] Create Likes
+  - [] Create Comments resource
+  - [] Create Post partial that displays content, author, comments and likes
+- [] Make the Posts index a timeline of all current_user posts and those of their friends
+- [] Create User#show which displays their personal info, posts and a photo
+- [] User#index shows all Users and a button to send them a friend request
+- [] Use Omniauth so users can sign in with their real FB account
+- [] Set up a mailer with
+  - [] A welcome email
+  - [] Notification emails
+- [] Deploy
+  - [] Figure out how to send emails without SendGrid/Heroku
 
 #### What I learned
-- 
-
-
-### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
-#### What I did
-- [] 
-
-#### What I learned
-- 
+- Rails' route helpers are not available in RSpec by default, this can be problematic
+  - There is also a larger problem with seemingly not being able to use the route helpers in your model?? Might need to do it thru controller instead
+- Do I really need a separate notification model or can I just show the count of unread thingies on the nav bar?
