@@ -356,3 +356,85 @@ end
 - Rails' route helpers are not available in RSpec by default, this can be problematic
   - There is also a larger problem with seemingly not being able to use the route helpers in your model?? Might need to do it thru controller instead
 - Do I really need a separate notification model or can I just show the count of unread thingies on the nav bar?
+
+## Wed 14th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+#### What I did
+- [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
+  - [] Integration tests
+    - []
+  - [] Unit tests (models)
+    - [x] Users
+    - [x] Friendships
+    - [x] Notifications
+    - [x] Posts
+    - [] Comments
+    - [] Likes
+
+- [x] Create Posts resource
+  - [x] Update Posts test and existing tests to make use of Factory Bot
+- [] Create Likes
+- [] Create Comments resource
+- [] Create Post partial that displays content, author, comments and likes
+- [] Make the Posts index a timeline of all current_user posts and those of their friends
+- [] Create User#show which displays their personal info, posts and a photo
+- [] User#index shows all Users and a button to send them a friend request
+- [] Use Omniauth so users can sign in with their real FB account
+- [] Set up a mailer with
+  - [] A welcome email
+  - [] Notification emails
+- [] Deploy
+  - [] Figure out how to send emails without SendGrid/Heroku
+
+#### What I learned
+- Action Text doesn't need a content column, you just set it up as an association
+  - but you can still use validations like it was a column
+- Read about [Factory Bot](https://github.com/thoughtbot/factory_bot/blob/main/GETTING_STARTED.md)
+- Regex is annoying
+  - But I found a nice test site [specifically for Ruby](https://rubular.com/)
+  - And learned you can replace ^ with \A, $ with \z in Ruby to fix security issues
+
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [x] Changed the authentication requirement for all routes to be in the routes.rb file, not the application controller as recommended by the Devise wiki
+  - [x] Fixed the unnoticed naming collision between Registrations controller and Devise's
+
+#### What I learned
+- Naming a controller Registrations when you're using Devise is a problem cos it conflicts
+  - But you can namespace it to avoid that, and kinda makes sense to do that with registrations here anyway
+
+
+## Thurs 15th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+#### What I did
+- [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
+  - [] Integration tests
+    - []
+  - [] Unit tests (models)
+    - [] Comments
+    - [] Likes
+
+- [] Create Likes
+- [] Create Comments resource
+- [] Create Post partial that displays content, author, comments and likes
+- [] Make the Posts index a timeline of all current_user posts and those of their friends
+- [] Create User#show which displays their personal info, posts and a photo
+- [] User#index shows all Users and a button to send them a friend request
+- [] Use Omniauth so users can sign in with their real FB account
+- [] Set up a mailer with
+  - [] A welcome email
+  - [] Notification emails
+- [] Deploy
+  - [] Figure out how to send emails without SendGrid/Heroku
+
+#### What I learned
+- 
+
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [] 
+
+#### What I learned
+-
