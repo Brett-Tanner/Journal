@@ -411,14 +411,71 @@ end
 - [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
   - [] Integration tests
     - []
-  - [] Unit tests (models)
-    - [] Comments
-    - [] Likes
+  - [x] Unit tests (models)
+    - [x] Comments
+    - [x] Likes
 
-- [] Create Likes
-- [] Create Comments resource
+- [x] Create Likes
+- [x] Create Comments
+- [x] Make the Posts index a timeline of all current_user posts and those of their friends
 - [] Create Post partial that displays content, author, comments and likes
-- [] Make the Posts index a timeline of all current_user posts and those of their friends
+- [] Create User#show which displays their personal info, posts and a photo
+- [] User#index shows all Users and a button to send them a friend request
+- [] Use Omniauth so users can sign in with their real FB account
+- [] Set up a mailer with
+  - [] A welcome email
+  - [] Notification emails
+- [] Deploy
+  - [] Figure out how to send emails without SendGrid/Heroku
+
+#### What I learned
+- Factory Bot
+  - Can use aliases to allow you to reference an object using associations not named after it
+  - Can define transient variables in the factory which won't be set on the object under any circumstances but can be used for logic in creating it
+  - You can nest factories to do something like what I wanted with user/friend, you just create another factory inside the first one which has different values not defined in the parent factory
+    - Best practice is to start by defining a base factory with only the values required to create the object, then nest factories with any variations on that
+  - To put an association in your factory, just include the name of the association with no block passed
+    - or if you need to do it explicitly, "association :name" 
+    - when you do it that way, you can override attributes on the association object like "association :author, last_name: "Writely""
+    - remember you can manually specify the object associated by passing it to build/create like this "post = build(:post, author: eunji)"
+      - but I think I still prefer just doing this in the tests manually unless a good reason comes up not to
+      - same with [has_many associations](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#has_many-associations), feels much simpler to just use the Rails syntax in the tests for this
+  - To avoid duplicate pkeys, have the id of each object set to {|n| n} so it'll auto-increment with each object created
+
+- Polymorphic associations
+  - When you're validating them you have to do each of the _id and _type cols separately
+  - but in factory_bot you can just pass an object to likeable, for example
+
+- Security
+  - It would probably be best to split names into first, last and title so you don't need to allow spaces or dots, and have the title be a dropdown selection
+  - But that's an annoying amount of work with Faker for something that won't matter on this project, good to keep in mind for the event_db though
+    - Even though Japanese names maybe don't have spaces between 1st and last?
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [] 
+
+#### What I learned
+- i18n
+  - Pretty much perfect for localizing the project so I can read in English in dev/test and just have someone translate for production
+  - Stores the translations in something like a hash
+  - 2 best ways of deciding which language to use are using a domain like .jp/.en or just passing the language as a param to literally everything
+    - 2nd is not as horrendously messy as it sounds, there are ways to hide it in the final URL
+  - basically prepend t to anything in the view/controller to translate, or l to localize times
+  - uses Simple backend to store the translations in either Ruby or YAML
+    - got the impression Ruby is just better, mostly cos it'll throw an error rather than silently fail in some cases
+    - relatively ez to use a different backend, might look into if there's one for JP
+  - there are user translations for a lot of things/languages, look into that
+
+## Fri 16th
+### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
+#### What I did
+- [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
+  - [] Integration tests
+    - []
+  - [] Unit tests (controllers)
+
+- [] Create Post partial that displays content, author, comments and likes
 - [] Create User#show which displays their personal info, posts and a photo
 - [] User#index shows all Users and a button to send them a friend request
 - [] Use Omniauth so users can sign in with their real FB account
@@ -431,10 +488,9 @@ end
 #### What I learned
 - 
 
-
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
 - [] 
 
 #### What I learned
--
+- 
