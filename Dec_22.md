@@ -490,7 +490,14 @@ end
 
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
-- [] 
+- [x] Created area_manager role and added event_splash controller/view for the QR code link
+- [x] Moved the current app to first_prototype branch so I can start fresh for the prototype I'm presenting
 
 #### What I learned
-- 
+- You can create a fresh Rails app in an existing directory/repo with "rails new . --database=postgresql --skip-git"
+  - Maybe don't do that
+  - I had just soooooooooooo much fun with git
+    - eventually just checked out the last commit before I messed things up 
+    - then committed it to a branch 
+    - hard reset main with that branch
+    - then force pushed it
