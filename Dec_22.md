@@ -468,25 +468,6 @@ end
   - there are user translations for a lot of things/languages, look into that
 
 ## Fri 16th
-### Odin Project - Ruby on Rails - [Rails Final Project](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
-#### What I did
-- [] Set up tests and run them continuously using [Guard](https://github.com/guard/guard), like [this](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/static_pages#sec-guard)
-  - [] Integration tests
-    - []
-  - [] Unit tests (controllers)
-
-- [] Create Post partial that displays content, author, comments and likes
-- [] Create User#show which displays their personal info, posts and a photo
-- [] User#index shows all Users and a button to send them a friend request
-- [] Use Omniauth so users can sign in with their real FB account
-- [] Set up a mailer with
-  - [] A welcome email
-  - [] Notification emails
-- [] Deploy
-  - [] Figure out how to send emails without SendGrid/Heroku
-
-#### What I learned
-- 
 
 ### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
 #### What I did
@@ -501,3 +482,25 @@ end
     - then committed it to a branch 
     - hard reset main with that branch
     - then force pushed it
+
+
+## Sun 18th
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [x] Created a whole new repo so the old one is definitely safe from me messing stuff up with git
+- [x] Installed devise
+- [x] Required authentication for all pages, though remember you'll need to add each controller as you create it and think about namespacing
+
+#### What I learned
+- Don't code while tired, or you'll cd into the wrong folder and delete a perfectly good fresh repo due to an error in an entirely different one
+
+
+## Mon 19th
+
+### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+#### What I did
+- [x] 
+
+#### What I learned
+- 
