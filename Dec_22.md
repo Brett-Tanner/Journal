@@ -498,7 +498,26 @@ end
 
 ## Mon 19th
 
-### Work Project - [Event Database Prototype](https://github.com/Brett-Tanner/event_db_protoype)
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Installed Devise, Faker, RSpec and other associated testing stuff
+- [x] Configure I18n
+- [x] Add roles to User model
+- [x] Get Rubocop working
+- [x] Add and style the welcome page
+
+#### What I learned
+- enum role: [] is an AR method
+  - can use a hash (like user: 0) to explicitly map to values
+  - can check if a user is an admin etc. by just using user.admin?
+- Annoyingly can't get Rubocop to exclude any files
+  - figured it out, it's fine to put in the app directory (so relative paths work easier) but I didn't need to copy the inherit from the web example
+- Even when no using helpers in the CSS, just specify the image name in the url() function and it'll find it
+
+
+## Tues 20th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [x] 
 
