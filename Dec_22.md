@@ -519,7 +519,22 @@ end
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [x] 
+- [x] Style the header
+  - [x] Stop it from showing up on the welcome page
+- [x] Create/style/translate User#index
+- [x] Create/style/translate User#show
+
+#### What I learned
+- If you wanna overwrite a getter method on a model, self[:column] is the way to go
+  - self.column or just column.method creates an infinite loop for some reason????
+  - An alternative is to just use I18n, not sure if that's faster or not but it's simpler when I'm already using it
+
+
+## Wed 21st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Added a site icon
 
 #### What I learned
 - 
