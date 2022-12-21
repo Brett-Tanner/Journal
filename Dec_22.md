@@ -534,7 +534,30 @@ end
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
+- [x] Adjusted I18n .yml files to lazy load
 - [x] Added a site icon
+- [x] Created a basic Area model and tests
+  - [] Test associations to existing models
+  - [] Filled out the basic views/controller actions
+- [x] Created a basic School model and tests
+  - [] Test associations to existing models
+  - [] Filled out the basic views/controller actions
+
+#### What I learned
+- Remembered you can load translations by convention in views and controllers
+- Don't create an infinite loop with factories, be careful about what requires what
+
+
+## Thurs 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Created a basic Area model and tests
+  - [] Test associations to existing models
+  - [] Filled out the basic views/controller actions
+- [x] Created a basic School model and tests
+  - [] Test associations to existing models
+  - [] Filled out the basic views/controller actions
 
 #### What I learned
 - 
