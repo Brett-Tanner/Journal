@@ -556,8 +556,23 @@ end
   - [] Test associations to existing models
   - [] Filled out the basic views/controller actions
 - [x] Created a basic School model and tests
-  - [] Test associations to existing models
+  - [x] Test associations to existing models
   - [] Filled out the basic views/controller actions
 
 #### What I learned
-- 
+- build_list and create_list are very helpful Factory Bot methods for creating an array of Objects/un-instantiated objects
+
+
+## Fri 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Created a basic Area model and tests
+  - [] Test associations to existing models
+  - [] Filled out the basic views/controller actions
+- [x] Created a basic School model and tests
+  - [x] Test associations to existing models
+  - [] Filled out the basic views/controller actions
+
+#### What I learned
+-
