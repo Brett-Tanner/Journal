@@ -568,11 +568,33 @@ end
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [x] Created a basic Area model and tests
-  - [] Test associations to existing models
-  - [] Filled out the basic views/controller actions
-- [x] Created a basic School model and tests
   - [x] Test associations to existing models
-  - [] Filled out the basic views/controller actions
+- [x] Figured out how to change the area/school an AM/SM is associated with
+- [x] Created a basic Child model and tests
+  - [] Test associations to existing models
 
 #### What I learned
--
+- There's a [bug](https://github.com/rails/rails/issues/43096) with on has_one associations not being updated when the foreign key changes
+  - So we're changing AM/SMs by updating them in place, should be fine since there's not personal info in the accounts, just a set of permissions basically
+
+
+## Mon 26th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Created a basic Child model and tests
+  - [x] Test associations to existing models
+  - [] Test Associations of existing models (User/School/Area) to child
+
+#### What I learned
+- 
+
+## Tues 27th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Created a basic Child model and tests
+  - [] Test Associations of existing models (User/School/Area) to child
+
+#### What I learned
+- 
