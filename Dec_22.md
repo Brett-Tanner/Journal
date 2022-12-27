@@ -594,7 +594,21 @@ end
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [x] Created a basic Child model and tests
-  - [] Test Associations of existing models (User/School/Area) to child
+  - [x] Test Associations of existing models (User/School/Area) to Child
+- [x] Created a basic Event model and tests
+  - [x] Test associations to existing models
+  - [x] Test Associations of existing models (User/School/Area/Child) to Event
+
+#### What I learned
+- Use match_array() to match an array to an AR list/relation
+- Use Time.zone.today rather than Date.today as it localizes I assume
+
+
+## Wed 28th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] 
 
 #### What I learned
 - 
