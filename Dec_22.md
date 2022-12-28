@@ -608,7 +608,15 @@ end
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] 
+- [x] Decided to switch from using EventDays to time slots
+  - This lets me more easily change the number of discrete slots a child can register for each day, since there can be at least 4 for stuff like the Christmas party
+  - Registrations are now just a boolean, a price inherited from their parent time slot and the foreign keys for time slot and registered child
+  - Each registration has many options, depending on the time slot its for
+    - **Will need to have some way of adding possible options to a time slot so the system knows which ones to offer**
+- [x] Created a basic TimeSlot model and tests
+  - [x] Test associations to existing models
+  - [x] Test Associations of existing models (User/School/Area/Child/Event) to TimeSlot
+    - But no child/user yet as no registrations
 
 #### What I learned
 - 
