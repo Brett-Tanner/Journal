@@ -617,6 +617,3 @@ end
   - [x] Test associations to existing models
   - [x] Test Associations of existing models (User/School/Area/Child/Event) to TimeSlot
     - But no child/user yet as no registrations
-
-#### What I learned
-- 
