@@ -42,7 +42,7 @@
 - [] Test all option relationships with the new associations
     - [x] Associations from Option
     - [x] Associations with TimeSlot
-    - [x] Associations with Registration
+    - [] Associations with Registration
     - [] Associations with Event
     - [] Associations with School
     - [] Associations with Child
@@ -55,3 +55,34 @@
     - Yeah we're going for an additional has_many :through model
     - Nope, needed less complexity, not more
 - To be able tor register for options and show users what options they've chosen for a given time slot each option must be linked to a single time slot, not a collection of them
+
+
+## Jan 6th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Test all option relationships with the new associations
+    - [x] Associations with Registration
+    - [x] Associations with Event
+    - [x] Associations with School
+    - [x] Associations with Child
+    - [x] Associations with Area
+
+#### What I learned
+- Joins are very useful and I should really consider using them more in scopes/generally
+
+
+## Jan 7th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Figure out any extra fields I need from my call with Leroy/the resources he sent
+- [] Add said fields
+- [] Create the User#show page
+    - [] For customer
+    - [] For SM
+    - [] For AM
+    - [] For Admin
+
+#### What I learned
+- 
