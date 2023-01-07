@@ -76,8 +76,16 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
+- [x] Let children be created without parents so we can actually migrate data from the SS
 - [] Figure out any extra fields I need from my call with Leroy/the resources he sent
 - [] Add said fields
+    - [x] Test new fields for Child
+    - [] Test new scopes for Child
+    - [x] Test new fields for Parent
+    - [x] Update seed for both of them
+- [] Add the backup models for User/Child
+- [] Add Day and the through table RegularDay for children
+- [] Add Adjustments for Registrations
 - [] Create the User#show page
     - [] For customer
     - [] For SM
@@ -85,4 +93,26 @@
     - [] For Admin
 
 #### What I learned
-- 
+- First and family names need separate fields for clarity
+
+
+## Jan 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Figure out any extra fields I need from my call with Leroy/the resources he sent
+- [] Add said fields
+    - [] Test new scopes for Child
+    - [] Test new fields for 
+    - [] Update seed for 
+- [] Add the backup models for User/Child
+- [] Add Day and the through table RegularDay for children
+- [] Add Adjustments for Registrations
+- [] Create the User#show page
+    - [] For customer
+    - [] For SM
+    - [] For AM
+    - [] For Admin
+
+#### What I learned
+-
