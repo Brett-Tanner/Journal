@@ -100,11 +100,13 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Figure out any extra fields I need from my call with Leroy/the resources he sent
-- [] Add said fields
-    - [] Test new scopes for Child
-    - [] Test new fields for 
-    - [] Update seed for 
+- [x] Figure out any extra fields I need from my call with Leroy/the resources he sent
+- [x] Add said fields
+    - [x] Test new scopes for Child
+    - [x] Test new fields for Event
+    - [x] Test new fields for User    
+    - [x] Test new fields for TimeSlot    
+    - [x] Update seed for Child, TimeSlot & Event
 - [] Add the backup models for User/Child
 - [] Add Day and the through table RegularDay for children
 - [] Add Adjustments for Registrations
@@ -115,4 +117,6 @@
     - [] For Admin
 
 #### What I learned
--
+- We have coupons, which will need a variety of extra info probably
+    - e.g. adjustments will need to know what coupon was used for them if any
+    - Coupons will need to know if they can be combined, and a specific target if they have one
