@@ -120,3 +120,42 @@
 - We have coupons, which will need a variety of extra info probably
     - e.g. adjustments will need to know what coupon was used for them if any
     - Coupons will need to know if they can be combined, and a specific target if they have one
+
+
+## Jan 10th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Add PaperTrail for User/Child, test its functionality
+- [x] Add RegularSchedule for Child
+- [x] Remove username from User as it's not necessary anymore
+- [x] Add booleans to registrations to say if they've been confirmed (which means the confirmation email has been sent) and paid. Also add billing date.
+- [x] Add Adjustment for Registration
+- [x] Add numericality validations to all the stuff that should already have them
+- [] Add Coupon
+- [] Update seeds.rb with today's changes
+- [] Create the User#show page
+    - [] For customer
+    - [] For SM
+    - [] For AM
+    - [] For Admin
+
+#### What I learned
+- If you wanna access a value on an associated model for validations, you can create a private method that returns that value
+    - Cleaner way is to create some kind of validator class with the method comparing the two model values and include that, but a lot of effort for one validation
+
+
+## Jan 11th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Add Coupon
+- [] Update seeds.rb with today's changes
+- [] Create the User#show page
+    - [] For customer
+    - [] For SM
+    - [] For AM
+    - [] For Admin
+
+#### What I learned
+- 
