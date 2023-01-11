@@ -149,13 +149,43 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Add Coupon
-- [] Update seeds.rb with today's changes
+- [x] Add Coupon
+- [x] Update seeds.rb with recent changes
+    - PaperTrail doesn't need to be seeded
+    - Regular Schedule
+    - Adjustments
+    - Coupons
+- [x] Implement User filtering for the relevant parts of User#index
+- [x] Figure out how to get the redirect to error pages working
 - [] Create the User#show page
-    - [] For customer
-    - [] For SM
-    - [] For AM
-    - [] For Admin
+
+#### What I learned
+- Use #create! for the seeds file or a lot of stuff fails silently
+    - Also a lot of stuff was failing silently lol
+- Just generate a controller if you need to direct to pages, it's a lot easier
+
+- AR query optimisation
+    - The optimisation I'm looking for to avoid making a million AR queries is #includes(:association), which loads the associated records together with the parents
+    - Also use #select and #pluck to only get the fields you need
+    - Use #size rather than #count to avoid querying the db again when you've already loaded the relation you wanna count
+
+
+## Jan 12th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Add Coupon
+- [x] Update seeds.rb with recent changes
+    - PaperTrail doesn't need to be seeded
+    - Regular Schedule
+    - Adjustments
+    - Coupons
+- [x] Implement User filtering for the relevant parts of User#index
+- [x] Figure out how to get the redirect to error pages working
+- [] Create the User#show page
+    - [] Upcoming events (at the user's school, plus any their kid is attending at other schools)
+    - [] Registered time slots and their options
+    - [] Managed schools/areas if manager
 
 #### What I learned
 - 
