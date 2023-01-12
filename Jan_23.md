@@ -174,18 +174,23 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [x] Add Coupon
-- [x] Update seeds.rb with recent changes
-    - PaperTrail doesn't need to be seeded
-    - Regular Schedule
-    - Adjustments
-    - Coupons
-- [x] Implement User filtering for the relevant parts of User#index
-- [x] Figure out how to get the redirect to error pages working
-- [] Create the User#show page
-    - [] Upcoming events (at the user's school, plus any their kid is attending at other schools)
-    - [] Registered time slots and their options
-    - [] Managed schools/areas if manager
+- [x] Set home page to User#show
+- [x] Allow users/children controllers to accept nested attributes for children/registrations respectively
+- [x] Create the User#show page
+    - [x] Upcoming events (at the user's school, plus any their kid is attending at other schools)
+    - [x] Registered time slots and their options
+    - [x] Managed schools/areas if manager
+- [x] Modify the sign up form so it's actually possible to sign up
+
+#### What I learned
+- AR query optimisation is hard and changes whenever the stuff you need to display does. I'm leaving that for after the prototype gets demoed
+
+
+## Jan 13th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Create Event#show 
 
 #### What I learned
 - 
