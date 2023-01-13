@@ -190,7 +190,47 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Create Event#show 
+- [x] Create Event#show
+    - [x] Add options to the TimeSlot partial
+    - [x] Update the methods on Event to provide the children I actually need to find
+    - [] Start thinking with turboframes
+- [] Create Child partial
+- [] Create Child#index
+- [] Create Child#show
+- [] Allow parents to add new/existing children on their profile
+
+- [] Create the different versions of views for staff
+    - Generally more optimised for long lists of kids/events etc., like a table or spreadsheet
+    - Plus able to edit all the extra fields
+- [] Make the 'children registered' counter on the event partial a link to the list of registered children
+    - As Child#index but the event_id is passed as a param
+
+#### What I learned
+- Maybe have each slot/option registration "form" inside a turboframe so you're not jumping back to the top of the page when you hit it
+    - Need to find out if turboframes render the frame corresponding to the controller the link goes to or where the controller redirects to after the action
+    - Currently the links are going to Registration#create and #destroy respectively, so should I put the frames in them or can I have them redirect to a different partial with the frame in it?
+        - Don't really want the frames to be on the full pages for those as staff need them, though could always make them hidden with CSS I guess??
+        - Yes, it looks for the turbo_frame in the place the controller redirects it to
+        - Having some issues with querySelector though? The frame appears after registering but isn't filled with any content
+- Did not tick a lot of boxes today but I did a lot of thinking about how to set stuff up
+
+
+## Jan 14th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Create Event#show
+    - [] Start thinking with turboframes
+- [] Create Child partial
+- [] Create Child#index
+- [] Create Child#show
+- [] Allow parents to add new/existing children on their profile
+
+- [] Create the different versions of views for staff
+    - Generally more optimised for long lists of kids/events etc., like a table or spreadsheet
+    - Plus able to edit all the extra fields
+- [] Make the 'children registered' counter on the event partial a link to the list of registered children
+    - As Child#index but the event_id is passed as a param
 
 #### What I learned
 - 
