@@ -215,15 +215,16 @@
 - Did not tick a lot of boxes today but I did a lot of thinking about how to set stuff up
 
 
-## Jan 14th
+## Jan 15th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [x] Create Event#show
-    - [] Start thinking with turboframes
-- [] Create Child partial
-- [] Create Child#index
-- [] Create Child#show
+    - [x] Start thinking with turboframes
+    - [x] Add all the necessary info to the registration partial
+    - [] Adjust Event#show and User#show to accomodate these new fields (more of a spreadsheet layout but small)
+        - [] Also add stuff like previous events, recent registrations etc.
+    - [] Limit the number of records displayed on User/Event#show and add buttons to the full list (#index) for User/Event
 - [] Allow parents to add new/existing children on their profile
 
 - [] Create the different versions of views for staff
