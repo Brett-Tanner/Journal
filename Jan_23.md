@@ -233,5 +233,37 @@
 - [] Make the 'children registered' counter on the event partial a link to the list of registered children
     - As Child#index but the event_id is passed as a param
 
+
+
+## Jan 16th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Create Event#show
+    - [x] Adjust Event#show and User#show to accommodate these new fields (more of a spreadsheet layout but small)
+        - [x] Adjust events/time slots to actually show what people might want to see
+        - [x] Also add turboframes to _option so it updates in place
+        - [x] Add labels for registrations in the time slots
+        - [] Fix adjusted cost being the value for cost as per message I sent
+    - [x] Add buttons to the full list (#index) of attending students for _event/_time_slot
+    - [] Separate _registration into _registration and _unregistered
+- [] Allow parents to add new/existing children on their profile
+
 #### What I learned
-- 
+- The turbo frame goes **inside** the conditional, or you spawn two with identical ids and weird stuff happens
+- When passing variables to a rendered partial sometimes you need to use a locals hash, sometimes just an implied hash???
+    - Maybe locals in controller and implied in the views?
+
+
+## Jan 17th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Create Event#show
+    - [x] Adjust Event#show and User#show to accommodate these new fields (more of a spreadsheet layout but small)
+        - [] Fix adjusted cost being the value for cost as per message I sent
+    - [] Separate _registration into _registration and _unregistered
+- [] Allow parents to add new/existing children on their profile
+
+#### What I learned
+-
