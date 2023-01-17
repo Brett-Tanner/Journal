@@ -261,9 +261,22 @@
 #### What I did
 - [x] Create Event#show
     - [x] Adjust Event#show and User#show to accommodate these new fields (more of a spreadsheet layout but small)
-        - [] Fix adjusted cost being the value for cost as per message I sent
-    - [] Separate _registration into _registration and _unregistered
+        - [x] Fix adjusted cost being the value for cost as per message I sent
+    - [x] Separate _registration into _registration and _unregistered
+    - [x] Clean up styling for registrations and add those see all buttons I keep forgetting
+- [x] Add a title to Registrations#index
+- [x] Get flash messages and the attending count updating with turboframes as well
 - [] Allow parents to add new/existing children on their profile
 
 #### What I learned
--
+- I shouldn't hate on JS quite so much, especially with access to Stimulus. Both CSS and JS have things they're good at
+
+
+## Jan 18th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Allow parents to add new/existing children on their profile
+
+#### What I learned
+- 
