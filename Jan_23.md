@@ -276,7 +276,41 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Allow parents to add new/existing children on their profile
+- [x] Clean up Registration Controller using turbostream templates
+- [] Allow parents/staff to add new/existing children on the parent's profile
+    - [] Also let staff remove the children
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+
+- Bugfixes/Requested Features
+    - [x] User#index limited to 12 users
+    - [x] Admin can delete self even though only one exists
+    - [x] Stop customers escaping
+    - [x] Scaffold School#index
+    - [x] Scaffold Child#index
+    - [x] Scaffold School#index
+
+#### What I learned
+- Turbo stream templates let you update all/some of the turboframes on a page as necessary
+    - Just respond_to turbo_stream in the controller, and have an action.turbo_stream.erb file in your views with the stuff you wanna update
+- Unless you're submitting a form, you'll need to specify format: :turbo_stream on the link to handle it as a turbo stream rather than html
+
+
+## Jan 19th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Allow parents/staff to add new/existing children on the parent's profile
+    - [] Also let staff remove the children
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+
+- Bugfixes/Requested Features
+    - []
 
 #### What I learned
 - 
