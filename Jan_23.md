@@ -303,7 +303,36 @@
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Allow parents/staff to add new/existing children on the parent's profile
-    - [] Also let staff remove the children
+    - [x] Figure out why the hell it's downloading the response rather than rendering it in the frames
+    - [] Also let staff remove the children so they can be added to the correct parent
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+
+- Bugfixes/Requested Features
+    - []
+
+#### What I learned
+- Now that I moved the parent destroying children from dependent into a before_destroy, I can remove children from a parent using parent.children.delete(child)
+    - And then add them to the correct parent
+- Got nothing done during work cos of a long meeting with Leroy and dumb setsumeikai stuff
+    - From the meeting, to prep for the demo I need to:
+        - Fix the add kid form -__-
+        - Change the registration index to show the order the kids registered in (just each with index and print the index), kid's name and the time slots they're attending (options below?? maybe a really minified timeslot partial somehow?)
+        - Update my seeds file to manually set values that actually make sense
+- It's best to use forms for submissions to register/add stuff, because a: that's how I know to do it and b: they use POST automatically adn c: easier to submit the params
+    - I think the problem causing the random download was that my original request was a GET? So it thought I wanted a full page in return and downloaded that??? Will remain one of life's mysteries but it's fixed
+
+
+
+## Jan 20th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Allow parents/staff to add new/existing children on the parent's profile
+    - [] Update the relevant bits of the page with the new child
+    - [] Also let staff remove the children so they can be added to the correct parent
 - [] Allow staff to create new events
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
