@@ -330,16 +330,67 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Allow parents/staff to add new/existing children on the parent's profile
-    - [] Update the relevant bits of the page with the new child
-    - [] Also let staff remove the children so they can be added to the correct parent
+- [x] Allow parents/staff to add new/existing children on the parent's profile
+    - [x] Update the relevant bits of the page with the new child
+- [x] Also let admins remove the children so they can be added to the correct parent
+
+- [] Demo stuff
+    - [x] Update seeds to stuff that actually makes sense rather than random values
+    - [] Event registration index
+        - [x] First 3 columns are an index and their two names
+        - [] Remaining columns are all the time slots for that event, plus an indication of whether they're coming in the morning or afternoon
+    - [] Decide what pages we're gonna show and make sure they look clean
+        - [] User#show should list all the time slots, either vertically or horizontally scrolling
+
+
+
+## Jan 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [x] Update seeds to stuff that actually makes sense rather than random values
+    - [x] Event registration index
+        - [x] Remaining columns are all the time slots for that event, plus an indication of whether they're coming in the morning or afternoon
+        - [x] Split kids on event index into attending/not attending
+        - [x] Currently need to refresh to move kids from/to attending/possible. Fix this with frames
+    - [x] Decide what pages we're gonna show and make sure they look clean
+        - [x] User#show should list 5 time slots, horizontally scrolling
+        - [x] Event#show should list all the event's time slots, also horizontally scrolling
+    - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
+
 - [] Allow staff to create new events
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
     - [] Fade/slide them in from left, fade/slide out to top
 
 - Bugfixes/Requested Features
-    - []
+    - [x] Some buttons aren't updating when clicked on Event children index
+    - [x] Can register multiple times if button not updated
+    - [x] Need to update the PM option button too when a slot registration is deleted
+
+#### What I learned
+- Lots of initial reading on optimisation, combining queries as expected but also caching could be a really big help
+    - [Lots of good resources here](https://blog.appsignal.com/2020/01/22/rails-is-fast-optimize-your-view-performance.html)
+    - [Rails has built in caching](https://guides.rubyonrails.org/caching_with_rails.html) and there are also other options
+    - [Kaminari](https://github.com/kaminari/kaminari) looks like a good option for pagination
+
+
+
+## Jan 24th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
+
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+
+- Bugfixes/Requested Features
+    - [] 
 
 #### What I learned
 - 
