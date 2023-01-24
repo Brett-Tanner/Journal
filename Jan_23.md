@@ -382,6 +382,33 @@
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Demo stuff
+    - [x] Style login and sign up pages
+        - [x] Plus add some color to the whole app
+        - [x] And do a styling pass on the pages linked to in the nav bar
+    - [] Add the edit/user add child form cos they might want to see that rather than just claiming a kid
+    - [] Add Child#timeslot_index
+    - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
+
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+
+- Bugfixes/Requested Features
+    - [x] Labels in _registration partial did not have unique ids
+    - [x] _child needs to include hat and allergies
+
+#### What I learned
+- You can style alternating rows in a table using :nth-child and odd/even
+
+
+## Jan 25th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [] Add the edit/user add child form cos they might want to see that rather than just claiming a kid
+    - [] Add Child#timeslot_index
     - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
 
 - [] Allow staff to create new events
