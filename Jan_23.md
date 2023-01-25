@@ -407,17 +407,54 @@
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Demo stuff
-    - [] Add the edit/user add child form cos they might want to see that rather than just claiming a kid
+    - [x] Add the edit/user add child form cos they might want to see that rather than just claiming a kid
+        - [x] Style it for the partial/in place editing
+        - [x] Update the user index to match other indexes, with edit links
     - [] Add Child#timeslot_index
+        - [] Needs to show options
+        - [] Arrival time
+        - [] Maybe group by kindy/elementary?
     - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
 
 - [] Allow staff to create new events
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
     - [] Fade/slide them in from left, fade/slide out to top
+- [] Add notifications
+- [] Add a way of calculating the cost for an event, probably requires implementing a Course model
+
+- Bugfixes/Requested Features
+    - [x] Create Event list for staff
+    - [x] Stop customers editing registration after payment
+    - [x] Allow users to be edited on their profile 
+
+
+#### What I learned
+- 
+
+
+
+## Jan 26th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [] Add Child#timeslot_index
+        - [] Needs to show options
+        - [] Arrival time
+        - [] Maybe group by kindy/elementary?
+    - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
+
+- [] Allow staff to create new events
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+- [] Add notifications
+- [] Add a way of calculating the cost for an event, probably requires implementing a Course model
 
 - Bugfixes/Requested Features
     - [] 
+
 
 #### What I learned
 - 
