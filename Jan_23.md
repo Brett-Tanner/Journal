@@ -429,20 +429,15 @@
     - [x] Allow users to be edited on their profile 
 
 
-#### What I learned
-- 
-
-
-
 ## Jan 26th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Demo stuff
-    - [] Add Child#timeslot_index
-        - [] Needs to show options
-        - [] Arrival time
-        - [] Maybe group by kindy/elementary?
+    - [x] Add Child#timeslot_index
+        - [x] Needs to show options
+        - [x] Arrival time
+        - [x] List number of kindy/elementary attending
     - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
 
 - [] Allow staff to create new events
@@ -453,7 +448,7 @@
 - [] Add a way of calculating the cost for an event, probably requires implementing a Course model
 
 - Bugfixes/Requested Features
-    - [] 
+    - [x] Group Registrations#index by time slot and order by start time
 
 
 #### What I learned
