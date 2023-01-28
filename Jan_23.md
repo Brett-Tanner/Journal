@@ -460,7 +460,6 @@
     - [x] Implement Event creation, editing and associated time slot creation
     - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
 
-- [] Allow staff to create new events
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
     - [] Fade/slide them in from left, fade/slide out to top
@@ -482,8 +481,9 @@
 #### What I did
 - [] Demo stuff
     - [] Focus on optimizing the pages we're gonna show, event children index is especially slow cos of partials rather than AR queries
+        - [x] Rather than having turboframes for each individual button, just use the event_child/time slot turboframe they're contained in
 
-- [] Allow staff to create new events
+- [x] Use #constantize for @source variable rather than case statements
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
     - [] Fade/slide them in from left, fade/slide out to top
@@ -491,7 +491,34 @@
 - [] Add a way of calculating the cost for an event, probably requires implementing a Course model
 
 - Bugfixes/Requested Features
-    - [] 
+    - [x] Can't delete time slots through the event form
+        - [x] Blank time slots aren't saved
+    - [x] Didn't actually write a validation for max_attendees 
+
+
+#### What I learned
+- Having a turboframe around each button was costing me about 90ms on initial page load for the event_children index, though removing them did increase the response time for updating a registration 
+    - As it now has to refresh all registrations for that user
+    - Probably possible to improve this with better queries once I get to optimising that
+    - But even if not, it's a worthwhile tradeoff since initial page load will always be the bottleneck
+
+
+
+## Jan 29th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [] Leave optimisation for when stuff is more finalised and work on a script/talking points for the presentation
+        - Maybe some slides to show the current system alongside mine
+
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+- [] Add notifications
+- [] Add a way of calculating the cost for an event, probably requires implementing a Course model
+
+- Bugfixes/Requested Features
 
 
 #### What I learned
