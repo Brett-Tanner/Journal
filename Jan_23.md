@@ -508,9 +508,19 @@
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [] Demo stuff
-    - [] Leave optimisation for when stuff is more finalised and work on a script/talking points for the presentation
-        - Maybe some slides to show the current system alongside mine
+- [x] Demo stuff
+    - [x] Work on a script/talking points for the presentation
+    - [x] Fix some styling/logic errors in the pages we're gonna show
+
+
+
+## Jan 29th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [x] Demo stuff
+    - [x] Work on a script/talking points for the presentation
+    - [x] Fix some styling/logic errors in the pages we're gonna show
 
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
