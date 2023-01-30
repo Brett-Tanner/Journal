@@ -514,13 +514,28 @@
 
 
 
-## Jan 29th
+## Jan 30th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-- [x] Demo stuff
-    - [x] Work on a script/talking points for the presentation
-    - [x] Fix some styling/logic errors in the pages we're gonna show
+- [] Demo stuff
+    - [] Move Attend PM from being an option to being its own time slot for each spring school event day
+    - [] Create Child#show 
+    - [] Add images to the time slots
+    - [] Style the result box when finding a child by SSID and bday
+        - [] Move add child functionality into the add children box on User#show, change edit button back to just edit but keep ability to add child
+        - [] Only show the kid's name and SSID here to reduce potential fears of info being exposed
+    - [] Change all date fields to be YY/MM/DD (maybe will be done automatically by I18n??)
+     - [] Allergies need to be two columns, boolean for has one or not and info about the allergy
+    - [] Event_children/time_slot_children rework
+        - [] Don't need not attending list
+        - [] Should just be info, click on child name to change stuff
+        - [] Add a cost placeholder (maybe just num of slots * 8000 for now)
+            - [] Button to cost breakdown which pops up an overlay
+        - [] Regular days, photo status, allergy or not (if allergy, click on it for more info)
+        - [] On event_children, each slot needs to show if they're attending, their arrival/departure times and what meals they're having
+        - [] For time slot children, should just look exactly like the printable one
+    - [] Photo service is an option for the whole event, probably need to make options polymorphic
 
 - [] Make flash notices pretty
     - [] Make them little notification bubbles floating above the nav bar
@@ -529,6 +544,47 @@
 - [] Add a way of calculating the cost for an event, probably requires implementing a Course model
 
 - Bugfixes/Requested Features
+    - [x] SSID uniqueness validation was preventing multiple children having 'nil' as their SSID
+
+
+
+#### What I learned
+- Meetings. So many meetings. But at least I'm getting a clearer picture of requirements?
+
+
+
+## Jan 31st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+- [] Demo stuff
+    - [] Move Attend PM from being an option to being its own time slot for each spring school event day
+    - [] Create Child#show 
+    - [] Add images to the time slots
+    - [] Style the result box when finding a child by SSID and bday
+        - [] Move add child functionality into the add children box on User#show, change edit button back to just edit but keep ability to add child
+        - [] Only show the kid's name and SSID here to reduce potential fears of info being exposed
+    - [] Change all date fields to be YY/MM/DD (maybe will be done automatically by I18n??)
+     - [] Allergies need to be two columns, boolean for has one or not and info about the allergy
+    - [] Event_children/time_slot_children rework
+        - [] Don't need not attending list
+        - [] Should just be info, click on child name to change stuff
+        - [] Add a cost placeholder (maybe just num of slots * 8000 for now)
+            - [] Button to cost breakdown which pops up an overlay
+        - [] Regular days, photo status, allergy or not (if allergy, click on it for more info)
+        - [] On event_children, each slot needs to show if they're attending, their arrival/departure times and what meals they're having
+        - [] For time slot children, should just look exactly like the printable one
+    - [] Photo service is an option for the whole event, probably need to make options polymorphic
+
+- [] Make flash notices pretty
+    - [] Make them little notification bubbles floating above the nav bar
+    - [] Fade/slide them in from left, fade/slide out to top
+- [] Add notifications
+- [] Add a way of calculating the cost for an event, probably requires implementing a Course model
+
+- Bugfixes/Requested Features
+    - [] 
+
 
 
 #### What I learned
