@@ -519,7 +519,7 @@
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Demo stuff
-    - [] Move Attend PM from being an option to being its own time slot for each spring school event day
+    - [x] Move Attend PM from being an option to being its own time slot for each spring school event day
     - [] Create Child#show 
     - [] Add images to the time slots
     - [] Style the result box when finding a child by SSID and bday
@@ -558,8 +558,9 @@
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 - [] Demo stuff
-    - [] Move Attend PM from being an option to being its own time slot for each spring school event day
-    - [] Create Child#show 
+    - [x] Create Child#show
+        - If SMs are making changes on child/parent pages they need to be able to see all the available slots
+        - Parents still only need to see upcoming ones though, they can go to the event page if they wanna sign up to new stuff
     - [] Add images to the time slots
     - [] Style the result box when finding a child by SSID and bday
         - [] Move add child functionality into the add children box on User#show, change edit button back to just edit but keep ability to add child
