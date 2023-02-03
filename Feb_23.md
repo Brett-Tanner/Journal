@@ -73,14 +73,14 @@
 DEMO DAY!
 
 
+#### What I learned
+- I don't need to change the date format in the forms, user's browser does that for them
 
 
 ## Feb 4th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
-
-
 
 - [] Change all date fields to be YY/MM/DD (maybe will be done automatically by I18n??)
     - [] Allergies need to be two columns, boolean for has one or not and info about the allergy
