@@ -77,7 +77,7 @@ DEMO DAY!
 - I don't need to change the date format in the forms, user's browser does that for them
 
 
-## Feb 6th
+## Feb 5th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
@@ -139,18 +139,57 @@ DEMO DAY!
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 #### What I did
 
-- [] Cost rework
-    - [] Add ability to select time slots from list and have them appear at the bottom of the event page
-    - [] Add a way of calculating the total cost for an event, probably requires implementing a Course model and some JS
+- [] Email confirmation as well as password
+- [] Send a confirmation email when people sign up
+- [] Implement forgot password process
 
 - [] Event_children/time_slot_children rework
-    - [] Don't need not attending list
     - [] Should just be info, click on child name to change stuff
     - [] Add a cost placeholder (maybe just num of slots * 8000 for now)
         - [] Button to cost breakdown which pops up an overlay
     - [] Regular days, photo status, allergy or not (if allergy, click on it for more info)
     - [] On event_children, each slot needs to show if they're attending, their arrival/departure times and what meals they're having
     - [] For time slot children, should just look exactly like the printable one
+
+- [] Cost rework
+    - [x] Scaffold what the new version will look like
+        - [x] Create a link between AM and PM slots of the same day (foreign key)
+    - [] Add ability to select time slots from list and have them appear at the bottom of the event page
+    - [] Add a way of calculating the total cost for an event, probably requires implementing a Course model and some JS
+        - Have the total cost saved in a model that belongs to both an event and a parent
+        - Update it whenever you do a big submit/change anything else that would effect it
+            - For the live total, just calculate with JS?
+
+- [] Implement notifications
+
+- Bugfixes/Requested Features
+    - [] 
+
+
+
+## Feb 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+
+- [] Email confirmation as well as password
+- [] Send a confirmation email when people sign up
+- [] Implement forgot password process
+
+- [] Event_children/time_slot_children rework
+    - [] Should just be info, click on child name to change stuff
+    - [] Add a cost placeholder (maybe just num of slots * 8000 for now)
+        - [] Button to cost breakdown which pops up an overlay
+    - [] Regular days, photo status, allergy or not (if allergy, click on it for more info)
+    - [] On event_children, each slot needs to show if they're attending, their arrival/departure times and what meals they're having
+    - [] For time slot children, should just look exactly like the printable one
+
+- [] Cost rework
+    - [] Add ability to select time slots from list and have them appear at the bottom of the event page
+    - [] Add a way of calculating the total cost for an event, probably requires implementing a Course model and some JS
+        - Have the total cost saved in a model that belongs to both an event and a parent
+        - Update it whenever you do a big submit/change anything else that would effect it
+            - For the live total, just calculate with JS?
 
 - [] Implement notifications
 
