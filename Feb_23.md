@@ -246,14 +246,18 @@ DEMO DAY!
 ## Feb 10th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
-#### What I did
 
-- [] Email confirmation as well as password
-- [] Send a confirmation email when people sign up
-- [] Implement forgot password process
+Got nothing of substance done, time wasted by dumb setsumeikai prep then cleaning
+
+
+## Feb 11th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
 
 - [] Add Invoices
     - [] Calculate invoice cost using PriceList, number of registrations, option costs and any adjustments
+    - [] Update the cost breakdown when new total cost is calculated
     - [] Need to be able to merge invoices by moving registrations from one to another
 
 - [] Event_children/time_slot_children rework
@@ -261,6 +265,8 @@ DEMO DAY!
 
 - [] Event booking rework
     - [] Add ability to select time slots from list and have them appear at the bottom of the event page
+        - Probably do this by rendering them then toggling their display status with JS?
+        - When they go to the event page it loads their current invoice if not paid, new one if not paid
     - [] When you register for those time slots, it adds the registration to the invoice form in the bar at the bottom
         - Submitting the invoice form creates all the associated registrations along with the invoice
         - Will need some way to check for duplicate registrations, probably unable to do it on frontend and a backend check
@@ -275,6 +281,9 @@ DEMO DAY!
 - Bugfixes/Requested Features
     - [] Autofill address from post code
         - [] Move postcode to the left, so it's at the start of address fields
+    - [] Email confirmation as well as password
+    - [] Send a confirmation email when people sign up
+    - [] Implement forgot password process
 
 
 #### What I learned
