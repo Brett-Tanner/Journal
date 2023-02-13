@@ -296,7 +296,25 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 - [] Add Invoices
     - [] Calculate invoice cost using PriceList, number of registrations, option costs and any adjustments
-        - [] Test with options and adjustments
+        - [x] Test with options 
+        - [] Change adjustments to be on invoices and test including them in calculations
+    - [] Update the cost breakdown when new total cost is calculated
+    - [] Need to be able to merge invoices by moving registrations from one to another
+
+
+#### What I learned
+- Since we're using a separate account for the app to the main site, the main site account will need to add us to the Route 53 records like [this](https://medium.com/shelf-io-engineering/aws-route53-how-to-share-subdomains-with-multiple-aws-accounts-ad002c77be76)
+
+
+## Feb 14th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+#### What I did
+
+- [] Add Invoices
+    - [] Calculate invoice cost using PriceList, number of registrations, option costs and any adjustments
+        - [] Change adjustments to be on invoices and test including them in calculations
+        - [] Figure out how coupons should relate to invoices/adjustments and test that
     - [] Update the cost breakdown when new total cost is calculated
     - [] Need to be able to merge invoices by moving registrations from one to another
 
