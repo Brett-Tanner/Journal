@@ -359,28 +359,76 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-#### Time spend
-- At work
-    - 
-- At home
-    - 
-
-
 #### What I did
 
 - [] Add Invoices
+    - [] Cost break down needs list of courses and all options in one place
+    - [] Kindy spot use has a different price if full day
+        - Only relevant if full day registrations are more than the nearest full course
+        - Leroy's function needs full days and the number of regs covered by the course
+        - Overall flow of calculation:
+            - 
+    - [] Tidy the whole thing up and split it into separate methods for each section
     - [] Need to be able to merge invoices by moving registrations from one to another
+    - [] Need a request change button on the old, paid invoices
 
 - [] Event_children/time_slot_children rework
     - [] For time slot children, should just look exactly like the printable one
 
 - [] Event booking rework
-    - [] Add ability to select time slots from list and have them appear at the bottom of the event page
-        - Probably do this by rendering them then toggling their display status with JS?
-        - When they go to the event page it loads their current invoice if not paid, new one if not paid
-    - [] When you register for those time slots, it adds the registration to the invoice form in the bar at the bottom
-        - Submitting the invoice form creates all the associated registrations along with the invoice
-        - Will need some way to check for duplicate registrations, probably unable to do it on frontend and a backend check
+    - [x] Scaffold the new layout
+    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+        - [] If already registered on current invoice, slots should be outlined green and in a different section
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
+    - [] Have running total for the invoice calculated in real time by JS (validated by the DB calculation when submitted)
+
+- [] Implement notifications
+    - [] Need a link, message, read/unread boolean
+    - [] Not live, can be displayed when page is refreshed
+    - [] Automatically created on certain actions
+        - 
+
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [] Email confirmation as well as password
+    - [] Send a confirmation email when people sign up
+    - [] Implement forgot password process
+
+
+#### What I learned
+- When eager loading images from ActiveStorage, you can use #with_attached_#{name of association}
+
+
+
+## Feb 16th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Add Invoices
+    - [] Cost break down needs list of courses and all options in one place
+    - [] Kindy spot use has a different price if full day
+        - Only relevant if full day registrations are more than the nearest full course
+        - Leroy's function needs full days and the number of regs covered by the course
+        - Overall flow of calculation:
+            - 
+    - [] Tidy the whole thing up and split it into separate methods for each section
+    - [] Need to be able to merge invoices by moving registrations from one to another
+    - [] Need a request change button on the old, paid invoices
+
+- [] Event_children/time_slot_children rework
+    - [] For time slot children, should just look exactly like the printable one
+
+- [] Event booking rework
+    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+        - [] If already registered on current invoice, slots should be outlined green and in a different section
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
     - [] Have running total for the invoice calculated in real time by JS (validated by the DB calculation when submitted)
 
 - [] Implement notifications
