@@ -410,13 +410,67 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 #### What I did
 
 - [] Add Invoices
-    - [] Cost break down needs list of courses and all options in one place
-    - [] Kindy spot use has a different price if full day
-        - Only relevant if full day registrations are more than the nearest full course
-        - Leroy's function needs full days and the number of regs covered by the course
-        - Overall flow of calculation:
-            - 
-    - [] Tidy the whole thing up and split it into separate methods for each section
+    - [x] Cost break down needs list of courses and all options in one place
+    - [x] Kindy spot use has a different price if full day
+        - Only relevant if no courses used
+    - [x] Compartmentalize Invoice#calc_cost
+        - Stuff to calculate:
+            - Course cost
+                - If children are both members/not, calculate all slot registrations together
+                - If different, calculate separately then add together
+                - Total cost/number in child summary and in overall summary put the courses used/cost for each
+                    - If kindy and full days are more than half the total of courses selected, they need to pay 184 yen extra per full day 
+            - Option cost
+                - Sum up all the options for each child
+                    - Event options go in child summary, slot options go under their slot
+                    - They also go in the overall summary
+            - Adjustments
+                - Apply non-member repeater discount if eligible
+                - Apply hat fee if child needs hat
+                - Apply any other manual adjustments
+                - Discount by 184yen if dumb cost is not 0 and the special day is a full day
+                - List them all in the overall summary
+    - [] Need to be able to merge invoices by moving registrations from one to another
+    - [] Need a request change button on the old, paid invoices
+
+- [] Event_children/time_slot_children rework
+    - [] For time slot children, should just look exactly like the printable one
+
+- [] Event booking rework
+    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+        - [] If already registered on current invoice, slots should be outlined green and in a different section
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
+    - [] Have running total for the invoice calculated in real time by JS (validated by the DB calculation when submitted)
+
+- [] Implement notifications
+    - [] Need a link, message, read/unread boolean
+    - [] Not live, can be displayed when page is refreshed
+    - [] Automatically created on certain actions
+        - 
+
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [] Email confirmation as well as password
+    - [] Send a confirmation email when people sign up
+    - [] Implement forgot password process
+
+
+#### What I learned
+- Apparently you can pass count an arbitrary block specifying a condition to count by, despite there not being anything about that in the rails docs
+    - Oh it's just the Array#count
+    - fuck me that's annoying, wish they'd come up with different names for stuff like select/count but can definitely see why they didn't
+
+
+## Feb 17th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
 
