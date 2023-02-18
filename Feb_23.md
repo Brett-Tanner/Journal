@@ -470,6 +470,20 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I did
 
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [x] Email confirmation as well as password
+    - [x] Send a confirmation email when people sign up
+    - [x] Lock access after 10 failed login attempts
+
+
+## Feb 18th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
@@ -494,10 +508,6 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 - Bugfixes/Requested Features
     - [] Autofill address from post code
         - [] Move postcode to the left, so it's at the start of address fields
-    - [] Email confirmation as well as password
-    - [] Send a confirmation email when people sign up
-    - [] Implement forgot password process
-
 
 #### What I learned
 - 
