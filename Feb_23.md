@@ -500,6 +500,21 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I did
 
+- [] Event booking rework
+    - [x] Add the relevant event price list/s to the page
+
+- [x] Implement notifications
+    - [x] Test basic functionality
+    - [] Automatically created on certain actions
+        - 
+
+
+## Feb 21st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
@@ -508,6 +523,7 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
     - [] For time slot children, should just look exactly like the printable one
 
 - [] Event booking rework
+    - [x] Add the relevant event price list/s to the page
     - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
         - [] If already registered on current invoice, slots should be outlined green and in a different section
     - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
@@ -515,8 +531,8 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
         - [] Put a link to that invoice on greyed out slots (separate for each child)
     - [] Have running total for the invoice calculated in real time by JS (validated by the DB calculation when submitted)
 
-- [] Implement notifications
-    - [] Test basic functionality
+- [x] Implement notifications
+    - [x] Test basic functionality
     - [] Automatically created on certain actions
         - 
 
