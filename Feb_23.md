@@ -503,7 +503,7 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 - [] Event booking rework
     - [x] Add the relevant event price list/s to the page
 
-- [x] Implement notifications
+- [] Implement notifications
     - [x] Test basic functionality
     - [] Automatically created on certain actions
         - 
@@ -515,6 +515,58 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I did
 
+- [] Event booking rework
+    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+        - [x] Implement show and update on Invoice controller so it can actually be saved/checked
+        - Two stimulus controllers:
+            - [x] Register controller that has many instances and handles changing the buttons on click
+                - sends registerable id, type, child
+                - sends option cost if registering for an option
+            - [] Invoice controller that has one instance on the form and adds/removes fields for the relevant registration when clicked
+                - [x] broadcast the necessary values from register controller when a button is clicked
+                - puts them in the correct div based on registerable type
+                - adds a cost for the option registrations
+            - [] Price controller that only has one instance and listens to the whole window, updating the form/price when a button is clicked
+                - [x] get the course hashes as values from their tables on the page
+                - [] run it whenever the invoice controller adds a new registration
+                - [] updates the cost breakdown
+                - calculates course cost using a hash from the price lists and the number of slot regs in the form
+                - sums option costs
+            - [] Popup controller to show the cost breakdown
+                - Ensure it's re-usable e.g. on the list of event children and elsewhere
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
+
+
+#### What I learned
+- Values for a stimulus controller need to be defined on the same element the controller is connected to, not any child elements
+
+
+## Feb 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Event booking rework
+    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+        - Two stimulus controllers:
+            - [x] Register controller that has many instances and handles changing the buttons on click
+            - [] Invoice controller that has one instance on the form and adds/removes fields for the relevant registration when clicked
+                - [] puts them in the correct div based on registerable type
+                    - adds a cost for the option registrations
+            - [] Price controller that only has one instance and listens to the whole window, updating the form/price when a button is clicked
+                - [] run it whenever the invoice controller adds a new registration
+                - [] updates the cost breakdown
+                - calculates course cost using a hash from the price lists and the number of slot regs in the form
+                - sums option costs
+            - [] Popup controller to show the cost breakdown
+                - Ensure it's re-usable e.g. on the list of event children and elsewhere
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
+
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
@@ -522,17 +574,7 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 - [] Event_children/time_slot_children rework
     - [] For time slot children, should just look exactly like the printable one
 
-- [] Event booking rework
-    - [x] Add the relevant event price list/s to the page
-    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
-        - [] If already registered on current invoice, slots should be outlined green and in a different section
-    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
-        - [] Grey out slots if registered for in previous invoice
-        - [] Put a link to that invoice on greyed out slots (separate for each child)
-    - [] Have running total for the invoice calculated in real time by JS (validated by the DB calculation when submitted)
-
-- [x] Implement notifications
-    - [x] Test basic functionality
+- [] Implement notifications
     - [] Automatically created on certain actions
         - 
 
