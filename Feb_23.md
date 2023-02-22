@@ -541,6 +541,8 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I learned
 - Values for a stimulus controller need to be defined on the same element the controller is connected to, not any child elements
+- I can make sure my commits show up on my github profile by adding a second remote matching my old repo and pushing all the changes to that occasionally
+    - Won't show up on the work repo because it's a fork, and commits to forks don't count
 
 
 ## Feb 22nd
@@ -550,19 +552,55 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 #### What I did
 
 - [] Event booking rework
-    - [] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
+    - [x] When you register for time slots, it adds the registration to the invoice form in the bar at the bottom
         - Two stimulus controllers:
             - [x] Register controller that has many instances and handles changing the buttons on click
-            - [] Invoice controller that has one instance on the form and adds/removes fields for the relevant registration when clicked
-                - [] puts them in the correct div based on registerable type
+                - [] Need to send a variable to tell if it's adding or deleting the element
+            - [x] Invoice controller that has one instance on the form and adds/removes fields for the relevant registration when clicked
+                - [x] puts them in the correct div based on registerable type
                     - adds a cost for the option registrations
-            - [] Price controller that only has one instance and listens to the whole window, updating the form/price when a button is clicked
-                - [] run it whenever the invoice controller adds a new registration
-                - [] updates the cost breakdown
+            - [x] Price controller that only has one instance and listens to the whole window, updating the form/price when a button is clicked
+                - [x] run it whenever the invoice controller adds a new registration
                 - calculates course cost using a hash from the price lists and the number of slot regs in the form
                 - sums option costs
-            - [] Popup controller to show the cost breakdown
-                - Ensure it's re-usable e.g. on the list of event children and elsewhere
+    - [] At some point, a hide controller to hide the options if unregistered and reveal them if registered
+        - You can hide by interpolating .hidden into the classes unless registered is true
+    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [] Grey out slots if registered for in previous invoice
+        - [] Put a link to that invoice on greyed out slots (separate for each child)
+
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [x] Fix options which are registered on load not affecting price when removed
+    - [x] Fix id collision issue on slot/opt_regs for live price JS
+    - [x] Disallow manually editing invoice cost/summary
+
+#### What I learned
+- JS is super annoying
+    - remember to pass functions with () if you want the value, not the function itself
+    - if you wanna call other functions in your stimulus controller you need to prepend this
+
+- Event options currently not affecting price calculation
+    - Option cost doesn't have a filter for removing unregistered options?
+    - But works fine with Spring options I think?
+    - Maybe have a separate method on price for when I register/unregister options
+
+- Separate issue with some options changing course cost
+    - They're correctly in opt regs, some opt regs are seemingly in slot regs?
+    - It's in the add slot partial, I'm duplicating ids
+    - Ah, time slot ids and option ids can overlap. Might need to add more info to avoid that
+
+
+## Feb 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Event booking rework
+    - [] At some point, a hide controller to hide the options if unregistered and reveal them if registered
+        - You can hide by interpolating .hidden into the classes unless registered is true
     - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
         - [] Grey out slots if registered for in previous invoice
         - [] Put a link to that invoice on greyed out slots (separate for each child)
