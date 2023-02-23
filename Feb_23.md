@@ -598,6 +598,25 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I did
 
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [x] Add adjustments to live price calculation
+    - [x] Optimise queries for reg/unreg slots to not be n+1
+
+#### What I learned
+- You can append more where/joins to AR relation objects, like I did with the @slot_regs relation for registered slots in Event#show
+    - but not the opposite for unregistered slots for some reason, can't seem to select slots where the child id is NOT a given id
+    - maybe because it's 3am
+
+
+
+## Feb 24th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] Event booking rework
     - [] At some point, a hide controller to hide the options if unregistered and reveal them if registered
         - You can hide by interpolating .hidden into the classes unless registered is true
