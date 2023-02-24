@@ -617,6 +617,34 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 #### What I did
 
+- Bugfixes/Requested Features
+    - [] Autofill address from post code
+        - [] Move postcode to the left, so it's at the start of address fields
+    - [x] Get all the n+1 queries out of Event#show
+    - [x] Style the Invoice#show page
+        - [x] Modify the Invoice#calc_cost alterations to Invoice#summary to use HTML
+    - [x] Stopped .ds_store/images being uploaded/tracked by git
+
+#### What I learned
+- Looked into getting it all set up on AWS
+    - EC2 Instance
+        - Need a key pair to connect to the instance via SSH
+    - Elastic Beanstalk
+        - Create a source bundle by zipping the repo
+            - Like this from the Repos directory 
+            ```
+            zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/*"
+            ```
+            - Apparently gemfile wasn't included though so I'll need to fix that
+
+
+
+## Feb 25th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] Event booking rework
     - [] At some point, a hide controller to hide the options if unregistered and reveal them if registered
         - You can hide by interpolating .hidden into the classes unless registered is true
