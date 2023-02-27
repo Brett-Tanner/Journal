@@ -639,7 +639,23 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 
 
 
-## Feb 25th
+## Feb 25th & 26th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Hosting
+    - [x] Installed AWS CLI on both computers
+
+
+#### What I learned
+- Generate keys by going to Users in IAM, clicking on the user then Security Credentials tab
+
+
+
+
+## Feb 28th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -662,6 +678,9 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 - [] Implement notifications
     - [] Automatically created on certain actions
         - 
+
+- [] Hosting
+    - [] 
 
 - Bugfixes/Requested Features
     - [] Autofill address from post code
