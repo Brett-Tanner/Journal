@@ -662,29 +662,18 @@ Got nothing of substance done, time wasted by dumb setsumeikai prep then cleanin
 #### What I did
 
 - [] Event booking rework
-    - [] At some point, a hide controller to hide the options if unregistered and reveal them if registered
-        - You can hide by interpolating .hidden into the classes unless registered is true
+    - [x] At some point, a hide controller to hide the options if unregistered and reveal them if registered
+        - [x] Add the popup controller
+        - [x] Generate a cost summary in JS and put it in a popup
+        - [x] Add a listen function to hide/show the options when a slot is registered/unregistered
+            - don't need to explicitly delete dependent options, it's handled by a lifecycle callback on the model
     - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - So have an @invoices, not just one. Set the desired invoice through params
         - [] Grey out slots if registered for in previous invoice
+            - Have a list of all registrations from @invoices or from just the event's time slots
         - [] Put a link to that invoice on greyed out slots (separate for each child)
-
-- [] Add Invoices
-    - [] Need to be able to merge invoices by moving registrations from one to another
-    - [] Need a request change button on the old, paid invoices
-
-- [] Event_children/time_slot_children rework
-    - [] For time slot children, should just look exactly like the printable one
-
-- [] Implement notifications
-    - [] Automatically created on certain actions
-        - 
-
-- [] Hosting
-    - [] 
+            - Using the list of all registrations
 
 - Bugfixes/Requested Features
-    - [] Autofill address from post code
-        - [] Move postcode to the left, so it's at the start of address fields
-
-#### What I learned
-- 
+    - [x] Autofill address from post code
+        - [x] Move postcode to the left, so it's at the start of address fields
