@@ -25,13 +25,34 @@
 
 #### What I did
 
-- [] Event booking rework
-    - [] Use current invoice if it exists/is not closed, otherwise use a new invoice
-        - So have an @invoices, not just one. Set the desired invoice through params
-        - [] Grey out slots if registered for in previous invoice
-            - Have a list of all registrations from @invoices or from just the event's time slots
-        - [] Put a link to that invoice on greyed out slots (separate for each child)
-            - Using the list of all registrations
+- [x] Event booking rework
+    - [x] Use current invoice if it exists/is not closed, otherwise use a new invoice
+        - [x] So have an @invoices, not just one. Set the desired invoice through params
+        - [x] Grey out slots if registered for in previous invoice
+        - [x] Put a link to that invoice on greyed out slots (separate for each child)
+    - [x] Make early arrival/departure options mutually exclusive (radio buttons rather than buttons???)
+        - [x] Works if already registered for one of the options
+        - [x] Works if not already registered for either option
+
+- [] Event_children/time_slot_children rework
+    - [] Event children
+        - [x] Add the cost breakdown popup
+        - [] Build out the functionality to send a confirmation email from the table
+    - [x] For time slot children, should just look exactly like the printable one
+        - [x] Display the necessary information
+        - [x] Style the table and implement sticky headers like on event_children
+
+- Bugfixes/Requested Features
+    - [x] From Event#index, just put the link to Child#index on the pic for staff rather than the link to Event#show
+    - [] Add repeater discount to Invoice#calc_cost (probably as an adjustment?)
+    - [x] Add an 'on time' option with 0 offset and cost since I'm doing radio buttons for arrival/departure times
+
+
+## Mar 3rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
 
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
@@ -39,9 +60,8 @@
 
 - [] Event_children/time_slot_children rework
     - [] Event children
-        - [] Add the cost breakdown popup
         - [] Build out the functionality to send a confirmation email from the table
-    - [] For time slot children, should just look exactly like the printable one
+
 
 - [] Implement notifications
     - [] Automatically created on certain actions
@@ -51,9 +71,7 @@
     - [] 
 
 - Bugfixes/Requested Features
-    - [] From Event#index, just put the link to Child#index on the pic for staff rather than the link to Event#show
-    - [] Add repeated discount to Invoice#calc_cost (probably as an adjustment?)
-
+    - [] Add repeater discount to Invoice#calc_cost (probably as an adjustment?)
 
 #### What I learned
 - 
