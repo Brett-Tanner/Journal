@@ -48,7 +48,22 @@
     - [x] Add an 'on time' option with 0 offset and cost since I'm doing radio buttons for arrival/departure times
 
 
-## Mar 3rd
+## Mar 6th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+Was stuck at Mizonokuchi, just laid some groundwork for AWS
+
+#### What I learned
+- New, more optimised zip command for uploading source bundles to AWS
+```
+zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/*" "db_prototype_v2/tmp/*" "db_prototype_v2/log/*"
+```
+
+
+## Mar 7th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
