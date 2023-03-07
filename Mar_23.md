@@ -69,6 +69,34 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] AWS
+    - [x] Installed EB CLI
+        - Attempted to use it to create the EB, failed because it got stuck on creating the source bundle
+    - [x] Updated Ruby to 3.0.5 to match AWS platform version
+        - Issue is now pg gem failing to install for some reason
+        ```
+        An error occurred while installing pg (1.4.5), and Bundler cannot continue.
+
+        In Gemfile:
+          pg
+        ```
+
+#### What I learned
+- AWS EB doesn't like zip files produced on a Mac, so use git archive instead (and probably a prod branch to exclude dev stuff)
+    - hence new command to generate a source is this from the project folder
+    ```
+    git archive -v -o db_prototype_v2.zip --format=zip HEAD
+    ```
+
+
+
+
+## Mar 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
@@ -89,4 +117,4 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - [] Add repeater discount to Invoice#calc_cost (probably as an adjustment?)
 
 #### What I learned
-- 
+- AWS EB doesn't like zip files produced on a Mac, so use git archive instead (and probably a prod branch to exclude dev stuff)
