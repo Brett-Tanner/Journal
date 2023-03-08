@@ -97,24 +97,64 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] AWS
+    - [x] Successfully SSH into the EC2 instance!
+    - [x] Resolved the issue with pg gem being installed
+    - [x] Resolved issues with Bundler and puma versions not matching those on the AWS platform
+        - Issue now seems to be puma constantly failing to start due to being able to load some 'indifferent_hash.rb' file
+            - Stayed up way too fucking late trying to figure this out, still have no idea.It's 3:20am, what the fuck am I doing
+                - Leaving puma out of gemfile produces same error (cos it's the same version by default)
+                - Reverting to the original version (5) leads to it terminating as soon as it calls require rather than making it to the folder, which is different at least
+                - I hate this, I'm going to sleep
+
 - [] Add Invoices
     - [] Need to be able to merge invoices by moving registrations from one to another
     - [] Need a request change button on the old, paid invoices
+    - [] Children are NOT ON THE SAME INVOICE, separate invoices for each child
+        - [] Toggle between kids where the invoice toggle is now
+            - [] On price bar
+            - [] Preserve scroll position
+        - [] Button to copy kid's registrations from one kid to to another (separate controller for this)
+    - [] No switching between invoices, just display them all at once and have total for all
+    - [] Have a confirmation screen before invoice is finalised showing full details
+        - Can I do that with Invoice #new? does it create #new regs???? 
 
-- [] Event_children/time_slot_children rework
-    - [] Event children
-        - [] Build out the functionality to send a confirmation email from the table
-
-
-- [] Implement notifications
-    - [] Automatically created on certain actions
-        - 
-
-- [] Hosting
-    - [] 
-
-- Bugfixes/Requested Features
-    - [] Add repeater discount to Invoice#calc_cost (probably as an adjustment?)
 
 #### What I learned
-- AWS EB doesn't like zip files produced on a Mac, so use git archive instead (and probably a prod branch to exclude dev stuff)
+- The pg gem couldn't be installed because EC2 instances come with a hilariously outdated version of PG installed, and the gem needs a supported version of PG installed
+    - In the future will install a newer version of PG through .ebextensions/packages.config during instance initialization [like here](https://stackoverflow.com/questions/61148791/postgresql-on-elastic-beanstalk-amazon-linux-2/63204453#63204453)
+    - For now will try to SSH in and install it manually/check what versions are available for the config file in future
+    - Shouldn't I be able to just have it connect to the RDS tho???
+
+- Just generate a new keypair for SSH into the instance, it needs to be in your .ssh folder as a .pem
+
+- To get to the app on the EC2 instance, go to the home directory then cd into /var/app/current
+    - You don't have write permissions for a whole bunch of stuff though [per this](https://stackoverflow.com/questions/27611608/ec2-user-permissions), so mostly for looking around
+
+- You can use 'tail -f' on a file to view changes as they're made (in shell)
+- And cat to read the file
+
+
+## Mar 9th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] AWS
+
+- [] Add Invoices
+    - [] Need to be able to merge invoices by moving registrations from one to another
+    - [] Need a request change button on the old, paid invoices
+    - [] Children are NOT ON THE SAME INVOICE, separate invoices for each child
+        - [] Toggle between kids where the invoice toggle is now
+            - [] On price bar
+            - [] Preserve scroll position
+        - [] Button to copy kid's registrations from one kid to to another (separate controller for this)
+    - [] No switching between invoices, just display them all at once and have total for all
+    - [] Have a confirmation screen before invoice is finalised showing full details
+        - Can I do that with Invoice #new? does it create #new regs???? 
+
+
+#### What I learned
+- 
