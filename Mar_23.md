@@ -142,19 +142,165 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 #### What I did
 
 - [] AWS
+    - Look into alternatives to EB since that's determined to not work
+        - [] Manually setting up an EC2/other associated resources
+        - [] Deploying with Docker
+        - [] Engineyard/other hosting options (will need to be cheaper or clearly better in other ways and same price)
 
-- [] Add Invoices
-    - [] Need to be able to merge invoices by moving registrations from one to another
-    - [] Need a request change button on the old, paid invoices
-    - [] Children are NOT ON THE SAME INVOICE, separate invoices for each child
-        - [] Toggle between kids where the invoice toggle is now
-            - [] On price bar
-            - [] Preserve scroll position
-        - [] Button to copy kid's registrations from one kid to to another (separate controller for this)
-    - [] No switching between invoices, just display them all at once and have total for all
+- [] Invoices
+    - Children are NOT ON THE SAME INVOICE, separate invoices for each child
+        - [] Redo calculation logic with this knowledge
+            - [x] Model logic
+            - [] JS logic
+        - [] Views
+                - [x] Basic layout/contents
+                - [] Submit multiple invoices together
+                - [x] Show all invoices for a child together, cumulative total at the bottom
+                - [x] Toggle between kids where the invoice toggle is now
+                    - [] Preserve scroll position
+            - [] Don't block the whole day when in SS/on previous invoice, just the stuff that's registered
+                - [] When in SS, grey out the individual slot/option and have contact info at top
+                - [] Can still add new options/regs tho
+            - [] Have a warning for afternoons on regular days with a message saying they're already going
+        - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
+    - [] In calculation
+        - [] external students who have at least the 10 course and have attended a seasonal event before get 10k discount
+        - [] add hat option if they need a hat
     - [] Have a confirmation screen before invoice is finalised showing full details
-        - Can I do that with Invoice #new? does it create #new regs???? 
+        - #new creates new nested records as well and they can be used in calcs without saving them
+            - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
+                - With the details prefilled as what they selected on the event page (hidden though)
+                - And summary/total cost displayed as calculated on the backend
+                - They can then submit the hidden details and actually create the invoice/registrations with a 'create registrations' button
+                - Takes them to Invoice#show
+    - [] Need to be able to merge invoices by moving registrations from one to another
+
+- [] Event children
+    - [] Live update or timed refresh so SMs are notified when changes are made even with window open
+        - Refresh timer on activity
+    - [] Datetime for seen at by SM
+        - [] auto set to nil on creation
+        - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
+        - [] separate col in event children table to show changes since last seen
+            - should be able to do this using paper trail, no DB change needed
+            - get all changes since the seen_at column and show the diffs
+    - [] Remove send email and replace with email template (backed by DB col)
+    - [] Add arrival and departure times (not just on time slot sheet)
+    - [] List billing dates per invoice next to the invoice id
+    - [] Put the Kanji/lack thereof to show options
+    - [] List the coupons so SM can apply
+
+- [] Time Slot children
+    - [] In general should include all info for afternoon slot as well (options, attendance etc.)
+    - [] Add columns to show if they're coming in morning/afternoon or both
+        - [] Tally for AM/PM attendance like the main attendance col
+    - [] Add column to show if photo service is selected for the event
+    - [] Change arr/dept time to only display something if option selected, and include the afternoon slot
+    - [] If option is not selected/arrival/depart is not changed just leave it blank
+
+- Time Slots
+    - Some are priced differently, have a proper think about how to handle those 
+        - Col with modifiers??
+    - [] Render special days first on the event children list with different cols
+
+- [] Emails
+    - [] When new invoice is confirmed
+        - Email SM saying it's been created with link to the invoice
+        - Email parent with details and provisional price
+    
+- [] Coupons
+    - [] Add somewhere to add a coupon during the invoice creation process
+        - SMs will add the adjustment manually
+    
+- [] Events
+    - [] Need seasonal and single day to be separate types
 
 
 #### What I learned
-- 
+- Very long meeting with Leroy which once again will surely result in no more major changes -__-
+- You can batch update records using a separate controller + fields_for as described [here](https://stackoverflow.com/questions/41902942/rails-how-to-submit-multiple-forms-to-the-same-table) and [here](https://stackoverflow.com/questions/34557033/rails-submitting-multiple-forms-with-one-submit-button)
+    - Can hopefully use that to not have a mess of submit buttons on the price bar
+
+
+
+
+## Mar 10th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] AWS
+    - Look into alternatives to EB since that's determined to not work
+        - [] Manually setting up an EC2/other associated resources
+            - [YT Walkthrough](https://www.youtube.com/watch?app=desktop&v=E2o2u7Rc0h0)
+        - [] Deploying with Docker
+
+- [] Invoices
+    - Children are NOT ON THE SAME INVOICE, separate invoices for each child
+        - [] Redo calculation logic with this knowledge
+            - [] JS logic
+        - [] Views
+                - [] Submit multiple invoices together
+                - [x] Toggle between kids where the invoice toggle is now
+                    - [] Preserve scroll position
+            - [] Don't block the whole day when in SS/on previous invoice, just the stuff that's registered
+                - [] When in SS, grey out the individual slot/option and have contact info at top
+                - [] Can still add new options/regs tho
+            - [] Have a warning for afternoons on regular days with a message saying they're already going
+        - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
+    - [] In calculation
+        - [] external students who have at least the 10 course and have attended a seasonal event before get 10k discount
+        - [] add hat option if they need a hat
+    - [] Have a confirmation screen before invoice is finalised showing full details
+        - #new creates new nested records as well and they can be used in calcs without saving them
+            - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
+                - With the details prefilled as what they selected on the event page (hidden though)
+                - And summary/total cost displayed as calculated on the backend
+                - They can then submit the hidden details and actually create the invoice/registrations with a 'create registrations' button
+                - Takes them to Invoice#show
+    - [] Need to be able to merge invoices by moving registrations from one to another
+
+- [] Event children
+    - [] Live update or timed refresh so SMs are notified when changes are made even with window open
+        - Refresh timer on activity
+    - [] Datetime for seen at by SM
+        - [] auto set to nil on creation
+        - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
+        - [] separate col in event children table to show changes since last seen
+            - should be able to do this using paper trail, no DB change needed
+            - get all changes since the seen_at column and show the diffs
+    - [] Remove send email and replace with email template (backed by DB col)
+    - [] Add arrival and departure times (not just on time slot sheet)
+    - [] List billing dates per invoice next to the invoice id
+    - [] Put the Kanji/lack thereof to show options
+    - [] List the coupons so SM can apply
+
+- [] Time Slot children
+    - [] In general should include all info for afternoon slot as well (options, attendance etc.)
+    - [] Add columns to show if they're coming in morning/afternoon or both
+        - [] Tally for AM/PM attendance like the main attendance col
+    - [] Add column to show if photo service is selected for the event
+    - [] Change arr/dept time to only display something if option selected, and include the afternoon slot
+    - [] If option is not selected/arrival/depart is not changed just leave it blank
+
+- Time Slots
+    - Some are priced differently, have a proper think about how to handle those 
+        - Col with modifiers??
+    - [] Render special days first on the event children list with different cols
+
+- [] Emails
+    - [] When new invoice is confirmed
+        - Email SM saying it's been created with link to the invoice
+        - Email parent with details and provisional price
+    
+- [] Coupons
+    - [] Add somewhere to add a coupon during the invoice creation process
+        - SMs will add the adjustment manually
+    
+- [] Events
+    - [] Need seasonal and single day to be separate types
+
+
+#### What I learned
+-
