@@ -223,8 +223,46 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 
 
-
 ## Mar 10th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Invoices
+    - Children are NOT ON THE SAME INVOICE, separate invoices for each child
+        - [x] Redo calculation logic with this knowledge
+            - [x] JS logic
+        - [] Views
+            - [] Submit multiple invoices together
+                - [] Make sure JS is adding regs to correct invoice
+                    - If already on invoice, should just add or remove from that one
+                    - If an invoice is closed, should only be able to add
+            - [] Don't block the whole day when in SS/on previous invoice, just the stuff that's registered
+                - [] When in SS, grey out the individual slot/option and have contact info at top
+                - [] Can still add new options/regs tho
+            - [] Have a warning for afternoons on regular days with a message saying they're already going
+        - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
+    - [] In calculation
+        - [] external students who have at least the 10 course and have attended a seasonal event before get 10k discount
+        - [] add hat option if they need a hat
+        - [] Add the 184 yen to the JS calculation
+    - [] Have a confirmation screen before invoice is finalised showing full details
+        - #new creates new nested records as well and they can be used in calcs without saving them
+            - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
+                - With the details prefilled as what they selected on the event page (hidden though)
+                - And summary/total cost displayed as calculated on the backend
+                - They can then submit the hidden details and actually create the invoice/registrations with a 'create registrations' button
+                - Takes them to Invoice#show
+    - [] Need to be able to merge invoices by moving registrations from one to another
+
+- [] Requests/Bugfixes
+    - [] Preserve scroll position on Event#show when switching between children
+    - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
+
+
+
+## Mar 11th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -238,12 +276,11 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 - [] Invoices
     - Children are NOT ON THE SAME INVOICE, separate invoices for each child
-        - [] Redo calculation logic with this knowledge
-            - [] JS logic
         - [] Views
-                - [] Submit multiple invoices together
-                - [x] Toggle between kids where the invoice toggle is now
-                    - [] Preserve scroll position
+            - [] Submit multiple invoices together
+                - [] Make sure JS is adding regs to correct invoice
+                    - If already on invoice, should just add or remove from that one
+                    - If an invoice is closed, should only be able to add
             - [] Don't block the whole day when in SS/on previous invoice, just the stuff that's registered
                 - [] When in SS, grey out the individual slot/option and have contact info at top
                 - [] Can still add new options/regs tho
@@ -252,6 +289,7 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - [] In calculation
         - [] external students who have at least the 10 course and have attended a seasonal event before get 10k discount
         - [] add hat option if they need a hat
+        - [] Add the 184 yen to the JS calculation
     - [] Have a confirmation screen before invoice is finalised showing full details
         - #new creates new nested records as well and they can be used in calcs without saving them
             - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
@@ -300,6 +338,10 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     
 - [] Events
     - [] Need seasonal and single day to be separate types
+
+- [] Requests/Bugfixes
+    - [] Preserve scroll position on Event#show when switching between children
+    - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
 
 
 #### What I learned
