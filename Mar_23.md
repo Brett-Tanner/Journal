@@ -268,6 +268,30 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] Invoices
+    - [x] In calculation
+        - [x] External students who have at least the 10 course and have attended a seasonal event before get 10k discount
+        - [x] Add hat option if they need a hat
+        - [x] Add the 184 yen to the JS calculation
+
+- [] Event children
+    - [] Datetime for seen at by SM
+        - [x] auto set to nil on creation
+
+
+- [] Time Slot children
+    - [x] Add column to show if photo service is selected for the event
+    - [x] Change arr/dept time to only display something if option selected
+    - [x] Leave options blank unless selected/different from default
+
+
+
+## Mar 12th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
     - Look into alternatives to EB since that's determined to not work
         - [] Manually setting up an EC2/other associated resources
@@ -286,10 +310,6 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
                 - [] Can still add new options/regs tho
             - [] Have a warning for afternoons on regular days with a message saying they're already going
         - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
-    - [] In calculation
-        - [] external students who have at least the 10 course and have attended a seasonal event before get 10k discount
-        - [] add hat option if they need a hat
-        - [] Add the 184 yen to the JS calculation
     - [] Have a confirmation screen before invoice is finalised showing full details
         - #new creates new nested records as well and they can be used in calcs without saving them
             - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
@@ -303,7 +323,6 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - [] Live update or timed refresh so SMs are notified when changes are made even with window open
         - Refresh timer on activity
     - [] Datetime for seen at by SM
-        - [] auto set to nil on creation
         - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
         - [] separate col in event children table to show changes since last seen
             - should be able to do this using paper trail, no DB change needed
@@ -311,21 +330,18 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - [] Remove send email and replace with email template (backed by DB col)
     - [] Add arrival and departure times (not just on time slot sheet)
     - [] List billing dates per invoice next to the invoice id
+    - [] Render special days first on the event children list with different cols
     - [] Put the Kanji/lack thereof to show options
     - [] List the coupons so SM can apply
 
 - [] Time Slot children
-    - [] In general should include all info for afternoon slot as well (options, attendance etc.)
+    - [] Include all info for afternoon slot as well (options, attendance etc.)
     - [] Add columns to show if they're coming in morning/afternoon or both
         - [] Tally for AM/PM attendance like the main attendance col
-    - [] Add column to show if photo service is selected for the event
-    - [] Change arr/dept time to only display something if option selected, and include the afternoon slot
-    - [] If option is not selected/arrival/depart is not changed just leave it blank
 
 - Time Slots
     - Some are priced differently, have a proper think about how to handle those 
         - Col with modifiers??
-    - [] Render special days first on the event children list with different cols
 
 - [] Emails
     - [] When new invoice is confirmed
