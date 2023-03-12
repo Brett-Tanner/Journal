@@ -292,6 +292,30 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] Event children
+    - [x] Remove send email and replace with email template (backed by DB col)
+    - [x] List billing dates per invoice next to the invoice id
+    - [] Live update or timed refresh so SMs are notified when changes are made even with window open
+        - Refresh timer on activity
+    - [] Datetime for seen at by SM
+        - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
+        - [] separate col in event children table to show changes since last seen
+            - should be able to do this using paper trail, no DB change needed
+            - get all changes since the seen_at column and show the diffs
+    - [] Add arrival and departure times (not just on time slot sheet)
+    - [] Render special days first on the event children list with different cols
+    - [] Put the Kanji/lack thereof to show options
+    - [] List the coupons so SM can apply
+
+
+
+
+## Mar 12th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
     - Look into alternatives to EB since that's determined to not work
         - [] Manually setting up an EC2/other associated resources
@@ -327,9 +351,7 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
         - [] separate col in event children table to show changes since last seen
             - should be able to do this using paper trail, no DB change needed
             - get all changes since the seen_at column and show the diffs
-    - [] Remove send email and replace with email template (backed by DB col)
     - [] Add arrival and departure times (not just on time slot sheet)
-    - [] List billing dates per invoice next to the invoice id
     - [] Render special days first on the event children list with different cols
     - [] Put the Kanji/lack thereof to show options
     - [] List the coupons so SM can apply
