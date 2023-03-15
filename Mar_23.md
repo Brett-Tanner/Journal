@@ -356,6 +356,24 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+
+- [] Requests/Bugfixes
+    - [x] 500yen bug in customer event invoices
+        - When I moved the repeater and hat adjustments to being actual adjustments I didn't do the same for the JS, so the hat cost was being repeated
+    - [] Preserve scroll position on Event#show when switching between children
+    - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
+
+#### What I learned
+- Every time I run a db:reset the storage folder gets a whole new set of blobs, so it's been steadily increasing this whole time. Just deleting the folder before doing another reset is fine
+
+
+
+## Mar 16th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
     - Look into alternatives to EB since that's determined to not work
         - [] Manually setting up an EC2/other associated resources
