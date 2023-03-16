@@ -374,6 +374,43 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] Invoices
+        - [] Views
+            - [x] If all invoices are in SS, create a new invoice on Event#show load to add any further registrations
+            - [x] Make sure JS is adding regs to correct invoice, and handling calculations for all invoices correctly
+            - [] Have a warning for afternoons on regular days with a message saying they're already going
+        - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
+    - [] Have a confirmation screen before invoice is finalised showing full details
+        - #new creates new nested records as well and they can be used in calcs without saving them
+            - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
+                - With the details prefilled as what they selected on the event page (hidden though)
+                - And summary/total cost displayed as calculated on the backend
+                - They can then submit the hidden details and actually create the invoice/registrations with a 'create registrations' button
+                - Takes them to Invoice#show
+    - [] Need to be able to merge invoices by moving registrations from one to another
+
+- [] Event children
+    - [x] Put the Kanji/lack thereof to show options
+    - [x] Add arrival and departure times (not just on time slot sheet)
+    - [] Live update or timed refresh so SMs are notified when changes are made even with window open
+        - Refresh timer on activity
+    - [] Datetime for seen at by SM
+        - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
+        - [] separate col in event children table to show changes since last seen
+            - should be able to do this using paper trail, no DB change needed
+            - get all changes since the seen_at column and show the diffs
+    - [] Render special days first on the event children list with different cols
+    - [] List the coupons so SM can apply
+
+
+
+
+## Mar 17th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
     - Look into alternatives to EB since that's determined to not work
         - [] Manually setting up an EC2/other associated resources
@@ -381,12 +418,7 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
         - [] Deploying with Docker
 
 - [] Invoices
-    - Children are NOT ON THE SAME INVOICE, separate invoices for each child
         - [] Views
-            - [] Submit multiple invoices together
-                - [] Make sure JS is adding regs to correct invoice
-                    - If already on invoice, should just add or remove from that one
-                    - If an invoice is closed, should only be able to add
             - [] Have a warning for afternoons on regular days with a message saying they're already going
         - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
     - [] Have a confirmation screen before invoice is finalised showing full details
@@ -406,9 +438,7 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
         - [] separate col in event children table to show changes since last seen
             - should be able to do this using paper trail, no DB change needed
             - get all changes since the seen_at column and show the diffs
-    - [] Add arrival and departure times (not just on time slot sheet)
     - [] Render special days first on the event children list with different cols
-    - [] Put the Kanji/lack thereof to show options
     - [] List the coupons so SM can apply
 
 - [] Time Slot children
@@ -419,6 +449,10 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 - Time Slots
     - Some are priced differently, have a proper think about how to handle those 
         - Col with modifiers??
+    - [] AMs can close time slots
+        - still shows but says full
+        - no need for automatic closing
+        - [] default registration deadline is 2pm the day before
 
 - [] Emails
     - [] When new invoice is confirmed
@@ -432,9 +466,17 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 - [] Events
     - [] Need seasonal and single day to be separate types
 
+- [] Options
+    - [] Photo service is only necessary once per parent
+        - Need to somehow register all other children for it, maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
+        - And reverse on delete
+        - Probably a callback when that type of option is created/destroyed?
+
 - [] Requests/Bugfixes
     - [] Preserve scroll position on Event#show when switching between children
     - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
+    - [] Make allergies on the add child form a select box between yes/no
+    - [] Need a note on the Invoice#index page that price will likely increase when merged later
 
 #### What I learned
 -
