@@ -411,7 +411,7 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - [x] Have a warning for afternoons on regular days with a message saying they're already going
     - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
 
-## Mar 18th
+## Mar 20th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -426,17 +426,34 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 - [] Invoices
 
-  - [] Views
+  - [x] Views
 
-    - [] Button to register your other kid for the same stuff as your first kid (separate controller for this)
+    - [x] Button to register your other kid for the same stuff as your first kid (separate controller for this)
 
-  - [] Have a confirmation screen before invoice is finalised showing full details
+  - [x] Have a confirmation screen before invoice is finalised showing full details
     - #new creates new nested records as well and they can be used in calcs without saving them
       - So when they're done they click a 'confirm details' button which takes them to the Invoice#new page
         - With the details prefilled as what they selected on the event page (hidden though)
         - And summary/total cost displayed as calculated on the backend
         - They can then submit the hidden details and actually create the invoice/registrations with a 'create registrations' button
-        - Takes them to Invoice#show
+        - Takes them to Invoice#index
+  - [] Need to be able to merge invoices by moving registrations from one to another
+
+## Mar 21st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] AWS
+
+  - Look into alternatives to EB since that's determined to not work
+    - [] Manually setting up an EC2/other associated resources
+      - [YT Walkthrough](https://www.youtube.com/watch?app=desktop&v=E2o2u7Rc0h0)
+    - [] Deploying with Docker
+
+- [] Invoices
+
   - [] Need to be able to merge invoices by moving registrations from one to another
 
 - [] Event children
