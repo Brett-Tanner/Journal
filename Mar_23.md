@@ -445,6 +445,23 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] Invoices
+
+  - [x] Confirmation page correctly decreases price when registrations are deleted
+  - [] Need to be able to merge invoices by moving registrations from one to another
+
+- [] Requests/Bugfixes
+  - [] Preserve scroll position on Event#show when switching between children
+  - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
+  - [] Make allergies on the add child form a select box between yes/no
+  - [x] Need a note on the Invoice#index page that price will likely decrease when merged later
+
+## Mar 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
@@ -505,7 +522,6 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
   - [] Preserve scroll position on Event#show when switching between children
   - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
   - [] Make allergies on the add child form a select box between yes/no
-  - [] Need a note on the Invoice#index page that price will likely increase when merged later
 
 #### What I learned
 
