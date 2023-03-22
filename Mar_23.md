@@ -462,6 +462,36 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [] Event children
+
+  - [] Live update or timed refresh so SMs are notified when changes are made even with window open
+    - Refresh timer on activity
+  - [x] Datetime for seen at by SM
+    - [x] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
+    - [x] separate col in event children table to show changes since last seen
+  - [x] Render special days first on the event children list with different cols
+    - [x] Add categories to time slots
+    - [x] Render the special days first
+    - [x] Add their unique info
+  - [] List the coupons so SM can apply
+
+- [] Requests/Bugfixes
+  - [x] Wrote a guide for anyone who ends up translating for the app
+    - [] Update to reflect the fact we're using codespaces
+    - [] Set up codespaces so translators can run a version of the app with their changes using rails s
+      - Create an issue to track the translations, from that issue create a branch
+      - Delete the current one and set it up on translation branch
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+  - [] Also look into the performance impact of making each row a turbo frame (or maybe just the col??) so marking it as seen removes the button
+  - [] Preserve scroll position on Event#show when switching between children
+  - [] Make allergies on the add child form a select box between yes/no
+
+## Mar 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
@@ -472,17 +502,14 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 - [] Invoices
 
   - [] Need to be able to merge invoices by moving registrations from one to another
+    - Does it matter if invoice is in the ss?
+    - Need a confirmation page? (I think/hope not)
+    - Make sure you only get the option for valid merges
 
 - [] Event children
 
   - [] Live update or timed refresh so SMs are notified when changes are made even with window open
     - Refresh timer on activity
-  - [] Datetime for seen at by SM
-    - [] button to update to current time when SM has seen it (put this in the change list popup so they actually have to open it)
-    - [] separate col in event children table to show changes since last seen
-      - should be able to do this using paper trail, no DB change needed
-      - get all changes since the seen_at column and show the diffs
-  - [] Render special days first on the event children list with different cols
   - [] List the coupons so SM can apply
 
 - [] Time Slot children
@@ -519,8 +546,14 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - Probably a callback when that type of option is created/destroyed?
 
 - [] Requests/Bugfixes
+  - [x] Wrote a guide for anyone who ends up translating for the app
+    - [] Update to reflect the fact we're using codespaces
+    - [] Set up codespaces so translators can run a version of the app with their changes using rails s
+      - Create an issue to track the translations, from that issue create a branch
+      - Delete the current one and set it up on translation branch
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+  - [] Also look into the performance impact of making each row a turbo frame (or maybe just the col??) so marking it as seen removes the button
   - [] Preserve scroll position on Event#show when switching between children
-  - [] Unsure which invoice JS puts the new regs on rn, will need to look into controlling that if it turns out we do need multiple invoices per event
   - [] Make allergies on the add child form a select box between yes/no
 
 #### What I learned
