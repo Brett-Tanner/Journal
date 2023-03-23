@@ -492,6 +492,45 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 #### What I did
 
+- [x] Event children
+
+  - [x] Remove the view changes button once invoice changes are viewed
+  - [x] Add blank cells when special not registered
+  - [x] Move extension option out of col with lunch and into middle of arrival/dept
+  - [x] Timed refresh so SMs are notified when changes are made even with window open
+    - [x] Refresh timer on activity
+    - [x] Add countdown
+  - [x] List the coupons so SM can apply
+
+- [x] Time Slot children
+
+  - [x] Include all info for afternoon slot as well (options, attendance etc.)
+  - [x] Add columns to show if they're coming in morning/afternoon or both
+    - [x] Tally for AM/PM attendance like the main attendance col
+
+- Time Slots
+
+  - [x] Add a category col for special, seasonal, party time slots so they can be sorted
+  - [] AMs can close time slots
+    - still shows but says full
+    - no need for automatic closing
+  - [] Default registration deadline is 2pm the day before
+
+- [] Children
+
+  - [] Add column for grade at school
+  - [x] Single name column for kids/adults
+    - [] But in forms, get separately then combine with japanese space
+  - [] Single columns for allergies
+    - [] Allergies are a required field
+    - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+
+## Mar 24th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
@@ -502,41 +541,26 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 - [] Invoices
 
   - [] Need to be able to merge invoices by moving registrations from one to another
-    - Does it matter if invoice is in the ss?
-    - Need a confirmation page? (I think/hope not)
+    - Should be set to in_ss and just merged, SMs will do it in the SS at the same time
     - Make sure you only get the option for valid merges
-
-- [] Event children
-
-  - [] Live update or timed refresh so SMs are notified when changes are made even with window open
-    - Refresh timer on activity
-  - [] List the coupons so SM can apply
-
-- [] Time Slot children
-
-  - [] Include all info for afternoon slot as well (options, attendance etc.)
-  - [] Add columns to show if they're coming in morning/afternoon or both
-    - [] Tally for AM/PM attendance like the main attendance col
 
 - Time Slots
 
-  - Some are priced differently, have a proper think about how to handle those
-    - Col with modifiers??
   - [] AMs can close time slots
     - still shows but says full
     - no need for automatic closing
-    - [] default registration deadline is 2pm the day before
+  - [] Default registration deadline is 2pm the day before
 
 - [] Emails
+
   - [] When new invoice is confirmed
     - Email SM saying it's been created with link to the invoice
     - Email parent with details and provisional price
+
 - [] Coupons
+
   - [] Add somewhere to add a coupon during the invoice creation process
     - SMs will add the adjustment manually
-- [] Events
-
-  - [] Need seasonal and single day to be separate types
 
 - [] Options
 
@@ -545,16 +569,17 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
     - And reverse on delete
     - Probably a callback when that type of option is created/destroyed?
 
+- [] Children
+
+  - [] Add column for grade at school
+  - [x] Single name column for kids/adults
+    - [] But in forms, get separately then combine with japanese space
+  - [] Single columns for allergies
+    - [] Allergies are a required field
+    - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+
 - [] Requests/Bugfixes
-  - [x] Wrote a guide for anyone who ends up translating for the app
-    - [] Update to reflect the fact we're using codespaces
-    - [] Set up codespaces so translators can run a version of the app with their changes using rails s
-      - Create an issue to track the translations, from that issue create a branch
-      - Delete the current one and set it up on translation branch
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
-  - [] Also look into the performance impact of making each row a turbo frame (or maybe just the col??) so marking it as seen removes the button
-  - [] Preserve scroll position on Event#show when switching between children
-  - [] Make allergies on the add child form a select box between yes/no
 
 #### What I learned
 
