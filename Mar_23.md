@@ -527,6 +527,10 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 
 ## Mar 24th
 
+Busy day & tired
+
+## Mar 25th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 #### What I did
@@ -572,14 +576,35 @@ zip -r db_prototype_v2.zip db_prototype_v2 -x * .[^.]* "db_prototype_v2/storage/
 - [] Children
 
   - [] Add column for grade at school
+    - Kindy:
+      - 満１歳
+      - 満２歳
+      - 年々少
+      - 年少
+      - 年中
+      - 年長
+    - Ele:
+      - 小１
+      - 小２
+      - 小３
+      - 小４
+      - 小５
+      - 小６
+      - 中学１年
+      - 中学２年
+    - Only the last 3 of kindy and 小 for elementary in form selection boxes
   - [x] Single name column for kids/adults
-    - [] But in forms, get separately then combine with japanese space
+    - [] But in forms, get separately then combine with japanese space (katakana name too)
   - [] Single columns for allergies
     - [] Allergies are a required field
     - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
 
 - [] Requests/Bugfixes
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+  - [] Time slot children should have katakana name, not kanji
+  - [] Display NG if photos_ok false, otherwise blank
+  - [] Check the option counting on time slot children
+  - [] Replace ✓ with ◯
 
 #### What I learned
 
