@@ -535,6 +535,23 @@ Busy day & tired
 
 #### What I did
 
+- [] Requests/Bugfixes
+  - [x] Replace ✓ with ◯
+  - [x] Display NG if photos_ok false, otherwise blank
+  - [x] Figure out why kids are having 12 invoices created by seeds, not 4 (probably making one for each school/event rather than being limited)
+  - [x] Time slot children should have katakana name, not kanji
+  - [x] Check the option counting on time slot children
+    - Seeds was creating two registrations to the same option for each child/invoice because meals were included in the regular scope for options
+      - [x] Fix regular scope
+      - [] Add a validation to ensure registerable ids are unique per child and registerable type
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+
+## Mar 25th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
@@ -600,12 +617,8 @@ Busy day & tired
     - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
 
 - [] Requests/Bugfixes
+  - [x] Check the option counting on time slot children
+    - Seeds was creating two registrations to the same option for each child/invoice because meals were included in the regular scope for options
+      - [x] Fix regular scope
+      - [] Add a validation to ensure registerable ids are unique per child and registerable type
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
-  - [] Time slot children should have katakana name, not kanji
-  - [] Display NG if photos_ok false, otherwise blank
-  - [] Check the option counting on time slot children
-  - [] Replace ✓ with ◯
-
-#### What I learned
-
--
