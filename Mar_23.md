@@ -546,7 +546,50 @@ Busy day & tired
       - [] Add a validation to ensure registerable ids are unique per child and registerable type
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
 
-## Mar 25th
+## Mar 27th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Children
+
+  - [] Add column for grade at school
+    - Kindy:
+      - 満１歳
+      - 満２歳
+      - 年々少
+      - 年少
+      - 年中
+      - 年長
+    - Ele:
+      - 小１
+      - 小２
+      - 小３
+      - 小４
+      - 小５
+      - 小６
+      - 中学１年
+      - 中学２年
+    - Only the last 3 of kindy and 小 for elementary in form selection boxes
+  - [x] Single name column for kids/adults
+    - [x] But in forms, get separately then combine with japanese space
+    - [x] Katakana name too - [] Single columns for allergies
+  - [] Allergies are a required field
+  - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+
+- [] Requests/Bugfixes
+  - [x] Check the option counting on time slot children
+    - Seeds was creating two registrations to the same option for each child/invoice because meals were included in the regular scope for options
+      - [x] Add a validation to ensure registerable ids are unique per child and registerable type
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+
+#### What I learned
+
+- Once again, lifecycle callbacks are very useful
+  - Rather than dealing with strong params in the controller, I just allowed the separate names then used them with attr_accessor to set full name in a before_validation callback
+
+## Mar 28th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -610,15 +653,11 @@ Busy day & tired
       - 中学１年
       - 中学２年
     - Only the last 3 of kindy and 小 for elementary in form selection boxes
-  - [x] Single name column for kids/adults
-    - [] But in forms, get separately then combine with japanese space (katakana name too)
   - [] Single columns for allergies
     - [] Allergies are a required field
     - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
 
 - [] Requests/Bugfixes
-  - [x] Check the option counting on time slot children
-    - Seeds was creating two registrations to the same option for each child/invoice because meals were included in the regular scope for options
-      - [x] Fix regular scope
-      - [] Add a validation to ensure registerable ids are unique per child and registerable type
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+
+#### What I learned
