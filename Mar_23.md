@@ -595,6 +595,42 @@ Busy day & tired
 
 #### What I did
 
+- [] Children
+
+  - [x] Add column for grade at school
+    - Kindy:
+      - 満１歳
+      - 満２歳
+      - 年々少
+      - 年少
+      - 年中
+      - 年長
+    - Ele:
+      - 小１
+      - 小２
+      - 小３
+      - 小４
+      - 小５
+      - 小６
+      - 中学１年
+      - 中学２年
+    - [] Only the last 3 of kindy and 小 for elementary in form selection boxes
+  - [x] Single columns for allergies
+    - [] Allergies are a required field
+    - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+
+- [] Requests/Bugfixes
+  - [x] Fix seeds file for the new way to set single name/kana name from combo of first/last
+    - [x] Add a conditional to stop errors when manually modifying names
+  - [x] Display first and last names in fields when editing a user/child
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+
+## Mar 28th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
@@ -635,7 +671,7 @@ Busy day & tired
 
 - [] Children
 
-  - [] Add column for grade at school
+  - [x] Add column for grade at school
     - Kindy:
       - 満１歳
       - 満２歳
@@ -652,8 +688,8 @@ Busy day & tired
       - 小６
       - 中学１年
       - 中学２年
-    - Only the last 3 of kindy and 小 for elementary in form selection boxes
-  - [] Single columns for allergies
+    - [] Only the last 3 of kindy and 小 for elementary in form selection boxes
+  - [x] Single columns for allergies
     - [] Allergies are a required field
     - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
 
@@ -661,3 +697,5 @@ Busy day & tired
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
 
 #### What I learned
+
+-
