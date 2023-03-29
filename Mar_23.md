@@ -625,7 +625,7 @@ Busy day & tired
   - [x] Display first and last names in fields when editing a user/child
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
 
-## Mar 28th
+## Mar 29th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -669,7 +669,7 @@ Busy day & tired
     - And reverse on delete
     - Probably a callback when that type of option is created/destroyed?
 
-- [] Children
+- [x] Children
 
   - [x] Add column for grade at school
     - Kindy:
@@ -688,10 +688,56 @@ Busy day & tired
       - 小６
       - 中学１年
       - 中学２年
-    - [] Only the last 3 of kindy and 小 for elementary in form selection boxes
+    - [x] Only the last 3 of kindy and 小 for elementary in form selection boxes
   - [x] Single columns for allergies
-    - [] Allergies are a required field
-    - [] Form default is blank, there's a greyed select box which when toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+    - [x] Form default is blank, there's a greyed text field which when check box toggled to no changes the input to なし (user can't alter), toggled to yes makes editable
+
+- [] Requests/Bugfixes
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+
+## Mar 30th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] AWS
+
+  - Look into alternatives to EB since that's determined to not work
+    - [] Manually setting up an EC2/other associated resources
+      - [YT Walkthrough](https://www.youtube.com/watch?app=desktop&v=E2o2u7Rc0h0)
+    - [] Deploying with Docker
+
+- [] Invoices
+
+  - [] Need to be able to merge invoices by moving registrations from one to another
+    - Should be set to in_ss and just merged, SMs will do it in the SS at the same time
+    - Make sure you only get the option for valid merges
+
+- Time Slots
+
+  - [] AMs can close time slots
+    - still shows but says full
+    - no need for automatic closing
+  - [] Default registration deadline is 2pm the day before
+
+- [] Emails
+
+  - [] When new invoice is confirmed
+    - Email SM saying it's been created with link to the invoice
+    - Email parent with details and provisional price
+
+- [] Coupons
+
+  - [] Add somewhere to add a coupon during the invoice creation process
+    - SMs will add the adjustment manually
+
+- [] Options
+
+  - [] Photo service is only necessary once per parent
+    - Need to somehow register all other children for it, maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
+    - And reverse on delete
+    - Probably a callback when that type of option is created/destroyed?
 
 - [] Requests/Bugfixes
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
