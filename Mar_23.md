@@ -704,9 +704,57 @@ Busy day & tired
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
-    - [] Manually setting up an EC2/other associated resources
-      - [YT Walkthrough](https://www.youtube.com/watch?app=desktop&v=E2o2u7Rc0h0)
-    - [] Deploying with Docker
+
+    - [x] Get the Elastic Beanstalk up and running!!
+      - [x] Get the database seeded
+      - [] Figure out what's causing the render error when you log in
+
+#### What I learned
+
+- Edit Rails credentials with `EDITOR="code --wait" bin/rails credentials:edit`
+  - View them with `Rails.application.credentials`
+- View locally saved AWS credentials with `code ~/.aws/credentials`
+- Use 'logout', not 'exit' to close eb ssh sessions
+- Finally tracked down the issue with mail not being readable, it's a [known issue](https://github.com/mikel/mail/issues/1489) with version 2.8.0
+  - Path to the problem folder is '/var/app/current/vendor/bundle/ruby/3.0.0/gems/mail-2.8.0/lib/mail/'
+  - Can be (seemingly) fixed by locking 'mail' to 2.7.1 in gemfile
+- But now it's trying to load Faker in production for some reason
+  - I was loading it in an initializer to set the locale to JA, removed initializer
+- This opens the console in an SSH session `RAILS_ENV=production bundle exec rails c`
+- `/var/app/containerfiles/logs/production.log` Is the path for logs which would usually be shown as errors
+- Currently stuck on this error
+
+```
+ActionView::Template::Error (undefined method `persisted?' for nil:NilClass):
+    18: <% else %>
+    19:
+    20:     <div class="event">
+    21:         <%= (link_to image_tag(url_for(event.image)), event_path(id: event, child: current_user.children.first.id)) unless event.image.nil? %>
+    22:
+    23:         <h2><%= link_to event.description, event_path(id: event, child: current_user.children.first.id) %></h2>
+    24:
+
+app/views/events/_event.html.erb:21
+app/views/users/show.html.erb:53
+```
+
+## Mar 31st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] AWS
+
+  - Look into alternatives to EB since that's determined to not work
+
+    - [x] Get the Elastic Beanstalk up and running!!
+      - [x] Get the database seeded
+      - [] Figure out what's causing the render error when you log in
+
+  - [] Children
+    - [] Editable when SSID is nil, otherwise locked for editing because in SS
+    - [] Highlight in event list if no SSID
 
 - [] Invoices
 
