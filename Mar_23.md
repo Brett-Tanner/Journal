@@ -744,52 +744,13 @@ app/views/users/show.html.erb:53
 
 #### What I did
 
+Busy day @school, also discovered the issue with nested attributes and spent some time looking at that/figuring out what was happening
+
 - [] AWS
 
   - Look into alternatives to EB since that's determined to not work
 
     - [x] Get the Elastic Beanstalk up and running!!
       - [x] Get the database seeded
-      - [] Figure out what's causing the render error when you log in
-
-  - [] Children
-    - [] Editable when SSID is nil, otherwise locked for editing because in SS
-    - [] Highlight in event list if no SSID
-
-- [] Invoices
-
-  - [] Need to be able to merge invoices by moving registrations from one to another
-    - Should be set to in_ss and just merged, SMs will do it in the SS at the same time
-    - Make sure you only get the option for valid merges
-
-- Time Slots
-
-  - [] AMs can close time slots
-    - still shows but says full
-    - no need for automatic closing
-  - [] Default registration deadline is 2pm the day before
-
-- [] Emails
-
-  - [] When new invoice is confirmed
-    - Email SM saying it's been created with link to the invoice
-    - Email parent with details and provisional price
-
-- [] Coupons
-
-  - [] Add somewhere to add a coupon during the invoice creation process
-    - SMs will add the adjustment manually
-
-- [] Options
-
-  - [] Photo service is only necessary once per parent
-    - Need to somehow register all other children for it, maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
-    - And reverse on delete
-    - Probably a callback when that type of option is created/destroyed?
-
-- [] Requests/Bugfixes
-  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
-
-#### What I learned
-
--
+      - [x] Figure out what's causing the render error when you log in
+        - Needed to use #blank? for checking image attachments rather than #image.nil?
