@@ -1,5 +1,36 @@
 # April 2023
 
+## Apr 3rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+Busy with Spring school/new kids' book stickers
+
+- [] Requests/Bugfixes
+  - [x] Children now update their names properly when edited through parent as nested attributes
+  - [x] Staging branch .gitignore updated to dramatically reduce bundle size
+
+#### What I learned
+
+- Use `git checkout <commit id>`, not git reset if you wanna try out a past version
+- Figured out nested attributes weren't the problem since other child attributes could be edited fine
+  - It was actually because nested records aren't validated, so the before_validated callback which sets names was never triggered
+  - Resolved by adding 'validates_associated :children' to the User model
+- To remove files using .gitignore that have already been tracked, you need to `git rm -rf --cached foldername` after editing .gitignore
+
+  - To ignore a folder except for a few files, do something like this
+
+  ```
+  /app/assets/images/*
+  !/app/assets/images/favicon.png
+  !/app/assets/images/logo.png
+  !/app/assets/images/white_logo.png
+  ```
+
+## Apr 4th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 #### What I did
@@ -46,4 +77,4 @@
 
 #### What I learned
 
-- Use `git checkout <commit id>`, not git reset if you wanna try out a past version
+-
