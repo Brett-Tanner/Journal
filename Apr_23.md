@@ -38,13 +38,31 @@ Busy with Spring school/new kids' book stickers
 - [] Children
 
   - [] Editable when SSID is nil, otherwise locked for editing because in SS
-  - [] Highlight in event list if no SSID
+  - [x] Highlight in event list if no SSID
 
-- [] Invoices
+- [x] Invoices
 
-  - [] Need to be able to merge invoices by moving registrations from one to another
+  - [x] Need to be able to merge invoices by moving registrations from one to another
     - Should be set to in_ss and just merged, SMs will do it in the SS at the same time
     - Make sure you only get the option for valid merges
+
+- [] Requests/Bugfixes
+  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
+  - [x] 2nd row of headers for days on event children sticks too far up, it overlaps first header row
+  - [x] Options weren't being deleted because I hardcoded the \_destroy value to be 0 on the confirm page
+  - [x] I think copy_regs button fails when there isn't an invoice for the kid you're copying to yet, so maybe create one if it doesn't exists as part of the action
+    - Was already doing that, problem was it wasn't saving because the total cost was nil
+    - Resolved by creating a db default of 0 for that column
+
+## Apr 5th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- [] Children
+
+  - [] Editable when SSID is nil, otherwise locked for editing because in SS
 
 - Time Slots
 
@@ -73,7 +91,6 @@ Busy with Spring school/new kids' book stickers
 
 - [] Requests/Bugfixes
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
-  - [] 2nd row of headers for days on event children sticks too far up, it overlaps first header row
 
 #### What I learned
 
