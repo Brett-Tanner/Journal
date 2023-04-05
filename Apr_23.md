@@ -60,9 +60,30 @@ Busy with Spring school/new kids' book stickers
 
 #### What I did
 
-- [] Children
+- CSV
+
+  - [x] Decide on postgres-copy for CSV parsing since it uses PG's own COPY function
+    - [] Install and set up the controller actions for import/export
+
+## Apr 6th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- CSV
+
+  - [x] Decide on postgres-copy for CSV parsing since it uses PG's own COPY function
+    - [] Install and set up the controller actions for import/export
+
+- Children
 
   - [] Editable when SSID is nil, otherwise locked for editing because in SS
+
+- Invoices
+
+  - [] Staff should be able to edit if not in SS
+    - [] If in SS, the space where edit should be should instead be filled by a mini form that allows in_ss to be toggled then replaces self with edit button (turboframe)
 
 - Time Slots
 
@@ -71,25 +92,25 @@ Busy with Spring school/new kids' book stickers
     - no need for automatic closing
   - [] Default registration deadline is 2pm the day before
 
-- [] Emails
+- Emails
 
   - [] When new invoice is confirmed
     - Email SM saying it's been created with link to the invoice
     - Email parent with details and provisional price
 
-- [] Coupons
+- Coupons
 
   - [] Add somewhere to add a coupon during the invoice creation process
     - SMs will add the adjustment manually
 
-- [] Options
+- Options
 
   - [] Photo service is only necessary once per parent
     - Need to somehow register all other children for it, maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
     - And reverse on delete
     - Probably a callback when that type of option is created/destroyed?
 
-- [] Requests/Bugfixes
+- Requests/Bugfixes
   - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
 
 #### What I learned
