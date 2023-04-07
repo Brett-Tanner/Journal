@@ -124,6 +124,46 @@ Busy with Spring school/new kids' book stickers
 
 #### What I did
 
+- Children
+
+  - [] Editable when SSID is nil, otherwise locked for editing because in SS
+  - [] If child entered without SSID, staff can enter an SSID and find a child by that to merge
+    - Moves the child to the parent
+    - Moves all the info from the entered child to the SS imported one
+    - Moves all invoices etc. from entered child to SS imported one
+    - Needs to be a confirm page showing the kids to be merged cos SMs can't be trusted to enter the right number
+  - [x] Photos OK should be an enum
+    - [x] Has photos OK, my page ok and none ok
+    - [x] Parents can edit photo status
+      - [x] But parents can't select the my page ok
+  - [x] Put first seasonal option in new child form
+    - [x] If that's true and child is external, set needs hat to true
+    - Show 1st seasonal if customer, just the hat checkbox if staff
+    - Only show first seasonal if it's a new record as well
+  - [x] Make allergies a select, not check box
+
+- Users
+
+  - [x] Parents don't need to be associated to a school (I think)
+    - Can just get the list of parents for a school through their children (distinct)
+  - [] User sign up form needs to remember names as well, do the same as you did for the user#edit form
+
+- Requests/Bugfixes
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
+  - [x] Change seeds to only create arrival options if morning, afternoon if afternoon
+  - [] Arrival only for morning, depart only or afternoon **On live**
+  - [] Make options a check box, not a button
+  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
+  - [] Add some orphan children with 10 digit SSIDs for friday **On live**
+  - [] Images on Events/time slots **On live**
+    - [] Include pics of the price lists in the bundle and just direct link them **On live**
+
+## Apr 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - CSV
 
   - [] Set up the controller action for import
@@ -136,12 +176,6 @@ Busy with Spring school/new kids' book stickers
     - Moves all the info from the entered child to the SS imported one
     - Moves all invoices etc. from entered child to SS imported one
     - Needs to be a confirm page showing the kids to be merged cos SMs can't be trusted to enter the right number
-  - [] Photos OK should be an enum **Friday**
-    - [] Parents can edit photo status **Friday**
-    - Has photos OK, my page ok and none ok
-    - But parents can't select the my page ok
-  - [] Put first seasonal option in new child form **Friday**
-    - If that's true and child is external, set needs hat to true **Friday**
 
 - Invoices
 
@@ -177,15 +211,14 @@ Busy with Spring school/new kids' book stickers
 
 - Users
 
-  - [] Parents don't need to be associated to a school (I think) **On this one rn, fixing seeds for no parent school**
-    - Can just get the list of parents for a school through their children (distinct) **Friday**
+  - [x] Parents don't need to be associated to a school (I think)
+    - Can just get the list of parents for a school through their children (distinct)
   - [] User sign up form needs to remember names as well, do the same as you did for the user#edit form
 
 - Requests/Bugfixes
-  - [] Sort out the invoice change formatting on event children so HTML tags are removed but newlines aren't
-  - [] Change seeds to only create arrival options if morning, afternoon if afternoon
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
   - [] Arrival only for morning, depart only or afternoon **On live**
-  - [] Make options a check box, not a button **Friday**
+  - [] Make options a check box, not a button
   - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
   - [] Add some orphan children with 10 digit SSIDs for friday **On live**
   - [] Images on Events/time slots **On live**
