@@ -158,7 +158,11 @@ Busy with Spring school/new kids' book stickers
   - [] Images on Events/time slots **On live**
     - [] Include pics of the price lists in the bundle and just direct link them **On live**
 
-## Apr 8th
+## Apr 8th & 9th
+
+Worked on the project setup instructions for Mike
+
+## Apr 10th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
