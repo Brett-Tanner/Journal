@@ -168,6 +168,29 @@ Worked on the project setup instructions for Mike
 
 #### What I did
 
+- Events
+
+  - [x] Re-enable event/slot creation by admins with new fields
+    - [x] Add image uploads to Event and Time Slot forms
+  - [x] Allow afternoon time slots to be created automatically from morning slots
+  - [x] Add an option in the School select box to create the event for all schools
+
+- Requests/Bugfixes
+  - [x] Fix lack of User school causing issues with Event#index
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
+  - [] Arrival only for morning, depart only or afternoon **On live**
+  - [] Make options a check box, not a button
+  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
+  - [] Add some orphan children with 10 digit SSIDs for friday **On live**
+  - [] Images on Events/time slots **On live**
+    - [] Include pics of the price lists in the bundle and just direct link them **On live**
+
+## Apr 11th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - CSV
 
   - [] Set up the controller action for import
@@ -181,19 +204,10 @@ Worked on the project setup instructions for Mike
     - Moves all invoices etc. from entered child to SS imported one
     - Needs to be a confirm page showing the kids to be merged cos SMs can't be trusted to enter the right number
 
-- Invoices
+- Coupons
 
-  - [] Staff should be able to edit if not in SS
-    - [] If in SS, the space where edit should be should instead be filled by a mini form that allows in_ss to be toggled then replaces self with edit button (turboframe)
-  - [] Needs to be an error if you try to copy regs to a closed time slot
-  - [] Remove invoice numbers from parent view
-
-- Time Slots
-
-  - [] AMs can close time slots
-    - still shows but says full
-    - no need for automatic closing
-  - [] Default registration deadline is 2pm the day before
+  - [] Add somewhere to add a coupon during the invoice creation process
+    - SMs will add the adjustment manually
 
 - Emails
 
@@ -201,10 +215,12 @@ Worked on the project setup instructions for Mike
     - Email SM saying it's been created with link to the invoice
     - Email parent with details and provisional price
 
-- Coupons
+- Invoices
 
-  - [] Add somewhere to add a coupon during the invoice creation process
-    - SMs will add the adjustment manually
+  - [] Staff should be able to edit if not in SS
+    - [] If in SS, the space where edit should be should instead be filled by a mini form that allows in_ss to be toggled then replaces self with edit button (turboframe)
+  - [] Needs to be an error if you try to copy regs to a closed time slot
+  - [] Remove invoice numbers from parent view
 
 - Options
 
@@ -213,10 +229,15 @@ Worked on the project setup instructions for Mike
     - And reverse on delete
     - Probably a callback when that type of option is created/destroyed?
 
+- Time Slots
+
+  - [] AMs can close time slots
+    - still shows but says full
+    - no need for automatic closing
+  - [] Default registration deadline is 2pm the day before
+
 - Users
 
-  - [x] Parents don't need to be associated to a school (I think)
-    - Can just get the list of parents for a school through their children (distinct)
   - [] User sign up form needs to remember names as well, do the same as you did for the user#edit form
 
 - Requests/Bugfixes
