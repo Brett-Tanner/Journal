@@ -187,6 +187,11 @@ Worked on the project setup instructions for Mike
 
 ## Apr 11th
 
+Too busy.
+Did finally get an error for the S3 image upload though! It's the screenshot on my desktop. Successful one was POST, other was PATCH???
+
+## Apr 12th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 #### What I did

@@ -721,7 +721,7 @@ Busy day & tired
 - But now it's trying to load Faker in production for some reason
   - I was loading it in an initializer to set the locale to JA, removed initializer
 - This opens the console in an SSH session `RAILS_ENV=production bundle exec rails c`
-- `/var/app/containerfiles/logs/production.log` Is the path for logs which would usually be shown as errors
+- `/var/app/containerfiles/logs/production.log` Is the path for puma output
 - Currently stuck on this error
 
 ```
