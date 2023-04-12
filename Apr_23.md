@@ -192,6 +192,21 @@ Did finally get an error for the S3 image upload though! It's the screenshot on 
 
 ## Apr 12th
 
+Too busy again, lunch was just getting info to Mike/Jack. Got file uploads (partially) working by remembering .yml is not a .rb
+
+#### What I learned
+
+- The inability to attach images was being caused by me trying to use ENV variables in a .yml file without declaring them as ruby syntax
+  - Attaching images to events seems to work with smaller files, but not large ones
+- Image ideas
+  - Use [ListObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) to attach images from the S3 bucket manually in rails c
+  - Search for images I upload with the app using the same logic I do when seeding locally (with active storage)
+  - Image tag pointing at the S3 image [like this](https://stackoverflow.com/questions/7933458/how-to-format-a-url-to-get-a-file-from-amazon-s3)
+  - Just have an image tag linking to the image in the assets folder, path generated from event/slot name
+  - Read through the logs till you figure out why larger images fail silently
+
+## Apr 13th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 #### What I did
