@@ -211,6 +211,87 @@ Too busy again, lunch was just getting info to Mike/Jack. Got file uploads (part
 
 #### What I did
 
+- Styling
+
+  - [x] Login
+  - [x] Signup
+  - [x] Profile (user)
+  - [x] Profile (child)
+  - [x] Event index
+  - [x] Child list for event
+  - [x] Child list for time slot
+
+- Requests/Bugfixes
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
+  - [x] Arrival only for morning, depart only or afternoon **On live**
+  - [] Make options a check box, not a button
+  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
+  - [x] Add some orphan children with 10 digit SSIDs for friday **On live**
+  - [x] Images on Events/time slots **On live**
+    - [x] Include pics of the price lists in the bundle and just direct link them **On live**
+  - [x] Claim child tries to add parent's school, but that doesn't exist **Friday**
+  - [] Staff shouldn't see option to add/claim child
+
+#### What I learned
+
+- 90% memory usage seems to be from when I SSH and mess around in the console, needs to hold a lot in memory when I do that
+- Rather than using nested hashes, it's actually possible to set attributes in Rails helpers with 'aria-label': 'stuff' for example
+- Add classes to the devise forms using html: { class: 'something' }
+
+- Bootstrap
+
+  - General
+
+    - Rules after Bootstrap is imported in application.scss will override BS rules (because the BS ones are set with the default! flag)
+    - To modify default CSS variables, set them like `$bg-color: white;`
+      - Theme colors from maps can also be called as standalone variables
+      - SASS variables need to be set outside a rule to be global, if inside a rule will only be accessible to that rule
+      - If you wanna overwrite a SASS variable put it before the import, if you wanna overwrite a CSS variable put it after the import
+    - Can add to map (groups of css values) by creating your own and merging it like
+
+    ```
+    // Create your own map
+    $custom-colors: (
+      "custom-color": #900
+    );
+
+    // Merge the maps
+    $theme-colors: map-merge($theme-colors, $custom-colors);
+    ```
+
+    - Use tint-color(color, weight) to lighten, shade-color to darken
+    - There's a color-contrast(color) function which returns a color which has at least the minimum contrast to the passed color
+    - Use add() and subtract() rather than calc to avoid weird errors
+    - Their components inherit from a base class and add modifiers as appropriate, try to stick to this when adding your own
+    - BS variables are by default prefixed with bs- to differentiate from mine
+
+  - Forms
+    - You can add the 'disabled' attribute to a fieldset and it'll disable all the fields inside it, and style them appropriately
+      - Similar for readonly, can add '.form-control-plaintext' to make them just display as plaintext without the input
+    - Add text under inputs with the '.form-text' class on a div
+      - Use 'aria-labelledby' or 'aria-describedby' on the input to link it to the text (using an id on the text div)
+      - If you want the text in line, use a span etc.
+
+- SASS
+  - Lets you nest pseudo-selectors like
+  ```
+  .btn-ku {
+    background: $ku-orange;
+    color: $near-white;
+    &:hover {
+      background: $near-white;
+      color: $ku-orange;
+      border: 1px inset $ku-orange;
+    }
+  }
+  ```
+
+## Apr 14th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - CSV
 
   - [] Set up the controller action for import
@@ -223,6 +304,7 @@ Too busy again, lunch was just getting info to Mike/Jack. Got file uploads (part
     - Moves all the info from the entered child to the SS imported one
     - Moves all invoices etc. from entered child to SS imported one
     - Needs to be a confirm page showing the kids to be merged cos SMs can't be trusted to enter the right number
+  - [] Should be able to print a list of kids attending from the page showing them
 
 - Coupons
 
@@ -262,12 +344,9 @@ Too busy again, lunch was just getting info to Mike/Jack. Got file uploads (part
 
 - Requests/Bugfixes
   - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
-  - [] Arrival only for morning, depart only or afternoon **On live**
   - [] Make options a check box, not a button
   - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
-  - [] Add some orphan children with 10 digit SSIDs for friday **On live**
-  - [] Images on Events/time slots **On live**
-    - [] Include pics of the price lists in the bundle and just direct link them **On live**
+  - [] Staff shouldn't see option to add/claim child
 
 #### What I learned
 
