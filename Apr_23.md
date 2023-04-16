@@ -286,7 +286,11 @@ Too busy again, lunch was just getting info to Mike/Jack. Got file uploads (part
   }
   ```
 
-## Apr 14th
+## Apr 16th
+
+Set up the EB CLI on my home computer.
+
+## Apr 17th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
