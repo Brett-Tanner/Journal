@@ -296,19 +296,100 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
+- AWS
+
+  - [x] Terminated and re-created the staging environment
+    - DO NOT delete the current version of the app from the S3 bucket -\_\_-
+
 - CSV
 
-  - [] Set up the controller action for import
+  - [x] Set up the controller action for import
+
+- Styling
+
+  - [x] Styled the Child form (still overridden by the in place edit styling on the user page tho)
+
+#### What I learned
+
+- For some reason when applying a class to the select form helper, it needs to be in a hash and must be the 4th option passed
+
+  - You can make it the 4th by making an empty hash the 3rd
+
+- Don't delete any vaguely recent app versions from the S3 bucket, they might still be needed for rollback
+  - Yeah really don't do this, it requires you to terminate the environment and just start again
+
+## Apr 18th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
 
 - Children
 
-  - [] Editable when SSID is nil, otherwise locked for editing because in SS
-  - [] If child entered without SSID, staff can enter an SSID and find a child by that to merge
-    - Moves the child to the parent
-    - Moves all the info from the entered child to the SS imported one
+  - [x] Editable when SSID is nil, otherwise locked for editing because in SS
+  - [x] Should be able to print a list of kids attending from the page showing them
+  - [x] If child entered without SSID, staff can enter an SSID and find a child by that to merge
+    - [x] Also needs to update the child_id for each registration
+    - Moves the ssid child to the parent
     - Moves all invoices etc. from entered child to SS imported one
     - Needs to be a confirm page showing the kids to be merged cos SMs can't be trusted to enter the right number
-  - [] Should be able to print a list of kids attending from the page showing them
+  - [x] Links to all time slots at the top of event children list
+  - [x] Link to an index of the daily attendance sheets
+    - [x] Style those
+    - [x] Figure out how to only print the table the print button is associated with
+  - [] Hide ele school from all, staff can enter pin to view sensitive info
+
+- Styling
+
+  - [x] User#form partial
+
+- Tests
+
+  - [x] Rewrite for new reality
+    - [x] Child
+    - [x] Invoice
+    - [x] Misc changes caused by removing school from parents
+
+- Users
+
+  - [x] User sign up form needs to remember names as well, do the same as you did for the user#edit form
+  - [] Hide address info and phone number once entered to sign up, staff can see by entering PIN
+    - [x] Add a PIN column on the user table, we set for them
+  - [] Redirect to P-up privacy policy and require acceptance before accessing app
+  - [] SM can only log in from their school's IP address
+    - Implement through an 'AllowedIPs' table
+      - Name and IP fields on this table
+    - Probably with a through table???
+  - [] Timeout admin users after a while
+  - [] On SM/AM profile
+    - Show table for each event
+      - Internal , reservations, external and total kids
+      - Number of photobook sales
+      - Total revenue from internal & reservation (sum of invoices)
+      - Total revenue from external Ss
+      - Total revenue for event
+      - Goal revenue
+
+- Requests/Bugfixes
+  - [x] Stop displaying unnecessary afternoon info for special days
+  - [x] Staff shouldn't see option to add/claim child
+  - [] Parent children are not updated after redirect from merge child
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
+  - [] Stop printing the weird extra info on attendance sheets
+
+#### What I learned
+
+- Registrations need to belong to a child so I can validate that a child hasn't registered for the same thing twice
+
+## Apr 19th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
+  - [] Hide ele school from all, staff can enter pin to view sensitive info
 
 - Coupons
 
@@ -321,6 +402,12 @@ Set up the EB CLI on my home computer.
     - Email SM saying it's been created with link to the invoice
     - Email parent with details and provisional price
 
+- Events
+
+  - [] Events need a revenue goal
+  - [] Make options a check box, not a button
+  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
+
 - Invoices
 
   - [] Staff should be able to edit if not in SS
@@ -331,9 +418,15 @@ Set up the EB CLI on my home computer.
 - Options
 
   - [] Photo service is only necessary once per parent
-    - Need to somehow register all other children for it, maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
+    - Need to somehow register all other children for it,
+      - maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
+      - or maybe count them as registered if any sibling is, probably few enough places it's relevant
     - And reverse on delete
     - Probably a callback when that type of option is created/destroyed?
+
+- Styling
+
+  - []
 
 - Time Slots
 
@@ -344,13 +437,26 @@ Set up the EB CLI on my home computer.
 
 - Users
 
-  - [] User sign up form needs to remember names as well, do the same as you did for the user#edit form
+  - [] Hide address info and phone number once entered to sign up, staff can see by entering PIN
+  - [] Redirect to P-up privacy policy and require acceptance before accessing app
+  - [] SM can only log in from their school's IP address
+    - Implement through an 'AllowedIPs' table
+      - Name and IP fields on this table
+    - Probably with a through table???
+  - [] Timeout admin users after a while
+  - [] On SM/AM profile
+    - Show table for each event
+      - Internal , reservations, external and total kids
+      - Number of photobook sales
+      - Total revenue from internal & reservation (sum of invoices)
+      - Total revenue from external Ss
+      - Total revenue for event
+      - Goal revenue
 
 - Requests/Bugfixes
-  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't
-  - [] Make options a check box, not a button
-  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
-  - [] Staff shouldn't see option to add/claim child
+  - [] Parent children are not updated after redirect from merge child
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
+  - [] Stop printing the weird extra info on attendance sheets
 
 #### What I learned
 
