@@ -24,9 +24,10 @@ Busy with Spring school/new kids' book stickers
 
   ```
   /app/assets/images/*
-  !/app/assets/images/favicon.png
-  !/app/assets/images/logo.png
-  !/app/assets/images/white_logo.png
+  !/app/assets/images/favicon.svg
+  !/app/assets/images/logo.svg
+  !/app/assets/images/white_logo.svg
+  !/app/assets/images/login_splash.jpg
   ```
 
 ## Apr 4th
@@ -389,24 +390,86 @@ Set up the EB CLI on my home computer.
 
 - Children
 
-  - [] Hide ele school from all, staff can enter pin to view sensitive info
+  - [x] Hide ele school from all, staff can enter pin to view
 
 - Coupons
 
-  - [] Add somewhere to add a coupon during the invoice creation process
+  - [x] Add somewhere to add a coupon during the invoice creation process
     - SMs will add the adjustment manually
+
+- Events
+
+  - [x] Make registrations a check box, not a button
+    - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
+  - [x] Add names of registered time slots to a box on the price bar
+    - [x] Whose visibility can be toggled
+  - [] Staff need a way to see/edit the same event show view customers do
+    - Probably an 'Edit Invoice' button on invoices
+  - [] Events need a revenue goal
+
+- JS
+
+  - [x] Modify conditional controller to by used for PIN reveal of sensitive info
+  - [x] Rewrite large chunks of the price calculation logic to work with checkboxes
+
+- Users
+
+  - [x] Hide address info and phone number once entered to sign up, staff can see by entering PIN
+  - [] Redirect to P-up privacy policy and require acceptance before accessing app
+  - [] SM can only log in from their school's IP address
+    - Implement through an 'AllowedIPs' table
+      - Name and IP fields on this table
+    - Probably with a through table???
+  - [] Timeout admin users after a while
+  - [] On SM/AM profile
+    - Show table for each event
+      - Internal , reservations, external and total kids
+      - Number of photobook sales
+      - Total revenue from internal & reservation (sum of invoices)
+      - Total revenue from external Ss
+      - Total revenue for event
+      - Goal revenue
+
+- Requests/Bugfixes
+  - [] Parent children are not updated after redirect from merge child
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
+  - [] Stop printing the weird extra info on attendance sheets
+
+#### What I learned
+
+- Seems the leftover require tree comments in application.css cause some problems with asset compilation
+
+  - Might just have been because my CSS used the login splash JPG and I hadn't retained it in the bundle through .gitignore
+  - Removing the comment at the start of the file resulted in a successful deploy
+  - Very possible the issues were all caused by me not updating the stuff I copy/paste into .gitignore to include the SVGs
+    - They were in the CSS so tried to be bundled, but could't cos I left the PNG versions in, not SVG
+
+- If you make a change that requires database changes, you'll need to rebuild the environment
+  - Best to do that with an upload of a full, images included deploy so seeding is easier
+
+## Apr 20th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Authorisation
+
+  - [] Choose between Pundit and cancancan
 
 - Emails
 
   - [] When new invoice is confirmed
-    - Email SM saying it's been created with link to the invoice
-    - Email parent with details and provisional price
+    - [] Email SM saying it's been created with link to the invoice
+    - [] Email parent with details and provisional price
 
 - Events
 
+  - [x] Make registrations a check box, not a button
+    - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
+  - [] Staff need a way to see/edit the same event show view customers do
+    - Probably an 'Edit Invoice' button on invoices
   - [] Events need a revenue goal
-  - [] Make options a check box, not a button
-  - [] Add names of registered time slots to a box on the price bar which expands up and down when clicked
 
 - Invoices
 
@@ -414,6 +477,10 @@ Set up the EB CLI on my home computer.
     - [] If in SS, the space where edit should be should instead be filled by a mini form that allows in_ss to be toggled then replaces self with edit button (turboframe)
   - [] Needs to be an error if you try to copy regs to a closed time slot
   - [] Remove invoice numbers from parent view
+
+- JS
+
+  - []
 
 - Options
 
@@ -437,7 +504,6 @@ Set up the EB CLI on my home computer.
 
 - Users
 
-  - [] Hide address info and phone number once entered to sign up, staff can see by entering PIN
   - [] Redirect to P-up privacy policy and require acceptance before accessing app
   - [] SM can only log in from their school's IP address
     - Implement through an 'AllowedIPs' table
