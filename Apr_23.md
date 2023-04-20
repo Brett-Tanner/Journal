@@ -453,13 +453,67 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
+- Events
+
+  - [x] Make registrations a check box, not a button
+    - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
+    - Probably an 'Edit Registrations' button on invoices
+  - [x] Events need a revenue goal
+
+- Invoices
+
+  - [x] Remove invoice numbers from summary
+  - [x] Only apply hat adj if never applied before, not per event
+  - [x] Group invoices by child, event in index
+  - [x] Staff should be able to edit (same view as customers) if not in SS
+    - [x] Replace with in_ss message if in SS, and disable merging from Invoices in SS
+  - [x] Add previous versions to the #show view
+    - [x] Allow resurrection of those versions
+  - [x] Streamline logic for skipping slots already registered for in #copy_regs
+  - [] Skip closed time slots (and their options) when copying registrations **DB change**
+
+- Styling
+
+  - [x] Basic Invoice styles
+    - [x] Divs for each block of text, w/BS styles
+    - [x] Switch partial to card class and tidy up from
+    - [x] Redo heading sizes with knowledge they're not gonna be primary headings on page
+    - [x] Make various small things I noticed readable
+      - [x] Children index
+      - [x] Customers index
+      - [x] Schools index
+
+- Users
+
+  - [x] Show P-UP privacy policy in a modal on sign up page
+  - [x] Require accepting P-UP privacy policy before accessing app
+  - [] SM can only log in from their school's IP address **DB change**
+    - Implement through an 'AllowedIPs' table
+      - Name and IP fields on this table
+    - Probably with a through table???
+  - [x] Timeout admins/AMs after an hour
+  - [x] Show event stats for each event at each school they manage. Cols are:
+    - Internal , reservations, external and total kids
+    - Number of photobook sales
+    - Total revenue from internal & reservation (sum of invoices)
+    - Total revenue from external Ss
+    - Total revenue for event
+    - [x] Goal revenue **DB change**
+  - [x] Make the school list for AM/SMs actually readable
+
+## Apr 21st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Authorisation
 
   - [] Choose between Pundit and cancancan
 
 - Emails
 
-  - [] When new invoice is confirmed
+  - [] When new invoice is confirmed **Requires domain**
     - [] Email SM saying it's been created with link to the invoice
     - [] Email parent with details and provisional price
 
@@ -467,16 +521,11 @@ Set up the EB CLI on my home computer.
 
   - [x] Make registrations a check box, not a button
     - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
-  - [] Staff need a way to see/edit the same event show view customers do
-    - Probably an 'Edit Invoice' button on invoices
-  - [] Events need a revenue goal
+    - Probably an 'Edit Registrations' button on invoices
 
 - Invoices
 
-  - [] Staff should be able to edit if not in SS
-    - [] If in SS, the space where edit should be should instead be filled by a mini form that allows in_ss to be toggled then replaces self with edit button (turboframe)
-  - [] Needs to be an error if you try to copy regs to a closed time slot
-  - [] Remove invoice numbers from parent view
+  - [] Skip closed time slots (and their options) when copying registrations **DB change**
 
 - JS
 
@@ -495,34 +544,27 @@ Set up the EB CLI on my home computer.
 
   - []
 
+- Security
+
 - Time Slots
 
-  - [] AMs can close time slots
+  - [] Create index
+  - [] Create partial
+  - [] AMs (not SMs) can close time slots **DB change**
     - still shows but says full
-    - no need for automatic closing
-  - [] Default registration deadline is 2pm the day before
 
 - Users
 
-  - [] Redirect to P-up privacy policy and require acceptance before accessing app
-  - [] SM can only log in from their school's IP address
+  - [] SM can only log in from their school's IP address **DB change**
     - Implement through an 'AllowedIPs' table
       - Name and IP fields on this table
     - Probably with a through table???
-  - [] Timeout admin users after a while
-  - [] On SM/AM profile
-    - Show table for each event
-      - Internal , reservations, external and total kids
-      - Number of photobook sales
-      - Total revenue from internal & reservation (sum of invoices)
-      - Total revenue from external Ss
-      - Total revenue for event
-      - Goal revenue
 
 - Requests/Bugfixes
   - [] Parent children are not updated after redirect from merge child
   - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
   - [] Stop printing the weird extra info on attendance sheets
+  - [] Resume printing table borders on attendance sheets
 
 #### What I learned
 
