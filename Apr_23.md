@@ -509,7 +509,73 @@ Set up the EB CLI on my home computer.
 
 - Authorisation
 
-  - [] Choose between Pundit and cancancan
+  - [x] Choose between Pundit and cancancan
+    - Pundit, I like the way they organise their files more
+
+- Children
+
+  - [x] Katakana name must be present and katakana
+  - [x] Allergies read only by default
+  - [x] Photos select defaults to blank
+  - [x] Have a link to their invoices on show page
+
+- Events
+
+  - [x] Make registrations a check box, not a button
+    - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
+  - [x] Partial links to sheet if in index, to child's regs if on child#show
+  - Registered slots popup
+    - [x] add AM/PM or date
+    - [x] add total num of options registered
+    - [x] sort alphabetically
+
+- Invoices
+
+  - [x] Skip closed time slots (and their options) when copying registrations
+  - SM/AMs can
+    - [x] add adjustments to invoices
+    - [x] edit adjustments on invoices
+  - [x] Change visible name to 'Bookings'
+  - [x] prevent multiple siblings being registered for same event option in Invoice#calc_cost (just destroy it if siblings registered)
+  - [x] Show tax in Invoice#summary
+  - [x] Needs the weird number thing from the example Leroy had
+  - [] Re-enable resurrection with the ability to restore registrations and adjustments for that version
+
+- Options
+
+  - Photo service is only necessary once per parent
+    - [x] count them as registered if any sibling is on time slot attendance sheet
+      - on event sheet
+      - on time slot sheet
+
+- Time Slots
+
+  - [x] Create index
+  - [x] Create partial
+  - [x] Create show
+  - [x] AMs (not SMs) can close time slots
+    - [x] still shows but says full
+
+- Users
+
+  - [x] Katakana name must be present and katakana
+  - [] SM can only log in from their school's IP address
+    - [x] Implement through column on User table
+
+- Requests/Bugfixes
+  - [x] Start generating test data in JA again
+  - [x] Stop showing children without relevant invoices on invoice#index
+
+## Apr 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Authorisation
+
+  - [] Set up authorisation for all controllers
+    - []
 
 - Emails
 
@@ -517,50 +583,16 @@ Set up the EB CLI on my home computer.
     - [] Email SM saying it's been created with link to the invoice
     - [] Email parent with details and provisional price
 
-- Events
-
-  - [x] Make registrations a check box, not a button
-    - [] Automatically uncheck all options for a time slot when that time slot is unchecked on the registration page (easy enough to do but more difficult to do in a way that updates the price)
-    - Probably an 'Edit Registrations' button on invoices
-
-- Invoices
-
-  - [] Skip closed time slots (and their options) when copying registrations **DB change**
-
-- JS
-
-  - []
-
-- Options
-
-  - [] Photo service is only necessary once per parent
-    - Need to somehow register all other children for it,
-      - maybe do so then apply an adjustment to their invoices reducing the cost by photo service cost
-      - or maybe count them as registered if any sibling is, probably few enough places it's relevant
-    - And reverse on delete
-    - Probably a callback when that type of option is created/destroyed?
-
 - Styling
-
-  - []
 
 - Security
 
-- Time Slots
-
-  - [] Create index
-  - [] Create partial
-  - [] AMs (not SMs) can close time slots **DB change**
-    - still shows but says full
-
 - Users
 
-  - [] SM can only log in from their school's IP address **DB change**
-    - Implement through an 'AllowedIPs' table
-      - Name and IP fields on this table
-    - Probably with a through table???
+  - [] SM can only log in from their school's IP address
 
 - Requests/Bugfixes
+
   - [] Parent children are not updated after redirect from merge child
   - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
   - [] Stop printing the weird extra info on attendance sheets
