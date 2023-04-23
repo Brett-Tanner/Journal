@@ -572,10 +572,41 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
-- Authorisation
+- Security
 
+  - [x] Install Pundit
   - [] Set up authorisation for all controllers
-    - []
+    - [x] Adjustments
+    - [x] Children
+    - [x] CSVs
+    - [x] Events
+    - [x] Invoices
+  - [] Remove model scopes/methods that aren't needed anymore now I have policy scopes
+
+- Requests/Bugfixes
+
+  - [] Invoice#index is empty for some users despite having invoices
+  - [] Parent children are not updated after redirect from merge child
+  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
+  - [] Stop printing the weird extra info on attendance sheets
+  - [] Resume printing table borders on attendance sheets
+
+## Apr 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Requests/Bugfixes
+
+  - [x] Invoice#index is empty for some users despite having invoices
+    - Event association was defined thru regs, not invoices
+
+## Apr 24th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
 
 - Emails
 
@@ -586,6 +617,10 @@ Set up the EB CLI on my home computer.
 - Styling
 
 - Security
+
+  - [] Set up authorisation for all controllers
+    - []
+  - [] Remove model scopes/methods that aren't needed anymore now I have policy scopes
 
 - Users
 
