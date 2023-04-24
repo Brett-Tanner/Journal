@@ -614,13 +614,35 @@ Set up the EB CLI on my home computer.
     - [] Email SM saying it's been created with link to the invoice
     - [] Email parent with details and provisional price
 
-- Styling
+- Price Lists
+
+  - [x] Create controller
+  - [x] Set up views for admins to manage price lists
+    - [x] Index/partial
+    - [x] Edit/new/form
 
 - Security
 
-  - [] Set up authorisation for all controllers
-    - []
-  - [] Remove model scopes/methods that aren't needed anymore now I have policy scopes
+  - [x] Set up authorisation for all controllers
+    - [x] Options
+    - [x] Price Lists
+    - [x] TimeSlots
+    - [x] User
+  - [x] Remove unnecessary routes
+
+## Apr 25th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Emails
+
+  - [] When new invoice is confirmed **Requires domain**
+    - [] Email SM saying it's been created with link to the invoice
+    - [] Email parent with details and provisional price
+
+- Styling
 
 - Users
 
