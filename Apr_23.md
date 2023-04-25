@@ -636,24 +636,119 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
-- Emails
+2-3 hour meeting w/Leroy
 
-  - [] When new invoice is confirmed **Requires domain**
-    - [] Email SM saying it's been created with link to the invoice
-    - [] Email parent with details and provisional price
+- Child
 
-- Styling
+  - [x] Only show needs hat/received hat
+  - [x] Allow SMs to edit on child#show if no SSID
+  - [x] Allow staff to create children from index
+  - [] Check for registrations on child being merged to and don't copy dups
+    - [] Limit select for non ssid kid to kids with no ssid
+    - [] Click no ssid (in event sheet) to go to merge page for that child
+  - [] Make sure SSID link on index doesn't default to the path
+
+- Events
+
+  - [x] First toggle doesn't change price
+
+- Invoices
+
+  - [x] Add whodunnit to the past invoice versions
+  - [x] Set the info to be displayed for each Invoice partial context
+  - [x] Convert all my popups to BS modals
+    - [x] Invoice summary and template
+    - [x] Invoice changes
+  - [] Back button on confirm page
+  - [] See if you can show options on the confirm page
+  - [] Event partial at the top of invoice index (show the pic)
+  - [] Copy_regs is checking if options are closed again, stop it doing that
+  - [] Add a button to partial to mark as in_ss
+
+- Seeds
+
+  - [x] New price lists
+  - [x] Real schools
+    - [x] SM accounts for each school
+    - [x] 10 parents for each school
+    - [x] 2 kids for each parent, registered for 10 random slots and 5 random options each at their school's event
+    - [x] An unclaimed child for each school
+      - [] Put in a spreadsheet we can show during the presentation (probably the one Leroy sent me w/emails)
+  - [x] Seed the staging database
+  - [] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage
 
 - Users
 
-  - [] SM can only log in from their school's IP address
+  - [x] Allow staff to create customers from index
+  - [] SM can only log in from their school's IP address **requires IP list**
+  - [] When adding child there should be a back/close button for the TF
+  - [] Only show time slot index for staff
 
 - Requests/Bugfixes
 
-  - [] Parent children are not updated after redirect from merge child
-  - [] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
-  - [] Stop printing the weird extra info on attendance sheets
-  - [] Resume printing table borders on attendance sheets
+  - [x] First registration added after navigating to event page doesn't register
+  - [x] Sort out the invoice change view formatting on event children so HTML tags are removed but newlines aren't (probably just open the full versions view in a new tab)
+  - [x] Stop printing the weird extra info on attendance sheets (this is an option on the browser print dialog)
+
+## Apr 26th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Child
+
+  - [] Check for registrations on child being merged to and don't copy dups
+    - [] Limit select for non ssid kid to kids with no ssid
+    - [] Click no ssid (in event sheet) to go to merge page for that child
+  - [] Make sure SSID link on index doesn't default to the path
+
+- Emails
+
+  - [] When new invoice is confirmed or invoice is updated **Requires domain**
+    - [] Email SM saying it's been created with link to the invoice
+    - [] Email parent with details and provisional price
+    - [] If student is at a closed school, send to Leroy instead
+  - [] When user signs up (to the user)
+
+- Invoices
+
+  - [] Back button on confirm page
+  - [] See if you can show options on the confirm page
+  - [] Event partial at the top of invoice index (show the pic)
+  - [] Add a button to partial to mark as in_ss
+
+- Options
+
+  - [] Timing options should default to なし if there isn't one registered
+  - [] Timing options need separate costs for kindy and elementary
+
+- Styling
+
+- Seeds
+
+  - [x] Real schools
+    - [x] An unclaimed child for each school
+      - [] Put in a spreadsheet we can show during the presentation (probably the one Leroy sent me w/emails)
+  - [] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage
+
+- Time Slots
+
+  - [] Don't need the show view, remove all links to it
+  - [] Index for admins needs pagination for performance/not loading 10 billion images
+
+- Users
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+  - [] When adding child there should be a back/close button for the TF
+  - [] Only show time slot index for staff
+
+- Validations
+
+  - [] Child
+    - [] Presence, but not
+      - Ele school
+      - first seasonal
 
 #### What I learned
 
