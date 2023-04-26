@@ -698,14 +698,81 @@ Set up the EB CLI on my home computer.
 
 - Child
 
-  - [] Check for registrations on child being merged to and don't copy dups
-    - [] Limit select for non ssid kid to kids with no ssid
-    - [] Click no ssid (in event sheet) to go to merge page for that child
-  - [] Make sure SSID link on index doesn't default to the path
+  - [x] Make sure SSID link on index doesn't default to the path
+  - [x] Add catch-all to enums for all the extra SS categories
+  - [x] Reject kindy time options on attendance sheet
 
-- Emails
+- Events
 
-  - [] When new invoice is confirmed or invoice is updated **Requires domain**
+  - [x] Only show kindy times for kindy and ele times for ele
+  - [x] Update JS to have 200yen dumb increase instead of 184yen
+    - [x] And not apply to single regs
+
+- Hosting
+
+  - [x] Validate SES as email service
+  - [x] Get AWS to issue an SSL cert for our domain
+
+- Invoices
+
+  - [x] Back button on confirm page
+  - [x] Add invoices in SS to confirm page for context
+  - [x] Event partial at the top of invoice index (show the pic)
+  - [x] Add a button to invoice partial to mark as in_ss
+
+- Options
+
+  - [x] Timing options should default to なし if there isn't one registered
+  - [x] Timing options need separate costs for kindy and elementary
+
+- Seeds
+
+  - [x] Real schools
+    - [x] An unclaimed child for each school
+      - [x] Put in a spreadsheet we can show during the presentation (probably the one Leroy sent me w/emails)
+
+- Time Slots
+
+  - [x] Don't need the show view, remove all links to it
+
+- Users
+
+  - [x] Merge Child
+    - [x] Fix
+      - [x] For in_ss kids with no registrations
+      - [x] For in_ss kids with registrations
+    - [x] No SSID on event sheet links to the merge child div for that child's parent, or their #show page if no parent
+    - [x] Check for registrations on child being merged to and don't copy dups (use copy_regs?)
+      - [x] Limit select for non ssid kid to kids with no ssid
+    - [x] PIN to delete children, since I can't do that or invoices in the merge action
+  - [x] When finding child there should be a back/close button for the TF
+  - [x] Only show time slot index for staff
+
+- Bugfixes
+
+  - [x] Find child not working
+    - Authorisation issue
+  - [x] Copy regs not working
+    - Was checking if options are closed. They can't be.
+  - [x] Long-running registration error w/multiple invoices
+    - Regs were being added to a random invoice (sometimes the in_ss one) as there were multiple opt/slot targets
+    - This led to those regs not being passed to the confirm page, or update action, as invoices in SS aren't updated
+    - Stopped rendering the targets on invoices in the SS
+
+#### What I learned
+
+- You can link back with a link_to that's passed :back as the url
+- And link to an anchor (by its id) on another page by passing the anchor: param to a url helper
+
+## Apr 27th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Emails **Requires being let out of sandbox**
+
+  - [] When new invoice is confirmed or invoice is updated
     - [] Email SM saying it's been created with link to the invoice
     - [] Email parent with details and provisional price
     - [] If student is at a closed school, send to Leroy instead
@@ -713,42 +780,34 @@ Set up the EB CLI on my home computer.
 
 - Invoices
 
-  - [] Back button on confirm page
-  - [] See if you can show options on the confirm page
-  - [] Event partial at the top of invoice index (show the pic)
-  - [] Add a button to partial to mark as in_ss
+  - [] Figure out why I can't show option details on confirm page
 
-- Options
+- Styling **Friday**
 
-  - [] Timing options should default to なし if there isn't one registered
-  - [] Timing options need separate costs for kindy and elementary
-
-- Styling
+  - [] The damn flash message
 
 - Seeds
 
-  - [x] Real schools
-    - [x] An unclaimed child for each school
-      - [] Put in a spreadsheet we can show during the presentation (probably the one Leroy sent me w/emails)
-  - [] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage
+  - [] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage **Friday**
 
 - Time Slots
 
-  - [] Don't need the show view, remove all links to it
   - [] Index for admins needs pagination for performance/not loading 10 billion images
 
 - Users
 
   - [] SM can only log in from their school's IP address **requires IP list**
-  - [] When adding child there should be a back/close button for the TF
-  - [] Only show time slot index for staff
 
 - Validations
 
   - [] Child
-    - [] Presence, but not
+    - [] Presence, all except
       - Ele school
       - first seasonal
+
+- Bugfixes
+
+  -
 
 #### What I learned
 
