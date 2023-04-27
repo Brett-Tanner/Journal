@@ -770,6 +770,46 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
+- Styling
+
+  - [x] The damn flash message
+    - Using BS toasts now
+  - [x] Responsive navbar
+  - [x] Event sheet
+  - [x] Slot attendance sheet
+  - [x] Login fixes for mobile
+  - [x] Customer profile
+  - [x] Child profile
+  - [] Event#show
+    - [x] Migrate basic layout to BS to avoid conflicts
+    - [x] Header section
+    - [x] More info
+    - [x] Accordion
+    - [x] Registered/Unregistered slots
+    - [x] Price bar
+      - Probably have a collapse that toggles everything except the price, like a view details button before they register
+      - Could also show the register button, but have the collapse toggle the coupon field as well
+  - [] Login page (desktop)
+
+- Seeds
+
+  - [x] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage
+  - [x] Re-seed the test DB with new option names
+
+- Bugfixes
+
+  - [x] Event child needs active invoice to exist
+    - Added a check that such an invoice does exist before rendering the changes cell, if it doesn't just renders an empty cell
+  - [x] Child deletion logic
+    - Legacy button for admins on parent page was using legacy code that was unnecessary and not be authorised properly
+    - Cleaned up so kids can only be deleted by staff if no SSID, from their own page
+
+## Apr 28th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Emails **Requires being let out of sandbox**
 
   - [] When new invoice is confirmed or invoice is updated
@@ -778,17 +818,17 @@ Set up the EB CLI on my home computer.
     - [] If student is at a closed school, send to Leroy instead
   - [] When user signs up (to the user)
 
+- Events
+
+  - [] Figure out how to lazy load images now they're in the accordion
+
 - Invoices
 
   - [] Figure out why I can't show option details on confirm page
 
-- Styling **Friday**
+- Styling
 
-  - [] The damn flash message
-
-- Seeds
-
-  - [] Use find_each with batch_size: 100 for seeds with a large number of records to maybe help RAM usage **Friday**
+  - [] Login page (desktop)
 
 - Time Slots
 
@@ -807,7 +847,7 @@ Set up the EB CLI on my home computer.
 
 - Bugfixes
 
-  -
+  - []
 
 #### What I learned
 
