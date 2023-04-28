@@ -810,6 +810,47 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
+- Hosting
+
+  - [x] Troubleshoot domain not working
+    - spent an ungodly amount of time on this, literal hours of just reading docs/thinking of ways to approach it
+    - seems .app forces SSL, and I'm not set up for that yet
+    - test.kids-up is now getting incorrect cert errors, which is an improvement
+      - will try explicitly adding to new cert
+    - but the main domain just times out over and over, it should be working
+    - tried a whole bunch of things I didn't document cos too tired/frustrated, but eventually worked my way through to the ports on the load balancer
+    - figured out I needed it earlier in the day, but had left instance port on default, same as incoming for HTTPs
+    - it needed to be port 80 on the instance, and using HTTP
+  - [x] Set up for SSL
+    - Created a load balancer listening on port 443 for HTTPS requests, using our certificate
+      - 1st time forgot the wildcard
+      - 2nd time wildcard didn't work
+  - [] Write a proper application to get out of email sandbox
+  - [] Set up dev environment
+
+- Localisation
+
+  - [x] Login
+  - [x] Signup
+  - [x] User profile
+  - [x] Child form
+  - [x] Event#show
+  - [x] Invoice partial
+  - [x] Child profile
+  - [x] Attendance sheets
+  - [x] Misc Yuna changes later in the day
+
+- Styling
+
+  - [x] Accordion on event attendance sheet
+  - [] Login page (desktop)
+
+## Apr 29th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Emails **Requires being let out of sandbox**
 
   - [] When new invoice is confirmed or invoice is updated
@@ -818,13 +859,23 @@ Set up the EB CLI on my home computer.
     - [] If student is at a closed school, send to Leroy instead
   - [] When user signs up (to the user)
 
-- Events
+- Hosting
 
-  - [] Figure out how to lazy load images now they're in the accordion
+  - [] Write a proper application to get out of email sandbox
+  - [] Set up dev environment
 
 - Invoices
 
   - [] Figure out why I can't show option details on confirm page
+
+- Localisation
+
+  - []
+
+- QOL
+
+  - [] Add filtering to tables
+  - [] Add sorting to tables
 
 - Styling
 
