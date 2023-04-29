@@ -851,6 +851,20 @@ Set up the EB CLI on my home computer.
 
 #### What I did
 
+- Children
+
+  - [x] Added toggle buttons for staff to set if a child has their hat or changes their photo permission
+
+- Invoices
+
+  - [x] Handle lack of invoice when going back thru confirm page more gracefully
+
+## Apr 30th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Emails **Requires being let out of sandbox**
 
   - [] When new invoice is confirmed or invoice is updated
