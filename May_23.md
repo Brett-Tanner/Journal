@@ -127,31 +127,57 @@
 
 #### What I did
 
+- Email
+
+  - [x] Configure app for sending email through SES
+  - [x] Set up bounce and complaint notifications to go to my personal email (hopefully not a terrible idea)
+  - Figure out how to
+    - [x] preview emails
+    - [x] test emails
+      - temporarily set dev email config to be the same as production, export the SES creds as ENV variables **in the same WSL window**
+  - [x] Write temp email templates in English
+  - [x] Set up emails to be sent
+    - [x] When invoice is updated
+      - [x] Email SM saying it's been updated with link to the invoice
+      - [x] Email parent with details and provisional price
+      - [x] If student is at a closed school, send to Leroy instead
+    - [x] When user signs up (to the user)
+      - Needs DB changes, so I'll do it at night after SMs are done using the app
+  - [x] Allow users to unsubscribe from our emails automatically by clicking a link
+    - [x] Add the unsubscribe link to our email template
+  - [x] Allow them to manually manage their email preferences when signed in
+
+- Bugfixes
+
+  - [x] Alter link from login to sign up so it doesn't shed locale info
+
+#### What I learned
+
+- Devise confirmation emails aren't sent if :reconfirmable is true, so make false and just don't use it
+
+## May 3rd - May 7th
+
+Golden Week
+
+## May 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Backups
 
   - [] Twice a day, rotate after 5 days
 
-  - [] When new invoice is confirmed or invoice is updated
-    - [] Email SM saying it's been created with link to the invoice
-    - [] Email parent with details and provisional price
-    - [] If student is at a closed school, send to Leroy instead
-  - [] When user signs up (to the user)
-
-- Email
-
-  - [] When new invoice is confirmed or invoice is updated
-    - [] Email SM saying it's been created with link to the invoice
-    - [] Email parent with details and provisional price
-    - [] If student is at a closed school, send to Leroy instead
-  - [] When user signs up (to the user)
-
 - Hosting
 
+  - [] Uploaded Email update and reset the database to facilitate all the changes
   - [] Set up dev environment
 
 - Invoices
 
   - [] Figure out why I can't show option details on confirm page
+  - [] Put dates for time slots next to their name in the summary
 
 - Localisation
 
@@ -168,7 +194,7 @@
 
 - Security
 
-  - []
+  - [] SM can only log in from their school's IP address **requires IP list**
 
 - Styling
 
@@ -177,10 +203,6 @@
 - Time Slots
 
   - [] Index for admins needs pagination for performance/not loading 10 billion images
-
-- Users
-
-  - [] SM can only log in from their school's IP address **requires IP list**
 
 - Validations
 
