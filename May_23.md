@@ -155,11 +155,36 @@
 
 - Devise confirmation emails aren't sent if :reconfirmable is true, so make false and just don't use it
 
-## May 3rd - May 7th
+## May 3rd - May 8th
 
 Golden Week
 
-## May 8th
+## May 9th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Email
+
+  - [x] Return to not requiring email confirmation before granting access to the site
+
+- Bugfixes
+
+  - [x] Prevent incorrect counting of afternoon meal options [#28](https://github.com/KUJP-code/db_prototype_v2_official/issues/28)
+  - [x] Prevent accidental copying of afternoon registrations for a child's regular days [#29](https://github.com/KUJP-code/db_prototype_v2_official/issues/29)
+  - [x] Show detailed info about registered options (#25)(https://github.com/KUJP-code/db_prototype_v2_official/issues/25)
+    - Because the record isn't saved on the confirm page, using DB queries to find the relevant info doesn't work
+    - Switched away from DB queries to (potentially slower) Ruby methods on the instantiated Invoice object
+  - [x] JS calculations got messed up by me putting the children in tables, so had to fix those
+  - [x] Fixed opts/slots in SS not correctly displaying as such/made the process of rendering them more efficient
+  - [] Change 'Mark in SS' to 'Confirm Invoice'
+
+#### What I learned
+
+- Use #reorder to clear orders applied previously to your associations
+
+## May 10th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -171,7 +196,6 @@ Golden Week
 
 - Hosting
 
-  - [] Uploaded Email update and reset the database to facilitate all the changes
   - [] Set up dev environment
 
 - Invoices
@@ -181,7 +205,7 @@ Golden Week
 
 - Localisation
 
-  - []
+  - [] Get screenshots of everything that needs to be translated & send to Leroy
 
 - QOL
 
@@ -213,8 +237,8 @@ Golden Week
 
 - Bugfixes
 
-  - []
+  - [] Change 'Mark in SS' to 'Confirm Invoice'
 
 #### What I learned
 
--
+- Use #reorder to clear orders applied previously to your associations
