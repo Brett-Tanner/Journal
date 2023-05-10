@@ -178,7 +178,6 @@ Golden Week
     - Switched away from DB queries to (potentially slower) Ruby methods on the instantiated Invoice object
   - [x] JS calculations got messed up by me putting the children in tables, so had to fix those
   - [x] Fixed opts/slots in SS not correctly displaying as such/made the process of rendering them more efficient
-  - [] Change 'Mark in SS' to 'Confirm Invoice'
 
 #### What I learned
 
@@ -192,20 +191,73 @@ Golden Week
 
 - Backups
 
-  - [] Twice a day, rotate after 5 days
-
-- Hosting
-
-  - [] Set up dev environment
+  - [x] Twice a day, rotate after 5 days
 
 - Invoices
 
-  - [] Figure out why I can't show option details on confirm page
-  - [] Put dates for time slots next to their name in the summary
+  - [x] Figure out why I can't show option details on confirm page
+  - [x] Add various links and buttons to make navigating to linked pages easier
+  - [x] Hide the merge form unless there's something to merge to
+  - [x] Put dates for time slots next to their name in the summary
 
 - Localisation
 
-  - [] Get screenshots of everything that needs to be translated & send to Leroy
+  - [x] Get screenshots of everything that needs to be translated & send to Leroy
+    - [x] And the emails
+
+- Validations
+
+  - [x] Child
+    - [x] Presence, all except
+      - Ele school
+      - first seasonal
+    - [x] Katakana name is only katakana
+    - [x] Birthday is between 1 and 15 years ago
+    - [x] SSID is unique
+    - [x] Grade, category and photos are only the values allowed in the enum
+
+- Bugfixes/Misc Features
+
+  - [x] Change 'Mark in SS' to 'Confirm Invoice'
+  - [x] Fix navbar remaining invisible after printing attendance sheet
+  - [x] Fix issues with photo service opt count being inaccurate due to added complexity from sibling registrations counting
+  - [x] Fix 200yen not being applied on confirm screen due to the calculation using things which aren't saved yet
+    - [x] Also refactored the calculation to dramatically increase performance
+  - [x] Fixed adjustments not being included in the post-merge calculation when on the invoice being merged from
+  - [x] Make site display in English if you're logged in as an admin
+  - [x] Find the memory leak
+    - Based on what I saw while the MG SM was looking around, something can potentially cause the site logo to be repeatedly loaded?
+    - Looking at top very shortly after reveals basically 0 memory usage, while Elastic Beanstalk still says 92%
+    - Seems there's some kind of lag on the EB measurement, maybe not as much of an issue as I thought if it's cleared that quickly?
+    - Ah, the zero mem usage is only for the list of processes. In the summary at the top it does actually have 90%ish used
+    - Using htop now, seems Puma processes might be the culprit for high memory usage
+    - Tentatively seems it can be fixed with MALLOC_ARENA_MAX env variable, as per [here](https://www.speedshop.co/2017/12/04/malloc-doubles-ruby-memory.html)
+    - Also possible Ruby just uses a lot of memory, might need to go to a 2GB instance rather than 1GB
+
+#### What I learned
+
+- Use #reorder to clear orders applied previously to your associations
+- Using &.method means the method won't be called if the thing you're calling it on is nil
+  - This is super super helpful, I know there were a lot of times using this would've made my code way simpler haha
+
+## May 11th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Emails
+
+  - [] Send customer a confirmation email when SM clicks 'Confirm Booking' on their invoice
+
+- Localisation
+
+  - []
+
+- Performance
+
+  - [] Optimise AR queries for
+  - [] Optimise view rendering for
 
 - QOL
 
@@ -219,6 +271,7 @@ Golden Week
 - Security
 
   - [] SM can only log in from their school's IP address **requires IP list**
+  - [] Run Brakeman and check what it finds
 
 - Styling
 
@@ -228,17 +281,10 @@ Golden Week
 
   - [] Index for admins needs pagination for performance/not loading 10 billion images
 
-- Validations
+- Bugfixes/Misc Features
 
-  - [] Child
-    - [] Presence, all except
-      - Ele school
-      - first seasonal
-
-- Bugfixes
-
-  - [] Change 'Mark in SS' to 'Confirm Invoice'
+  - []
 
 #### What I learned
 
-- Use #reorder to clear orders applied previously to your associations
+-
