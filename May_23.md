@@ -246,9 +246,77 @@ Golden Week
 
 #### What I did
 
+- Children
+
+  - [x] Change photo permission options back to OK/NG
+
+- Hosting
+
+  - [x] Create the production environment
+    - [x] bump the versions of bundler and ruby to match the new platform version I was forced into
+
+- Invoices
+
+  - [x] Apply coupon button on confirm page that reveals a dropdown
+    - Coupons are WELBOX/すくすくえいど
+
+- Performance
+
+  - [x] Clean up unused turbo frames
+
+- SM Suggestions
+
+  - [x] Sort student/parent indexes by name
+  - [x] Change the total price on Invoices to 合計（税込）and remove the standalone 税込
+  - [x] Make 'Confirm Booking' a toggle, so SMs can unconfirm and make changes
+  - [x] Add regular placeholders to the first/last name/kana name fields on forms so they know which is which
+    - Family name first
+    - [x] Store them in the db this way too, so change the callback that sets the names
+
+- Styling
+
+  - [x] Change password screen
+
+- Users
+
+  - [x] Users can edit their personal info
+  - [x] Show a badge asking them to verify email
+    - [x] They can resend a confirmation email from there
+
+- Validations
+
+  - [x] Adjustments
+    - Presence on change and reason
+  - [x] Price Lists
+    - Cost positive integer, presence
+    - Name presence
+  - [x] User
+    - Presence of name, kana name, address stuff, phone
+
+#### What I learned
+
+- Maybe bump the platform version first, then upload the new app version.
+  - Other way round caused some problems, not entirely sure how I fixed them other than restarting the app server and spam deploying the version bumped version
+  - Because I tried to deploy new version on old platform it failed, but seems the new version was actually installed
+  - So I had a version mismatch error, and couldn't redeploy the bumped version I wanted on there
+- Should probably manually attach single images to multiple slots when seeding the real data so I don't have a million copies
+  - Or figure out a way to do it in seeds, like creating the blob in AS then attaching it to all the slots
+  - [Something like this maybe](https://stackoverflow.com/questions/72137882/attach-one-active-storage-blob-to-multiple-files)
+- Shift + tab to collapse leading whitespace
+
+## May 12th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Emails
 
   - [] Send customer a confirmation email when SM clicks 'Confirm Booking' on their invoice
+
+- Invoices
+
+  - [] Make it more obvious the invoice is confirmed, they have to click close on something
 
 - Localisation
 
@@ -273,6 +341,13 @@ Golden Week
   - [] SM can only log in from their school's IP address **requires IP list**
   - [] Run Brakeman and check what it finds
 
+- SM Suggestions
+
+  - [] Snacks
+    - This is auto-applied to every child who is attending an afternoon and it's not their regular day
+    - Since they can't apply for afternoons on their regular days, it's safe to add the option to every afternoon slot they register for
+    - Leroy says its fine to just show them all in the summary, but let's try to do it for individual days as well if possible
+
 - Styling
 
   - []
@@ -281,9 +356,7 @@ Golden Week
 
   - [] Index for admins needs pagination for performance/not loading 10 billion images
 
-- Bugfixes/Misc Features
-
-  - []
+- List of people who tried the site from logs
 
 #### What I learned
 
