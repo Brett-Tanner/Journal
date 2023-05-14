@@ -310,13 +310,30 @@ Golden Week
 
 #### What I did
 
+- Database
+
+  - [x] Re-write seeds file for new validations
+  - [x] And to not create a million copies of each image
+  - [x] And to put images into a folder in S3 based on environment and what they're an image for
+  - [x] See what happens when you try to import a record that already exists with PG_COPY
+    - It just tries to create a new one, that's not gonna work
+  - [x] Create a second, slower way of importing CSVs that can update records
+    - [x] For children
+    - [x] For their schedules
+
 - Emails
 
-  - [] Send customer a confirmation email when SM clicks 'Confirm Booking' on their invoice
+  - [x] Send customer a confirmation email when SM clicks 'Confirm Booking' on their invoice
+
+- Forms
+
+  - [x] Added a yen kanji to the change field on the adjustment form for clarity
+  - [x] Made the selects on the Child form auto-derived from enums so I don't have to keep changing them if the values change
 
 - Invoices
 
-  - [] Make it more obvious the invoice is confirmed, they have to click close on something
+  - [x] Make it more obvious the invoice is confirmed, they have to click close on something
+    - Nice big green box at the top of the page with a long, detailed message.
 
 - Localisation
 
@@ -339,11 +356,14 @@ Golden Week
 - Security
 
   - [] SM can only log in from their school's IP address **requires IP list**
-  - [] Run Brakeman and check what it finds
+  - [x] Run Brakeman and check what it finds
+    - [x] Whitelist unsafe params
 
 - SM Suggestions
 
-  - [] Snacks
+  - [x] Snacks
+    - [x] Frontend
+    - [x] Backend
     - This is auto-applied to every child who is attending an afternoon and it's not their regular day
     - Since they can't apply for afternoons on their regular days, it's safe to add the option to every afternoon slot they register for
     - Leroy says its fine to just show them all in the summary, but let's try to do it for individual days as well if possible
@@ -351,6 +371,63 @@ Golden Week
 - Styling
 
   - []
+
+- Time Slots
+
+  - [] Index for admins needs pagination for performance/not loading 10 billion images
+
+- List of people who tried the site from logs
+
+#### What I learned
+
+- You can specify the path for ActiveStorage attachments like so `user.avatar.attach(key: "avatars/#{user.id}.jpg", io: io, content_type: "image/jpeg", filename: "avatar.jpg")`
+
+## May 13th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- QOL
+
+  - [x] Add filtering to tables
+    - [x] Add to event sheet
+    - [x] Add to attendance sheets
+  - [x] Scaffold daily attendance summary on SM homepage
+
+- Security
+
+  - [x] Remove ability to change User roles from frontend
+
+## May 14th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Localisation
+
+  - []
+
+- Performance
+
+  - [] Optimise AR queries for
+  - [] Optimise view rendering for
+
+- QOL
+
+  - [] Add stimulus length counter to password/SSID fields
+  - [] Add filtering to event registration????
+  - [] Add filtering to time slots???
+  - [] Add sorting to tables
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+- Styling
+
+  - [] Daily attendance summary on SM homepage
 
 - Time Slots
 
