@@ -405,14 +405,31 @@ Golden Week
 
 #### What I did
 
+- Production setup
+
+  - [x] Alter the CSVs controller for new data format
+  - [x] Alter various pages to handle kids not having a school, or names
+
+## May 15th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Localisation
 
   - []
 
 - Performance
 
+  - [] Paginate indexes, especially for admin (mainly for JS), but also take 7s to load
+    - [] Paginate the list of time slots to be 1 per school? or about enough for 1 event
   - [] Optimise AR queries for
   - [] Optimise view rendering for
+
+- Production setup
+
+  - []
 
 - QOL
 
@@ -428,10 +445,6 @@ Golden Week
 - Styling
 
   - [] Daily attendance summary on SM homepage
-
-- Time Slots
-
-  - [] Index for admins needs pagination for performance/not loading 10 billion images
 
 - List of people who tried the site from logs
 
