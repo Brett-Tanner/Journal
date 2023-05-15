@@ -416,15 +416,51 @@ Golden Week
 
 #### What I did
 
+- Hosting
+
+  - [x] Seed real child data to the production DB
+
+- Performance
+
+  - [x] Remove unnecessary helpers/routes
+  - [x] Paginate indexes
+    - [x] Children
+    - [x] Users
+  - [] Optimise AR queries for
+    - [x] Child#index
+    - [x] User#index
+    - [x] Event sheet
+      - [x] Event_child partial (this was a huge one, takes a third of the time to render the page now)
+
+- QOL
+
+  - [x] Add character counter to password/SSID fields
+
+- Styling
+
+  - [x] Daily attendance summary on SM homepage
+    - [x] And make it printable
+
+- Bugfixes
+
+  - [x] Added a separate type to the JS price calc to avoid check boxes triggering the radio button function and adding/removing unexpected registrations
+  - [x] Added a type filter to the check if an \_add_slot is registered to avoid false positives on option registrations
+
+## May 16th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Localisation
 
   - []
 
 - Performance
 
-  - [] Paginate indexes, especially for admin (mainly for JS), but also take 7s to load
-    - [] Paginate the list of time slots to be 1 per school? or about enough for 1 event
   - [] Optimise AR queries for
+    - [] Slot children index
+      - [] Slot child partial (remove the depart/arrive time methods from time slot model after this)
   - [] Optimise view rendering for
 
 - Production setup
@@ -433,9 +469,6 @@ Golden Week
 
 - QOL
 
-  - [] Add stimulus length counter to password/SSID fields
-  - [] Add filtering to event registration????
-  - [] Add filtering to time slots???
   - [] Add sorting to tables
 
 - Security
@@ -444,7 +477,11 @@ Golden Week
 
 - Styling
 
-  - [] Daily attendance summary on SM homepage
+  - []
+
+- Bugfixes
+
+  - []
 
 - List of people who tried the site from logs
 
