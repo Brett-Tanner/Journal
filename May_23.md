@@ -452,6 +452,38 @@ Golden Week
 
 #### What I did
 
+- Events
+
+  - [x] Add the outdoor category to relevant time slots
+
+- Invoices
+
+  - [x] Hat adjustment is now only applied if child hasn't received hat and they're registered for an outdoor activity
+  - [x] Create first time registration adjustment now it's different from hat
+
+- Performance
+
+  - [] Optimise AR queries for
+    - [x] Slot children index
+      - [x] Slot child partial (remove the depart/arrive time methods from time slot model after this)
+    - [x] Use #select to only fetch relevant fields for User#index
+
+- Production setup
+
+  - [x] Cleaned out our S3 bucket now that I know how to not generate a billion junk files every reset
+  - [x] Rebuilt the staging environment and reseeded it to test that I actually know how to not generate junk files
+    - [x] Rewrote seeds files to do it even more efficiently
+    - [x] Rename all the images to the japanese names of the time slots
+    - [x] Discovered AWS/Ruby do NOT like Kanji/they use different encodings so a bunch of slots won't get associated with their images
+      - [x] Write a translation hash to fix that and rename all the images to english
+      - [x] It only works for 20, end up doing the other 11 by hand
+
+## May 17th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
 - Localisation
 
   - []
@@ -459,13 +491,14 @@ Golden Week
 - Performance
 
   - [] Optimise AR queries for
-    - [] Slot children index
-      - [] Slot child partial (remove the depart/arrive time methods from time slot model after this)
+    - [] Paginate TimeSlot#index
+      - Every 28 slots
+      - use the event's school name as the key of the nav bar
+    - [] Event#show page
+      - Try lazy loading closed asccordion contents?
+    - [] SM profile page
+    - [] AM profile page
   - [] Optimise view rendering for
-
-- Production setup
-
-  - []
 
 - QOL
 
@@ -477,7 +510,7 @@ Golden Week
 
 - Styling
 
-  - []
+  - [] Forgot password & password reset pages
 
 - Bugfixes
 

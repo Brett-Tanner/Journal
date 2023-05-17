@@ -23,12 +23,13 @@ Busy with Spring school/new kids' book stickers
   - To ignore a folder except for a few files, do something like this
 
   ```
+  /spec
   /app/assets/images/*
   !/app/assets/images/favicon.svg
   !/app/assets/images/logo.svg
   !/app/assets/images/white_logo.svg
   !/app/assets/images/login_splash.jpg
-  !/app/assets/images/sm_login_splash.png
+  !/app/assets/images/sm_login_splash.jpg
   ```
 
 ## Apr 4th
