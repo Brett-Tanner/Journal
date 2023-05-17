@@ -484,25 +484,73 @@ Golden Week
 
 #### What I did
 
+- Children
+
+  - [x] If children are missing required fields, populate them with a default value
+    - Search like this `problems = Child.where(name: nil).or(Child.where(katakana_name: nil).or(Child.where(en_name: nil).or(Child.where(allergies: nil))))`
+    - Then select (not where, it'll modify the records then not save) records with nil for a required value and loop over applying the default value
+    - Then loop over saving all, printing the name of the record being modified for debugging
+  - [x] Make blank default for kid photo permission
+  - [x] When adding a new child from index, need to make the check boxes first seasonal rather than needs/received hat
+    - [x] Also when claiming a child, they need to say if they've attended a seasonal or not - [] Use needs hat for first seasonal boolean
+    - Lots of comments to explain why that is
+    - Either automatically toggle when they register for their second seasonal or I do it manually to all after each event
+
 - Localisation
 
-  - []
+  - [x] Add translation for copy-regs under the button to do so on event#show
 
 - Performance
 
   - [] Optimise AR queries for
-    - [] Paginate TimeSlot#index
-      - Every 28 slots
+    - [x] Paginate TimeSlot#index
+      - Page per event
       - use the event's school name as the key of the nav bar
+
+- Styling
+
+  - [x] Forgot password & password reset pages
+    - [] No you didn't not responsive for mobile
+
+- Bugfixes
+
+  - [x] Stop showing the PIN popup on child page to users, they should just be able to see
+
+## May 18th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
+  - [] First time reg needs to be based on the first seasonal (needs_hat) boolean
+    - [] Repeater discount should also use this boolean rather than looking for previous events
+  - [] Find child didn't add to leroy???? (think this was fixed by adding default values but check)
+  - [] Merge children is broken, screenshot on my air
+  - [] Import the regular schedules on prod
+    - [] Test on staging/dev
+
+- Events
+
+  - [] Copy-regs fails because no en_days method on regular schedule
+
+- Localisation
+
+  - [] Authentication pages
+  - [] User profile
+  - [] Child/User forms
+  - [] Change my pass translation is missing
+  - [] Adjustments in invoice need translations
+
+- Performance
+
+  - [] Optimise AR queries for
     - [] Event#show page
-      - Try lazy loading closed asccordion contents?
+      - Try lazy loading closed accordion contents?
     - [] SM profile page
     - [] AM profile page
   - [] Optimise view rendering for
-
-- QOL
-
-  - [] Add sorting to tables
 
 - Security
 
@@ -510,13 +558,36 @@ Golden Week
 
 - Styling
 
-  - [] Forgot password & password reset pages
+  - [x] Forgot password & password reset pages
+    - [] No you didn't not responsive for mobile
+  - [] Confirm email page
+  - [] Reconfirm email page
+  - [] Remove the negative margin on login page
+  - [] Different sizes for images on event#show?
+  - [] Coupon collapse makes the buttons look hilarious on mobile
+  - [] Summary popup on event sheet is off center
+
+- Time Slots
+
+  - [] Time slot index links don't work on live
+
+- Users
+
+  - [] Add randomly generated password field, not editable, to create customer form
+  - [] AM should have a summary for their area on their homepage
+  - [] Admin should have a summary for the whole company
 
 - Bugfixes
 
-  - []
+  - [] Got the different schools mixed up with the regular ones
 
-- List of people who tried the site from logs
+    - American hot dogs is the normal one
+    - [] Change their event images
+    - [] Change their slots??????
+
+  - [] Print not working for attendance sheet, is for daily attendance on SM profile
+  - [] On SM profile table, photo sales should only be the kids who paid for
+  - [] When we import children for update, I'll need to handle nil values in the import data for required fields
 
 #### What I learned
 
