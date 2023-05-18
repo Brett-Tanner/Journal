@@ -524,24 +524,36 @@ Golden Week
 
 - Children
 
-  - [] First time reg needs to be based on the first seasonal (needs_hat) boolean
-    - [] Repeater discount should also use this boolean rather than looking for previous events
-  - [] Find child didn't add to leroy???? (think this was fixed by adding default values but check)
-  - [] Merge children is broken, screenshot on my air
-  - [] Import the regular schedules on prod
-    - [] Test on staging/dev
+  - [x] Merge children is broken, child has no parent??
+    - Was using the SS child to get the list of kids to merge from, but they'll not be associated to a parent by definition
+    - Instead used a parent param in the initial search by SSID to set the parent instance variable and get the list of mergeable kids from that
+  - [x] Import the regular schedules on prod
+    - [x] Test on staging/dev
+    - [x] Fix some of the very weird logic I had in the upload method
+  - [x] Link to the morning slot for both special days from event sheet, it has all the info
 
 - Events
 
-  - [] Copy-regs fails because no en_days method on regular schedule
+  - [x] Copy-regs fails because no en_days method on regular schedule
+    - The method is there, but some kids don't have a regular schedule
+    - Added logic to return a blank hash if no regular schedule, meaning no registrations will be skipped due to being regular days
 
 - Localisation
 
-  - [] Authentication pages
-  - [] User profile
-  - [] Child/User forms
-  - [] Change my pass translation is missing
-  - [] Adjustments in invoice need translations
+  - [x] Authentication pages
+  - [x] User profile
+  - [x] Child/User forms
+  - [x] SM sheets/lists
+  - [x] SM invoice stuff
+  - [x] Change my pass translation is missing
+  - [x] Generic adjustments in invoice need English removed
+  - [x] Merge child translations
+  - [] Toast translations
+
+- Invoices
+
+  - [x] First time reg needs to be based on the first seasonal (needs_hat) boolean
+    - [x] Repeater discount should also use this boolean rather than looking for previous events
 
 - Performance
 
@@ -558,8 +570,10 @@ Golden Week
 
 - Styling
 
-  - [x] Forgot password & password reset pages
-    - [] No you didn't not responsive for mobile
+  - [x] More clarity on Invoice summary
+  - [x] Improve time slot partial layout
+  - [] Make links orange by default, grey on hover
+  - [] Forgot password & password reset pages
   - [] Confirm email page
   - [] Reconfirm email page
   - [] Remove the negative margin on login page
@@ -569,25 +583,33 @@ Golden Week
 
 - Time Slots
 
-  - [] Time slot index links don't work on live
+  - [x] Time slot index links don't work on live
+    - Was trying to access school 1, which doesn't exist anymore
+    - Added a check to prevent that
 
 - Users
 
-  - [] Add randomly generated password field, not editable, to create customer form
-  - [] AM should have a summary for their area on their homepage
-  - [] Admin should have a summary for the whole company
+  - [x] Add randomly generated password field, not editable, to create customer form
+    - [x] Allow users to change their password by editing themselves
+    - [x] Allow SMs to edit users without changing/needing their password
+  - [x] AM should have a summary for their area on their homepage
+  - [x] Admin should have a summary for the whole company
 
 - Bugfixes
 
-  - [] Got the different schools mixed up with the regular ones
-
+  - [x] Blank is still not default for photos on add child form
+    - DB default for photos was NG, so I manually set it in controller when creating a new child
+  - [x] Find child didn't add to leroy
+    - Was caused by required values not being present on child records, resolved by adding defaults when importing children
+  - [x] Some forms had the old first/last name order
+  - [x] Got the different schools mixed up with the regular ones
     - American hot dogs is the normal one
-    - [] Change their event images
-    - [] Change their slots??????
-
-  - [] Print not working for attendance sheet, is for daily attendance on SM profile
-  - [] On SM profile table, photo sales should only be the kids who paid for
-  - [] When we import children for update, I'll need to handle nil values in the import data for required fields
+    - [x] Change their event images
+    - [x] Change their slots and images
+    - [x] Add their options back
+  - [x] On SM profile table, photo sales should only be the kids who paid for
+  - [x] Print not working for attendance sheet, is for daily attendance on SM profile
+  - [x] When we import children for update, I'll need to handle nil values in the import data for required fields
 
 #### What I learned
 
