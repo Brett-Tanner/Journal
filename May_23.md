@@ -548,44 +548,31 @@ Golden Week
   - [x] Change my pass translation is missing
   - [x] Generic adjustments in invoice need English removed
   - [x] Merge child translations
-  - [] Toast translations
+  - [x] Toast translations
 
 - Invoices
 
   - [x] First time reg needs to be based on the first seasonal (needs_hat) boolean
     - [x] Repeater discount should also use this boolean rather than looking for previous events
 
-- Performance
-
-  - [] Optimise AR queries for
-    - [] Event#show page
-      - Try lazy loading closed accordion contents?
-    - [] SM profile page
-    - [] AM profile page
-  - [] Optimise view rendering for
-
-- Security
-
-  - [] SM can only log in from their school's IP address **requires IP list**
-
 - Styling
 
   - [x] More clarity on Invoice summary
   - [x] Improve time slot partial layout
-  - [] Make links orange by default, grey on hover
-  - [] Forgot password & password reset pages
-  - [] Confirm email page
-  - [] Reconfirm email page
-  - [] Remove the negative margin on login page
-  - [] Different sizes for images on event#show?
-  - [] Coupon collapse makes the buttons look hilarious on mobile
-  - [] Summary popup on event sheet is off center
+  - [x] Make links orange by default, grey on hover
+  - [x] Reconfirm email page
+  - [x] Forgot password & password reset pages
+  - [x] Remove the negative margin on login page
+  - [x] Different sizes for images on event#show?
+  - [x] Coupon collapse makes the buttons look hilarious on mobile
+  - [x] Summary popup on event sheet is off center
 
 - Time Slots
 
   - [x] Time slot index links don't work on live
     - Was trying to access school 1, which doesn't exist anymore
     - Added a check to prevent that
+  - [x] Completely redesigned pagination for TimeSlot#index to use my own method
 
 - Users
 
@@ -610,6 +597,29 @@ Golden Week
   - [x] On SM profile table, photo sales should only be the kids who paid for
   - [x] Print not working for attendance sheet, is for daily attendance on SM profile
   - [x] When we import children for update, I'll need to handle nil values in the import data for required fields
+  - [x] Fix option radio button behaviour when already selected on load
+    - selecting something else then reselecting the original option would lead to the FE price calculation showing the option as free
+    - list of optCostTargets decreases when original option is selected (it should though, the temp opt is removed)
+    - the registered class should also be removed from the hidden field when deselected, but it's not added back when reselected like it should be
+
+## May 19th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Performance
+
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
 
 #### What I learned
 
