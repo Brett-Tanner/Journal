@@ -641,11 +641,11 @@ Golden Week
 - Localization
 
   - [x] Copy regs popup is in english
+  - [x] Edit child on Child page (in the card and in the child summary at the top)
+  - [x] When adding a new child on the parent page, the toast is missing a translation
+  - [x] Coupon heading on the confirm page is in English
+  - [x] Summer school needs to be in Japanese (Kids UP サマースクール 2023)
   - [] Error messages on form submission are mostly fine but the name of the field is in english
-  - [] Edit child on Child page (in the card and in the child summary at the top)
-  - [] When adding a new child on the parent page, the toast is missing a translation
-  - [] Coupon heading on the confirm page is in English
-  - [] Summer school needs to be in Japanese (Kids UP サマースクール 2023)
 
 - Performance
 
@@ -665,17 +665,16 @@ Golden Week
   - [x] Add the ability to close afternoon slots
   - [x] Add translations
   - [x] Make the index page more user friendly
-  - [] Update Yakisoba activity with new image and name
-  - [] KidsUP 南町田グランベリーパーク has no morning extension
-  - [] 新浦安校 has no 8:30 morning. Earliest they can start is 9:00
-  - [] Den-en-chofu is missing a time slot image
-  - [] extension option missing from special day
+  - [x] Update Yakisoba activity with new image and name
+    - [x] Add the missing slot image on Den-en-chofu
+  - [x] KidsUP 南町田グランベリーパーク has no morning extension
+  - [x] 新浦安 has no 8:30 morning. Earliest they can start is 9:00
+  - [x] Den-en-chofu is missing a time slot image
+  - [x] Extension option missing from special day
 
 - Users
 
   - [x] Added areas to the AMs
-
-Added ssid: 2101000048, 2303000365
 
 #### What I learned
 
