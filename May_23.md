@@ -608,6 +608,45 @@ Golden Week
 
 #### What I did
 
+- Adjustments
+
+  - [x] Allow deletion of adjustments
+
+- Children
+
+  - [] Create 100 test children and add them to the online school
+
+- Emails
+
+  - [x] Change the devise mailer templates to reflect the translated versions
+  - [x] Add a message saying when the SM updated the booking
+  - [x] Create a layout with the signature and image
+    - [x] Create a similar one just for Devise emails
+  - [x] Change the booking related mailer templates to reflect translated versions
+  - [] Add copy button to the email template
+
+- Events
+
+  - [x] Header disappears when you search the event sheet cos they have classes now
+  - [x] Only show instructions for copying regs if more than one child
+
+- Invoices
+
+  - [x] Make the tax number smaller and after the final price
+  - [x] Left align all the summary text
+  - [] Have a total of all invoices costs on the event show page, invoice index (for both parent and children)
+  - [x] have different success messages for parents and SM when updated
+    - [x] have a different one for confirmed
+
+- Localization
+
+  - [x] Copy regs popup is in english
+  - [] Error messages on form submission are mostly fine but the name of the field is in english
+  - [] Edit child on Child page (in the card and in the child summary at the top)
+  - [] When adding a new child on the parent page, the toast is missing a translation
+  - [] Coupon heading on the confirm page is in English
+  - [] Summer school needs to be in Japanese (Kids UP サマースクール 2023)
+
 - Performance
 
   - [] Optimise AR queries for
@@ -621,6 +660,23 @@ Golden Week
 
   - [] SM can only log in from their school's IP address **requires IP list**
 
+- Time Slots
+
+  - [x] Add the ability to close afternoon slots
+  - [x] Add translations
+  - [x] Make the index page more user friendly
+  - [] Update Yakisoba activity with new image and name
+  - [] KidsUP 南町田グランベリーパーク has no morning extension
+  - [] 新浦安校 has no 8:30 morning. Earliest they can start is 9:00
+  - [] Den-en-chofu is missing a time slot image
+  - [] extension option missing from special day
+
+- Users
+
+  - [x] Added areas to the AMs
+
+Added ssid: 2101000048, 2303000365
+
 #### What I learned
 
--
+- Can override the default layout for Devise emails like [this](https://stackoverflow.com/questions/72305122/after-upgrading-rails-from-6-1-1-to-7-0-3-my-devise-mailers-cant-be-initialized/72308475#72308475)
