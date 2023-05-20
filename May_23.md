@@ -645,7 +645,7 @@ Golden Week
   - [x] When adding a new child on the parent page, the toast is missing a translation
   - [x] Coupon heading on the confirm page is in English
   - [x] Summer school needs to be in Japanese (Kids UP サマースクール 2023)
-  - [] Error messages on form submission are mostly fine but the name of the field is in english
+  - [x] Error messages on form submission are mostly fine but the name of the field is in english
 
 - Performance
 
@@ -679,3 +679,52 @@ Golden Week
 #### What I learned
 
 - Can override the default layout for Devise emails like [this](https://stackoverflow.com/questions/72305122/after-upgrading-rails-from-6-1-1-to-7-0-3-my-devise-mailers-cant-be-initialized/72308475#72308475)
+
+## May 20th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
+  - [x] Create 100 test children (and parents) and add them to the online school
+  - [x] Investigated Leroy saying the update function doesn't work on children
+    - On prod, around 4000 were updated in some way when he did it, but no idea if correctly
+    - Tested updating name on dev, staging and prod, all worked
+    - Will go over the exact fields he tried to update and check it out on Monday
+
+## May 21st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
+  - [] Go over the update function with Leroy
+
+- Emails
+
+  - [] Add copy button to the email template
+
+- Invoices
+
+  - [] Have a total of all invoices costs on the event show page, invoice index (for both parent and children)
+
+- Performance
+
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+#### What I learned
+
+-
