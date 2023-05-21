@@ -700,17 +700,26 @@ Golden Week
 
 #### What I did
 
-- Children
-
-  - [] Go over the update function with Leroy
-
 - Emails
 
-  - [] Add copy button to the email template
+  - [x] Make the email template Japanese
+  - [x] Add copy button to the email template
 
 - Invoices
 
-  - [] Have a total of all invoices costs on the event show page, invoice index (for both parent and children)
+  - [x] Have a total of all invoices costs on the
+    - [x] event show page
+    - [x] invoice index (for both parent and children)
+
+## May 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
+  - [] Go over the update function with Leroy
 
 - Performance
 
