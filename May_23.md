@@ -719,6 +719,29 @@ Golden Week
 
 - Children
 
+  - [x] Go over the update function with Leroy
+    - [x] Fix katakana missing default being hiragana
+
+- Invoices
+
+  - [x] Update the event cost translation and add the explanatory message
+
+- Translations
+
+  - [x] Changed some invoice related translations, and categories on event page
+
+### Odin Project - [Rails Conclusion](https://www.theodinproject.com/lessons/ruby-on-rails-conclusion)
+
+I submitted my work project for the final project rather than building a Facebook clone, since it let me get way more experience with the stuff I learned in Odin's Rails path and a whole lot more experience with stuff that wasn't covered/was skimmed over. I feel like building a Facebook clone with the requirements Odin sets would be kinda boring revision at this point, and I'll be keeping my Rails skills fresh by maintaining/adding features to the work project going forward. On to Advanced HTML and CSS! (by skimming the headings looks like I learnt most of the CSS stuff myself for the work project haha). But first time to set up my personal wiki in this repo.
+
+## May 23rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+#### What I did
+
+- Children
+
   - [] Go over the update function with Leroy
 
 - Performance
@@ -733,6 +756,12 @@ Golden Week
 - Security
 
   - [] SM can only log in from their school's IP address **requires IP list**
+
+### Personal Project - Wiki
+
+- Start a wiki in this Journal repo to organise the stuff I learned more efficiently, and host on Github Pages
+
+### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
 
 #### What I learned
 
