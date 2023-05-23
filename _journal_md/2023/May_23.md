@@ -740,9 +740,10 @@ I submitted my work project for the final project rather than building a Faceboo
 
 #### What I did
 
-- Children
+- Localization
 
-  - [] Go over the update function with Leroy
+  - [x] Added a different message/subject to the booking update email depending on whether an SM or user caused the update
+  - [x] Translated the site title
 
 - Performance
 
@@ -759,10 +760,17 @@ I submitted my work project for the final project rather than building a Faceboo
 
 ### Personal Project - Wiki
 
-- Start a wiki in this Journal repo to organise the stuff I learned more efficiently, and host on Github Pages
+Start a wiki in this Journal repo to organise the stuff I learned more efficiently, and host on Github Pages
 
-### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
+- [Setting up Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 #### What I learned
 
--
+- Jekyll (a Ruby gem!) is used to build Github Pages
+  - [Guide to setting up Jekyll](https://jekyllrb.com/docs/step-by-step/01-setup/)
+  - Jekyll does not like tabs in its config file, use spaces
+  - `bundle exec jekyll serve --livereload` to test locally
+    - port is 4000, not 3000
+  - You can set [defaults for front matter](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in \_config.yml
+
+### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
