@@ -745,19 +745,6 @@ I submitted my work project for the final project rather than building a Faceboo
   - [x] Added a different message/subject to the booking update email depending on whether an SM or user caused the update
   - [x] Translated the site title
 
-- Performance
-
-  - [] Optimise AR queries for
-    - [] Event#show page
-      - Try lazy loading closed accordion contents?
-    - [] SM profile page
-    - [] AM profile page
-  - [] Optimise view rendering for
-
-- Security
-
-  - [] SM can only log in from their school's IP address **requires IP list**
-
 ### Personal Project - Wiki
 
 Start a wiki in this Journal repo to organise the stuff I learned more efficiently, and host on Github Pages
@@ -772,5 +759,47 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
   - `bundle exec jekyll serve --livereload` to test locally
     - port is 4000, not 3000
   - You can set [defaults for front matter](https://jekyllrb.com/docs/configuration/front-matter-defaults/) in \_config.yml
+- Frontmatter
+  - two lines of --- with some yml in between
+  - can be used to set objects, config for the page
+- Liquid
+  - [Objects](https://jekyllrb.com/docs/variables/)
+    - Enclosed in double curlies like `{{ page.title }}`
+  - [Tags](https://jekyllrb.com/docs/liquid/tags/)
+    ```
+    {% if page.show_sidebar %}
+      <div class="sidebar">
+        sidebar content
+      </div>
+    {% endif %}
+    ```
+    - For control flow
+  - [Filters](https://jekyllrb.com/docs/liquid/filters/)
+    - Change the output of an object, using a '|'
+    - For example `{{ "hi" | capitalize }}`
+- Includes
+  - Kinda like partials, they go in the \_includes folder
+  - Called in your page like `{% include navigation.html %}`
+- Data Files
+  - .yml files in \_data directory
+  - they act as a kind of database, can be accessed like `site.data.????`
+  - accept JSON, YAML and CSV
+
+## May 24th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Performance
+
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
 
 ### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
