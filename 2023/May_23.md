@@ -825,6 +825,53 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- Bugfixes
+
+  - [x] Handle attempted bookings for orphans by redirecting to child page and showing a warning asking to add a parent
+  - [x] Change the afternoon name for special days to the actual name of the afternoon activity on that day
+  - [x] Middle extension cost for special days needs to be 3 x the 30min extension cost for that level
+    - [x] Seed k_extensions to production env
+    - There's a different cost for kindy and elementary
+  - [] Special days should automatically add a 1500 yen adjustment when registered for (maybe count number registered in calc cost and have that many)
+    - [] also need to delete that adjustment when unregistered
+    - [] will need to update the FE calculation somehow too, probably by tagging special days and adding/subtracting 1500 yen per (can I do it the same way as snack?)
+
+- Localization
+
+  - [x] Change all instances of booking to application
+    - [x] And the more adjustments
+  - [x] 3 回 not 3 コマ on invoice summary
+
+- Performance
+
+  - [] **Stats summary takes wayyyy too long to load at large numbers of registrations**
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+### Personal Project - Wiki
+
+- Create separate collections for topics and link to them from the topics index
+- Set up projects to have their own nav links
+- Try and fail to set up each topic to have its own nav links because I can't get the correct layout to apply from frontmatter defaults
+
+## May 26th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [] Special days should automatically add a 1500 yen adjustment when registered for (maybe count number registered in calc cost and have that many)
+    - [] also need to delete that adjustment when unregistered
+    - [] will need to update the FE calculation somehow too, probably by tagging special days and adding/subtracting 1500 yen per (can I do it the same way as snack?)
+
 - Performance
 
   - [] **Stats summary takes wayyyy too long to load at large numbers of registrations**
