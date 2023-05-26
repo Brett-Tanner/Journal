@@ -832,9 +832,6 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
   - [x] Middle extension cost for special days needs to be 3 x the 30min extension cost for that level
     - [x] Seed k_extensions to production env
     - There's a different cost for kindy and elementary
-  - [] Special days should automatically add a 1500 yen adjustment when registered for (maybe count number registered in calc cost and have that many)
-    - [] also need to delete that adjustment when unregistered
-    - [] will need to update the FE calculation somehow too, probably by tagging special days and adding/subtracting 1500 yen per (can I do it the same way as snack?)
 
 - Localization
 
@@ -844,7 +841,8 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
 
 - Performance
 
-  - [] **Stats summary takes wayyyy too long to load at large numbers of registrations**
+  - [x] Stats summary takes wayyyy too long to load at large numbers of registrations
+    - Added eager loading for the big stuff, should do for now
   - [] Optimise AR queries for
     - [] Event#show page
       - Try lazy loading closed accordion contents?
@@ -868,13 +866,46 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
 
 - Bugfixes
 
-  - [] Special days should automatically add a 1500 yen adjustment when registered for (maybe count number registered in calc cost and have that many)
-    - [] also need to delete that adjustment when unregistered
-    - [] will need to update the FE calculation somehow too, probably by tagging special days and adding/subtracting 1500 yen per (can I do it the same way as snack?)
+  - [x] Handle cases where the customer selects options for a day, then deselects the day without deselecting options
+  - [x] Special days should automatically add a 1500 yen adjustment when registered for (maybe count number registered in calc cost and have that many)
+    - [x] also need to delete that adjustment when unregistered
+    - [x] will need to update the FE calculation somehow too, probably by tagging special days and adding/subtracting 1500 yen per (can I do it the same way as snack?)
+  - [x] A million other things I was too busy to write down as I did them
+  - [x] Remove online course from offered schools
+  - [x] And from the per-school event stats
+  - [x] Hide empty areas in per-school stats for the big boss
+
+- DB Changes
+
+  - [x] Gave AMs their new areas
 
 - Performance
 
   - [] **Stats summary takes wayyyy too long to load at large numbers of registrations**
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+## May 27th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [] Stats summary partial, and maybe the per school ones??? are broken
+    - was showing regs for each category of kid that added up to more than the number of total regs
+    - we believe total regs was right, based on adding up the totals from each school
+    - maybe the < 3000 filter?
+
+- Performance
+
   - [] Optimise AR queries for
     - [] Event#show page
       - Try lazy loading closed accordion contents?
