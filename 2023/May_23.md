@@ -893,16 +893,50 @@ Start a wiki in this Journal repo to organise the stuff I learned more efficient
 
   - [] SM can only log in from their school's IP address **requires IP list**
 
-## May 27th
+## May 27th-28th
+
+Izu Roadtrip
+
+## May 29th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  - [] Stats summary partial, and maybe the per school ones??? are broken
+  - [x] Stats summary partial, and maybe the per school ones??? are broken
     - was showing regs for each category of kid that added up to more than the number of total regs
     - we believe total regs was right, based on adding up the totals from each school
-    - maybe the < 3000 filter?
+    - maybe the < 3000 filter? (that was an issue, but smaller)
+    - maybe because online was excluded from the list of events, but not when joining children with invoices
+  - [x] Big boss sees the summary 3 times, but the stats are for all their areas combined?
+    - made them actually per area
+  - [x] Stop SS updates setting every parent id to nil
+    - [x] and needs hat, and received hat
+
+- Performance
+
+  - [] Optimise AR queries for
+    - [] Event#show page
+      - Try lazy loading closed accordion contents?
+    - [] SM profile page
+    - [] AM profile page
+  - [] Optimise view rendering for
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+### Personal Project - Wiki
+
+- Got per-topic layouts working, albeit by manually adding them to the topic pages rather than in the front-matter defaults
+
+## May 30th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
 
 - Performance
 
