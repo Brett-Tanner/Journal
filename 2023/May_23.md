@@ -936,16 +936,47 @@ Izu Roadtrip
 
 - Bugfixes
 
-  - []
+  - [x] Fix the lambda being applied to the child/invoice association preventing anyone registering for anything
+    - Filter meant the registration page never showed an invoice for kids to register on
+    - because newly created invoices are always less than 3000, they weren't included in all invoices or active
+    - also, a new one was still created each time
+    - so some had 10+ invoices
+    - added a separate, 'real invoices' association, which I should have done in the first place
+  - [x] Saw someone repeatedly try to find a child by only their birthday, and made birthday/SSID fields required
+  - [x] Saw a lot of people just leave after reaching the confirm page, so got a more explicit translation about needing to hit confirm
+    - And put it in a yellow warning box
+
+- Features
+
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
 
 - Performance
 
-  - [] Optimise AR queries for
-    - [] Event#show page
-      - Try lazy loading closed accordion contents?
-    - [] SM profile page
-    - [] AM profile page
-  - [] Optimise view rendering for
+  - Optimise AR queries for
+    - [x] SM profile page
+    - [x] AM profile page
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+### Personal Project - Wiki
+
+- Add instructions to the Jekyll section for creating new topics
+
+## May 31st
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
+
+- Features
+
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
 
 - Security
 
