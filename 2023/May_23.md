@@ -971,12 +971,14 @@ Izu Roadtrip
 
 - Bugfixes
 
-  - []
+  - [x] Keep kana names on sign up form after 422
+  - [x] Check for the full name of the water fight special day to avoid counting regular water fights (in JS calc)
 
 - Features
 
   - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
   - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
+  - [] When generating invoice details, just skip if the option name is 'なし'
 
 - Security
 
@@ -984,6 +986,7 @@ Izu Roadtrip
 
 ### Personal Project - Wiki
 
--
+- [] Style the navs for each topic
+  - [x] CSS
 
 ### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
