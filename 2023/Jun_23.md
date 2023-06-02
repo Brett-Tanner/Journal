@@ -31,10 +31,24 @@
 
 - Bugfixes
 
-  - []
+  - [x] Stopped a new child/schedule version being created each time they're updated due to manually setting created and updated at
+  - [x] Set backup retention back to 14 days after it somehow got set to 2
+
+## June 3rd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  -
 
 - Features
 
+  - [] All AMs want the all schools summary, so remove special code for big boss and maybe condense admin/AM conditionals a bit
+  - [] Add an instructional PDF to the login page/make the sign up button more obvious
+  - [] For special days, display the connection option between the morning and afternoon slots
+    - Maybe also show if kids are attending both morning and afternoon in that column for regular days
+    - Just a different header/values
   - [] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
   - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
