@@ -40,6 +40,16 @@
 
 - Bugfixes
 
+  - [x] Photo service is bugged, it's impossible to register for right now. Works in JS but is not present on confirm page or confirmed invoice
+    - Was being caught by the orphan option check as event options never have an associated slot
+    - Added a guard clause to except event options from said check
+
+## June 4th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
   -
 
 - Features
