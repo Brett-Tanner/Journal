@@ -44,19 +44,40 @@
     - Was being caught by the orphan option check as event options never have an associated slot
     - Added a guard clause to except event options from said check
 
-## June 4th
+## June 5th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  -
+  - [x] Two schools were in the wrong areas (Ikegami and Toyocho) so I switched them
+    - Actually, they had their ids switched. The correct ids were in the correct areas, but those ids were associated to the wrong school/name
+    - Means:
+      - Anyone who signed up without associating their kid to an SSID is fine, they manually chose the school which reflects the order of the schools in the database
+      - But any kid imported from the SS is at the wrong school, because it's mapped wrong.
+        - So to fix, maybe we just change the mapping in the SS imports?
+          - Nah change the names to avoid confusion on future. Name/id mapping is same everywhere
+        - Then for both of those schools, check if any of their students have an invoice for an event at the other school, switch to the correct event if so
+  - [x] Renamed the schools to match the SS mapping, then made sure all associated children/invoices/events/managers were associated with the right one
+
+### Personal Project - Wiki
+
+- [x] Style the navs for each topic
+  - [x] HTML
+
+## June 6th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
 
 - Features
 
   - [] All AMs want the all schools summary, so remove special code for big boss and maybe condense admin/AM conditionals a bit
   - [] Add an instructional PDF to the login page/make the sign up button more obvious
-  - [] For special days, display the connection option between the morning and afternoon slots
+  - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
   - [] Prevent slots closing on weekends, they should close the Friday before instead
@@ -69,11 +90,6 @@
 - Security
 
   - [] SM can only log in from their school's IP address **requires IP list**
-
-### Personal Project - Wiki
-
-- [] Style the navs for each topic
-  - [] HTML
 
 ### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
 
