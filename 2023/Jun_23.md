@@ -67,6 +67,17 @@
 
 ## June 6th
 
+### Personal Project - Wiki
+
+- [x] Added a table of contents to the css/animations page, will re-use on others
+
+### Odin Project
+
+- [x] [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
+- [x] [Transitions](https://www.theodinproject.com/lessons/advanced-html-and-css-transitions)
+
+## June 7th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
@@ -91,8 +102,6 @@
 
   - [] SM can only log in from their school's IP address **requires IP list**
 
-### Odin Project - [Transforms](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
+### Odin Project
 
-### What I learned
-
--
+- [] [Keyframes](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
