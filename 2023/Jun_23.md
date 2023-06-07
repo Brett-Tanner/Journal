@@ -82,7 +82,28 @@
 
 - Bugfixes
 
-  - []
+  - [x] Fixed one of the invoices broken by the Toyocho/Ikegami switch as a proof
+    - [] Fix the others (2?)
+
+### Odin Project
+
+- [x] [Keyframes](https://www.theodinproject.com/lessons/advanced-html-and-css-keyframes)
+- [x] [Animation Exercises](https://github.com/TheOdinProject/css-exercises/tree/main/animation)
+- [x] [Intro to Accessibility](https://www.theodinproject.com/lessons/advanced-html-and-css-introduction-to-web-accessibility)
+- [x] [Web Content Accessibility Guidelines](https://www.theodinproject.com/lessons/advanced-html-and-css-the-web-content-accessibility-guidelines-wcag)
+- [x] [Semantic HTML](https://www.theodinproject.com/lessons/advanced-html-and-css-semantic-html)
+- [x] [Accessible Colors](https://www.theodinproject.com/lessons/advanced-html-and-css-accessible-colors)
+- [x] [Keyboard Navigation](https://www.theodinproject.com/lessons/advanced-html-and-css-keyboard-navigation)
+- [x] [Meaningful Text](https://www.theodinproject.com/lessons/advanced-html-and-css-meaningful-text)
+
+## June 8th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [x] Fixed one of the invoices broken by the Toyocho/Ikegami switch as a proof
+    - [] Fix the others (2?)
 
 - Features
 
@@ -104,4 +125,4 @@
 
 ### Odin Project
 
-- [] [Keyframes](https://www.theodinproject.com/lessons/advanced-html-and-css-transforms)
+- [] [WAI-ARIA](https://www.theodinproject.com/lessons/advanced-html-and-css-wai-aria)
