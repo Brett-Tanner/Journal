@@ -103,21 +103,50 @@
 - Bugfixes
 
   - [x] Fixed one of the invoices broken by the Toyocho/Ikegami switch as a proof
-    - [] Fix the others (2?)
+    - [x] Fix the others (2?)
+  - [x] On the event sheet in the coupon column, it says 'Booking#246' in English
+    - Change to just be the number, it's right next to it
+  - [x] Transfer the kid's registrations who registered for their regular school but wanted to go to a different one
+  - [x] Make event partial calendar image full width
+  - [x] School never displays on child profile, should be the name or dashes but it's just blank
+    - It was just a missing English translation for the admin accounts
+
+- Chores
+
+  - [x] Change dev seeds to use the Summer event
 
 - Features
 
-  - [] All AMs want the all schools summary, so remove special code for big boss and maybe condense admin/AM conditionals a bit
+  - [x] When generating invoice details, just skip if the option name is 'なし'
+  - [x] Give parents an easy way to register their kid for an event at a different school
+    - Add to the event partial, as a form that lets them select another school to register at
+  - [x] Highlight students from other schools on the event sheet
+    - Add a col (titled 担当校舎) which contains the kid's regular school and is highlighted if different to the event school
+    - [x] pop up the name of their regular school in a popover
+  - [x] Add conditional to show correct event partial if registered for an event at a school other than their regular one
+  - [x] Add Clarity to the site so we can use heatmaps
+  - [x] All AMs want the all schools summary, so remove special code for big boss and maybe condense admin/AM conditionals a bit
+
+## June 9th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
+
+- Features
+
   - [] Add an instructional PDF to the login page/make the sign up button more obvious
+  - [] Prevent slots closing on weekends, they should close the Friday before instead
+    - Possibly hard code the relevant public holidays
+  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
   - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
-  - [] Prevent slots closing on weekends, they should close the Friday before instead
-    - Possibly hard code the relevant public holidays
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
-  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
-  - [] When generating invoice details, just skip if the option name is 'なし'
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Add a 'Latest Registrations' feed for staff
 
 - Security
 
