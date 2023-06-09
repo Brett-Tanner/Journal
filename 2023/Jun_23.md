@@ -133,7 +133,22 @@
 
 - Bugfixes
 
-  - []
+  - [x] Ensure regular days are not registered for when copying registrations during child merge
+    - [x] But only for afternoon, merge invoices was also preventing for mornings as well
+
+### Odin Project
+
+- [x] [WAI-ARIA](https://www.theodinproject.com/lessons/advanced-html-and-css-wai-aria)
+- [x] [Accessibility Auditing](https://www.theodinproject.com/lessons/advanced-html-and-css-accessibility-auditing)
+
+## June 10th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [] Hide the card with invoices, mailer subscriptions etc. when the parent has no children, clearly its too distracting for them
+  - [] Hide the invoice index button for children without invoices, similar reason
 
 - Features
 
@@ -148,10 +163,24 @@
   - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
   - [] Add a 'Latest Registrations' feed for staff
 
+- Invoice confirmation rework
+
+  - [] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page
+    - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets
+    - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else
+    - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status
+    - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed
+  - [] Change the in_ss field to 'staff_confirmed' to better reflect its actual function
+  - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it
+    - only the confirmed booking should be shown to staff/included in indexes/stats
+    - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes
+  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
+  - [] Change logic on which email is sent to use the new confirmed fields
+
 - Security
 
   - [] SM can only log in from their school's IP address **requires IP list**
 
 ### Odin Project
 
-- [] [WAI-ARIA](https://www.theodinproject.com/lessons/advanced-html-and-css-wai-aria)
+- [] [Intro to Responsive Design](https://www.theodinproject.com/lessons/advanced-html-and-css-introduction-to-responsive-design)
