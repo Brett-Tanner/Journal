@@ -147,8 +147,19 @@
 
 - Bugfixes
 
-  - [] Hide the card with invoices, mailer subscriptions etc. when the parent has no children, clearly its too distracting for them
-  - [] Hide the invoice index button for children without invoices, similar reason
+  - [x] Hide the card with invoices, mailer subscriptions etc. when the parent has no children, clearly its too distracting for them
+  - [x] Hide the invoice index button for children/parents without real invoices, similar reason
+  - [x] Only show real invoices in Invoice#index
+  - [x] Still default to showing events at the kid's school unless they've actually registered for something at another school
+  - [x] Get rid of the weird margin at the bottom of login page on certain mobile viewports
+
+## June 11th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
 
 - Features
 
