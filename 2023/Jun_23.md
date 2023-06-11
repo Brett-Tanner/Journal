@@ -155,6 +155,14 @@
 
 ## June 11th
 
+### Odin Project
+
+- [x] [Intro to Responsive Design](https://www.theodinproject.com/lessons/advanced-html-and-css-introduction-to-responsive-design)
+- [x] [Natural Responsiveness](https://www.theodinproject.com/lessons/advanced-html-and-css-natural-responsiveness)
+- [x] [Responsive Images](https://www.theodinproject.com/lessons/advanced-html-and-css-responsive-images)
+
+## June 12th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
@@ -194,4 +202,4 @@
 
 ### Odin Project
 
-- [] [Intro to Responsive Design](https://www.theodinproject.com/lessons/advanced-html-and-css-introduction-to-responsive-design)
+- [] [Media Queries](https://www.theodinproject.com/lessons/advanced-html-and-css-media-queries)
