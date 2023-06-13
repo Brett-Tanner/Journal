@@ -163,15 +163,28 @@
 
 ## June 12th
 
+### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Initialize the Astro project
+
+### Odin Project - [Personal Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [x] [Media Queries](https://www.theodinproject.com/lessons/advanced-html-and-css-media-queries)
+
+- [x] Scaffold the homepage, top nav and contact info footer
+- [] Add a light/dark mode toggle like the one on [this guy's blog](https://vanntile.com/blog/next-to-astro/)
+
+## June 13th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  - []
+  - [x] Ensure options are also unregistered when unregistering from regular day afternoons
 
 - Features
 
-  - [] Add an instructional PDF to the login page/make the sign up button more obvious
+  - [] Add an instructional PDF to the login page
   - [] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
   - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
@@ -200,6 +213,63 @@
 
   - [] SM can only log in from their school's IP address **requires IP list**
 
-### Odin Project
+### Odin Project - [Personal Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
-- [] [Media Queries](https://www.theodinproject.com/lessons/advanced-html-and-css-media-queries)
+- [x] Add a light/dark mode toggle like the one on [this guy's blog](https://vanntile.com/blog/next-to-astro/)
+- [x] Persist user theme preference across browser sessions
+- [x] Automatically set the theme (and slider position) from browser preference
+
+### Personal Project - [Personal Wiki](https://brett-tanner.github.io/)
+
+- [x] Added the JS section that was missing for some reason
+
+## June 13th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
+
+- Features
+
+  - [] Add an instructional PDF to the login page
+  - [] Prevent slots closing on weekends, they should close the Friday before instead
+    - Possibly hard code the relevant public holidays
+  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
+  - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
+    - Maybe also show if kids are attending both morning and afternoon in that column for regular days
+    - Just a different header/values
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Add a 'Latest Registrations' feed for staff
+
+- Invoice confirmation rework
+
+  - [] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page
+    - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets
+    - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else
+    - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status
+    - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed
+  - [] Change the in_ss field to 'staff_confirmed' to better reflect its actual function
+  - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it
+    - only the confirmed booking should be shown to staff/included in indexes/stats
+    - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes
+  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
+  - [] Change logic on which email is sent to use the new confirmed fields
+
+- Security
+
+  - [] SM can only log in from their school's IP address **requires IP list**
+
+### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- []
+
+### Odin Project - [Personal Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- []
+
+### Personal Project - [Personal Wiki](https://brett-tanner.github.io/)
+
+- []
