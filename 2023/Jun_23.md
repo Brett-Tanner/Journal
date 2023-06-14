@@ -182,37 +182,6 @@
 
   - [x] Ensure options are also unregistered when unregistering from regular day afternoons
 
-- Features
-
-  - [] Add an instructional PDF to the login page
-  - [] Prevent slots closing on weekends, they should close the Friday before instead
-    - Possibly hard code the relevant public holidays
-  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
-  - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
-    - Maybe also show if kids are attending both morning and afternoon in that column for regular days
-    - Just a different header/values
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
-  - [] Add a 'Latest Registrations' feed for staff
-
-- Invoice confirmation rework
-
-  - [] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page
-    - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets
-    - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else
-    - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status
-    - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed
-  - [] Change the in_ss field to 'staff_confirmed' to better reflect its actual function
-  - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it
-    - only the confirmed booking should be shown to staff/included in indexes/stats
-    - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes
-  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
-  - [] Change logic on which email is sent to use the new confirmed fields
-
-- Security
-
-  - [] SM can only log in from their school's IP address **requires IP list**
-
 ### Odin Project - [Personal Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
 - [x] Add a light/dark mode toggle like the one on [this guy's blog](https://vanntile.com/blog/next-to-astro/)
@@ -223,7 +192,7 @@
 
 - [x] Added the JS section that was missing for some reason
 
-## June 13th
+## June 15th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -233,29 +202,36 @@
 
 - Features
 
-  - [] Add an instructional PDF to the login page
+  - [x] Make authentication redirect the new splash page which links to login or sign up
+    - [x] Style the new landing page
+    - [x] Add the little arrows to the landing page buttons
+  - [x] Add an instructional PDF to the login page
+  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
+  - [] Make the activity names on the registration page labels linked to their checkboxes to avoid dead clicks
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Add a 'Latest Registrations' feed for staff
+  - [] Add an 'Incomplete Registrations' feed as well
+  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
   - [] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
-  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
   - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
-  - [] Add a 'Latest Registrations' feed for staff
 
 - Invoice confirmation rework
+
+  1. Migrate the new user_confirmed column in, check nothing is on fire
+  2. Then try out the other changes locally before pushing
 
   - [] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page
     - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets
     - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else
     - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status
     - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed
-  - [] Change the in_ss field to 'staff_confirmed' to better reflect its actual function
   - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it
     - only the confirmed booking should be shown to staff/included in indexes/stats
     - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes
-  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
   - [] Change logic on which email is sent to use the new confirmed fields
 
 - Security
@@ -266,9 +242,20 @@
 
 - []
 
-### Odin Project - [Personal Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
-- []
+- [] Scaffold the contents of each section
+- [] Fill in each section
+  - [] Hero
+  - [] About
+  - [] Skills
+    - [] On desktop, the BS list selector thingy
+    - [] On mobile maybe the same but horizontal mode?
+  - [] Projects
+    - [] Slide up on visible, small delay on the second one
+    - [] Links to github repo and live version
+    - these cards can probably be an include
+  - [] Contact
 
 ### Personal Project - [Personal Wiki](https://brett-tanner.github.io/)
 
