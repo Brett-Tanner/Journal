@@ -25,6 +25,7 @@ Busy with Spring school/new kids' book stickers
   ```
   /spec
   /app/assets/images/*
+  !/app/assets/images/arrow-right.svg
   !/app/assets/images/favicon.svg
   !/app/assets/images/logo.svg
   !/app/assets/images/white_logo.svg
