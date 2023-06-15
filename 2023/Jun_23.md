@@ -198,41 +198,87 @@
 
 - Bugfixes
 
-  - []
+  - [x] Remove unnecessarily large margins on login page
+  - [x] Make the login form justified center, not start
+  - [x] Remove unnecessary scroll bars on Chrome
 
-- Features
+- Time Sensitive Features
 
   - [x] Make authentication redirect the new splash page which links to login or sign up
     - [x] Style the new landing page
     - [x] Add the little arrows to the landing page buttons
   - [x] Add an instructional PDF to the login page
-  - [] Possibly bring the recalculate button back, e.g. for children whose category in the SS changed since their booking was made
-  - [] Make the activity names on the registration page labels linked to their checkboxes to avoid dead clicks
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [x] Make the sign-up form fullscreen
+  - [x] Make the activity names on the registration page labels linked to their checkboxes to avoid dead clicks
+  - [x] Look into what Cloudwatch might be useful for
+    - most of the free tier stuff we already get for free, and even if we get useful info from the paid tier when do I have time to look at it do anything about it?
+  - [x] Re-add the ability to merge invoices from the active invoice
+    - make the text in the dropdown the total cost
+  - [x] Filter invoices shown on event sheet to only real ones, right now it's only filtering children with real ones but showing all
+  - [x] Add the name of the day to the add slot partial date (in brackets)
+  - [x] Change sorting order for admins to en_name on children
+  - [x] Group children by school, same as for time slots
+  - [] Migrate the 'entered' boolean field into the Invoice table
+  - [] Add a button for the SMs to set whether they entered a booking into the SS or not
   - [] Add a 'Latest Registrations' feed for staff
-  - [] Add an 'Incomplete Registrations' feed as well
-  - [] Rather than showing a blank page on the invoice index when there're no real invoices, show a 'No confirmed invoices, #{num} unconfirmed" message
+  - [] You can probably just set 'seen' to false on invoices whenever they're updated
+
+- Near event start features
+
+  - [] Allow staff to edit bookings for even closed activities
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
   - [] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
   - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
+
+- Post event features
+
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Have a way to stop sending emails when the event stops
 
-- Invoice confirmation rework
+~~ - Invoice confirmation rework
 
-  1. Migrate the new user_confirmed column in, check nothing is on fire
-  2. Then try out the other changes locally before pushing
+~~ - [x] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else ~~
+~~ - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status ~~
+~~ - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed ~~
+~~ - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it ~~
+~~ - only the confirmed booking should be shown to staff/included in indexes/stats ~~
+~~ - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes ~~
+~~ - [] Change logic on which email is sent to use the new confirmed fields ~~
 
-  - [] Add a user_confirmed field to Invoice model, which is set to true when they confirm on the confirm page
-    - Allows us to save invoices so they persist when users hit back/abandon before confirming without showing in stats/sheets
-    - By actually updating the invoice when the user goes to confirm from the registration page, but only using confirmed versions anywhere else
-    - [] Change the stats/sheets/indexes other places to decide what they show based on confirmation status
-    - [] Check all the logic that uses in_ss and think about how it could better use user_confirmed
-  - [] Use versions to handle cases where a user edits an existing booking but doesn't confirm it
-    - only the confirmed booking should be shown to staff/included in indexes/stats
-    - [] add a warning to the reg page/invoice index telling the user they have unconfirmed changes
-  - [] Change logic on which email is sent to use the new confirmed fields
+Abandoned the rework because saving invoices on the confirm screen also creates registrations, which has knock on effects to the rest of the site which shouldn't be caused by an unconfirmed invoice. In addition to the issue of displaying confirmed versions of the invoices themselves when the latest version can be unconfirmed, e.g. a user edits their existing booking but doesn't confirm it
+
+## June 16th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - []
+
+- Time Sensitive Features
+
+  - [] Migrate the 'entered' boolean field into the Invoice table
+  - [] Add a button for the SMs to set whether they entered a booking into the SS or not
+  - [] Add a 'Latest Registrations' feed for staff
+  - [] You can probably just set 'seen' to false on invoices whenever they're updated
+
+- Near event start features
+
+  - [] Allow staff to edit bookings for even closed activities
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Prevent slots closing on weekends, they should close the Friday before instead
+    - Possibly hard code the relevant public holidays
+  - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
+    - Maybe also show if kids are attending both morning and afternoon in that column for regular days
+    - Just a different header/values
+
+- Post event features
+
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Have a way to stop sending emails when the event stops
 
 - Security
 
