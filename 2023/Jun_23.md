@@ -218,25 +218,6 @@
   - [x] Add the name of the day to the add slot partial date (in brackets)
   - [x] Change sorting order for admins to en_name on children
   - [x] Group children by school, same as for time slots
-  - [] Migrate the 'entered' boolean field into the Invoice table
-  - [] Add a button for the SMs to set whether they entered a booking into the SS or not
-  - [] Add a 'Latest Registrations' feed for staff
-  - [] You can probably just set 'seen' to false on invoices whenever they're updated
-
-- Near event start features
-
-  - [] Allow staff to edit bookings for even closed activities
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
-  - [] Prevent slots closing on weekends, they should close the Friday before instead
-    - Possibly hard code the relevant public holidays
-  - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
-    - Maybe also show if kids are attending both morning and afternoon in that column for regular days
-    - Just a different header/values
-
-- Post event features
-
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
-  - [] Have a way to stop sending emails when the event stops
 
 ~~ - Invoice confirmation rework
 
@@ -254,16 +235,35 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- Features
+
+  - [x] Migrate the 'entered' boolean field into the Invoice table, default false
+  - [x] Add a button for the SMs to set whether they entered a booking into the SS or not
+    - There's an issue with the button displaying as entered when all a kid's invoices are confirmed
+    - Might cause SMs to toggle it to not entered, which would unconfirm the last invoice
+    - Probably not intended, so best to disable the buttons until I figure out the logic properly
+    - Last commit **DID NOT ACTUALLY FIX IT** overwrite the changes when you get back
+  - [x] Fix above issues by displaying a button per invoice
+    - [x] And then go back and add an exception to display the big button again if there's only one invoice
+    - [x] Disable the button unless the invoice in question is confirmed, so we don't skip confirmation emails to parents
+    - [x] Restore seen at to its previous functionality as it can't be accurately updated via form
+  - [x] Also update the list of invoices so they show as confirmed/unconfirmed correctly without a refresh
+  - [x] Don't show the 'unconfirm' button if the child has other unconfirmed invoices
+
+## June 17th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - Bugfixes
 
   - []
 
-- Time Sensitive Features
+- Features
 
-  - [] Migrate the 'entered' boolean field into the Invoice table
-  - [] Add a button for the SMs to set whether they entered a booking into the SS or not
   - [] Add a 'Latest Registrations' feed for staff
-  - [] You can probably just set 'seen' to false on invoices whenever they're updated
+  - [] Split the User#show pages out into different pages for different roles
+  - [] Make the summary tables responsive
+    - Pretty sure there's just a BS class for that
 
 - Near event start features
 
