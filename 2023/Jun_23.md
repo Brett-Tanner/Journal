@@ -250,7 +250,28 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - [x] Also update the list of invoices so they show as confirmed/unconfirmed correctly without a refresh
   - [x] Don't show the 'unconfirm' button if the child has other unconfirmed invoices
 
-## June 17th
+## June 19th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [x] Prevent emails sending when admins edit invoices
+  - [x] Figure out how to find accidentally deleted invoices (search papertrail versions by action, item type and created at)
+
+### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Import the 'Setting up a dev environment on WSL' tutorial I did
+- [x] Make homepage use the doc layout so the sidebar is available, and autogenerate sidebar content from folders
+
+### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [x] Scaffold the contents of each section
+
+- Styling
+  - [x] Give the main nav opacity and a cool frosted glass effect
+
+## June 20th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -260,25 +281,39 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 - Features
 
-  - [] Add a 'Latest Registrations' feed for staff
-  - [] Split the User#show pages out into different pages for different roles
   - [] Make the summary tables responsive
     - Pretty sure there's just a BS class for that
+  - [] Also make the daily attendance boxes responsive, they should just shift into a single column
+  - [] Rather than completely blocking out regular days, put a red warning box on them (with the current text) and make the registerable as usual
+    - [] Remove the check that removes registrations for regular days
+  - [] Put the confirm page in a turbo-frame filled modal on the registration page
+    - Then they can just close the modal and edit their booking without losing progress
+  - [] Split the User#show pages out into different pages for different roles
+  - [] Add a 'Latest Registrations' feed for staff
+  - [] Change 'vh' units to 'dvh' because they solve the issue I had with stuff being cut off much more responsively
 
 - Near event start features
 
-  - [] Allow staff to edit bookings for even closed activities
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
   - [] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
   - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
+  - [] Style the print output to be more like the current attendance sheets for slot attendance
+  - [] Allow staff to edit bookings for even closed activities
+  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
 
 - Post event features
 
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
   - [] Have a way to stop sending emails when the event stops
+  - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Add a way of uploading images to the S3 bucket from the site
+    - [] Then selecting the blob to attach when creating an event/slot
+    - [] Extend the 'all' option on event creation to allow specific schools to be selected
+  - [] Stats page
+    - [] Registrations per time
+    - [] Average cost per invoice/school
 
 - Security
 
@@ -286,12 +321,17 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 ### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- []
+- [] Add 'How to contribute'
+  - [] Adding a page
+  - [] Adding a section
+- [] AWS section
+  - [] Pushing a new version
+  - [] Services we use and overview of what for
 
 ### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
-- [] Scaffold the contents of each section
 - [] Fill in each section
+
   - [] Hero
   - [] About
   - [] Skills
@@ -302,6 +342,9 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
     - [] Links to github repo and live version
     - these cards can probably be an include
   - [] Contact
+
+- Styling
+  - [] Decide on a color scheme using [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator)
 
 ### Personal Project - [Personal Wiki](https://brett-tanner.github.io/)
 
