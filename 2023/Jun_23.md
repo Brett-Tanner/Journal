@@ -273,11 +273,35 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 ## June 20th
 
+### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [] Fill in each section
+
+  - [x] Navbar
+
+    - [x] Choose and add site logo
+      - [x] Animate it bouncing on hover
+      - [x] Animate it spinning on hover
+      - [x] Filter it to orange when active
+    - [x] Limit theme toggle triggering to the actual button
+
+  - [x] Hero
+    - [x] Greeting text in frosted div
+    - [x] In Chrome/Safari this disappears and has to be scrolled into view?????
+      - The grid seems to be huge, either the width or an overflow property is working differently to Firefox
+      - Was caused by the min width of the columns being unlimited, need to use `minmax(0, something)` to keep it in check
+    - [x] RGB background
+  - [] Projects
+    - [x] Slide up on visible, small delay on the second one
+
+## June 21st
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  - []
+  - [] Copy_regs doesn't know about different arrival/depart options for kindy/elementary, teach it
+  - [] Coupons (on the event sheet) still use the invoice id and are the only thing that does. Change it to the cost to match everything else
 
 - Features
 
@@ -332,20 +356,14 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 - [] Fill in each section
 
-  - [] Hero
   - [] About
   - [] Skills
     - [] On desktop, the BS list selector thingy
     - [] On mobile maybe the same but horizontal mode?
   - [] Projects
-    - [] Slide up on visible, small delay on the second one
     - [] Links to github repo and live version
     - these cards can probably be an include
   - [] Contact
 
 - Styling
   - [] Decide on a color scheme using [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator)
-
-### Personal Project - [Personal Wiki](https://brett-tanner.github.io/)
-
-- []
