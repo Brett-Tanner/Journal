@@ -300,6 +300,29 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 - Bugfixes
 
+  - [x] Some parents managed to enter 'nil' for their school_id, manually associate with their schools
+    - [x] Prevent parents doing that by, paradoxically, removing the required attribute from the select
+      - HTML spec means required selects must have a blank option, by making it not required they can select the wrong school then go back and change it if they need
+
+### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [] Fill in each section
+
+  - [x] Navbar
+    - [x] use BS offcanvas
+      - [x] Fix gap to toggle
+      - [x] Fix the contents of body looking like they're too far down
+  - [] Contact
+    - [x] Switch to flex-column on mobile
+
+## June 22nd
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Bugfixes
+
+  - [] Might be some issues with the confirm button being hidden by the address bar on mobile, use dvh and add padding
+  - [] Add some kind of error message when a child can't be found in #find_child on the profile page
   - [] Copy_regs doesn't know about different arrival/depart options for kindy/elementary, teach it
   - [] Coupons (on the event sheet) still use the invoice id and are the only thing that does. Change it to the cost to match everything else
 
@@ -362,8 +385,10 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
     - [] On mobile maybe the same but horizontal mode?
   - [] Projects
     - [] Links to github repo and live version
+    - [] Expanding view transition between projects and their page
     - these cards can probably be an include
   - [] Contact
 
 - Styling
-  - [] Decide on a color scheme using [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator)
+  - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
+  - [] use CQI units for text scaling
