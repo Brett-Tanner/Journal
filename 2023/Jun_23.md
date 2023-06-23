@@ -358,44 +358,38 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 ## June 23rd
 
+### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [] Fill in each section
+
+  - [] About
+    - [] Add 'Download CV' button
+    - [] Write a dev CV
+  - [] Skills
+    - [x] Use an accordion, works on desktop and mobile
+    - [x] Header should have language logo then name and a badge indicating proficiency
+    - [] Fill body with a brief description of my proficiency at that skill/projects I've used it on
+  - [] Projects
+    - [] Make them full width (background, content should be 75% to match rest) and slide/fade in from different sides
+    - [] Full height image with bullet points to side, paragraph explanation underneath
+    - [] Links to github repo and live version
+    - [] Expanding view transition between projects and their page
+  - [] Contact
+
+- Styling
+  - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
+  - [] use CQI units for text scaling
+
+## June 24th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  - [x] Might be some issues with the confirm button being hidden by the address bar on mobile, add padding
-  - [x] Stop charging internal kids for hats
-  - [x] Coupons (on the event sheet) still use the invoice id and are the only thing that does. Change it to not have a key at all
-  - [x] Event sheet needs kindy/elementary (幼児, 小学生) and internal/external/reservation columns
-  - [x] Drop the email template column and move copy button to the summary modal
-  - [x] Reduce font size for the seen buttons
-  - [x] Invoice summary needs kindy/not and membership status under kids name, as a small heading
-  - [x] Stop coupons submitting multiple times when booking edited/already one with the same name (reject if?)
-    - [x] Find and clear extras for the ones that already have duplicates
-  - [x] Add some kind of error message when a child can't be found in #find_child on the profile page
-  - [x] Copy_regs doesn't know about different arrival/depart options for kindy/elementary, teach it
-    - [x] Ensure the copied invoice is correctly saved with its new registrations, even if a new invoice has to be created to copy to
-
-- Chores
-
-  - [x] Downloaded [Blisk](https://blisk.io/) so I can test mobile browsers with their toolbars etc to make sure nothing is cut off
+  - []
 
 - Features
 
-  - [x] Make the summary tables scrollable on mobile
-    - Pretty sure there's just a BS class for that
-  - [x] Also make the daily attendance boxes shift into a single column on mobile
-  - [x] Rather than completely blocking out regular days, put a red warning box on them (with the current text) and make the registerable as usual
-    - [x] Remove the check that removes registrations for regular days
-      - When copying invoices
-      - When merging children
-  - [x] Show count of students per membership category who are attending their first seasonal (headers like 通学生(初めて))
-    - [x] Make clickable, takes you to an index of the parents of those first time kids
-  - [x] Put the confirm page in a turbo-frame filled modal on the registration page
-    - Then they can just close the modal and edit their booking without losing progress
-    - [x] Add the modal
-    - [x] Fill it with a turbo-frame, then wrap the existing confirm page in a matching one
-    - [x] Figure out how to apply styles to it in the new context
-    - [x] Hide unnecessary turbo frames for invoices in the SS
   - [] Split the User#show pages out into different pages for different roles
   - [] Add a 'Latest Registrations' feed for staff
 
@@ -440,13 +434,15 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 - [] Fill in each section
 
   - [] About
+    - [] Add 'Download CV' button
+    - [] Write a dev CV
   - [] Skills
-    - [] On desktop, the BS list selector thingy
-    - [] On mobile maybe the same but horizontal mode?
+    - [] Fill body with a brief description of my proficiency at that skill/projects I've used it on
   - [] Projects
+    - [] Make them full width (background, content should be 75% to match rest) and slide/fade in from different sides
+    - [] Full height image with bullet points to side, paragraph explanation underneath
     - [] Links to github repo and live version
     - [] Expanding view transition between projects and their page
-    - these cards can probably be an include
   - [] Contact
 
 - Styling
