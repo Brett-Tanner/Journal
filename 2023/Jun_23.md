@@ -380,18 +380,38 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
   - [] use CQI units for text scaling
 
-## June 24th
+## June 26th
+
+### Work Project - WordPress Reservation Plugin
+
+- [x] Set up a WP dev environment on my macbook
+- [] Decide on a plugin to use as the basis
+  - Hour bookings
+    - has a nice easy toggle to switch between schools, seems easy to style.
+    - But only simple text fields on free version, no date etc.
+    - Backend seems nice and simple for non-tech users
+  - Bookly
+    - seems very modern and stylish, but maybe no calendar on the frontend?
+    - Also I can't seem to add more services to be selected on the form?
+  - BookingPress
+    - Best looking one so far, but necessary stuff locked behind paywall
+    - If we do pay though, very slick starting point, lots of customization, can maybe generate the documents we need?
+
+## June 27th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugfixes
 
-  - []
+  - [] Add the turboframe which updates the invoice list back into the event sheet, so the order of the invoices match
+  - [] Change the 'real invoices' relation to be only invoices with at least one time slot
 
 - Features
 
   - [] Split the User#show pages out into different pages for different roles
   - [] Add a 'Latest Registrations' feed for staff
+  - [] Look into [this](https://github.com/westonganger/paper_trail-association_tracking) to see if I can add a restore invoice button
+    - In the show action, have an or to assign @invoice or @last version
 
 - Near event start features
 
@@ -428,6 +448,21 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 - [] AWS section
   - [] Pushing a new version
   - [] Services we use and overview of what for
+
+### Work Project - WordPress Reservation Plugin
+
+- [x] Set up a WP dev environment on my macbook
+- [] Decide on a plugin to use as the basis
+  - Hour bookings
+    - has a nice easy toggle to switch between schools, seems easy to style.
+    - But only simple text fields on free version, no date etc.
+    - Backend seems nice and simple for non-tech users
+  - Bookly
+    - seems very modern and stylish, but maybe no calendar on the frontend?
+    - Also I can't seem to add more services to be selected on the form?
+  - BookingPress
+    - Best looking one so far, but necessary stuff locked behind paywall
+    - If we do pay though, very slick starting point, lots of customization, can maybe generate the documents we need?
 
 ### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
