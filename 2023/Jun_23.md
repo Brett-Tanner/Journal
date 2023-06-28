@@ -404,7 +404,8 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 - Bugfixes
 
   - [] Add the turboframe which updates the invoice list back into the event sheet, so the order of the invoices match
-  - [] Change the 'real invoices' relation to be only invoices with at least one time slot
+  - [] Change the 'real invoices' relation to be only invoices with at least one time slot [using something like this](https://stackoverflow.com/questions/63774601/finding-all-records-that-has-at-least-one-association-from-associated-models-ta)
+  - [] Add the correct options for level check to merge children as well as copy invoice
 
 - Features
 
@@ -412,6 +413,7 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - [] Add a 'Latest Registrations' feed for staff
   - [] Look into [this](https://github.com/westonganger/paper_trail-association_tracking) to see if I can add a restore invoice button
     - In the show action, have an or to assign @invoice or @last version
+  - [] Take away the frontend delete user button to stop an admin accidentally deleting an SM or something
 
 - Near event start features
 
@@ -452,7 +454,7 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 ### Work Project - WordPress Reservation Plugin
 
 - [x] Set up a WP dev environment on my macbook
-- [] Decide on a plugin to use as the basis
+- [x] Decide on a plugin to use as the basis: **BookingPress**
   - Hour bookings
     - has a nice easy toggle to switch between schools, seems easy to style.
     - But only simple text fields on free version, no date etc.
@@ -463,6 +465,7 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - BookingPress
     - Best looking one so far, but necessary stuff locked behind paywall
     - If we do pay though, very slick starting point, lots of customization, can maybe generate the documents we need?
+  - Can translate backend with a plugin like [this](https://www.bookingpressplugin.com/documents/translate-bookingpress-plugin/)
 
 ### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
