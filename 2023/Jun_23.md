@@ -385,7 +385,7 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 ### Work Project - WordPress Reservation Plugin
 
 - [x] Set up a WP dev environment on my macbook
-- [] Decide on a plugin to use as the basis
+- [] Decide on a plugin to use as the basis **BookingPress, it's almost exactly what we need and only nice dollars**
   - Hour bookings
     - has a nice easy toggle to switch between schools, seems easy to style.
     - But only simple text fields on free version, no date etc.
@@ -401,19 +401,45 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Bugfixes
+- Changes
 
-  - [] Add the turboframe which updates the invoice list back into the event sheet, so the order of the invoices match
-  - [] Change the 'real invoices' relation to be only invoices with at least one time slot [using something like this](https://stackoverflow.com/questions/63774601/finding-all-records-that-has-at-least-one-association-from-associated-models-ta)
-  - [] Add the correct options for level check to merge children as well as copy invoice
+  - [x] Change the 'real invoices' relation to be only invoices with at least one time slot [using something like this](https://stackoverflow.com/questions/63774601/finding-all-records-that-has-at-least-one-association-from-associated-models-ta)
+    - [x] Fix the issue this introduced with the school totals where AR #sum with #distinct was summing distinct total costs, rather than the total_costs from distinct invoices
+  - [x] Start updating the invoice list on the event sheet with the turbo stream again, so the order of the invoices always match
+  - [x] Add the correct-options-for-level check to merge children as well as copy invoice
+  - [x] Afternoon departure options are ele price for kindy
+    - was getting the correct options but then just using the ele ones anyway
+    - [x] Find all the kindy kids who signed up for the ele departure option and adjust (there was only 1)
+  - [x] On the event sheet, show the school name along with the event name
+  - [x] Fix the my page enumerable key for photos, should be proper spelling with 'OK' at the end
 
 - Features
 
-  - [] Split the User#show pages out into different pages for different roles
-  - [] Add a 'Latest Registrations' feed for staff
+  - [x] Take away the frontend delete user button to stop an admin accidentally deleting an SM or something
+  - [x] Add a 'Latest Registrations' feed for staff
+  - [x] Allow staff to edit bookings for even closed activities
+  - [x] Overall (condensed summary for AM/Admins) with the children counts, photo service, goal and total revenue
+  - [x] Put the extension option for special days outside the morning/afternoon collapses
+    - [x] Add a special case to orphan option to not delete it if afternoon slot is registered for
+    - [x] but make sure it's still deleted if neither is registered
+  - [x] Show parent's address on kid
+
+## June 28th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Changes
+
+  - [] Move invoice list next to total cost and change the heading for total cost to the new translation
+    - [] Migrate the DB column first, then make changes
+
+- Features
+
   - [] Look into [this](https://github.com/westonganger/paper_trail-association_tracking) to see if I can add a restore invoice button
     - In the show action, have an or to assign @invoice or @last version
-  - [] Take away the frontend delete user button to stop an admin accidentally deleting an SM or something
+    - actually, just change the dependent option to nil so the invoice can be restored and still have all its stuff
+    - [] List all deleted invoices on SMs page if there are any
+  - [] Split the User#show pages out into different pages for different roles
 
 - Near event start features
 
@@ -423,7 +449,6 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
   - [] Style the print output to be more like the current attendance sheets for slot attendance
-  - [] Allow staff to edit bookings for even closed activities
   - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
 
 - Post event features
@@ -437,6 +462,12 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - [] Stats page
     - [] Registrations per time
     - [] Average cost per invoice/school
+
+- Somewhere around the SM training
+
+  - [] Give SMs a 'confirm with email' and 'confirm without email' button
+    - [] Add copy button to the invoice show view just for SMs
+    - [] Add a 'confirmation email sent' checkbox to the event sheet, same as 'entered'
 
 - Security
 
@@ -452,20 +483,6 @@ Abandoned the rework because saving invoices on the confirm screen also creates 
   - [] Services we use and overview of what for
 
 ### Work Project - WordPress Reservation Plugin
-
-- [x] Set up a WP dev environment on my macbook
-- [x] Decide on a plugin to use as the basis: **BookingPress**
-  - Hour bookings
-    - has a nice easy toggle to switch between schools, seems easy to style.
-    - But only simple text fields on free version, no date etc.
-    - Backend seems nice and simple for non-tech users
-  - Bookly
-    - seems very modern and stylish, but maybe no calendar on the frontend?
-    - Also I can't seem to add more services to be selected on the form?
-  - BookingPress
-    - Best looking one so far, but necessary stuff locked behind paywall
-    - If we do pay though, very slick starting point, lots of customization, can maybe generate the documents we need?
-  - Can translate backend with a plugin like [this](https://www.bookingpressplugin.com/documents/translate-bookingpress-plugin/)
 
 ### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
