@@ -1,4 +1,17 @@
-## July 1st
+# July 2023
+
+## July 1st-3rd Entry (Long weekend)
+
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- Navbar
+
+  - [x] Doesn't close on mobile when you click a link
+
+- Wiki
+  - [x] Added notes on JS Object Construction
+
+## July 4th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -9,14 +22,14 @@
 
 - Features
 
-  - [] Look into [this](https://github.com/westonganger/paper_trail-association_tracking) to see if I can add a restore invoice button
-    - In the show action, have an or to assign @invoice or @last version
-    - actually, just change the dependent option to nil so the invoice can be restored and still have all its stuff
-    - [] List all deleted invoices on SMs page if there are any
+  - [] Change the dependent option on all the invoice's associations to nil so they're still there if it's reified
+    - [] List all deleted invoices on SMs page if there are any, with a restore button
+    - Or look into [this](https://github.com/westonganger/paper_trail-association_tracking) if necessary
   - [] Add a count of students registered for each time slot, for all schools (or for all schools in an area for AMs)
   - [] Sort the condensed summary by percent of goal
     - Maybe get the data and create a hash with it, then just sort the hash and use it to make the rows?
   - [] Split the User#show pages out into different pages for different roles
+  - [] Write a Stimulus controller allowing the condensed summary to be sorted by clicking a header
 
 - Near event start features
 
@@ -58,18 +71,31 @@
 - [] AWS section
   - [] Pushing a new version
   - [] Services we use and overview of what for
+- [] Rails section
+  - [] Overview
+  - [] Useful Commands
 
 ### Work Project - WordPress Reservation Plugin
 
-### Odin Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
-- [] Fill in each section
+- Navbar
+  - Button on theme toggle goes outside on wide mobile screens
+- [] About
+  - [] Write a dev CV
+- [] Projects
 
-  - [] About
-    - [] Write a dev CV
-  - [] Projects
-    - [] Expanding view transition between projects and their page
+  - [] Expanding view transition between projects and their page
+  - [] Fill in content for KU Regs tabs
+    - [] Backend
+    - [] Customer frontend
+    - [] Staff frontend
+    - [] Admin frontend
 
 - Styling
+
   - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
   - [] use CQI units for text scaling
+
+- Wiki
+  - []
