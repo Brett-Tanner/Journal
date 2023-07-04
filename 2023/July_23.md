@@ -13,12 +13,34 @@
 
 ## July 4th
 
+### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
+
+- [x] Create the Book object constructor
+  - [x] Learn how to create class properties in TS
+- [] Create the HTML scaffold
+
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- Wiki
+  - Lots of reading about TypeScript and adding notes to the TS page
+
+## July 5th
+
+### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
+
+- [] Create the HTML scaffold
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Changes
 
   - [] Move invoice list next to total cost and change the heading for total cost to the new translation
     - [] Migrate the DB column first, then make changes
+  - [] Add minami-machida's extra special day
+    - Add the code which handles the 1100 (rather than 1500) extra charge for the afternoon slot and excludes the 1500 for the morning slot
+    - Create the morning slot, then the afternoon slot linked to it
+    - Create the extension option (and other options same as other special days, which for minami machida means no morning extension)
+    -
 
 - Features
 
@@ -98,4 +120,6 @@
   - [] use CQI units for text scaling
 
 - Wiki
-  - []
+  - [] Create the TS page, create sections for
+    - [] Types
+    - [] Classes
