@@ -26,6 +26,13 @@
 
 ## July 5th
 
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- Wiki
+  - [x] Add TypeScript, Classes, Functions and Variables to the JS section
+
+## July 6th
+
 ### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
 
 - [] Create the HTML scaffold
@@ -44,6 +51,8 @@
 
 - Features
 
+  - [x] Added list of badge kids to Yoshi's homepage
+    - [x] Sort them by activities registered for
   - [] Change the dependent option on all the invoice's associations to nil so they're still there if it's reified
     - [] List all deleted invoices on SMs page if there are any, with a restore button
     - Or look into [this](https://github.com/westonganger/paper_trail-association_tracking) if necessary
