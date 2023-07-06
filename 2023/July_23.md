@@ -33,48 +33,55 @@
 
 ## July 6th
 
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Changes
+
+  - [x] Add Minami-Machida's extra special day
+    - [x] And the logic to exclude the morning from special day charges
+    - [x] And the logic to charge 1100 yen for the afternoon rather than 1500 (FE & BE)
+  - [x] Show special day afternoons in the daily attendance
+  - [x] Move invoice list next to total cost and change the heading for total cost to the new translation
+  - [x] Don't version changes to Invoices once they're confirmed, so SMs toggling email sent/entered etc. doesn't create a million versions
+
+- Features
+
+  - [x] Added list of badge kids to Yoshi's homepage
+    - [x] Sort them by activities registered for
+    - [x] Include special days, even the afternoon slot
+  - [x] Add a count of students registered for each time slot for all schools
+  - [x] Give SMs a 'confirm with email' and 'confirm without email' button
+    - [x] Migrate the DB column first, then make changes
+    - [x] Add copy (summary) button to the invoice show view just for SMs
+    - [x] Add a 'confirmation email sent' checkbox to the event sheet, same as 'entered'
+      - [x] Set all invoices confirmed at the time of the second button being added to email sent: true, as that was the only option for them
+    - [x] Set 'email sent' when SMs choose to send the automatic one
+  - [x] List all invoices an SM has deleted (if any) on their page, with a summary modal so they can manually recreate
+    - [x] exclude zero cost invoices as those are auto-deleted by child merges, or irrelevant if manually deleted
+  - [x] Write a Stimulus controller allowing the condensed summary to be sorted by clicking a header
+    - [x] Handle numbers with more digits correctly by reducing numbers to actual
+
+## July 7th
+
 ### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
 
 - [] Create the HTML scaffold
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Changes
-
-  - [] Move invoice list next to total cost and change the heading for total cost to the new translation
-    - [] Migrate the DB column first, then make changes
-  - [] Add minami-machida's extra special day
-    - Add the code which handles the 1100 (rather than 1500) extra charge for the afternoon slot and excludes the 1500 for the morning slot
-    - Create the morning slot, then the afternoon slot linked to it
-    - Create the extension option (and other options same as other special days, which for minami machida means no morning extension)
-    -
-
-- Features
-
-  - [x] Added list of badge kids to Yoshi's homepage
-    - [x] Sort them by activities registered for
-  - [] Change the dependent option on all the invoice's associations to nil so they're still there if it's reified
-    - [] List all deleted invoices on SMs page if there are any, with a restore button
-    - Or look into [this](https://github.com/westonganger/paper_trail-association_tracking) if necessary
-  - [] Add a count of students registered for each time slot, for all schools (or for all schools in an area for AMs)
-  - [] Sort the condensed summary by percent of goal
-    - Maybe get the data and create a hash with it, then just sort the hash and use it to make the rows?
-  - [] Split the User#show pages out into different pages for different roles
-  - [] Write a Stimulus controller allowing the condensed summary to be sorted by clicking a header
-
 - Near event start features
 
-  - [] Prevent slots closing on weekends, they should close the Friday before instead
-    - Possibly hard code the relevant public holidays
   - [] For special days, display the connection option between the morning and afternoon slots (on the daily attendance sheet)
     - Maybe also show if kids are attending both morning and afternoon in that column for regular days
     - Just a different header/values
   - [] Style the print output to be more like the current attendance sheets for slot attendance
-  - [] Add a search to the indexes (mainly for admins, there are too many pages and we don't know the order)
+  - [] Prevent slots closing on weekends, they should close the Friday before instead
+    - Possibly hard code the relevant public holidays
 
 - Post event features
 
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Remove all references to the email template column, then remove the column
+    - [] Split the User#show pages out into different pages for different roles
   - [] Have a way to stop sending emails when the event stops
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Add a way of uploading images to the S3 bucket from the site
@@ -83,16 +90,8 @@
   - [] Stats page
     - [] Registrations per time
     - [] Average cost per invoice/school
-
-- Somewhere around the SM training
-
-  - [] Give SMs a 'confirm with email' and 'confirm without email' button
-    - [] Add copy button to the invoice show view just for SMs
-    - [] Add a 'confirmation email sent' checkbox to the event sheet, same as 'entered'
-
-- Security
-
-  - [] SM can only log in from their school's IP address **requires IP list**
+    - [] Bar graph of activity popularity (and by school)
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
 ### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -127,8 +126,3 @@
 
   - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
   - [] use CQI units for text scaling
-
-- Wiki
-  - [] Create the TS page, create sections for
-    - [] Types
-    - [] Classes
