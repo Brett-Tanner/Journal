@@ -63,6 +63,20 @@
 
 ## July 7th
 
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Changes
+
+  - [x] Choose a redirect path after deleting a student that actually works
+  - [x] Delete the non_ss kid after merging them with their SS counterpart
+  - [x] Add a method to the Child model concatenating all their names into a string so it can be displayed when they're being selected for merging
+
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [x] Started scaffolding the carousel for images on the registration project page, but was interrupted by work stuff
+
+## July 8th
+
 ### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
 
 - [] Create the HTML scaffold
