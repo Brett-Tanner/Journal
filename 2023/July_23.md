@@ -109,7 +109,7 @@
   - [x] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
 
-## July 13th
+## July 12th
 
 ### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
 
@@ -123,29 +123,66 @@
   - Learned documentFragment is not actually a more performant way to append a bunch of stuff than just looping
   - Also you can append all at once using `.append()` and the spread notation rather than `.appendChild()`
 
+## July 13th
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Bugs
+- Changes
 
-  - [] Remove start-of-line whitespace on copied summaries
   - [x] Take away SM foot gun by removing manual SSID entry from child forms
   - [x] And their ability to delete children
+  - [] Remove start-of-line whitespace on copied summaries
+
+- Testing
+
+  - [x] Merge all the Okurayama kids (at least those with SS counterparts) to check it works when the user can read
 
 - Features
 
   - [x] Give SMs a button to toggle first seasonal status on Child#show
-  - [] Make it unbelievably obvious which child is being merged from by rendering full forms with different tables for each
+  - [x] Make it unbelievably obvious which child is being merged from by rendering full forms with different tables for each
     - [x] Put the SS kid and candidate non-ss kids in a table right next to each other, color coded
-    - [] Have the merge button pop up a full screen modal that asks them if they're really, really sure. The actual form to
+    - [x] Have the merge button pop up a modal that asks them if they're really, really sure
+    - [x] The actual form to submit is in the modal footer as a button
+    - [x] Add the new translations/warnings
+  - [x] Stats page
+    - [x] Choose between the chartkick and gruff gems
+      - Chartkick, much more popular and fully developed
+    - [x] Scaffold the page, install gems, figure out how they work etc.
+    - [x] Registrations per day/week
+    - [x] Per day of the week
+    - [x] Revenue per day/week
+    - [x] Average cost per invoice/by school
+    - [x] Number of activities per booking (not by school yet)
+    - [x] Number of attendees by category
+    - [] Bar graph of activity popularity (and by school)
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Add a way of uploading images to the S3 bucket from the site
     - [] Then selecting the blob to attach when creating an event/slot
     - [] Extend the 'all' option on event creation to allow specific schools to be selected
   - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
-  - [] Stats page
-    - [] Registrations per time
-    - [] Average cost per invoice/school
+  - [] Remove all references to the email template column, then remove the column
+    - [] Split the User#show pages out into different pages for different roles
+  - [] Have a way to stop sending emails when the event stops
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+
+## July 13th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Changes
+
+  - [] Remove start-of-line whitespace on copied summaries
+
+- Features
+
+  - Stats page
     - [] Bar graph of activity popularity (and by school)
+  - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Add a way of uploading images to the S3 bucket from the site
+    - [] Then selecting the blob to attach when creating an event/slot
+    - [] Extend the 'all' option on event creation to allow specific schools to be selected
+  - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
   - [] Remove all references to the email template column, then remove the column
     - [] Split the User#show pages out into different pages for different roles
   - [] Have a way to stop sending emails when the event stops
@@ -162,23 +199,3 @@
 - [] Rails section
   - [] Overview
   - [] Useful Commands
-
-### Work Project - WordPress Reservation Plugin
-
-### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
-
-- Navbar
-  - Button on theme toggle goes outside on wide mobile screens
-- [] Projects
-
-  - [] Expanding view transition between projects and their page
-  - [] Fill in content for KU Regs tabs
-    - [] Backend
-    - [] Customer frontend
-    - [] Staff frontend
-    - [] Admin frontend
-
-- Styling
-
-  - [] Use [this site](https://realtimecolors.com/palettes/?colors=1e0f1f-eeddee-a151a4-e1c5e2-ad5eb0#generator) to get accent colors for stuff like the ring around the theme toggle
-  - [] use CQI units for text scaling
