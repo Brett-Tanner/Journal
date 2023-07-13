@@ -109,20 +109,34 @@
   - [x] Prevent slots closing on weekends, they should close the Friday before instead
     - Possibly hard code the relevant public holidays
 
-## July 11th
+## July 13th
+
+### Personal Project - [Portfolio](https://www.theodinproject.com/lessons/advanced-html-and-css-personal-portfolio)
+
+- [x] Run Lighthouse on the site and follow the recommendations
+  - [x] get and use differently sized images for different screen sizes
 
 ### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
 
-- [] Create the HTML scaffold
+- [x] Create library array and addBook()
+- [] Create showLibrary() to populate the bookshelf div
+  - Learned documentFragment is not actually a more performant way to append a bunch of stuff than just looping
+  - Also you can append all at once using `.append()` and the spread notation rather than `.appendChild()`
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Bugs
 
   - [] Remove start-of-line whitespace on copied summaries
+  - [x] Take away SM foot gun by removing manual SSID entry from child forms
+  - [x] And their ability to delete children
 
 - Features
 
+  - [x] Give SMs a button to toggle first seasonal status on Child#show
+  - [] Make it unbelievably obvious which child is being merged from by rendering full forms with different tables for each
+    - [x] Put the SS kid and candidate non-ss kids in a table right next to each other, color coded
+    - [] Have the merge button pop up a full screen modal that asks them if they're really, really sure. The actual form to
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Add a way of uploading images to the S3 bucket from the site
     - [] Then selecting the blob to attach when creating an event/slot
@@ -155,8 +169,6 @@
 
 - Navbar
   - Button on theme toggle goes outside on wide mobile screens
-- [] About
-  - [] Write a dev CV
 - [] Projects
 
   - [] Expanding view transition between projects and their page
