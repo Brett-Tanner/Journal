@@ -166,18 +166,25 @@
   - [] Have a way to stop sending emails when the event stops
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
-## July 13th
+## July 18th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Changes
 
+  - [x] Remove online test event from stats
+  - [x] Add some color to the charts
+  - [x] Remove the unnecessary timezones causing weird behaviour with the current day's bookings
+  - [x] Fix the header row overlapping the first row (on chrome at least) whe printing attendance sheets
+    - Seems to be an issue with sticky? Position changes when scrolling in devtools print mode
+    - Was the offset I use on the sticky header to avoid it overlapping the navbar. Removed it in the print media query
   - [] Remove start-of-line whitespace on copied summaries
 
 - Features
 
   - Stats page
-    - [] Bar graph of activity popularity (and by school)
+    - [x] Bar graph of activity popularity
+      - [] (and by school)
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Add a way of uploading images to the S3 bucket from the site
     - [] Then selecting the blob to attach when creating an event/slot
