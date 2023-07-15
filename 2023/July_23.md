@@ -156,15 +156,18 @@
     - [x] Number of activities per booking (not by school yet)
     - [x] Number of attendees by category
     - [] Bar graph of activity popularity (and by school)
-  - [] Finish off the event creation features so someone other than me can actually do it
-    - [] Add a way of uploading images to the S3 bucket from the site
-    - [] Then selecting the blob to attach when creating an event/slot
-    - [] Extend the 'all' option on event creation to allow specific schools to be selected
-  - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
-  - [] Remove all references to the email template column, then remove the column
-    - [] Split the User#show pages out into different pages for different roles
-  - [] Have a way to stop sending emails when the event stops
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+
+## July 15th
+
+### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
+
+- [x] Create showLibrary() to populate the bookshelf div
+  - Learned documentFragment is not actually a more performant way to append a bunch of stuff than just looping
+  - Also you can append all at once using `.append()` and the spread notation rather than `.appendChild()`
+- [] Add a button that brings up a form for adding books
+  - [x] Add & style the button
+  - [x] Add form
+  - [] Put the form in a modal triggered by the add book button
 
 ## July 18th
 
