@@ -169,6 +169,14 @@
   - [x] Add form
   - [] Put the form in a modal triggered by the add book button
 
+## July 16th
+
+### Odin Project - [Library](https://www.theodinproject.com/lessons/javascript-library)
+
+- [x] Add a button that brings up a form for adding books
+  - [x] Put the form in a modal triggered by the add book button
+- [x] Add a button on each book to remove it from the library
+
 ## July 18th
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
