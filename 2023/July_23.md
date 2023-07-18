@@ -190,17 +190,42 @@
   - [x] Fix the header row overlapping the first row (on chrome at least) whe printing attendance sheets
     - Seems to be an issue with sticky? Position changes when scrolling in devtools print mode
     - Was the offset I use on the sticky header to avoid it overlapping the navbar. Removed it in the print media query
-  - [] Remove start-of-line whitespace on copied summaries
+  - [x] Link the afternoon special days (on daily attendance sheet) to the morning slot's attendance sheet
+    - [x] On a related note, afternoon only kids aren't shown for special days. Fix that
+    - [x] And stop the allergy column on attendance tables causing them to overflow
+  - [x] Remove whitespace on copied summaries
 
 - Features
 
-  - Stats page
-    - [x] Bar graph of activity popularity
-      - [] (and by school)
   - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Event step
+      - [x] Allow an image to be selected from the 'events' S3 folder
+      - [x] Generally update the fields/controller/routing with new knowledge
+      - [] Extend the 'all' option on event creation to allow specific schools to be selected
+
+## July 19th
+
+### Work Project - WP Reservation Plugin
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Features
+
+  - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Event step
+      - [x] Allow an image to be selected from the 'events' S3 folder
+      - [x] Generally update the fields/controller/routing with new knowledge
+      - [] Extend the 'all' option on event creation to allow specific schools to be selected
+    - [] Time Slot step
+      - [] Show the event partial at the top of the form
+      - [] Each time slot in an individual card, all in a big form
+      - [] Add a dropdown to select an image from available active storage blobs (group images by event?)
     - [] Add a way of uploading images to the S3 bucket from the site
-    - [] Then selecting the blob to attach when creating an event/slot
-    - [] Extend the 'all' option on event creation to allow specific schools to be selected
+      - [] Upload to a specific folder based on purpose of image
+      - [] Make sure large files work, they didn't the first time
+    - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
+  - Stats page
+    - [] Add school-specific pages for each of the existing stats
   - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
   - [] Remove all references to the email template column, then remove the column
     - [] Split the User#show pages out into different pages for different roles
