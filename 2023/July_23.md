@@ -207,6 +207,46 @@
 
 ### Work Project - WP Reservation Plugin
 
+- [x] Add accounts for each school
+- [x] Add a Setsumeikai service for each school
+- [x] Customise the form to match the current one
+- [] Make an API available on the WP site so GAS can access the data it needs
+  - [x] Set up Postman to test/check the contents of old/new APIs
+  - [x] For customers
+  - [x] For schools
+    - But getting an empty response every time, maybe they're deleted after relevant so nothing there?
+    - Or maybe my school value in the payload is wrong in some way
+  - It's possible the API is actually set up on the new site somehow, so look into that
+  - The current site's API is v2, while the one I was given is v1. Wonder where the v1 is?
+- [] Add filtering by
+  - [] name
+  - [] closest station
+  - [] area (kanagawa, tokyo etc.)
+  - Add script tag to the template (and search box)
+    - Gets the school cards by class
+    - Reads their names, which are used as keys to a hash in the script tag that contains the other info
+    - Hide everything that doesn't match the entered string in some way
+- [] Multi-school selection
+  - Not sure it's even possible
+
+## July 20th
+
+### Work Project - WP Reservation Plugin
+
+- [] Make an API available on the WP site so GAS can access the data it needs
+  - The current site's API is v2, while the one I was given is v1. Wonder where the v1 is?
+  - [] For setsumeikaiMeibo?
+- [] Add filtering by
+  - [] name
+  - [] closest station
+  - [] area (kanagawa, tokyo etc.)
+  - Add script tag to the template (and search box)
+    - Gets the school cards by class
+    - Reads their names, which are used as keys to a hash in the script tag that contains the other info
+    - Hide everything that doesn't match the entered string in some way
+- [] Multi-school selection
+  - Not sure it's even possible
+
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Features
