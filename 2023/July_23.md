@@ -233,17 +233,61 @@
 
 ### Work Project - WP Reservation Plugin
 
+**Realised it might not actually be possible to set up the schedule the way we need it. Special days seem to get ignored, and services can't be set on a day by day basis**
+
 - [] Make an API available on the WP site so GAS can access the data it needs
-  - The current site's API is v2, while the one I was given is v1. Wonder where the v1 is?
-  - [] For setsumeikaiMeibo?
+  - [] Read up on WP APIs
+    - Endpoints have a controller which provides data much like Rails
+    - You can pass an authentication function to check authorization, or just return true if public
+      - Maybe also use [Application Passwords](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#basic-authentication-with-application-passwords) for auth
+  - [] Find the table BP is submitting to
+  - [] Create an API for it
+  - [] Inquiry form needs to submit to the database too so the API can retrieve the parents
 - [] Add filtering by
   - [] name
   - [] closest station
   - [] area (kanagawa, tokyo etc.)
+  - [] by text and dropdown
   - Add script tag to the template (and search box)
     - Gets the school cards by class
     - Reads their names, which are used as keys to a hash in the script tag that contains the other info
     - Hide everything that doesn't match the entered string in some way
+- Styling
+  - [x] Make the school cards flex row so they're smaller
+  - [x] Stop the main content scrolling
+  - [x] Stretch the school card grid to take up the whole container
+  - [x] Center the header
+  - [] Make it clear which days are available with an orange circle
+  - [] Also a bigger calendar if possible
+- [] Multi-school selection
+  - Not sure it's even possible
+
+## July 21st
+
+### Work Project - WP Reservation Plugin
+
+**Realised it might not actually be possible to set up the schedule the way we need it. Special days seem to get ignored, and services can't be set on a day by day basis**
+
+- [] Make an API available on the WP site so GAS can access the data it needs
+  - [] Read up on WP APIs
+    - Endpoints have a controller which provides data much like Rails
+    - You can pass an authentication function to check authorization, or just return true if public
+      - Maybe also use [Application Passwords](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#basic-authentication-with-application-passwords) for auth
+  - [] Find the table BP is submitting to
+  - [] Create an API for it
+  - [] Inquiry form needs to submit to the database too so the API can retrieve the parents
+- [] Add filtering by
+  - [] name
+  - [] closest station
+  - [] area (kanagawa, tokyo etc.)
+  - [] by text and dropdown
+  - Add script tag to the template (and search box)
+    - Gets the school cards by class
+    - Reads their names, which are used as keys to a hash in the script tag that contains the other info
+    - Hide everything that doesn't match the entered string in some way
+- Styling
+  - [] Make it clear which days are available with an orange circle
+  - [] Also a bigger calendar if possible
 - [] Multi-school selection
   - Not sure it's even possible
 
