@@ -266,30 +266,10 @@
 
 ### Work Project - WP Reservation Plugin
 
-**Realised it might not actually be possible to set up the schedule the way we need it. Special days seem to get ignored, and services can't be set on a day by day basis**
+**Plugin won't work for our purposes**
 
-- [] Make an API available on the WP site so GAS can access the data it needs
-  - [] Read up on WP APIs
-    - Endpoints have a controller which provides data much like Rails
-    - You can pass an authentication function to check authorization, or just return true if public
-      - Maybe also use [Application Passwords](https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/#basic-authentication-with-application-passwords) for auth
-  - [] Find the table BP is submitting to
-  - [] Create an API for it
-  - [] Inquiry form needs to submit to the database too so the API can retrieve the parents
-- [] Add filtering by
-  - [] name
-  - [] closest station
-  - [] area (kanagawa, tokyo etc.)
-  - [] by text and dropdown
-  - Add script tag to the template (and search box)
-    - Gets the school cards by class
-    - Reads their names, which are used as keys to a hash in the script tag that contains the other info
-    - Hide everything that doesn't match the entered string in some way
-- Styling
-  - [] Make it clear which days are available with an orange circle
-  - [] Also a bigger calendar if possible
-- [] Multi-school selection
-  - Not sure it's even possible
+- Rewrote the possible solutions in light of this
+- Looked up a calendar gem if I get to do it in Rails, picked [Simple Calendar](https://www.ruby-toolbox.com/projects/simple_calendar)
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -297,13 +277,48 @@
 
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Event step
-      - [x] Allow an image to be selected from the 'events' S3 folder
-      - [x] Generally update the fields/controller/routing with new knowledge
       - [] Extend the 'all' option on event creation to allow specific schools to be selected
     - [] Time Slot step
-      - [] Show the event partial at the top of the form
-      - [] Each time slot in an individual card, all in a big form
-      - [] Add a dropdown to select an image from available active storage blobs (group images by event?)
+      - [x] Show the event partial at the top of the form
+      - [x] Give them an 'add time slot' button
+      - [x] Add a dropdown to select an image from available active storage blobs (group images by event?)
+      - [] Allow updating time slots for all events with the same name
+    - [] Add a way of uploading images to the S3 bucket from the site
+      - [] Upload to a specific folder based on purpose of image
+      - [] Make sure large files work, they didn't the first time
+    - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
+
+## July 22nd
+
+### Work Project - Setsumeikai
+
+- Rails DB setup
+  - Each school gets a setsumeikai event (add a setsumeikai category to that enumerable)
+    - The actual setsumeikai is a time slot on that event, SMs can create and edit those time slots for their schools
+  - I add area and nearby train stations to the school table so we can sort by those
+  - New table for something like 'leads' which will be where we store the info customers submit when requesting a setsumeikai
+- Will need SM interfaces for
+  - List of leads (per setsumeikai and overall)
+  - Calendar view where they can see their setsumeikais
+- Customer interface needs
+  - School selection
+    - with filter by area/station/name etc
+  - Then date selection with the calendar
+  - Then the form
+  - Then a confirmation which shows the details they entered
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Features
+
+  - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Event step
+      - [] Extend the 'all' option on event creation to allow specific schools to be selected
+    - [] Time Slot step
+      - [x] Show the event partial at the top of the form
+      - [x] Give them an 'add time slot' button
+      - [x] Add a dropdown to select an image from available active storage blobs (group images by event?)
+      - [] Allow updating time slots for all events with the same name
     - [] Add a way of uploading images to the S3 bucket from the site
       - [] Upload to a specific folder based on purpose of image
       - [] Make sure large files work, they didn't the first time
