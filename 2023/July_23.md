@@ -290,6 +290,16 @@
 
 ## July 22nd
 
+### Odin Project - [Tic-Tac-Toe](https://github.com/Brett-Tanner/odin-tic-tac-toe)
+
+- Start scaffolding the JS objects/HTML
+
+## July 23rd
+
+### Odin Project - [Tic-Tac-Toe](https://github.com/Brett-Tanner/odin-tic-tac-toe)
+
+-
+
 ### Work Project - Setsumeikai
 
 - Rails DB setup
