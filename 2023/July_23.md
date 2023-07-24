@@ -298,6 +298,12 @@
 
 ### Odin Project - [Tic-Tac-Toe](https://github.com/Brett-Tanner/odin-tic-tac-toe)
 
+- Finish scaffolding the HTML/CSS, write the logic for checking if the game is over
+
+## July 24th
+
+### Odin Project - [Tic-Tac-Toe](https://github.com/Brett-Tanner/odin-tic-tac-toe)
+
 -
 
 ### Work Project - Setsumeikai
@@ -321,6 +327,7 @@
 
 - Features
 
+  - [x] Show SMs kids who are regular students in the afternoon when they attend a morning activity
   - [] Finish off the event creation features so someone other than me can actually do it
     - [] Event step
       - [] Extend the 'all' option on event creation to allow specific schools to be selected
