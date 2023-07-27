@@ -300,11 +300,60 @@
 
 - Finish scaffolding the HTML/CSS, write the logic for checking if the game is over
 
-## July 24th
+## July 26th
 
 ### Odin Project - [Tic-Tac-Toe](https://github.com/Brett-Tanner/odin-tic-tac-toe)
 
--
+- Add event listeners so the game can actually be played
+- Handle draws
+- Complete the project
+
+## July 27th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Chores
+
+  - [x] Find proof two different SMs can't read and give Leroy the info he needs to fix it
+  - [x] Add Futatamagawa's Summer Festival
+    - [x] Add an exception to the activity partial to be able to show departure extensions on a morning slot
+    - [x] Add exceptions to the attendance sheet to be able to display the extension option in the first column, departure in the last
+    - In future, probably best to create a morning slot (with the image) and immediately close it, the add the afternoon slot normally
+
+- Features
+
+  - [x] Show SMs kids who are regular students in the afternoon when they attend a morning activity
+  - [x] Add a (H) next to children who have the hat adjustment on the attendance sheet for outdoor activities
+
+## July 28th
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Features
+
+  - [] Give SMs a printable list of kids who need a hat (based on the hat adjustment, not received hat which is something different)
+  - [] Finish off the event creation features so someone other than me can actually do it
+    - [] Event step
+      - [] pre-select the existing image in the form
+      - [] Extend the 'all' option on event creation to allow specific schools to be selected
+    - [] Time Slot step
+      - [] pre-select the existing image in the form
+      - [] Allow updating time slots for all events with the same name
+    - [] Option step
+      - [] Automatically create standard options from the list in the TimeSlot model
+      - [] Allow custom options to be added
+    - [] Add a way of uploading images to the S3 bucket from the site
+      - [] Upload to a specific folder based on purpose of image
+      - [] Make sure large files work, they didn't the first time
+    - [] Add "Edit Event" button to event partial for admins
+    - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
+  - Stats page
+    - [] Add school-specific pages for each of the existing stats
+  - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
+  - [] Remove all references to the email template column, then remove the column
+    - [] Split the User#show pages out into different pages for different roles
+  - [] Have a way to stop sending emails when the event stops
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
 ### Work Project - Setsumeikai
 
@@ -323,32 +372,7 @@
   - Then the form
   - Then a confirmation which shows the details they entered
 
-### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
-
-- Features
-
-  - [x] Show SMs kids who are regular students in the afternoon when they attend a morning activity
-  - [] Finish off the event creation features so someone other than me can actually do it
-    - [] Event step
-      - [] Extend the 'all' option on event creation to allow specific schools to be selected
-    - [] Time Slot step
-      - [x] Show the event partial at the top of the form
-      - [x] Give them an 'add time slot' button
-      - [x] Add a dropdown to select an image from available active storage blobs (group images by event?)
-      - [] Allow updating time slots for all events with the same name
-    - [] Add a way of uploading images to the S3 bucket from the site
-      - [] Upload to a specific folder based on purpose of image
-      - [] Make sure large files work, they didn't the first time
-    - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
-  - Stats page
-    - [] Add school-specific pages for each of the existing stats
-  - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
-  - [] Remove all references to the email template column, then remove the column
-    - [] Split the User#show pages out into different pages for different roles
-  - [] Have a way to stop sending emails when the event stops
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
-
-### Work Project - [Registration Wiki](https://github.com/Brett-Tanner/db_prototype_v2.git)
+### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
 - [] Add 'How to contribute'
   - [] Adding a page
