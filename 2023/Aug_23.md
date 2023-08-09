@@ -47,7 +47,32 @@
   - [] Have a way to stop sending emails when the event stops
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
-## August 4th
+## August 8th
+
+### Odin Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Plan out the basic features
+  - On arrival loads your budget for that month from local storage, or prompts you to create/import one if you don't have one
+  - Budgets should have your salary for that month and your saving goal
+  - Parent object for everything is a user, user can have many budgets (monthly) and budgets have many expenses
+  - Also allow for extra income from various things, but probably less prominent in UI cos it's less likely
+  - Expenses/budget should have categories like food, transport, bills
+  - Should be able to add expenses quickly from the main page
+    - Either as a custom expense through a form
+    - Or as a saved frequent expense by just clicking it/selecting from a dropdown
+  - Display a (reverse) progress bar at the top of the home page showing how close you are to spending too much
+  - Projected yearly savings/expenses etc. based on existing data
+  - List of expenses for a given week or day
+  - Export to JSON/CSV button
+  - Use chart.js for
+    - a pie chart of your expenses by category over the month
+    - bar chart of your expenses by day/week
+      - filterable by category?
+- [x] Create base factory functions for users, budgets, frequent expenses and expenses
+
+## August 9th
+
+### Odin Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
