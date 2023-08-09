@@ -72,13 +72,37 @@
 
 ## August 9th
 
-### Odin Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
-
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Chores
 
-  - [] Add Shin-kawasaki's special day
+  - [x] Add Shin-kawasaki's special day
+    - [x] exclude it from the different prices for Minami-machida/futatamagawa's summer festival
+  - [x] Make requested changes to Oi and Kitashinagawa's
+    - [x] Add the options they want (lunch on AM/PM and 2 period extension)
+    - [x] Change all the hardcoded exceptions to use the new names
+    - [x] Rename them
+    - [x] Add the new photos
+  - [x] Show minami-machida/futatamatagawa's (18, 21) summer festival day in the daily attendance (it's missing now)
+  - [x] Add Rinkai's triple day
+    - [x] Middle activity as an option
+  - [x] Monzen
+    - [x] The new days are alongside PM activities, but tag them morning cos it's easier
+    - [x] Close afternoon slots for the existing activities, and move the kids registered for them to the new activity on that day
+  - [x] Add special days for Ikegami, Magome, Nagahara, Todoroki & Toyocho
+    - [x] Actually create all those on live
+  - [x] Add the TY coupon and update translation on button
+    - [x] Get leroy the list of people eligible for the coupon
+
+## August 10th-14th
+
+Obon Holiday in Hokkaido!
+
+## August 15th
+
+### Odin Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Features
 
