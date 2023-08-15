@@ -100,7 +100,48 @@ Obon Holiday in Hokkaido!
 
 ## August 15th
 
-### Odin Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
+- Create factories for
+  - [x] ToDos with
+    - title
+    - description
+    - due date
+    - priority
+    - notes (like comments)
+    - checklist (interactive)
+  - [x] Projects which group ToDos, default project called "Misc"
+  - [x] Checklists
+    - Completed boolean
+    - Step description
+- UI
+  - [x] Homepage has
+    - [x] all todos (sorted by due date)
+    - [x] list of projects
+    - [x] ability to add a todo
+    - [x] ability to add a project
+  - [] Project pages showing all todos for a project
+    - Activated by clicking on the project from the sidebar nav
+    - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
+  - Individual todos have
+    - [x] Their title and due date, as well as the description by default
+    - [x] Different colors for different priorities
+    - [x] Edit, delete, view notes, view checklist and view description buttons
+- Functionality
+  - [] Can click a button to add new todos
+  - [] And to add new projects
+- [] Build out the localStorage capability
+
+## August 16th
+
+- UI
+  - [] Project pages showing all todos for a project
+    - Activated by clicking on the project from the sidebar nav
+    - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
+- Functionality
+  - [] Can click a button to add new todos
+  - [] And to add new projects
+- [] Build out the localStorage capability
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
