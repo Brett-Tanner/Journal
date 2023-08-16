@@ -135,6 +135,19 @@ Obon Holiday in Hokkaido!
 ## August 16th
 
 - UI
+  - Shared components for
+    - [x] Modal
+    - [x] Form
+      - [] Project Fields
+      - [] Todo Fields
+
+## August 17th
+
+- UI
+  - Shared components for
+    - [x] Form
+      - [] Project Fields
+      - [] Todo Fields
   - [] Project pages showing all todos for a project
     - Activated by clicking on the project from the sidebar nav
     - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
