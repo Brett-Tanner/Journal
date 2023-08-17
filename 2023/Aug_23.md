@@ -250,6 +250,7 @@ Obon Holiday in Hokkaido!
   - Then date selection with the calendar
   - Then the form
   - Then a confirmation which shows the details they entered
+- Calendar using [this](https://www.ruby-toolbox.com/projects/simple_calendar)
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
