@@ -158,9 +158,57 @@ Obon Holiday in Hokkaido!
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- Chores
+
+  - [x] Fix Rinakai's afternoon price
+    - [x] Fix a pricing bug when both AM and PM are registered for Rinakai's triple day
+    - [x] Allow the pizza party to be selected independently of AM or PM
+  - [x] Add new activities
+    - [x] Yako
+    - [x] Shinjo
+    - [x] Shin-Urayasu
+    - [x] Kamata
+    - [x] Minami Gyotoku
+      - [x] Add a plusone category to options
+      - [x] Modify views to show plusone options with radio buttons on the registration page
+  - [] Update the attendance sheet views
+    - [] to show the morning and afternoons of the new special days separately
+    - [] gyotoku's plus one options should only show the registered one
+    - [] Summer monster shows as the afternoon slot for the main special day on Rinkai's main sheet??
+
 - Features
 
-  - [] Finish off the event creation features so someone other than me can actually do it
+  - Stats page
+    - [x] Add coupon tracker graph
+      - [x] And one showing revenue for Leroy's
+        - Internal cost is 3000, external is 5000
+        - Per school graph of the revenue from that coupon
+      - [x] Also total revenue from coupons
+    - [x] Split activity popularity into 2 graphs, one for new activities and one for original
+    - [] Add school-specific pages for each of the existing stats
+
+## August 18th
+
+- UI
+  - Shared components for
+    - [x] Form
+      - [] Project Fields
+      - [] Todo Fields
+  - [] Project pages showing all todos for a project
+    - Activated by clicking on the project from the sidebar nav
+    - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
+- Functionality
+  - [] Can click a button to add new todos
+  - [] And to add new projects
+- [] Build out the localStorage capability
+
+### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Features
+
+  - Stats page
+    - [] Add school-specific pages for each of the existing stats
+  - [] Event creation
     - [] Event step
       - [] pre-select the existing image in the form
       - [] Extend the 'all' option on event creation to allow specific schools to be selected
@@ -176,8 +224,10 @@ Obon Holiday in Hokkaido!
     - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
     - [] Add a test event with the new flow (on dev env) and go through the whole app to see what needs changing to support having multiple events
       - Probably need some dummy registrations too
-  - Stats page
-    - [] Add school-specific pages for each of the existing stats
+  - [] Per-activity costs
+    - [] Add internal/external modifier cols to Time Slot
+    - [] Add a snack boolean col to Time Slot
+    - [] Add code to use them in Invoice#calc_cost
   - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
   - [] Remove all references to the email template column, then remove the column
     - [] Split the User#show pages out into different pages for different roles
