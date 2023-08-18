@@ -146,14 +146,14 @@ Obon Holiday in Hokkaido!
 - UI
   - Shared components for
     - [x] Form
-      - [] Project Fields
+      - [x] Project Fields
       - [] Todo Fields
   - [] Project pages showing all todos for a project
     - Activated by clicking on the project from the sidebar nav
     - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
 - Functionality
   - [] Can click a button to add new todos
-  - [] And to add new projects
+  - [x] And to add new projects
 - [] Build out the localStorage capability
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
@@ -190,23 +190,36 @@ Obon Holiday in Hokkaido!
 ## August 18th
 
 - UI
-  - Shared components for
-    - [x] Form
-      - [] Project Fields
-      - [] Todo Fields
+  - Components for
+    - [x] Project Form
+    - [x] Todo Form
   - [] Project pages showing all todos for a project
     - Activated by clicking on the project from the sidebar nav
     - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
 - Functionality
-  - [] Can click a button to add new todos
-  - [] And to add new projects
+  - [x] Can click a button to add new todos
+  - [x] And to add new projects
 - [] Build out the localStorage capability
+
+## August 19th
+
+- UI
+  - Components for
+  - [] Project pages showing all todos for a project
+    - Activated by clicking on the project from the sidebar nav
+    - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
+- [] LocalStorage
+  - [] Save & load projects
+  - [] Save & load todos
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Features
 
   - Stats page
+    - [] Option charts
+      - [] Count total registrations for options grouped by name
+      - [] Separate the arrival and departure options into pie charts showing which are most popular
     - [] Add school-specific pages for each of the existing stats
   - [] Event creation
     - [] Event step
@@ -233,6 +246,21 @@ Obon Holiday in Hokkaido!
     - [] Split the User#show pages out into different pages for different roles
   - [] Have a way to stop sending emails when the event stops
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+
+- Future Plans
+
+  - [] See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
+    - [] Setting up counter_cache for some stuff like registrations on TimeSlots might help with the memory usage
+    - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
+    - [] Install and use Bullet gem
+    - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
+    - [] Turnout gem to put it in maintenance mode?
+    - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
+    - [] Bump Ruby version and others as far as possible
+    - [] Forms
+      - [] Add useful error messages to all forms
+      - [] Add JS validation as well
+    - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
 
 ### Work Project - Setsumeikai
 
