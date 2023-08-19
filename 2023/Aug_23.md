@@ -203,11 +203,28 @@ Obon Holiday in Hokkaido!
 
 ## August 19th
 
-- UI
-  - Components for
-  - [] Project pages showing all todos for a project
-    - Activated by clicking on the project from the sidebar nav
-    - Replaces the content of the main, renders using the todo list of the project and listTodos from todoComponents
+- [x] Project name links lead to their todo list when clicked
+- [x] Add button to go back to home/all todos
+- ToDo card buttons
+  - [x] Description
+  - [x] Notes
+  - [x] Checklist
+  - [x] Edit
+  - [x] Delete
+    - [x] pass a reference to the project it belongs to at creation so you can actually delete
+- [x] Fix layout on mobile
+- [] Add notes form
+- [] Add checklist form
+- [] Add a way to delete projects (probably from their own screen)
+- [] LocalStorage
+  - [] Save & load projects
+  - [] Save & load todos
+
+## August 20th
+
+- [] Add notes form
+- [] Add checklist form
+- [] Add a way to delete projects (probably from their own screen)
 - [] LocalStorage
   - [] Save & load projects
   - [] Save & load todos
