@@ -134,6 +134,8 @@ Obon Holiday in Hokkaido!
 
 ## August 16th
 
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
 - UI
   - Shared components for
     - [x] Modal
@@ -142,6 +144,8 @@ Obon Holiday in Hokkaido!
       - [] Todo Fields
 
 ## August 17th
+
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
 
 - UI
   - Shared components for
@@ -189,6 +193,8 @@ Obon Holiday in Hokkaido!
 
 ## August 18th
 
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
 - UI
   - Components for
     - [x] Project Form
@@ -202,6 +208,8 @@ Obon Holiday in Hokkaido!
 - [] Build out the localStorage capability
 
 ## August 19th
+
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
 
 - [x] Project name links lead to their todo list when clicked
 - [x] Add button to go back to home/all todos
@@ -222,8 +230,24 @@ Obon Holiday in Hokkaido!
 
 ## August 20th
 
-- [] Add notes form
-- [] Add checklist form
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
+- [x] Add notes form
+- [x] Add checklist form
+  - [] And the logic to display it if it exists
+- [] Make submit button a shared component which takes innerText and a callback as arguments
+- [] Add a way to delete projects (probably from their own screen)
+- [] LocalStorage
+  - [] Save & load projects
+  - [] Save & load todos
+
+## August 21st
+
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
+- [x] Add checklist form
+  - [] And the logic to display it if it exists
+- [] Make submit button a shared component which takes innerText and a callback as arguments
 - [] Add a way to delete projects (probably from their own screen)
 - [] LocalStorage
   - [] Save & load projects
@@ -237,6 +261,10 @@ Obon Holiday in Hokkaido!
     - [] Option charts
       - [] Count total registrations for options grouped by name
       - [] Separate the arrival and departure options into pie charts showing which are most popular
+      - [] Separate graphs for daily updates by staff and customers
+        - Count versions where item_type == invoice and event == update
+        - Possibly subtract the create events for that day? Might stop inflation from both usually happening together
+        - Might also lead to negative numbers though
     - [] Add school-specific pages for each of the existing stats
   - [] Event creation
     - [] Event step
