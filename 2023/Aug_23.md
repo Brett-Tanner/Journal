@@ -246,12 +246,16 @@ Obon Holiday in Hokkaido!
 ### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
 
 - [x] Add checklist form
-  - [] And the logic to display it if it exists
-- [] Make submit button a shared component which takes innerText and a callback as arguments
-- [] Add a way to delete projects (probably from their own screen)
+  - [x] And the logic to display it if it exists
+- [x] Add a way to delete projects (probably from their own screen)
+
+## August 22nd
+
+### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
+
 - [] LocalStorage
-  - [] Save & load projects
-  - [] Save & load todos
+  - [] Save projects automatically when changed
+  - [] Load projects (if they exist) on page load
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
