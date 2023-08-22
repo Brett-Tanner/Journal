@@ -259,6 +259,20 @@ Obon Holiday in Hokkaido!
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- Chores
+
+  - [x] Check the attendance sheets for all the new activities for any issues caused by all the complications
+    - [x] Rinkai's middle event wasn't using the name of the actual event because I hardcoded it as 中延長 in the past
+    - [x] Extension option was still taking up space on the sheet when it didn't exist because it was hardcoded to be there
+    - [x] The event id for 大井's aqua park trip was 16 rather than 22 for some reason????? Was only stopping it from showing up in the daily attendance list, no other problems
+      - [x] Same for 北品川
+    - [x] 南行徳 parent days had the plusone options pushing everything else completely off the screen, condensing them all into one column too way too long
+  - [x] Info for friday presentation
+    - [x] Why the plugin option didn't work
+    - [x] Time estimate for developing our own reservation solution
+    - [x] And for getting the site ready for next event
+    - [x] Put the time estimates in a sheet, not a doc
+
 - Features
 
   - Stats page
@@ -269,6 +283,9 @@ Obon Holiday in Hokkaido!
         - Count versions where item_type == invoice and event == update
         - Possibly subtract the create events for that day? Might stop inflation from both usually happening together
         - Might also lead to negative numbers though
+    - [] Registration chart???? Should get around the created_at issue for invoices
+      - Likely can't get revenue from it though
+      - But even after the blank invoice issue is resolved, will retain an accurate picture of registrations per day after invoices are merged
     - [] Add school-specific pages for each of the existing stats
   - [] Event creation
     - [] Event step
@@ -308,26 +325,8 @@ Obon Holiday in Hokkaido!
     - [] Bump Ruby version and others as far as possible
     - [] Forms
       - [] Add useful error messages to all forms
-      - [] Add JS validation as well
+      - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
     - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
-
-### Work Project - Setsumeikai
-
-- Rails DB setup
-  - Each school gets a setsumeikai event (add a setsumeikai category to that enumerable)
-    - The actual setsumeikai is a time slot on that event, SMs can create and edit those time slots for their schools
-  - I add area and nearby train stations to the school table so we can sort by those
-  - New table for something like 'leads' which will be where we store the info customers submit when requesting a setsumeikai
-- Will need SM interfaces for
-  - List of leads (per setsumeikai and overall)
-  - Calendar view where they can see their setsumeikais
-- Customer interface needs
-  - School selection
-    - with filter by area/station/name etc
-  - Then date selection with the calendar
-  - Then the form
-  - Then a confirmation which shows the details they entered
-- Calendar using [this](https://www.ruby-toolbox.com/projects/simple_calendar)
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
