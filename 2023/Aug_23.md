@@ -253,9 +253,10 @@ Obon Holiday in Hokkaido!
 
 ### Odin Project - [ToDo List](https://github.com/Brett-Tanner/odin-todo)
 
-- [] LocalStorage
-  - [] Save projects automatically when changed
-  - [] Load projects (if they exist) on page load
+- [x] LocalStorage
+  - [x] Save projects automatically when
+  - [x] Load projects (if they exist) on page load
+- [x] Finish!
 
 ### Work Project - [Event Database Prototype v2](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -275,18 +276,40 @@ Obon Holiday in Hokkaido!
 
 - Features
 
+  - [x] Make sure coupons are preserved when invoices are merged (they were not)
   - Stats page
-    - [] Option charts
-      - [] Count total registrations for options grouped by name
-      - [] Separate the arrival and departure options into pie charts showing which are most popular
-      - [] Separate graphs for daily updates by staff and customers
-        - Count versions where item_type == invoice and event == update
-        - Possibly subtract the create events for that day? Might stop inflation from both usually happening together
-        - Might also lead to negative numbers though
-    - [] Registration chart???? Should get around the created_at issue for invoices
-      - Likely can't get revenue from it though
+    - [x] Option charts
+      - [x] Count total registrations for options grouped by name
+      - [x] Revenue by options grouped by name
+      - [x] Separate the arrival and departure options into pie charts showing which are most popular
+    - [x] Daily Registration chart? Should get around the created_at issue for invoices
+      - Can't get revenue from it though
       - But even after the blank invoice issue is resolved, will retain an accurate picture of registrations per day after invoices are merged
+    - [x] Separate graphs for daily updates by staff and customers
+      - Count versions where item_type == invoice and event == update
+      - Possibly subtract the create events for that day? Might stop inflation from both usually happening together
+      - Might also lead to negative numbers though
+    - [] Add tabs/pages for the type of stat
     - [] Add school-specific pages for each of the existing stats
+
+## August 23rd
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
+- [] Dropdown
+- [] Offcanvas
+- [] Carousel
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Features
+
+  - Stats page
+    - [] Add tabs/pages for the type of stat
+    - [] Add school-specific pages for each of the existing stats
+  - [] Add a way of uploading images to the S3 bucket from the site
+    - [] Upload to a specific folder based on purpose of image
+    - [] Make sure large files work, they didn't the first time
   - [] Event creation
     - [] Event step
       - [] pre-select the existing image in the form
@@ -297,9 +320,6 @@ Obon Holiday in Hokkaido!
         - [] Allow custom options to be added/edited
         - [] Allow updating time slots with the same name for all events with the same name
       - [] pre-select the existing image in the form
-    - [] Add a way of uploading images to the S3 bucket from the site
-      - [] Upload to a specific folder based on purpose of image
-      - [] Make sure large files work, they didn't the first time
     - [] Remove ability to destroy events from frontend when I'm done testing (no route for it)
     - [] Add a test event with the new flow (on dev env) and go through the whole app to see what needs changing to support having multiple events
       - Probably need some dummy registrations too
