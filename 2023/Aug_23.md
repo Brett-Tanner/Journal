@@ -296,6 +296,22 @@ Obon Holiday in Hokkaido!
 
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
+- [x] Figure out the TS/tailwind config for this project
+  - Remember the preview server only gets the correct paths when run from the individual component's folder
+  - tailwind cli is `npx tailwindcss -i ./main.css -o ./dist/output.css --watch`
+  - `tsc -w` does the job for typescript
+- [] Dropdown
+  - [x] Scaffold layout
+    - Dropdown container should be a ul with position relative
+    - Heading is a li in that ul
+    - Dropdown itself is a nested ul within the container, position absolute and w-full
+- [] Offcanvas
+- [] Carousel
+
+## August 24th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
 - [] Dropdown
 - [] Offcanvas
 - [] Carousel
@@ -305,6 +321,15 @@ Obon Holiday in Hokkaido!
 - Features
 
   - Stats page
+    - Adjustments
+      - [] Number of each adjustment applied
+      - [] Total effect on revenue from each (some will be negative)
+        - [] Group any with a magnitude less than a certain amount into a misc data point
+    - Edits
+      - [] Total edits by staff/customers (subtract the total number of creates from updates)
+    - Revenue
+      - [] Pie chart of revenue by student category
+      - [] Pie chart of revenue by time slot/option/adjustment
     - [] Add tabs/pages for the type of stat
     - [] Add school-specific pages for each of the existing stats
   - [] Add a way of uploading images to the S3 bucket from the site
