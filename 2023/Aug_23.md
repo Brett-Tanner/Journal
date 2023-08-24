@@ -313,6 +313,38 @@ Obon Holiday in Hokkaido!
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
 - [] Dropdown
+  - [x] Make heading links clickable if hoverable, and preventDefault if not hoverable
+  - [x] Close non-hoverable dropdowns when you click elsewhere on the page (if target isn't the container or children)
+  - [x] Close all other dropdowns when a new one is opened
+  - [x] Create some animations to show off
+    - [x] And a way to reverse them
+  - [x] Add the animation API and the stuff I learned about it to my wiki
+  - [x] Add animation duration to the animation info passed
+  - [x] Probably add an array of default hidden classes, there are too many of them copied all over
+  - [x] Implement some basic logic for applying individual, offset animations to each dropdown item
+  - [x] Extract logic for adding the offset into its own function in the animations module
+  - [] Refine offset logic to get rid of some of the weird glitchiness
+    - The li are offset, but there's some weird flickering going on
+    - Offset values are probably weird in some way
+    - [This](https://css-tricks.com/repeatable-staggered-animation-three-ways-sass-gsap-web-animations-api/) got me on the right track, further inspection might help
+  - [] Add the widgets and their animations
+  - [] Some glitchiness while mousing over the hover animation as it fades in, try resolving that
+    - Probably with a setTimeout on the listener which starts the removal
+- [] Offcanvas
+- [] Carousel
+
+## August 25th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
+- [] Dropdown
+  - [] Refine offset logic to get rid of some of the weird glitchiness
+    - The li are offset, but there's some weird flickering going on
+    - Offset values are probably weird in some way
+    - [This](https://css-tricks.com/repeatable-staggered-animation-three-ways-sass-gsap-web-animations-api/) got me on the right track, further inspection might help
+  - [] Add the widgets and their animations
+  - [] Some glitchiness while mousing over the hover animation as it fades in, try resolving that
+    - Probably with a setTimeout on the listener which starts the removal
 - [] Offcanvas
 - [] Carousel
 
