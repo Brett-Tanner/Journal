@@ -338,14 +338,28 @@ Obon Holiday in Hokkaido!
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
 - [] Dropdown
-  - [] Refine offset logic to get rid of some of the weird glitchiness
+
+  - [x] Refine offset logic to get rid of some of the weird glitchiness
     - The li are offset, but there's some weird flickering going on
     - Offset values are probably weird in some way
     - [This](https://css-tricks.com/repeatable-staggered-animation-three-ways-sass-gsap-web-animations-api/) got me on the right track, further inspection might help
-  - [] Add the widgets and their animations
-  - [] Some glitchiness while mousing over the hover animation as it fades in, try resolving that
-    - Probably with a setTimeout on the listener which starts the removal
+      - Yeah, the initial state of the element has no transforms, and I didn't specify a plain beginning state with no offset
+      - So they were starting with no transform, animating to what should be the starting transform, then animating to the final state
+      - Probably too much movement in opposing directions for 300ms, which is why it looked glitchy
+  - [x] Decide the widget can/should just be handled with a ::before/after pseudoelement, styled through the passed headingClasses
+    - [x] Create some examples of doing that
+
+## August 26th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
 - [] Offcanvas
+  - Hamburger button to toggle
+  - Container that can slide in from a specified direction
+  - On mobile is fullscreen
+  - On desktop is a percent width (probably need to define options to match possible tailwind classes)
+  - Can pass contents
+  - Can pass classes for container and its contents
 - [] Carousel
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
