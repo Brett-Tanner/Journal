@@ -353,8 +353,20 @@ Obon Holiday in Hokkaido!
 
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
-- [] Offcanvas
-  - Hamburger button to toggle
+- [] Menus
+  - [x] Hamburger button to toggle
+  - Container that can slide in from a specified direction
+  - On mobile is fullscreen
+  - On desktop is a percent width (probably need to define options to match possible tailwind classes)
+  - Can pass contents
+  - Can pass classes for container and its contents
+- [] Carousel
+
+## August 27th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
+- [] Menus
   - Container that can slide in from a specified direction
   - On mobile is fullscreen
   - On desktop is a percent width (probably need to define options to match possible tailwind classes)
