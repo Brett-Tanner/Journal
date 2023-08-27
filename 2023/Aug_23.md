@@ -353,26 +353,34 @@ Obon Holiday in Hokkaido!
 
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
-- [] Menus
-  - [x] Hamburger button to toggle
-  - Container that can slide in from a specified direction
-  - On mobile is fullscreen
-  - On desktop is a percent width (probably need to define options to match possible tailwind classes)
-  - Can pass contents
-  - Can pass classes for container and its contents
+- Menus
+  - [] Bubble
+    - [x] Hamburger button to toggle
 - [] Carousel
 
 ## August 27th
 
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
-- [] Menus
-  - Container that can slide in from a specified direction
-  - On mobile is fullscreen
-  - On desktop is a percent width (probably need to define options to match possible tailwind classes)
-  - Can pass contents
-  - Can pass classes for container and its contents
-- [] Carousel
+- Dropdowns
+  - [x] The autoclose on clicks outside broke, I fixed/refactored it
+  - [z] Modularize/document code
+    - [x] addHoverListeners
+    - [x] addClickListeners
+      - [x] and hideOtherDropdowns to use ariaExpanded
+- Menus
+  - [] Bubble
+    - [x] Menu items fade in/out when toggled
+    - [x] Backdrop slides to cover the whole screen when toggled
+    - [] Give buttons actions based on whether a string or function was passed
+      - [] If function, run it on click
+      - [] If string, render a link instead and set its href to the string passed
+    - [] Fix the X animation, the smaller the screen gets (or more toward certain aspect rations) the more off-center it gets.
+      - Maybe switch to using absolute units?
+  - [] Drawer
+  - [] Offcanvas
+  - [] Rudder
+- Carousel
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
