@@ -369,18 +369,32 @@ Obon Holiday in Hokkaido!
     - [x] addClickListeners
       - [x] and hideOtherDropdowns to use ariaExpanded
 - Menus
-  - [] Bubble
+  - [x] Bubble
     - [x] Menu items fade in/out when toggled
     - [x] Backdrop slides to cover the whole screen when toggled
-    - [] Give buttons actions based on whether a string or function was passed
-      - [] If function, run it on click
-      - [] If string, render a link instead and set its href to the string passed
-    - [] Fix the X animation, the smaller the screen gets (or more toward certain aspect rations) the more off-center it gets.
+    - [x] Run the passed function on click
+    - [x] Fix the X animation, the smaller the screen gets (or more toward certain aspect rations) the more off-center it gets.
       - Maybe switch to using absolute units?
+      - Nah, made them all relative instead
+    - [x] Add the logic for putting images in the buttons
   - [] Drawer
   - [] Offcanvas
   - [] Rudder
 - Carousel
+
+## August 28th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
+- Carousel
+  - Three visible at a time, a main one and one at an angle on either side
+  - Arrows to click which move in that direction
+  - Also keyboard navigation
+  - Add nav dots allowing skipping to any image
+- Menus
+  - [] Rudder
+  - [] Drawer
+  - [] Offcanvas
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
