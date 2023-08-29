@@ -382,15 +382,27 @@ Obon Holiday in Hokkaido!
   - [] Rudder
 - Carousel
 
-## August 28th
+## August 29th
 
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
 - Carousel
-  - Three visible at a time, a main one and one at an angle on either side
-  - Arrows to click which move in that direction
-  - Also keyboard navigation
-  - Add nav dots allowing skipping to any image
+  - [x] In index.ts, programmatically generate an array of path strings to pass to the carousel function
+    - Nah, just use `ls` and copy it haha
+  - [x] In the carousel function, automatically generate the thumbnail paths by adding `/thumbails/` ahead of the file name
+  - [x] One image in the middle
+
+## August 30th
+
+### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
+
+- Carousel
+  - [] Arrows to click which move it in that direction
+    - [] Create the arrows
+    - [] Add the logic for moving images
+    - [] Also keyboard navigation
+  - [] Add nav dots allowing skipping to any image
+- [] Offset and skew the previous/next images, maybe fade a bit as well? Or a shadow
 - Menus
   - [] Rudder
   - [] Drawer
