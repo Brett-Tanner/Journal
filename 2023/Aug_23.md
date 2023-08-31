@@ -397,16 +397,17 @@ Obon Holiday in Hokkaido!
 ### Odin Project - [JS Components](https://github.com/Brett-Tanner/js-components)
 
 - Carousel
-  - [] Arrows to click which move it in that direction
-    - [] Create the arrows
-    - [] Add the logic for moving images
-    - [] Also keyboard navigation
-  - [] Add nav dots allowing skipping to any image
-- [] Offset and skew the previous/next images, maybe fade a bit as well? Or a shadow
-- Menus
-  - [] Rudder
-  - [] Drawer
-  - [] Offcanvas
+  - [x] Correct image positioning so it doesn't overflow vertically
+    - [] Fix the aspect ratio breaking on narrow screens
+  - [x] Arrows to click which move it in that direction
+    - [x] Load next/previous image on click
+      - [x] Make it loop when you hit the end
+      - [x] Find a way that doesn't involve stacking containers
+        - made creating a container a separate function, handles adding classes for the various types
+    - [x] Also keyboard navigation
+  - [x] Allow skipping to any image from the nav bar
+
+## August 31st
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
