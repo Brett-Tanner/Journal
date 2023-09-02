@@ -1,13 +1,5 @@
 ## September 1st
 
-### Odin Project - [Weather App](https://github.com/Brett-Tanner/weather)
-
-- [] Display the info (all in a main element)
-  - [] Create containers for the layout elements and do a pulse effect while loading (if no data passed), fill with content once received
-  - [] Location info header at top of main
-  - [] Current weather card, followed by three days of forecast cards
-  - [] Change the border color/shadow of the cards according to weather
-
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Features
@@ -38,10 +30,11 @@
 ### Odin Project - [Weather App](https://github.com/Brett-Tanner/weather)
 
 - [] Display the info (all in a main element)
-  - [] Create containers for the layout elements and do a pulse effect while loading (if no data passed), fill with content once received
-  - [] Location info header at top of main
+  - [x] Switch to Vite as a build tool
+  - [x] Create containers for the layout elements and do a pulse effect while loading (if no data passed), replace with content once received
+  - [x] Location info header at top of main
   - [] Current weather card, followed by three days of forecast cards
-  - [] Change the border color/shadow of the cards according to weather
+  - [] Change the border color/shadow (and background color) of the cards according to weather
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
