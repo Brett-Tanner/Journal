@@ -36,6 +36,36 @@
   - [] Current weather card, followed by three days of forecast cards
   - [] Change the border color/shadow (and background color) of the cards according to weather
 
+## September 3rd
+
+### Odin Project - [Weather App](https://github.com/Brett-Tanner/weather)
+
+- [x] Display the info (all in a main element)
+  - [x] Current weather card, followed by three days of forecast cards
+  - [x] Change the border color/shadow (and background color) of the cards according to weather
+
+### Odin Project - [JS Testing Practise](https://github.com/Brett-Tanner/js-testing-practise)
+
+- [x] Decide on Vitest rather than Jest
+  - works with ES6 modules
+  - simple integration with Vite, which I plan to use where possible
+- [x] Set up the repo with Vite/Vitest
+- [] Write tests, then code for
+  - [x] `capitalize`
+  - [x] `reverseString`
+  - [] `calculator`
+  - [] `caesarCipher`
+  - [] `analyzeArray`
+
+## September 4th
+
+### Odin Project - [JS Testing Practise](https://github.com/Brett-Tanner/js-testing-practise)
+
+- [] Write tests, then code for
+  - [] `calculator`
+  - [] `caesarCipher`
+  - [] `analyzeArray`
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Features
@@ -56,15 +86,6 @@
 
   - Event creation
 
-    - Add a way of uploading images to the S3 bucket from the site
-      - [x] Upload to a specific folder based on purpose of image
-        - [x] and on the event it's for
-      - [x] Restrict the types of file that can be uploaded to image types
-      - [x] Make sure large files work on live, they didn't the first time
-        - Upload doesn't even seem to start, only thing in the logs is a get request to the same page
-        - Figured it out, the POST is sent but the file is too big (was in nginx error logs)
-        - Seems I need to set `client_max_body_size` in nginx.conf (locations to set it are http, server, location, you want to set it in server or it'll be overridden)
-        - Can be done by following [this AWS help article](https://repost.aws/knowledge-center/elastic-beanstalk-nginx-configuration)
     - [] Event step
       - [] pre-select the existing image in the form
       - [] Extend the 'all' option on event creation to allow specific schools to be selected
@@ -72,11 +93,8 @@
       - [x] Allow slots to be edited individually from the slot index
         - [x] Allow editing an afternoon slot manually
           - [] Allow applying to all with same name, morning boolean and event_id
-        - [x] Allow options to be edited
-        - [x] Allow options to be added
         - [] Allow updating time slots with the same name, morning boolean and event_id
       - [] pre-select the existing image in the form
-    - [x] Remove ability to destroy events from frontend
     - [] Add a test event with the new flow (on staging env) and go through the whole app to see what needs changing to support having multiple events
       - Probably need some dummy registrations too
 
