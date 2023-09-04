@@ -50,6 +50,7 @@
   - works with ES6 modules
   - simple integration with Vite, which I plan to use where possible
 - [x] Set up the repo with Vite/Vitest
+  - Click `Vitest` in the bottom bar to start it in watch mode, show errors inline
 - [] Write tests, then code for
   - [x] `capitalize`
   - [x] `reverseString`
@@ -61,10 +62,34 @@
 
 ### Odin Project - [JS Testing Practise](https://github.com/Brett-Tanner/js-testing-practise)
 
-- [] Write tests, then code for
-  - [] `calculator`
-  - [] `caesarCipher`
-  - [] `analyzeArray`
+- [x] Write tests, then code for
+  - [x] `calculator`
+  - [x] `caesarCipher`
+  - [x] `analyzeArray`
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- [x] Scaffold the types so I have an idea of the overall shape
+- [x] Ships
+  - [x] Write tests
+  - [x] Write passing code
+- [] Gameboard
+  - [x] Write tests
+  - [] Write passing code
+- [] Player
+  - [] Write tests
+  - [] Write passing code
+
+## September 5th
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- [] Gameboard
+  - [x] Write tests
+  - [] Write passing code
+- [] Player
+  - [] Write tests
+  - [] Write passing code
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
