@@ -85,7 +85,6 @@
 ### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
 
 - [] Gameboard
-  - [x] Write tests
   - [] Write passing code
 - [] Player
   - [] Write tests
@@ -93,62 +92,114 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Features
+- Event creation
 
-  - Stats page
+  - Event step
+    - [x] Refactor existing controller code
+      - [x] To give more helpful error/success messages, in English
+      - [x] To redirect to event index on update, slots should be updated from their form
+    - [x] Allow updating all events with same name
+  - Time Slot step
+    - [x] When creating a new event, slots should be created for that event at all schools
+    - [x] Group images by the folder they're in
+    - [x] Allow creating all special afternoons from one special morning
+    - [x] Allow creation of new time slots for an event from the index for that event
+  - [x] Pre-select existing images in the form
+  - [] Test out what needs changing when a second event is added
+    - Seed some dummy registrations
+  - [] Add instructions for each step
 
-    - Adjustments
-      - [] Number of each adjustment applied
-      - [] Total effect on revenue from each (some will be negative)
-        - [] Group any with a magnitude less than a certain amount into a misc data point
-    - Edits
-      - [] Total edits by staff/customers (subtract the total number of creates from updates)
-    - Revenue
-      - [] Pie chart of revenue by student category
-      - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
-    - [] Add tabs/pages for the type of stat
-    - [] Add school-specific pages for each of the existing stats
+## September 6th
 
-  - Event creation
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
 
-    - [] Event step
-      - [] pre-select the existing image in the form
-      - [] Extend the 'all' option on event creation to allow specific schools to be selected
-    - [] Time Slot step
-      - [x] Allow slots to be edited individually from the slot index
-        - [x] Allow editing an afternoon slot manually
-          - [] Allow applying to all with same name, morning boolean and event_id
-        - [] Allow updating time slots with the same name, morning boolean and event_id
-      - [] pre-select the existing image in the form
-    - [] Add a test event with the new flow (on staging env) and go through the whole app to see what needs changing to support having multiple events
-      - Probably need some dummy registrations too
+- [] Gameboard
+  - [] Write passing code
+- [] Player
+  - [] Write tests
+  - [] Write passing code
 
-  - [] Per-activity costs
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-    - [] Add internal/external modifier cols to Time Slot
-    - [] Add a snack boolean col to Time Slot
-    - [] Add code to use them in Invoice#calc_cost
+- Stats page
 
-  - [] Figure out what needs to change to stop persisting a blank invoice when there are no unconfirmed invoices available for a child and someone looks at their registration page
-  - [] Remove all references to the email template column, then remove the column
+  - Adjustments
+    - [] Number of each adjustment applied
+    - [] Total effect on revenue from each (some will be negative)
+      - [] Group any with a magnitude less than a certain amount into a misc data point
+  - Edits
+    - [] Total edits by staff/customers (subtract the total number of creates from updates)
+  - Revenue
+    - [] Pie chart of revenue by student category
+    - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
+  - [] Add filtering by school, student category, option/slot category etc.
+
+- Code cleanup
+
+  - [] Find all the stuff with hardcoded event ids/links between school id/event id/user id and refactor it
+
+- DB
+
+  - [] Remove email template column (invoices)
+  - [] Remove description column (everything)
+  - [] Change 'needs_hat' to 'first_seasonal' to match its meaning (child)
+    - [] Update all kids who attended to have 'first_seasonal' = false
+  - [] Remove old versions once I'm done making invoice table changes (invoices, children)
+  - [] See if it's vacuuming/analyzing by default, if not make it do that
+  - [] Add counter_cache where appropriate (TimeSlot children for sure)
+
+- Invoices
+
+  - [] Stop persisting blank invoices when registration page viewed
+  - [] Simplify/modularize invoice code
+
+- Per-activity costs
+
+  - [] Add internal/external modifier cols to Time Slot
+  - [] Add a snack boolean col to Time Slot
+  - [] Add code to use them in
+    - [] Invoice#calc_cost
+
+- Platform Upgrades
+
+  - TEST ALL ON STAGING FIRST
+  - [] Bump AWS platform version
+  - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
+  - [] Bump Rails versions
+  - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+
+- UX
+
+  - Forms
+
+    - [] Add useful error messages to all forms (from backend)
+    - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
+
+  - Images
+
+    - [] Use picture tags
+    - [] Create a workflow for generating responsive versions
+
+- Views
+
   - [] Split the User#show pages out into different pages for different roles
-  - [] Have a way to stop sending emails when the event stops
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
+  - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
+  - [] Stats Page
+    - [] Add tabs for the type of stat
+    - [] Add school-specific pages for each of the existing stats
 
 - Future Plans
 
   - [] See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
-    - [] Setting up counter_cache for some stuff like registrations on TimeSlots might help with the memory usage
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
     - [] Install and use Bullet gem
     - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
     - [] Turnout gem to put it in maintenance mode?
-    - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
-    - [] Bump Ruby version and others as far as possible
-    - [] Forms
-      - [] Add useful error messages to all forms
-      - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
+  - [] Bump Ruby version and others as far as possible
+
     - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
+
+  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
