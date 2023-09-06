@@ -82,14 +82,6 @@
 
 ## September 5th
 
-### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
-
-- [] Gameboard
-  - [] Write passing code
-- [] Player
-  - [] Write tests
-  - [] Write passing code
-
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Event creation
@@ -113,11 +105,34 @@
 
 ### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
 
-- [] Gameboard
-  - [] Write passing code
-- [] Player
-  - [] Write tests
-  - [] Write passing code
+- [x] Gameboard
+  - [x] Test placeShip()
+  - [x] Realise fill() fills the array with references to the passed object (it was literally in the MDN page I read)
+  - [x] Clean up the atrocious code I wrote last night
+  - [x] Realise the first index of rows is the y-axis, second index is the x-axis
+  - [x] Test receiveAttack()
+- [x] Spaces
+- [x] Player
+- [] DOM
+  - [x] Initially just inputs for name, human or computer
+  - [] Then switches to active player unobscured board, opponent obscured
+  - [] Prompts for move (click, see possibilities, then click again)
+  - [] Create displayMessage(), called when
+    - Ship sinks
+    - Attack hits or misses
+    - Player wins
+
+## September 7th
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- [] DOM
+  - [] Active player unobscured board, opponent obscured
+  - [] Prompts for move (click, see possibilities, then click again)
+  - [] Create displayMessage(), called when
+    - Ship sinks
+    - Attack hits or misses
+    - Player wins
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
