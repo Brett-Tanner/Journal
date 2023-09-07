@@ -113,26 +113,36 @@
   - [x] Test receiveAttack()
 - [x] Spaces
 - [x] Player
-- [] DOM
+- DOM
   - [x] Initially just inputs for name, human or computer
+
+## September 7th
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- DOM
+  - [x] Add possibleEnds(currentCoords) to ship
+  - [x] Add possible property to spaces
+  - [x] Create basic board
+
+## September 8th
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- DOM
+  - [x] Create basic board
+    - [] Probably add a board type argument (placement, obscured)
+    - [] Different createSpace() functions called based on board type
+  - [] Each player is shown their board with ability to place ships
+    - [] Listener on all cells to set the start, get the possibleEnds and mark them/add listeners to place the ship
+    - [] With listeners only on those spaces, to call place ship
   - [] Then switches to active player unobscured board, opponent obscured
   - [] Prompts for move (click, see possibilities, then click again)
   - [] Create displayMessage(), called when
     - Ship sinks
     - Attack hits or misses
     - Player wins
-
-## September 7th
-
-### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
-
-- [] DOM
-  - [] Active player unobscured board, opponent obscured
-  - [] Prompts for move (click, see possibilities, then click again)
-  - [] Create displayMessage(), called when
-    - Ship sinks
-    - Attack hits or misses
-    - Player wins
+  - [] Pass button, and countdown timer before board obscurity is switched
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
