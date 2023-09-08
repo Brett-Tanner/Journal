@@ -120,29 +120,57 @@
 
 ### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
 
+- [x] Add possibleEnds(currentCoords) to ship
+- [x] Add possible property to spaces
 - DOM
-  - [x] Add possibleEnds(currentCoords) to ship
-  - [x] Add possible property to spaces
   - [x] Create basic board
 
 ## September 8th
 
 ### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
 
+- [x] Add getCoordinates() to get the coordinates of a domSpace in the rows array of the representation in memory
+- [x] Add test to reject a space for possible ends if it contains a ship
+- [x] Very possible I want to remove the possible property from spaces and just do that through event listeners in the DOM
+- [x] Add placeShips() to player
+  - takes main as an argument
+  - [x] creates a new board as innerHTML of main (w/heading saying Player $ place your $)
+    - [x] remember to show ships already placed
+    - [x] and not add start listeners to cells already occupied by a ship
+  - for each ship of that player's gameBoard
+    - [x] attach listeners to every cell of the board which set it as the start point (and generates a new board without listeners)
+    - [x] await the promise around that listener resolving (in the listener callback)
+    - [x] use the value of the resolved promise (the start cell) to show the possible spaces the ship can end on
+      - [x] return a promise, resolved by added listeners with end coordinates to them
+    - [x] use the start and end coordinates to place the ship
+    - [x] recursively call the function till you run out of ships, at which point you resolve the promise placeShips returns and let the game loop know it's ok to move on
 - DOM
   - [x] Create basic board
-    - [] Probably add a board type argument (placement, obscured)
-    - [] Different createSpace() functions called based on board type
-  - [] Each player is shown their board with ability to place ships
-    - [] Listener on all cells to set the start, get the possibleEnds and mark them/add listeners to place the ship
-    - [] With listeners only on those spaces, to call place ship
-  - [] Then switches to active player unobscured board, opponent obscured
+    - [] Add a an optional board type argument (placement, obscured) to createBoard
   - [] Prompts for move (click, see possibilities, then click again)
+    - [] Countdown timer before board obscurity is switched
   - [] Create displayMessage(), called when
     - Ship sinks
     - Attack hits or misses
     - Player wins
-  - [] Pass button, and countdown timer before board obscurity is switched
+  - [] Prevent ships crossing each other at points other than the end
+  - [] Figure out what sometimes causes end overlaps to not be notice
+
+## September 9th
+
+### Odin Project - [Battleship](https://github.com/Brett-Tanner/battleship)
+
+- DOM
+  - [x] Create basic board
+    - [] Add a an optional board type argument (placement, obscured) to createBoard
+  - [] Prompts for move (click, see possibilities, then click again)
+    - [] Countdown timer before board obscurity is switched
+  - [] Create displayMessage(), called when
+    - Ship sinks
+    - Attack hits or misses
+    - Player wins
+  - [] Prevent ships crossing each other at points other than the end
+  - [] Figure out what sometimes causes end overlaps to not be notice
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
