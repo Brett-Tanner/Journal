@@ -162,15 +162,18 @@
 
 - DOM
   - [x] Create basic board
-    - [] Add a an optional board type argument (placement, obscured) to createBoard
-  - [] Prompts for move (click, see possibilities, then click again)
-    - [] Countdown timer before board obscurity is switched
-  - [] Create displayMessage(), called when
-    - Ship sinks
-    - Attack hits or misses
-    - Player wins
-  - [] Prevent ships crossing each other at points other than the end
-  - [] Figure out what sometimes causes end overlaps to not be notice
+    - [x] Add a an optional obscured boolean to createBoard
+  - [x] Prompts for attack
+    - [x] Display hit marker if hit, miss if miss
+    - [x] Display message showing which ship was hit if any, or a "You missed" message
+    - [x] Figure out which modules the methods should be on (in takeTurn on player)
+    - [x] Figure out how to loop between the players (recursively call take turn on the other player until allSunk for one of them)
+    - [x] Render button to pass to other player (lack of this is why the hit/miss messages don't show)
+  - [x] Stop hit markers displaying twice on the unobscured board (was being rendered once in the ship marker, once outside)
+  - [x] End the game and display victory message if all a player's ships are sunk
+  - [x] Prevent ships intersecting each other at points other than the end
+  - [x] Figure out what sometimes causes end overlaps to not be noticed (I only checked for them on the up possible end)
+  - [x] Don't add listeners to squares you already hit or missed
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
