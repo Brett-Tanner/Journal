@@ -175,6 +175,10 @@
   - [x] Figure out what sometimes causes end overlaps to not be noticed (I only checked for them on the up possible end)
   - [x] Don't add listeners to squares you already hit or missed
 
+## September 9th
+
+### Odin Project - [CV App](https://github.com/Brett-Tanner/odin-cv)
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Stats page
