@@ -175,9 +175,20 @@
   - [x] Figure out what sometimes causes end overlaps to not be noticed (I only checked for them on the up possible end)
   - [x] Don't add listeners to squares you already hit or missed
 
-## September 9th
+## September 10th
 
 ### Odin Project - [CV App](https://github.com/Brett-Tanner/odin-cv)
+
+- Create a CV, where info is displayed by default and can be edited/saved by clicking a button
+- Sections for basic info, education and work experience
+- [x] Create forms (editing state)
+- [x] Create edit/save button component
+- [x] Create display versions (not editing state)
+- [x] Deploy to Netlify, Cloudflare or Vercel
+  - Vercel, it was the only one where I could find [instructions](https://maximevermeeren.medium.com/how-to-use-bun-on-vercel-7512383153d7) for deploying using a Bun runtime
+  - You'll also want to switch the build command in package.json to be `"~/.bun/bin/bun vite build"`, cos bun won't be in the path after install
+
+## September 11th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
