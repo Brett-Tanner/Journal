@@ -190,6 +190,16 @@
 
 ## September 11th
 
+- Buy brett-tanner.dev!
+- Create a new personal site with Astro/Starlight and deploy it to my new domain
+- Add the React docs page and my notes on useEffect
+- In Astro/Starlight, if you have trouble importing `astro:content` in a page, just drag it into the main pages directory then back into the one you want????????
+  - I guess maybe because I made it before exporting the collection types???
+  - This one was really weird
+  - [Github issue](https://github.com/withastro/astro/issues/5711) which I don't think helped much but certainly gave a lot of options to try
+
+## September 12th
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Stats page
