@@ -200,6 +200,52 @@
 
 ## September 12th
 
+- Starlight splash page colors match up with Tailwind grays, 900 is the main background color
+- Decide to switch to separate repos for wiki/portfolio, portfolio will be plain Astro while wiki sticks with Starlight
+- Remove my domain from the current one, delete the pages project and redirect the domain to my current GH pages site
+  - Has the handy side effect of all my GH pages sites redirecting to brett-tanner.dev/repo-name now as well
+
+### Odin Project - [Pokemon Memory Game](https://github.com/Brett-Tanner/odin-memory)
+
+- API stuff
+
+  - [x] get list of all pokemon URLs and put it in state
+  - [x] pick 20 random ones to fetch details for from the api
+    - [x] create a pokemon object for each { id, name, src, clicked } and add them to an activePokemon state
+    - [x] filter out pokemon with no front sprite
+    - [x] filter out pokemon with the same ID
+
+- Render a pokemon component for each pokemon retrieved
+
+  - [x] key is the id
+  - [x] Sprite, name under, pokemon themed styling
+  - [] on click
+    - [] if not clicked, set its clicked property to true, increment score by one and randomize the active pokemon (set it to a reversed copy of itself)
+    - [] update PB if necessary
+    - [] if clicked, display game over message and offer to play again
+
+- Score component at the top, shows current score, best score (each their own state)
+
+- Later, add ability to choose number of active pokemon/region they're from (by id, they're in release order)
+
+  - this will be a filter state object
+
+## September 13th
+
+### Odin Project - [Pokemon Memory Game](https://github.com/Brett-Tanner/odin-memory)
+
+- Render a pokemon component for each pokemon retrieved
+
+  - [] on click
+    - [] if not clicked, set its clicked property to true, increment score by one and randomize the active pokemon (set it to a reversed copy of itself)
+    - [] update PB if necessary
+    - [] if clicked, display game over message and offer to play again
+
+- Score component at the top, shows current score, best score (each their own state)
+
+- Later, add ability to choose number of active pokemon/region they're from (by id, they're in release order)
+  - this will be a filter state object
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Stats page
