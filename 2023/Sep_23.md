@@ -232,19 +232,32 @@
 
 ## September 13th
 
+- [x] Start the new wiki repo using Starlight/tailwind
+  - and copy over existing react page/necessary settings
+  - make some notes on React testing
+- [x] Get it online under wiki.brett-tanner.dev
+
 ### Odin Project - [Pokemon Memory Game](https://github.com/Brett-Tanner/odin-memory)
 
-- Render a pokemon component for each pokemon retrieved
+- Pokemon cards
 
-  - [] on click
-    - [] if not clicked, set its clicked property to true, increment score by one and randomize the active pokemon (set it to a reversed copy of itself)
-    - [] update PB if necessary
-    - [] if clicked, display game over message and offer to play again
+  - [x] on click
+    - [x] increment the click counter by one
+    - [x] if clicked more than once, display game over message
+    - [x] randomize the activePokemon array
+    - [x] update score
+    - [x] update PB if necessary
 
 - Score component at the top, shows current score, best score (each their own state)
 
-- Later, add ability to choose number of active pokemon/region they're from (by id, they're in release order)
-  - this will be a filter state object
+  - [x] show score and personal best
+  - [x] reset score when game resets, but keep PB
+
+- Live version
+  - [x] Remember the package.json script I use to push to GH pages
+  - [x] Remember I need to modify the base in vite.config or stylesheets/js won't load
+
+## September 14th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
