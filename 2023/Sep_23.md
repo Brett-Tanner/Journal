@@ -259,6 +259,21 @@
 
 ## September 14th
 
+- Added a bunch of notes to the React section of the wiki on
+
+  - React Router
+  - Fetching Data
+
+- Took a brief look over the shopping cart project, big fan of the MTG version someone did. Maybe a similar LOR/Mobalytics API I could use? Yu-Gi-Oh?
+
+## September 15th
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+- Homepage/landing page
+- Shopping cart
+- Individual product pages?
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Stats page
