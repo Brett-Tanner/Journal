@@ -270,9 +270,40 @@
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
+Components without state to get the layout/loading view, then write tests for what they should be like with state, then add all the state and data fetching.
+
 - Homepage/landing page
 - Shopping cart
 - Individual product pages?
+- Sidebar to filter the cards you see
+
+- Skeleton components
+  - [x] Nav bar
+  - [] Hero
+    - [x] background image & shadow
+  - [] Card card
+    - [] Cart variant (w/different styles)
+  - [] Cart
+  - [] Filter sidebar
+
+## September 16th
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+Components without state to get the layout/loading view, then write tests for what they should be like with state, then add all the state and data fetching.
+
+- Homepage/landing page
+- Shopping cart
+- Individual product pages?
+- Sidebar to filter the cards you see
+
+- Skeleton components
+  - [] Hero
+    - [x] background image & shadow
+  - [] Card card
+    - [] Cart variant (w/different styles)
+  - [] Cart
+  - [] Filter sidebar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
