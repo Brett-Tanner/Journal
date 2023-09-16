@@ -279,31 +279,35 @@ Components without state to get the layout/loading view, then write tests for wh
 
 - Skeleton components
   - [x] Nav bar
-  - [] Hero
+  - Hero
     - [x] background image & shadow
-  - [] Card card
-    - [] Cart variant (w/different styles)
-  - [] Cart
-  - [] Filter sidebar
 
 ## September 16th
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
-Components without state to get the layout/loading view, then write tests for what they should be like with state, then add all the state and data fetching.
-
-- Homepage/landing page
-- Shopping cart
-- Individual product pages?
-- Sidebar to filter the cards you see
+Ported my HTML notes over to the new wiki.
+Didn't actually write any tests, but set up testing and some skeleton files.
 
 - Skeleton components
-  - [] Hero
-    - [x] background image & shadow
+  - Hero
+    - [x] contents
+  - [x] Setup React Router so I can go to the other page for testing
+
+## September 17th
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+Ported my HTML notes over to the new wiki.
+Didn't actually write any tests, but set up testing and some skeleton files.
+
+- Skeleton components
+  - Write tests
+    - [] Card card
+    - [] Cart
   - [] Card card
     - [] Cart variant (w/different styles)
   - [] Cart
-  - [] Filter sidebar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
