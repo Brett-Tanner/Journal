@@ -298,16 +298,19 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
-Ported my HTML notes over to the new wiki.
-Didn't actually write any tests, but set up testing and some skeleton files.
+- Write tests
+  - [x] Card card
 
-- Skeleton components
-  - Write tests
-    - [] Card card
-    - [] Cart
-  - [] Card card
-    - [] Cart variant (w/different styles)
-  - [] Cart
+## September 18th
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+- [] Card card
+  - [] Reverse side w/card details
+    - [] Flip like [one of these](https://freefrontend.com/css-flip-cards/)
+  - [] Cart variant (w/different styles)
+- [] Cart
+  - [] Write tests
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
