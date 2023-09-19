@@ -301,16 +301,23 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 - Write tests
   - [x] Card card
 
-## September 18th
+## September 19th
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
-- [] Card card
-  - [] Reverse side w/card details
-    - [] Flip like [one of these](https://freefrontend.com/css-flip-cards/)
-  - [] Cart variant (w/different styles)
-- [] Cart
-  - [] Write tests
+- [x] Test and implement increment/decrement buttons
+- [x] Reverse side w/card details
+- [x] Style shop variant
+- [x] Cart variant (w/different styles)
+- [x] Add cart modal
+
+## September 20th
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+- [] Show remove from cart button on cards in cart
+- [] Find out why empty cart message isn't displaying
+- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
