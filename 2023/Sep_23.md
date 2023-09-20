@@ -315,9 +315,8 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
-- [] Show remove from cart button on cards in cart
-- [] Find out why empty cart message isn't displaying
-- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
+- [x] Fetch the cards from MTG API
+- [x] Create a loading state
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -382,6 +381,7 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
   - Add counter_cache
     - TimeSlot registrations
+      - [] Probably useful in stats somewhere too
     - Option registrations
       - [] Where is this useful?
   - [] Remove old PaperTrail versions once I'm done making invoice table changes (invoices, children)
