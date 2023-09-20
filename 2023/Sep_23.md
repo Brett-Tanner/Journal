@@ -321,6 +321,50 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- DB
+
+  - [x] Remove email template, billing date columns (invoices)
+  - [x] Remove description column (time slots, options)
+  - [x] Remove name, combinable, discount from coupons
+  - [x] Remove IP from users
+    - (I never liked it, Jack seems to have forgotten about it, potential scandal if someone sees the code and thinks we're collecting IP addresses? IDK probably not an issue anyway but we don't need it)
+  - Change 'needs_hat' to 'first_seasonal' to match its meaning (child)
+    - [x] Add first_seasonal
+    - [x] Migrate existing needs_hat values to first_seasonal
+      - The old attr_accessor workaround I had with a fake first seasonal param was preventing me setting the new col
+    - [x] Update all kids who attended to have 'first_seasonal' = false
+    - [x] Remove all references to needs_hat and replace with first_seasonal
+    - [x] Remove needs_hat col
+  - Time Slot table
+    - [x] Internal/external modifier
+    - [x] Snack boolean
+  - Add counter_cache
+    - TimeSlot registrations
+      - [x] Update daily attendance to use #size so it'll use the counter_cache
+    - Option registrations
+      - [] Where is this useful?
+  - [] Remove old PaperTrail versions once I'm done making invoice table changes (invoices, children)
+  - [] See if it's vacuuming/analyzing by default, if not make it do that
+
+- Per-activity costs
+
+  - Use per-slot/int/ext modifiers and snack boolean in
+    - [x] Afternoon slot auto-creation (set to true unless a special day)
+    - [x] Invoice#calc_cost
+    - [x] In JS cost calculation
+    - [] Display extra cost if any on the registration form
+    - [] Add fields for them on time slot forms
+
+## September 21st
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+- [] Show remove from cart button on cards in cart
+- [] Find out why empty cart message isn't displaying
+- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - Stats page
 
   - Adjustments
@@ -334,19 +378,18 @@ Didn't actually write any tests, but set up testing and some skeleton files.
     - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
   - [] Add filtering by school, student category, option/slot category etc.
 
-- Code cleanup
-
-  - [] Find all the stuff with hardcoded event ids/links between school id/event id/user id and refactor it
-
 - DB
 
-  - [] Remove email template column (invoices)
-  - [] Remove description column (everything)
-  - [] Change 'needs_hat' to 'first_seasonal' to match its meaning (child)
-    - [] Update all kids who attended to have 'first_seasonal' = false
-  - [] Remove old versions once I'm done making invoice table changes (invoices, children)
+  - Add counter_cache
+    - TimeSlot registrations
+    - Option registrations
+      - [] Where is this useful?
+  - [] Remove old PaperTrail versions once I'm done making invoice table changes (invoices, children)
   - [] See if it's vacuuming/analyzing by default, if not make it do that
-  - [] Add counter_cache where appropriate (TimeSlot children for sure)
+
+- Event Creation
+
+  - [] Find all the stuff with hardcoded event ids/links between school id/event id/user id and refactor it
 
 - Invoices
 
@@ -355,10 +398,8 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - Per-activity costs
 
-  - [] Add internal/external modifier cols to Time Slot
-  - [] Add a snack boolean col to Time Slot
-  - [] Add code to use them in
-    - [] Invoice#calc_cost
+  - [] Display extra cost if any on the registration form
+  - [] Add fields for them on time slot forms
 
 - Platform Upgrades
 
@@ -379,6 +420,7 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
     - [] Use picture tags
     - [] Create a workflow for generating responsive versions
+      - Probably just me doing it manually with Sharp, Leroy can't export as .avif
 
 - Views
 
