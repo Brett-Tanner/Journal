@@ -358,9 +358,9 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
 
-- [] Show remove from cart button on cards in cart
-- [] Find out why empty cart message isn't displaying
-- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
+- [x] Show remove from cart button on cards in cart
+- [x] Find out why empty cart message isn't displaying
+- [x] Host on Vercel
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -385,6 +385,7 @@ Didn't actually write any tests, but set up testing and some skeleton files.
     - [x] School stats summary shows past events
     - [x] Daily activities list activities for all events
       - [x] Added the ability for SMs to see attendance for past events while I was there
+    - [x] Realise a whole bunch of stuff breaks when there are no upcoming events, and add checks to prevent that
     - [] Stats page uses data from all events together
 
 - Invoices
@@ -416,12 +417,6 @@ Didn't actually write any tests, but set up testing and some skeleton files.
     - [x] Add nav for admin/AM to look at each school's stats
 
 ## September 22nd
-
-### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
-
-- [] Show remove from cart button on cards in cart
-- [] Find out why empty cart message isn't displaying
-- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
