@@ -364,6 +364,67 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- DB
+
+  - [x] Remove old PaperTrail versions once I'm done making invoice table changes
+    - Add a check to anything that relies on versions that versions actually exist for it
+      - [x] Mailer whodunnit
+      - [x] Invoice changes col in event sheet
+    - [x] Make sure I'm not creating unnecessary versions when stuff like seen is updated on invoices
+  - [x] See if it's vacuuming/analyzing by default, if not make it do that
+    - Seems its fine, using the AR method [here](https://stackoverflow.com/questions/14824453/rails-raw-sql-example) with the query [here](https://aws.amazon.com/blogs/database/understanding-autovacuum-in-amazon-rds-for-postgresql-environments/) under 'Dead Tuples' showed recent vacuums and analyzes for all tables I'd expect them on
+  - [x] Add real scope to schools (excludes online and test)
+
+- Event Creation
+
+  - Find all the stuff with hardcoded event ids/links between school id/event id/user id and refactor it
+    - [x] Diff school reg seems to be hardlinked to an event id that's related to the school id?
+      - Yeah was just the school id lol. Changed it to a proc which gets the id of the next event instead
+      - Still not ideal cos querying n+1 in the view, but can be left for my big optimisation run if it ever happens
+    - [x] In condensed summary, all events show up
+    - [x] School stats summary shows past events
+    - [x] Daily activities list activities for all events
+      - [x] Added the ability for SMs to see attendance for past events while I was there
+    - [] Stats page uses data from all events together
+
+- Invoices
+
+  - [x] Only show real invoices in index
+
+- Per-activity costs
+
+  - [x] Generate data attributes with the modifiers in SSR
+    - If not done JS gives NaN when existing regs added to, because SSR p elements didn't have a data attribute
+  - [x] Display extra cost if any on the registration form
+    - [x] Add the translations for 'extra charge' when I get them, here and to replace special day in the invoice
+  - Add fields on time slot forms
+    - [x] modifiers
+    - [x] snack
+
+- UX
+
+  - [x] Add 'don't refresh' warning to time slot forms
+    - causes the current image to be swapped out in some cases
+    - also some option category issues for individual slot edits
+  - [x] Sort invoice index by event date
+  - [x] Change close/reopen button color on hover/active for daily activities
+
+- Views
+
+  - Charts Page
+    - [x] Show action takes school id as a param and shows stats for only that school
+    - [x] Add nav for admin/AM to look at each school's stats
+
+## September 22nd
+
+### Odin Project - [Shopping Cart](https://github.com/Brett-Tanner/shopping-cart)
+
+- [] Show remove from cart button on cards in cart
+- [] Find out why empty cart message isn't displaying
+- [] Split out increment, decrement and remove from cart callbacks as props to card, and define them in the shop component
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - Stats page
 
   - Adjustments
@@ -384,22 +445,15 @@ Didn't actually write any tests, but set up testing and some skeleton files.
       - [] Probably useful in stats somewhere too
     - Option registrations
       - [] Where is this useful?
-  - [] Remove old PaperTrail versions once I'm done making invoice table changes (invoices, children)
-  - [] See if it's vacuuming/analyzing by default, if not make it do that
 
 - Event Creation
 
-  - [] Find all the stuff with hardcoded event ids/links between school id/event id/user id and refactor it
+  - [] Stats page uses data from all events together
 
 - Invoices
 
   - [] Stop persisting blank invoices when registration page viewed
   - [] Simplify/modularize invoice code
-
-- Per-activity costs
-
-  - [] Display extra cost if any on the registration form
-  - [] Add fields for them on time slot forms
 
 - Platform Upgrades
 
@@ -411,24 +465,24 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - UX
 
+  - [] Sort arrival/departure options by modifier
+    - different directions for each
+    - right now they're in creation order, potential problem now we can manually edit
   - Forms
-
     - [] Add useful error messages to all forms (from backend)
     - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
-
   - Images
-
     - [] Use picture tags
     - [] Create a workflow for generating responsive versions
       - Probably just me doing it manually with Sharp, Leroy can't export as .avif
 
 - Views
 
+  - Charts
+    - [] Add tabs for the type of stat
+      - implemented as dynamic views, stat param decides which to render/which variables to make available
   - [] Split the User#show pages out into different pages for different roles
   - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
-  - [] Stats Page
-    - [] Add tabs for the type of stat
-    - [] Add school-specific pages for each of the existing stats
 
 - Future Plans
 
