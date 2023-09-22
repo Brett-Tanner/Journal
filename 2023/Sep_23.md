@@ -420,18 +420,30 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- DB
+
+  - Add counter_cache
+    - Invoice slot regs
+      - [x] Use as the new real scope
+
+- Invoices
+
+  - [x] Remember why the 'real' scope has a distinct on it
+
 - Stats page
 
-  - Adjustments
-    - [] Number of each adjustment applied
-    - [] Total effect on revenue from each (some will be negative)
-      - [] Group any with a magnitude less than a certain amount into a misc data point
-  - Edits
-    - [] Total edits by staff/customers (subtract the total number of creates from updates)
-  - Revenue
-    - [] Pie chart of revenue by student category
-    - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
-  - [] Add filtering by school, student category, option/slot category etc.
+  - [x] Add tabs for the type of stat
+    - Add dynamic show page for
+      - [x] Activities
+      - [x] Bookings
+      - [x] Children
+      - [x] Coupons
+      - [x] Edits
+      - [x] Options
+
+## September 23rd
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - DB
 
@@ -440,10 +452,6 @@ Didn't actually write any tests, but set up testing and some skeleton files.
       - [] Probably useful in stats somewhere too
     - Option registrations
       - [] Where is this useful?
-
-- Event Creation
-
-  - [] Stats page uses data from all events together
 
 - Invoices
 
@@ -457,6 +465,17 @@ Didn't actually write any tests, but set up testing and some skeleton files.
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
   - [] Bump Rails versions
   - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+
+- Stats page
+
+  - [] Add the logic to render per-stat tabs on the index page
+  - Adjustments
+    - [] Number of each adjustment applied
+    - [] Total effect on revenue from each (some will be negative)
+      - [] Group any with a magnitude less than a certain amount into a misc data point
+  - Revenue
+    - [] Pie chart of revenue by student category
+    - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
 
 - UX
 
@@ -473,10 +492,8 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - Views
 
-  - Charts
-    - [] Add tabs for the type of stat
-      - implemented as dynamic views, stat param decides which to render/which variables to make available
-  - [] Split the User#show pages out into different pages for different roles
+  - User
+    - [] Split show pages into dynamic routes based on role
   - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
 
 - Future Plans
@@ -485,11 +502,8 @@ Didn't actually write any tests, but set up testing and some skeleton files.
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
     - [] Install and use Bullet gem
     - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
-    - [] Turnout gem to put it in maintenance mode?
   - [] Bump Ruby version and others as far as possible
-
-    - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
-
+  - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
   - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
