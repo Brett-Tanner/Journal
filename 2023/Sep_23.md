@@ -441,7 +441,20 @@ Didn't actually write any tests, but set up testing and some skeleton files.
       - [x] Edits
       - [x] Options
 
-## September 23rd
+## September 25th
+
+- Finish my notes on React
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Condense the nav filters on stats page into a dropdown for each filter
+- [x] Refactor categories to partials so they can be reused in index
+- Get tabs working on Index for
+  - [x] Activities
+  - [x] Bookings
+    - [x] Add charts for bookings by hour of day and day of week
+
+## September 26th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -468,7 +481,12 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - Stats page
 
-  - [] Add the logic to render per-stat tabs on the index page
+  - Get tabs working on Index for
+    - [] Children
+    - [] Coupons
+    - [] Edits
+    - [] Options
+  - [] Leroy wants to be able to download stats per event from the CSVs export
   - Adjustments
     - [] Number of each adjustment applied
     - [] Total effect on revenue from each (some will be negative)
