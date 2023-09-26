@@ -458,17 +458,44 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [x] Options with radio buttons cause the FE JS calculation to fail
+
+  - Was checking name !== null for some reason
+  - too narrow because name could be undefined
+  - changed it to just be `if name` since both null & undefined are falsy
+
 - DB
 
   - Add counter_cache
     - TimeSlot registrations
-      - [] Probably useful in stats somewhere too
+      - [x] Use in stats to dramatically reduce joins
     - Option registrations
       - [] Where is this useful?
+        - It had to be added as part of tracking registrations for time slots, but not sure where it could be used
+    - [x] All counter_cache cols should be 0 by default, not nil
+      - [x] Make sure all existing counters in prod are set to an integer
 
 - Invoices
 
-  - [] Stop persisting blank invoices when registration page viewed
+  - [x] Stop persisting blank invoices when registration page viewed
+
+- Stats page
+
+  - Get tabs working on Index for
+    - [x] Children
+    - [x] Coupons
+    - [x] Edits
+    - [x] Options
+  - [x] Add option stats by category
+  - [x] Chase down a few assorted bugs/typos
+  - [x] Let Leroy download stats per event from the CSV export
+
+## September 27th
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Invoices
+
   - [] Simplify/modularize invoice code
 
 - Platform Upgrades
@@ -479,22 +506,6 @@ Didn't actually write any tests, but set up testing and some skeleton files.
   - [] Bump Rails versions
   - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
 
-- Stats page
-
-  - Get tabs working on Index for
-    - [] Children
-    - [] Coupons
-    - [] Edits
-    - [] Options
-  - [] Leroy wants to be able to download stats per event from the CSVs export
-  - Adjustments
-    - [] Number of each adjustment applied
-    - [] Total effect on revenue from each (some will be negative)
-      - [] Group any with a magnitude less than a certain amount into a misc data point
-  - Revenue
-    - [] Pie chart of revenue by student category
-    - [] Pie chart of revenue by time slot/option/adjustment (subtract others from total for time slot revenue)
-
 - UX
 
   - [] Sort arrival/departure options by modifier
@@ -504,7 +515,7 @@ Didn't actually write any tests, but set up testing and some skeleton files.
     - [] Add useful error messages to all forms (from backend)
     - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
   - Images
-    - [] Use picture tags
+    - [] Use picture tags (or at least some way of loading smaller images on mobile)
     - [] Create a workflow for generating responsive versions
       - Probably just me doing it manually with Sharp, Leroy can't export as .avif
 
