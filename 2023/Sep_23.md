@@ -494,6 +494,45 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- UX
+
+  - [x] Sort activities on Invoice summary
+  - [x] Exclude kids who received a hat from hat kids list
+  - [x] Sort arrival/departure options by modifier
+    - different directions for each
+    - right now they're in creation order, potential problem now we can manually edit
+  - Forms
+    - Add useful error messages to all forms
+      - [x] Login
+        - was missing translations for the validation messages
+      - [x] Password reset
+        - was also pretty ugly, so I tidied up the styling a bit
+      - [x] Sign up
+        - FE validation wasn't triggering
+        - br tags littered everywhere
+        - padding was too thick on mobile
+      - [x] Child form
+        - Was ignoring the BS ones and rendering the form full-screen with backend errors
+        - Switched back to HTML validation, and styled the backend errors so they look nicer if displayed
+
+- Views
+
+  - User
+    - Split show pages into dynamic routes based on role
+      - [x] Customer
+      - [x] SM
+      - [x] AM
+      - [] Admin
+
+- Future Plans
+
+  - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
+    - [x] Install and use Bullet gem
+
+## September 28th
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - Invoices
 
   - [] Simplify/modularize invoice code
@@ -508,12 +547,9 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - UX
 
-  - [] Sort arrival/departure options by modifier
-    - different directions for each
-    - right now they're in creation order, potential problem now we can manually edit
-  - Forms
-    - [] Add useful error messages to all forms (from backend)
-    - [] Add JS validation as well (constraint validation API, see the [Odin Project Lesson](https://www.theodinproject.com/lessons/javascript-form-validation-with-javascript))
+  - [] Move condensed stats table and headers into the partial as well
+    - means sorting out something else to pass
+  - [] Give AMs the ability to sort condensed stats as well
   - Images
     - [] Use picture tags (or at least some way of loading smaller images on mobile)
     - [] Create a workflow for generating responsive versions
@@ -522,18 +558,14 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 - Views
 
   - User
-    - [] Split show pages into dynamic routes based on role
-  - [] Look at moving to view components rather than partials for (apparently) better performance and easier testing
+    - Split show pages into dynamic routes based on role
+      - [] Admin
 
 - Future Plans
 
-  - [] See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
+  - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
-    - [] Install and use Bullet gem
     - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
-  - [] Bump Ruby version and others as far as possible
-  - [] Come up with a better logging system than just dumping them unsorted to S3 (apparently sending them to STDOUT sends them to Cloudwatch?)
-  - [] Look into using our SES account/domain for the school emails to escape their 5000 email limit
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
