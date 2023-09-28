@@ -535,6 +535,44 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - Invoices
 
+  - PDF Invoice Generation
+    - [x] Pick a gem from prawn or hexapdf
+      - WickedPDF and pdfKit are based on HTML to PDF converters, so slower and more dependencies. They're out
+      - Went with prawn, hexapdf requires a license for commercial use
+      - [x] Learn to use Prawn
+        - [x] And write a wiki page with the useful bits
+    - Setup the basic layout
+      - [x] Header
+
+- UX
+
+  - [x] Move condensed stats table and headers into the partial as well
+    - means sorting out something else to pass
+  - [x] Give AMs the ability to sort condensed stats as well
+
+- Views
+
+  - User
+    - Split show pages into dynamic routes based on role
+      - [x] Admin
+    - [x] Kill all the N+1 queries for User#show
+    - [x] Fix some bugs caused by no upcoming events
+
+### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- [x] PDF Generation
+
+## September 29th
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Invoices
+
+  - PDF Invoice Generation
+    - Setup the basic layout
+      - [] Summary
+      - [] Footer
+    - [] Fill it with details
   - [] Simplify/modularize invoice code
 
 - Platform Upgrades
@@ -547,19 +585,10 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 - UX
 
-  - [] Move condensed stats table and headers into the partial as well
-    - means sorting out something else to pass
-  - [] Give AMs the ability to sort condensed stats as well
   - Images
     - [] Use picture tags (or at least some way of loading smaller images on mobile)
     - [] Create a workflow for generating responsive versions
       - Probably just me doing it manually with Sharp, Leroy can't export as .avif
-
-- Views
-
-  - User
-    - Split show pages into dynamic routes based on role
-      - [] Admin
 
 - Future Plans
 
