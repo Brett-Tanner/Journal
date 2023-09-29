@@ -564,24 +564,31 @@ Didn't actually write any tests, but set up testing and some skeleton files.
 
 ## September 29th
 
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Initialize the project and verify ReactPress/Vite/Tailwind etc. all work together
+  - [x] Export site from Tools, and download theme from the themes folder in the file manager
+  - [x] Figure out how to set up WPLocal
+    - Download it, start a new project, import the .xml file from the main site and the theme .zip I downloaded from the file manager
+    - React app goes in a subfolder of the Local project, I'll make that folder the git repo and just have two identical Local setups on my PCs
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Invoices
 
   - PDF Invoice Generation
     - Setup the basic layout
-      - [] Summary
-      - [] Footer
-    - [] Fill it with details
-  - [] Simplify/modularize invoice code
+      - [x] Summary
+      - [x] Footer
+    - [x] Fill it with details
 
-- Platform Upgrades
+## September 30th
 
-  - TEST ALL ON STAGING FIRST
-  - [] Bump AWS platform version
-  - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
-  - [] Bump Rails versions
-  - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Initialize the project and verify ReactPress/Vite/Tailwind etc. all work together
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - UX
 
@@ -595,6 +602,16 @@ Didn't actually write any tests, but set up testing and some skeleton files.
   - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
     - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
+  - Simplify/modularize invoice code
+    - [] Split out PDF functionality
+    - [] Preload all the stuff I need for calc_cost at the start and pass it explicitly
+    - [] Create columns for each type of cost?
+  - Platform Upgrades
+    - TEST ALL ON STAGING FIRST
+    - [] Bump AWS platform version
+    - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
+    - [] Bump Rails versions
+    - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
