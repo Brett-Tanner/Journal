@@ -2,23 +2,32 @@
 
 ## October 3rd
 
-### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Initialize the project and verify ReactPress/Vite/Tailwind etc. all work together
-- Add to the wiki page as I'm going, at minimum I'll need to do it again on my home computer
-- Store the fetched school data in a Set?
+- [x] Discovered and fixed an issue where Price Lists couldn't be updated or properly created from FE
+- [x] Refactor the code for uploading assets
+  - [x] Allow uploads to arbitrary event names
+- [x] Make the VIP kid's names links to their profile
+- [x] Add invoice over time stats back in now that they're real
+
+## October 4th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Images
-  - [] Use picture tags (or at least some way of loading smaller images on mobile)
-  - [] Create a workflow for generating responsive versions
-    - Probably just me doing it manually with Sharp, Leroy can't export as .avif
-- [] Add invoice over time stats back in now that they're real
-- [] Check everything works for Halloween Party type events
 - [] Separate attendance sheets for morning/afternoon (all special days)
   - [] Also look into adding a tab that shows just the afternoon/morning attendance for all attendance sheets, not just special
 - [] Stop 'なし' being an option, just add it in the view code so it can delete the others
+
+- Check everything works for Halloween Party type events
+
+  - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
+  - [] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
+
+- Images
+
+  - [] Use picture tags (or at least some way of loading smaller images on mobile)
+  - [] Create a workflow for generating responsive versions
+    - Probably just me doing it manually with Sharp, Leroy can't export as .avif
 
 - Future Plans
 
@@ -35,6 +44,12 @@
     - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
     - [] Bump Rails versions
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Initialize the project and verify ReactPress/Vite/Tailwind etc. all work together
+- Add to the wiki page as I'm going, at minimum I'll need to do it again on my home computer
+- Store the fetched school data in a Set?
 
 ### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
