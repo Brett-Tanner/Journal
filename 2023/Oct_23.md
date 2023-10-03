@@ -1,6 +1,6 @@
 # October 2023
 
-## October 3rd
+## October 2nd
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -10,16 +10,26 @@
 - [x] Make the VIP kid's names links to their profile
 - [x] Add invoice over time stats back in now that they're real
 
+## October 3rd
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Make event cards smaller on the index, especially on admin index it's ridiculous
+- [x] Paginate the event index
+
 ## October 4th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Mark invoices as email sent when SMs choose to send the confirmation email
+  - They actually want them unmarked when invoice is unconfirmed, not sure about that idea
 - [] Separate attendance sheets for morning/afternoon (all special days)
   - [] Also look into adding a tab that shows just the afternoon/morning attendance for all attendance sheets, not just special
 - [] Stop 'なし' being an option, just add it in the view code so it can delete the others
 
 - Check everything works for Halloween Party type events
 
+  - [] Add an exception to auto-creating afternoon slots for party days as well
   - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
   - [] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
 
