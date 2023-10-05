@@ -21,7 +21,6 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Go over SM requests with Leroy when he gets back
 - [x] Make my changes to the invoice index responsive
 - [x] Don't show diff school events that have already happened in preference to upcoming events on child profile
 - [x] Add next_event convenience method for upcoming events on school/child
@@ -38,6 +37,7 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Go over SM requests with Leroy when he gets back
 - [] Let admins create/edit new schools/areas and assign managers to them
 
 - Check everything works for party type events
