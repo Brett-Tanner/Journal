@@ -17,17 +17,30 @@
 - [x] Make event cards smaller on the index, especially on admin index it's ridiculous
 - [x] Paginate the event index
 
-## October 4th
+## October 5th
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Mark invoices as email sent when SMs choose to send the confirmation email
-  - They actually want them unmarked when invoice is unconfirmed, not sure about that idea
-- [] Separate attendance sheets for morning/afternoon (all special days)
-  - [] Also look into adding a tab that shows just the afternoon/morning attendance for all attendance sheets, not just special
-- [] Stop 'なし' being an option, just add it in the view code so it can delete the others
+- [] Go over SM requests with Leroy when he gets back
+- [x] Make my changes to the invoice index responsive
+- [x] Don't show diff school events that have already happened in preference to upcoming events on child profile
+- [x] Add next_event convenience method for upcoming events on school/child
+- [x] Stop 'なし' being an option, just add it in the view code so it can delete the others
+- [x] Split out the radio buttons from add_slot into smaller option partials for readability/DRY
+- [x] Install `rack-mini-profiler` for performance monitoring
+  - [x] Configure for production (use memory cache rather than default file cache which doesn't expire)
+  - [x] Figure out how to read results like [flamegraphs](https://samsaffron.com/archive/2013/03/19/flame-graphs-in-ruby-miniprofiler)
+- [x] Separate attendance sheets for special morning/afternoon
+  - [x] Required a big ol' rework of the view/controller code for this, it was a mess from all the random exceptions I had to add
+  - [x] Also general tidy-up of the view/controller code for readability
 
-- Check everything works for Halloween Party type events
+## October 6th
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Let admins create/edit new schools/areas and assign managers to them
+
+- Check everything works for party type events
 
   - [] Add an exception to auto-creating afternoon slots for party days as well
   - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
