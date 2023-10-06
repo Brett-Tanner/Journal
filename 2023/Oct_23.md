@@ -35,6 +35,46 @@
 
 ## October 6th
 
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Initialize the project
+  - [x] Tailwind
+  - [x] React Router
+  - [x] Test by uploading to live test page
+  - [x] Setup testing with Bun and happy-dom
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- Add Setsumeikai calendar page
+  - [x] How to set up a local dev env
+
+## October 7th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Plan out initial types
+- [] Write tests
+- Create components
+  - [] Progress Bar
+  - [] School Card
+  - [] School filters
+  - [] Calendar
+  - [] Form
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- Add Setsumeikai calendar page
+  - [] Overview of the flow/types
+- [] Add 'How to contribute'
+  - [] Adding a page
+  - [] Adding a section
+- [] AWS section
+  - [] Pushing a new version
+  - [] Services we use and overview of what for
+- [] Rails section
+  - [] Overview
+  - [] Useful Commands
+
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Go over SM requests with Leroy when he gets back
@@ -45,6 +85,7 @@
   - [] Add an exception to auto-creating afternoon slots for party days as well
   - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
   - [] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
+    - [] and add tabs for past events
 
 - Images
 
@@ -67,21 +108,3 @@
     - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
     - [] Bump Rails versions
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
-
-### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
-
-- Initialize the project and verify ReactPress/Vite/Tailwind etc. all work together
-- Add to the wiki page as I'm going, at minimum I'll need to do it again on my home computer
-- Store the fetched school data in a Set?
-
-### Work Project - [Seasonal Wiki](https://github.com/Brett-Tanner/KU-wiki)
-
-- [] Add 'How to contribute'
-  - [] Adding a page
-  - [] Adding a section
-- [] AWS section
-  - [] Pushing a new version
-  - [] Services we use and overview of what for
-- [] Rails section
-  - [] Overview
-  - [] Useful Commands
