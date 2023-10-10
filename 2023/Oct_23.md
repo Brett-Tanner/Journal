@@ -50,25 +50,29 @@
 
 ## October 10th
 
-### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
-
-- [] Plan out initial types
-- Write basic tests
-  - [] ProgressNav
-  - [] Breadcrumbs
-  - []
-- Create components
-  - [] Progress Bar
-  - [] School Card
-  - [] School filters
-  - [] Calendar
-  - [] Form
-
 ### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
 - [x] Tidy up hero page and docs organisation
 - [x] Add guide for creating new events
 - [x] Push it up to live on my domain/Cloudflare pages
+- [x] Merge Paolo's contribution
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Refactor TimeSlot controller
+- [x] Let admins create/edit new schools/areas
+
+  - [x] and assign managers to them
+  - [x] add the JSON cols for the API and the ability to edit them
+
+- Check everything works for party type events
+
+  - [x] Add an exception to auto-creating afternoon slots for party days as well
+
+## October 11th
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
 - Add Setsumeikai calendar page
   - [] Overview of the flow/types
 - [] Add 'How to contribute'
@@ -83,13 +87,10 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [x] Refactor TimeSlot controller
-- [] Let admins create/edit new schools/areas and assign managers to them
 - [] Go over SM requests with Leroy when he gets back
 
 - Check everything works for party type events
 
-  - [x] Add an exception to auto-creating afternoon slots for party days as well
   - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
   - [] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
     - [] and add tabs for past events
@@ -115,3 +116,17 @@
     - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
     - [] Bump Rails versions
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Plan out initial types
+- Write basic tests
+  - [] ProgressNav
+  - [] Breadcrumbs
+  - []
+- Create components
+  - [] Progress Bar
+  - [] School Card
+  - [] School filters
+  - [] Calendar
+  - [] Form
