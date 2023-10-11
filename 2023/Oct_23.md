@@ -71,6 +71,18 @@
 
 ## October 11th
 
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Check everything works for party type events
+
+  - [x] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
+    - [x] and add tabs for past events
+    - [x] automatically select the next event by default
+  - [x] Profile stats count every upcoming event
+  - [x] Users can see all events, past and upcoming
+
+## October 12th
+
 ### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
 - Add Setsumeikai calendar page
@@ -88,12 +100,6 @@
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Go over SM requests with Leroy when he gets back
-
-- Check everything works for party type events
-
-  - [] Currently next event seems to show the furthest, not the closest (at least on activities index)
-  - [] Activities index shows multiple schools when multiple upcoming events, better to make a tab for each event like stats
-    - [] and add tabs for past events
 
 - Images
 
