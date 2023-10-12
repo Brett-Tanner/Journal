@@ -99,13 +99,24 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Go over SM requests with Leroy when he gets back
+- [] Missing translation for extra cost in add slot
+- [] Add the new school and its event
+- [] Add the .avifs for all time slots because I forgot to add the form field to the event slot partial
+- [] Add the missing form field
+- [] Add an exception for the new 3 course
+
+  - [] in invoice#calc_cost
+  - [] in the JS
+
+- [] Add create staff button on the school/area management page
 
 - Images
 
-  - [] Use picture tags (or at least some way of loading smaller images on mobile)
-  - [] Create a workflow for generating responsive versions
-    - Probably just me doing it manually with Sharp, Leroy can't export as .avif
+  - [x] Figure out how to create .avif versions of our images through Sharp
+  - Find a way to show .avif images to everyone not on Edge, and .jpg to Edge users
+    - [x] In CSS
+    - [x] Allow attaching .avifs to Time Slots/Events
+    - [x] Use them in views
 
 - Future Plans
 

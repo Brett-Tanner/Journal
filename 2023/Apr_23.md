@@ -29,8 +29,10 @@ Busy with Spring school/new kids' book stickers
   !/app/assets/images/favicon.svg
   !/app/assets/images/logo.svg
   !/app/assets/images/white_logo.svg
+  !/app/assets/images/login_splash.avif
   !/app/assets/images/login_splash.jpg
-  !/app/assets/images/sm_login_splash.jpg
+  !/app/assets/images/sm_login_splash.avif
+  !/app/assets/images/sm_login_splash.png
   ```
 
 ## Apr 4th
