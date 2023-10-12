@@ -83,6 +83,50 @@
 
 ## October 12th
 
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Missing translation for extra cost in add slot
+  - Was still in en mode?
+- [x] Add the new school
+  - [x] and its event
+- [x] Add the .avifs for all time slots because I forgot to add the form field to the event slot partial
+- [x] Add the missing form field
+- Remove extraneous options from Shin Urayasu and Minami Machida
+  - [x] Shin urayasu: no 8:30 arrival
+  - [x] Minami machida: no arrival
+- [x] Add an exception for the new 3 course
+
+  - [x] in invoice#calc_cost
+  - [x] in the JS
+
+- [x] Add create staff button on the area and user indexes
+
+  - nah, don't want it exposed on the FE at all, security risk
+
+- Images
+
+  - [x] Figure out how to create .avif versions of our images through Sharp
+  - Find a way to show .avif images to everyone not on Edge, and .jpg to Edge users
+    - [x] In CSS
+    - [x] Allow attaching .avifs to Time Slots/Events
+    - [x] Use them in views
+
+## October 13th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Plan out initial types
+- Write basic tests
+  - [] ProgressNav
+  - [] Breadcrumbs
+  - []
+- Create components
+  - [] Progress Bar
+  - [] School Card
+  - [] School filters
+  - [] Calendar
+  - [] Form
+
 ### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
 - Add Setsumeikai calendar page
@@ -99,25 +143,6 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Missing translation for extra cost in add slot
-- [] Add the new school and its event
-- [] Add the .avifs for all time slots because I forgot to add the form field to the event slot partial
-- [] Add the missing form field
-- [] Add an exception for the new 3 course
-
-  - [] in invoice#calc_cost
-  - [] in the JS
-
-- [] Add create staff button on the school/area management page
-
-- Images
-
-  - [x] Figure out how to create .avif versions of our images through Sharp
-  - Find a way to show .avif images to everyone not on Edge, and .jpg to Edge users
-    - [x] In CSS
-    - [x] Allow attaching .avifs to Time Slots/Events
-    - [x] Use them in views
-
 - Future Plans
 
   - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
@@ -131,19 +156,5 @@
     - TEST ALL ON STAGING FIRST
     - [] Bump AWS platform version
     - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
-    - [] Bump Rails versions
+    - [] Bump Rails version
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
-
-### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
-
-- [] Plan out initial types
-- Write basic tests
-  - [] ProgressNav
-  - [] Breadcrumbs
-  - []
-- Create components
-  - [] Progress Bar
-  - [] School Card
-  - [] School filters
-  - [] Calendar
-  - [] Form
