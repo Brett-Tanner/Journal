@@ -113,15 +113,29 @@
 
 ## October 13th
 
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Create Yoshi's new account
+- [x] Add the goals for each school
+
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- [] Plan out initial types
 - Write basic tests
-  - [] ProgressNav
-  - [] Breadcrumbs
+  - [x] ProgressNav
+  - [x] Breadcrumbs
+- Scaffold components
+  - [x] ProgressNav
+  - [x] Breadcrumbs
+
+## October 14th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- Write basic tests
   - []
-- Create components
-  - [] Progress Bar
+- Scaffold components
   - [] School Card
   - [] School filters
   - [] Calendar
@@ -142,6 +156,10 @@
   - [] Useful Commands
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] VIP kid reservation count (in stats) seems to count option registrations as well
+  - Yeah despite the counter_cache being called slot_regs, it counts all registrations. Will need to change the data fetching
+- [] Add a section on the admin page that links to each SM page so I can easily check in on them (or maybe on user index?)
 
 - Future Plans
 
