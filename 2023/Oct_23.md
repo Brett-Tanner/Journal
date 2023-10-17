@@ -127,17 +127,30 @@
   - [x] ProgressNav
   - [x] Breadcrumbs
 
-## October 14th
+## October 16th
+
+- [x] Get rid of the red bar on registration site sign up page
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Write basic tests
+  - [x] School Card
+  - [x] School List
+- Scaffold components
+  - [x] School Card
+  - [x] School List
+    - [x] Create test school data
+
+## October 17th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
 - Write basic tests
-  - []
+  - [] School Search
 - Scaffold components
-  - [] School Card
-  - [] School filters
+  - [] School Search
   - [] Calendar
   - [] Form
 
@@ -157,6 +170,7 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Blank coupons are being created with every invoice, thought I fixed that?
 - [] VIP kid reservation count (in stats) seems to count option registrations as well
   - Yeah despite the counter_cache being called slot_regs, it counts all registrations. Will need to change the data fetching
 - [] Add a section on the admin page that links to each SM page so I can easily check in on them (or maybe on user index?)
