@@ -145,12 +145,26 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
+- [x] Basic layout styling for school list/progress nav
+- Basic tests
+  - [x] School Search
+  - [x] School selection
+  - [x] Footer
+- Scaffold components
+  - [x] School Search
+  - [x] Footer
+
+## October 18th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
-- Write basic tests
-  - [] School Search
+- Basic tests
+  - [] Setsumeikai
+  - [] Calendar
 - Scaffold components
-  - [] School Search
+  - [] Setsumeikai
   - [] Calendar
   - [] Form
 
