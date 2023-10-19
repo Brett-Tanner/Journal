@@ -158,36 +158,44 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
+- [x] Switch to NavLinks for SchoolCard for better UX
+
+- Set state in/from URL so you can link from external school pages
+
+  - [x] School on calendar route
+
+- FullCalendar and plugins
+  - [x] Install
+  - [x] Dynamically choose to render calendar or list view based on screen width
+  - [x] Read the docs and figure out the bits we need
+  - [x] Configure Events on calendar to send user to form when clicked
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] TimeSlot partial for special afternoon says close AM, despite being close PM
+- [x] Also the AM special shows a button to close PM, which won't update the PM partial when clicked. Remove it
+- [x] Manually add 3 course to the price list shown on Event#show
+- [x] Blank coupons are being created with every invoice, thought I fixed that?
+- [x] Add a section on the admin page that links to each SM page so I can easily check in on them (or maybe on user index?)
+
+## October 19th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
+- Set state in/from URL so you can link from external school pages
+  - [] School and setsumeikai on form route?
+  - [] Write tests for state getting set from params for Calendar and Form
 - Basic tests
-  - [] Setsumeikai
   - [] Calendar
+  - [] Form
 - Scaffold components
   - [] Setsumeikai
   - [] Calendar
   - [] Form
 
-### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
-
-- Add Setsumeikai calendar page
-  - [] Overview of the flow/types
-- [] Add 'How to contribute'
-  - [] Adding a page
-  - [] Adding a section
-- [] AWS section
-  - [] Pushing a new version
-  - [] Services we use and overview of what for
-- [] Rails section
-  - [] Overview
-  - [] Useful Commands
-
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
-
-- [] Blank coupons are being created with every invoice, thought I fixed that?
-- [] VIP kid reservation count (in stats) seems to count option registrations as well
-  - Yeah despite the counter_cache being called slot_regs, it counts all registrations. Will need to change the data fetching
-- [] Add a section on the admin page that links to each SM page so I can easily check in on them (or maybe on user index?)
 
 - Future Plans
 
@@ -204,3 +212,17 @@
     - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
     - [] Bump Rails version
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- Add Setsumeikai calendar page
+  - [] Overview of the flow/types
+- [] Add 'How to contribute'
+  - [] Adding a page
+  - [] Adding a section
+- [] AWS section
+  - [] Pushing a new version
+  - [] Services we use and overview of what for
+- [] Rails section
+  - [] Overview
+  - [] Useful Commands
