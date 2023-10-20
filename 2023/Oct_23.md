@@ -188,12 +188,22 @@
   - [] School and setsumeikai on form route?
   - [] Write tests for state getting set from params for Calendar and Form
 - Basic tests
-  - [] Calendar
   - [] Form
 - Scaffold components
-  - [] Setsumeikai
-  - [] Calendar
-  - [] Form
+  - [x] Form
+  - [x] Various field components
+- Features
+  - [x] Tidy up FooterNav into Back and ForwardLink components
+  - [x] Set blocked cursor on footer links when nothing selected
+  - [] Highlight p elements in SchoolCard when their string matches a query
+  - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
+  - [] Add hiragana versions of school name/address to avoid blank screen while filtering?
+  - [] Add loading states for SchoolList and Calendar
+- API
+  - [] Filter the events you send by future and not full
+- Error Handling
+  - [x] 404s
+    - Used a navigate element, actions don't work as they're only on non-get requests
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
