@@ -182,28 +182,51 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
-
 - Set state in/from URL so you can link from external school pages
-  - [] School and setsumeikai on form route?
-  - [] Write tests for state getting set from params for Calendar and Form
+  - [x] School and setsumeikai on form route?
+  - [x] Maintain state using NavLinks
 - Basic tests
-  - [] Form
+  - Footer Link components
+    - [x] BackLink
+    - [x] ForwardLink
+  - Form components
+    - [x] InputField
+    - [x] RadioField
+    - [x] SelectField
 - Scaffold components
   - [x] Form
   - [x] Various field components
+- Error Handling
+  - [x] 404s
+    - Used a navigate element, actions don't work as they're only on non-get requests
 - Features
   - [x] Tidy up FooterNav into Back and ForwardLink components
   - [x] Set blocked cursor on footer links when nothing selected
+  - [x] Update id types to be strings, makes more sense on JS side
+    - [x] Update tests accordingly
+  - [x] Basic Form styling
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Special afternoon is still saying close AM, make it say close PM
+- [x] Separate manager list into SM/AM
+
+## October 20th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- Features
+
   - [] Highlight p elements in SchoolCard when their string matches a query
   - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
   - [] Add hiragana versions of school name/address to avoid blank screen while filtering?
   - [] Add loading states for SchoolList and Calendar
+
 - API
-  - [] Filter the events you send by future and not full
-- Error Handling
-  - [x] 404s
-    - Used a navigate element, actions don't work as they're only on non-get requests
+  - Set up Rails API to send schools and their setsumeikais
+    - [] Filter the events you send by future and not full
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
