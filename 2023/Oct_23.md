@@ -217,6 +217,11 @@
 
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
+- Tests
+
+  - [] Hooks
+  - [] Helpers
+
 - Features
 
   - [] Highlight p elements in SchoolCard when their string matches a query
@@ -231,6 +236,12 @@
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Future Plans
+
+  - [] Add a 'download PDF invoice' button
+    - Just for staff or for everyone?
+  - [] Add button to generate photo service armband PDF for parties
+
+    - Printable template with kids' names and a color which shows their photo status
 
   - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
