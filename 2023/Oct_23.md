@@ -211,7 +211,13 @@
 - [x] Special afternoon is still saying close AM, make it say close PM
 - [x] Separate manager list into SM/AM
 
-## October 20th
+## October 23rd
+
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Set up Vercel PG db
+
+## October 24th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -234,6 +240,8 @@
     - [] Filter the events you send by future and not full
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Add photo service stats to options
 
 - Future Plans
 
@@ -270,3 +278,18 @@
 - [] Rails section
   - [] Overview
   - [] Useful Commands
+
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [] Create the schema with drizzle
+  - [] Plan out the schema
+    - Users
+    - Categories
+    - Transactions
+    - Budgets
+  - [] Migrate
+- Import transactions to the database
+  - [] Create UI scaffold
+  - [] Auto-categorize based on rules
+  - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
+    - [] If uploaded for any time prior to the last day in the database, just ignore them
