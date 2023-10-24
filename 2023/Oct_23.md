@@ -221,12 +221,48 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
+- [x] Test `jaFormat` date helper
+
+- API
+
+  - [x] Finalize API response structure for schools and update types/componenets to match
+  - [x] Decide between [jbuilder](https://www.ruby-toolbox.com/projects/jbuilder), [grape](https://www.ruby-toolbox.com/projects/grape) and [active_model_serializers](https://www.ruby-toolbox.com/projects/active_model_serializers) for the API builder
+    - went with jbuilder as it's the most commonly used/not a full API generator like Grape, and OJ for JSON parsing cos it's fast
+  - [x] Then ditched Jbuilder as it unnecessarily abstracts away stuff I can do on my own
+
+- School API
+
+  - [x] Build the school API
+    - [x] Limit to real schools
+    - [x] Include available setsumeikais
+  - [x] Add the real details to the live Schools, then test the API with them
+    - [] Move the API route out of the authenticated namespace so it's publicly accessible
+  - [x] Add setsumeikais to the seasonal DB
+    - [x] Will need a columns for attendance limit, counter cache for current attendees so we know if full
+    - [] Set up the counter_cache on the inquiry side when you create them
+  - [x] Create setsumeikai views
+    - [x] Form
+    - [x] Index
+    - [x] Restrict schools they can be created for with a policy
+
+## October 25th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
-- Tests
+- School API
 
-  - [] Hooks
-  - [] Helpers
+  - [] Create the React loader which fetches and handles the school API response
+    - [] Get setsumeikai title from its parent school
+  - [] Decide on a caching policy for the school/setsumeikai response
+
+- Inquiry API
+
+  - [] Add inquiries to the seasonal DB
+  - [] Create the inquiry API
+  - [] Create the React action to create inquiries through the API
+  - [] Create the seasonal app views for staff to interact with inquiries
 
 - Features
 
@@ -235,16 +271,13 @@
   - [] Add hiragana versions of school name/address to avoid blank screen while filtering?
   - [] Add loading states for SchoolList and Calendar
 
-- API
-  - Set up Rails API to send schools and their setsumeikais
-    - [] Filter the events you send by future and not full
-
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Add photo service stats to options
 
 - Future Plans
 
+  - [] Move control of the domain from that Japanese site to Cloudflare
   - [] Add a 'download PDF invoice' button
     - Just for staff or for everyone?
   - [] Add button to generate photo service armband PDF for parties
