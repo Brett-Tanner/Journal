@@ -249,8 +249,6 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
-
 - School API
 
   - [x] Create the React loader which fetches and handles the school API response
@@ -261,16 +259,15 @@
     - [x] Forms
     - [x] Index
     - [x] Partial
-  - [] Create the inquiry API
-  - [] Create the React action to create inquiries through the API
-  - [] Create the seasonal app views for staff to interact with inquiries
+  - [x] Create the inquiry API
+  - [x] Create the React action to create inquiries through the API
+  - [x] Create the seasonal app views for staff to interact with inquiries
+  - [x] Show a summary of the created inquiry after creation
 
 - Features
 
   - [x] Add hiragana versions of school name/address to avoid blank screen while filtering
-  - [] Highlight p elements in SchoolCard when their string matches a query
-  - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
-  - [] Add loading states for SchoolList and Calendar
+    - [] Fill in the hiragana on prod
 
 - Bugs
 
@@ -283,6 +280,31 @@
 
 - [x] Add rack-cors so the API accepts requests from the React app
 - [x] Add hiragana to schools so searching doesn't go blank
+- [x] Add the referrer column I forgot on Inquiry
+- [x] Provide a json response to API Inquiry#create calls
+- [x] Display the inquiry list on setsumeikai show page
+- [x] Set counter_cache on Setsumeikais for inquiries
+  - [] And update it for existing ones after pushing the change
+
+## October 27th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- Features
+
+  - [x] Add hiragana versions of school name/address to avoid blank screen while filtering
+    - [] Fill in the hiragana on prod
+  - [] Highlight p elements in SchoolCard when their string matches a query
+  - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
+  - [] Add loading states for SchoolList and Calendar
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Set counter_cache on Setsumeikais for inquiries
+  - [] And update it for existing ones after pushing the change
+- [] Add images to schools, and a way to upload/attach them
 - [] Add photo service stats to options
 - [] Add total children who attended each event
 - [] Add setsumeikai stats once those are all set up
