@@ -245,7 +245,7 @@
     - [x] Index
     - [x] Restrict schools they can be created for with a policy
 
-## October 25th
+## October 26th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -253,27 +253,42 @@
 
 - School API
 
-  - [] Create the React loader which fetches and handles the school API response
-    - [] Get setsumeikai title from its parent school
-  - [] Decide on a caching policy for the school/setsumeikai response
+  - [x] Create the React loader which fetches and handles the school API response
 
 - Inquiry API
 
-  - [] Add inquiries to the seasonal DB
+  - [x] Add inquiries to the seasonal DB
+    - [x] Forms
+    - [x] Index
+    - [x] Partial
   - [] Create the inquiry API
   - [] Create the React action to create inquiries through the API
   - [] Create the seasonal app views for staff to interact with inquiries
 
 - Features
 
+  - [x] Add hiragana versions of school name/address to avoid blank screen while filtering
   - [] Highlight p elements in SchoolCard when their string matches a query
   - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
-  - [] Add hiragana versions of school name/address to avoid blank screen while filtering?
   - [] Add loading states for SchoolList and Calendar
+
+- Bugs
+
+  - [x] Refreshing the form keeps the school but loses the setsumeikai
+    - Rails was sending a number for the id rather than a string
+  - [x] NavLink for Calendar not showing active from SchoolCard click
+    - Noticed it worked if the setsuId param was 'undefined' but not 0 for some reason, so changed the SchoolCard url to use undefined
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [x] Add rack-cors so the API accepts requests from the React app
+- [x] Add hiragana to schools so searching doesn't go blank
 - [] Add photo service stats to options
+- [] Add total children who attended each event
+- [] Add setsumeikai stats once those are all set up
+- [] Should be able to add setsumeikai/inquiries in seasonal site like a spreadsheet
+
+  - Presented in a table that's a turboframe, rows can be forms to submit
 
 - Future Plans
 
