@@ -297,20 +297,19 @@
   - [x] Add hiragana versions of school name/address to avoid blank screen while filtering
     - [] Fill in the hiragana on prod
   - [] Highlight p elements in SchoolCard when their string matches a query
-  - [] Redirect in Router Actions based on selections state i.e. if no school navigate to school
   - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Set counter_cache on Setsumeikais for inquiries
-  - [] And update it for existing ones after pushing the change
-- [] Add images to schools, and a way to upload/attach them
+  - [x] And update it for existing ones after pushing the change
+- [x] Use table to display setsumeikais
+- [x] Edit them in a row at the top
+- [x] Setup links between various setsumeikai/inquiry pages, misc. polish
+- [x] Add images to schools, and a way to upload/attach them
 - [] Add photo service stats to options
 - [] Add total children who attended each event
 - [] Add setsumeikai stats once those are all set up
-- [] Should be able to add setsumeikai/inquiries in seasonal site like a spreadsheet
-
-  - Presented in a table that's a turboframe, rows can be forms to submit
 
 - Future Plans
 
