@@ -286,18 +286,27 @@
 - [x] Set counter_cache on Setsumeikais for inquiries
   - [] And update it for existing ones after pushing the change
 
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Create the schema with drizzle
+  - [x] Plan out the schema
+    - Users
+    - Categories
+    - Transactions
+    - Budgets
+  - [x] Migrate
+
 ## October 27th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+Went on an archaeology expedition with Leroy.
 
 - Features
 
   - [x] Add hiragana versions of school name/address to avoid blank screen while filtering
-    - [] Fill in the hiragana on prod
-  - [] Highlight p elements in SchoolCard when their string matches a query
-  - [] Add loading states for SchoolList and Calendar
+    - [x] Fill in the hiragana on prod
+    - [x] Add the images
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -307,9 +316,35 @@
 - [x] Edit them in a row at the top
 - [x] Setup links between various setsumeikai/inquiry pages, misc. polish
 - [x] Add images to schools, and a way to upload/attach them
-- [] Add photo service stats to options
-- [] Add total children who attended each event
-- [] Add setsumeikai stats once those are all set up
+- [x] Add photo service stats to options
+  - [x] Fix event options not being found
+    - Was pushing an array of them, not concatenating it
+- [x] Add total children who attended each event
+- [x] Fix price calculation where exactly 4 activities are registered for
+  - Wasn't taking advantage of the 3 course plus one
+
+## October 28th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- Features
+
+  - [] Display images in school list
+  - [] Display some kind of indicator that a school has setsumeikais scheduled
+    - If that's ever in question, seems they always should
+  - [] Highlight p elements in SchoolCard when their string matches a query
+  - [] Add loading states for SchoolList and Calendar
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Restyle the school/area index cards to be full width
+- [] Add setsumeikai stats
+
+  - Monthly and yearly setsumeikais scheduled
+  - Monthly and weekly inquiries
+  - Average setsumeikais per month
 
 - Future Plans
 
@@ -350,15 +385,9 @@
 
 ### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
 
-- [] Create the schema with drizzle
-  - [] Plan out the schema
-    - Users
-    - Categories
-    - Transactions
-    - Budgets
-  - [] Migrate
 - Import transactions to the database
   - [] Create UI scaffold
   - [] Auto-categorize based on rules
+    - [] Add rules table
   - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
     - [] If uploaded for any time prior to the last day in the database, just ignore them
