@@ -332,8 +332,19 @@ Went on an archaeology expedition with Leroy.
   - [x] `Main.gs`
   - [] `kidsCustomerGAS`
     - [x] `getCustomer`
+    - [x] `getSchool`
+    - [x] `createRecordMain`
+    - [] `createSetsumeikaiMeibo`
+    - [] `moveLast`
 
 ## October 31st
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- Document GAS
+  - [] `kidsCustomerGAS`
+    - [] `createSetsumeikaiMeibo`
+    - [] `moveLast`
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
