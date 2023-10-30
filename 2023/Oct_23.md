@@ -334,8 +334,10 @@ Went on an archaeology expedition with Leroy.
     - [x] `getCustomer`
     - [x] `getSchool`
     - [x] `createRecordMain`
-    - [] `createSetsumeikaiMeibo`
-    - [] `moveLast`
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] VIP kids are only shown if attending the current event, but their invoices for all events are summed
 
 ## October 31st
 
@@ -360,8 +362,6 @@ Went on an archaeology expedition with Leroy.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] VIP kids are only shown if attending the current event, but their invoices for all events are summed
-- [] Restyle the school/area index cards to be full width
 - [] Add setsumeikai stats
 
   - Monthly and yearly setsumeikais scheduled
