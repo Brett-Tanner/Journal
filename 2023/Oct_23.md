@@ -323,7 +323,17 @@ Went on an archaeology expedition with Leroy.
 - [x] Fix price calculation where exactly 4 activities are registered for
   - Wasn't taking advantage of the 3 course plus one
 
-## October 28th
+## October 30th
+
+### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- Document GAS
+  - [x] The spreadsheet
+  - [x] `Main.gs`
+  - [] `kidsCustomerGAS`
+    - [x] `getCustomer`
+
+## October 31st
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -339,12 +349,15 @@ Went on an archaeology expedition with Leroy.
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] VIP kids are only shown if attending the current event, but their invoices for all events are summed
 - [] Restyle the school/area index cards to be full width
 - [] Add setsumeikai stats
 
   - Monthly and yearly setsumeikais scheduled
   - Monthly and weekly inquiries
   - Average setsumeikais per month
+
+- [] Show all upcoming events in order on parent/child pages so we can handle parties better
 
 - Future Plans
 
