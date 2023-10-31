@@ -343,25 +343,36 @@ Went on an archaeology expedition with Leroy.
 
 ### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
-- Document GAS
-  - [] `kidsCustomerGAS`
-    - [] `createSetsumeikaiMeibo`
-    - [] `moveLast`
+- Switch focus to only documenting the GAS API, that's all we need for now
+  - [x] school endpoint
+  - [x] customer endpoint
+  - [x] update endpoint
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
+- [x] Add requests textarea to Form and Summary
+
 - Features
 
   - [] Display images in school list
-  - [] Display some kind of indicator that a school has setsumeikais scheduled
-    - If that's ever in question, seems they always should
   - [] Highlight p elements in SchoolCard when their string matches a query
   - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Create a new API controller for the GAS sheet's endpoints
+  - [x] schools
+    - [] Change '南行徳' to 'ソコラ南行徳' since that's its official name anyway
+    - [x] Add emails to schools since they can apparently be different to the SM email
+  - [] inquiries
+    - [] Map GAS school ids to my DB
+    - [] Add a way for SMs to attach followup notes to inquiries
+    - [] Also add requests since I forgot those before
+  - [] update
+    - [] Add `send_flag` to the table so it can be toggled
+- [] Add the 3 course to the invoice summary text as well
 - [] Add setsumeikai stats
 
   - Monthly and yearly setsumeikais scheduled
