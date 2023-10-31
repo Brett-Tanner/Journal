@@ -350,79 +350,19 @@ Went on an archaeology expedition with Leroy.
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
-
 - [x] Add requests textarea to Form and Summary
-
-- Features
-
-  - [] Display images in school list
-  - [] Highlight p elements in SchoolCard when their string matches a query
-  - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Create a new API controller for the GAS sheet's endpoints
   - [x] schools
-    - [] Change '南行徳' to 'ソコラ南行徳' since that's its official name anyway
     - [x] Add emails to schools since they can apparently be different to the SM email
-  - [] inquiries
-    - [] Map GAS school ids to my DB
-    - [] Add a way for SMs to attach followup notes to inquiries
-    - [] Also add requests since I forgot those before
+    - [x] Change '南行徳' to 'ソコラ南行徳' since that's its official name anyway
+    - [x] Add emails to the live schools as well
+  - [x] inquiries
+    - [x] Add a way for SMs to attach followup notes to inquiries
+    - [x] Also add requests since I forgot those before
   - [] update
-    - [] Add `send_flag` to the table so it can be toggled
-- [] Add the 3 course to the invoice summary text as well
-- [] Add setsumeikai stats
-
-  - Monthly and yearly setsumeikais scheduled
-  - Monthly and weekly inquiries
-  - Average setsumeikais per month
-
-- [] Show all upcoming events in order on parent/child pages so we can handle parties better
-
-- Future Plans
-
-  - [] Move control of the domain from that Japanese site to Cloudflare
-  - [] Add a 'download PDF invoice' button
-    - Just for staff or for everyone?
-  - [] Add button to generate photo service armband PDF for parties
-
-    - Printable template with kids' names and a color which shows their photo status
-
-  - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
-    - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
-    - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
-  - Simplify/modularize invoice code
-    - [] Split out PDF functionality
-    - [] Preload all the stuff I need for calc_cost at the start and pass it explicitly
-    - [] Create columns for each type of cost?
-  - Platform Upgrades
-    - TEST ALL ON STAGING FIRST
-    - [] Bump AWS platform version
-    - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
-    - [] Bump Rails version
-    - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
-
-### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
-
-- Add Setsumeikai calendar page
-  - [] Overview of the flow/types
-- [] Add 'How to contribute'
-  - [] Adding a page
-  - [] Adding a section
-- [] AWS section
-  - [] Pushing a new version
-  - [] Services we use and overview of what for
-- [] Rails section
-  - [] Overview
-  - [] Useful Commands
-
-### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
-
-- Import transactions to the database
-  - [] Create UI scaffold
-  - [] Auto-categorize based on rules
-    - [] Add rules table
-  - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
-    - [] If uploaded for any time prior to the last day in the database, just ignore them
+    - [x] Add `send_flg` to the table so it can be toggled
+  - [x] Mess around with `rack-cors` to allow GAS requests but still have security
+- [x] Add the 3 course to the invoice summary text as well
