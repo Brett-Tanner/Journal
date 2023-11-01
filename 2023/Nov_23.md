@@ -9,13 +9,16 @@
 - Features
 
   - [] Display images in school list
-  - [] Highlight p elements in SchoolCard when their string matches a query
   - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Create a new API controller for the GAS sheet's endpoints
-  - [] update
+- [x] Create a new API controller for the GAS sheet's endpoints
+  - [x] update
+    - [x] figure out how to parse the string GAS sends as readable JSON
+- [] In recent invoices, kids who registered then unregistered down to 0 are shown
+  - see if we can auto-delete that
+  - if not, check the leftover adjustments aren't included in any stats
 - [] Add setsumeikai stats
 
   - Monthly and yearly setsumeikais scheduled
