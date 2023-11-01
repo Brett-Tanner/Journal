@@ -6,6 +6,35 @@
 
 `cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
 
+- Inquiry Form
+
+  - [x] Find the path: `public/wp-content/themes/kidsup/page-inquiry.php`
+  - [] Add a plain HTML form pointing at my site's create_inquiry endpoint
+    - [x] Figure out how to edit the template (through the Theme File Editor under appearance in WP)
+    - [x] Duplicate the styles from the iframe in a style tag in the template
+    - [x] change the `attend` input to separate `kindy` and `ele_school` inputs to match my DB
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Create a new API controller for the GAS sheet's endpoints
+  - [x] update
+    - [x] figure out how to parse the string GAS sends as readable JSON
+- [x] Rework inquiries relations into school and setsumeikai
+  - [x] Rename the area relations for inquiries from `school_inquiries` to `setsumeikai_inquiries`
+- [] Create '池袋' (Ikebukero) school
+  - [x] and adjust the event partial to not error stuff when there are no events at the school
+
+## November 1st
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- Inquiry Form
+
+  - [] Add a plain HTML form pointing at my site's create_inquiry endpoint
+    - [] add JS to intercept the form data, wrap it in inquiry, and redirect to the current place it's meant to go
+
 - Features
 
   - [] Display images in school list
@@ -13,9 +42,7 @@
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [x] Create a new API controller for the GAS sheet's endpoints
-  - [x] update
-    - [x] figure out how to parse the string GAS sends as readable JSON
+- [] Create '池袋' (Ikebukero) school
 - [] In recent invoices, kids who registered then unregistered down to 0 are shown
   - see if we can auto-delete that
   - if not, check the leftover adjustments aren't included in any stats
