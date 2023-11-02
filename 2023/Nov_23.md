@@ -24,7 +24,7 @@
 - [] Create '池袋' (Ikebukero) school
   - [x] and adjust the event partial to not error stuff when there are no events at the school
 
-## November 1st
+## November 2nd
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -33,11 +33,16 @@
 - Inquiry Form
 
   - [] Add a plain HTML form pointing at my site's create_inquiry endpoint
-    - [] add JS to intercept the form data, wrap it in inquiry, and redirect to the current place it's meant to go
+    - [] add JS to show a summary of the inquiry before sending
+    - [] add JS to intercept the form data, wrap it in inquiry, and send it to the seasonal DB
+    - [] Then redirect to the current place it's meant to go
+    - [] Style everything involved in that
 
 - Features
 
-  - [] Display images in school list
+  - [x] Apply animations when searching schools
+  - [x] Send school_id as well since it's a field on Inquiry now
+  - [] Remove the fade-in effect (think it's just a class in the theme)
   - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
