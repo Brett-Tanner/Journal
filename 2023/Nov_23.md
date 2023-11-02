@@ -28,36 +28,67 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
-
 - Inquiry Form
 
-  - [] Add a plain HTML form pointing at my site's create_inquiry endpoint
-    - [] add JS to show a summary of the inquiry before sending
-    - [] add JS to intercept the form data, wrap it in inquiry, and send it to the seasonal DB
-    - [] Then redirect to the current place it's meant to go
-    - [] Style everything involved in that
+  - [x] Add a plain HTML form pointing at my site's create_inquiry endpoint
+    - [x] show a summary of the inquiry before sending
+    - [x] preserve form state when using the back button
+    - [x] on final submission, intercept the form data, wrap it in inquiry, and send it to the seasonal DB
+    - [x] Then redirect to the current place it's meant to go
+    - [x] Style everything involved in that
 
 - Features
 
   - [x] Apply animations when searching schools
   - [x] Send school_id as well since it's a field on Inquiry now
-  - [] Remove the fade-in effect (think it's just a class in the theme)
-  - [] Add loading states for SchoolList and Calendar
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Create '池袋' (Ikebukero) school
-- [] In recent invoices, kids who registered then unregistered down to 0 are shown
-  - see if we can auto-delete that
-  - if not, check the leftover adjustments aren't included in any stats
-- [] Add setsumeikai stats
+- [x] Remove null constraint on Inquiry.setsumeikai_id
+- [x] Add User.all_inquiries to get all inquiries of any type for managers
+- [x] Create '池袋' (Ikebukero) school
 
-  - Monthly and yearly setsumeikais scheduled
-  - Monthly and weekly inquiries
-  - Average setsumeikais per month
+## November 3rd
 
-- [] Show all upcoming events in order on parent/child pages so we can handle parties better
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
+
+- [] Make comparison documents
+- [] Write the instructions for testing
+
+- Features
+
+  - [] Figure out how to trigger GTM when the form submits
+    - remember you have access to the dashboard
+    - and there's something which tracks form submissions
+  - [] Remove the fade-in effect
+    - it's a class in the theme, but which one?
+    - whole page may fade in separate to any sections
+  - [] Add loading states for SchoolList (use `Suspense`)
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
+  - [] Setsumeikais need to be assignable to multiple schools, and show on all those school's calendars
+    - [] Inquiries go on the sheet for the school they want to attend, the school it's at goes in one of the columns
+  - [] On inquiry creation, send an email to the school, parent and HQ
+    - [] For setsumeikai inquiries, the school is the school they want to attend
+  - [] The table needs a `release_date`, when it becomes available to be seen on the calendar
+  - [] Tidy up the Inquiry/Setsu UI keeping in mind the fact that there are actually gonna be multiple categories
+
+- General
+
+  - [] In recent invoices, kids who registered then unregistered down to 0 are shown
+    - see if we can auto-delete that
+    - if not, check the leftover adjustments aren't included in any stats
+  - [] Add setsumeikai stats
+    - Monthly and yearly setsumeikais scheduled
+    - Monthly and weekly inquiries
+    - Average setsumeikais per month
+  - [] Leroy's survey thing
+  - [] Show all upcoming events in order on parent/child pages so we can handle parties better
 
 - Future Plans
 
