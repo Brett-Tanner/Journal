@@ -48,7 +48,7 @@
 - [x] Add User.all_inquiries to get all inquiries of any type for managers
 - [x] Create '池袋' (Ikebukero) school
 
-## November 3rd
+## November 4th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -56,6 +56,13 @@
 
 - [] Make comparison documents
 - [] Write the instructions for testing
+
+- Inquiries
+
+  - [] Fetch schools and ids from the API for the select input
+    - [] Have a hardcoded version as a fallback
+  - [] Map school_id in summary to school names
+  - [] Re-attach the form's showSummary event listener when back button is clicked
 
 - Features
 
@@ -71,8 +78,10 @@
 
 - Inquiries
 
+  - [] Check ALL inquiries are sent from the API, not just the setsumeikai ones
   - [] Setsumeikais need to be assignable to multiple schools, and show on all those school's calendars
     - [] Inquiries go on the sheet for the school they want to attend, the school it's at goes in one of the columns
+    - [] So figure out what decides the sheet it's assigned to, and make sure everything sets that correctly
   - [] On inquiry creation, send an email to the school, parent and HQ
     - [] For setsumeikai inquiries, the school is the school they want to attend
   - [] The table needs a `release_date`, when it becomes available to be seen on the calendar
