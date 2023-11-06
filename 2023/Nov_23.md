@@ -57,15 +57,16 @@
 - [] Make comparison documents
 - [] Write the instructions for testing
 
-- Inquiries
+- Inquiry Form
 
-  - [] Fetch schools and ids from the API for the select input
-    - [] Have a hardcoded version as a fallback
-  - [] Map school_id in summary to school names
-  - [] Re-attach the form's showSummary event listener when back button is clicked
+  - [x] Map school_id in summary to school names
+  - [x] Re-attach the form's showSummary event listener when back button is clicked
+  - [] Rather than school_id, the select box should be `planned_school`
 
-- Features
+- Setsumeikai Form
 
+  - [x] Change `planned_school` to `school_id`
+    - because it's the school they should be shown for, better way to do the association
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
@@ -78,13 +79,21 @@
 
 - Inquiries
 
-  - [] Check ALL inquiries are sent from the API, not just the setsumeikai ones
+  - [x] Add referrer to Inquiry form
+  - [x] Remove `planned_school` column
+    - That info is now found in `school_id` foreign key/school association
   - [] Setsumeikais need to be assignable to multiple schools, and show on all those school's calendars
-    - [] Inquiries go on the sheet for the school they want to attend, the school it's at goes in one of the columns
-    - [] So figure out what decides the sheet it's assigned to, and make sure everything sets that correctly
+    - [x] Through a `SetsumeikaiInvolvements` join table
+    - [x] Setsumeikais need to accept nested attributes for `Setsumeikai Involvement`
+    - `school_id` on Setsumeikai will now refer only to the school it's physically held at
+    - the school it's held at will also be linked through `SetsumeikaiInvolvements`
+    - [] Inquiries go on the sheet for the school they want to attend (was `planned_school`, now just the associated school)
+    - [] the school that inquiry's setsumeikai is at goes in one of the columns
+  - [x] The table needs a `release_date`, when it becomes available to be seen on the calendar
+    - [x] don't send setsumeikais where the release date hasn't passed, same as full ones
+  - [] Check ALL inquiries are sent from the API, not just the setsumeikai ones
   - [] On inquiry creation, send an email to the school, parent and HQ
     - [] For setsumeikai inquiries, the school is the school they want to attend
-  - [] The table needs a `release_date`, when it becomes available to be seen on the calendar
   - [] Tidy up the Inquiry/Setsu UI keeping in mind the fact that there are actually gonna be multiple categories
 
 - General
