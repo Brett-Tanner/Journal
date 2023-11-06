@@ -48,7 +48,44 @@
 - [x] Add User.all_inquiries to get all inquiries of any type for managers
 - [x] Create '池袋' (Ikebukero) school
 
-## November 4th
+## November 6th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Inquiry Form
+
+  - [x] Map school_id in summary to school names
+  - [x] Re-attach the form's showSummary event listener when back button is clicked
+
+- Setsumeikai Form
+
+  - [x] Change `planned_school` to `school_id`
+    - because it's the school they should be shown for, better way to do the association
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
+  - [x] Add referrer to Inquiry form
+  - [x] Remove `planned_school` column
+    - That info is now found in `school_id` foreign key/school association
+  - [x] Setsumeikais need to be assignable to multiple schools
+    - [x] Through a `SetsumeikaiInvolvements` join table
+    - [x] Setsumeikais need to accept nested attributes for `Setsumeikai Involvement`
+    - [x] show on all involved school's calendars/setsumeikai indexes
+    - `school_id` on Setsumeikai will now refer only to the school it's physically held at
+    - the school it's held at will also be linked through `SetsumeikaiInvolvements`
+    - [x] Inquiries go on the sheet for the school they want to attend (was `planned_school`, now just the associated school)
+    - [x] the school that inquiry's setsumeikai is at goes in one of the columns
+  - [x] The table needs a `release_date`, when it becomes available to be seen on the calendar
+    - [x] don't send setsumeikais where the release date hasn't passed, same as full ones
+  - [x] Check ALL inquiries are sent from the API, not just the setsumeikai ones
+
+- General
+
+  - [x] Add address to user profile (behind PIN)
+
+## November 7th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -57,16 +94,9 @@
 - [] Make comparison documents
 - [] Write the instructions for testing
 
-- Inquiry Form
-
-  - [x] Map school_id in summary to school names
-  - [x] Re-attach the form's showSummary event listener when back button is clicked
-  - [] Rather than school_id, the select box should be `planned_school`
-
 - Setsumeikai Form
 
-  - [x] Change `planned_school` to `school_id`
-    - because it's the school they should be shown for, better way to do the association
+  - [] Translations
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
@@ -79,22 +109,10 @@
 
 - Inquiries
 
-  - [x] Add referrer to Inquiry form
-  - [x] Remove `planned_school` column
-    - That info is now found in `school_id` foreign key/school association
-  - [] Setsumeikais need to be assignable to multiple schools, and show on all those school's calendars
-    - [x] Through a `SetsumeikaiInvolvements` join table
-    - [x] Setsumeikais need to accept nested attributes for `Setsumeikai Involvement`
-    - `school_id` on Setsumeikai will now refer only to the school it's physically held at
-    - the school it's held at will also be linked through `SetsumeikaiInvolvements`
-    - [] Inquiries go on the sheet for the school they want to attend (was `planned_school`, now just the associated school)
-    - [] the school that inquiry's setsumeikai is at goes in one of the columns
-  - [x] The table needs a `release_date`, when it becomes available to be seen on the calendar
-    - [x] don't send setsumeikais where the release date hasn't passed, same as full ones
-  - [] Check ALL inquiries are sent from the API, not just the setsumeikai ones
   - [] On inquiry creation, send an email to the school, parent and HQ
-    - [] For setsumeikai inquiries, the school is the school they want to attend
-  - [] Tidy up the Inquiry/Setsu UI keeping in mind the fact that there are actually gonna be multiple categories
+    - Only from the API
+  - [] Translations
+  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
