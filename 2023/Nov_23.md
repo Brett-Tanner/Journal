@@ -126,6 +126,12 @@
     - [x] Inquiries
     - [x] Stats
 
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Try `auth-astro`
+  - rejected it because there was some un-google-able import error
+- [x] Add Supabase auth
+
 ## November 8th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
