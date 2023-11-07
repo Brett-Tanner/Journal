@@ -89,14 +89,14 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-`cd /Users/brett/Documents/Repos/kids-up/app/public/wp-content/reactpress/apps/setsumeikai_calendar`
-
 - [] Make comparison documents
 - [] Write the instructions for testing
 
 - Setsumeikai Form
 
-  - [] Translations
+  - Translations
+    - [] Stuff I have
+    - [] Stuff I need to ask Miki about
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
@@ -109,13 +109,24 @@
 
 - Inquiries
 
-  - [] On inquiry creation, send an email to the school, parent and HQ
-    - Only from the API
-  - [] Translations
+  - [x] Change setsumeikai form to add involved schools on a separate row
+  - [x] On inquiry creation, send an email to the school, parent and HQ
+    - [x] for setsumeikai inquiries
+    - [x] for general inquiries
+  - [x] Planned school doesn't show in summary anymore
+    - was still using planned school, not school_id
+  - Translations
+    - [] Stuff I have
+    - [] Stuff I need to ask Miki about
   - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
+  - [x] Send emails on create as well as update
+    - previously creates meant nothing, but now they're important
+  - [x] Add `#manager` convenience method to `School`
+    - `school.managers.first` is awful, but I wanna keep the possibility of multiple SMs open
+  - [x] Allow creation of inquiries without a setsumeikai (general/ 'I')
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
     - if not, check the leftover adjustments aren't included in any stats
