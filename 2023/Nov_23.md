@@ -89,21 +89,17 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- [] Make comparison documents
-- [] Write the instructions for testing
-
 - Setsumeikai Form
 
+  - [x] Style SchoolCard
+  - [x] Clean up other assorted styling
   - Translations
-    - [] Stuff I have
+    - [x] Stuff I have
     - [] Stuff I need to ask Miki about
-  - [] Figure out how to trigger GTM when the form submits
-    - remember you have access to the dashboard
-    - and there's something which tracks form submissions
-  - [] Remove the fade-in effect
-    - it's a class in the theme, but which one?
-    - whole page may fade in separate to any sections
-  - [] Add loading states for SchoolList (use `Suspense`)
+  - [x] Override site styles
+  - [x] Remove the fade-in effect
+    - didn't end up managing it
+    - hidden away somewhere, not worth the effort/time when other stuff to work on
 
 ### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -116,9 +112,8 @@
   - [x] Planned school doesn't show in summary anymore
     - was still using planned school, not school_id
   - Translations
-    - [] Stuff I have
+    - [x] Stuff I have
     - [] Stuff I need to ask Miki about
-  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
@@ -127,6 +122,36 @@
   - [x] Add `#manager` convenience method to `School`
     - `school.managers.first` is awful, but I wanna keep the possibility of multiple SMs open
   - [x] Allow creation of inquiries without a setsumeikai (general/ 'I')
+  - Create translation sheets for Miki
+    - [x] Inquiries
+    - [x] Stats
+
+## November 8th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Make comparison documents
+- [] Write the instructions for testing
+- [] Copy school sheets from my fake one so SMs can use
+
+- Setsumeikai Form
+
+  - Translations
+    - [] Stuff I need to ask Miki about
+  - [] Figure out how to trigger GTM when the form submits
+    - remember you have access to the dashboard
+    - and there's something which tracks form submissions
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
+  - Translations
+    - [] Stuff I need to ask Miki about
+  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
+
+- General
+
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
     - if not, check the leftover adjustments aren't included in any stats
@@ -135,6 +160,9 @@
     - Monthly and weekly inquiries
     - Average setsumeikais per month
   - [] Leroy's survey thing
+    - Table needs survey name, separate jsonb cols to store responses/Qs and school_id FK
+    - show on invoice confirmation screen but only for external students
+    - one of them is shown only to external who are also first seasonal
   - [] Show all upcoming events in order on parent/child pages so we can handle parties better
 
 - Future Plans
