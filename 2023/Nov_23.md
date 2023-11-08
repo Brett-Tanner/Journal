@@ -136,9 +136,30 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- [] Make comparison documents
-- [] Write the instructions for testing
-- [] Copy school sheets from my fake one so SMs can use
+- [x] Copy school sheets from my fake one so SMs can use
+- [x] Write the instructions for testing
+- Make comparison documents
+
+  - [x] Add old pics
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Fix naming collision between slot_regs and slot_regs_count
+
+  - It actually counter cached all registrations, not just on slots
+  - Renamed to registrations_count
+  - Stops it counting all registrations for num_regs in calc_cost
+
+- [x] Remove all old empty invoices
+
+## November 9th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Make comparison documents
+
+  - [] Add new pics
+  - [] Write explanatory text
 
 - Setsumeikai Form
 
