@@ -192,7 +192,7 @@
 
 ## November 10th
 
-### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 - Setsumeikai Form
 
@@ -200,7 +200,7 @@
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
 
-### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Inquiries
 
@@ -248,10 +248,10 @@
     - [] Bump Rails version
     - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
 
-### Work Project - [Wiki](https://github.com/Brett-Tanner/KU-wiki)
+### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
-- Add Setsumeikai calendar page
-  - [] Overview of the flow/types
+- [x] Switch all the testing guide/comparison images to .avif
+- [] Create refactoring guide
 - [] Add 'How to contribute'
   - [] Adding a page
   - [] Adding a section
@@ -264,8 +264,10 @@
 
 ### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
 
+- [x] Move SignOut to a component in the Layout
+  - [x] exclude it from the Sign in page
+- [] Create (editable) list of transactions to be imported
 - Import transactions to the database
-  - [] Create UI scaffold
   - [] Auto-categorize based on rules
     - [] Add rules table
   - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
