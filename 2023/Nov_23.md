@@ -156,15 +156,41 @@
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- Make comparison documents
+- Make comparison/testing documents
 
-  - [] Add new pics
-  - [] Write explanatory text
+  - [x] Add new pics
+  - [x] update testing pics
+  - [x] add survey at the end
+  - [x] add Japanese translation
 
 - Setsumeikai Form
 
   - Translations
-    - [] Stuff I need to ask Miki about
+    - [x] Stuff I need to ask Miki about
+  - [x] Override site styles on the form/summary for borders
+  - [x] Final styling pass on the whole app
+  - [x] Scroll to top on page nav
+  - [x] Keep bottom navbar above site nav on mobile
+    - Only worked when logged in as WP Admin????
+    - So rolled it back
+  - [x] Add required badges
+
+### Work Project - [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
+  - Translations
+    - Stuff I need to ask Miki about
+      - [x] Stats
+      - [x] Inquiries & Setsumeikais
+    - [x] Comment out the setsumeikai links before pushing to live, not ready yet
+
+## November 10th
+
+### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Setsumeikai Form
+
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
@@ -173,12 +199,17 @@
 
 - Inquiries
 
-  - Translations
-    - [] Stuff I need to ask Miki about
+  - [] Look into other fields to add to inquiries
+    - [] Allow editing of notes inline in the table
   - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
+  - [] Leroy's survey thing
+    - Table needs survey name, separate jsonb cols to store responses/Qs and school_id FK
+    - show on invoice confirmation screen but only for external students
+    - one of them is shown only to external who are also first seasonal
+  - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
     - if not, check the leftover adjustments aren't included in any stats
@@ -186,10 +217,7 @@
     - Monthly and yearly setsumeikais scheduled
     - Monthly and weekly inquiries
     - Average setsumeikais per month
-  - [] Leroy's survey thing
-    - Table needs survey name, separate jsonb cols to store responses/Qs and school_id FK
-    - show on invoice confirmation screen but only for external students
-    - one of them is shown only to external who are also first seasonal
+    - Breakdown of referrers
   - [] Show all upcoming events in order on parent/child pages so we can handle parties better
 
 - Future Plans
