@@ -185,6 +185,11 @@
       - [x] Inquiries & Setsumeikais
     - [x] Comment out the setsumeikai links before pushing to live, not ready yet
 
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Set up basic CSV parsing
+  - Just an API route which logs the result for now
+
 ## November 10th
 
 ### Work Project - [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
