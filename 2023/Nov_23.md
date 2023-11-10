@@ -192,6 +192,35 @@
 
 ## November 10th
 
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- General
+
+  - [] Leroy's survey thing
+    - [x] Create Survey model/controller
+    - [x] Create Survey access policies
+    - [x] Create the views to create a survey
+    - [x] Create the views to display and manage surveys
+    - Write the logic to decide which kids are shown the surveys
+      - [x] Based on criteria
+      - [] And whether they or a sibling has already filled it out
+    - [x] Create SurveyResponse model/controller
+    - [x] Create SurveyResponse access policies
+    - [x] Create associations to other relevant models/fill in associated controller actions/views
+    - [x] Create the basic form for submitting survey responses on invoice confirmation screen
+      - [x] Implement generic field partial
+      - [x] Implement check field partial
+      - [x] Implement radio field partial
+      - [x] Implement select field partial
+    - [x] Create views for displaying and managing responses
+    - [x] Sort response table to ensure values line up with headers
+
+### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- [x] Switch all the testing guide/comparison images to .avif
+
+## November 11th
+
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 - Setsumeikai Form
@@ -211,9 +240,10 @@
 - General
 
   - [] Leroy's survey thing
-    - Table needs survey name, separate jsonb cols to store responses/Qs and school_id FK
-    - show on invoice confirmation screen but only for external students
-    - one of them is shown only to external who are also first seasonal
+    - Write the logic to decide which kids are shown the surveys
+      - [] And whether they or a sibling has already filled it out
+    - [] Do some processing on the JSON values to make sure they're the correct type (e.g. first seasonal boolean)
+    - [] Maybe include a stats page
   - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
@@ -250,7 +280,6 @@
 
 ### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
-- [x] Switch all the testing guide/comparison images to .avif
 - [] Create refactoring guide
 - [] Add 'How to contribute'
   - [] Adding a page
