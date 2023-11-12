@@ -219,7 +219,16 @@
 
 - [x] Switch all the testing guide/comparison images to .avif
 
-## November 11th
+## November 12th
+
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Go through the insane ordeal of parsing Japanese CSVs to something displayable by JS
+- [x] Create UploadApp React component, parent of
+  - [x] Upload form, to send the CSV to the parse endpoint
+  - [] Edit form, to edit the parsed CSV data for saving as transactions
+
+## November 13th
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
@@ -293,11 +302,16 @@
 
 ### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
 
-- [x] Move SignOut to a component in the Layout
-  - [x] exclude it from the Sign in page
-- [] Create (editable) list of transactions to be imported
-- Import transactions to the database
-  - [] Auto-categorize based on rules
-    - [] Add rules table
-  - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
-    - [] If uploaded for any time prior to the last day in the database, just ignore them
+- Create UploadApp React component, parent of
+
+  - [] EditForm, to edit the parsed CSV data for saving as transactions
+  - [] TransactionField to display the transaction and allow it to be edited
+
+- [] Write tests, especially for the parsing API endpoint
+
+- Features
+
+- [] Auto-categorize based on rules
+  - [] Add rules table
+- [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
+  - [] If uploaded for any time prior to the last day in the database, just ignore them
