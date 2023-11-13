@@ -230,17 +230,6 @@
 
 ## November 13th
 
-### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
-
-- Setsumeikai Form
-
-  - [] Still send full setsumeikais to the app
-    - [] Also show they're full somehow
-  - [] Allow attendance_limit to be 0
-  - [] Figure out how to trigger GTM when the form submits
-    - remember you have access to the dashboard
-    - and there's something which tracks form submissions
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Fix reservation kids not being members for the new 3 course
@@ -248,15 +237,9 @@
 - [x] remove unused test files
 - [x] update testing gems
 
-- Inquiries
-
-  - [] Look into other fields to add to inquiries
-    - [] Allow editing of notes inline in the table
-  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
-
 - General
 
-  - [] Leroy's survey thing
+  - [x] Leroy's survey thing
     - Write the logic to decide which kids are shown the surveys
       - Write tests
         - create updated factories for
@@ -273,7 +256,33 @@
       - [x] true when random boolean values match
       - [x] true when date values match
     - [x] Fix checkbox component
-    - [] Fix layout of checkbox results in tables
+
+## November 14th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Setsumeikai Form
+
+  - [] Still send full setsumeikais to the app
+    - [] Also show they're full somehow
+  - [] Allow attendance_limit to be 0
+  - [] Figure out how to trigger GTM when the form submits
+    - remember you have access to the dashboard
+    - and there's something which tracks form submissions
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
+  - [] Seems that we're not sending setsumeikais to the involved schools for the API, will need to check that
+  - [] Backend needs translations, probs just copy column names from the sheet actually
+  - [] Look into other fields to add to inquiries
+    - [] Allow editing of notes inline in the table
+  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
+
+- General
+
+  - [] Fix layout of checkbox results in survey response tables
   - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
@@ -323,13 +332,6 @@
   - [] Useful Commands
 
 ### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
-
-- Create UploadApp React component, parent of
-
-  - [] EditForm, to edit the parsed CSV data for saving as transactions
-  - [] TransactionField to display the transaction and allow it to be edited
-
-- [] Write tests, especially for the parsing API endpoint
 
 - Features
 
