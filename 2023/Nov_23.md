@@ -234,11 +234,19 @@
 
 - Setsumeikai Form
 
+  - [] Still send full setsumeikais to the app
+    - [] Also show they're full somehow
+  - [] Allow attendance_limit to be 0
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
     - and there's something which tracks form submissions
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Fix reservation kids not being members for the new 3 course
+- [x] Use direnv and binstubs to make rspec faster to run
+- [x] remove unused test files
+- [x] update testing gems
 
 - Inquiries
 
@@ -250,9 +258,22 @@
 
   - [] Leroy's survey thing
     - Write the logic to decide which kids are shown the surveys
-      - [] And whether they or a sibling has already filled it out
-    - [] Do some processing on the JSON values to make sure they're the correct type (e.g. first seasonal boolean)
-    - [] Maybe include a stats page
+      - Write tests
+        - create updated factories for
+          - [x] School
+          - [x] Child
+          - [x] Survey
+        - [x] figure out how to write test helpers & require them in the test
+      - [x] false if all criteria blank
+      - [x] false if they have already filled it out
+      - [x] false if a sibling has already filled it out
+      - [x] true when random enum values match
+      - [x] true when random string values match
+      - [x] true when SSID values match
+      - [x] true when random boolean values match
+      - [x] true when date values match
+    - [x] Fix checkbox component
+    - [] Fix layout of checkbox results in tables
   - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
     - see if we can auto-delete that
@@ -273,6 +294,7 @@
 
     - Printable template with kids' names and a color which shows their photo status
 
+  - [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
   - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
     - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
     - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
