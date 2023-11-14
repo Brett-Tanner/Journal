@@ -265,11 +265,9 @@
 
   - [x] Still send full setsumeikais to the app
     - [x] Add a boolean to the response JSON indicating if full or not
-    - [] Display full setsumeikais differently and disable clicking them (maybe the title & classes based on boolean)
-  - [] Allow attendance_limit to be 0
-  - [] Figure out how to trigger GTM when the form submits
-    - remember you have access to the dashboard
-    - and there's something which tracks form submissions
+    - [x] Display full setsumeikais differently and disable clicking them (maybe the title & classes based on boolean)
+    - [x] Delete all setsumeikais before pushing new version, they didn't have a default for inquiries_count
+  - [x] Allow attendance_limit to be 0
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -290,13 +288,31 @@
   - [x] Modify inquiry index to more closely match the sheet
   - [x] Allow deleting setsumeikais
     - [x] But throw an error if there are associated inquiries
+
+### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
+
+- [x] Add inputs to the parsed transactions
+
+## November 15th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Figure out how to trigger GTM when the form submits
+  - remember you have access to the dashboard
+  - and there's something which tracks form submissions
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Inquiries
+
   - [] Look into other fields to add to inquiries
     - [] Allow editing of notes inline in the table
   - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
-  - [] Add translation for thank you message on surveys? Not sure if it's there in JA
+  - [] Change the Setsumeikai factory to generate an involvement for the host school
+    - [] and write a test that checks it won't save without one
   - [] Fix layout of checkbox results in survey response tables
   - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
@@ -350,6 +366,8 @@
 
 - Features
 
+- [] wire the upload form up to submit to
+- [] an endpoint to create DB records
 - [] Auto-categorize based on rules
   - [] Add rules table
 - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
