@@ -263,8 +263,9 @@
 
 - Setsumeikai Form
 
-  - [] Still send full setsumeikais to the app
-    - [] Also show they're full somehow
+  - [x] Still send full setsumeikais to the app
+    - [x] Add a boolean to the response JSON indicating if full or not
+    - [] Display full setsumeikais differently and disable clicking them (maybe the title & classes based on boolean)
   - [] Allow attendance_limit to be 0
   - [] Figure out how to trigger GTM when the form submits
     - remember you have access to the dashboard
@@ -274,14 +275,28 @@
 
 - Inquiries
 
-  - [] Seems that we're not sending setsumeikais to the involved schools for the API, will need to check that
-  - [] Backend needs translations, probs just copy column names from the sheet actually
+  - [x] Add nakagawa's translation suggestions
+  - [x] Add school selection for AMs
+  - [x] Send `involved_setsumeikais` to the calendar, with upcoming and visible scopes applied
+  - [x] Auto-select current school in setsumeikai form for admin/AM
+  - [x] Refactor Setsumeikais#index controller logic
+  - Modify forms to do everything I can to make sure schools are involved in their own setsumeikai
+    - [x] autofill the current school on the form
+    - [x] add model-level validation that involved schools includes host school
+  - [x] Add 'copy' button to existing setsumeikais
+  - [x] Refactor Inquiries#index controller logic
+  - [x] Move the table filter headers into a partial
+    - [x] Do the same for every other instance of filter headers in the site (except event sheet)
+  - [x] Modify inquiry index to more closely match the sheet
+  - [x] Allow deleting setsumeikais
+    - [x] But throw an error if there are associated inquiries
   - [] Look into other fields to add to inquiries
     - [] Allow editing of notes inline in the table
   - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
 
 - General
 
+  - [] Add translation for thank you message on surveys? Not sure if it's there in JA
   - [] Fix layout of checkbox results in survey response tables
   - [] Write the refactoring guide and do some small examples so others can work on it
   - [] In recent invoices, kids who registered then unregistered down to 0 are shown
