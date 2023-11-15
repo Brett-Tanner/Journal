@@ -297,36 +297,60 @@
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- [] Figure out how to trigger GTM when the form submits
-  - remember you have access to the dashboard
-  - and there's something which tracks form submissions
+- [x] Figure out how to trigger GTM when the form submits
+  - [x] Figure out there's a way to send custom events to the data layer with `useEffect`
+  - [x] Add the code to do so (the custom event is `setsu_success`)
+  - [x] Configure GTM to listen for it
+    - [x] Test the workspace
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Inquiries
 
-  - [] Look into other fields to add to inquiries
-    - [] Allow editing of notes inline in the table
-  - [] Allow sorting of inquiries/setsumeikais through links that filter by categories etc.
+- [x] use `involved_setsumeikais` everywhere `all_setsumeikais` was
+- [x] Scope the setsumeikai index with a combo of the policy scope and @school.id
 
 - General
 
-  - [] Change the Setsumeikai factory to generate an involvement for the host school
-    - [] and write a test that checks it won't save without one
-  - [] Fix layout of checkbox results in survey response tables
-  - [] Write the refactoring guide and do some small examples so others can work on it
-  - [] In recent invoices, kids who registered then unregistered down to 0 are shown
-    - see if we can auto-delete that
-    - if not, check the leftover adjustments aren't included in any stats
+  - [x] Only hide the unconfirm button if there are unconfirmed invoices for **the same event**
+  - [x] Correctly associate checkbox labels to their checkboxes on survey response forms
+  - [x] Add translation for thank you message
+  - [x] Format the list of options in a more readable way
+  - [x] Stretch the main (colored) heading across the width of the card
+  - Fix layout of checkbox results in survey response tables
+    - [x] make sure you're only showing responses for that survey, on live it's showing all for that Q for all surveys
+    - [x] fit all checkbox responses in one column
+  - [x] Add custom error pages
+  - [x] Optimise DB requests for Surveys
+  - [x] In recent invoices, kids who registered then unregistered down to 0 are shown
+    - was a missing `real` scope
+  - [x] Add columns to survey_response table
+    - en_name
+    - grade
+    - email
+    - phone
+  - [x] Add a notes field, text area which SMs can submit to add notes on the survey
+  - [x] Give AMs and SMs access to surveys and tweak the permissions/stuff that's displayed
+  - [x] Stop error controller responding to spam requests and throwing errors
+    - just removed it again lol
+
+## November 16th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- General
+
   - [] Add setsumeikai stats
     - Monthly and yearly setsumeikais scheduled
     - Monthly and weekly inquiries
     - Average setsumeikais per month
     - Breakdown of referrers
   - [] Show all upcoming events in order on parent/child pages so we can handle parties better
+  - [] Write the refactoring guide and do some small examples so others can work on it
 
 - Future Plans
 
+  - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
   - [] Move control of the domain from that Japanese site to Cloudflare
   - [] Add a 'download PDF invoice' button
     - Just for staff or for everyone?
