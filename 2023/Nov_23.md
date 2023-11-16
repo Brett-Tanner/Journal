@@ -338,6 +338,23 @@
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
+- Styling
+    - Nav
+        - [x] School breadcrumb
+        - [x] Calendar breadcrumb
+        - [x] Form breadcrumb
+    - Main
+        - [x] background
+    - School List
+        - [] Cards
+    - Calendar
+        - [] Header
+    - Form
+        - [] SelectionFields
+        - [] Summary
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - General
 
   - [] Add setsumeikai stats
