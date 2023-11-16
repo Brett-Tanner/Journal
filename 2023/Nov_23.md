@@ -344,15 +344,21 @@
     - [x] Calendar breadcrumb
     - [x] Form breadcrumb
     - [x] Fix Breadcrumb borders being overridden by WP styles
+    - [x] FooterNav
+    - [] Form breadcrumb isn't squared when just a heading
+    - [] Round the corners of breadcrumbs
   - Main
     - [x] background
   - School List
-    - [] Cards
+    - [x] Cards
+    - [x] Search box
   - Calendar
     - [] Header
+    - [] Body
   - Form
     - [] SelectionFields
     - [] Summary
+- [] Do a responsiveness pass, maybe add a 3rd breakpoint
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
