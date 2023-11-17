@@ -345,25 +345,49 @@
     - [x] Form breadcrumb
     - [x] Fix Breadcrumb borders being overridden by WP styles
     - [x] FooterNav
-    - [] Form breadcrumb isn't squared when just a heading
-    - [] Round the corners of breadcrumbs
   - Main
     - [x] background
   - School List
     - [x] Cards
     - [x] Search box
-  - Calendar
-    - [] Header
-    - [] Body
-  - Form
-    - [] SelectionFields
-    - [] Summary
-- [] Do a responsiveness pass, maybe add a 3rd breakpoint
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Show nav with schools to choose which responses are shown
 - [x] Filter responses by AM schools
+
+## November 17th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Styling
+  - Nav
+    - [x] Form breadcrumb isn't squared when just a heading
+    - [x] Round the corners of breadcrumbs
+ - Calendar
+    - [x] Header
+    - [x] Body
+        - [x] Table spacing & borders
+        - [x] Cell contents
+  - Form
+    - [x] SelectionFields
+    - [x] Inputs
+
+## November 20th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Styling
+ - Calendar
+    - Header
+        - [] Come back and do the fading dashes later
+  - Form
+    - [] Irregular fields
+    - [] Summary
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
 
 - General
 
