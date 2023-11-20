@@ -387,7 +387,6 @@
   - [x] Irregular fields
   - [x] Change search input to ku-faded, white background
 - [] Summary
-- [] Lazy load school images to decrease AWS load
 - [] Scroll to the correct point on navigation
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
