@@ -377,23 +377,43 @@
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- Styling
 - Calendar
-  - Header
-    - [] Come back and do the fading dashes later
 - Form
   - [x] Add outline styles on input focus
   - [x] Style placeholder text in date fields
   - [x] Irregular fields
   - [x] Change search input to ku-faded, white background
-- [] Summary
-- [] Scroll to the correct point on navigation
+  - [x] Options text is styled orange, probably inherits. Set it to black.
+- [x] Scroll to the correct point on navigation
+- [x] Search box borders (active and not) overridden by WP styles
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Add a statistician role, and the appropriate policies/views
 - [x] Make a list of things AMs requested and my responses
+- [x] Live diagnosed an issue one of Yoshi's customers was having
+
+## November 21st
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Calendar
+  - Header
+    - [] Come back and do the fading dashes later
+- [] Summary
+
+Inquiry form
+
+- Style to match setsu form
+  - [] Form
+  - [] Summary
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - [] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
+- [] Since we can apparently have children without a school id, need a better way of handling that
+
+  - e.g. currently causes the parent's profile to error on login
 
 - General
 
