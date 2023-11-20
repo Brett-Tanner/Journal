@@ -382,11 +382,13 @@
   - Header
     - [] Come back and do the fading dashes later
 - Form
-  - [] Add outline styles on input focus
-  - [] Style placeholder text in date fields
-  - [] Irregular fields
-  - [] Summary
+  - [x] Add outline styles on input focus
+  - [x] Style placeholder text in date fields
+  - [x] Irregular fields
+  - [x] Change search input to ku-faded, white background
+- [] Summary
 - [] Lazy load school images to decrease AWS load
+- [] Scroll to the correct point on navigation
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
