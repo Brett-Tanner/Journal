@@ -364,29 +364,34 @@
   - Nav
     - [x] Form breadcrumb isn't squared when just a heading
     - [x] Round the corners of breadcrumbs
- - Calendar
-    - [x] Header
-    - [x] Body
-        - [x] Table spacing & borders
-        - [x] Cell contents
-  - Form
-    - [x] SelectionFields
-    - [x] Inputs
+- Calendar
+  - [x] Header
+  - [x] Body
+    - [x] Table spacing & borders
+    - [x] Cell contents
+- Form
+  - [x] SelectionFields
+  - [x] Inputs
 
 ## November 20th
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 - Styling
- - Calendar
-    - Header
-        - [] Come back and do the fading dashes later
-  - Form
-    - [] Irregular fields
-    - [] Summary
+- Calendar
+  - Header
+    - [] Come back and do the fading dashes later
+- Form
+  - [] Add outline styles on input focus
+  - [] Style placeholder text in date fields
+  - [] Irregular fields
+  - [] Summary
+- [] Lazy load school images to decrease AWS load
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [x] Add a statistician role, and the appropriate policies/views
+- [x] Make a list of things AMs requested and my responses
 - [] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
 
 - General
