@@ -397,19 +397,30 @@
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- Calendar
-  - Header
-    - [] Come back and do the fading dashes later
-- [] Summary
+- [x] Summary
+    - [x] Move hidden fields into the actual form -__-
+    - [x] Add and style selectionsBox
+    - [x] Style Summary body
+    - [x] Add 4pm callout
+- [x] Mobile pass
+    - [x] Calendar
+    - [x] Make the breadcrumbs not skewed
+    - [x] use jaFormat in SelectionFields
+- [x] Error page
 
 Inquiry form
 
 - Style to match setsu form
-  - [] Form
-  - [] Summary
+  - [x] Form
+  - [x] Summary
+
+## November 21st
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Registering for both AM and PM means the kid shows up twice on the attendance sheet, I probably missed a uniq or distinct somewhere
 - [] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
 - [] Since we can apparently have children without a school id, need a better way of handling that
 
