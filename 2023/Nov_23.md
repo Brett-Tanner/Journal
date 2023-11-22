@@ -398,14 +398,14 @@
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
 - [x] Summary
-    - [x] Move hidden fields into the actual form -__-
-    - [x] Add and style selectionsBox
-    - [x] Style Summary body
-    - [x] Add 4pm callout
+  - [x] Move hidden fields into the actual form
+  - [x] Add and style selectionsBox
+  - [x] Style Summary body
+  - [x] Add 4pm callout
 - [x] Mobile pass
-    - [x] Calendar
-    - [x] Make the breadcrumbs not skewed
-    - [x] use jaFormat in SelectionFields
+  - [x] Calendar
+  - [x] Make the breadcrumbs not skewed
+  - [x] use jaFormat in SelectionFields
 - [x] Error page
 
 Inquiry form
@@ -414,30 +414,44 @@ Inquiry form
   - [x] Form
   - [x] Summary
 
-## November 21st
+## November 22nd
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
+- [x] Make calendar padding (and a bunch of other small stuff) uniform
+- [x] Return bookends to visibility on desktop screens
+
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
-
-- [] Registering for both AM and PM means the kid shows up twice on the attendance sheet, I probably missed a uniq or distinct somewhere
-- [] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
-- [] Since we can apparently have children without a school id, need a better way of handling that
-
-  - e.g. currently causes the parent's profile to error on login
 
 - General
 
+  - [x] Registering for both AM and PM means the kid shows up twice on the attendance sheet, I probably missed a uniq or distinct somewhere
+    - was a result of adding afternoon kids to morning kids in table without removing the overlap
+  - [x] Fix what seems to be a lot of N+1 requests getting schools from setsu endpoint
+  - [x] Write the refactoring guide and do some small examples so others can work on it
+  - [x] Add bug and feature issue templates
+  - [x] Add some starter issues
+
+### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
+
+- [x] Create refactoring guide
+
+## November 24th
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- General
+
+  - [] Show all upcoming events in order on parent/child pages so we can handle parties better
   - [] Add setsumeikai stats
     - Monthly and yearly setsumeikais scheduled
     - Monthly and weekly inquiries
     - Average setsumeikais per month
     - Breakdown of referrers
-  - [] Show all upcoming events in order on parent/child pages so we can handle parties better
-  - [] Write the refactoring guide and do some small examples so others can work on it
 
 - Future Plans
 
+  - [] Address dependabot warnings
   - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
   - [] Move control of the domain from that Japanese site to Cloudflare
   - [] Add a 'download PDF invoice' button
@@ -463,7 +477,6 @@ Inquiry form
 
 ### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
-- [] Create refactoring guide
 - [] Add 'How to contribute'
   - [] Adding a page
   - [] Adding a section
