@@ -440,18 +440,30 @@ Inquiry form
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- General
+- [x] Set up, then terminate testing environment to try out platform changes
+- [x] Undo the change that removed editing invoices for staff by adding it to their card
+- [x] Get a test environment set up on AWS so I can try upgrades before pushing to live
+- [x] Address Puma dependabot warning
+- [x] Address the other warnings by upgrading to Rails 7.1.2
+  - REMEMBER TO INSTALL `libyaml-devel` package before pushing the upgrade. WILL FAIL otherwise
+  - Also run the migrations straight after pushing
+- [x] Upgrade Devise to not need the Turbo workaround anymore
 
-  - [] Show all upcoming events in order on parent/child pages so we can handle parties better
-  - [] Add setsumeikai stats
-    - Monthly and yearly setsumeikais scheduled
-    - Monthly and weekly inquiries
-    - Average setsumeikais per month
-    - Breakdown of referrers
+## November 27th
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Look into disabling some of the stuff we don't use like ActionCable/Text
+- [] Show all upcoming events in order on parent/child pages so we can handle parties better
+- [] Add setsumeikai stats
+
+  - Monthly and yearly setsumeikais scheduled
+  - Monthly and weekly inquiries
+  - Average setsumeikais per month
+  - Breakdown of referrers
 
 - Future Plans
 
-  - [] Address dependabot warnings
   - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
   - [] Move control of the domain from that Japanese site to Cloudflare
   - [] Add a 'download PDF invoice' button
