@@ -509,3 +509,11 @@ Inquiry form
   - [] Add rules table
 - [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
   - [] If uploaded for any time prior to the last day in the database, just ignore them
+
+### Work Project - [Games Site]()
+
+- [] Avatars
+  - Can customise with points earned from games
+- [] Matching game
+  - Toggle numbers on the cards
+  - Play audio of the word when clicked? (Audio file size might be an issue)
