@@ -451,9 +451,30 @@ Inquiry form
 
 ## November 27th
 
+- [x] Remove mobile background-image from WP nav-top for Jack
+  - Previous css was `#nav-top{ background-position: 50% 103%; background-image: url("img/img-back-learnwithfun-menu-sp.svg"); background-size: 100%;}`
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Add list of nearby schools to setsumeikai calendar
+- [] Prepend KidsUp to all the school names (in the object)
+  - [] To React app
+  - [] To Rails DB
+  - [] Add new nearby areas to bus_areas
+- [] Make all the text black
+- [] Make all backgrounds white
+- [] Remove bold from background image
+- [] In general copy the input styles from Tailwind inputs
+  - Especially the border-width they're not a fan of
+- [] Trim the inquiry form down to just name, school and one of phone or email. Plus requests
+
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Look into disabling some of the stuff we don't use like ActionCable/Text
+- Write tests for Invoice#calc_cost to prepare for the rewrite
+  - [x] Test cost calculation when a course is matched
+  - [x] Test cost calculation when a course is not matched
+  - [x] Test cost calculation when the pointless price is involved
+  - [] Test adjustments
 - [] Show all upcoming events in order on parent/child pages so we can handle parties better
 - [] Add setsumeikai stats
 
@@ -462,30 +483,46 @@ Inquiry form
   - Average setsumeikais per month
   - Breakdown of referrers
 
-- Future Plans
+- [] Add button to generate photo service armband PDF for parties
+  - Printable template with kids' names and a color which shows their photo status
 
-  - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
-  - [] Move control of the domain from that Japanese site to Cloudflare
-  - [] Add a 'download PDF invoice' button
-    - Just for staff or for everyone?
-  - [] Add button to generate photo service armband PDF for parties
+#### Future Plans
 
-    - Printable template with kids' names and a color which shows their photo status
+- [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
+- [] Move control of the domain from that Japanese site to Cloudflare
+- Platform Upgrades
+  - TEST ALL ON STAGING FIRST
+  - [] Bump AWS platform version
+  - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
 
-  - [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
-  - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
-    - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
-    - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
-  - Simplify/modularize invoice code
-    - [] Split out PDF functionality
-    - [] Preload all the stuff I need for calc_cost at the start and pass it explicitly
-    - [] Create columns for each type of cost?
-  - Platform Upgrades
-    - TEST ALL ON STAGING FIRST
-    - [] Bump AWS platform version
-    - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
-    - [] Bump Rails version
-    - [] Bump gem versions that've received a major upgrade (not the mail one though, make sure that's locked)
+#### Optimisation
+
+- [] Change the current event#show to be Invoice#new, since that's what it really is
+  - Do it in Phlex to test out how well it works
+  - [] Rework the current add_slot partials into a container, morning and afternoon
+- [] Nest the confirm_invoice view inside the new route so it's confirm_new_invoice_path
+
+```
+resources :invoices do
+  new do
+    post :confirm
+  end
+end
+```
+
+- [] Similarly, I could do school filtering by nesting those resources inside the school resource.
+- [] Use #fetch and #dig in the controller rather than conditionals about the existence of a param, since they can have a default value if not found
+- [] Move all formatting-related code into helpers
+  - [] Can still use in controller using `helpers.method`
+- [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
+  - [] Do a moderately complex view in each of them and benchmark it
+- See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
+  - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
+  - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
+- Simplify/modularize invoice code
+  - [] Split out PDF functionality
+  - [] Preload all the stuff I need for calc_cost at the start and pass it explicitly
+  - [] Create columns for each type of cost?
 
 ### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
@@ -516,4 +553,5 @@ Inquiry form
   - Can customise with points earned from games
 - [] Matching game
   - Toggle numbers on the cards
+  - Show heat gauge/points earned on right
   - Play audio of the word when clicked? (Audio file size might be an issue)
