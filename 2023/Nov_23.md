@@ -454,26 +454,52 @@ Inquiry form
 - [x] Remove mobile background-image from WP nav-top for Jack
   - Previous css was `#nav-top{ background-position: 50% 103%; background-image: url("img/img-back-learnwithfun-menu-sp.svg"); background-size: 100%;}`
 
-### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
-
-- [] Add list of nearby schools to setsumeikai calendar
-- [] Prepend KidsUp to all the school names (in the object)
-  - [] To React app
-  - [] To Rails DB
-  - [] Add new nearby areas to bus_areas
-- [] Make all the text black
-- [] Make all backgrounds white
-- [] Remove bold from background image
-- [] In general copy the input styles from Tailwind inputs
-  - Especially the border-width they're not a fan of
-- [] Trim the inquiry form down to just name, school and one of phone or email. Plus requests
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [x] Test cost calculation when a course is matched
   - [x] Test cost calculation when a course is not matched
   - [x] Test cost calculation when the pointless price is involved
+
+## November 28th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [x] Prepend KidsUp to all the school names (in the object)
+  - [x] And normalize the school names when searching so it's case insensitive
+- [x] Make all the text black
+- [x] Make all backgrounds white
+- [x] Remove bold from placeholder text
+- [x] Re-style search box, placeholder/icon opacity
+- [x] Trim the inquiry form down to just name, school, requests, phone and email
+  - [x] Handle missing fields on the database side
+- Add list of nearby schools to setsumeikai calendar
+  - [x] To Rails DB
+  - [x] To React app
+  - [x] Add the actual data to the live site
+  - [] Add new nearby areas to bus_areas
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Use Oj#safe_load instead of Oj#load
+- [x] Remove the lock on options
+- [x] Remove unnecessary optionable_id/type from TimeSlot edit
+- [x] Add button to toggle between special and sesonal categories for afternoon TimeSlots
+- [x] Fix the afternoon attendance sheets
+  - Made sure @afternoon variables are always set, but empty if morning
+- [x] Test that changing a TimeSlot to special so you can edit its afternoon works as expected
+- [x] Wrap `@event_options + options` in brackets so you're not just iterating over the options -\_\_-
+
+## November 29th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- Add list of nearby schools to setsumeikai calendar
+  - [] Add new nearby areas to bus_areas
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Test adjustments
 - [] Show all upcoming events in order on parent/child pages so we can handle parties better
 - [] Add setsumeikai stats
