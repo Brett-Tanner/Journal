@@ -494,21 +494,37 @@ Inquiry form
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
 
-- Add list of nearby schools to setsumeikai calendar
-  - [] Add new nearby areas to bus_areas
+- [x] On the inquiry form, fetch the school list from the Seasonal API
+- [x] Add list of nearby schools to setsumeikai calendar
+- [] Add new nearby areas to bus_areas
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [x] Run Brakeman && remove a dangerous send when choosing the correct attendance sheet
+- [x] Actually use the accessKey GAS sends, set it as an ENV variable and require it before changes are made
+- Add setsumeikai stats
+  - [x] Summary stats
+    - Total setsumeikais
+    - Average monthly setsumeikais
+    - Inquiries per setsumeikai
+    - Average monthly inquiries
+    - Total Inquiries
+  - [x] Monthly setsumeikais scheduled
+  - [x] Monthly inquiries
+  - [x] Breakdown of referrers
+  - [x] All those stats per school for admins
+
+## November 30th
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar.git)
+
+- [] Add new nearby areas to bus_areas
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Show all upcoming events in order on parent/child pages so we can handle parties better
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Test adjustments
-- [] Show all upcoming events in order on parent/child pages so we can handle parties better
-- [] Add setsumeikai stats
-
-  - Monthly and yearly setsumeikais scheduled
-  - Monthly and weekly inquiries
-  - Average setsumeikais per month
-  - Breakdown of referrers
-
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 
@@ -521,11 +537,23 @@ Inquiry form
   - [] Bump AWS platform version
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
 
+#### Views
+
+- [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
+  - [] Do a moderately complex view in each of them and benchmark it
+- [] Move all formatting-related code into helpers
+  - [] Can still use in controller using `helpers.method`
+- [] Change the current event#show to be Invoice#new, since that's what it really is
+  - [] Rework the current add_slot partials into a container, morning and afternoon
+    - They can likely use fieldsets (with a form attribute matching the invoice form's id) to be submitted with the form directly
+    - reduces the JS I need on that page [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+- [] If you wanna show fallback content (like on the invoice index) use `render 'partial' || 'fallback text/content'`
+- [] Extract form error messages into a shared partial
+- [] Potentially also extract fields shared between multiple models into a partial (e.g. names for kids/parents)
+  - Or just partials for each type of form group? As a fieldset
+
 #### Optimisation
 
-- [] Change the current event#show to be Invoice#new, since that's what it really is
-  - Do it in Phlex to test out how well it works
-  - [] Rework the current add_slot partials into a container, morning and afternoon
 - [] Nest the confirm_invoice view inside the new route so it's confirm_new_invoice_path
 
 ```
@@ -538,10 +566,6 @@ end
 
 - [] Similarly, I could do school filtering by nesting those resources inside the school resource.
 - [] Use #fetch and #dig in the controller rather than conditionals about the existence of a param, since they can have a default value if not found
-- [] Move all formatting-related code into helpers
-  - [] Can still use in controller using `helpers.method`
-- [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
-  - [] Do a moderately complex view in each of them and benchmark it
 - See if the occasional memory problems are actually something more like [this](https://www.engineyard.com/blog/thats-not-a-memory-leak-its-bloat/)
   - [] Also loading all the TimeSlots and Options from the start when calculating Invoice costs
   - [] Also maybe Rack::Bug, or a newer version of something similar since it was last updated in 2015
