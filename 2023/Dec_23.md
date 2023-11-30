@@ -14,27 +14,13 @@
 
 #### Future Plans
 
+- [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
 - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
 - [] Move control of the domain from that Japanese site to Cloudflare
 - Platform Upgrades
   - TEST ALL ON STAGING FIRST
   - [] Bump AWS platform version
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
-
-#### Views
-
-- [] Look into HAML for templating rather than ERB, as well as the other options like phlex or components
-  - [] Do a moderately complex view in each of them and benchmark it
-- [] Move all formatting-related code into helpers
-  - [] Can still use in controller using `helpers.method`
-- [] Change the current event#show to be Invoice#new, since that's what it really is
-  - [] Rework the current add_slot partials into a container, morning and afternoon
-    - They can likely use fieldsets (with a form attribute matching the invoice form's id) to be submitted with the form directly
-    - reduces the JS I need on that page [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
-- [] If you wanna show fallback content (like on the invoice index) use `render 'partial' || 'fallback text/content'`
-- [] Extract form error messages into a shared partial
-- [] Potentially also extract fields shared between multiple models into a partial (e.g. names for kids/parents)
-  - Or just partials for each type of form group? As a fieldset
 
 #### Optimisation
 
@@ -57,6 +43,19 @@ end
   - [] Split out PDF functionality
   - [] Preload all the stuff I need for calc_cost at the start and pass it explicitly
   - [] Create columns for each type of cost?
+- [] use read/write_attribute or bracked notation in my custom getters/setters
+  - Not sure what I'm using now, but probably not those
+
+#### Views
+
+- [] Change the current event#show to be Invoice#new, since that's what it really is
+  - [] Rework the current add_slot partials into a container, morning and afternoon
+    - They can likely use fieldsets (with a form attribute matching the invoice form's id) to be submitted with the form directly
+    - reduces the JS I need on that page [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+- [] If you wanna show fallback content (like on the invoice index) use `render 'partial' || 'fallback text/content'`
+- [] Extract form error messages into a shared partial
+- [] Potentially also extract fields shared between multiple models into a partial (e.g. names for kids/parents)
+  - Or just partials for each type of form group? As a fieldset
 
 ### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
