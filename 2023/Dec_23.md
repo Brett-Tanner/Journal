@@ -5,10 +5,24 @@
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Write tests for Invoice#calc_cost to prepare for the rewrite
-  - [] Test adjustments
-  - [] Test options
-  - [] Test PDF creation (or at least that one is created)
-  - [] Test the summary
+  - [x] Automatic adjustments
+  - [x] Manual adjustments
+  - [x] Basic registrations tests (including dup protection)
+  - Option price calculation
+    - [x] Slot options
+
+## December 2nd
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Write tests for Invoice#calc_cost to prepare for the rewrite
+  - Option price calculation
+    - [] Event options
+  - [] Snack price calculation
+  - [] Extra cost price calculation
+  - [] PDF creation (or at least that one is created)
+  - [] Summary
+    - Maybe just add some of these to the other, more specific tests to take advantage of the setup in those files
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 
