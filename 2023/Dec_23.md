@@ -46,7 +46,34 @@
   - [] Bump AWS platform version
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
 
-#### Optimisation
+##### ActiveRecord
+
+- Can use has_one on a has_many to single out a specific important record
+  - [] Managed school
+  - [] Next event
+  - [] Active invoice
+- Rather than manually setting `_destroy`, use `#mark_for_destruction`
+  - [] Will be used by invoice calculations, maybe in the confirm controller too?
+- You can define methods on associations either by nesting them within a block for that association or defining a class method on the model like `self.my_method`
+  - Lets me pass parameters to an operation on an association
+  - But I think this is basically just scopes no?
+  - Apparently can define a scope on children like `scope :event_invoices, ->(name) { where(event_name: name) }`
+- More specific to what I've needed before, you can pass params to scopes by just putting brackets with the params after the '->'
+  - Can also put these in modules for re-use, could be handy for stuff like dates that are on everything
+  - [] Definitely useful somewhere in the Charts/Stats section of the site
+- [] Look into using [query logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) for a better idea of where slow SQL is coming from
+- validates_acceptance_of creates a virtual attribute which must be true for the record to be saved
+  - [] add to User for backend validation of privacy policy
+- You can chain a list of validations on a single column, like `validates presence: true, uniqueness: true ... etc.`
+- Look into [delegated types](https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html)
+  - [] especially for splitting the mess of user logic into more manageable chunks
+- Maybe use [#store](https://api.rubyonrails.org/classes/ActiveRecord/Store.html) on models with JSON, seems to give a nicer API
+  - [] price lists
+  - [] surveys
+  - [] maybe email preferences
+- Use SQL strings, or maybe hte active_record_import gem to update children
+
+##### Optimisation
 
 - [] Nest the confirm_invoice view inside the new route so it's confirm_new_invoice_path
 
@@ -70,7 +97,7 @@ end
 - [] use read/write_attribute or bracked notation in my custom getters/setters
   - Not sure what I'm using now, but probably not those
 
-#### Views
+##### Views
 
 - [] Change the current event#show to be Invoice#new, since that's what it really is
   - [] Rework the current add_slot partials into a container, morning and afternoon
