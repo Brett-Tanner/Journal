@@ -27,6 +27,10 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- Remember debug() is a helper in views, formats and YML and displays in pre tags
+- [] Why couldn't Leroy delete the auto-created options for that Saturday he made
+- [] Invesigate what happens if you upload a new asset with the same key as an existing one
+- [] Check for missing translations with `i18n-tasks`
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Snack price calculation
   - [] Extra cost price calculation
@@ -99,6 +103,9 @@ end
 
 ##### Views
 
+- [] Remove locale param from number_to_currency calls, shouldn't need it
+- [] number_to_phone_number exists
+- [] there's also a number_to_percentage helper, but may be more verbose than what I'm doing now
 - [] Change the current event#show to be Invoice#new, since that's what it really is
   - [] Rework the current add_slot partials into a container, morning and afternoon
     - They can likely use fieldsets (with a form attribute matching the invoice form's id) to be submitted with the form directly
@@ -107,6 +114,9 @@ end
 - [] Extract form error messages into a shared partial
 - [] Potentially also extract fields shared between multiple models into a partial (e.g. names for kids/parents)
   - Or just partials for each type of form group? As a fieldset
+- [] Apparently there are undocumented ControllerHelper methods I can use to generate the ID for for main elements
+- [] Use time_tag helper when outputting date or time, generates a `time` element which apparently is a thing
+- [] Use number_to_human_size when I add the blob index etc.
 
 ### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
 
