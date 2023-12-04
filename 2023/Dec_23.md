@@ -11,13 +11,23 @@
   - Option price calculation
     - [x] Slot options
 
-## December 2nd
+## December 4th
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Write tests for Invoice#calc_cost to prepare for the rewrite
+  - [x] Output full test details by default
   - Option price calculation
-    - [] Event options
+    - [x] event options
+    - [x] calc_cost itself and its arguments/guards
+    - [x] callbacks like auto-calc on save and auto moving registrations to a new child
+    - [x] price lists
+
+## December 5th
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Snack price calculation
   - [] Extra cost price calculation
   - [] PDF creation (or at least that one is created)

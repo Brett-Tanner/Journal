@@ -477,7 +477,6 @@ Inquiry form
   - [x] To Rails DB
   - [x] To React app
   - [x] Add the actual data to the live site
-  - [] Add new nearby areas to bus_areas
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -496,7 +495,6 @@ Inquiry form
 
 - [x] On the inquiry form, fetch the school list from the Seasonal API
 - [x] Add list of nearby schools to setsumeikai calendar
-- [] Add new nearby areas to bus_areas
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
