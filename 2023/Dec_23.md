@@ -28,9 +28,30 @@
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
-- [] Why couldn't Leroy delete the auto-created options for that Saturday he made
-- [] Invesigate what happens if you upload a new asset with the same key as an existing one
-- [] Check for missing translations with `i18n-tasks`
+
+- [x] Why couldn't Leroy delete the auto-created options for that Saturday he made
+  - Was the empty fields for the afternoon slot; they were trying to create a new one and obviously the validation failed
+  - Added a reject_if: :name_blank? to the options
+  - :all_blank wasn't working cos I had default values like `morning: false` set which the form was submitting
+- [x] Move form errors into a haml partial
+- Can use has_one on a has_many to single out a specific important record
+  - [x] Managed school - doesn't work for this, can't use it on :through tables. My existing instance method is fine.
+
+## December 6th
+
+### Setsumeikai Calendar
+
+- [] Pad school list component (by shrinking the whole main so the WP background is visible)
+  - Align with the images below for a guide on the space to pad
+- [] Use flex-start on the school list
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Remember debug() is a helper in views, formats and YML and displays in pre tags
+
+- [] SMs should be able to edit their school's data
+  - [] JSON validations from Rails Way
+  - [] Pundit permissions
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Snack price calculation
   - [] Extra cost price calculation
@@ -42,6 +63,7 @@
 
 #### Future Plans
 
+- [] Investigate what happens if you upload a new asset with the same key as an existing one
 - [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
 - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
 - [] Move control of the domain from that Japanese site to Cloudflare
@@ -52,8 +74,12 @@
 
 ##### ActiveRecord
 
+- Maybe use [#store](https://api.rubyonrails.org/classes/ActiveRecord/Store.html) on models with JSON, seems to give a nicer API
+  - [] schools
+  - [] price lists
+  - [] surveys
+  - [] maybe email preferences
 - Can use has_one on a has_many to single out a specific important record
-  - [] Managed school
   - [] Next event
   - [] Active invoice
 - Rather than manually setting `_destroy`, use `#mark_for_destruction`
@@ -71,10 +97,6 @@
 - You can chain a list of validations on a single column, like `validates presence: true, uniqueness: true ... etc.`
 - Look into [delegated types](https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html)
   - [] especially for splitting the mess of user logic into more manageable chunks
-- Maybe use [#store](https://api.rubyonrails.org/classes/ActiveRecord/Store.html) on models with JSON, seems to give a nicer API
-  - [] price lists
-  - [] surveys
-  - [] maybe email preferences
 - Use SQL strings, or maybe hte active_record_import gem to update children
 
 ##### Optimisation
@@ -103,6 +125,7 @@ end
 
 ##### Views
 
+- [] Check for missing translations with `i18n-tasks`
 - [] Remove locale param from number_to_currency calls, shouldn't need it
 - [] number_to_phone_number exists
 - [] there's also a number_to_percentage helper, but may be more verbose than what I'm doing now
