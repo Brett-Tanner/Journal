@@ -39,6 +39,36 @@
 
 ## December 6th
 
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Fix the logic error in the event partial which directed parents to the attendance sheet
+  - [x] Also switch Invoice#index to haml
+  - [x] Extract child/parent partials from Invoice#index
+- [x] Check Pundit policies inherit from ApplicationPolicy, which is all false by default
+- [x] Check I included Pundit in ApplicationController
+- [x] Check whether I handled redirect to profile by overriding `after_sign_in_path` in Devise
+  - I did for `after_sign_out_path`, not for sign in though
+- [x] Figure out why Pundit didn't stop parents following the attendance link anyway
+  - There was a scope on the main index action, but not the attendance associations
+  - They had been using authorize, but I removed that
+
+##### Pundit
+
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [x] Children
+- Fix any weird authorization logic I find
+  - Children
+    - [x] Make child_policy scope actually return children, not schools
+    - [x] Authorize ChildrenController#event_attendance & #slot_attendance with Event & Slot policies respectively
+    - [x] Clean up unnecessary params, user and record are available implicitly to every method
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Children
+  - Unit tests for policy scopes
+    - [x] Children
+
+## December 7th
+
 ### Setsumeikai Calendar
 
 - [] Add margins (but only on school list component) to align root with the images below
@@ -50,14 +80,6 @@
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
-- [x] Fix the logic error in the event partial which directed parents to the attendance sheet
-  - [x] Also switch Invoice#index to haml
-  - [x] Extract child/parent partials from Invoice#index
-- [x] Check Pundit policies inherit from ApplicationPolicy, which is all false by default
-- [x] Check I included Pundit in ApplicationController
-- [x] Check whether I handled redirect to profile by overriding `after_sign_in_path` in Devise
-  - I did for `after_sign_out_path`, not for sign in though
-- [] Figure out why Pundit didn't stop parents following the attendance link anyway
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
@@ -107,14 +129,20 @@
 
 ##### Pundit
 
-- [] Enforce pundit on all controllers with `after_action :verify_authorized, except: :index` and `after_action :verify_policy_scoped, only: :index` on ApplicationController
-  - [] Verify that works by removing authorize/scope calls and checking I get an error
-- [] Write tests for every Pundit policy (should now be every action on every controller)
-  - [] If I can figure out a way, shared example that checks authorize called on every non-index action and policy_scope called on index
+- [] Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [] Adjustments
+- Fix any weird authorization logic I find
+  - Children
+- Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
     - [] Adjustments
-  - Request tests for controllers (to check for 401's when not authorized)
+  - Unit tests for policy scopes
     - [] Adjustments
+  - Request tests for controllers (to check for 401's when not authorized)
+    - [] Children
+    - [] Adjustments
+  - [] If I can figure out a way, shared example that checks authorize called on every non-index action and policy_scope called on index
+    - Maybe doable by just testing each route responds with something since we're using `after_action :verify_authorized`
 - Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
 
 ##### Optimisation
@@ -183,17 +211,6 @@ end
 - [] Rails section
   - [] Overview
   - [] Useful Commands
-
-### Personal Project - [Budgeting Site](https://github.com/Brett-Tanner/budgeting-site)
-
-- Features
-
-- [] wire the upload form up to submit to
-- [] an endpoint to create DB records
-- [] Auto-categorize based on rules
-  - [] Add rules table
-- [] If transactions are uploaded for last day already in the DB and they have the same amount, ask if duplicates
-  - [] If uploaded for any time prior to the last day in the database, just ignore them
 
 ### Work Project - [Games Site]()
 
