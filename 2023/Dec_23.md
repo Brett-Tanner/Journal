@@ -44,20 +44,26 @@
 - [] Pad school list component (by shrinking the whole main so the WP background is visible)
   - Align with the images below for a guide on the space to pad
 - [] Use flex-start on the school list
+- [] Change referrer options to match those in this [pdf](https://drive.google.com/file/d/1zD98bm_XZo0jNP4DQu5FJT9BDR0y5i_B/view)
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
+- [x] Fix the logic error in the event partial which directed parents to the attendance sheet
+  - [x] Also switch Invoice#index to haml
+  - [x] Extract child/parent partials from Invoice#index
+- [x] Check Pundit policies inherit from ApplicationPolicy, which is all false by default
+- [x] Check I included Pundit in ApplicationController
+- [x] Check whether I handled redirect to profile by overriding `after_sign_in_path` in Devise
+  - I did for `after_sign_out_path`, not for sign in though
+- [] Figure out why Pundit didn't stop parents following the attendance link anyway
+- [] Overwrite the sign in path properly as well
+  - Can use `stored__location_for` to redirect to originally requested page
+- [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
 - [] SMs should be able to edit their school's data
   - [] JSON validations from Rails Way
   - [] Pundit permissions
-- Write tests for Invoice#calc_cost to prepare for the rewrite
-  - [] Snack price calculation
-  - [] Extra cost price calculation
-  - [] PDF creation (or at least that one is created)
-  - [] Summary
-    - Maybe just add some of these to the other, more specific tests to take advantage of the setup in those files
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 
@@ -99,6 +105,18 @@
   - [] especially for splitting the mess of user logic into more manageable chunks
 - Use SQL strings, or maybe hte active_record_import gem to update children
 
+##### Pundit
+
+- [] Enforce pundit on all controllers with `after_action :verify_authorized, except: :index` and `after_action :verify_policy_scoped, only: :index` on ApplicationController
+  - [] Verify that works by removing authorize/scope calls and checking I get an error
+- [] Write tests for every Pundit policy (should now be every action on every controller)
+  - [] If I can figure out a way, shared example that checks authorize called on every non-index action and policy_scope called on index
+  - Unit tests for policies
+    - [] Adjustments
+  - Request tests for controllers (to check for 401's when not authorized)
+    - [] Adjustments
+- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+
 ##### Optimisation
 
 - [] Nest the confirm_invoice view inside the new route so it's confirm_new_invoice_path
@@ -123,8 +141,21 @@ end
 - [] use read/write_attribute or bracked notation in my custom getters/setters
   - Not sure what I'm using now, but probably not those
 
+##### Testing
+
+- Devise gives you handy helpers `sign_in` and `sign_out` which take an instance of user
+- Write tests for Invoice#calc_cost to prepare for the rewrite
+  - [] Snack price calculation
+  - [] Extra cost price calculation
+  - [] PDF creation (or at least that one is created)
+  - [] Summary
+    - Maybe just add some of these to the other, more specific tests to take advantage of the setup in those files
+- [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
+
 ##### Views
 
+- [] Use `current_page` helpers in partials to conditionally render stuff like diff school selection on event partial
+- [] Add a photo_for helper to encapsulate nil checks for associated images and return empty string if missing
 - [] Check for missing translations with `i18n-tasks`
 - [] Remove locale param from number_to_currency calls, shouldn't need it
 - [] number_to_phone_number exists
