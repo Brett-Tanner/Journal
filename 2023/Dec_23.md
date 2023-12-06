@@ -41,8 +41,8 @@
 
 ### Setsumeikai Calendar
 
-- [] Pad school list component (by shrinking the whole main so the WP background is visible)
-  - Align with the images below for a guide on the space to pad
+- [] Add margins (but only on school list component) to align root with the images below
+- [] Add margin to top of root for separation from page text
 - [] Use flex-start on the school list
 - [] Change referrer options to match those in this [pdf](https://drive.google.com/file/d/1zD98bm_XZo0jNP4DQu5FJT9BDR0y5i_B/view)
 
