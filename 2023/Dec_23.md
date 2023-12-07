@@ -69,9 +69,44 @@
 
 ## December 7th
 
+##### Pundit
+
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [x] Adjustments
+  - [x] Areas
+  - [x] Events
+- Misc changes I decided to make along the way
+  - Areas
+    - [x] Add logic for showing buttons since AMs will have access
+    - Rewrite in haml
+      - [x] Index
+      - [x] Area partial
+      - [x] School partial
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Adjustments
+    - [x] Areas
+    - [x] Events
+  - Unit tests for policy scopes
+    - [x] Areas
+    - [x] Events
+  - Request tests for controllers (to check for 302s when not authorized, it should redirect to the root)
+    - [x] Children
+      - [x] Go back and add them for index as well as the attendances (in event and slot specs)
+    - [x] Adjustments
+    - [x] Areas
+    - [x] Events
+  - [x] If I can figure out a way, shared example that checks authorize called on every non-index action and policy_scope called on index
+    - This is covered by the request tests, they'll error as long as I remembered to add the Pundit after_actions
+
+## December 8th
+
 ### Setsumeikai Calendar
 
+- [] Jack wants a step-by-step guide to how we're deploying the new forms
+  - [] Test out all the steps on my local version
 - [] Add margins (but only on school list component) to align root with the images below
+- [] Make sure we keep 4 schools to a row with the new margins
 - [] Add margin to top of root for separation from page text
 - [] Use flex-start on the school list
 - [] Change referrer options to match those in this [pdf](https://drive.google.com/file/d/1zD98bm_XZo0jNP4DQu5FJT9BDR0y5i_B/view)
@@ -129,21 +164,17 @@
 
 ##### Pundit
 
-- [] Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Adjustments
-- Fix any weird authorization logic I find
-  - Children
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [] Inquiries
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
-    - [] Adjustments
+    - [] Inquiries
   - Unit tests for policy scopes
-    - [] Adjustments
-  - Request tests for controllers (to check for 401's when not authorized)
-    - [] Children
-    - [] Adjustments
-  - [] If I can figure out a way, shared example that checks authorize called on every non-index action and policy_scope called on index
-    - Maybe doable by just testing each route responds with something since we're using `after_action :verify_authorized`
+    - [] Inquiries
+  - Request tests for controllers (to check for not authorized flash message)
+    - [] Inquiries
 - Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+  - [] Add to InvoiceController so parents can't manually add adjustments
 
 ##### Optimisation
 
