@@ -196,8 +196,7 @@
 ##### Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Options
-  - [] PriceLists
+  - [x] PriceLists
   - [] Schools
   - [] Setsumeikais
   - [] Survey Responses
@@ -207,8 +206,7 @@
   - [] Versions
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
-    - [] Options
-    - [] PriceLists
+    - [x] PriceLists
     - [] Schools
     - [] Setsumeikais
     - [] Survey Responses
@@ -217,8 +215,7 @@
     - [] Users
     - [] Versions
   - Unit tests for policy scopes
-    - [] Options
-    - [] PriceLists
+    - [x] PriceLists
     - [] Schools
     - [] Setsumeikais
     - [] Survey Responses
@@ -227,7 +224,6 @@
     - [] Users
     - [] Versions
   - Request tests for controllers (to check for not authorized flash message)
-    - [] Options
     - [] PriceLists
     - [] Schools
     - [] Setsumeikais
