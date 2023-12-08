@@ -103,12 +103,43 @@
 
 ### Setsumeikai Calendar
 
+- [x] Add margins (but only on school list component) to align root with the images below
+- [x] Make sure we keep 4 schools to a row with the new margins
+- [x] Add margin to top of root for separation from page text
+- [x] Use flex-start on the school list
+  - Need to align the last row to start, but without ruining the rest of the layout
+  - So added an :after element to the last row with flex-grow
+  - Tweaked the gaps and school card basis to get it to line up
+  - Ended up just using grid, this is what it's for
+- [x] Inquiry form school & requests were not required, changed them so they are
+- [x] Same deal for setsumeikai form school select
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+##### Tests
+
+- [x] Ensure parents can't register other people's children for activities
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [x] Inquiries
+  - [x] Invoices
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Inquiries
+    - [x] Invoices
+  - Unit tests for policy scopes
+    - [x] Inquiries
+    - [x] Invoices
+  - Request tests for controllers (to check for not authorized flash message)
+    - [x] Inquiries
+      - [x] Verify create_inquiry allows requests from unauthenticated users
+    - [x] Invoices
+
+## December 9th
+
+### Setsumeikai Calendar
+
 - [] Jack wants a step-by-step guide to how we're deploying the new forms
   - [] Test out all the steps on my local version
-- [] Add margins (but only on school list component) to align root with the images below
-- [] Make sure we keep 4 schools to a row with the new margins
-- [] Add margin to top of root for separation from page text
-- [] Use flex-start on the school list
 - [] Change referrer options to match those in this [pdf](https://drive.google.com/file/d/1zD98bm_XZo0jNP4DQu5FJT9BDR0y5i_B/view)
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
@@ -162,19 +193,52 @@
   - [] especially for splitting the mess of user logic into more manageable chunks
 - Use SQL strings, or maybe hte active_record_import gem to update children
 
-##### Pundit
+##### Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Inquiries
+  - [] Options
+  - [] PriceLists
+  - [] Schools
+  - [] Setsumeikais
+  - [] Survey Responses
+  - [] Surveys
+  - [] TimeSlots
+  - [] Users
+  - [] Versions
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
-    - [] Inquiries
+    - [] Options
+    - [] PriceLists
+    - [] Schools
+    - [] Setsumeikais
+    - [] Survey Responses
+    - [] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
   - Unit tests for policy scopes
-    - [] Inquiries
+    - [] Options
+    - [] PriceLists
+    - [] Schools
+    - [] Setsumeikais
+    - [] Survey Responses
+    - [] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
   - Request tests for controllers (to check for not authorized flash message)
-    - [] Inquiries
+    - [] Options
+    - [] PriceLists
+    - [] Schools
+    - [] Setsumeikais
+    - [] Survey Responses
+    - [] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
 - Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
   - [] Add to InvoiceController so parents can't manually add adjustments
+- You can time-travel in tests! Not useful for auth but can do it for others
 
 ##### Optimisation
 
@@ -199,6 +263,9 @@ end
   - [] Create columns for each type of cost?
 - [] use read/write_attribute or bracked notation in my custom getters/setters
   - Not sure what I'm using now, but probably not those
+- [] Use AWS Cloudfront to serve images?
+- [] Can probably speed up queries for ChartController with pluck
+- [] If indexing FK columns which can be null, exclude null from the index
 
 ##### Testing
 
