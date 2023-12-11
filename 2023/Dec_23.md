@@ -136,6 +136,32 @@
 
 ## December 11th
 
+##### Tests
+
+- [x] Stopped trying to authorize the child as part of the event#show authorization, the child is authorized separately in the controller action
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [x] PriceLists
+  - [x] Schools - except index cos that's the public API
+  - [x] Setsumeikais
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] PriceLists
+    - [x] Schools
+    - [x] Setsumeikais
+  - Unit tests for policy scopes
+    - [x] PriceLists
+    - [x] Schools
+    - [x] Setsumeikais
+  - Request tests for controllers (to check for not authorized flash message)
+    - [x] PriceLists
+    - [x] Schools
+    - [x] Setsumeikais
+- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+  - [] Add to InvoiceController so parents can't manually add adjustments
+- You can time-travel in tests! Not useful for auth but can do it for others
+
+## December 12th
+
 ### Setsumeikai Calendar
 
 - [] Jack wants a step-by-step guide to how we're deploying the new forms
@@ -198,9 +224,6 @@
 ##### Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [x] PriceLists
-  - [x] Schools - except index cos that's the public API
-  - [x] Setsumeikais
   - [] Survey Responses
   - [] Surveys
   - [] TimeSlots
@@ -208,27 +231,20 @@
   - [] Versions
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
-    - [x] PriceLists
-    - [x] Schools
     - [x] Setsumeikais
+      - [] Rewrite to account for difference between manager of setsu school and manager of involved school
     - [] Survey Responses
     - [] Surveys
     - [] TimeSlots
     - [] Users
     - [] Versions
   - Unit tests for policy scopes
-    - [x] PriceLists
-    - [x] Schools
-    - [x] Setsumeikais
     - [] Survey Responses
     - [] Surveys
     - [] TimeSlots
     - [] Users
     - [] Versions
   - Request tests for controllers (to check for not authorized flash message)
-    - [x] PriceLists
-    - [x] Schools
-    - [] Setsumeikais
     - [] Survey Responses
     - [] Surveys
     - [] TimeSlots
