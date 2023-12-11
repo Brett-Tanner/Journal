@@ -134,7 +134,7 @@
       - [x] Verify create_inquiry allows requests from unauthenticated users
     - [x] Invoices
 
-## December 9th
+## December 11th
 
 ### Setsumeikai Calendar
 
@@ -146,6 +146,8 @@
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
+- [] Disable copy regs for closed events
+- [] Move upcoming events to top of parent/child profiles
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
@@ -197,8 +199,8 @@
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
   - [x] PriceLists
-  - [] Schools
-  - [] Setsumeikais
+  - [x] Schools - except index cos that's the public API
+  - [x] Setsumeikais
   - [] Survey Responses
   - [] Surveys
   - [] TimeSlots
@@ -207,8 +209,8 @@
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
     - [x] PriceLists
-    - [] Schools
-    - [] Setsumeikais
+    - [x] Schools
+    - [x] Setsumeikais
     - [] Survey Responses
     - [] Surveys
     - [] TimeSlots
@@ -216,16 +218,16 @@
     - [] Versions
   - Unit tests for policy scopes
     - [x] PriceLists
-    - [] Schools
-    - [] Setsumeikais
+    - [x] Schools
+    - [x] Setsumeikais
     - [] Survey Responses
     - [] Surveys
     - [] TimeSlots
     - [] Users
     - [] Versions
   - Request tests for controllers (to check for not authorized flash message)
-    - [] PriceLists
-    - [] Schools
+    - [x] PriceLists
+    - [x] Schools
     - [] Setsumeikais
     - [] Survey Responses
     - [] Surveys
@@ -276,6 +278,8 @@ end
 
 ##### Views
 
+- [] Use @layer to section off old BS styles so I can switch to tailwind
+  - But both tailwind and BS using !important liberally might make that problematic
 - [] Use `current_page` helpers in partials to conditionally render stuff like diff school selection on event partial
 - [] Add a photo_for helper to encapsulate nil checks for associated images and return empty string if missing
 - [] Check for missing translations with `i18n-tasks`
