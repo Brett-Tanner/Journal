@@ -190,26 +190,40 @@
 ##### Pundit Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Surveys
-  - [] TimeSlots
-  - [] Users
-  - [] Versions
+  - [x] Surveys
+  - [x] TimeSlots
+  - [x] Users
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
     - [x] Surveys
-    - [] TimeSlots
-    - [] Users
+    - [x] TimeSlots
+    - [x] Users
+      - [] Finish the logic to stop looking at other staff profiles
+  - Unit tests for policy scopes
+    - [x] Surveys
+    - [x] TimeSlots
+  - Request tests for controllers (to check for not authorized flash message)
+    - [x] Surveys
+    - [x] TimeSlots
+
+## December 14th
+
+##### Pundit Tests
+
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [] Versions
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Users
+      - [] Finish the logic to stop looking at other staff profiles
     - [] Versions
   - Unit tests for policy scopes
-    - [] Surveys
-    - [] TimeSlots
     - [] Users
     - [] Versions
   - Request tests for controllers (to check for not authorized flash message)
-    - [] Surveys
-    - [] TimeSlots
     - [] Users
     - [] Versions
+- [] Refactor request specs to use rails path helpers
 - Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
   - [] Add to InvoiceController so parents can't manually add adjustments
 - You can time-travel in tests! Not useful for auth but can do it for others
