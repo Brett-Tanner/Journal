@@ -164,14 +164,65 @@
 
 ### Setsumeikai Calendar
 
-- [] Jack wants a step-by-step guide to how we're deploying the new forms
-  - [] Test out all the steps on my local version
-- [] Change referrer options to match those in this [pdf](https://drive.google.com/file/d/1zD98bm_XZo0jNP4DQu5FJT9BDR0y5i_B/view)
+- [x] Jack wants a step-by-step guide to how we're deploying the new forms
+  - Test out all the steps on my local version
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Fix using the reopen translation for morning time slots both when they're open and closed
+
+##### Pundit Tests
+
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [x] Survey Responses
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Setsumeikais
+      - [x] Rewrite to account for difference between manager of setsu school and manager of involved school
+    - [x] Survey Responses
+  - Unit tests for policy scopes
+    - [x] Survey Responses
+  - Request tests for controllers (to check for not authorized flash message)
+    - [x] Survey Responses
+
+## December 13th
+
+##### Pundit Tests
+
+- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
+  - [] Surveys
+  - [] TimeSlots
+  - [] Users
+  - [] Versions
+- Write tests for every Pundit policy (should now be every action on every controller)
+  - Unit tests for policies
+    - [x] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
+  - Unit tests for policy scopes
+    - [] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
+  - Request tests for controllers (to check for not authorized flash message)
+    - [] Surveys
+    - [] TimeSlots
+    - [] Users
+    - [] Versions
+- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+  - [] Add to InvoiceController so parents can't manually add adjustments
+- You can time-travel in tests! Not useful for auth but can do it for others
+
+### Setsumeikai Calendar
+
+- [] Change referrer options to match those in the new referrers PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
+- [] Close activities at the middle of the last weekday before they start
 - [] Disable copy regs for closed events
 - [] Move upcoming events to top of parent/child profiles
 - [] Overwrite the sign in path properly as well
@@ -221,39 +272,6 @@
   - [] especially for splitting the mess of user logic into more manageable chunks
 - Use SQL strings, or maybe hte active_record_import gem to update children
 
-##### Tests
-
-- Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Survey Responses
-  - [] Surveys
-  - [] TimeSlots
-  - [] Users
-  - [] Versions
-- Write tests for every Pundit policy (should now be every action on every controller)
-  - Unit tests for policies
-    - [x] Setsumeikais
-      - [] Rewrite to account for difference between manager of setsu school and manager of involved school
-    - [] Survey Responses
-    - [] Surveys
-    - [] TimeSlots
-    - [] Users
-    - [] Versions
-  - Unit tests for policy scopes
-    - [] Survey Responses
-    - [] Surveys
-    - [] TimeSlots
-    - [] Users
-    - [] Versions
-  - Request tests for controllers (to check for not authorized flash message)
-    - [] Survey Responses
-    - [] Surveys
-    - [] TimeSlots
-    - [] Users
-    - [] Versions
-- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
-  - [] Add to InvoiceController so parents can't manually add adjustments
-- You can time-travel in tests! Not useful for auth but can do it for others
-
 ##### Optimisation
 
 - [] Nest the confirm_invoice view inside the new route so it's confirm_new_invoice_path
@@ -283,17 +301,21 @@ end
 
 ##### Testing
 
-- Devise gives you handy helpers `sign_in` and `sign_out` which take an instance of user
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Snack price calculation
   - [] Extra cost price calculation
   - [] PDF creation (or at least that one is created)
   - [] Summary
     - Maybe just add some of these to the other, more specific tests to take advantage of the setup in those files
+- Rewrite Invoice#calc_cost as separate classes for cost calculation, summary generation and PDF creation
+  - Can test it separately with unit tests till ready, then swap it in when done
+- [] Test emails with [email_spec](https://github.com/email-spec/email-spec) gem
 - [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
 
 ##### Views
 
+- [] Remember you can use partials in turbo-stream responses, I'm sure there's some stuff to clean up there
+- [] Move set_shared_vars in the mailer to a before_action, is fine to apply to all mailers I think
 - [] Use @layer to section off old BS styles so I can switch to tailwind
   - But both tailwind and BS using !important liberally might make that problematic
 - [] Use `current_page` helpers in partials to conditionally render stuff like diff school selection on event partial
