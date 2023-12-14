@@ -208,6 +208,14 @@
 
 ## December 14th
 
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Remember debug() is a helper in views, formats and YML and displays in pre tags
+
+- [x] Install pghero so I can see DB stats easily
+  - [] Test that only User 1 can access the panel
+  - [] Check out the recommendations on live, from dev seems like some unused indexes at least
+
 ##### Pundit Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
@@ -223,6 +231,18 @@
     - [x] Users
 - [x] Manually test everything to check I was testing the right stuff
 
+##### Views
+
+- [x] Refactor navbar to use HAML/partials for different roles
+- [x] Refactor User#index/partial to HAML
+- [x] Remove school column from child index rows, it's never necessary now
+- [x] Refactor Child#index/partial to HAML
+- [x] Move event partials to top of child profile
+  - [x] Refactor customer show page to HAML and move the event up a bit
+  - [] Check this next time, and shorten lines
+
+## December 15th
+
 ### Setsumeikai Calendar
 
 - [] Change referrer options to match those in the new referrers PDF
@@ -231,9 +251,11 @@
 
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
-- [] Close activities at the middle of the last weekday before they start
+- [x] Install pghero so I can see DB stats easily
+  - [] Test that only User 1 can access the panel
+  - [] Check out the recommendations on live, from dev seems like some unused indexes at least
+- [] Close activities 2pm the last weekday before they start
 - [] Disable copy regs for closed events
-- [] Move upcoming events to top of parent/child profiles
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
@@ -327,7 +349,16 @@ end
 
 ##### Views
 
-- [] Remove school column from child index rows, it's never necessary now
+- [x] Refactor navbar to use HAML/partials for different roles
+- [x] Refactor User#index/partial to HAML
+- [x] Remove school column from child index rows, it's never necessary now
+- [x] Refactor Child#index/partial to HAML
+- [x] Move event partials to top of child profile
+  - [x] Refactor customer show page to HAML and move the event up a bit
+  - [] Check this next time, and shorten lines
+- [] Extract school selection nav into its own partial
+- [] Extract conditonal info display into its own partial
+  - [] and add it back to Child#show
 - [] Remember you can use partials in turbo-stream responses, I'm sure there's some stuff to clean up there
 - [] Move set_shared_vars in the mailer to a before_action, is fine to apply to all mailers I think
 - [] Use @layer to section off old BS styles so I can switch to tailwind
