@@ -211,22 +211,17 @@
 ##### Pundit Tests
 
 - Enforce pundit on all controllers one by one with `after_action :verify_authorized` and `after_action :verify_policy_scoped`
-  - [] Versions
+  - [x] Children#find_child
+    - route to child#show?
 - Write tests for every Pundit policy (should now be every action on every controller)
   - Unit tests for policies
     - [x] Users
-      - [] Finish the logic to stop looking at other staff profiles
-    - [] Versions
+      - [x] Finish the tests to stop looking at other staff profiles
   - Unit tests for policy scopes
-    - [] Users
-    - [] Versions
+    - [x] Users
   - Request tests for controllers (to check for not authorized flash message)
-    - [] Users
-    - [] Versions
-- [] Refactor request specs to use rails path helpers
-- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
-  - [] Add to InvoiceController so parents can't manually add adjustments
-- You can time-travel in tests! Not useful for auth but can do it for others
+    - [x] Users
+- [x] Manually test everything to check I was testing the right stuff
 
 ### Setsumeikai Calendar
 
@@ -315,6 +310,10 @@ end
 
 ##### Testing
 
+- [] Refactor request specs to use rails path helpers
+- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+  - [] Add to InvoiceController so parents can't manually add adjustments
+- You can time-travel in tests! Not useful for auth but can do it for others
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - [] Snack price calculation
   - [] Extra cost price calculation
@@ -328,6 +327,7 @@ end
 
 ##### Views
 
+- [] Remove school column from child index rows, it's never necessary now
 - [] Remember you can use partials in turbo-stream responses, I'm sure there's some stuff to clean up there
 - [] Move set_shared_vars in the mailer to a before_action, is fine to apply to all mailers I think
 - [] Use @layer to section off old BS styles so I can switch to tailwind
