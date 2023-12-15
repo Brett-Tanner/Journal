@@ -252,10 +252,14 @@
 - Remember debug() is a helper in views, formats and YML and displays in pre tags
 
 - [x] Install pghero so I can see DB stats easily
-  - [] Test that only User 1 can access the panel
-  - [] Check out the recommendations on live, from dev seems like some unused indexes at least
-- [] Close activities 2pm the last weekday before they start
-- [] Disable copy regs for closed events
+  - [x] Write auth tests (request)
+- [x] Don't send confirm emails when clicking 'no email confirm' button after invoice previously confirmed with an email
+- Close activities 2pm the last weekday before they start
+  - [x] Edit the closing date hash in TimeSlot
+  - [x] Edit the live activity names to handle identically named activities
+  - [x] Fix the 1/8 closing dates, upload and rename live activities
+- [x] Disable copy regs for closed events
+- [] Add translations for school names
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
@@ -264,6 +268,7 @@
   - [] Pundit permissions
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
+- [] Add close_date field to TimeSlot, saves me having to edit the hash every event
 
 #### Future Plans
 
@@ -349,12 +354,7 @@ end
 
 ##### Views
 
-- [x] Refactor navbar to use HAML/partials for different roles
-- [x] Refactor User#index/partial to HAML
-- [x] Remove school column from child index rows, it's never necessary now
-- [x] Refactor Child#index/partial to HAML
 - [x] Move event partials to top of child profile
-  - [x] Refactor customer show page to HAML and move the event up a bit
   - [] Check this next time, and shorten lines
 - [] Extract school selection nav into its own partial
 - [] Extract conditonal info display into its own partial
