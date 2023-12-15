@@ -243,13 +243,7 @@
 
 ## December 15th
 
-### Setsumeikai Calendar
-
-- [] Change referrer options to match those in the new referrers PDF
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
-
-- Remember debug() is a helper in views, formats and YML and displays in pre tags
 
 - [x] Install pghero so I can see DB stats easily
   - [x] Write auth tests (request)
@@ -259,7 +253,30 @@
   - [x] Edit the live activity names to handle identically named activities
   - [x] Fix the 1/8 closing dates, upload and rename live activities
 - [x] Disable copy regs for closed events
-- [] Add translations for school names
+- [x] Write unit tests for TimeSlot#closed?
+- [x] Add translations for school names
+- [x] Extract the school selection nav into a partial
+  - Use it in all the views that use a school nav
+    - [x] Setsu#index
+      - [x] And convert to haml
+    - [x] Inquiry#index
+      - [x] And convert to haml
+    - [] ???
+- [x] Add school nav for inquiries (for area managers)
+- [x] Avoid doubling up on 円 signs for pointless price summary
+- [x] Clean up customer profile when no invoices
+
+## December 18th
+
+### Setsumeikai Calendar
+
+- [] Change referrer options to match those in the new referrers PDF
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Extract the school selection nav into a partial
+  - Use it in all the views that use a school nav
+    - [] ???
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
@@ -354,11 +371,7 @@ end
 
 ##### Views
 
-- [x] Move event partials to top of child profile
-  - [] Check this next time, and shorten lines
-- [] Extract school selection nav into its own partial
 - [] Extract conditonal info display into its own partial
-  - [] and add it back to Child#show
 - [] Remember you can use partials in turbo-stream responses, I'm sure there's some stuff to clean up there
 - [] Move set_shared_vars in the mailer to a before_action, is fine to apply to all mailers I think
 - [] Use @layer to section off old BS styles so I can switch to tailwind
