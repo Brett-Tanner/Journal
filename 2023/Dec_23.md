@@ -270,8 +270,6 @@
 
 ### Setsumeikai Calendar
 
-- [] Change referrer options to match those in the new referrers PDF
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - Extract the school selection nav into a partial
@@ -280,13 +278,12 @@
     - [x] Child#index
     - [x] Survey#show
 - [] SMs should be able to edit their school's data
-  - [] Add the link to their profiles
-  - [] Pundit permissions
+  - [x] Pundit permissions
+  - [x] Add the link to their profiles
+  - [x] Change the form so they can't do admin stuff
+    - [x] And convert it to haml
+    - [] And enforce with Pundit strong params
   - [] JSON validations from Rails Way
-- [] Exclude Saturdays?/activities with an extension option from the 200yen increase
-- [] Add button to generate photo service armband PDF for parties
-  - Printable template with kids' names and a color which shows their photo status
-- [] Add close_date field to TimeSlot, saves me having to edit the hash every event
 
 #### HAML Refactors
 
@@ -294,6 +291,29 @@
 - [x] Child#index
 - [x] Area manager profile
 - [x] School manager profile
+- [x] TimeSlot#edit
+- [x] TimeSlot form partial
+- [x] School form partial
+
+## December 19th
+
+### Setsumeikai Calendar
+
+- [] Change referrer options to match those in the new referrers PDF
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Extract the school selection nav into a partial
+- [] SMs should be able to edit their school's data
+  - Change the form so they can't do admin stuff
+    - [] And enforce with Pundit strong params
+  - [] JSON validations from Rails Way
+- [] Exclude Saturdays?/activities with an extension option from the 200yen increase
+- [] Add button to generate photo service armband PDF for parties
+  - Printable template with kids' names and a color which shows their photo status
+- [] Add close_date field to TimeSlot, saves me having to edit the hash every event
+
+#### HAML Refactors
 
 #### Future Plans
 
