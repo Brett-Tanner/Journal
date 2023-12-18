@@ -276,19 +276,30 @@
 
 - Extract the school selection nav into a partial
   - Use it in all the views that use a school nav
-    - [] ???
-- [] Overwrite the sign in path properly as well
-  - Can use `stored__location_for` to redirect to originally requested page
-- [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
+    - [x] TimeSlot#index
+    - [x] Child#index
+    - [x] Survey#show
 - [] SMs should be able to edit their school's data
-  - [] JSON validations from Rails Way
+  - [] Add the link to their profiles
   - [] Pundit permissions
+  - [] JSON validations from Rails Way
+- [] Exclude Saturdays?/activities with an extension option from the 200yen increase
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
 
+#### HAML Refactors
+
+- [x] TimeSlot#index
+- [x] Child#index
+- [x] Area manager profile
+- [x] School manager profile
+
 #### Future Plans
 
+- [] Overwrite the sign in path properly as well
+  - Can use `stored__location_for` to redirect to originally requested page
+- [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
 - [] Investigate what happens if you upload a new asset with the same key as an existing one
 - [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
 - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
