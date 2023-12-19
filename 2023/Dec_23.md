@@ -327,6 +327,7 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Changing the school details accessors changed how I need to do the Pundit params, fix that
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
