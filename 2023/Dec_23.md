@@ -303,7 +303,15 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Extract the school selection nav into a partial
+- [x] Remove TY coupon
+- [x] Stop filtering out online events for online kids
+  - We don't want them to sign up for it, but at least we get notified
+  - And they can't register at another school if the card isn't there in the first place
+- [x] Improve my logic for handling missing school details
+- [x] Move School#new to haml and use the now required form locals
+- [x] Exclude special days with an extension option from the 200yen increase
+  - [x] And write some tests for basic coverage of the new functionality
+- [x] Uncomment the setsu links on SM profiles
 - [] SMs should be able to edit their school's data
   - Change the form so they can't do admin stuff
     - [] And enforce with Pundit strong params
@@ -314,6 +322,8 @@
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
 
 #### HAML Refactors
+
+- [x] School#new
 
 #### Future Plans
 
@@ -403,6 +413,7 @@ end
 ##### Views
 
 - [] Extract conditonal info display into its own partial
+  - Already done for the child one, just make more general for parents & move to shared folder
 - [] Remember you can use partials in turbo-stream responses, I'm sure there's some stuff to clean up there
 - [] Move set_shared_vars in the mailer to a before_action, is fine to apply to all mailers I think
 - [] Use @layer to section off old BS styles so I can switch to tailwind
