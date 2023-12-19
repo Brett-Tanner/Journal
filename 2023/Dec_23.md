@@ -297,10 +297,6 @@
 
 ## December 19th
 
-### Setsumeikai Calendar
-
-- [] Change referrer options to match those in the new referrers PDF
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Remove TY coupon
@@ -312,18 +308,32 @@
 - [x] Exclude special days with an extension option from the 200yen increase
   - [x] And write some tests for basic coverage of the new functionality
 - [x] Uncomment the setsu links on SM profiles
-- [] SMs should be able to edit their school's data
+- [x] SMs should be able to edit their school's data
   - Change the form so they can't do admin stuff
-    - [] And enforce with Pundit strong params
-  - [] JSON validations from Rails Way
-- [] Exclude Saturdays?/activities with an extension option from the 200yen increase
+    - [x] And enforce with Pundit strong params
+  - [x] Fix the area select showing the object as a string, not the area name
+  - [x] JSON store_accessors from Rails Way
+
+#### HAML Refactors
+
+- [x] School#new
+- [x] School#show
+
+## December 20th
+
+### Setsumeikai Calendar
+
+- [] Change referrer options to match those in the new referrers PDF
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
 
 #### HAML Refactors
 
-- [x] School#new
+- []
 
 #### Future Plans
 
