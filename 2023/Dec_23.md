@@ -321,16 +321,34 @@
 
 ## December 20th
 
+- [x] Make the activity closure notices less ugly
+
+##### Testing
+
+- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
+  - [x] Add to InvoicePolicy so parents can't manually add adjustments
+- Write tests for Invoice#calc_cost to prepare for the rewrite
+  - [x] Snack price calculation
+  - [x] Extra cost price calculation
+    - [x] Add pending tests for kindy/ele extra costs
+  - [x] Summary
+    - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
+
+## December 25th
+
 ### Setsumeikai Calendar
 
 - [] Change referrer options to match those in the new referrers PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Changing the school details accessors changed how I need to do the Pundit params, fix that
-- [] Add button to generate photo service armband PDF for parties
-  - Printable template with kids' names and a color which shows their photo status
+- [] Add the midExt category to the TimeSlot enum
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
+  - [] Add & run the migration, then zip for next week
+  - [] Add code & tests
+- [] Also kindy and elementary price modifiers
+  - [] Add & run the migration, then zip for next week
+  - [] Add code & tests
 
 #### HAML Refactors
 
@@ -349,11 +367,12 @@
   - TEST ALL ON STAGING FIRST
   - [] Bump AWS platform version
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
+- [] Add button to generate photo service armband PDF for parties
+  - Printable template with kids' names and a color which shows their photo status
 
 ##### ActiveRecord
 
 - Maybe use [#store](https://api.rubyonrails.org/classes/ActiveRecord/Store.html) on models with JSON, seems to give a nicer API
-  - [] schools
   - [] price lists
   - [] surveys
   - [] maybe email preferences
@@ -369,13 +388,12 @@
 - More specific to what I've needed before, you can pass params to scopes by just putting brackets with the params after the '->'
   - Can also put these in modules for re-use, could be handy for stuff like dates that are on everything
   - [] Definitely useful somewhere in the Charts/Stats section of the site
-- [] Look into using [query logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) for a better idea of where slow SQL is coming from
 - validates_acceptance_of creates a virtual attribute which must be true for the record to be saved
   - [] add to User for backend validation of privacy policy
 - You can chain a list of validations on a single column, like `validates presence: true, uniqueness: true ... etc.`
 - Look into [delegated types](https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html)
   - [] especially for splitting the mess of user logic into more manageable chunks
-- Use SQL strings, or maybe hte active_record_import gem to update children
+- Use SQL strings, or maybe the active_record_import gem to update children
 
 ##### Optimisation
 
@@ -406,18 +424,13 @@ end
 
 ##### Testing
 
-- [] Refactor request specs to use rails path helpers
-- Pundit can do [strong params based on role](https://github.com/varvet/pundit#strong-parameters), which I definitely wanted for some stuff
-  - [] Add to InvoiceController so parents can't manually add adjustments
-- You can time-travel in tests! Not useful for auth but can do it for others
 - Write tests for Invoice#calc_cost to prepare for the rewrite
-  - [] Snack price calculation
-  - [] Extra cost price calculation
+  - Summary
+    - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
   - [] PDF creation (or at least that one is created)
-  - [] Summary
-    - Maybe just add some of these to the other, more specific tests to take advantage of the setup in those files
 - Rewrite Invoice#calc_cost as separate classes for cost calculation, summary generation and PDF creation
   - Can test it separately with unit tests till ready, then swap it in when done
+- [] Refactor request specs to use rails path helpers
 - [] Test emails with [email_spec](https://github.com/email-spec/email-spec) gem
 - [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
 
