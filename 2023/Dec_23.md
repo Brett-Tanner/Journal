@@ -334,15 +334,42 @@
   - [x] Summary
     - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
 
-## December 25th
+## December 26th
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Let SMs see if activities are open/closed
+
+#### HAML Refactors
+
+- [x] TimeSlot partial
+  - [x] Extract responsive image into its own shared partial
+  - [x] Extract the open/close buttons into their own partial
 
 ### Setsumeikai Calendar
 
+- [] Add close dates to setsumeikais
+- [] Import the existing setsumeikais to the seasonal site
+- [] Add kid's name to inquiry form
+- [] Add privacy policy to both inquiry and setsu forms which requires agreement
+  - Outside form so it's not sent?
+- [] Change referrer options to match those in the new referrers PDF
+
+## December 27th
+
+### Setsumeikai Calendar
+
+- [] Add close dates to setsumeikais
+- [] Import the existing setsumeikais to the seasonal site
+- [] Add kid's name to inquiry form
+- [] Add privacy policy to both inquiry and setsu forms which requires agreement
+  - Outside form so it's not sent?
 - [] Change referrer options to match those in the new referrers PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Add the midExt category to the TimeSlot enum
+  - [] And use it when calculating the pointless price
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
   - [] Add & run the migration, then zip for next week
   - [] Add code & tests
@@ -366,6 +393,7 @@
 - Platform Upgrades
   - TEST ALL ON STAGING FIRST
   - [] Bump AWS platform version
+    - [] And enable YJIT
   - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
