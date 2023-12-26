@@ -339,29 +339,26 @@
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Let SMs see if activities are open/closed
+- [x] Add close dates to Setsumeikais
+  - [x] migration
+  - [x] form
+  - [x] model logic for making it 6PM on the close date
+  - [x] Send in API response
 
 #### HAML Refactors
 
 - [x] TimeSlot partial
   - [x] Extract responsive image into its own shared partial
   - [x] Extract the open/close buttons into their own partial
-
-### Setsumeikai Calendar
-
-- [] Add close dates to setsumeikais
-- [] Import the existing setsumeikais to the seasonal site
-- [] Add kid's name to inquiry form
-- [] Add privacy policy to both inquiry and setsu forms which requires agreement
-  - Outside form so it's not sent?
-- [] Change referrer options to match those in the new referrers PDF
+- [x] Setsumeikai form partial
+  - [x] Setsu#new/edit
+- [x] Add kid's name to inquiry form
 
 ## December 27th
 
 ### Setsumeikai Calendar
 
-- [] Add close dates to setsumeikais
 - [] Import the existing setsumeikais to the seasonal site
-- [] Add kid's name to inquiry form
 - [] Add privacy policy to both inquiry and setsu forms which requires agreement
   - Outside form so it's not sent?
 - [] Change referrer options to match those in the new referrers PDF
