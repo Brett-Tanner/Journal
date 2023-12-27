@@ -356,9 +356,25 @@
 
 ## December 27th
 
+- Plan out the materials site for Leroy
+
 ### Setsumeikai Calendar
 
-- [] Import the existing setsumeikais to the seasonal site
+- [x] Import the existing setsumeikais to the seasonal site
+  - [x] Change the upload code to accept CSVs of setsumeikai data
+  - [x] Fix the countless SM data entry errors
+  - [x] Add a close date field to the form/table
+  - [x] Figure out a way of generating the setsu involvements as well
+  - [x] Upload, then add shinkawa as an involved school for that Yako one
+
+## December 28th
+
+- [] Finish oultine for Leroy
+- [] Go through chats and check for stuff, like the price list from Daniel chat
+
+### Setsumeikai Calendar
+
+- [] Setsus added from Sheet are not being sent for some reason, look into it
 - [] Add privacy policy to both inquiry and setsu forms which requires agreement
   - Outside form so it's not sent?
 - [] Change referrer options to match those in the new referrers PDF
