@@ -369,25 +369,63 @@
 
 ## December 28th
 
-- [] Finish oultine for Leroy
-- [] Go through chats and check for stuff, like the price list from Daniel chat
+### Setsumeikai Calendar
+
+- [x] Setsus added from Sheet are not being sent for some reason, look into it
+  - The release date for most of them was today, not yesterday
+- [x] Change placeholder text color and unbold
+- Add privacy policy
+  - [x] Setsu form
+  - [x] Inquiry form
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Setsu should release on release date, not after it
+- [x] Add 'All/area schools' option to setsumeikai/inquiry list
+  - Modify the controller for
+    - [x] Setsumeikais
+    - [x] Inquiries
+    - [x] Children
+    - [x] Time slots
+      - Makes no sense here, added an optional param to exclude the all option
+    - [x] Surveys
+- [x] Translate lunch on attendance sheets to English, event in JA locale
+- [x] Fix photo service count on activity attendance sheet showing the count for the whole event, not activity
+  - Partial resolution, now correctly counts only the kids for that activity, but incorrectly doesn't count their siblings
+  - Might need a separate list of photo kids, then get all their siblings, then count the intersection of their siblings and the kids attending
+- [x] Finish off/fix the setsu stats page
+  - Was using plain scope rather than scope.all and passing just Inquiry to policy_scope
+
+## January 4th
+
+- [] Finish outline for Leroy
 
 ### Setsumeikai Calendar
 
-- [] Setsus added from Sheet are not being sent for some reason, look into it
-- [] Add privacy policy to both inquiry and setsu forms which requires agreement
-  - Outside form so it's not sent?
 - [] Change referrer options to match those in the new referrers PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [] Add the 3 course to price lists
+  - [] Change the model
+  - [] Change the forms
+  - [] If you have time left, use the store API rather than my hacked together solution
+  - [] Push, then add the 3 course (assuming here that it just won't use the 3 course since it's hardcoded)
+  - [] Change the code in Invoice#calc_cost
+  - [] And remove pointless price!!
+- Make other associated modifications to the costs
+  - [] There's now a 1 course (officially, price changed as well)
+  - [] Ele and kindy pay same base PriceLists
+  - [] Lunch & dinner options from 660 > 770
+  - [] Repeater discount is now for 5 or more registrations, not 10
+  - [] Look at the PDF for any others
 - [] Add the midExt category to the TimeSlot enum
   - [] And use it when calculating the pointless price
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
   - [] Add & run the migration, then zip for next week
   - [] Add code & tests
 - [] Also kindy and elementary price modifiers
-  - [] Add & run the migration, then zip for next week
+  - [] Add & run the migration, push
   - [] Add code & tests
 
 #### HAML Refactors
@@ -465,6 +503,7 @@ end
 
 ##### Testing
 
+- [] Add chart request specs (and policy??)
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - Summary
     - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
