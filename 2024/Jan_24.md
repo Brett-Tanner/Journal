@@ -4,17 +4,26 @@
 
 ### Setsumeikai Calendar
 
-- [] Do the switch
-- [] Change school page stubs to they link to the correct school on entry
-- [] Change referrer options to match those in the new referrers PDF
+- [x] Do the switch
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Add the 3 course to price lists
+- [x] Fix up some mising info on Schools/a missing SM
+- [x] Add the 3 course to price lists
   - [x] Change the model
   - [x] Change the forms
   - [x] Push, then add the 3 course
-  - [] Change the code in Invoice#calc_cost
+  - [x] Change the code in Invoice#calc_cost
+
+## January 5th
+
+### Seasonal Registration Site
+
+- [] Finish outline for Leroy
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Add the 3 course to price lists
   - [] And remove pointless price!!
 - Make other associated modifications to the costs
   - [] There's now a 1 course (officially, price changed as well)
