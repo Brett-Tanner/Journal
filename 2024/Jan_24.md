@@ -4,15 +4,16 @@
 
 ### Setsumeikai Calendar
 
+- [] Do the switch
+- [] Change school page stubs to they link to the correct school on entry
 - [] Change referrer options to match those in the new referrers PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Add the 3 course to price lists
-  - [] Change the model
-  - [] Change the forms
-  - [] If you have time left, use the store API rather than my hacked together solution
-  - [] Push, then add the 3 course (assuming here that it just won't use the 3 course since it's hardcoded)
+  - [x] Change the model
+  - [x] Change the forms
+  - [x] Push, then add the 3 course
   - [] Change the code in Invoice#calc_cost
   - [] And remove pointless price!!
 - Make other associated modifications to the costs
@@ -36,6 +37,7 @@
 
 #### Future Plans
 
+- [] Allow for varying price list courses by automatically determining max/intervals in invoice calc
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
 - [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
