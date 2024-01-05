@@ -23,14 +23,11 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Add the 3 course to price lists
-  - [] And remove pointless price!!
 - Make other associated modifications to the costs
-  - [] There's now a 1 course (officially, price changed as well)
-  - [] Ele and kindy pay same base PriceLists
-  - [] Lunch & dinner options from 660 > 770
+  - [] Default lunch & dinner options from 660 > 770
   - [] Repeater discount is now for 5 or more registrations, not 10
-  - [] Look at the PDF for any others
+  - [] There's now a 1 course (officially, price changed as well)
+    - Ele and kindy pay same for the new 1 course, so no more pointless price
 - [] Add the midExt category to the TimeSlot enum
   - [] And use it when calculating the pointless price
 - [] Add close_date field to TimeSlot, saves me having to edit the hash every event
