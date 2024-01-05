@@ -17,25 +17,31 @@
 
 ## January 5th
 
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- Make other associated modifications to the costs
+  - [x] Default lunch & dinner options from 660 > 770
+  - [x] Repeater discount is now for 5 or more registrations, not 10
+  - [x] There's now a 1 course (officially, price changed as well)
+    - Ele and kindy pay same for the new 1 course, so no more pointless price
+- Add close_date field to TimeSlot, saves me having to edit the hash every event
+  - [x] Add & run the migration, push
+  - [x] Add close_at tests
+  - TDD kindy/ele modifiers
+    - [x] Add the code to use them in calculations
+
 ### Seasonal Registration Site
 
 - [] Finish outline for Leroy
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- Make other associated modifications to the costs
-  - [] Default lunch & dinner options from 660 > 770
-  - [] Repeater discount is now for 5 or more registrations, not 10
-  - [] There's now a 1 course (officially, price changed as well)
-    - Ele and kindy pay same for the new 1 course, so no more pointless price
-- [] Add the midExt category to the TimeSlot enum
-  - [] And use it when calculating the pointless price
-- [] Add close_date field to TimeSlot, saves me having to edit the hash every event
-  - [] Add & run the migration, then zip for next week
-  - [] Add code & tests
-- [] Also kindy and elementary price modifiers
-  - [] Add & run the migration, push
-  - [] Add code & tests
+- Add close_date field to TimeSlot, saves me having to edit the hash every event
+  - TDD kindy/ele modifiers
+    - [] Refactor the conditional into separate functions
+    - [] Test their inclusion in the summary
+  - [] Show kindy/ele modifiers where extra cost is shown
+  - [] Add forms fields to actually set the values
 
 #### HAML Refactors
 
