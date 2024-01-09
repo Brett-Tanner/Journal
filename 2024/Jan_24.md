@@ -1,7 +1,5 @@
 ## January 4th
 
-- [] Finish outline for Leroy
-
 ### Setsumeikai Calendar
 
 - [x] Do the switch
@@ -30,22 +28,31 @@
   - TDD kindy/ele modifiers
     - [x] Add the code to use them in calculations
 
+## January 9th
+
 ### Seasonal Registration Site
 
-- [] Finish outline for Leroy
+- [x] Finish outline for Leroy
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
+- [x] Add temp exception to repeater discount being 5 till all SMs do their job
+- [x] Let SMs delete inquiries since customers seem to like sending multiple
 - Add close_date field to TimeSlot, saves me having to edit the hash every event
   - TDD kindy/ele modifiers
-    - [] Refactor the conditional into separate functions
-    - [] Test their inclusion in the summary
-  - [] Show kindy/ele modifiers where extra cost is shown
-  - [] Add forms fields to actually set the values
+    - [x] Test their inclusion in the summary
+  - [x] Show kindy/ele modifiers where extra cost is shown (as extra cost)
+  - [] Add form fields to actually set the values
+- [] Individual schools see setsu stats for everyone
+- [] 'All/Area schools' for surveys is broken, individual schools fine
+- [] List events they apply to under price lists
 
 #### HAML Refactors
 
-- []
+- [x] TimeSlot event form
+- [] TimeSlot#edit
+- [] TimeSlot#new
+- [] TimeSlot form
 
 #### Future Plans
 
