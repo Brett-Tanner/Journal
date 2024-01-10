@@ -55,9 +55,46 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Individual schools see setsu stats for everyone
-- [] 'All/Area schools' for surveys is broken, individual schools fine
-- [] List events they apply to under price lists
+- [x] Realise I'm missing policy/request tests for charts and write those
+- [x] 'All/Area schools' for surveys is broken, individual schools fine
+  - Was breaking due to children without parents, couldn't display phone/email for nil
+  - Can end up with parentless children when merging, since the responses aren't copied and they prevent the SSIDless child being deleted
+  - Added safe navigation, and copied survey responses during child merge
+- [x] Bump Puma to 6.4.2 to avoid request smuggling vulnerability
+- [x] Add English translations for Stats categories
+- [x] And why none have been sent to GAS
+  - They are being sent, but GAS isn't updating send_flg. No dupes so fine for now I guess
+- [x] Let statistician see setsu/inquiry stats
+- [x] When AM/Admin clicks on a school to view Setsu stats for, still shows all schools
+  - [x] Add requested graphs (separate for held/created setsu, inquiry category pie chart etc.)
+  - [x] Remove null from referrer pie chart
+  - [x] Limit inquiries per setsumeikai to setsu inquiries
+- [x] List events they apply to under price lists
+  - [x] And in the edit view
+- [x] Disallow blank survey response submissions
+
+#### HAML Refactors
+
+- [x] Charts#setsumeikais
+- [x] PriceList partial
+- [x] PriceList#index
+- [x] PriceList#edit
+- [x] PriceList#new
+
+## January 11th
+
+- Add online trial lessons to setsu registration form
+  - [] Make it possible to edit Online's school info
+  - [] Add the necessary info
+  - [] Send that info in API responses
+  - [] Add SM accounts (if necessary) for Online
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Adjustments snuck into the middle of the summary, put them back on the left edge
+- [] Figure out why/how there are inquiries for Online
+- [] Add a table showing a summary of inquiries per month and type, as well as total per month
+- [] Do a run through of creating Spring School in dev env, check all the views etc. work with 2 events
 
 #### HAML Refactors
 
@@ -65,6 +102,7 @@
 
 #### Future Plans
 
+- [] Filter inquiries by setsumeikai/general
 - [] Allow for varying price list courses by automatically determining max/intervals in invoice calc
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
@@ -72,7 +110,7 @@
 - [] Investigate what happens if you upload a new asset with the same key as an existing one
 - [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
 - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
-- [] Move control of the domain from that Japanese site to Cloudflare
+- [] Move control of the domain from Onamae to Cloudflare
 - Platform Upgrades
   - TEST ALL ON STAGING FIRST
   - [] Bump AWS platform version
@@ -83,6 +121,8 @@
 
 ##### ActiveRecord
 
+- Look into [delegated types](https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html)
+  - [] especially for splitting the mess of user logic into more manageable chunks
 - Maybe use [#store](https://api.rubyonrails.org/classes/ActiveRecord/Store.html) on models with JSON, seems to give a nicer API
   - [] price lists
   - [] surveys
@@ -102,8 +142,6 @@
 - validates_acceptance_of creates a virtual attribute which must be true for the record to be saved
   - [] add to User for backend validation of privacy policy
 - You can chain a list of validations on a single column, like `validates presence: true, uniqueness: true ... etc.`
-- Look into [delegated types](https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html)
-  - [] especially for splitting the mess of user logic into more manageable chunks
 - Use SQL strings, or maybe the active_record_import gem to update children
 
 ##### Optimisation
