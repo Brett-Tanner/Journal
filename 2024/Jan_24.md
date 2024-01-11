@@ -91,14 +91,21 @@
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Adjustments snuck into the middle of the summary, put them back on the left edge
-- [] Figure out why/how there are inquiries for Online
+- [x] Adjustments snuck into the middle of the summary, put them back on the left edge
+- [x] Figure out why/how there are inquiries for Online
+  - It was because I also made them Ikebukero SM for some reason, was getting their inquries as well
+  - Also had an issue with the inquiry index erroring because Online isn't a real school, so made default school the managed school
+- [x] Do a run through of creating Spring School in dev env, check all the views etc. work with 2 events
+- [x] Finish off the time slot edit form that got lost yesterday
+- [x] Show multiple events on child/parent pages if available
+- [x] Create Spring School
+- [x] Manual adjustments to special arvo snacks and arvo close_at
+- [] Modify auto afternoon creation to use the same close at as the morning, rather than the default
 - [] Add a table showing a summary of inquiries per month and type, as well as total per month
-- [] Do a run through of creating Spring School in dev env, check all the views etc. work with 2 events
 
 #### HAML Refactors
 
-- []
+- [x] TimeSlot#edit
 
 #### Future Plans
 
