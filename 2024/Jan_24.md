@@ -83,12 +83,6 @@
 
 ## January 11th
 
-- Add online trial lessons to setsu registration form
-  - [] Make it possible to edit Online's school info
-  - [] Add the necessary info
-  - [] Send that info in API responses
-  - [] Add SM accounts (if necessary) for Online
-
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [x] Adjustments snuck into the middle of the summary, put them back on the left edge
@@ -100,12 +94,55 @@
 - [x] Show multiple events on child/parent pages if available
 - [x] Create Spring School
 - [x] Manual adjustments to special arvo snacks and arvo close_at
-- [] Modify auto afternoon creation to use the same close at as the morning, rather than the default
-- [] Add a table showing a summary of inquiries per month and type, as well as total per month
 
 #### HAML Refactors
 
 - [x] TimeSlot#edit
+
+## January 12th
+
+To fix the rubocop linter in nvim using the wrong version, change the lsp setup like this:
+
+```
+require("lspconfig").rubocop.setup({
+  cmd = { "/home/brett/.rbenv/shims/rubocop --lsp" },
+})
+```
+
+- [x] Birthday/grade mapping was off because not using April as start of year or taking current date into account
+- [x] Auto-scroll to top wasn't happening on Setsu form summary because pathname didn't change
+  - So changed the useEffect dependency to the whole location object, which does change because of the hash
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [x] Modify auto afternoon creation to use the same close at as the morning, rather than the default
+- [x] Sort events by school id within start date on index
+
+##### Testing
+
+- [x] Create copy of Spring school in my (desktop) local dev environment
+
+## January 15th
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Add a table showing a summary of inquiries per month and type, as well as total per month [like this](https://docs.google.com/spreadsheets/d/1fcCN4togDFfhgDeuver5Ts-Javrq_s-RI0b_qRcJc3k/edit#gid=1456240236)
+
+##### Testing
+
+- Write tests for Invoice#calc_cost to prepare for the rewrite
+  - Summary
+    - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
+  - [] PDF creation (or at least that one is created)
+- Rewrite Invoice#calc_cost as separate classes for cost calculation, summary generation and PDF creation
+  - Can test it separately with unit tests till ready, then swap it in when done
+- [] Refactor request specs to use rails path helpers
+- [] Test emails with [email_spec](https://github.com/email-spec/email-spec) gem
+- [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
+
+#### HAML Refactors
+
+- []
 
 #### Future Plans
 
@@ -178,19 +215,6 @@ end
 - [] Can probably speed up queries for ChartController with pluck
 - [] If indexing FK columns which can be null, exclude null from the index
 
-##### Testing
-
-- [] Add chart request specs (and policy??)
-- Write tests for Invoice#calc_cost to prepare for the rewrite
-  - Summary
-    - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
-  - [] PDF creation (or at least that one is created)
-- Rewrite Invoice#calc_cost as separate classes for cost calculation, summary generation and PDF creation
-  - Can test it separately with unit tests till ready, then swap it in when done
-- [] Refactor request specs to use rails path helpers
-- [] Test emails with [email_spec](https://github.com/email-spec/email-spec) gem
-- [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
-
 ##### Views
 
 - [] Extract conditonal info display into its own partial
@@ -229,11 +253,21 @@ end
   - [] Overview
   - [] Useful Commands
 
-### Work Project - [Games Site]()
+### [Materials](https://github.com/Brett-Tanner/materials)
 
-- [] Avatars
-  - Can customise with points earned from games
-- [] Matching game
-  - Toggle numbers on the cards
-  - Show heat gauge/points earned on right
-  - Play audio of the word when clicked? (Audio file size might be an issue)
+- Scaffold the material resource
+  - [] system test
+  - [] unit tests
+  - [] model
+  - [] controller/routes
+  - [] views
+- Look into YJIT
+- Uncomment force_ssl if not already
+
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
+
+- Add online trial lessons to setsu registration form
+  - [] Make it possible to edit Online's school info
+  - [] Add the necessary info
+  - [] Send that info in API responses
+  - [] Add SM accounts (if necessary) for Online
