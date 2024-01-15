@@ -124,15 +124,57 @@ require("lspconfig").rubocop.setup({
 
 ## January 15th
 
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+#### Documentation
+
+- Create user stories for
+  - [x] External teacher
+  - [x] External manager
+  - [x] KU teacher
+  - [x] KU curriculum
+  - [x] KU sales
+  - [x] KU admin
+- [x] Make & embed a quick outline of the DB schema
+
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Add a table showing a summary of inquiries per month and type, as well as total per month [like this](https://docs.google.com/spreadsheets/d/1fcCN4togDFfhgDeuver5Ts-Javrq_s-RI0b_qRcJc3k/edit#gid=1456240236)
+- [x] Filter inquiries by setsumeikai/general
+- [x] Add auto-unsubscribe button to emails to meet gmail/yahoo requirements
+
+## January 16th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- Look into YJIT
+- Uncomment force_ssl if not already
+
+#### Views
+
+- Teacher homepage is "Today's materials"
+
+  - Main nav with contact us, news/blog
+  - Navbar at top with day links
+  - Links for phonics, Eng class, exercise
+  - Buttons for printables, information
+
+- Students
+
+  - Teachers should be able to comment on kids/see comments by other teachers
+    - Notifications?
+  - We want stats for students, gender, age, level, etc. in a stats view
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 ##### Testing
 
 - Write tests for Invoice#calc_cost to prepare for the rewrite
   - Summary
-    - [] Test that event options are removed from blank invoices (currently shown but not included in total cost?)
+    - [] Test that event options are removed from blank invoices
+      - They're currently shown, and the registration remains on the invoice, but not charged for
+      - Did not end up doing this because the logic is too entangled
+      - Obvious solution is to mark them for destruction in orphan option check, but that's also used with hashes, not just models
+      - So can't call #mark_for_destruction, #destroy or set the \_destroy flag
   - [] PDF creation (or at least that one is created)
 - Rewrite Invoice#calc_cost as separate classes for cost calculation, summary generation and PDF creation
   - Can test it separately with unit tests till ready, then swap it in when done
@@ -146,7 +188,7 @@ require("lspconfig").rubocop.setup({
 
 #### Future Plans
 
-- [] Filter inquiries by setsumeikai/general
+- [] Add a table showing a summary of inquiries per month and type, as well as total per month [like this](https://docs.google.com/spreadsheets/d/1fcCN4togDFfhgDeuver5Ts-Javrq_s-RI0b_qRcJc3k/edit#gid=1456240236)
 - [] Allow for varying price list courses by automatically determining max/intervals in invoice calc
 - [] Overwrite the sign in path properly as well
   - Can use `stored__location_for` to redirect to originally requested page
@@ -240,29 +282,6 @@ end
 - [] Apparently there are undocumented ControllerHelper methods I can use to generate the ID for for main elements
 - [] Use time_tag helper when outputting date or time, generates a `time` element which apparently is a thing
 - [] Use number_to_human_size when I add the blob index etc.
-
-### [KU-Wiki](https://github.com/Brett-Tanner/KU-wiki)
-
-- [] Add 'How to contribute'
-  - [] Adding a page
-  - [] Adding a section
-- [] AWS section
-  - [] Pushing a new version
-  - [] Services we use and overview of what for
-- [] Rails section
-  - [] Overview
-  - [] Useful Commands
-
-### [Materials](https://github.com/Brett-Tanner/materials)
-
-- Scaffold the material resource
-  - [] system test
-  - [] unit tests
-  - [] model
-  - [] controller/routes
-  - [] views
-- Look into YJIT
-- Uncomment force_ssl if not already
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
 
