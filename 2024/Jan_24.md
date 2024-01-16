@@ -146,25 +146,35 @@ require("lspconfig").rubocop.setup({
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
-- Look into YJIT
-- Uncomment force_ssl if not already
-
 #### Views
 
-- Teacher homepage is "Today's materials"
+- Scaffold course views
 
-  - Main nav with contact us, news/blog
-  - Navbar at top with day links
-  - Links for phonics, Eng class, exercise
-  - Buttons for printables, information
+  - [x] Index
+  - [x] Course table partial
+  - [x] New/Edit
+  - [x] Form partial
+  - [x] Show
 
-- Students
+#### Files
 
-  - Teachers should be able to comment on kids/see comments by other teachers
-    - Notifications?
-  - We want stats for students, gender, age, level, etc. in a stats view
+- [x] Add basic uploads
+- [x] Add basic downloads
+- [x] Add breadcrumbs
+- [x] Add ability to make new folders
+- [x] Implement uploads to current folder
+- [x] Add navigation back to previous folder
+- [x] Add navigation forward to nested folders
+
+## January 17th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [] Refactor the mess of folder-related code I wrote yesterday
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Add the event_summary table to one of the charts views
 
 ##### Testing
 
