@@ -168,13 +168,33 @@ require("lspconfig").rubocop.setup({
 
 ## January 17th
 
+- Set Jayson up with an AWS account for his Elastic Beanstalk
+  - [x] Invite his personal account
+  - [x] Then cancel that, bad idea
+  - [x] Make him get a new account just for work
+- Add a search to the school index on main site
+  - [x] Write basic JS to hide/show results
+  - [x] Basic HTML for the form
+- [x] Endless meetings
+- [x] Talk out a basic structure for lessons with Daniel, took pictures of the sketches
+
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
-- [] Refactor the mess of folder-related code I wrote yesterday
+- [x] Bump to Rails 7.1.3
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Add the event_summary table to one of the charts views
+- [x] Add the event_summary table to one of the charts views
+
+## January 18th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [] Refactor the mess of folder-related code I wrote yesterday
+  - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
+- [] Create a custom solution for uploading folders and keeping the directory structure, probably with JS
+
+### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 ##### Testing
 
