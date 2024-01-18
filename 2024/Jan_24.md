@@ -190,9 +190,52 @@ require("lspconfig").rubocop.setup({
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
-- [] Refactor the mess of folder-related code I wrote yesterday
-  - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
-- [] Create a custom solution for uploading folders and keeping the directory structure, probably with JS
+- Files controller is now just a file explorer rather than primary method of access/storage, so decouple from courses
+  - [x] Add index action that lists all course folders
+  - [x] Decouple all the partials from reliance on course_id
+  - [x] General cleanup of code quality in those views/controllers
+
+#### Lessons
+
+- Model for each category, all inheriting from a base class
+  - Base class has title, summary, category, week, day, references a course and has attached materials (attached files)
+  - Start with daily activity & exercise
+    - Links and steps for both as array column
+    - Each have different subcategory enums
+- Has to be backed by a single database table so it can be referenced from other tables
+- Each model can generate a PDF plan from a template
+
+- [x] Create & test base Lesson model
+- [x] Add a basic main nav
+- [x] Write a system test for creating a DailyActivity lesson
+- Pass that test by:
+  - [x] Adding the role enum to User
+  - [x] Creating a migration/model/factory for Organisations so Users can be associated with them
+  - [x] Adding steps and links columns to Lesson
+  - [x] Creating the DailyActivity model & testing its validity
+  - [x] Fiddle with rails_helper for a while to get system tests running with Rack::Test, not selenium
+  - [x] Correctly subclass DailyActivity from Lesson, and reorganise folders to match
+  - [x] Add an 'Add lesson' dropdown to Course#show
+  - [x] Create controller actions for DailyActivity creation
+  - [x] Make day an enum on Lesson so we have human readable days mapped
+  - [x] Create views for DailyActivity creation
+
+## January 19th
+
+- [] Stop pretending the 1 course is spot use on invoices
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+#### Lessons
+
+- Write a system test for creating a DailyActivity lesson
+- Pass that test by:
+  - [] Creating Lesson#show action/view and daily_activity partial
+
+#### Files
+
+- [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
+  - Maybe set automatically with constants on the relevant model
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
