@@ -222,11 +222,33 @@ require("lspconfig").rubocop.setup({
 
 ## January 19th
 
-- [] Stop pretending the 1 course is spot use on invoices
+- [x] Long meeting to get Jayson set up with organisation AWS account
+- [x] Set up an SCP so he can only access EB
+- [x] Stop pretending the 1 course is spot use on invoices
+- Main site tweaks
+  - [x] Limit month range to next 2 months
+    - [x] Write tests
+    - Can do with validRange prop to calendar component
+    - Takes start and end arguments in form 'YYYY-MM-DD'
+  - [x] Add month title/navigation to footer as well as header
+  - [x] Scroll to top of calendar when month changes
+- Realise Rails has built in STI support and try using that
+  - [x] Rename category enums to a 'type' string column
+  - [x] And subcategory to subtype
+  - [x] Add inclusion validations to compensate for the removal of enums
+  - [x] Update tests if needed
+  - Had quite a few issues compared to using the enum I had set up already
+  - Will need to look into it properly and weigh pros/cons
+
+## January 20th
+
+- [] Finish off the search functionality for the main site school index
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 #### Lessons
+
+- Take a fresh look at Rails STI vs my version with enums
 
 - Write a system test for creating a DailyActivity lesson
 - Pass that test by:
