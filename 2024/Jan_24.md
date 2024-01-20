@@ -222,6 +222,8 @@ require("lspconfig").rubocop.setup({
 
 ## January 19th
 
+### [Materials](https://github.com/Brett-Tanner/materials)
+
 - [x] Long meeting to get Jayson set up with organisation AWS account
 - [x] Set up an SCP so he can only access EB
 - [x] Stop pretending the 1 course is spot use on invoices
@@ -242,13 +244,20 @@ require("lspconfig").rubocop.setup({
 
 ## January 20th
 
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [x] Switch to Rails' built-in STI
+- [x] Add #split_on_capitals to Applicationhelper
+- [x] Split shared lesson form fields into their own partial
+- [x] Create Exercise model/form
+
+## January 22nd
+
 - [] Finish off the search functionality for the main site school index
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 #### Lessons
-
-- Take a fresh look at Rails STI vs my version with enums
 
 - Write a system test for creating a DailyActivity lesson
 - Pass that test by:
