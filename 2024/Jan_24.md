@@ -300,10 +300,13 @@ require("lspconfig").rubocop.setup({
 
 ### Lessons
 
-- [] Extract link and step logic into concerns to be shared amongst lesson types
-  - [] Same for the related partials
-  - [] And DRY the tests once I've verified they still pass using concerns
-  - [] Add tests for more complex validations like valid URLs, empty/partial inputs
+- Extract link and step logic into concerns to be shared amongst lesson types
+  - [x] Create the new concerns
+  - [x] And DRY the tests once I've verified they still pass using concerns
+  - [x] Same for the related partials
+  - Add tests for more complex validations and their errors like
+    - [x] empty/partial inputs
+    - [x] valid URLs (just checking for http:// or https://)
 - [] Figure out a way of moving the save_guide method to the model without infinite loops
   - Or maybe just inherit the controllers so you can have the after action in all subs automatically?
 
