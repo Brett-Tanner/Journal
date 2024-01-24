@@ -257,16 +257,65 @@ require("lspconfig").rubocop.setup({
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
+- [x] Create form errors partial and include it in the lesson form/all others going forward
+- [] Use '\_url' helpers in #redirect_to to conform to spec
+
 #### Lessons
 
 - Write a system test for creating a DailyActivity lesson
-- Pass that test by:
-  - [] Creating Lesson#show action/view and daily_activity partial
+  - Pass that test by:
+    - [x] Adding a DailyActivities controller with only a create action
+    - [x] Creating Lesson#show action/view and daily_activity partial
+- [x] Rather than rendering a form for each lesson type, render the shared form then a partial for each lesson type
+- [x] Extract lesson_params into a concern that can be included in and merged in type controllers
+- [x] Write scaffold tests for DailyActivity#set_links & #set_steps
+- [x] Move lesson controllers to a subfolder
+- [] Add has_one_attached :guide to Lesson
+  - [x] Test guide PDF generated with correct key
+  - [x] Add level enum to base Lesson
+  - [x] Autocreate guide on lesson creation
+
+## January 24th
+
+#### Lessons
+
+- [x] Add has_one_attached :guide to Lesson
+  - [x] Remove unnecessary whitespace from links
+  - [x] Fix infinite loop when updating lesson
+    - Was caused by calling purge on the guide attachment
+    - Moved the call to save_guide to the controller in an after_action hook
+    - But not happy with this solution, should be on the model
+    - Revisit later
+  - [x] Add check for guide download link to system test
+  - [x] Test PDF content
+  - [x] Resolve a bunch of gem dependency issues with poppler
+  - [x] Add check for guide preview to system test
+  - [x] Add guide preview to Lesson#show
+- [x] Preprocess guide thumbnails as AVIF
+- [x] Add timestamp to last part of guide key
+- [x] Figure out how to have lesson factories inherit from a base factory like the models
+- [x] Create & test guide creation for Exercise
+
+## January 25th
+
+### Lessons
+
+- [] Extract link and step logic into concerns to be shared amongst lesson types
+  - [] Same for the related partials
+  - [] And DRY the tests once I've verified they still pass using concerns
+  - [] Add tests for more complex validations like valid URLs, empty/partial inputs
+- [] Figure out a way of moving the save_guide method to the model without infinite loops
+  - Or maybe just inherit the controllers so you can have the after action in all subs automatically?
 
 #### Files
 
 - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
   - Maybe set automatically with constants on the relevant model
+
+#### PDF Templates
+
+- [] Create a module with reusable PDF components
+- [] Maybe have a base header or something generated in Lesson base class
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
