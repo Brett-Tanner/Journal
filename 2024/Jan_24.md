@@ -277,6 +277,8 @@ require("lspconfig").rubocop.setup({
 
 ## January 24th
 
+### [Materials](https://github.com/Brett-Tanner/materials)
+
 #### Lessons
 
 - [x] Add has_one_attached :guide to Lesson
@@ -298,6 +300,12 @@ require("lspconfig").rubocop.setup({
 
 ## January 25th
 
+### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
+
+- [x] Just don't show next buttons if they can't be clicked
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
 ### Lessons
 
 - Extract link and step logic into concerns to be shared amongst lesson types
@@ -307,8 +315,32 @@ require("lspconfig").rubocop.setup({
   - Add tests for more complex validations and their errors like
     - [x] empty/partial inputs
     - [x] valid URLs (just checking for http:// or https://)
-- [] Figure out a way of moving the save_guide method to the model without infinite loops
+- [x] Figure out a way of moving the save_guide method to the model without infinite loops
   - Or maybe just inherit the controllers so you can have the after action in all subs automatically?
+  - Ended up extracting it to the LessonsController and inheriting from that in all the subtypes
+- [x] Minor styling tweaks for meeting
+- Create CourseLessons to allow lessons to belong to multiple courses
+  - [x] Migrate in the table
+  - [x] Change associations
+  - [x] Create a partial for CourseLesson fields and add a Stimulus FieldsController
+  - [x] Change routes/controller code
+  - [x] Create Lessons#index and subcontroller indexes + view
+
+## January 26th
+
+- [] Add setsu stats Jack wanted (like in the admin chat)
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- Create CourseLessons to allow lessons to belong to multiple courses
+  - [] Modify CourseLesson fields partial so it can be used on Course creation form as well
+- Add Pundit for Lessons
+  - [] Tests
+  - [] Write the pundit models
+- Extract common guide generation code into Lesson parent class
+- [] Add translations for all the lesson stuff
 
 #### Files
 
@@ -319,6 +351,8 @@ require("lspconfig").rubocop.setup({
 
 - [] Create a module with reusable PDF components
 - [] Maybe have a base header or something generated in Lesson base class
+- [] Set up SolidQueue so I can be sure background jobs actually get done
+  - Previews/old PDFs etc. could definitely build up otherwise
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -441,6 +475,7 @@ end
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
 
+- [] Remove back button from summary screen
 - Add online trial lessons to setsu registration form
   - [] Make it possible to edit Online's school info
   - [] Add the necessary info
