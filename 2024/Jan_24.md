@@ -342,6 +342,9 @@ require("lspconfig").rubocop.setup({
 - Create CourseLessons to allow lessons to belong to multiple courses
   - [x] Move week and day from Lesson to CourseLesson table
   - [x] Add lesson_fields partial for adding lessons to courses
+  - [x] merge lesson_fields partial with courses_fields partial
+  - [x] move concern callbacks (linkable, steppable) into their concerns
+  - [x] test adding an image to a PDF with exercise
 
 ## January 29th
 
@@ -353,6 +356,7 @@ require("lspconfig").rubocop.setup({
   - [] Tests
   - [] Write the pundit models
 - [] Extract common guide generation code into Lesson parent class
+- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
 
 #### Files
 
