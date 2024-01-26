@@ -328,19 +328,31 @@ require("lspconfig").rubocop.setup({
 
 ## January 26th
 
-- [] Add setsu stats Jack wanted (like in the admin chat)
+- [x] 3 hour meeting with Leroy/Daniel/Luis
+- [x] Add setsu stats Jack wanted (like in the admin chat)
+  - [x] Add totals for each col at the top
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [x] Remove root_path from Course, not necessary anymore
+
+### Lessons
+
+- [x] Styling tweaks, sorting lessons by type on Courses#show
+- Create CourseLessons to allow lessons to belong to multiple courses
+  - [x] Move week and day from Lesson to CourseLesson table
+  - [x] Add lesson_fields partial for adding lessons to courses
+
+## January 29th
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 ### Lessons
 
-- Create CourseLessons to allow lessons to belong to multiple courses
-  - [] Modify CourseLesson fields partial so it can be used on Course creation form as well
 - Add Pundit for Lessons
   - [] Tests
   - [] Write the pundit models
-- Extract common guide generation code into Lesson parent class
-- [] Add translations for all the lesson stuff
+- [] Extract common guide generation code into Lesson parent class
 
 #### Files
 
@@ -353,6 +365,10 @@ require("lspconfig").rubocop.setup({
 - [] Maybe have a base header or something generated in Lesson base class
 - [] Set up SolidQueue so I can be sure background jobs actually get done
   - Previews/old PDFs etc. could definitely build up otherwise
+
+#### Students
+
+- Update student level when level check updates
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
