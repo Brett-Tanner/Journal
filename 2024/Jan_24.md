@@ -348,13 +348,46 @@ require("lspconfig").rubocop.setup({
 
 ## January 29th
 
+- [x] If a month is empty on the setsumeikai calendar, immediately show the next month
+  - [x] Also check how far in the future we are and stop if > 3 months to avoid infinite scroll
+
 ### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [x] Add basic seeds using FactoryBot to save me some typing
+- [x] Rename curriculum type to writer
+- [x] Remove students_count from organisation, add it to school later & calculate from Organisation#students_count
+- Generate Devise views
+  - [x] Convert to HAML
+  - [x] Add basic styling
 
 ### Lessons
 
+- Require authentication to access site
+  - [x] Add welcome page & devise sign in/up links
+  - [x] Add devise layout
+  - [x] Create different roots for authenticated/unauthenticated users
+  - [x] Require sign_in for all actions
+  - [x] Add locale scoped routes and locale switching based on them
+  - [x] Modify User#is?() to take array of roles and test
+  - [x] Auto-redirect user based on type at sign-in
 - Add Pundit for Lessons
-  - [] Tests
-  - [] Write the pundit models
+  - [x] Add scaffold for other user types so they can be included in auth testing
+  - [x] Tests
+    - [x] Add requirement to be part of KidsUP
+    - [x] Add policy_scope tests
+    - [x] Actually call policy_scope/authorize in controllers and enforce them being called
+    - [x] Inherit policy_class from Lesson so I don't need to write a new one for each subclass
+  - [x] Write the pundit models
+
+## January 30th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+- [] Create JS flash_controller
+- [] Cache plan_id or whatever determines permissions in session, to reduce DB calls
+
+### Lessons
+
 - [] Extract common guide generation code into Lesson parent class
 - [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
 
