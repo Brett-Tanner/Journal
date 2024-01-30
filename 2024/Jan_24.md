@@ -383,18 +383,59 @@ require("lspconfig").rubocop.setup({
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
-- [] Create JS flash_controller
+- [x] Create JS flash_controller
+- [x] Start using SolidQueue
+- [x] Install & secure PGHero
+
+#### Organisations
+
+- [x] System test for sales creating an organisation
+- [x] Create & test pundit policy
+- [x] Add validations
+  - presence of name, email
+  - uniqueness of name, email
+- Scaffold views
+  - [x] Index
+  - [x] Card
+  - [x] New/Edit/form
+
+#### Users
+
+- Create & test pundit policy for each user type
+  - [x] Validate that admins, curriculum and sales can only be created for KU
+  - [x] Policy scopes for all users
+  - [x] Scaffold School & Managements join table
+
+## January 31st
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
 - [] Cache plan_id or whatever determines permissions in session, to reduce DB calls
 
-### Lessons
+#### Users
 
-- [] Extract common guide generation code into Lesson parent class
-- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
+- Create & test pundit policy for each user type
+  - [] AdminPolicy
+  - [] CurriculumPolicy
+  - [] SalesPolicy
+  - [] OrgAdminPolicy
+  - [] SMPolicy
+  - [] TeacherPolicy
+- [] Check users can only be created for own org unless they're an appropriate role at KU
+- [] System test for creating teacher as org admin
+- Fill in differences between STI models
+  - [] Teacher & SM belong to a school
+- [] Create separate navs for roles which need them
 
 #### Files
 
 - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
   - Maybe set automatically with constants on the relevant model
+
+### Lessons
+
+- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
+- [] Extract common guide generation code into Lesson parent class
 
 #### PDF Templates
 
@@ -406,6 +447,12 @@ require("lspconfig").rubocop.setup({
 #### Students
 
 - Update student level when level check updates
+
+#### Support
+
+- Org Admins & SMs can message support
+- Sales, curriculum and admins can view/respond to support messages
+- Display notifications for support messages
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
