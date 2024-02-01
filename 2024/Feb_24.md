@@ -18,25 +18,32 @@
 - Create & test pundit policy for each user type
   - [x] OrgAdminPolicy
   - [x] SchoolManagerPolicy
-  - [] TeacherPolicy
+  - [x] TeacherPolicy
 - Create a controller if missing
   - [x] OrgAdminController
   - [x] SchoolManagerController
-  - [] TeacherController
+  - [x] TeacherController
 - Scaffold user views so I can test out how STI links work with Pundit
   - Nav for each type
     - [x] OrgAdmin
     - [x] SM
-    - [] Teacher
+    - [x] Teacher
   - Show for each type
     - [x] OrgAdmin
     - [x] SM
-    - [] Teacher
+    - [x] Teacher
   - Form partial for each type
     - [x] OrgAdmin
     - [x] SM
       - [x] Show at least one managements selection if none currently attached
-    - [] Teacher
+    - [x] Teacher
+      - [x] Create & test SchoolPolicy
+
+## February 2nd
+
+- [] Install Mission Control
+
+### [Materials](https://github.com/Brett-Tanner/materials)
 
 #### Files
 
