@@ -41,19 +41,73 @@
 
 ## February 2nd
 
-- [] Install Mission Control
+- [x] Install Mission Control
+- [x] Add the totals back to the setsu table (maybe did it on live branch??)
+- [x] Added some percentages in a hopeless attempt to avoid another tiny change in two days
+- [x] Finish off the WP search
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- [x] Untangle the info I got from Daniel about required fields for each lesson type
+- [x] Condense any fields that are basically the same
+- [x] Migrate in all the new Lesson columns
+- Rename Course#name to title for consistency
+  - [x] Change the migration
+  - [x] Find and replace all the code that uses Course.name
+- Create the resources I can for those lesson types
+  - Create/Modify factories & validity tests for all lesson types
+    - [x] DailyActivity
+    - [x] EnglishClass
+    - [x] Exercise
+    - [x] Phonics
+  - [x] Modify existing models/controllers for new default lesson fields
+
+## February 3rd
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- Shared lesson behaviour
+  - [] steppable concern might need to be made more generic so it can create an array for any col
+  - [] icon path generation
+    - also remove the default in the factory
+  - [] generate topic string from unit, week and topic inputs
+- Tests for new behaviour
+  - [] DailyActivity
+  - [] EnglishClass
+  - [] Exercise
+  - [] Phonics
+- Models
+  - [] DailyActivity
+  - [] EnglishClass
+    - [] Don't autogenerate PDF for this, will be manually uploaded for now
+    - [] So generate preview from the uploaded plan instead
+  - [] Exercise
+  - [] Phonics
+- PDF libs
+  - [] DailyActivity
+  - [] EnglishClass
+  - [] Exercise
+  - [] Phonics
+- Necessary tests
+  - [] DailyActivity
+  - [] EnglishClass
+  - [] Exercise
+  - [] Phonics
+- Views
+  - [] DailyActivity
+  - [] EnglishClass
+  - [] Exercise
+  - [] Phonics
+- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
 
 #### Files
 
 - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
   - Maybe set automatically with constants on the relevant model
-
-### Lessons
-
-- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
-- [] Extract common guide generation code into Lesson parent class
 
 #### PDF Templates
 
@@ -71,6 +125,8 @@
 - Display notifications for support messages
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
+
+- [] Jack wants an area filter on the stats as well as a school filter
 
 ##### Testing
 
