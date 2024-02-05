@@ -64,20 +64,48 @@
     - [x] Phonics
   - [x] Modify existing models/controllers for new default lesson fields
 
-## February 3rd
+## February 5th
+
+- 2 online lessons
 
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 ### Lessons
 
+- [x] Make another attempt at generating the PDF in a model callback, not a controller
+
+  - Ended up creating the blob independently then assigning it with = rather than attach to avoid saves
+
 - Shared lesson behaviour
-  - [] steppable concern might need to be made more generic so it can create an array for any col
-  - [] icon path generation
+  - [x] steppable concern might need to be made more generic so it can create an array for any col
+    - Renamed to listable and had it include #listify, which needs to be manually called for each array attr
+  - [x] icon path generation
     - also remove the default in the factory
-  - [] generate topic string from unit, week and topic inputs
+- [x] Move PDF generation code into concerns
+- Create shared pdf component modules
+  - [x] Header
+  - [x] NumList
+
+## February 6th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- [] Create somewhere for all the PDF code to include/inherit defaults from
+- Create shared pdf component modules
+  - padding
+  - gap
+  - heading size
+  - base font size
+  - pdf object?
+- Create shared pdf component modules
+  - [] DotList
+  - [] Links
 - Tests for new behaviour
   - [] DailyActivity
   - [] EnglishClass
+    - [] generate topic string from unit, week and topic inputs
   - [] Exercise
   - [] Phonics
 - Models
@@ -108,11 +136,6 @@
 
 - [] Can use the 'accept' attribute of file fields to limit filetypes which can be uploaded
   - Maybe set automatically with constants on the relevant model
-
-#### PDF Templates
-
-- [] Create a module with reusable PDF components
-  - Move it into lib/pdf, not a concern, unless they end up being shared between models
 
 #### Students
 
