@@ -88,49 +88,74 @@
 
 ## February 6th
 
+- [x] Get Togoshi photo kids data for Leroy
+
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 ### Lessons
 
-- [] Create somewhere for all the PDF code to include/inherit defaults from
-- Create shared pdf component modules
+- [x] Create somewhere for all the PDF code to include/inherit defaults from
+- [x] Iterate over listable attrs in Listable concern, get the attrs from class constant
+- [x] Format the date in filename gen to remove spaces
+- [x] Move the concern tests into their own spec files rather than shared examples
+
+- [x] Create shared pdf defaults component modules
   - padding
   - gap
   - heading size
   - base font size
-  - pdf object?
+- [x] Use the defaults in existing code
 - Create shared pdf component modules
-  - [] DotList
-  - [] Links
-- Tests for new behaviour
-  - [] DailyActivity
-  - [] EnglishClass
-    - [] generate topic string from unit, week and topic inputs
-  - [] Exercise
-  - [] Phonics
-- Models
-  - [] DailyActivity
-  - [] EnglishClass
-    - [] Don't autogenerate PDF for this, will be manually uploaded for now
-    - [] So generate preview from the uploaded plan instead
-  - [] Exercise
-  - [] Phonics
+  - [x] Links
+  - [x] Add optional subtitle to PdfHeader
+  - [x] DotList
+- [x] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
+  - Especially since AS way seems to not be working right now
+  - Did come up with a way of doing this, but regenerating pdfs would be an issue
+  - As images would only be stored in PDF
+  - Went back to has_one_attached, but the image was not available to add to the PDF before saving
+  - So eventually settled for queueing a job to generate the PDF after create or update in LessonsController
+  - Couldn't use a model callback as it triggered the callback recursively
+- Models/Factories
+  - [x] DailyActivity
+  - [x] EnglishClass
+- Necessary tests
+  - DailyActivity
+    - [x] Update system spec
+  - EnglishClass
+    - [x] Valid factory
+    - [x] Topic string creation
+    - [x] System test
+- Views/Strong params/Controllers
+  - [x] DailyActivity
+    - [x] Change step_fields partial to more generic list_fields that accepts a symbol
+  - [x] EnglishClass
 - PDF libs
-  - [] DailyActivity
-  - [] EnglishClass
+  - [x] DailyActivity
+
+## February 7th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- Models/Factories
   - [] Exercise
   - [] Phonics
 - Necessary tests
-  - [] DailyActivity
-  - [] EnglishClass
   - [] Exercise
   - [] Phonics
-- Views
-  - [] DailyActivity
-  - [] EnglishClass
+- Views/Strong params/Controllers
+  - DailyActivity
+    - [] Update the daily_activity partial for show
   - [] Exercise
   - [] Phonics
-- [] consider using a tempfile for images uploaded just for PDF creation instead of ActiveStorage
+- PDF libs
+  - [] EnglishClass
+    - For this one I just need to allow one to be uploaded directly instead
+  - [] Exercise
+  - [] Phonics
+- [] Extract image logic into module?
 
 #### Files
 
