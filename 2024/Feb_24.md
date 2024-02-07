@@ -135,26 +135,49 @@
 
 ## February 7th
 
+- [x] Figure out how to dump & restore the dev database from my latop cos some idiot reset the one on my desktop -\_\_-
+- [x] Add area filtering to Seasonal site stats
+- [x] Convert the nav to .haml while I'm there
+- [x] Notice there's no 'automated message' warning on the setsu emails and add it
+- [x] Remove Shin-urayasu & minamimachida arrival options
+
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 ### Lessons
 
-- Models/Factories
-  - [] Exercise
-  - [] Phonics
+- [x] Extract the display of listable attributes into a partial
+- [x] Use it in the existing lesson show partials
+
 - Necessary tests
-  - [] Exercise
-  - [] Phonics
+  - [x] Exercise
+  - [x] Phonics
+  - [x] StandShowSpeak
+- Models/Factories
+  - [x] Exercise
+  - [x] Phonics
+  - [x] StandShowSpeak
 - Views/Strong params/Controllers
   - DailyActivity
-    - [] Update the daily_activity partial for show
-  - [] Exercise
-  - [] Phonics
+    - [x] Update the daily_activity partial for show
+  - [x] Exercise
+  - [x] Phonics
+  - [x] StandShowSpeak
 - PDF libs
-  - [] EnglishClass
+  - [x] EnglishClass
     - For this one I just need to allow one to be uploaded directly instead
-  - [] Exercise
-  - [] Phonics
+  - [x] Exercise
+  - [x] Phonics
+  - [x] StandShowSpeak
+    - No guide for this one
+    - So replaced it with a thumb of the script
+
+## February 8th
+
+### [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- [] Add all these new lesson types to seeds file
 - [] Extract image logic into module?
 
 #### Files
@@ -173,8 +196,6 @@
 - Display notifications for support messages
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
-
-- [] Jack wants an area filter on the stats as well as a school filter
 
 ##### Testing
 
