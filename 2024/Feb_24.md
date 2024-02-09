@@ -205,19 +205,28 @@
 
 - Create lesson approval mechanisms
   - Add creator/assigned relations
-    - [] Does Daniel want to be able to change the assigned user? On a case by case basis or re-assign all for a user?
+    - [x] On lesson, allow changing assigned user
+    - On writer/admin profile, allow assigning all lessons to another user
+      - [x] Write & test Lesson.reassign_editor
+      - [x] Add the form/controller/route to call it
+      - [x] Set/test policy for User#reassign_editor
+      - [x] Strong params on creator/assigned editor ids
+        - Evolved into limiting Writers to only curriculum_approval attr since all else will be through proposed changes
+  - [x] Display internal comments/ability to add to them
   - Requires some number of curriculum & admin approvals
-    - [] Track the number of approvals for each in an array of { user_id: id, user_name: Name, date: Timestamp } hashes
-    - [] Don't allow multiple approvals from the same person
-  - [] Add buttons to approve/rescind approval on the #show page and on the #index for admins
-  - [] Add #visible? method that takes both approvals and the released boolean into account
-- [] Add comments field to lesson so staff can discuss approval status
+    - [x] Write tests for approvals
+    - [x] Track the approvals for each in an array of { user_id: id, user_name: Name, date: Timestamp } hashes
+    - [x] Don't allow multiple approvals from the same person
+  - [x] Add #approved? method
+    - [] Add released/approved badge to #show/index
+    - [] Add released/approved toggle to #show/index (remember different approvals for admin/writer)
 - Separate proposed changes table
   - [] Migrate
     - Needs a user_id column to track who proposed the change
   - [] Create system spec
   - [] Create model/factory
   - [] Create & test policy
+    - [] Update LessonPolicy to reflect inability to edit (but can still update for approval)
   - [] Create controller
     - Think I should be able to just render the lesson views from this controller? Or entirely inherit the controller
   - [] Display in the relevant view
@@ -225,6 +234,7 @@
 
 #### Courses
 
+- [] Since Writers can't immediately send new lessons/edits live, policy will need to stop them interacting with CourseLessons
 - Course price is per student, so need an easy way to calculate that
 - Needs to have a week from on the plan so they can't see stuff from before the week they started paying
 - [] Only show a month in advance of lessons by default as its paid by month
