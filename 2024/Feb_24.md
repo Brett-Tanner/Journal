@@ -199,6 +199,8 @@
 
 ## February 9th
 
+- [x] Change the wording of the setsumeikai inquiry email
+
 ### [Materials](https://github.com/Brett-Tanner/materials)
 
 ### Lessons
@@ -218,23 +220,32 @@
     - [x] Track the approvals for each in an array of { user_id: id, user_name: Name, date: Timestamp } hashes
     - [x] Don't allow multiple approvals from the same person
   - [x] Add #approved? method
-    - [] Add released/approved badge to #show/index
-    - [] Add released/approved toggle to #show/index (remember different approvals for admin/writer)
+    - [x] Add released/approved badge to #show/index
+    - [x] Add released/approved toggle to #show/index (remember different approvals for admin/writer)
+    - [x] Extract badges to their own partial for re-use on index
+    - [x] Change Lessons#index view to use a table for better organised status/toggles
+    - [x] Move toggles into their own partial
 - Separate proposed changes table
-  - [] Migrate
-    - Needs a user_id column to track who proposed the change
-  - [] Create system spec
-  - [] Create model/factory
-  - [] Create & test policy
-    - [] Update LessonPolicy to reflect inability to edit (but can still update for approval)
-  - [] Create controller
-    - Think I should be able to just render the lesson views from this controller? Or entirely inherit the controller
-  - [] Display in the relevant view
-    - Probably a partial that iterates over the attributes that aren't nil
+  - Only used when updating, writers can create lessons as normal as they're not immediately released
+  - Handle whether to create a lesson or proposed change in the controller based on user role
+  - Probably common code in lesson controller and inherit it with super to sub controllers
+  - [x] Migrate
+  - [x] Create system spec
+  - [x] Create model
+  - [x] Update LessonsController to automatically create proposed changes if user is a writer
+  - [x] Display proposed changes on Lesson#show
+  - [x] Give admins a reject button for each proposed change
+
+## February 10th
+
+## [Materials](https://github.com/Brett-Tanner/materials)
+
+### Lessons
+
+- [] Give admins an 'Apply changes' button for each proposed change
 
 #### Courses
 
-- [] Since Writers can't immediately send new lessons/edits live, policy will need to stop them interacting with CourseLessons
 - Course price is per student, so need an easy way to calculate that
 - Needs to have a week from on the plan so they can't see stuff from before the week they started paying
 - [] Only show a month in advance of lessons by default as its paid by month
