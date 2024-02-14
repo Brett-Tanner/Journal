@@ -240,9 +240,30 @@
 
 ## [Materials](https://github.com/Brett-Tanner/materials)
 
+### Deployment
+
+- [x] Install brakeman & lock production gem versions
+- [x] Switch to Ruby 3.3.0
+- [x] Enable YJIT
+- [x] Get the Docker image building succesfully
+
 ### Lessons
 
-- [] Give admins an 'Apply changes' button for each proposed change
+- [x] Create & test ProposedChangePolicy
+- [x] Give admins an 'Apply changes' button for each proposed change
+  - use the update action
+
+## February 11th
+
+### Deployment
+
+- [] Get the Docker image running succesfully
+
+### Lessons
+
+- [] Allow editing proposed changes directly
+- [] Reject doesn't destroy, just marks it as rejected
+- [] Allow adding comments to proposed changes
 
 #### Courses
 
@@ -253,6 +274,7 @@
 
 #### Students
 
+- [] Add 3rd level to L/S/G, as well as KU1/2 SP/SPA
 - Update student level when level check updates
 - Student limit on the plan as we're charging by student
   - They can only add students up to the limit
