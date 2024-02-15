@@ -255,15 +255,38 @@
 
 ## February 11th
 
+- [x] Add a time_slots table dump to the admin panel for Daniel
+
 ### Deployment
 
-- [] Get the Docker image running succesfully
+- Get the Docker image running succesfully
+  - [x] Resolve poppler related errors
 
 ### Lessons
 
-- [] Allow editing proposed changes directly
-- [] Reject doesn't destroy, just marks it as rejected
-- [] Allow adding comments to proposed changes
+- [x] Add comments and rejected boolean to proposed changes
+- [x] Reject doesn't destroy, just marks it as rejected
+- [x] Change rejected boolean to status enum
+- [x] Show changes on the profile of the writer who proposed them, sorted by status
+- [x] Allow adding comments to proposed changes & selecting change status
+- [x] Update ProposedChangePolicy & tests
+- Allow editing proposed changes directly
+  - [x] Give up and just duplicate the relevant lesson columns in proposed change table
+  - [x] Update tests
+  - [x] Editing a proposed change should take you to the relevant lesson form with the proposed change info prefilled
+    - Probably create a new Lesson from the proposed change info in ProposedChangeController#edit
+
+## February 12th
+
+### Deployment
+
+- Get the Docker image running succesfully
+  - [] Resolve lack of postgres server in dev env
+
+### Lessons
+
+- Allow editing proposed changes directly
+  - [] Make sure linkable/listable both work on ProposedChanges
 
 #### Courses
 
@@ -274,6 +297,7 @@
 
 #### Students
 
+- [] Should be able to group them into classes
 - [] Add 3rd level to L/S/G, as well as KU1/2 SP/SPA
 - Update student level when level check updates
 - Student limit on the plan as we're charging by student
