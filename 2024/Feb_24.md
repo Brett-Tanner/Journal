@@ -257,6 +257,8 @@
 
 - [x] Add a time_slots table dump to the admin panel for Daniel
 
+## [Materials](https://github.com/Brett-Tanner/materials)
+
 ### Deployment
 
 - Get the Docker image running succesfully
@@ -276,17 +278,84 @@
   - [x] Editing a proposed change should take you to the relevant lesson form with the proposed change info prefilled
     - Probably create a new Lesson from the proposed change info in ProposedChangeController#edit
 
-## February 12th
+## February 12th-16th
+
+No idea where these entries went???? I know Thursday I was in the office and this repo wasn't synced to Github, but no clue about the others.
+
+## February 19th
+
+## [Materials](https://github.com/Brett-Tanner/materials)
+
+- [x] Hide areas/prefectures that are empty on main site school search
 
 ### Deployment
 
 - Get the Docker image running succesfully
-  - [] Resolve lack of postgres server in dev env
+  - [x] Resolve lack of postgres server in dev env
+  - [x] Optimise the image for prod
+  - [x] Try out using Docker for development as well
+    - Dismissed as having multiple Dockerfiles/compose.ymls is annoying and Bun tailwind updates didn't work
+  - [x] Try and get an Alpine Docker image running
+    - Gave up after multiple rounds of failing to install Poppler-related dependencies. Damn PDFs.
+- Figure out the actual process of deployment
+  - [x] Try just pushing the Docker image to Elastic Beanstalk
+    - Didn't work, Elastic Beanstalk can't read the Ruby version inside ${} so hardcoded it
+    - Fixed some other small things and got it to 'succeed', but in actuality it timed out and couldn't be interacted with
+    - May have been related to me starting a new env while the old one was terminating, and RDS being decoupled on that old one
 
-### Lessons
+## February 20th
 
-- Allow editing proposed changes directly
-  - [] Make sure linkable/listable both work on ProposedChanges
+- Various stuff to get my P-UP AWS account set up
+  - [x] Log in and test switching to provided role
+  - [x] Check/get necessary permissions
+  - [x] Ask for IAM-related permissions for CLI/EB service role
+    - Temporarily granted, if I need to change them/create a new environment I'll need to ask for them again
+  - [x] Set up eb cli, and profile to assume the correct role
+  - [x] Add my ssh key and successfully ssh to the instance
+
+#### Sales/OrgAdmin
+
+- [x] Update DB Schema on Lucidchart
+- Scaffold Schools, Students & Classes
+  - Migrate Tables
+    - Schools
+      - [x] Join table for teachers
+    - [x] Classes
+      - [x] Join table for teachers
+    - [x] Students
+      - [x] Enable DB encryption so names aren't stored in plaintext
+      - [x] Join table for classes
+  - Create & test models/factories
+    - [x] School
+      - [x] Update test/code for school_id on user moving to SchoolTeachers table
+    - [x] Class
+      - [x] Rename to SchoolClass
+    - [x] Student
+      - [x] Encrypt the name
+      - [x] Also add extra levels to enum
+        - [x] And to lessons Enum (maybe in concern?)
+
+## February 21st
+
+- [] Look into the Normalize API for data that needs massaging
+- [] Add language toggle
+  - Maybe just use JS to switch the locale in the URL
+
+#### Sales/OrgAdmin
+
+- Scaffold Schools, Students & Classes
+  - Create & test policies
+    - [] SchoolPolicy
+    - [] ClassPolicy
+    - [] StudentPolicy
+  - [] Create & system test controller/views
+    - [] SchoolsController
+    - [] ClassesController
+    - [] StudentsController
+- Support
+  - Org Admins & SMs can message support
+  - Sales, curriculum and admins can view/respond to support messages
+  - Display notifications for support messages
 
 #### Courses
 
@@ -297,17 +366,9 @@
 
 #### Students
 
-- [] Should be able to group them into classes
-- [] Add 3rd level to L/S/G, as well as KU1/2 SP/SPA
 - Update student level when level check updates
 - Student limit on the plan as we're charging by student
   - They can only add students up to the limit
-
-#### Support
-
-- Org Admins & SMs can message support
-- Sales, curriculum and admins can view/respond to support messages
-- Display notifications for support messages
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
@@ -431,6 +492,13 @@ end
 - [] Use number_to_human_size when I add the blob index etc.
 
 ### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
+
+Text for Online card in React:
+
+楽しみながら学べるおうちで英会話！
+KidsUPのレッスンをご家庭で！
+お子様の学びをサポートするコンテンツを
+豊富にご用意しております。
 
 - [] Remove back button from summary screen
 - Add online trial lessons to setsu registration form
