@@ -337,6 +337,34 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 
 ## February 21st
 
+- [x] Fix Jayson's ACM cert
+  - Seems you need to add the CNAME records for subdomains to Route 53, not onamae
+
+#### Deployment
+
+- [x] Configure active record for production
+- [x] Configure active storage for production
+- [x] Confirm the container can access ENV variables set in EB console
+- [x] Add .ebignore
+- [x] Resolve some early deploy errors like ${} interpolation not working & docker-compose.yml suddenly reappearing
+- [x] Get back to the old problem of deployment timing out
+  - Seems EB tries to delete the old container's image while it's still running
+  - I think that might be fine though, seems it's maybe intended to fail for images in use?
+  - Saw some SO responses suggesting immutable deployments (creating a new instance and replacing the old if successful) might resolve the issue
+    - Didn't do the trick on its own, still timing out. But might revisit later if other issues come up
+  - Possible the EC2 instance doesn't have enough memory to build the image? Only 500MB and finished image is ~630MB
+- [x] Successfully pull & build image manually, then run it by manually passing all env variables
+  - Try enabling log streaming to track deploy progress as it happens
+- [x] One person seems to have solved slow deploys by just deploying their Dockerfile, which pulls the built image from dockerhub
+  - Same timeout error as before
+  - [x] Another variant is to just directly upload Dockerrun.aws.json and pull the built image from DockerHub
+    - Same issue still
+- [x] After just leaving it running for ages, try upgrading the instance class for more memory
+  - Didn't work, not ruling memory out as an issue yet though
+- When I leave it for ages I get 'The following resource(s) failed to create: [AWSEBInstanceLaunchWaitCondition]', but all the SO answers/AWS guidance for that talks about not having an internet gateway on your VPC, which I do. So pretty sure I need to figure out why it's timing out instead.
+
+## February 22nd
+
 - [] Look into the Normalize API for data that needs massaging
 - [] Add language toggle
   - Maybe just use JS to switch the locale in the URL
