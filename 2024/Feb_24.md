@@ -365,6 +365,30 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 
 ## February 22nd
 
+### Seasonal Site
+
+- [x] Line graph of daily inquiries (per month/school/area)
+- [x] Average for all schools on the all schools one
+
+### Materials Site
+
+- Memory is an issue on the smallest instance, the container seems to sit around 600MB so we'll need at least 1GB of RAM
+
+- [x] Successful deploy!
+- [x] [Add swap](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-swap.html) to dockerrun.aws.json
+  - Didn't work
+- [x] Sort out this msgpack issue that's causing bootsnap to fail (but only in the docker image)
+  - Seems to appear when I remove the interpolation from the Bun version???????? Wtf??????
+  - Think it's because the step after is the one with the issue, so changing a prior step causes it to be rebuilt rather than pulled from cache
+  - Maybe because I locked all the gem versions
+  - [x] `--no-cache` seemed to solve it, then wasn't needed after. Also bookmarked some more.
+
+#### Lessons
+
+- [x] Make adding comments to proposed changes actually work
+
+## February 23rd
+
 - [] Look into the Normalize API for data that needs massaging
 - [] Add language toggle
   - Maybe just use JS to switch the locale in the URL
