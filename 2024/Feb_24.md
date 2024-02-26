@@ -415,10 +415,23 @@ No idea where these entries went???? I know Thursday I was in the office and thi
   - Create & system test controller/views
     - SchoolsController
       - [x] Write system spec
-      - [] Create controller
-      - [] Create views
+      - [x] Create controller
+      - [x] Create views
+
+## February 27th
+
+- [] Look into the Normalize API for data that needs massaging
+- [] Add language toggle
+  - Maybe just use JS to switch the locale in the URL
+
+#### Sales/OrgAdmin
+
+- Scaffold Schools, Students & Classes
+  - Create & system test controller/views
+    - SchoolsController
     - [] ClassesController
     - [] StudentsController
+  - [] Write seeds for Schools, classes & students
 - Support
   - Org Admins & SMs can message support
   - Sales, curriculum and admins can view/respond to support messages
