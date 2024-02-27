@@ -420,17 +420,36 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 
 ## February 27th
 
+- Add Online to Setsu Calendar/inquiry form
+  - [x] Modify Setsu calendar to show the custom text
+  - [x] Modify registration site to send online with the other schools
+- [x] Set Jayson up to add the language toggle/give him ELB permissions
 - [] Look into the Normalize API for data that needs massaging
-- [] Add language toggle
-  - Maybe just use JS to switch the locale in the URL
 
 #### Sales/OrgAdmin
 
 - Scaffold Schools, Students & Classes
   - Create & system test controller/views
-    - SchoolsController
-    - [] ClassesController
-    - [] StudentsController
+    - SchoolClassesController
+      - [x] Write system spec
+      - [x] Create controller
+      - [x] Create views
+    - StudentsController
+      - [x] Write system spec
+      - [x] Create controller
+
+## February 28th
+
+- [] Look into the Normalize API for data that needs massaging
+
+#### Sales/OrgAdmin
+
+- Scaffold Schools, Students & Classes
+  - Create & system test controller/views
+    - StudentsController
+      - [] Create views
+        - Up to form
+        - Have not done the classes partial
   - [] Write seeds for Schools, classes & students
 - Support
   - Org Admins & SMs can message support
