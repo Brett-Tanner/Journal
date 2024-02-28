@@ -441,8 +441,9 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 
 ## February 28th
 
-- [] Get `eb deploy` working
-- [] Look into the Normalize API for data that needs massaging
+- [x] Get `eb deploy` working
+  - Maybe my making the dockerrun the  deploy artifact in config.yml
+  - Also set the profile in environment variable (on desktop)
 
 #### Sales/OrgAdmin
 
@@ -461,17 +462,37 @@ No idea where these entries went???? I know Thursday I was in the office and thi
   - Display notifications for support messages
   - Generate the resource
     - [x] SupportRequests
-    - [] SupportMessages
+      - [x] Rename body to description & add subject column
   - Create & test models
     - [x] SupportRequest
       - [x] has_many_attached attachments
       - [x] Seen by
+  - Create & test policy
+    - [x] SupportRequestPolicy
+      - [x] Scopes
+  - Write system spec
+    - [x] Teacher creating SupportRequest
+
+## February 29th
+
+- [] Look into the Normalize API for data that needs massaging
+
+#### Sales/OrgAdmin
+
+- Support
+  - Org Admins & SMs can message support
+  - Sales, curriculum and admins can view/respond to support messages
+    - Viewed by jsonb column
+    - Resolved at, resolved by columns
+  - Display notifications for support messages
+  - Generate the resource
+    - [] SupportMessages
+  - Create & test models
     - [] SupportMessage
   - Create & test policy
-    - [] SupportRequestPolicy
     - [] SupportMessagePolicy
+      - [] Scopes
   - Write system spec
-    - [] SM creating SupportRequest
     - [] OrgAdmin creating SupportMessage
   - Create controller/views
     - [] SupportRequests
@@ -479,6 +500,7 @@ No idea where these entries went???? I know Thursday I was in the office and thi
       - query if seen with #seen_by?(user_id)
       - add new people that've seen it with #mark_seen_by(user_id)
     - [] SupportMessages
+    - [] Both can have the user association nullified, so handle that possiblity in the views
 
 #### Courses
 
