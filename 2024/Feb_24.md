@@ -424,6 +424,7 @@ No idea where these entries went???? I know Thursday I was in the office and thi
   - [x] Modify Setsu calendar to show the custom text
   - [x] Modify registration site to send online with the other schools
 - [x] Set Jayson up to add the language toggle/give him ELB permissions
+- [] Add a 'Create ___ lesson' button to the lesson index as well
 - [] Look into the Normalize API for data that needs massaging
 
 #### Sales/OrgAdmin
@@ -440,6 +441,7 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 
 ## February 28th
 
+- [] Get `eb deploy` working
 - [] Look into the Normalize API for data that needs massaging
 
 #### Sales/OrgAdmin
@@ -447,14 +449,36 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 - Scaffold Schools, Students & Classes
   - Create & system test controller/views
     - StudentsController
-      - [] Create views
+      - [x] Create views
         - Up to form
         - Have not done the classes partial
-  - [] Write seeds for Schools, classes & students
+  - [x] Write seeds for Schools, classes & students
 - Support
   - Org Admins & SMs can message support
   - Sales, curriculum and admins can view/respond to support messages
+    - Viewed by jsonb column
+    - Resolved at, resolved by columns
   - Display notifications for support messages
+  - Generate the resource
+    - [x] SupportRequests
+    - [] SupportMessages
+  - Create & test models
+    - [x] SupportRequest
+      - [x] has_many_attached attachments
+      - [x] Seen by
+    - [] SupportMessage
+  - Create & test policy
+    - [] SupportRequestPolicy
+    - [] SupportMessagePolicy
+  - Write system spec
+    - [] SM creating SupportRequest
+    - [] OrgAdmin creating SupportMessage
+  - Create controller/views
+    - [] SupportRequests
+      - [] Call #mark_all_seen when anything other than seen_by is updated
+      - query if seen with #seen_by?(user_id)
+      - add new people that've seen it with #mark_seen_by(user_id)
+    - [] SupportMessages
 
 #### Courses
 
@@ -472,6 +496,14 @@ No idea where these entries went???? I know Thursday I was in the office and thi
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
 - [] Redirect or bounce emails to the automated email address
+
+### API
+
+- Number of internal + reservation
+- Number of external
+- Internal + res revenue
+- External revenue
+- For parties just the total revenue
 
 ##### Testing
 
@@ -589,19 +621,3 @@ end
 - [] Apparently there are undocumented ControllerHelper methods I can use to generate the ID for for main elements
 - [] Use time_tag helper when outputting date or time, generates a `time` element which apparently is a thing
 - [] Use number_to_human_size when I add the blob index etc.
-
-### [Setsumeikai Calendar](https://github.com/Brett-Tanner/setsumeikai_calendar)
-
-Text for Online card in React:
-
-楽しみながら学べるおうちで英会話！
-KidsUPのレッスンをご家庭で！
-お子様の学びをサポートするコンテンツを
-豊富にご用意しております。
-
-- [] Remove back button from summary screen
-- Add online trial lessons to setsu registration form
-  - [] Make it possible to edit Online's school info
-  - [] Add the necessary info
-  - [] Send that info in API responses
-  - [] Add SM accounts (if necessary) for Online
