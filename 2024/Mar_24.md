@@ -2,6 +2,21 @@
 
 ## March 1st
 
+- [x] Actually apply the CoursePolicy to requests -__-
+- [x] Rename ca/aa/_id/name to admin_approval & curriculum_approval, completely unreadble if you haven't worked on them in a while
+- [x] Give Luis a button to actually add new lessons from the index
+  - Probably turn the existing dropdown into a partial
+  - [x] And make it pretty
+- [x] Create the online-specific setsu inquiry email
+- [x] Add oddities section to Setsu Calendar, so far just includes the hardcoded order array
+- [] Define an ATTRIBUTES constant on each lesson type, use it in strong params on controllers/proposed changes controller anywhere else it might be useful
+  - Handy for tracking the attributes each lesson uses in the actual code rather than a lucidchart embedded in the wiki
+- [] Write a rake task or some kind of script that takes a version label and automatically:
+  - Changes the tag on the docker image in dockerrun.aws.json
+  - builds a new docker image with that tag
+  - uploads the image to dockerhub
+  - runs eb deploy
+  - with progress output at each step, and aborts on errors
 - [] Look into the Normalize API for data that needs massaging
 
 #### Sales/OrgAdmin
@@ -9,17 +24,24 @@
 - Support
   - Display notifications for support messages
   - Generate the resource
-    - [] SupportMessages
+    - [x] SupportMessages
   - Create & test models
-    - [] SupportMessage
+    - [x] SupportMessage
   - Create & test policy
-    - [] SupportMessagePolicy
-      - [] Scopes
+    - [x] SupportMessagePolicy
+      - Unnecessary as if you can see the SupportRequest you can see its messages, and there's no way of viewing them directly
+      - Any user can create support messages on a Request they're authorised to view, so not auth needed there
   - Write system spec
-    - [] OrgAdmin creating SupportMessage
-  - Create controller/views
-    - [] SupportMessages
-    - [] Both can have the user association nullified, so handle that possiblity in the views
+    - [x] OrgAdmin creating SupportMessage
+  - [x] Create SupportMessage partial
+  - [] Link to the support request index in the nav, and have the form to add a new one at the top of it
+  - [] Tidy up Support related views
+  - [] Both can have the user association nullified, so handle that possiblity in the views
+
+#### Teacher Interface
+
+- Match their profile to Louis' wireframe/Alex's designs
+  - [] navbar
 
 #### Courses
 
@@ -162,4 +184,3 @@ end
 - [] Apparently there are undocumented ControllerHelper methods I can use to generate the ID for for main elements
 - [] Use time_tag helper when outputting date or time, generates a `time` element which apparently is a thing
 - [] Use number_to_human_size when I add the blob index etc.
-
