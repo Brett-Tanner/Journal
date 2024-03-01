@@ -34,14 +34,38 @@
   - Write system spec
     - [x] OrgAdmin creating SupportMessage
   - [x] Create SupportMessage partial
-  - [] Link to the support request index in the nav, and have the form to add a new one at the top of it
-  - [] Tidy up Support related views
+  - [x] Link to the support request index in the nav, and have the form to add a new one at the top of it
+  - [x] Tidy up Support related views
+  - [x] Reset 'seen_by' on new support messages
   - [] Both can have the user association nullified, so handle that possiblity in the views
 
 #### Teacher Interface
 
 - Match their profile to Louis' wireframe/Alex's designs
-  - [] navbar
+  - Navbar
+    - [x] Style to match the design
+    - [x] Highlight the current link
+    - [x] Add subtitle
+
+## March 2nd
+
+- [] Define an ATTRIBUTES constant on each lesson type, use it in strong params on controllers/proposed changes controller anywhere else it might be useful
+  - Handy for tracking the attributes each lesson uses in the actual code rather than a lucidchart embedded in the wiki
+- [] Write a rake task or some kind of script that takes a version label and automatically:
+  - Changes the tag on the docker image in dockerrun.aws.json
+  - builds a new docker image with that tag
+  - uploads the image to dockerhub
+  - runs eb deploy
+  - with progress output at each step, and aborts on errors
+- [] Look into the Normalize API for data that needs massaging
+
+#### Sales/OrgAdmin
+
+  - [] Both can have the user association nullified, so handle that possiblity in the views
+
+#### Teacher Interface
+
+- Match their profile to Louis' wireframe/Alex's designs
 
 #### Courses
 
