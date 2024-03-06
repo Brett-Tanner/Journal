@@ -66,9 +66,32 @@
 
 ## March 5th
 
+- [x] Fill in my self-intro slide
+
 ### Materials
 
-- [] Style login page
+- [x] Style login page
+
+#### Teacher Interface
+
+- Create Plans linking organisations and courses
+  - [x] Create resource
+  - [x] Edit & test model/factory
+    - [x] Add & test Teacher#day_lessons
+  - [x] Add seeds for plans
+  - [x] Write a system test for creating one
+  - [x] Create & test PlanPolicy
+  - [x] Create the controller
+  - [x] Create the views
+- Show the day's lessons
+  - [x] Create unlevelled lesson partial
+    - [x] Add vertical separator partial
+
+## March 6th
+
+### Materials
+
+- [] Use 'after add' option on SupportRequest messages association to reset the seen status
 - [] Write a rake task or some kind of script that takes a version label and automatically:
   - Changes the tag on the docker image in dockerrun.aws.json
   - builds a new docker image with that tag
@@ -80,12 +103,10 @@
 #### Teacher Interface
 
 - Show the day's lessons
-  - [] Create DailyActivity partial
+  - [] Create levelled lesson partial
 
 #### Courses
 
-- Course price is per student, so need an easy way to calculate that
-- Needs to have a week from on the plan so they can't see stuff from before the week they started paying
 - [] Only show a month in advance of lessons by default as its paid by month
   - Probably need a field for months paid on the plan
 
