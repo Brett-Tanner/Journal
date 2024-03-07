@@ -87,28 +87,38 @@
   - [x] Create unlevelled lesson partial
     - [x] Add vertical separator partial
 
-## March 6th
+## March 7th
+
+- [x] Override WP styles on Online School custom text
 
 ### Materials
 
-- [] Use 'after add' option on SupportRequest messages association to reset the seen status
-- [] Write a rake task or some kind of script that takes a version label and automatically:
+- [x] Change StandShowSpeak script attachment to guide for uniformity
+- [x] Add subtypes to Exercise
+- [x] Update seeds to generate lessons and a plan showing them on the current day for teachers
+  - So I can just run `rails db:reset` to easily get lessons on the teacher profile
+- [x] Write a rake task or some kind of script that takes a version label and automatically:
   - Changes the tag on the docker image in dockerrun.aws.json
   - builds a new docker image with that tag
   - uploads the image to dockerhub
   - runs eb deploy
   - with progress output at each step, and aborts on errors
-- [] Look into the Normalize API for data that needs massaging
 
 #### Teacher Interface
 
 - Show the day's lessons
-  - [] Create levelled lesson partial
+  - [x] Create levelled lesson partial
+  - [x] Tweak the teacher profile styling for mobile
+
+## March 8th
+
+### Materials
+
+- [] Look into the Normalize API for data that needs massaging
 
 #### Courses
 
 - [] Only show a month in advance of lessons by default as its paid by month
-  - Probably need a field for months paid on the plan
 
 #### Students
 
