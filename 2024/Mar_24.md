@@ -112,19 +112,67 @@
 
 ## March 8th
 
+- [x] Include kindy/ele modifiers in JS invoice calculation
+  - And extract the modifier calculation to a helper
+  - [x] Use that helper to fix related problems with multiple modifiers not displaying/adding correctly
+
 ### Materials
 
-- [] Look into the Normalize API for data that needs massaging
+- [x] Add #short_level to Application helper to produce readable levels
 
-#### Courses
+#### Tests (for students)
 
-- [] Only show a month in advance of lessons by default as its paid by month
+- Questions are stored in JSON column, nested by 4 skills then question number and possible score
+  - So maybe a hash of arrays?
+  - When entering, each row should be a skill, then a colon and comma separated list of max scores for each question
+- Loaded by a stimulus controller into a table where teachers can enter results and have percentages live calculate
+- So need threshold to move up per test
+  - When entering, level and percent needed
+- Add tests & results
+  - Add resource
+    - [x] Test
+  - Edit & test model/factory
+    - [x] Test
+      - [x] Test questions parsing
+      - [x] Test thresholds parsing
+  - Add seeds
+    - [x] Test
+  - Write a system spec for creating one
+    - [x] Test
+  - Create & test Policies
+    - [x] Test
+  - Create the controller
+    - [x] Test
+  - Create the views
+    - [x] Test
 
-#### Students
+## March 11th
 
+- [] Updating time slots isn't working
+  - Only on live
+  - Absolutely nothing happens when button clicked
+
+### Materials
+
+#### Tests (for students)
+
+- Add tests & results
+  - Add resource
+    - [] TestResult
+  - Edit & test model/factory
+    - [] TestResult
+  - Add seeds
+    - [] TestResult
+  - Write a system spec for creating one
+    - [] TestResult
+  - Create & test Policies
+    - [] TestResult
+  - Create the controller
+    - [] TestResult
+  - Create the views
+    - [] TestResult
+  - [] Write a JS-enabled system spec for calculating scores on Tests#index
 - Update student level when level check updates
-- Student limit on the plan as we're charging by student
-  - They can only add students up to the limit
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
