@@ -194,10 +194,17 @@
 ## March 13th
 
 - [] Updating time slots isn't working
-  - Only on live (but worked for me when I tried a different timeslot, maybe issue with that other one specifically?)
-  - Absolutely nothing happens when button clicked
+  - Only on live
+  - Lots of 'invalid form control is not focusable' errors in console when submitted
+  - Other timeslots work fine
+  - Pretty sure the problem is [that slot](https://kids-up.app/en/time_slots/3963/edit) is a special slot with no afternoon slot
+     - So every time you try to edit it, the blank afternoon slot form is submitted and errors because it has blank required fields
+     - It's a browser error becuase they're hidden and required
+     - So maybe expand the afternoon slot by default if it doesn't exist?
+     - And improve the blank filter on the accepts_nested_attributes_for
+     - Also check errors for the afternoon slot are displayed at the top of the morning form, just to be sure
 - [] Merge child is also [not working](https://kids-up.app/en/users/4532)
-  - This one gets a 406 response, so it's an issue with the respond_to block
+  - This one gets a 406 response, so it's probably an issue with the respond_to block
 
 ### Materials
 
