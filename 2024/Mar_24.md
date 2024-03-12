@@ -118,7 +118,7 @@
 
 ### Materials
 
-- [x] Add #short_level to Application helper to produce readable levels
+- [x] Add 'short_level' to Application helper to produce readable levels
 
 #### Tests (for students)
 
@@ -148,14 +148,7 @@
 
 ## March 11th
 
-- [] Updating time slots isn't working
-  - Only on live
-  - Absolutely nothing happens when button clicked
-
 ### Materials
-
-- [] Limit helpers to their controllers since I seem to actually be using them
-- Shouldn't I just be using policy_scope to decide if a record can be accessed in pundit?
 
 #### Tests (for students)
 
@@ -179,9 +172,32 @@
 
 ## March 12th
 
+### Materials
+
+- [x] Review & merge Jayson's lang switcher PR
+- [x] Make some changes to integrate it into the site
+  - [x] Retain locale between pages by adding it to links as a default URL option
+  - [x] Fix the locale breaking a bunch of system tests
+    - Needed to set the locale in rails_helper since it's in the URLs by default now
+  - [x] Infer locale if not provided
+- [x] Remove vestigal files controller
+
+#### Tests (for students)
+
+- [x] Check answers are stored correctly when input
+- [x] Display existing answers in form when they exist
+- [x] Pass the JS enabled system spec for creating TestResults
+  - [x] Entering all the scores for a skill displays the percentage for that section
+  - [x] Entering all scores for a test shows the overall percentage and selects the suggested level from the select box
+  - [x] Handle empty strings so NaN isn't displayed, set value to 0 if NaN
+
+## March 13th
+
 - [] Updating time slots isn't working
-  - Only on live
+  - Only on live (but worked for me when I tried a different timeslot, maybe issue with that other one specifically?)
   - Absolutely nothing happens when button clicked
+- [] Merge child is also [not working](https://kids-up.app/en/users/4532)
+  - This one gets a 406 response, so it's an issue with the respond_to block
 
 ### Materials
 
@@ -190,10 +206,10 @@
 
 #### Tests (for students)
 
-- [] Check answers are added correctly when input
-- [] Entering all the scores for a skill displays the percentage for that section
-  - [] Entering all scores for a test shows the overall percentage and selects the suggested level from the select box
+- [] Create a separate controller to attach to each input which limits values to a valid range
 - Update student level when level check updates
+- Create results page/student profile
+  - Should be able to print as a PDF
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
