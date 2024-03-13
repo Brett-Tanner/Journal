@@ -193,7 +193,7 @@
 
 ## March 13th
 
-- [] Updating time slots isn't working
+- [x] Updating time slots isn't working
   - Only on live
   - Lots of 'invalid form control is not focusable' errors in console when submitted
   - Other timeslots work fine
@@ -203,24 +203,54 @@
      - So maybe expand the afternoon slot by default if it doesn't exist?
      - And improve the blank filter on the accepts_nested_attributes_for
      - Also check errors for the afternoon slot are displayed at the top of the morning form, just to be sure
-- [] Merge child is also [not working](https://kids-up.app/en/users/4532)
+- [x] Merge child is also [not working](https://kids-up.app/en/users/4532)
   - This one gets a 406 response, so it's probably an issue with the respond_to block
+  - It was actually a conditional in the controller which lead to nothing being explicitly rendered if there was no child found
+  - which meant the action tried to render a default 'find_child' template, which didn't exist
+  - thus the 406 response
 
 ### Materials
 
-- [] Limit helpers to their controllers since I seem to actually be using them
+- [x] Add the actual language switcher SVG
 - Shouldn't I just be using policy_scope to decide if a record can be accessed in pundit?
 
 #### Tests (for students)
 
-- [] Create a separate controller to attach to each input which limits values to a valid range
-- Update student level when level check updates
-- Create results page/student profile
-  - Should be able to print as a PDF
+- [x] Create a validity controller to attach to each input which limits values to a valid range
+  - Use the form validation API and attributes on the field to make it reusable for all form validations
+- [x] Update student level when level check updates
+- [x] Make results table header sticky
+
+### Setsumeikai Calendar
+
+- [x] Add prefecture filters under the search bar
+- [x] Group schools by prefecture in the select box
+  - Abandoned because Safari only added support for groupBy a few days ago
 
 ### [Seasonal Registration Site](https://github.com/Brett-Tanner/db_prototype_v2.git)
 
-- [] Redirect or bounce emails to the automated email address
+- [x] Add a 'prefecture' column to the schools table
+- [x] Then start sending it to the Setsumeikai API and add it to the forms
+
+#### HAML Refactors
+
+- [x] merge children partial
+- [x] add child partial
+
+## March 14th
+
+### Materials
+
+- Shouldn't I just be using policy_scope to decide if a record can be accessed in pundit?
+
+#### Tests (for students)
+
+- [] Allow filtering results table by level
+  - [] Also, in the controller, only fetch Ss who are currently in the level of the test
+- Create results page/student profile
+  - Should be able to print as a PDF
+
+### Seasonal Site
 
 ### API
 
@@ -245,10 +275,6 @@
 - [] Refactor request specs to use rails path helpers
 - [] Test emails with [email_spec](https://github.com/email-spec/email-spec) gem
 - [] Create `rails predeploy` task to run all the tests and brakeman prior to deployments
-
-#### HAML Refactors
-
-- []
 
 #### Future Plans
 
