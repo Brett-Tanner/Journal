@@ -241,16 +241,45 @@
 
 ### Materials
 
-- Shouldn't I just be using policy_scope to decide if a record can be accessed in pundit?
+- [x] Update nvim keymaps on macbook to auto-switch to new window when opened
+- [x] Students#new gives an error on prod
+  - Because encryption credentials are missing
+- [x] Remove '#' from test descriptions to avoid false positives in deploy scripts
+- Handle missing skills from Test questions in views, right now the result index crashes if all 4 aren't there
+  - [x] In views
+  - [x] And the JS
+- [x] Modify seeds to set a created_by/assigned_editor for each lesson
+- [x] Cancel the deploy script if docker isn't running
+- [x] Remove fields isn't working fully on school form at least, maybe others
+  - visually disappears but fields are still present and hidden, get submit errors
 
 #### Tests (for students)
 
-- [] Allow filtering results table by level
-  - [] Also, in the controller, only fetch Ss who are currently in the level of the test
+- [x] Add reason that're shown if they decide to change the level from the recommended one
+  - [x] Conditionally show a text field to add the reason
+  - [x] Set default level from the test if a result doesn't exist
+- [x] Migrate the default value of Test#questions to have skill keys, because empty check breaks the page right now
+  - rolled back cos it wasn't the problem/solution
+- [x] Only display children who'll actually take the test in the results table
+  - i.e. if the test is for sky, only show sky kids
+
+### Seasonal Site
+
+- [x] Fix the child birthday calculation for kids below school age, it should just show their current age instead
+
+## March 15th
+
+### Materials
+
+#### Tests (for students)
+
 - Create results page/student profile
   - Should be able to print as a PDF
 
 ### Seasonal Site
+
+- [x] Fix the child birthday calculation for kids below school age, it should just show their current age instead
+- Why can SMs make bookings for parentless kids? They can't edit them
 
 ### API
 
