@@ -269,16 +269,79 @@
 
 ## March 15th
 
+### Portfolio
+
+#### Seasonal Site
+
+- [x] Restructure the wiki folders
+- [x] Figure out how to style in markdown
+  - You just add html with classes, HTML is also valid markdown
+- [x] Add tabs for customer/staff features and technical details
+- Customer features
+  - [x] Existing user event registration flow
+  - [x] New user event registration flow
+- Technical details
+  - [x] Start User overview
+
+#### Setsumeikai Calendar
+
+#### Materials
+
 ### Materials
 
 #### Tests (for students)
 
 - Create results page/student profile
+  - [x] Add student details partial
+  - [x] Research charting libraries, this time with the knowledge that they can just be JS ones -__-
+    - Yep, chartkick is still good. And it has the diamond-looking one we need
+    - Doesn't support radar charts though, so
+  - [x] Install & setup @stimulus-components/chartjs instead
+  - [x] Add & style test summary table
+  - [x] Add test list table
+
+## March 18th
+
+### Portfolio
+
+#### Seasonal Site
+
+- Customer features
+  - [] Add some details on convenience stuff like editing a booking, copying a booking from one child to another etc.
+- Technical details
+  - [] Add an overview of all the site's features
+  - Add an overview of the tech stack
+    - [] Frameworks/languages
+    - [] Gems
+    - [] Hosting
+- Staff features
+  - [] Event sheet
+  - [] Attendance sheets
+
+
+#### Setsumeikai Calendar
+
+#### Materials
+
+### Materials
+
+- Try to implement my own version of hashid-rails using sqids instead
+
+#### Tests (for students)
+
+- Create results page/student profile
+  - Install & setup @stimulus-components/chartjs instead
+    - [] Add a 'radar_data' method to TestResult & provide that data from the controller
+    - [] Add a button for each test they've taken (probably in the table) to view the chart for that test
+  - Add & style test summary table
+    - [] Add total score method to TestResult
+    - [] Add max score method to Test
+  - Add test list table
+    - [] And buttons/links to switch focused test
   - Should be able to print as a PDF
 
 ### Seasonal Site
 
-- [x] Fix the child birthday calculation for kids below school age, it should just show their current age instead
 - Why can SMs make bookings for parentless kids? They can't edit them
 
 ### API
