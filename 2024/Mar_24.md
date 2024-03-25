@@ -2,8 +2,8 @@
 
 ## March 1st
 
-- [x] Actually apply the CoursePolicy to requests -__-
-- [x] Rename ca/aa/_id/name to admin_approval & curriculum_approval, completely unreadble if you haven't worked on them in a while
+- [x] Actually apply the CoursePolicy to requests -\_\_-
+- [x] Rename ca/aa/\_id/name to admin_approval & curriculum_approval, completely unreadble if you haven't worked on them in a while
 - [x] Give Luis a button to actually add new lessons from the index
   - Probably turn the existing dropdown into a partial
   - [x] And make it pretty
@@ -198,11 +198,11 @@
   - Lots of 'invalid form control is not focusable' errors in console when submitted
   - Other timeslots work fine
   - Pretty sure the problem is [that slot](https://kids-up.app/en/time_slots/3963/edit) is a special slot with no afternoon slot
-     - So every time you try to edit it, the blank afternoon slot form is submitted and errors because it has blank required fields
-     - It's a browser error becuase they're hidden and required
-     - So maybe expand the afternoon slot by default if it doesn't exist?
-     - And improve the blank filter on the accepts_nested_attributes_for
-     - Also check errors for the afternoon slot are displayed at the top of the morning form, just to be sure
+    - So every time you try to edit it, the blank afternoon slot form is submitted and errors because it has blank required fields
+    - It's a browser error becuase they're hidden and required
+    - So maybe expand the afternoon slot by default if it doesn't exist?
+    - And improve the blank filter on the accepts_nested_attributes_for
+    - Also check errors for the afternoon slot are displayed at the top of the morning form, just to be sure
 - [x] Merge child is also [not working](https://kids-up.app/en/users/4532)
   - This one gets a 406 response, so it's probably an issue with the respond_to block
   - It was actually a conditional in the controller which lead to nothing being explicitly rendered if there was no child found
@@ -293,7 +293,7 @@
 
 - Create results page/student profile
   - [x] Add student details partial
-  - [x] Research charting libraries, this time with the knowledge that they can just be JS ones -__-
+  - [x] Research charting libraries, this time with the knowledge that they can just be JS ones -\_\_-
     - Yep, chartkick is still good. And it has the diamond-looking one we need
     - Doesn't support radar charts though, so
   - [x] Install & setup @stimulus-components/chartjs instead
@@ -405,29 +405,15 @@
     - I was refreshing the same page, and checkbox state persists between refreshes
 - [x] Strip whitespace from search inputs on event site
 
-### Materials
-
-- [] Add search based on certain columns to user/child index, like I just added to the event site
-- [] Proposed changes need to generate a PDF as well
-  - [] Need to be able to compare proposed change and current version side by side
-- [] Implement the stats dashboard
-- Try to implement my own version of hashid-rails using sqids instead
-
 #### Parent accounts
 
 - Should be able to exchange messages with their child's school
+
   - Interactable by SM, OrgAdmin and child's teachers
 
 - [x] Add factory & model spec
   - [x] Add parent_id to Child
 - [x] Write a system spec for an SM creating one
-- [] Create & test Parent policy
-  - [] Add parents tests to all the existing policies
-- [] Add parents to the seeds
-- [] Create the controller
-- [] Create the views
-  - [] Create a partial for adding children in forms
-  - [] Add a form to child#show for adding them to a parent
 
 #### Tests (for students)
 
@@ -439,6 +425,32 @@
 
 ## March 25th
 
+- [x] Resolve unfindable parent (from SM search)
+- [x] Resolve un-uncomfirmable invoice
+- [x] Show childless parents in search for SM/AMs
+- [x] Don't load all the children/parents when going to to index, only show search results
+
+### Materials
+
+#### Parent accounts
+
+- Should be able to exchange messages with their child's school
+
+  - Interactable by SM, OrgAdmin and child's teachers
+
+- [x] Create & test Parent policy
+  - [x] Add parents tests to all the existing policies
+  - [x] Update SM and OrgAdmin user scopes to include parents with no children
+- [x] Add parents to the seeds
+- [x] Create the controller
+- [x] Create the views
+- Create StudentSearchesController
+  - Create is the route that gets the results, show shows them. Form that submits to it and show are turboframes
+  - [x] Add a form to parents#show to find and add children
+  - [x] Add the strong params and controller action to get results
+
+## March 26th
+
 ### Materials
 
 - [] Add search based on certain columns to user/child index, like I just added to the event site
@@ -450,15 +462,29 @@
 #### Parent accounts
 
 - Should be able to exchange messages with their child's school
+
   - Interactable by SM, OrgAdmin and child's teachers
 
-- [] Create & test Parent policy
-  - [] Add parents tests to all the existing policies
-- [] Add parents to the seeds
-- [] Create the controller
-- [] Create the views
-  - [] Create a partial for adding children in forms
+- Create StudentSearchesController
+  - Create is the route that gets the results, show shows them. Form that submits to it and show are turboframes
+  - [] Add unique index on student id per school_id
+  - [] Add a view to display results
+  - [] Put it all in turboframes
+  - [] Add a respond_to so the search can also be used on index? Or just do it in a frame at the top
+- Create UserSearchesController
   - [] Add a form to child#show for adding them to a parent
+- [] Ensure new user signups can only be parents
+  - [] And also give a link to sign up per-org
+  - probably super the Devise controller
+  - [] Add unique index on student id per school_id
+  - [] Add a view to display results
+  - [] Put it all in turboframes
+  - [] Add a respond_to so the search can also be used on index? Or just do it in a frame at the top
+- Create UserSearchesController
+  - [] Add a form to child#show for adding them to a parent
+- [] Ensure new user signups can only be parents
+  - [] And also give a link to sign up per-org
+  - probably super the Devise controller
 
 #### Tests (for students)
 
