@@ -451,9 +451,34 @@
 
 ## March 26th
 
+- [x] Fix some dependabot warnings on event/materials sites
+- [x] Sanitize user input for student/parent searches on event site
+  - [x] Remove edge case where full student list still displayed initially
+  - [x] Remove the school nav from student index as no longer necessary
+- [x] Investigate Github code scanning warning about unsanitized user input
+
 ### Materials
 
-- [] Add search based on certain columns to user/child index, like I just added to the event site
+- [x] Add schools to class index (conditional on being org admin or admin)
+
+#### Parent accounts
+
+- Create StudentSearchesController
+  - [x] Add child search by student id and level
+  - [x] Put it in turboframes
+  - [x] Touch up child table styling to match other tables
+  - [x] Prevent children with parents being claimed (or shown?)
+  - [x] Add a search form to the top of Children#index
+    - [x] Use it to update the table of students
+  - [x] Split the parent & staff form partials
+
+## March 27th
+
+### Materials
+
+- [] Student ids should be unique by school
+- [] and auto-prefixed with their school id to be unique by org
+  - Maybe auto-prefix with a new method like `#displayed_id` rather than overriding
 - [] Proposed changes need to generate a PDF as well
   - [] Need to be able to compare proposed change and current version side by side
 - [] Implement the stats dashboard
@@ -465,12 +490,6 @@
 
   - Interactable by SM, OrgAdmin and child's teachers
 
-- Create StudentSearchesController
-  - Create is the route that gets the results, show shows them. Form that submits to it and show are turboframes
-  - [] Add unique index on student id per school_id
-  - [] Add a view to display results
-  - [] Put it all in turboframes
-  - [] Add a respond_to so the search can also be used on index? Or just do it in a frame at the top
 - Create UserSearchesController
   - [] Add a form to child#show for adding them to a parent
 - [] Ensure new user signups can only be parents
@@ -485,14 +504,10 @@
 - [] Ensure new user signups can only be parents
   - [] And also give a link to sign up per-org
   - probably super the Devise controller
-
-#### Tests (for students)
 
 ### Event Site
 
 #### Search forms
-
-- [] Just make students/users an empty array if no search params
 
 ### API
 
