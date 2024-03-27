@@ -476,12 +476,37 @@
 
 ### Materials
 
-- [] Student ids should be unique by school
-- [] and auto-prefixed with their school id to be unique by org
-  - Maybe auto-prefix with a new method like `#displayed_id` rather than overriding
+- [x] Student ids should be unique by school
+- [x] If a student_id is nil, it should be generated from the DB id, school and a string of random characters
+- [x] Redact student names in forms, and check for other leaks
+- [x] Counter_cache students per lessons using the join table
+  - [x] And add it to the views
+
+#### Parent accounts
+
+- Should be able to exchange messages with their child's school
+
+  - Interactable by SM, OrgAdmin and child's teachers
+
+- [x] Add a requirement to search by school to parent search form, since IDs are only unique per school
+- Create UserSearchesController
+  - [x] Create a form partial to search parents
+  - [x] Create the controller to search parents
+  - [x] Remove the filter navs once it's set up as they're no longer necessary
+    - [x] And translation files
+  - [x] Add a search form to child#show for adding them to a parent
+    - Display if they don't have a parent
+  - [x] Switch to only index/update for student searches
+
+## March 28th
+
+### Materials
+
+- [] Write some unit tests for what I want Jayson to do
+  - Probably a separate helper method that sets the main_nav_link classes based on controller_name
 - [] Proposed changes need to generate a PDF as well
   - [] Need to be able to compare proposed change and current version side by side
-- [] Implement the stats dashboard
+- Implement the stats dashboard
 - Try to implement my own version of hashid-rails using sqids instead
 
 #### Parent accounts
@@ -490,8 +515,6 @@
 
   - Interactable by SM, OrgAdmin and child's teachers
 
-- Create UserSearchesController
-  - [] Add a form to child#show for adding them to a parent
 - [] Ensure new user signups can only be parents
   - [] And also give a link to sign up per-org
   - probably super the Devise controller
