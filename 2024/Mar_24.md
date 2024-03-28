@@ -502,28 +502,51 @@
 
 ### Materials
 
-- [] Write some unit tests for what I want Jayson to do
-  - Probably a separate helper method that sets the main_nav_link classes based on controller_name
-- [] Proposed changes need to generate a PDF as well
+- [x] Write up diff business models for Jack, e.g. self-hosted/managed/using our centrally hosted version
+- [x] Get Alex a list of components I need styled
+
+- [x] Don't try to find a child in user search when not searching for a parent
+- [x] Generate the student id when there's an empty string as well
+- [x] Improve the deploy flow so it exits on Docker failures
+
+#### Lessons
+
+- [x] Add lang goals & interesting fact cols to lessons table
+  - Three separate fields for lang goals by level, which are then saved into a single JSONB hash? Split back out in form
+  - [x] Use existing listable attributes, and store accessor to chuck them all in one jsonb column
+
+## March 29th
+
+- [] IP lock SM accounts for event site when I get the list
+- [] And prevent registrations for past events by redirecting on confirm invoice when past end date
+
+```
+〇〇スクールをお申込みご希望の場合は、下記カレンダーよりご希望のアクティビティをクリックし、選択してください。
+
+<注意>すでに終了しているアクティビティは選択をしないようご注意ください。
+```
+
+### Materials
+
+- [] Add lesson search
+- [] Add start/quit date/birthday dates to student
+  - [] Also search by them
+  - [] And refactor the search controller to get searchable params from the model, iterate through them without being manually added to controller
+
+#### Lessons
+
+- Proposed change rework
+  - Either migrate the lang goals and interesting fact cols to proposed changes, along with type, and somehow dynamically inherit from the types
+  - Or, just store in the same table and have a boolean marking them proposal or not/an enum for their status
+  - [] Proposed changes need to generate a PDF as well
   - [] Need to be able to compare proposed change and current version side by side
-- Implement the stats dashboard
-- Try to implement my own version of hashid-rails using sqids instead
 
 #### Parent accounts
 
-- Should be able to exchange messages with their child's school
-
-  - Interactable by SM, OrgAdmin and child's teachers
-
-- [] Ensure new user signups can only be parents
-  - [] And also give a link to sign up per-org
-  - probably super the Devise controller
-  - [] Add unique index on student id per school_id
-  - [] Add a view to display results
-  - [] Put it all in turboframes
-  - [] Add a respond_to so the search can also be used on index? Or just do it in a frame at the top
-- Create UserSearchesController
-  - [] Add a form to child#show for adding them to a parent
+- [] Add extra emails field
+  - [] Can login in with any email
+  - [] They can add emails but not delete
+- Should be able to exchange messages with their child's school; teachers, SM and org admin
 - [] Ensure new user signups can only be parents
   - [] And also give a link to sign up per-org
   - probably super the Devise controller
