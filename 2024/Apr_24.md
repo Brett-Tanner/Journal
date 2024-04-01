@@ -1,11 +1,29 @@
 ## April 1st
 
+- [x] Fix parents not being unable to unregister for activities if it dropped them below their previous invoice amount
+
 ### Materials
 
-- [] Add lesson search
+- Add lesson search
+  - [x] Write system spec
+  - [x] Add views
+  - [x] Add controller
+  - [x] Figure out how to integrate the DA short levels (mostly just ele) into the search
+    - Either duplicate the Ele key somehow
+    - Or when mapping the select options, map the integer as the value rather than the downcased key
+  - Remove the need for turbo-target top on status toggles
+    - [x] refactor 'after_update_url' to be on lesson
+
+## April 2nd
+
+### Materials
+
+- Add lesson search
+  - Remove the need for turbo-target top on status toggles
+    - [] submit a hidden 'index' boolean in the toggles that redirects to the index after updating
 - [] Add start/quit date/birthday dates to student
   - [] Also search by them
-  - [] And refactor the search controller to get searchable params from the model, iterate through them without being manually added to controller
+  - [] And refactor the search controller to have the searcahble params in constants
 
 #### Lessons
 
@@ -31,11 +49,22 @@
 
 ### API
 
+Request will contain an array of event names they want stats for (determined in sheets by the close dates in sheets for those events) and an API key.
+
+Needs to return these values for each event at each school which is ongoing or closed less than a month ago, as a hash keyed by event name and school id.
+
+#### Seasonal
+
 - Number of internal + reservation
 - Number of external
 - Internal + res revenue
 - External revenue
-- For parties just the total revenue
+- Goal
+
+#### Parties
+
+- Total revenue
+- Goal
 
 ##### Testing
 
