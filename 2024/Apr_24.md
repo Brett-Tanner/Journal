@@ -16,38 +16,9 @@
 
 ## April 2nd
 
-### Materials
-
-- Add lesson search
-  - Remove the need for turbo-target top on status toggles
-    - [] submit a hidden 'index' boolean in the toggles that redirects to the index after updating
-- [] Add start/quit date/birthday dates to student
-  - [] Also search by them
-  - [] And refactor the search controller to have the searcahble params in constants
-
-#### Lessons
-
-- Proposed change rework
-  - Either migrate the lang goals and interesting fact cols to proposed changes, along with type, and somehow dynamically inherit from the types
-  - Or, just store in the same table and have a boolean marking them proposal or not/an enum for their status
-  - [] Proposed changes need to generate a PDF as well
-  - [] Need to be able to compare proposed change and current version side by side
-
-#### Parent accounts
-
-- [] Add extra emails field
-  - [] Can login in with any email
-  - [] They can add emails but not delete
-- Should be able to exchange messages with their child's school; teachers, SM and org admin
-- [] Ensure new user signups can only be parents
-  - [] And also give a link to sign up per-org
-  - probably super the Devise controller
+- [x] Fall back to simplest implementation of blank invoice protection; just disable it till they change something
 
 ### Event Site
-
-- [] IP lock SM accounts
-
-### API
 
 Request will contain an array of event names they want stats for (determined in sheets by the close dates in sheets for those events) and an API key.
 
@@ -65,6 +36,57 @@ Needs to return these values for each event at each school which is ongoing or c
 
 - Total revenue
 - Goal
+
+- [x] Write a wiki page for the API
+- [x] Write a request spec for the API
+  - [x] Include it in the auth before action
+- [x] Add a route & controller action
+- [x] Add the Model methods to get the necessary data
+
+### Materials
+
+- Add lesson search
+  - Remove the need for turbo-target top on status toggles
+    - [x] Make the visibility badges actually visibility toggles
+    - [x] Style the lesson index table to match others
+    - [x] submit a hidden 'index' boolean in the toggles that redirects to the index after updating
+- [x] Add start/quit date/birthday dates to student
+  - [x] Also search by birthday
+
+## April 3rd
+
+### Materials
+
+- Add site themes by
+  - [] Renaming all the `ku-purple` etc to more generic stuff
+  - Maybe conditionally loading a stylesheet which imports the main one and sets css vars
+  - Or I think Tailwind has themes, look into that
+
+#### Lessons
+
+- Proposed change rework
+  - Either migrate the lang goals and interesting fact cols to proposed changes, along with type, and somehow dynamically inherit from the types
+  - Or, just store in the same table and have a boolean marking them proposal or not/an enum for their status
+  - [] Proposed changes need to generate a PDF as well
+  - [] Need to be able to compare proposed change and current version side by side
+
+#### Parent accounts
+
+- Should be able to exchange messages with their child's school; teachers, SM and org admin
+
+#### Auth
+
+- [] Ensure new user signups can only be parents
+  - [] And also give a link to sign up per-org with hidden field for the org id
+  - [] And a global sign up form with a select box for org
+  - [] Modify the after sign out path to redirect based on the org
+- [] Add extra emails field
+  - [] Can login in with any email
+  - [] They can add emails but not delete
+
+### Event Site
+
+- [] IP lock SM accounts
 
 ##### Testing
 
