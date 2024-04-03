@@ -57,6 +57,35 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+#### Lessons
+
+- [x] Only show toggle to release if the lesson is approved (or it's a course)
+- [x] Allow writers to update proposals without creating a new one
+- [x] Extract lesson attributes to a common partial rather than one per lesson type
+- Proposed change rework - Make them just a state of Lesson
+  - [x] Delete proposed change table
+  - [x] Refactor ProposedChange tests to match proposals being a state of Lesson
+  - [x] Write shared factory validity tests of proposals for each lesson type
+  - [x] Add new proposal trait to base Lesson factory
+  - Add columns to Lesson to duplicate the functionality
+    - [x] Add an enum column to Lesson to indicate its proposal status
+      - Accepted
+      - Changes Needed
+      - Proposed
+      - Rejected
+    - [x] Add an optional belongs_to ChangedLesson and has_many ProposedChanges on Lesson
+  - [x] Refactor references to ProposedChange to match them being a state of Lesson
+  - Need to be able to compare proposed change and current version side by side
+    - [x] Create ProposalsController to handle the changes
+    - [x] Write test for and create ProposalPolicy
+    - [x] Create ProposalsController#show
+    - [x] Update links where applicable to point at ProposalsController#show rather than LessonType#show
+    - [x] Basic styling for ProposalsController#show
+
+## April 4th
+
+### Materials
+
 - Add site themes by
   - [] Renaming all the `ku-purple` etc to more generic stuff
   - Maybe conditionally loading a stylesheet which imports the main one and sets css vars
@@ -64,11 +93,14 @@ Needs to return these values for each event at each school which is ongoing or c
 
 #### Lessons
 
-- Proposed change rework
-  - Either migrate the lang goals and interesting fact cols to proposed changes, along with type, and somehow dynamically inherit from the types
-  - Or, just store in the same table and have a boolean marking them proposal or not/an enum for their status
-  - [] Proposed changes need to generate a PDF as well
-  - [] Need to be able to compare proposed change and current version side by side
+- Proposed change rework - Make them just a state of Lesson
+  - Create ProposalsController#update, which
+    - [] deletes a Lesson and replaces it with the Proposal if proposal is accepted
+      - [] Add a class method to Lesson which handles the replacement
+    - [] otherwise does a normal update (only accepting status and internal comments as params)
+  - [] Create nav partial to switch between proposals for a lesson
+  - [] Write a model spec for accepting a proposed change and having it replace the existing one
+  - [] Use store API to dot access curriculum/admin approval
 
 #### Parent accounts
 
