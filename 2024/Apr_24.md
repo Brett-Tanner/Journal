@@ -77,7 +77,6 @@ Needs to return these values for each event at each school which is ongoing or c
   - [x] Refactor references to ProposedChange to match them being a state of Lesson
   - Need to be able to compare proposed change and current version side by side
     - [x] Create ProposalsController to handle the changes
-    - [x] Write test for and create ProposalPolicy
     - [x] Create ProposalsController#show
     - [x] Update links where applicable to point at ProposalsController#show rather than LessonType#show
     - [x] Basic styling for ProposalsController#show
@@ -86,25 +85,32 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+#### Lessons
+
+- [x] Add status to Lesson search
+- [x] Remove proposing changes condition on attach guide to close issue 12
+- [x] Add status to visibility toggles
+- Proposed change rework - Make them just a state of Lesson
+  - [x] Write tests for and create ProposalPolicy
+  - Create ProposalsController#update, which
+    - [x] Improve system spec expectations
+    - [x] Updates proposal with new status/comments if not accepted
+    - [x] deletes a Lesson and replaces it with the Proposal if proposal is accepted
+      - [x] Add a class method to Lesson which handles the replacement
+      - [x] Fix original lesson not being deleted due to destroy: option on associations
+    - [x] otherwise does a normal update (only accepting status and internal comments as params)
+  - [x] Write a model spec for accepting a proposed change and having it replace the existing one
+  - [x] Have proposals table use the proposal form
+  - [x] Remove changed_lesson_id field from proposal form as we can just get it from the proposal
+
+## April 5th
+
+### Materials
+
 - Add site themes by
   - [] Renaming all the `ku-purple` etc to more generic stuff
   - Maybe conditionally loading a stylesheet which imports the main one and sets css vars
   - Or I think Tailwind has themes, look into that
-
-#### Lessons
-
-- Proposed change rework - Make them just a state of Lesson
-  - Create ProposalsController#update, which
-    - [] deletes a Lesson and replaces it with the Proposal if proposal is accepted
-      - [] Add a class method to Lesson which handles the replacement
-    - [] otherwise does a normal update (only accepting status and internal comments as params)
-  - [] Create nav partial to switch between proposals for a lesson
-  - [] Write a model spec for accepting a proposed change and having it replace the existing one
-  - [] Use store API to dot access curriculum/admin approval
-
-#### Parent accounts
-
-- Should be able to exchange messages with their child's school; teachers, SM and org admin
 
 #### Auth
 
@@ -115,6 +121,11 @@ Needs to return these values for each event at each school which is ongoing or c
 - [] Add extra emails field
   - [] Can login in with any email
   - [] They can add emails but not delete
+
+#### Parent accounts
+
+- Should be able to exchange messages with their child's school; teachers, SM and org admin
+  - Probably just use support messages for this
 
 ### Event Site
 
