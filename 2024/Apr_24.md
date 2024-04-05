@@ -108,9 +108,22 @@ Needs to return these values for each event at each school which is ongoing or c
 ### Materials
 
 - Add site themes by
-  - [] Renaming all the `ku-purple` etc to more generic stuff
-  - Maybe conditionally loading a stylesheet which imports the main one and sets css vars
-  - Or I think Tailwind has themes, look into that
+  - [x] Renaming all the `ku-purple` etc to more generic stuff like `color-primary`
+  - [x] Add 'tailwind-theme-switcher' tailwind plugin and some demo themes
+  - [x] Add dropdown component from [tailwindcss-stimulus-components](https://github.com/excid3/tailwindcss-stimulus-components)
+  - [x] Create Stimulus theme switcher for admins
+  - [x] Allow the theme to be set for an organisation
+    - Add a helper which retrieves the theme based on a user's org id
+    - Needs to fall back to the default if org doesn't have a theme
+    - Name the theme like `org-n`
+- [x] Write a wiki entry for the theme setup
+
+## April 6th
+
+### Materials
+
+- [] Add an auto-expanding text area helper with StimulusComponents
+- [] Add slideover component for main nav on mobile
 
 #### Auth
 
