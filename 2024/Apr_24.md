@@ -118,12 +118,30 @@ Needs to return these values for each event at each school which is ongoing or c
     - Name the theme like `org-n`
 - [x] Write a wiki entry for the theme setup
 
-## April 6th
+## April 8th
 
 ### Materials
 
-- [] Add an auto-expanding text area helper with StimulusComponents
-- [] Add slideover component for main nav on mobile
+- [x] Review Jayson's PR
+  - Doesn't work for non-admin users
+  - Requested he add a highlight for tests when on test result page
+- [x] Add an auto-expanding text area helper with StimulusComponents
+  - Integrate it automatically into every text area by making a custom form builder and setting it as default
+- Add scrolling to a given skill in the test results input
+  - [x] Create stimulus controller
+  - [x] Create the nav component
+- Add slideover component for main nav on mobile
+  - [x] Add stimulus controller
+  - [x] Style
+
+## April 9th
+
+### Materials
+
+- Add slideover component for main nav on mobile
+  - [] Improve theme selector UI
+  - [] Stop it scrolling out on long pages
+  - [] Add scrolling to the link container
 
 #### Auth
 
