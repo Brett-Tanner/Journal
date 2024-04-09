@@ -136,9 +136,38 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ## April 9th
 
+- [x] Help Leroy with some kids whose parents registered them for events at online
+  - This took a really long time, and ended with two invoices being off by 1000yen combined -\_\_-
+- [x] Send invoice change emails to all SMs, like we do for inquiries
+
 ### Materials
 
+- [x] Require authorization on ProposalsController
 - Add slideover component for main nav on mobile
+  - [x] Keep signout link on far right for desktop, put in slideover for mobile
+  - Reduce nav links to minimum necessary
+    - [x] Admin
+
+## April 10th
+
+- If a kid is online, don't show the online event as their default.
+  - [] Render a message telling them they have to choose another school in place of the calendar/link
+    - 参加希望のスクールをお選びください。
+  - [] Show the expanded 'choose another school' option
+
+### Materials
+
+- [] Add organisations#show
+  - With list of plans
+  - Wit list of schools
+- [] Add list of classes & teachers to schools#show
+- Add slideover component for main nav on mobile
+  - Reduce nav links to minimum necessary
+    - [] Writer
+    - [] OrgAdmin
+    - [] SchoolManager
+    - [] Teacher
+    - [] Parent
   - [] Improve theme selector UI
   - [] Stop it scrolling out on long pages
   - [] Add scrolling to the link container
