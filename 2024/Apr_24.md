@@ -150,27 +150,34 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ## April 10th
 
-- If a kid is online, don't show the online event as their default.
-  - [] Render a message telling them they have to choose another school in place of the calendar/link
+- If a kid is an online student, don't show the online event as their default.
+  - [x] Render a highlighted message telling them they have to choose another school in place of the calendar/link
     - 参加希望のスクールをお選びください。
-  - [] Show the expanded 'choose another school' option
+  - [x] Keep the image, but without a link or event name
+  - [x] Show the expanded 'choose another school' option
+  - [x] Add Event#with_sibling_events and an attr_reader to simplify getting & accessing sibling events in controller
 
 ### Materials
 
-- [] Add organisations#show
-  - With list of plans
-  - Wit list of schools
-- [] Add list of classes & teachers to schools#show
-- Add slideover component for main nav on mobile
-  - Reduce nav links to minimum necessary
-    - [] Writer
-    - [] OrgAdmin
-    - [] SchoolManager
-    - [] Teacher
-    - [] Parent
-  - [] Improve theme selector UI
-  - [] Stop it scrolling out on long pages
-  - [] Add scrolling to the link container
+- [x] Add organisations#show
+  - Plan
+  - List of schools & school student counts
+  - List of OrgAdmins
+  - Student count
+- [x] Style schools table header
+- [x] Add list of classes & teachers to schools#show
+- Reduce nav links to minimum necessary
+  - [x] Writer
+  - [x] Sales
+  - [x] OrgAdmin
+  - [x] SchoolManager
+  - [x] Teacher
+  - [x] Parent
+- [x] Modify org theme helper to support use with no user/org params
+
+## April 11th
+
+### Materials
 
 #### Auth
 
@@ -178,9 +185,9 @@ Needs to return these values for each event at each school which is ongoing or c
   - [] And also give a link to sign up per-org with hidden field for the org id
   - [] And a global sign up form with a select box for org
   - [] Modify the after sign out path to redirect based on the org
-- [] Add extra emails field
-  - [] Can login in with any email
+- [] Add extra emails jsonb column to users
   - [] They can add emails but not delete
+  - [] Can login in with any email
 
 #### Parent accounts
 
