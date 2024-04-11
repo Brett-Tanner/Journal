@@ -181,10 +181,27 @@ Needs to return these values for each event at each school which is ongoing or c
 
 #### Auth
 
-- [] Ensure new user signups can only be parents
-  - [] And also give a link to sign up per-org with hidden field for the org id
-  - [] And a global sign up form with a select box for org
-  - [] Modify the after sign out path to redirect based on the org
+- [x] Remove Admins from visible types for Admin
+- [x] Attempt 2 at merging Jayson's PR
+  - [x] Restore the hover effect
+- [x] Move theme selector out of role links, next to the lang toggle
+  - [x] And find an icon for it
+- [x] Give a link to sign up per-org with hidden field for the org id
+  - [x] And a global sign up form with a select box for org
+  - [x] Show the org signup link on OrgAdmin & SM homepages, as well as the Org#show page
+  - [x] Add clipboard stimulus controller
+- Add Alex's icons
+  - [x] Teacher profile
+  - [x] Lesson pages
+  - [x] Course page, for the sections
+
+## April 12th
+
+### Materials
+
+- [] Fix the purple box around tutorials not reaching the top
+- [] Fix teacher page styling for large numbers of activities
+- [] Add support requests & messages to seeds
 - [] Add extra emails jsonb column to users
   - [] They can add emails but not delete
   - [] Can login in with any email
