@@ -199,21 +199,42 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
-- [] Fix the purple box around tutorials not reaching the top
-- [] Fix teacher page styling for large numbers of activities
-- [] Add support requests & messages to seeds
-- [] Add extra emails jsonb column to users
-  - [] They can add emails but not delete
-  - [] Can login in with any email
-
-#### Parent accounts
-
-- Should be able to exchange messages with their child's school; teachers, SM and org admin
-  - Probably just use support messages for this
+- [x] Address some issues Luis added to the repo, and help him/Jayson clarify tutorials requirements
+- [x] Add support requests & messages to seeds
+- [x] Fix the purple box around tutorials not reaching the top
+- [x] Wrap activities on teacher page for large numbers of activities
+- [x] Add extra emails jsonb column to users
+  - They can add emails but not delete
+    - [x] Write tests
+    - [x] Write code
+    - [x] Modify views/controllers
+      - [x] And add a check for email validity
+- [x] Add requester name to support requests
+- [x] Style support requests
 
 ### Event Site
 
-- [] IP lock SM accounts
+- [x] Create a page/scaffold for the downtime plan
+
+## April 13th
+
+### Materials
+
+- Address GH issues
+
+### Event Site
+
+- Write up the downtime plan
+  - [] Dockerize, upgrade to Ruby 3.3
+  - [] Backup the DB in every way possible
+  - [] Spin up a new version with the (shared) DB backup on the PUP account and get it working
+  - [] Switch the domain registrar to Cloudflare
+  - [] Point the domain at the new EB
+  - [] IP lock SM accounts
+  - Extras if I have time
+    - [] Maybe install SolidQueue and use it for emails
+    - [] Maybe finish the invoice calc rewrite if I have extra time
+    - [] Refactor the Event#show page and move it to Invoice#new
 
 ##### Testing
 
