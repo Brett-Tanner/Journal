@@ -220,6 +220,23 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+- [x] Respond to GH issues
+
+### Event Site
+
+- [x] Long meeting with leroy to plan out next year
+- Update seeds to make testing easier, let other people actually set up a dev environment
+  - [x] Test accounts, areas, schools, users & children
+  - [x] Price Lists, Events & Time Slots
+    - [x] Suppress STDOUT while adding images cos libvips has pointless errors
+  - [x] Invoices
+- Modify PriceList to use store_accessor for courses
+  - [x] No point I think, you can't use numbers as keys
+
+## April 14th
+
+### Materials
+
 - Address GH issues
 
 ### Event Site
