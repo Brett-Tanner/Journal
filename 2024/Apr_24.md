@@ -237,6 +237,46 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+#### CSV Upload
+
+- [x] Write JS enabled system spec to lay it all out
+  - Deliberately trigger some errors like not uploading a file, poorly formatted CSV
+  - Check kids are shown as uploaded on current page once done
+  - Check for successful upload by going to the index page
+- [x] Scaffold Controller with new, update & create actions
+- [x] Scaffold new view
+
+## April 15th
+
+### Materials
+
+- Handle daily attendance in the LMS?
+
+#### CSV Upload
+
+- [] Write tests for StudentUploadPolicy
+  - [] Create & enforce StudentUploadPolicy
+- [] Use [@rails/request.js](https://github.com/rails/request.js) to get turbo-stream responses
+- [] Should check is row is a valid child
+  - Need some way of getting the idea of a 'valid child' from backend to frontend
+  - Maybe values?
+- [] Displays status as sticky heading at top, moves between checking, uploading, done
+  - [] Also track pending, failures, successes
+- Flesh out controller
+  - [] New is form with a file field for the initial upload
+  - [] When you click upload, a Stimulus controller intercepts the request and parses the CSV
+- [] Populates list with children as they're processed, given 'pending' status
+- [] Once a child is processed, push it to queue and start uploading
+  - Have max concurrent uploads, maybe 2 or 3
+  - Moves to done once all are processed and uploaded
+  - If there's a network error (or timeout), give an option to retry
+- [] Once the child is uploaded, controller sends back either
+
+  - JSON indicating success which a stimulus controller uses to modify the child row
+  - A turbo-stream to replace the child row with a success version
+
+- [] Add staff uploads as well
+
 - Address GH issues
 
 ### Event Site
