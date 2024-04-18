@@ -254,8 +254,34 @@ Needs to return these values for each event at each school which is ongoing or c
 
 #### CSV Upload
 
-- [] Write tests for StudentUploadPolicy
-  - [] Create & enforce StudentUploadPolicy
+- [x] Write tests for StudentUploadPolicy
+  - [x] Create & enforce StudentUploadPolicy
+- [x] Use PapaParse to parse CSV into student objects
+
+## April 18th
+
+### Materials
+
+- Handle daily attendance in the LMS?
+
+#### CSV Upload
+
+- [x] Use Typescript for the Stimulus controller
+- [x] Create a student table
+- [x] Create rows for each student parsed from the CSV
+- [x] Set their ID from the array index
+- [x] Add an optional param for row creation which sets the status. Default is pending
+
+## April 19th
+
+### Materials
+
+- Handle daily attendance in the LMS?
+
+#### CSV Upload
+
+- Add an optional param for row creation which sets the status. Default is pending
+  - [] Make this an enumerated type with pending, uploading, done
 - [] Use [@rails/request.js](https://github.com/rails/request.js) to get turbo-stream responses
 - [] Should check is row is a valid child
   - Need some way of getting the idea of a 'valid child' from backend to frontend
