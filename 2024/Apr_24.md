@@ -274,19 +274,33 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ## April 19th
 
+#### CSV Upload
+
+- Add an optional param for row creation which sets the status. Default is pending
+  - [x] Make this an enumerated type with pending, uploading, done
+- Should check is row is a valid child
+  - [x] If the field is required, outline the row in red and the field in red with missing
+  - [x] If it's optional, just have yellow text showing it's missing and a yellow outline on the cell
+  - [x] Add icons for each status
+- Style the generated table of uploads
+  - [x] Header row
+  - [x] Body rows
+  - [x] Statuses/icons
+- [x] Use [@rails/request.js](https://github.com/rails/request.js) to get turbo-stream responses
+- Write response templates
+  - [x] Create
+
+## April 22nd
+
 ### Materials
 
 - Handle daily attendance in the LMS?
 
 #### CSV Upload
 
-- Add an optional param for row creation which sets the status. Default is pending
-  - [] Make this an enumerated type with pending, uploading, done
-- [] Use [@rails/request.js](https://github.com/rails/request.js) to get turbo-stream responses
-- [] Should check is row is a valid child
-  - Need some way of getting the idea of a 'valid child' from backend to frontend
-  - Maybe values?
-- [] Displays status as sticky heading at top, moves between checking, uploading, done
+- Write response templates
+  - [] Update
+- [] Displays overall status as sticky heading at top, moves between checking, uploading, done
   - [] Also track pending, failures, successes
 - Flesh out controller
   - [] New is form with a file field for the initial upload
