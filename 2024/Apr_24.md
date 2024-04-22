@@ -292,30 +292,51 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ## April 22nd
 
+- [x] Move some AMs around
+- [x] PDF research
+- [x] Attempt to resolve rubocop issues
+
+#### CSV Upload
+
+- [x] Displays overall status as sticky heading at top, moves between checking, uploading, done
+
+## April 22nd
+
 ### Materials
 
 - Handle daily attendance in the LMS?
 
+#### PDFs
+
+- DailyActivity PDF
+  - [] Background
+    - Doesn't show up when attached by adding in background option to ::new constructor
+    - Unsure if ::generate works as decent amount of refactoring required
+  - [] Subtype
+  - [] Title
+  - [] Goal
+  - [] Warning
+    - Shown conditionally, hide if there isn't one
+  - [] Image
+  - [] Lang goals by level
+  - [] Materials
+  - [] Intro
+    - [] Interesting fact
+  - [] Instructions
+    - [] Large groups
+  - [] Outro
+  - [] Teacher tips
+  - [] Elementary/Kindy
+
 #### CSV Upload
 
+- Displays overall status as sticky heading at top, moves between checking, uploading, done
+  - [] Also track totals for pending, failures, successes
+    - Use a separate Stimulus controller on the turbo response whose connect action updates the count appropriately
 - Write response templates
   - [] Update
-- [] Displays overall status as sticky heading at top, moves between checking, uploading, done
-  - [] Also track pending, failures, successes
-- Flesh out controller
-  - [] New is form with a file field for the initial upload
-  - [] When you click upload, a Stimulus controller intercepts the request and parses the CSV
-- [] Populates list with children as they're processed, given 'pending' status
-- [] Once a child is processed, push it to queue and start uploading
-  - Have max concurrent uploads, maybe 2 or 3
-  - Moves to done once all are processed and uploaded
-  - If there's a network error (or timeout), give an option to retry
-- [] Once the child is uploaded, controller sends back either
-
-  - JSON indicating success which a stimulus controller uses to modify the child row
-  - A turbo-stream to replace the child row with a success version
-
-- [] Add staff uploads as well
+- [] If there's a network error (or timeout), give an option to retry
+- [] Add staff/parent uploads as well
 
 - Address GH issues
 
