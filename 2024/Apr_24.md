@@ -300,7 +300,19 @@ Needs to return these values for each event at each school which is ongoing or c
 
 - [x] Displays overall status as sticky heading at top, moves between checking, uploading, done
 
-## April 22nd
+## April 23rd
+
+### Materials
+
+#### PDFs
+
+- DailyActivity PDF
+  - [x] Background
+    - Doesn't show up when attached by adding in background option to ::new constructor
+    - Unsure if ::generate works as decent amount of refactoring required
+    - [x] Spend a lot of time working with Luis to get the background perfectly lined up with the page size
+
+## April 24th
 
 ### Materials
 
@@ -309,9 +321,6 @@ Needs to return these values for each event at each school which is ongoing or c
 #### PDFs
 
 - DailyActivity PDF
-  - [] Background
-    - Doesn't show up when attached by adding in background option to ::new constructor
-    - Unsure if ::generate works as decent amount of refactoring required
   - [] Subtype
   - [] Title
   - [] Goal
