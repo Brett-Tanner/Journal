@@ -316,14 +316,22 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+#### PDFs
+
+- DailyActivity PDF
+  - [x] Subtype
+  - [x] Title
+  - [x] Goal
+
+## April 25th
+
+### Materials
+
 - Handle daily attendance in the LMS?
 
 #### PDFs
 
 - DailyActivity PDF
-  - [] Subtype
-  - [] Title
-  - [] Goal
   - [] Warning
     - Shown conditionally, hide if there isn't one
   - [] Image
