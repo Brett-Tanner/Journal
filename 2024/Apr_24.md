@@ -327,6 +327,20 @@ Needs to return these values for each event at each school which is ongoing or c
 
 ### Materials
 
+#### PDFs
+
+- DailyActivity PDF
+  - [x] Lang goals by level
+  - [x] Materials
+  - [x] Intro
+  - [x] Instructions
+    - [x] Large groups
+  - [x] Outro
+
+## April 26th
+
+### Materials
+
 - Handle daily attendance in the LMS?
 
 #### PDFs
@@ -335,15 +349,11 @@ Needs to return these values for each event at each school which is ongoing or c
   - [] Warning
     - Shown conditionally, hide if there isn't one
   - [] Image
-  - [] Lang goals by level
-  - [] Materials
-  - [] Intro
+  - Intro
     - [] Interesting fact
-  - [] Instructions
-    - [] Large groups
-  - [] Outro
-  - [] Teacher tips
   - [] Elementary/Kindy
+  - [] Add Shingo Pro as the font
+    - [] And match all the font weights/sizes
 
 #### CSV Upload
 
