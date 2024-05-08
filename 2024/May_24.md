@@ -2,6 +2,9 @@
 
 ## May 8th
 
+- [x] Sort out new AM areas
+- [x] Manually get summary stats for last 2 events
+
 ### Materials
 
 - Handle daily attendance in the LMS?
@@ -9,8 +12,17 @@
 #### CSV Upload
 
 - Displays overall status as sticky heading at top, moves between checking, uploading, done
-  - [] Also track totals for pending, failures, successes
+  - [x] Also track totals for pending, failures, successes
     - Use a separate Stimulus controller on the turbo response whose connect action updates the count appropriately
+
+## May 8th
+
+### Materials
+
+- Handle daily attendance in the LMS?
+
+#### CSV Upload
+
 - Write response templates
   - [] Update
 - [] If there's a network error (or timeout), give an option to retry
@@ -29,6 +41,7 @@
     - [] Maybe install SolidQueue and use it for emails
     - [] Maybe finish the invoice calc rewrite if I have extra time
     - [] Refactor the Event#show page and move it to Invoice#new
+- [] Need to add event summary stats to the charts
 
 ##### Testing
 
