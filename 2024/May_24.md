@@ -15,14 +15,40 @@
   - [x] Also track totals for pending, failures, successes
     - Use a separate Stimulus controller on the turbo response whose connect action updates the count appropriately
 
-## May 8th
+## May 9th
+
+### Documentation
+
+- Lessons
+  - [x] Inheritance
+  - [x] Guide generation
+  - [x] Form construction
+
+### Lessons
+
+- Tweaks to warning box on DA PDF
+  - [x] Round box border
+  - [x] Add padding
+- [x] Use correct ShingMGo
+- [x] Remove unused `includes` from PDF generation
+- [x] Update PDF generation tests to be less specific
+- [x] Actually use S3 for file storage
+- Sort out permissions for the app to upload files
+  - [x] Worked with Yamamoto-san to rule out IAM permissions issue
+  - [x] Roll back to using local storage so Luis can actually test stuff
+- [x] Try setting up swap space again
+  - [This one](https://repost.aws/knowledge-center/ec2-memory-swap-file) works fine while the instance is running, unsure if works when restarted though
+  - [x] Try seeing if it persists after modifying dockerrun to use a swap file and deploying
+    - It does, not 100% sure the container is using it but the swap file is there after a new deploy
+- Research possible solutions to Aws::S3::Errors::AccessDenied (Access Denied)
+
+## May 10th
 
 ### Materials
 
-- Handle daily attendance in the LMS?
-
 #### CSV Upload
 
+- [] Modify system spec setup to pass (progress on my home pc, so do it later)
 - Write response templates
   - [] Update
 - [] If there's a network error (or timeout), give an option to retry
@@ -30,6 +56,7 @@
 
 ### Event Site
 
+- [] Login isn't showing an error when it fails
 - Write up the downtime plan
   - [] Dockerize, upgrade to Ruby 3.3
   - [] Backup the DB in every way possible
