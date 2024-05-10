@@ -44,15 +44,41 @@
 
 ## May 10th
 
+- [x] Attempt to add new version of the dumb tracking thing
+  - Script they gave me does nothing
+  - Might create a script tag loaded from their servers that does something?
+  - But I want an explanation at least before running arbitrary code from someone else's server
+
 ### Materials
 
 #### CSV Upload
 
-- [] Modify system spec setup to pass (progress on my home pc, so do it later)
+- [x] Modify system spec setup to pass
 - Write response templates
-  - [] Update
-- [] If there's a network error (or timeout), give an option to retry
-- [] Add staff/parent uploads as well
+  - [x] Update
+  - [x] Make the error forms submit to the correct endpoints for them to function
+  - [x] Get a form in a table row to work correctly
+    - Had to put it in a cell and reference the form with the `form` attribute on inputs
+  - [x] Troubleshoot possible incorrect 'student already taken' error
+- [x] Add a dropdown to the nav that lets you select the type of upload
+- [] Teachers
+  - [x] Write system spec
+
+## May 13th
+
+### Materials
+
+#### CSV Upload
+
+- [] Teachers
+  - [] Test & write TeacherPolicySpec
+  - [] Create controller/views
+  - [] Create/refactor Stimulus controllers
+- [] Parents
+  - [] Write system spec
+  - [] Test & write ParentUploadPolicySpec
+  - [] Create controller/views
+  - [] Create/refactor Stimulus controllers
 
 ### Event Site
 
