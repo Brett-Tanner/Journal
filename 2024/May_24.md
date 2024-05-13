@@ -74,17 +74,28 @@
   - It was because I had `#create_csv` defined for each, so they were overwriting each other in non-deterministic ways
   - Causing the test CSVs to not be created, or the wrong one to be created at the wrong time
   - [x] Refactor the CSV creation code to just be part of `#create_{}_csv`
-- [] Teachers
+- [x] Fix tests not running the request JS, so full flow can be tested
+  - Was because the test was generating a CSV with a bunch of fields not used by the controller, was messing something up either with the data being sent or in the controller
+- [x] Teachers
   - [x] Refactor system spec to not interfere with other upload tests
   - [x] Test & write TeacherPolicySpec
   - [x] Create controller/views
   - [x] Create Stimulus controllers for teacher upload
   - [x] Fix a bug caused by relying on potentially blank fields for tubro dom ids
   - [x] Fix a bug caused by sending the (JS) index of the upload as an attribute of the record being uploaded
-  - [] Refactor upload Stimulus controllers to reduce code duplication
+- [] Refactor upload Stimulus controllers to reduce code duplication
 - [] Parents
   - [x] Write system spec
   - [x] Test & write ParentUploadPolicySpec
+
+## May 14th
+
+### Materials
+
+#### CSV Upload
+
+- [] Refactor upload Stimulus controllers to reduce code duplication
+- [] Parents
   - [] Create controller/views
   - [] Refactor Stimulus controllers
 
