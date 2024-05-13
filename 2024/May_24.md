@@ -61,7 +61,7 @@
     - Had to put it in a cell and reference the form with the `form` attribute on inputs
   - [x] Troubleshoot possible incorrect 'student already taken' error
 - [x] Add a dropdown to the nav that lets you select the type of upload
-- [] Teachers
+- Teachers
   - [x] Write system spec
 
 ## May 13th
@@ -70,15 +70,23 @@
 
 #### CSV Upload
 
+- [x] Troubleshoot flaky upload tests when running multiple together
+  - It was because I had `#create_csv` defined for each, so they were overwriting each other in non-deterministic ways
+  - Causing the test CSVs to not be created, or the wrong one to be created at the wrong time
+  - [x] Refactor the CSV creation code to just be part of `#create_{}_csv`
 - [] Teachers
-  - [] Test & write TeacherPolicySpec
-  - [] Create controller/views
-  - [] Create/refactor Stimulus controllers
+  - [x] Refactor system spec to not interfere with other upload tests
+  - [x] Test & write TeacherPolicySpec
+  - [x] Create controller/views
+  - [x] Create Stimulus controllers for teacher upload
+  - [x] Fix a bug caused by relying on potentially blank fields for tubro dom ids
+  - [x] Fix a bug caused by sending the (JS) index of the upload as an attribute of the record being uploaded
+  - [] Refactor upload Stimulus controllers to reduce code duplication
 - [] Parents
-  - [] Write system spec
-  - [] Test & write ParentUploadPolicySpec
+  - [x] Write system spec
+  - [x] Test & write ParentUploadPolicySpec
   - [] Create controller/views
-  - [] Create/refactor Stimulus controllers
+  - [] Refactor Stimulus controllers
 
 ### Event Site
 
