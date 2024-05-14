@@ -66,6 +66,8 @@
 
 ## May 13th
 
+- [x] Set up production summary API for Paolo
+
 ### Materials
 
 #### CSV Upload
@@ -83,8 +85,7 @@
   - [x] Create Stimulus controllers for teacher upload
   - [x] Fix a bug caused by relying on potentially blank fields for tubro dom ids
   - [x] Fix a bug caused by sending the (JS) index of the upload as an attribute of the record being uploaded
-- [] Refactor upload Stimulus controllers to reduce code duplication
-- [] Parents
+- Parents
   - [x] Write system spec
   - [x] Test & write ParentUploadPolicySpec
 
@@ -92,28 +93,54 @@
 
 ### Materials
 
+- [x] Bump Ruby version to 3.3.1
+- [x] Include `csv` in Gemfile since it's out of stdlib from 3.4.0
+
 #### CSV Upload
 
-- [] Refactor upload Stimulus controllers to reduce code duplication
-- [] Parents
-  - [] Create controller/views
-  - [] Refactor Stimulus controllers
+- [x] Parents
+  - [x] Create controller/views
+  - [x] Refactor Stimulus controllers
+- [x] Seems there's actually an issue with student uploads, chase that down
+  - Might be why it's the only one whose tests don't pass the whole way through
+    - Wasn't, that's still a problem
+  - Was a typo, using 'hidden_field' rather than 'hidden_field_tag'
+- [] Include correcting an invalid record in upload system specs
 
 ### Event Site
 
-- [] Login isn't showing an error when it fails
-- Write up the downtime plan
-  - [] Dockerize, upgrade to Ruby 3.3
-  - [] Backup the DB in every way possible
-  - [] Spin up a new version with the (shared) DB backup on the PUP account and get it working
-  - [] Switch the domain registrar to Cloudflare
-  - [] Point the domain at the new EB
-  - [] IP lock SM accounts
-  - Extras if I have time
-    - [] Maybe install SolidQueue and use it for emails
-    - [] Maybe finish the invoice calc rewrite if I have extra time
-    - [] Refactor the Event#show page and move it to Invoice#new
+- Dockerize
+  - [x] upgrade to Ruby 3.3.1
+  - [x] Customize Dockerfile to build successfully
+  - [] Customise docker-compose.yml to run the whole app successfully
+    - Up to the S3 SDK causing issues with docker-compose
+
+## May 15th
+
+### Materials
+
+#### CSV Upload
+
+- [] Include correcting an invalid record in upload system specs
+
+### Event Site
+
+- Dockerize
+  - [] Customise docker-compose.yml to run the whole app successfully
+    - Up to the S3 SDK causing issues with docker-compose
+  - [] customise .dockerignore
+  - [] take a look at the entrypoint, and config/dockerfile.yml
+- [] Backup the DB in every way possible
+- [] Spin up a new version with the (shared) DB backup on the PUP account and get it working
+- [] Switch the domain registrar to Cloudflare
+- [] Point the domain at the new EB
+- [] IP lock SM accounts
+- Extras if I have time
+  - [] Maybe install SolidQueue and use it for emails
+  - [] Maybe finish the invoice calc rewrite if I have extra time
+  - [] Refactor the Event#show page and move it to Invoice#new
 - [] Need to add event summary stats to the charts
+- [] Login isn't showing an error when it fails
 
 ##### Testing
 
