@@ -118,7 +118,7 @@
 
 #### CSV Upload
 
-- [] Include correcting an invalid record in upload system specs
+- [x] Add school creation link to Org page & make title of the table a link to the full school index
 
 ### Event Site
 
@@ -132,12 +132,26 @@
   - [x] DB setup required & how to do it
     - e.g. creating the DB, migrating, adding a user to log in with
 - Add wiki notes on transferring domain
-- [] Try getting dockerized app running on KU account
-- [] Backup the DB in every way possible
-- [] Switch the domain registrar to Cloudflare
+- [x] Try getting dockerized app running on KU account
+  - IT WORKED FIRST TRY! Just remember to add an S3 bucket name or it'll crash
+- [x] Backup the DB in every way possible
+  - Copied latest snapshot, figured out how to share, will export to S3 tomorrow morning
+- [x] Switch the domain registrar to Cloudflare
+
+## May 16th
+
+### Materials
+
+#### CSV Upload
+
+- [] Include correcting an invalid record in upload system specs
+
+### Event Site
 
 #### In-office tasks
 
+- IT WORKED FIRST TRY! Just remember to add an S3 bucket name or rails server will crash
+- [] Try creating an S3 bucket specifically for each app
 - [] Share the latest RDS snapshot with the P-UP account
 - [] Spin up a new version with the shared snapshot on the PUP account and get it working
   - [] Verify accounts still exist and are accessible
