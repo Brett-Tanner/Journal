@@ -105,15 +105,12 @@
   - Might be why it's the only one whose tests don't pass the whole way through
     - Wasn't, that's still a problem
   - Was a typo, using 'hidden_field' rather than 'hidden_field_tag'
-- [] Include correcting an invalid record in upload system specs
 
 ### Event Site
 
 - Dockerize
   - [x] upgrade to Ruby 3.3.1
   - [x] Customize Dockerfile to build successfully
-  - [] Customise docker-compose.yml to run the whole app successfully
-    - Up to the S3 SDK causing issues with docker-compose
 
 ## May 15th
 
@@ -126,14 +123,28 @@
 ### Event Site
 
 - Dockerize
-  - [] Customise docker-compose.yml to run the whole app successfully
+  - [x] Customise docker-compose.yml to run the whole app successfully
     - Up to the S3 SDK causing issues with docker-compose
-  - [] customise .dockerignore
-  - [] take a look at the entrypoint, and config/dockerfile.yml
+  - [x] customise .dockerignore
+  - [x] take a look at the entrypoint, and config/dockerfile.yml
+- Add wiki notes on getting docker-compose working locally
+  - [x] .env files and contents
+  - [x] DB setup required & how to do it
+    - e.g. creating the DB, migrating, adding a user to log in with
+- Add wiki notes on transferring domain
+- [] Try getting dockerized app running on KU account
 - [] Backup the DB in every way possible
-- [] Spin up a new version with the (shared) DB backup on the PUP account and get it working
 - [] Switch the domain registrar to Cloudflare
-- [] Point the domain at the new EB
+
+#### In-office tasks
+
+- [] Share the latest RDS snapshot with the P-UP account
+- [] Spin up a new version with the shared snapshot on the PUP account and get it working
+  - [] Verify accounts still exist and are accessible
+  - [] Once it's working, point the setsumeikai calendar at the new version temp URL
+  - [] Also change the GAS sheets URLs to point at the new version temp URL
+  - [] May need to reupload all the images that were on S3
+- [] Point the domain at the new URL with a CNAME record
 - [] IP lock SM accounts
 - Extras if I have time
   - [] Maybe install SolidQueue and use it for emails
