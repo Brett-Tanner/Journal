@@ -140,7 +140,26 @@
 
 ## May 16th
 
+- [x] In setsu calendar, auto select the school they're attending the setsu at as the default one they're interested in on form
+
+### Event Site
+
+#### In-office tasks
+
+- [x] Resize swap space because there's not room to pull docker images lol
+- IT WORKED FIRST TRY! Just remember to add an S3 bucket name or rails server will crash
+- [x] Try creating an S3 bucket specifically for each app
+- [x] Share the latest RDS snapshot with the P-UP account
+- [x] Spin up a new version with the shared snapshot on the PUP account and get it working
+  - [x] Verify accounts still exist and are accessible
+- [x] Set up eb CLI for new server
+- [x] Reinstate Leroy as online SM
+
+## May 17th
+
 ### Materials
+
+- [] 500 error on org page is caused by not having a plan, so when you try to call name on nil it crashes
 
 #### CSV Upload
 
@@ -150,11 +169,8 @@
 
 #### In-office tasks
 
-- IT WORKED FIRST TRY! Just remember to add an S3 bucket name or rails server will crash
-- [] Try creating an S3 bucket specifically for each app
-- [] Share the latest RDS snapshot with the P-UP account
-- [] Spin up a new version with the shared snapshot on the PUP account and get it working
-  - [] Verify accounts still exist and are accessible
+- [] Figure out why the temp URL won't work with the setsu calendar on live but will in dev
+- [] Figure out the S3 permissions issue, then:
   - [] Once it's working, point the setsumeikai calendar at the new version temp URL
   - [] Also change the GAS sheets URLs to point at the new version temp URL
   - [] May need to reupload all the images that were on S3
