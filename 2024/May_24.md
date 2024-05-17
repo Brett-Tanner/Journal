@@ -171,17 +171,12 @@
 ### Materials
 
 - [x] 500 error on org page is caused by not having a plan, so when you try to call name on nil it crashes
-- [] Try storing user type as a string enum rather then the current frozen array constant
-  - Could make some translations etc. easier
 
 #### CSV Upload
 
 - [x] Include correcting an invalid record in upload system specs
 
 ### Event Site
-
-- [] Need to add event summary stats to the charts
-- [] Login isn't showing an error when it fails
 
 #### In-office tasks
 
@@ -194,7 +189,7 @@
   - [x] Write model code to pass the tests
   - [] Add fields for Admins to add allowed_ips to SM accounts
 
-## May 18th
+## May 20th
 
 ### Materials
 
