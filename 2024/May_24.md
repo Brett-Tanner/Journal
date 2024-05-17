@@ -154,34 +154,68 @@
   - [x] Verify accounts still exist and are accessible
 - [x] Set up eb CLI for new server
 - [x] Reinstate Leroy as online SM
+- [x] Figure out the S3 permissions issue, then:
+  - [x] Once it's working, point the setsumeikai calendar at the new version temp URL
+  - [x] Also change the GAS sheets URLs to point at the new version temp URL
+  - [x] May need to reupload all the images that were on S3
 
 ## May 17th
 
+- [x] Troubleshoot & fix network error on Setsu calendar when pointed at new server
+  - Was just an origin header issue, because the main site is https and the generated URL for the new server was http
+  - Just pointed Cloudflare at the new server to give it https and we were all good
+- [x] Copy the inquiries that came in to the old server before I pointed Cloudflare at the new server
+- [x] Point the domain at the new URL with a CNAME record
+- [x] Bump Rails and some XML gem versions to avoid security vulnerabilities (both apps)
+
 ### Materials
 
-- [] 500 error on org page is caused by not having a plan, so when you try to call name on nil it crashes
+- [x] 500 error on org page is caused by not having a plan, so when you try to call name on nil it crashes
+- [] Try storing user type as a string enum rather then the current frozen array constant
+  - Could make some translations etc. easier
 
 #### CSV Upload
 
-- [] Include correcting an invalid record in upload system specs
+- [x] Include correcting an invalid record in upload system specs
 
 ### Event Site
 
-#### In-office tasks
-
-- [] Figure out why the temp URL won't work with the setsu calendar on live but will in dev
-- [] Figure out the S3 permissions issue, then:
-  - [] Once it's working, point the setsumeikai calendar at the new version temp URL
-  - [] Also change the GAS sheets URLs to point at the new version temp URL
-  - [] May need to reupload all the images that were on S3
-- [] Point the domain at the new URL with a CNAME record
-- [] IP lock SM accounts
-- Extras if I have time
-  - [] Maybe install SolidQueue and use it for emails
-  - [] Maybe finish the invoice calc rewrite if I have extra time
-  - [] Refactor the Event#show page and move it to Invoice#new
 - [] Need to add event summary stats to the charts
 - [] Login isn't showing an error when it fails
+
+#### In-office tasks
+
+- IP lock SM accounts
+  - [x] Write request specs with mocked IPs
+  - [x] Redirect SM to their profile with flash message if not at correct IP
+  - [x] Allow their own profile to avoid infinite redirects
+  - [x] Allow signing out
+  - [x] Write model spec for adding IPs
+  - [x] Write model code to pass the tests
+  - [] Add fields for Admins to add allowed_ips to SM accounts
+
+## May 18th
+
+### Materials
+
+- [] Try storing user type as a string enum rather then the current frozen array constant
+  - Could make some translations etc. easier
+
+### Event Site
+
+- [] Need to add event summary stats to the charts
+- [] Login isn't showing an error when it fails
+
+#### In-office tasks
+
+- IP lock SM accounts
+  - [] Add fields for Admins to add allowed_ips to SM accounts
+- Extras if I have time
+  - [] Install SolidQueue and use it for emails
+  - [] Maybe finish the invoice calc rewrite if I have extra time
+  - [] Refactor the Event#show page and move it to Invoice#new
+- [] Run migrations for User.allowed_ips & SolidQueue
+- [] Add IPs from the sheet for each SM account
 
 ##### Testing
 
@@ -267,6 +301,7 @@ end
 - [] use read/write_attribute or bracked notation in my custom getters/setters
   - Not sure what I'm using now, but probably not those
 - [] Use AWS Cloudfront to serve images?
+  - [Useful article](https://headey.net/rails-assets-active-storage-and-a-cloudfront-cdn)
 - [] Can probably speed up queries for ChartController with pluck
 - [] If indexing FK columns which can be null, exclude null from the index
 
