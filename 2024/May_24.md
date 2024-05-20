@@ -178,8 +178,6 @@
 
 ### Event Site
 
-#### In-office tasks
-
 - IP lock SM accounts
   - [x] Write request specs with mocked IPs
   - [x] Redirect SM to their profile with flash message if not at correct IP
@@ -187,9 +185,28 @@
   - [x] Allow signing out
   - [x] Write model spec for adding IPs
   - [x] Write model code to pass the tests
-  - [] Add fields for Admins to add allowed_ips to SM accounts
 
 ## May 20th
+
+### Event Site
+
+- IP lock SM accounts
+  - [x] Add fields for Admins to add allowed_ips to SM accounts
+  - [x] And refactor the form partial to HAML
+  - [x] Add first/family name methods to User
+  - [x] Same for kana
+    - Added both as helpers instead
+    - [x] Refactor other potential uses of the new name helpers
+  - [x] Refactor sign up form to HAML
+- Invoice calc refactor
+  - [x] Extract cost calculation into a concern
+    - Returns an object containing all the cost info
+  - [x] Extract PDF generation into a concern
+    - [] Refactor to use the cost info object
+  - [x] Extract summary generation into a concern
+    - [] Refactor to use a cost info object
+
+## May 21st
 
 ### Materials
 
@@ -198,18 +215,22 @@
 
 ### Event Site
 
+- Invoice calc refactor
+  - Extract cost calculation into a concern
+    - Returns an object containing all the cost info
+  - Extract PDF generation into a concern
+    - [] Refactor to use the cost info object
+  - Extract summary generation into a concern
+    - [] Refactor to use a cost info object
 - [] Need to add event summary stats to the charts
 - [] Login isn't showing an error when it fails
+- [] Refactor the Event#show page and move it to Invoice#new
+- [] Use SQ for Devise & transactional emails
 
 #### In-office tasks
 
-- IP lock SM accounts
-  - [] Add fields for Admins to add allowed_ips to SM accounts
-- Extras if I have time
-  - [] Install SolidQueue and use it for emails
-  - [] Maybe finish the invoice calc rewrite if I have extra time
-  - [] Refactor the Event#show page and move it to Invoice#new
 - [] Run migrations for User.allowed_ips & SolidQueue
+- [] Push a version with Puma managing SQ
 - [] Add IPs from the sheet for each SM account
 
 ##### Testing
@@ -238,12 +259,6 @@
 - [] Investigate what happens if you upload a new asset with the same key as an existing one
 - [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
 - [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
-- [] Move control of the domain from Onamae to Cloudflare
-- Platform Upgrades
-  - TEST ALL ON STAGING FIRST
-  - [] Bump AWS platform version
-    - [] And enable YJIT
-  - [] Try bumping Ruby version to latest stable (can maybe install manually with a pre-deploy hook)
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 
