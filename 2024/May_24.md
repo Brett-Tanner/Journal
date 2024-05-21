@@ -208,6 +208,30 @@
 
 ### Materials
 
+### Event Site
+
+- [x] Allow missing fields in price_list form
+- Invoice calc refactor
+  - Extract cost calculation into a concern
+    - [x] Refactor calc_course_cost
+      - [x] Extract into `CourseCalculator` module
+      - [x] Extract summary related code to `InvoiceSummarisable`
+    - [x] Refactor calc_option_cost
+      - [x] Extract into `OptionCalculator` module
+      - [x] Extract summary related code to `InvoiceSummarisable`
+    - [x] Refactor calc_adjustment_cost
+      - [x] Extract into `AdjustmentCalculator` module
+      - [x] Extract summary related code to `InvoiceSummarisable`
+  - Extract summary generation into a concern
+    - [x] Refactor to use cost info object
+  - [x] Extract the main loop into `calc_cost` in 'invoice.rb'
+
+## May 22nd
+
+- [] change setsu calendar text from ”内容の確認へ” to "無料体験レッスンを申し込む"
+
+### Materials
+
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
 
@@ -215,16 +239,15 @@
 
 - Invoice calc refactor
   - Extract cost calculation into a concern
-    - [x] Refactor calc_course_cost
-      - [x] Extract into `CourseCalculator` module
-      - [x] Extract summary related code to `InvoiceSummarisable`
+    - Refactor calc_course_cost
       - [] Do a final performance/readability pass with full @data object defined
-    - [x] Refactor calc_option_cost
-      - [x] Extract into `OptionCalculator` module
-      - [x] Extract summary related code to `InvoiceSummarisable`
+        - [] Refactor best_price to iterate over courses and handle missing fields
+          - [] Improve related tests to not give false positives with 1-1 courses
+    - Refactor calc_option_cost
+      - [] Do a final performance/readability pass with full @data object defined
+    - Refactor calc_adjustment_cost
       - [] Do a final performance/readability pass with full @data object defined
   - Extract summary generation into a concern
-    - [] Refactor to use a cost info object
     - [] Generally clean up/put things in the right order
   - Extract PDF generation into a concern
     - [] Refactor to use the cost info object
@@ -236,6 +259,7 @@
 
 #### In-office tasks
 
+- [] Delete the test PriceList I accidentally created
 - [] Run migrations for User.allowed_ips & SolidQueue
 - [] Push a version with Puma managing SQ
 - [] Add IPs from the sheet for each SM account
