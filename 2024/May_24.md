@@ -202,9 +202,7 @@
   - [x] Extract cost calculation into a concern
     - Returns an object containing all the cost info
   - [x] Extract PDF generation into a concern
-    - [] Refactor to use the cost info object
   - [x] Extract summary generation into a concern
-    - [] Refactor to use a cost info object
 
 ## May 21st
 
@@ -217,11 +215,20 @@
 
 - Invoice calc refactor
   - Extract cost calculation into a concern
-    - Returns an object containing all the cost info
-  - Extract PDF generation into a concern
-    - [] Refactor to use the cost info object
+    - [x] Refactor calc_course_cost
+      - [x] Extract into `CourseCalculator` module
+      - [x] Extract summary related code to `InvoiceSummarisable`
+      - [] Do a final performance/readability pass with full @data object defined
+    - [x] Refactor calc_option_cost
+      - [x] Extract into `OptionCalculator` module
+      - [x] Extract summary related code to `InvoiceSummarisable`
+      - [] Do a final performance/readability pass with full @data object defined
   - Extract summary generation into a concern
     - [] Refactor to use a cost info object
+    - [] Generally clean up/put things in the right order
+  - Extract PDF generation into a concern
+    - [] Refactor to use the cost info object
+- [] Document refactored invoice calculation
 - [] Need to add event summary stats to the charts
 - [] Login isn't showing an error when it fails
 - [] Refactor the Event#show page and move it to Invoice#new
