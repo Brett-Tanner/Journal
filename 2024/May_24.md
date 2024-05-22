@@ -228,7 +228,25 @@
 
 ## May 22nd
 
-- [] change setsu calendar text from ”内容の確認へ” to "無料体験レッスンを申し込む"
+- [x] change setsu calendar text from "内容の確認へ" to "無料体験レッスンを申し込む"
+
+### Materials
+
+### Event Site
+
+- Invoice calc refactor
+  - Extract cost calculation into a concern
+    - Refactor calc_course_cost
+      - [x] Refactor best_price to iterate over courses and handle missing fields
+      - [x] Improve related tests to not give false positives with 1-1 courses
+  - Extract summary generation into a concern
+    - [x] Generally clean up/put things in the right order
+    - [x] Fetch `@data[:time_slots]` with options included
+    - [x] Get a list of all registered option ids once, prior to filtering the registered slot options with them
+    - [x] Add test for not including slot options not registered for in summary
+    - [x] Visually inspect and clean up stuff like unjoined arrays
+
+## May 23rd
 
 ### Materials
 
@@ -241,14 +259,10 @@
   - Extract cost calculation into a concern
     - Refactor calc_course_cost
       - [] Do a final performance/readability pass with full @data object defined
-        - [] Refactor best_price to iterate over courses and handle missing fields
-          - [] Improve related tests to not give false positives with 1-1 courses
     - Refactor calc_option_cost
       - [] Do a final performance/readability pass with full @data object defined
     - Refactor calc_adjustment_cost
       - [] Do a final performance/readability pass with full @data object defined
-  - Extract summary generation into a concern
-    - [] Generally clean up/put things in the right order
   - Extract PDF generation into a concern
     - [] Refactor to use the cost info object
 - [] Document refactored invoice calculation
@@ -261,6 +275,7 @@
 
 - [] Delete the test PriceList I accidentally created
 - [] Run migrations for User.allowed_ips & SolidQueue
+- [] Add swap to the event site
 - [] Push a version with Puma managing SQ
 - [] Add IPs from the sheet for each SM account
 
