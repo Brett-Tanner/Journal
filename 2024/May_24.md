@@ -250,21 +250,52 @@
 
 ### Materials
 
+- [x] Bump SolidQueue and MissionControlJobs
+
+### Event Site
+
+- [x] Add GTM scripts to sign_up, sign_in and success pages
+  - [x] And set up the customer account with a blank invoice Junya can use to trigger the invoice creation GTM
+  - id is 12101
+- [x] Check the allowed IPs thing works with the app in a Docker container
+- [x] Install SolidQueue and MissionControlJobs
+- [x] Stop using opt_regs to get the option IDs, they don't filter ignored opts. Use @data instead
+
+#### In-office tasks
+
+- [x] Delete the test PriceList I accidentally created
+- [x] Move Jayson's photobook site
+- [x] Install SQ and MissionControl
+- [x] Run migrations for User.allowed_ips & SolidQueue
+- [x] Push a version with Puma managing SQ
+- Close our old AWS accounts
+  - [x] terminate all our resources so we're not being billed
+  - [x] And Jayson's member account
+- [x] Try adding swap space on deploy in a hook
+
+## May 24th
+
+- [] Hide Online from the school list on setsu calendar, but still enable linking directly to its calendar
+
+### Materials
+
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
 
 ### Event Site
 
-- Invoice calc refactor
-  - Extract cost calculation into a concern
-    - Refactor calc_course_cost
-      - [] Do a final performance/readability pass with full @data object defined
-    - Refactor calc_option_cost
-      - [] Do a final performance/readability pass with full @data object defined
-    - Refactor calc_adjustment_cost
-      - [] Do a final performance/readability pass with full @data object defined
-  - Extract PDF generation into a concern
-    - [] Refactor to use the cost info object
+- [] Test emails are sent for registrations once we create the new event
+- [] Add IPs from the sheet for each SM account
+- Refactor calc_course_cost
+  - [] Do a final performance/readability pass with full @data object defined
+- Refactor calc_option_cost
+  - [] Do a final performance/readability pass with full @data object defined
+- Refactor calc_adjustment_cost
+  - [] Do a final performance/readability pass with full @data object defined
+- Extract PDF generation into a concern
+  - [] Generate it in a SQ job when the invoice is modified
+    - [] And make it available to download from the invoice partial
+  - [] Refactor to use the cost info object
 - [] Document refactored invoice calculation
 - [] Need to add event summary stats to the charts
 - [] Login isn't showing an error when it fails
@@ -273,11 +304,8 @@
 
 #### In-office tasks
 
-- [] Delete the test PriceList I accidentally created
-- [] Run migrations for User.allowed_ips & SolidQueue
-- [] Add swap to the event site
-- [] Push a version with Puma managing SQ
-- [] Add IPs from the sheet for each SM account
+- [] Close our old AWS accounts
+  - Once Jayson's subaccount closes
 
 ##### Testing
 
