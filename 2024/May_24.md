@@ -275,10 +275,31 @@
 
 ## May 24th
 
-- [] Hide Online from the school list on setsu calendar, but still enable linking directly to its calendar
+- [x] Hide Online from the school list on setsu calendar, but still enable linking directly to its calendar
 
 ### Materials
 
+- Address Github issues
+  - [x] Create lesson use matrix
+    - [x] Create controller, routes and policy
+    - [x] Create the view
+  - [x] Show subtypes for relevant lessons on Course#show
+  - [x] Show resource list with links on Lesson#show
+  - [x] Change lesson details layout to not just be a big column
+- Update the new color scheme from Alex's style guide
+  - [x] Add new scheme colors
+  - [x] Try using CSS vars to set the logo with theme
+    - Ended up using a helper method since we need favicon to match
+  - Add the new rules to the theme switcher, then find and replace
+    - [x] Border radius
+    - [x] Lighter versions of main & secondary colors
+  - [x] Rename all the new colors to not require the '-color-' prefix
+
+## May 27th
+
+## Materials
+
+- [] Sweep the site for style guide violations
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
 
