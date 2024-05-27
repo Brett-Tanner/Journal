@@ -299,12 +299,41 @@
 
 ## Materials
 
-- [] Sweep the site for style guide violations
+- [x] Sweep the site for style guide violations
+  - [x] Create classes for table headers
+  - [x] Grug-far btn-info to btn-secondary
+  - [x] Match new lesson/student dropdowns to style guide
+- Address Github issues
+  - [x] Language switcher doesn't work on new lesson form; loses the lesson type param
+  - [x] Give writers/admins a dropdown to see the homepage of a teacher from each org
+  - [x] Find out why images aren't being added to PDF guides
+    - potentially the SolidQueue polling rate?
+    - was me using :attr in the partial rather than just attr
+  - [x] Send Devise emails later with SolidQueue
+  - [x] Possible issues changing week on course_lessons
+    - 99% sure this is just them moving when updated cos they're not sorted
+  - Ensure Lessons have unique title within level and subtype
+    - Postponed as not everything has subtype, want to clarify if just level is ok
+
+## May 28th
+
+## Materials
+
+- Address Github issues
+  - [] Ensure Lessons have unique title within level and subtype
+  - [] Mask the corners of uploaded images to make them rounded
+    - Need a mask image from Alex or Luis
+- [] When updating upload progress, decrement failures if sum of all > total
+- [] Add delay between uploads
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
+- Implement notifications
+  - [] When lessons haven't been updated in 2 years
+  - [] When there are new (relevant) support messages
 
 ### Event Site
 
+- [] Create new event
 - [] Test emails are sent for registrations once we create the new event
 - [] Add IPs from the sheet for each SM account
 - Refactor calc_course_cost
@@ -325,6 +354,7 @@
 
 #### In-office tasks
 
+- [] Migrate Lesson uniqueness constraints for Materials
 - [] Close our old AWS accounts
   - Once Jayson's subaccount closes
 
