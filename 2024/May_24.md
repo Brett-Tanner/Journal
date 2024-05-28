@@ -319,12 +319,37 @@
 
 ## Materials
 
+- [x] Add header styles to explainer tables
+- [x] Add a button to download a blank sample CSV to use in uploads
+  - In the show action
+- [x] Autogenerate required fields from Model constant CSV_HEADERS
+  - [x] Also use for params
+  - [x] And in views
+  - [x] And in the JS for table column creation
+  - [x] and in tests to generate test headers & data
+- [x] Realise password confirmation isn't necessary when uploading, remove from JS validation
+  - But keep in form cos it's needed there
+
+### Event Site
+
+- [x] Check if events with no activities can be used as a banner
+- [x] Update seeds to give customer children and use string course costs
+- [x] Add the placeholder event
+  - [x] Fix an issue with goals of 0
+
+## May 29th
+
+## Materials
+
 - Address Github issues
+  - [] Chase down the intermittent failure to update course_lessons from date_fields partial
   - [] Ensure Lessons have unique title within level and subtype
   - [] Mask the corners of uploaded images to make them rounded
     - Need a mask image from Alex or Luis
 - [] When updating upload progress, decrement failures if sum of all > total
 - [] Add delay between uploads
+- [] Make the test result entry table at least readable with new styles
+- [] Add separate columns for ja and en names
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
 - Implement notifications
@@ -354,7 +379,7 @@
 
 #### In-office tasks
 
-- [] Migrate Lesson uniqueness constraints for Materials
+- [] Migrate new name columns and Lesson uniqueness constraints for Materials
 - [] Close our old AWS accounts
   - Once Jayson's subaccount closes
 
