@@ -341,6 +341,17 @@
 
 ## Materials
 
+- [x] Add 'New Plan' button to org pages if no plan present
+  - [x] Automatically select the org you followed the link from
+
+### Event Site
+
+- [x] Separate out reservation kids in summary API response
+
+## May 30th
+
+## Materials
+
 - Address Github issues
   - [] Chase down the intermittent failure to update course_lessons from date_fields partial
   - [] Ensure Lessons have unique title within level and subtype
@@ -358,6 +369,7 @@
 
 ### Event Site
 
+- [] PUSH UPDATE FOR PAOLO
 - [] Create new event
 - [] Test emails are sent for registrations once we create the new event
 - [] Add IPs from the sheet for each SM account
