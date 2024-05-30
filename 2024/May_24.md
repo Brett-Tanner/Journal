@@ -343,6 +343,7 @@
 
 - [x] Add 'New Plan' button to org pages if no plan present
   - [x] Automatically select the org you followed the link from
+- [x] Chase down the intermittent failure to update course_lessons from date_fields partial
 
 ### Event Site
 
@@ -350,10 +351,41 @@
 
 ## May 30th
 
+### Event Site
+
+- [x] PUSH UPDATE FOR PAOLO
+- [x] Add child partial on customer profile is getting 'content_missing' as a response
+  - It's going to '/en/children/new?parent=4', 'ChildrenController#new as HTML'
+  - Was using '-' on one and '\_' on another
+- [x] Fix malformed magic comments
+- [x] Update SM IPs
+- [x] Add grouping by folder to event photo selection like for time slots
+  - [x] Extract the controller code that splits them by folder to a concern
+  - [x] And refactor to HAML
+- [x] Add IPs from the sheet for each SM account
+- [x] Create new event
+  - [x] Make changes to Minamimachida
+    - [x] Time Slots & calendar
+    - [x] Options
+  - [x] Make changes to Shinurayasu
+    - [x] Time Slots & calendar
+    - [x] Options
+  - [x] Check & fix incorrectly named activities
+  - [x] Some are outdoor that shouldn't be
+
+## May 31st
+
 ## Materials
 
+- [] Show first 3 letters of days in date fields for course_lessons
+- [] Move edit button to top of lesson page
+- [] Add max_body_size config for nginx (10MB)
+- [] Make lesson names in the use matrix link to the lesson page
+- [] Reassign lessons partial needs some padding
+- [] Remove red box around warning text, align with bottom of picture
+- [] Teacher logins need to be locked to their school's IP
+  - But only for KidsUP
 - Address Github issues
-  - [] Chase down the intermittent failure to update course_lessons from date_fields partial
   - [] Ensure Lessons have unique title within level and subtype
   - [] Mask the corners of uploaded images to make them rounded
     - Need a mask image from Alex or Luis
@@ -369,10 +401,8 @@
 
 ### Event Site
 
-- [] PUSH UPDATE FOR PAOLO
-- [] Create new event
+- [] Add goals for each school
 - [] Test emails are sent for registrations once we create the new event
-- [] Add IPs from the sheet for each SM account
 - Refactor calc_course_cost
   - [] Do a final performance/readability pass with full @data object defined
 - Refactor calc_option_cost
@@ -391,7 +421,6 @@
 
 #### In-office tasks
 
-- [] Migrate new name columns and Lesson uniqueness constraints for Materials
 - [] Close our old AWS accounts
   - Once Jayson's subaccount closes
 
