@@ -375,6 +375,8 @@
 
 ## May 31st
 
+- [] Start cron job article on wiki
+
 ## Materials
 
 - [] Show first 3 letters of days in date fields for course_lessons
@@ -417,7 +419,9 @@
 - [] Need to add event summary stats to the charts
 - [] Login isn't showing an error when it fails
 - [] Refactor the Event#show page and move it to Invoice#new
-- [] Use SQ for Devise & transactional emails
+- Can do a lot of stuff with cron/background jobs/APIs
+  - [] Sync the day's invoices to the new SS in the AM
+  - [] Grab a student's test results as JSON to show in the seasonal app
 
 #### In-office tasks
 
