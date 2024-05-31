@@ -392,6 +392,11 @@
 - [x] Make lesson names in the use matrix link to the lesson page
 - [x] Tutorial link formatting is broken for teachers
 - [x] Add missing 'Today' button on teacher nav
+- [x] Add 'en_name' to students
+- [x] Make text on test result table headers white
+- [x] Require birthday
+- [x] Copy docker_entrypoint from event site
+  - Tried but failed, I think an issue with the file extension? It looked different without a \* but adding one failed the deploy
 
 ### Event Site
 

@@ -10,6 +10,8 @@
 
 ## Materials
 
+- [] Copy docker_entrypoint from event site
+  - Tried but failed, I think an issue with the file extension? It looked different without a \* but adding one failed the deploy
 - [] Add date fields to the table so you can add lessons to other courses
   - In turboframes
 - [] Teacher logins need to be locked to their school's IP
