@@ -1,30 +1,57 @@
 # June 2024
 
-## June 1st
+## June 3rd
 
-- [] Start cron job article on wiki
-  - [] Set one up to sweep SQ jobs older than a week
+- [x] Start cron job article on wiki
+  - Set one up to sweep SQ jobs older than a week
+    - [x] For LMS
+    - [x] For event site
+  - [x] One to get PGHero stats
+    - Requires messing with RDS settings so skipping this one
+- [x] Copy docker_entrypoint from event site
+  - Tried but failed, I think an issue with the file extension? It looked different without a \* but adding one failed the deploy
+  - Just trying it without the extension this time
+
+## LMS
+
+- [x] Bump propshaft to 0.9
+- [x] Make the test result entry table at least readable with new styles
+- Add level SVGs where appropriate
+  - [x] Organise assets/icons into folders without breaking anything
+  - [x] On teacher profile
+- [x] Improve levelled lesson styling & add KeepUp/Specialist
+- [x] Add a level_icon helper for lessons
+  - [x] And refactor the icon_filename method out into a helper as well
+- [x] Only allow PDF uploads for lesson guides
+- Address Github issues
+  - [x] Add separate columns for en names
+  - [x] Add kindy row to levelled lessons
+
+## June 4th
 
 #### In-office tasks
 
-- [] Copy docker_entrypoint from event site
-  - Tried but failed, I think an issue with the file extension? It looked different without a \* but adding one failed the deploy
+- [] Try new docker_entrypoint
+- [] Manually fix the PPT guide uploads for lessons 48 & 49
 
-## Materials
+## LMS
 
-- [] Bump propshaft to 0.9
-- [] Add date fields to the table so you can add lessons to other courses
-  - In turboframes
-- [] Teacher logins need to be locked to their school's IP
-  - But only for KidsUP
+- [] Make resource dropdowns just use details/summary
+- [] Get a download SVG and add it where appropriate
+  - [] Guide buttons
+  - [] Resource dropdowns (internal)
 - Address Github issues
   - [] Ensure Lessons have unique title within level and subtype
   - [] Mask the corners of uploaded images to make them rounded
     - Need a mask image from Alex or Luis
+  - [] Add 'Special' (blank) lessons
+- [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
+- [] Add date fields to the table so you can add lessons to other courses
+  - In turboframes
+- [] Teacher logins need to be locked to their school's IP
+  - But only for KidsUP
 - [] When updating upload progress, decrement failures if sum of all > total
 - [] Add delay between uploads
-- [] Make the test result entry table at least readable with new styles
-- [] Add separate columns for ja and en names
 - [] Try storing user type as a string enum rather then the current frozen array constant
   - Could make some translations etc. easier
 - Implement notifications
