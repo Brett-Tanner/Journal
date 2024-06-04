@@ -29,6 +29,26 @@
 
 ## June 4th
 
+- [x] Only show the "don't select regular days" message to internal students
+  - [x] Extract child switcher to a HAML partial
+  - [x] Chase down potential 'copy_regs' issue
+    - Was just because all the slots were closed on test event
+- [x] Add a 'wildcard' carveout to the SM IP check so we can make sure we always have the ability to give them access
+- [x] Add GTM to main layout and remove the page-specific tags
+  - [x] Remove the Clarity tags
+  - [x] And fix BS validations not applying on turboload
+- [x] Chase phantom 'Allergy not entered' issue on event site
+  - Can't reproduce
+
+## LMS
+
+- [x] Test new filepath helpers
+- Change Exercise to not generate guides
+  - [x] Add to list of skipped classes in Pdfable
+  - [x] Cut down form fields to guide/resources/basic stuff required
+
+## June 5th
+
 #### In-office tasks
 
 - [] Try new docker_entrypoint
@@ -36,7 +56,7 @@
 
 ## LMS
 
-- [] Make resource dropdowns just use details/summary
+- [] Make resource dropdowns use the dropdown component the theme switcher uses
 - [] Get a download SVG and add it where appropriate
   - [] Guide buttons
   - [] Resource dropdowns (internal)
