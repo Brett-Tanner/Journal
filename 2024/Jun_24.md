@@ -51,20 +51,61 @@
 
 #### In-office tasks
 
-- [] Try new docker_entrypoint
-- [] Manually fix the PPT guide uploads for lessons 48 & 49
+- [x] Try new docker_entrypoint
+  - Failed again, with a permissions error
+  - Tried changing the permissions, failed for a different reason
+  - Gave up again for now and will just migrate manually
+- [x] Manually fix the PPT guide uploads for lessons 48 & 49
+  - [x] Discover and fix edge case with short name for keep up having space in it, leading to icon path breaking
+- [x] Test whether the event site is correctly receiving IPs from the docker container
+  - Certainly seems to be from the logging, will need to do some real-time testing with the affected SMs
 
 ## LMS
 
-- [] Make resource dropdowns use the dropdown component the theme switcher uses
-- [] Get a download SVG and add it where appropriate
-  - [] Guide buttons
-  - [] Resource dropdowns (internal)
+- [x] point 'materials' subdomain of 'kids-up.app' at the LMS
+- [x] Make resource dropdowns absolutely positioned in a relative container so they don't shift the layout
+- [x] Grey them out when there aren't any attached resources
+- [x] Sort searchable resources by most recent, only show the last 10
+  - But still show unlimited results for searches
+- [x] Show kindy phonics on teacher page
+- [x] Extract the logic for checking guides are uploaded to PdfUploadable concern
+- [x] Fix resources details element having higher z-index than summaries that drop down from them
 - Address Github issues
+  - [x] Add KindyPhonics
+    - [x] Write a system test for creating one
+    - [x] Create model, factory and unit tests
+      - [x] Alias 'example sentences' as 'blending words'
+      - [x] Should automatically set level as kindy
+      - [x] Exclude from guide generation
+    - [x] Create and controller & views
+  - [x] Add 'Special' (blank) lessons
+    - [x] Write a system test for creating one
+    - [x] Create model, factory and unit tests
+      - [x] Exclude from guide generation, only resources and title
+    - [x] Create views and controller
+      - [x] Hide the guide partial
+      - [x] Show them to teachers
+- [x] Get a download SVG and add it where appropriate
+  - [x] Resource dropdowns (internal)
+- [x] Also add separator to the resource dropdown
+
+## June 6th
+
+## LMS
+
+- Address Github issues
+  - [] Add Keep Up/Specialist
+    - [] Write a system test for creating one
+    - [] Create model, factory and unit tests
+      - [] Exclude from guide generation
+      - [] Custom levels enum with only specialist and keep up
+    - [] Create views and controller
+    - [] Add a separate tab for KeepUp/Specialist
   - [] Ensure Lessons have unique title within level and subtype
   - [] Mask the corners of uploaded images to make them rounded
     - Need a mask image from Alex or Luis
-  - [] Add 'Special' (blank) lessons
+- Get a download SVG and add it where appropriate
+  - [] Guide buttons
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add date fields to the table so you can add lessons to other courses
   - In turboframes
