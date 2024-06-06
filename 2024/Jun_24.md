@@ -91,9 +91,46 @@
 
 ## June 6th
 
+- [x] Get constantly interrupted by fixing SM's IP addresses in the event site
+- [x] Figure out why confirmation emails are failing
+  - Was calling `calc_course_cost` directly, but not passing the new slots arg that's required
+  - Also relied on the existence of @data
+  - passed a list of slots, and removed reliance on @data (partially, probably a better solution than initializing it blank if not present)
+  - [x] Wrote mailer tests to make sure it doesn't happen again
+- Write tests for all the other mailers
+  - [x] InvoiceMailer.updated_notif
+  - [x] InvoiceMailer.sm_updated_notif
+  - [x] InquiryMailer.inquiry
+  - [x] InquiryMailer.setsu_inquiry
+
 ## LMS
 
+- [x] Add missing control svg (temp)
+- [x] Create PhonicsLesson template
+  - [x] Add background image
+  - [x] Header section
+    - Level, title, goal
+  - [x] Image
+  - [x] Materials
+  - [x] Instructions
+  - [x] Adding difficulty
+  - [x] Extra fun
+  - [x] Notes
+  - [x] Links
+  - [x] Footer level
+
+## June 7th
+
+- [] Fix the preview when you paste it into a chat
+
+## LMS
+
+- [] Update DailyActivity template with new bg image
+- [] Refactor the PDF generation
+  - The endless 'draw\_\_\_\_' methods seem like they could be extracted
+  - Probably different versions for plaintext, lists and links
 - Address Github issues
+  - [] Mask the corners of uploaded images to make them rounded
   - [] Add Keep Up/Specialist
     - [] Write a system test for creating one
     - [] Create model, factory and unit tests
@@ -102,8 +139,6 @@
     - [] Create views and controller
     - [] Add a separate tab for KeepUp/Specialist
   - [] Ensure Lessons have unique title within level and subtype
-  - [] Mask the corners of uploaded images to make them rounded
-    - Need a mask image from Alex or Luis
 - Get a download SVG and add it where appropriate
   - [] Guide buttons
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
