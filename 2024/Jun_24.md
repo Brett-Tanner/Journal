@@ -121,26 +121,50 @@
 
 ## June 7th
 
-- [] Fix the preview when you paste it into a chat
+- [x] Fix the preview when you paste it into a chat
+- [x] Set up promo site repo for Mike
+  - [x] Write some docs on how to use it
+  - [x] Set up a branch to auto-deploy to cloudflare
 
 ## LMS
 
-- [] Update DailyActivity template with new bg image
+- [x] Set up emails now we have a domain
+- [x] Add new icon and favicon
+- [x] Update DailyActivity template with new bg image
+  - [x] And tweak positions to fit
+- Get a download SVG and add it where appropriate
+  - [x] Guide buttons
+  - [x] Guide preview download
+  - [x] Lesson resource download (curriculum side)
+  - [x] Sample CSV download
+- [x] Add delete SVG to resource list
+- [x] Add kindy/ele subtitles to unlevelled lessons
+- Address Github issues
+  - [x] Mask the corners of uploaded images to make them rounded
+    - The idea I had doesn't work, so letting curriculum do this manually
+  - [x] Add Evening Class
+    - [x] Write a system test for creating them
+    - [x] Create model, factory and unit tests
+      - [x] Exclude from guide generation
+      - [x] Custom levels enum with only specialist/keep up/tech up
+    - [x] Create views and controller
+
+## June 10th
+
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
+- [] Actually filter out unreleased lessons in the teacher view, tell Lu to approve them or I just bulk approve all existing lessons
+- [] Add next day/week arrows to the teacher profile
+- [] Add a separate tab for KeepUp/Specialist
+- Address Github issues
+  - [] Ensure Lessons have unique title within level and release status
+    - Tried, but couldn't get it to pass validation despite definitely not having any others with title
 - [] Refactor the PDF generation
   - The endless 'draw\_\_\_\_' methods seem like they could be extracted
   - Probably different versions for plaintext, lists and links
-- Address Github issues
-  - [] Mask the corners of uploaded images to make them rounded
-  - [] Add Keep Up/Specialist
-    - [] Write a system test for creating one
-    - [] Create model, factory and unit tests
-      - [] Exclude from guide generation
-      - [] Custom levels enum with only specialist and keep up
-    - [] Create views and controller
-    - [] Add a separate tab for KeepUp/Specialist
-  - [] Ensure Lessons have unique title within level and subtype
-- Get a download SVG and add it where appropriate
-  - [] Guide buttons
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add date fields to the table so you can add lessons to other courses
   - In turboframes
@@ -275,3 +299,11 @@ end
 - [] Apparently there are undocumented ControllerHelper methods I can use to generate the ID for for main elements
 - [] Use time_tag helper when outputting date or time, generates a `time` element which apparently is a thing
 - [] Use number_to_human_size when I add the blob index etc.
+
+### SS Replacement
+
+- We need an electronic version of the new student application form
+  - Maybe prefill behind a PIN
+  - Could use the PIN field on event site users for that
+  - Have an open, blank one anyone can use
+  - Multi-stage? With stage by stage validations
