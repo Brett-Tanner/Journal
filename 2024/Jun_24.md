@@ -151,17 +151,37 @@
 
 ## June 10th
 
+- Lazy load images by default
+  - [x] LMS
+  - [x] Event Site
+
+## LMS
+
+- [x] Actually filter out unreleased lessons in the teacher view
+  - tell Lu to approve them or I just bulk approve all existing lessons
+- [x] Add next day/week arrows to the teacher profile
+- [x] Don't download resources/guides in a new tab for no reason
+- [x] Add a separate tab for KeepUp/Specialist
+  - Just put it at the bottom of levelled lessons for now, will revisit when we add Keep Up
+- Address Github issues
+  - Sort resources
+    - [x] On teacher profile
+    - [x] On lesson#show
+  - [x] When lessons are used multiple times in a course, show them with the correct dates
+
+## June 11th
+
+- [] Remove mini-profiler from prod (only event site I think)
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] Actually filter out unreleased lessons in the teacher view, tell Lu to approve them or I just bulk approve all existing lessons
-- [] Add next day/week arrows to the teacher profile
-- [] Add a separate tab for KeepUp/Specialist
 - Address Github issues
   - [] Ensure Lessons have unique title within level and release status
     - Tried, but couldn't get it to pass validation despite definitely not having any others with title
+- [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
+  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] Refactor the PDF generation
   - The endless 'draw\_\_\_\_' methods seem like they could be extracted
   - Probably different versions for plaintext, lists and links
