@@ -171,17 +171,36 @@
 
 ## June 11th
 
-- [] Remove mini-profiler from prod (only event site I think)
+- [x] Remove mini-profiler
+- Chase down intermittent JS issues
+  - [x] Write a JS enabled system spec to run on a loop until it fails
+  - [x] Check out stimulus/turbo rails issues on Github to see if it's a known issue
+    - No luck
+  - Create versions that work without JS if not loaded
+    - [x] Allergy field
+      - [x] Refactor child form to HAML
+      - [x] Implement the fallback version if JS is not loaded
+      - [x] Reimplement the original version with AllergyController
+    - [x] Sign up form
+      - Button enabled by default, JS disables until box checked
+      - backend verification that policy accepted
+- [x] Fix content missing for merge children form submission
+  - Was missing '\_top' on the submit, meant it was trying to find a frame on child page
+
+## June 12th
+
+- [] Create statistician accounts for Jack
+  - [] Give statisticians access to view setsumeikais & inquiries
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
+- [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
+  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - Address Github issues
   - [] Ensure Lessons have unique title within level and release status
     - Tried, but couldn't get it to pass validation despite definitely not having any others with title
-- [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
-  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] Refactor the PDF generation
   - The endless 'draw\_\_\_\_' methods seem like they could be extracted
   - Probably different versions for plaintext, lists and links
