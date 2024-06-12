@@ -189,13 +189,49 @@
 
 ## June 12th
 
-- [] Create statistician accounts for Jack
-  - [] Give statisticians access to view setsumeikais & inquiries
+- [x] Check SQ isn't overloading the RDS instances
+  - Sitting at 3 and 5% CPU usage, so probably not.
+- [x] Realise vendor/javascript is required by sprockets, so recreate it and the .keep file to be safe
+- [x] Approve all existing lessons after pushing the update with release filter for teachers
+- [x] Create statistician accounts for Jack
+  - [x] Add a way for admins to create users with other roles in the UI
+    - [x] Policy & tests
+    - [x] Controller, routes
+    - [x] Views
+    - [x] Add the ability to add managements in the form
+      - HAML refactors
+        - [x] Management fields partial
+          - [x] And make it more generic
+        - [x] Area form
+        - [x] School form
+  - [x] Point the "Edit SM" button on the SM profiles to the new form
+  - [x] Remove the "allowed IPs" and other staff related stuff from the generic user form
+
+## LMS
+
+- [x] Teacher logins need to be locked to their school's IP
+  - But only for KidsUP
+  - Put the allowed IPs on the schools, since a Teacher can have multiple schools
+  - Have a head office school with the wildcard IP
+  - [x] Write request specs for the desired behaviour
+  - [x] Write the filter in application controller
+
+## June 13th
+
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
+- Teacher logins need to be locked to their school's IP
+  - Add the necessary fields
+    - [] IP on school form
+      - [] With backend validation
+      - [] And tests
+        - they're breaking since IPAddr apparently needs a family now????
+    - [] Teacher fields (school teachers) on school form
+      - [x] accepts_nested_attributes_for
+      - [] partials
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - Address Github issues
@@ -207,8 +243,6 @@
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add date fields to the table so you can add lessons to other courses
   - In turboframes
-- [] Teacher logins need to be locked to their school's IP
-  - But only for KidsUP
 - [] When updating upload progress, decrement failures if sum of all > total
 - [] Add delay between uploads
 - [] Try storing user type as a string enum rather then the current frozen array constant
