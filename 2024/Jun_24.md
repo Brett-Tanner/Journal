@@ -218,22 +218,79 @@
 
 ## June 13th
 
+- [x] MEETINGS
+
+## LMS
+
+- Teacher logins need to be locked to their school's IP
+  - Add the necessary fields
+    - [x] IP on school form
+      - [x] With backend validation
+      - [x] And tests
+        - they're breaking since IPAddr apparently needs a family now????
+    - [x] Teacher fields (school teachers) on school form
+      - [x] accepts_nested_attributes_for
+      - [x] partials
+  - [x] Add teacher list to School page
+- [x] Add delay between uploads
+- [x] Add en_name to student_uploads
+  - [x] In model (constant passed to JS)
+  - [x] In explainer
+    - [x] Generate table headers and '...' from CSV_HEADERS
+  - [x] In JS
+    - [x] And refactor table creation to generate from CSV_HEADERS on model
+  - [x] In turbo response
+    - [x] And refactor to generate from CSV_HEADERS
+  - Refactor the other uploads to also generate from CSV_HEADERS
+    - Parents
+      - [x] Explainer
+      - [x] JS
+      - [x] Turbo
+    - Teachers
+      - [x] Explainer
+      - [x] JS
+      - [x] Turbo
+
+## June 14th
+
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
 - Teacher logins need to be locked to their school's IP
-  - Add the necessary fields
-    - [] IP on school form
-      - [] With backend validation
-      - [] And tests
-        - they're breaking since IPAddr apparently needs a family now????
-    - [] Teacher fields (school teachers) on school form
-      - [x] accepts_nested_attributes_for
-      - [] partials
+- [] Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
+  - Basically just blobs with categories
+- [] Get child data for test schools for Luis
+- [] Errors on teacher form throw a 500 because they're missing data for the selects
+- [] Skip Sat & Sun when advancing day by day on teacher profile
+- [] PaperTrail on children
+- [] If after quit date, don't show the student
+  - [] Remove ability to delete students
+- [] There's a lot more I can refactor out of JS upload controllers, especially the table creation now it's from CSV_HEADERS
+- [] Monthly list of materials by lesson
+  - Just a list of lesson titles and the materials they need for now
+  - Later on think about automatically generating the full list for a month
+  - Monthly materials controller
+- [] Change guide text to 'Lesson Plan'
+- [] In unlevelled lessons, align each component of the lesson with the others on the row
+- [] Teacher profile opens to icons for kindy/ele/Evening
+  - click one to go to the tab
+  - links go to the top
+  - remove the less
+- [] Shrink the icons on levelled lessons
+- [] Phonics have sets, which can be different based on the timing of the lesson
+  - So need a way to have sets based on the date it's delivered
+  - Maybe attach them to the CourseLesson?
+  - Need to have some way to upload resources independently of a lesson, selecting one to add to a course lesson
+- [] Close other resource dropdowns when one is opened
+- [] Add a 'likelihood of quitting' enum to students, next to the comments section
+- [] Make resources dropdown a pointer cursor
+- [] Change teacher welcome Today's Lessons
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
+  - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
+- [] When updating upload progress, decrement failures if sum of all > total
 - Address Github issues
   - [] Ensure Lessons have unique title within level and release status
     - Tried, but couldn't get it to pass validation despite definitely not having any others with title
@@ -243,13 +300,10 @@
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add date fields to the table so you can add lessons to other courses
   - In turboframes
-- [] When updating upload progress, decrement failures if sum of all > total
-- [] Add delay between uploads
-- [] Try storing user type as a string enum rather then the current frozen array constant
-  - Could make some translations etc. easier
 - Implement notifications
   - [] When lessons haven't been updated in 2 years
   - [] When there are new (relevant) support messages
+  - [] Manually send notifications to subsets of people
 
 ### Event Site
 
