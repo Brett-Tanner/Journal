@@ -250,6 +250,8 @@
       - [x] Explainer
       - [x] JS
       - [x] Turbo
+    - [x] Extract all types to declarations.d.ts
+    - [x] Extract everything but the table header functions to the main table.ts
 
 ## June 14th
 
@@ -258,7 +260,6 @@
 
 ## LMS
 
-- Teacher logins need to be locked to their school's IP
 - [] Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
   - Basically just blobs with categories
 - [] Get child data for test schools for Luis
@@ -267,7 +268,6 @@
 - [] PaperTrail on children
 - [] If after quit date, don't show the student
   - [] Remove ability to delete students
-- [] There's a lot more I can refactor out of JS upload controllers, especially the table creation now it's from CSV_HEADERS
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
