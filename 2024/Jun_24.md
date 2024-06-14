@@ -252,58 +252,78 @@
       - [x] Turbo
     - [x] Extract all types to declarations.d.ts
     - [x] Extract everything but the table header functions to the main table.ts
+- [x] Get child data for test schools for Luis
+  - Sent to Leroy to add the levels
 
 ## June 14th
+
+## LMS
+
+- [x] Change teacher welcome to Today's Lessons
+- [x] Change guide text to 'Lesson Plan'
+- [x] Make resources dropdown a pointer cursor
+- [x] Shrink the icons on levelled lessons
+- [x] Skip Sat & Sun when advancing day by day on teacher profile
+- [x] Stop displaying "today's lessons" in the past
+  - [x] And show 'Past lessons for #{date}' instead
+- [x] Errors on teacher form throw a 500 because they're missing data for the selects
+  - [x] Do a sweep for similar instances of not setting form data/to normalise the naming
+- [x] Try out logidze for version tracking on students
+  - [x] Install
+  - [x] Run existing tests
+- [x] Add current & former scopes to students
+  - [x] Find and fix issue with some student params not being allowed in strong params
+- [x] Remove ability to delete students (already no buttons, does the route exist?)
+- [x] Add student list to School#show
+- [x] And alter create links/controllers to autofill school
+- [x] Refactor Lesson.replace to actually update the lesson in place rather than replacing it
+  - [x] Then add logidze to track the last version of lessons
+  - Add views and controllers to view the version and revert to them
+    - [x] Controller
+    - [x] View
+  - [x] Figure out why there's an \r getting appended when updated with no changes
+- [x] Open lesson guides in new tab, and inline by default
+
+## June 17th
 
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
-  - Basically just blobs with categories
-- [] Get child data for test schools for Luis
-- [] Errors on teacher form throw a 500 because they're missing data for the selects
-- [] Skip Sat & Sun when advancing day by day on teacher profile
-- [] PaperTrail on children
-- [] If after quit date, don't show the student
-  - [] Remove ability to delete students
+- Add logidze
+  - [] Add policy and tests
+- [] Add a UI for viewing/rolling back to previous versions of students
+- [] And add content-type to the FilesController
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
   - Monthly materials controller
-- [] Change guide text to 'Lesson Plan'
-- [] In unlevelled lessons, align each component of the lesson with the others on the row
+- [] Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
+  - Basically just blobs with categories
+  - Also add Phonics sets to be made available on every phonics lesson
 - [] Teacher profile opens to icons for kindy/ele/Evening
+  - Probably in a turboframe?
   - click one to go to the tab
   - links go to the top
   - remove the less
-- [] Shrink the icons on levelled lessons
-- [] Phonics have sets, which can be different based on the timing of the lesson
-  - So need a way to have sets based on the date it's delivered
-  - Maybe attach them to the CourseLesson?
-  - Need to have some way to upload resources independently of a lesson, selecting one to add to a course lesson
+- [] In unlevelled lessons, align each component of the lesson with the others on the row
 - [] Close other resource dropdowns when one is opened
-- [] Add a 'likelihood of quitting' enum to students, next to the comments section
-- [] Make resources dropdown a pointer cursor
-- [] Change teacher welcome Today's Lessons
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] When updating upload progress, decrement failures if sum of all > total
-- Address Github issues
-  - [] Ensure Lessons have unique title within level and release status
-    - Tried, but couldn't get it to pass validation despite definitely not having any others with title
 - [] Refactor the PDF generation
   - The endless 'draw\_\_\_\_' methods seem like they could be extracted
   - Probably different versions for plaintext, lists and links
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
-- [] Add date fields to the table so you can add lessons to other courses
-  - In turboframes
+- [] Add a 'quit_chance' enum to students, next to the comments section
+  - Revisit after SS meeting to decide what the enum values will be
 - Implement notifications
   - [] When lessons haven't been updated in 2 years
   - [] When there are new (relevant) support messages
   - [] Manually send notifications to subsets of people
+- [] Use Flipper for feature flags
 
 ### Event Site
 
