@@ -286,15 +286,37 @@
 
 ## June 17th
 
+- [x] Chase down the JS/CSS issues with old browsers
+  - Turns out they were two separate issues
+  - Tailwind on the LMS uses stuff like `color-mix` which only has support in recent browsers, just for normal colors
+  - Whereas on the event site it's the JS which wasn't working
+- [x] CSS needed a PostCSS postprocessor plugin to add fallbacks to old browsers (seemingly mostly by hardcoding the colors)
+- [x] JS was caused by turbo-rails > 2.0.1 dropping the shim that enables importmaps on old browsers
+  - Meant none of the JS was being loaded as everything on the event site is through importmaps
+  - So added the shim back myself and it was all good
+- [x] add content-type to the FilesController (from the blob)
+- [x] Add en_name to student form
+- [x] Align the list of tests like #55
+- Give staff the ability to add teachers to a class, not just students lol
+  - [x] From school_class form
+  - [x] From teacher form
+- Figure out what's up with the test result entry
+  - [x] Student page not loading when test result entered correctly
+    - Because total score method is trying to sum all the answers, which are stored as strings
+    - Added a before validation hook to map over answers and convert to int
+
+## June 18th
+
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- Add logidze
-  - [] Add policy and tests
-- [] Add a UI for viewing/rolling back to previous versions of students
-- [] And add content-type to the FilesController
+- [] Figure out what's up with the test result entry
+  - [] JS not showing the reason popup
+    - Is actually an issue with the backend validation, I think it's taking the first threshold it finds rather than the highest one
+- [] Add logidze policy and tests for the lesson versions controller
+- [] Close other resource dropdowns when one is opened
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
@@ -308,7 +330,7 @@
   - links go to the top
   - remove the less
 - [] In unlevelled lessons, align each component of the lesson with the others on the row
-- [] Close other resource dropdowns when one is opened
+- [] Add a UI for viewing/rolling back to previous versions of students
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
