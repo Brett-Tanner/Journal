@@ -307,16 +307,34 @@
 
 ## June 18th
 
+## LMS
+
+- [x] Class fields are outside the main form, move them inside so they actually work
+- [x] Figure out what's up with the test result entry
+  - [x] JS not showing the reason popup
+    - Is actually an issue with the backend validation, I think it's taking the first threshold it finds rather than the highest one
+  - [x] Luis also having an issue with the flash message not showing, nothing happening when form is submitted
+    - Can repro on Chrome, it's probably the form being wrapped around the table row again
+    - Might be something Firefox allows but isn't part of the spec so the others don't
+- [x] Fix various `accepts_nested_attributes_for` issues
+- [x] Bulk assign the uploaded students to their school's classes
+- [x] In student errors partial the Japanese name is filled into the en_name field, saves as JA value
+- [x] Add logidze policy and tests for the lesson versions controller
+  - Can be handled by LessonPolicy
+- [x] Get Jack a list of which emails sent to staff contain kids' personal info
+- [x] Initial setup of new laptop
+- Close other resource dropdowns when one is opened
+  - [x] Using the name attr (only in newer browsers)
+
+## June 19th
+
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] Figure out what's up with the test result entry
-  - [] JS not showing the reason popup
-    - Is actually an issue with the backend validation, I think it's taking the first threshold it finds rather than the highest one
-- [] Add logidze policy and tests for the lesson versions controller
-- [] Close other resource dropdowns when one is opened
+- Close other resource dropdowns when one is opened
+  - [] Add stimulus controller as a fallback
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
