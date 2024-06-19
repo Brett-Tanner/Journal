@@ -328,21 +328,17 @@
 
 ## June 19th
 
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
-
 ## LMS
 
-- [] Add english 'you need a reason' translation
-- [] When picking parent, it shows Object not org name in dropdown
-- [] Add view results button for teachers
-- [] Add level icons to tests
-- [] Don't automatically move up kids if they're going to an evening course
-  - [] Highlight row and add flag if evening course threshold passed
-  - [] Provide a list of kids who could move up
+- [x] Add english 'you need a reason' translation
+- [x] Fix reason box still being shown when reselecting recommended level
+- [x] Don't automatically move up kids if they're going to an evening course
+  - [x] Highlight row and add flag if evening course threshold passed
+  - [x] Also highlight rows if they could go to evening course when the row is first loaded
+  - [x] Change the backend automove code to move to Galaxy 2 if they'd go to evening
 - Close other resource dropdowns when one is opened
   - [x] Add stimulus controller as a fallback
-- [] Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
+- Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
   - [x] Generate resource/migration
   - [x] Add validations of resource type by lesson type & test
   - [x] Add controller/policy/policy specs
@@ -352,6 +348,18 @@
     - [x] Add a course_resource join model
     - [x] Add category_resources method to Teacher that fetches through course & join model
       - Turned out I could just delegate to the course
+
+## June 20th
+
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
+- [] When picking parent, it shows Object not org name in dropdown
+- [] Add view results button for teachers
+- [] Add level icons to tests
+- Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
   - Add views
     - [] For management by staff
     - [] To show on the teacher page
@@ -366,6 +374,7 @@
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
   - Monthly materials controller
+- [] Provide a list of kids who could move up for each test
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
