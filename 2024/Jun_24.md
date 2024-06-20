@@ -351,25 +351,55 @@
 
 ## June 20th
 
+- [x] Remove student names from emails on Event Site
+  - [x] SM update email
+  - [x] General Inquiry email
+  - [x] Setsu Inquiry email
+  - [x] Online Sets Inquiry email
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] When picking parent, it shows Object not org name in dropdown
-- [] Add view results button for teachers
-- [] Add level icons to tests
+- [x] Check JS lvl rec also doesn't just pick last that matches
+  - It has the same problem the backend one did, will pick a lower level if it's the last it looks at
+  - Restructured to use an object holding the lvl and percent for comparisons to make sure the highest possible level is chosen
+- [x] Add translations on test result index
+- [x] Add view results button for teachers
+- [x] Style the list of tests for better separation between tests
+- [x] Add level icons to tests
+- [x] Remove Tests#show
+- [x] When picking parent, it shows Object not org name in dropdown
+- [x] Change to 'Specialist Check Required'
+- [x] On teacher page, translation button kicks them back to current day
 - Need to add Resource model & controller for stuff like BrushUp/Get Up & Go/Snack
+  - [x] Prevent deletion if associated with a course
   - Add views
-    - [] For management by staff
-    - [] To show on the teacher page
-- [] Teacher profile opens to icons for kindy/ele/Evening
-  - Probably in a turboframe?
-  - click one to go to the tab
-  - links go to the top
-  - remove the less
+    - [x] For management by staff
+    - [x] To show on the teacher page
+- [x] Clean up the styling on the shared form errors a bit
+- [x] Modify the tests that broke because of IP requirements/translations changing
+- [x] Switch fonts to the ones Alex gave me
+- [x] Add some missing translations
+
+## June 21st
+
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
+- [] Apply the fonts to the devise layout too lol, you literally had it open
+  - Should probably find a way to share the code between those two, maybe sub-layouts?
+- [] Teacher profile rework
+  - [] Opens to splash with kindy, ele and evening icons
+  - [] Clicking on an icon takes you to the resources for that level
+  - [] resources are grouped by level, in an accordion
+  - [] Icons are at the top and can be clicked to switch to that level
 - [] In unlevelled lessons, align each component of the lesson with the others on the row
 - [] Add a UI for viewing/rolling back to previous versions of students
+- [] Add a CSVExportsController to dump the data from various tables for export
+  - [] Will need to check what gem I used for the event site, that one's fast
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
