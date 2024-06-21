@@ -384,22 +384,49 @@
 
 ## June 21st
 
+- Look into languages rendomly toggling on Event site
+  - [x] Use around action to set it
+  - [x] Fix tests broken by doing that
+  - [x] Add for LMS as well
+  - [x] And figure out how to make the tests work for that
+- [x] More constant interruptions by SMs with the wrong IP
+
+## LMS
+
+- [x] Apply the fonts to the devise layout too lol, you literally had it open
+  - Should probably find a way to share the code between those two, maybe sub-layouts?
+- [x] Update font weights requested by Alex
+- [x] Add remaining missing translations for Teacher section
+- [x] Teachers shouldn't be able to see the add parent form
+- For Phonics category_resources, you should be able to add them for a week using an existing uploaded resource
+  - [x] Create the join model
+    - [x] Should change it to being related to the blob directly
+      - Just gets the blob ID through the category_resources
+      - [x] Don't need map when setting form data in lessons controller, know how to SQL it now (from phonics resources query)
+        - Actually do need map cos it's the signed id
+  - [x] Add the partial/accepts_nested_attributes_for so you can add them from the Phonics class form
+
+## June 24th
+
+- Need some way of doing the early bird discounts for parties
+  - They could be different per school
+  - Some schools (new ones) can do free events
+    - Just add a separate 0 cost price list for that event
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] Apply the fonts to the devise layout too lol, you literally had it open
-  - Should probably find a way to share the code between those two, maybe sub-layouts?
-- [] Teacher profile rework
-  - [] Opens to splash with kindy, ele and evening icons
-  - [] Clicking on an icon takes you to the resources for that level
-  - [] resources are grouped by level, in an accordion
-  - [] Icons are at the top and can be clicked to switch to that level
-- [] In unlevelled lessons, align each component of the lesson with the others on the row
-- [] Add a UI for viewing/rolling back to previous versions of students
+- For Phonics category_resources, you should be able to add them for a week using an existing uploaded resource
+  - [] Show them as resources in the teacher view
+    - [] And on the lesson page for curriculum
+  - [] And the category_resources form
+- [] Figure out how to safely whitelist all params when switching languages, so I don't have to manually add them
 - [] Add a CSVExportsController to dump the data from various tables for export
   - [] Will need to check what gem I used for the event site, that one's fast
+- [] Add a UI for viewing/rolling back to previous versions of students
+- [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
+  - Noticed this on phonics class, with the associated phonics resources
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
