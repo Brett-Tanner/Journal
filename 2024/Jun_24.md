@@ -417,10 +417,13 @@
 
 ## LMS
 
-- For Phonics category_resources, you should be able to add them for a week using an existing uploaded resource
+- Add PhonicsResource join model
+  - [x] Show on the lesson page for curriculum
+  - [x] Add controller & routes to hande deleting
+    - [x] And policy/spec
+  - [] Add the fields partial to category_resources form
   - [] Show them as resources in the teacher view
-    - [] And on the lesson page for curriculum
-  - [] And the category_resources form
+- [] Add the JS controller to show the dates for course lessons for Luis
 - [] Figure out how to safely whitelist all params when switching languages, so I don't have to manually add them
 - [] Add a CSVExportsController to dump the data from various tables for export
   - [] Will need to check what gem I used for the event site, that one's fast
