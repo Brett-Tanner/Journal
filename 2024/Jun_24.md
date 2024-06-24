@@ -408,12 +408,11 @@
 
 ## June 24th
 
+- [x] Learning how to do level check for online lessons
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
     - Just add a separate 0 cost price list for that event
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
 
 ## LMS
 
@@ -421,12 +420,33 @@
   - [x] Show on the lesson page for curriculum
   - [x] Add controller & routes to hande deleting
     - [x] And policy/spec
-  - [] Add the fields partial to category_resources form
-  - [] Show them as resources in the teacher view
-- [] Add the JS controller to show the dates for course lessons for Luis
+  - Add the fields partial to category_resources form
+    - Bad idea, potentially confusing on what should be a simple form
+    - [x] Show a list of the classes that use it instead in a table
+  - [x] Show them as resources in the teacher view
+- [x] Add the JS controller to show the dates for course lessons for Luis
+  - [x] Courses also need a list of all their plans and their start dates
+  - [x] Show the date for each plan/organisation, updated on connect and when fields changed
+  - [x] Add a method to the Course model to generate the plan data
+  - [x] Include organisations when querying plans from course by default
+  - [x] DRY up the JS controller
+- [x] Add the Brush Up category_resources to the teacher view as a card linking to another page
+  - [x] Create a TeacherResourcesController
+    - Index filters by category based on a param
+  - [x] Add index view
+
+## June 25th
+
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
 - [] Figure out how to safely whitelist all params when switching languages, so I don't have to manually add them
 - [] Add a CSVExportsController to dump the data from various tables for export
   - [] Will need to check what gem I used for the event site, that one's fast
+- [] Allow organisations to have multiple courses again
+  - [] Only show teachers the ones that've started
 - [] Add a UI for viewing/rolling back to previous versions of students
 - [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
   - Noticed this on phonics class, with the associated phonics resources
