@@ -437,16 +437,53 @@
 
 ## June 25th
 
+- Lost 30min to missing class meeting
+- Plan out SS replacement DB structure
+  - [x] Student search page
+
+## LMS
+
+- [x] Filter Luis' date thing by selected course name
+  - [x] Check the accuracy of the dates
+- [x] Figure out how to safely whitelist all params when switching languages, so I don't have to manually add them
+- [x] Fix dangerous send in teacher_resources index
+- [x] Remove SSID, Kanji name from test results table
+  - Add a nav for admins to switch between schools/orgs
+    - [x] Views & basic controller vars
+    - [x] Filtering dependant vars by preceding ones
+      - [x] And the children
+    - [x] Refactor
+- [x] Add translations for school names
+
+## June 26th
+
+- Plan out SS replacement DB structure
+  - []
+- Add document submission form the event site
+  - Unauthenticated users should be able to submit
+  - Table with all the details accessible by SM of school submitted to, AMs
+  - Email sent on submission
+  - Form needs student name, school, file and file category
+  - Limit filetypes to jpg/jpeg/png/pdf/doc/docx/heic
+    - On backend too
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- [] Figure out how to safely whitelist all params when switching languages, so I don't have to manually add them
+- Add translations for school names
+- And find where I haven't used them/add the translation call
 - [] Add a CSVExportsController to dump the data from various tables for export
   - [] Will need to check what gem I used for the event site, that one's fast
 - [] Allow organisations to have multiple courses again
   - [] Only show teachers the ones that've started
+- [] Add a weekly/monthly calendar view of missing lessons
+  - Probably a method on the course that grabs all the course lessons and checks for missing based on weeks/days
+  - Might also want to check for dups
+  - [] Notify if upcoming missing lessons from a cron job
+- [] Automatically:
+  - [] Create default teacher and class when new schools create
+  - [] Add uploaded students to their school's default class
 - [] Add a UI for viewing/rolling back to previous versions of students
 - [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
   - Noticed this on phonics class, with the associated phonics resources
