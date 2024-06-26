@@ -356,8 +356,6 @@
   - [x] General Inquiry email
   - [x] Setsu Inquiry email
   - [x] Online Sets Inquiry email
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
 
 ## LMS
 
@@ -408,6 +406,7 @@
 
 ## June 24th
 
+- _Lost 1.5 hours to online lessons_
 - [x] Learning how to do level check for online lessons
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
@@ -437,7 +436,7 @@
 
 ## June 25th
 
-- Lost 30min to missing class meeting
+- _Lost 30min to missing class meeting_
 - Plan out SS replacement DB structure
   - [x] Student search page
 
@@ -457,8 +456,29 @@
 
 ## June 26th
 
+- _Lost 3 hours to online lessons_
+- [x] Fix students not having their 'first seasonal' status updated from spring, leading to repeater discounts not being applied
+  - 12 students affected
+  - [x] Add a note to the cron page on the wiki about updating first seasonal at the end of each event
 - Plan out SS replacement DB structure
-  - []
+  - [x] Student data import
+  - [x] Bulk student deletion
+  - [x] Medical Records
+  - [x] Medical record upload
+  - [x] Messages
+  - [x] Email distribution
+
+## LMS
+
+- [x] Resolve issue causing error on teacher page when trying to combine phonics courses with regular courses
+- [x] Add levels to category resources, optional for anything but phonics and brush up
+  - [x] And group brush up by them
+- [x] Seems to be an issue with the brush up link
+  - Wasn't actually calling the function to set lesson category
+- [x] Added order by en_name to the children on test results index
+
+## June 27th
+
 - Add document submission form the event site
   - Unauthenticated users should be able to submit
   - Table with all the details accessible by SM of school submitted to, AMs
@@ -471,8 +491,14 @@
 
 ## LMS
 
+- Added order by en_name to the children on test results index
+  - But seems to not apply correctly, was getting T > O > Q or O > T > Q depending on length of the T name
+- [] Missing English translations for user roles in the support messages
 - Add translations for school names
-- And find where I haven't used them/add the translation call
+  - [] And find where I haven't used them/add the translation call
+- [] Move some stuff out of the admin nav into an 'Admin tasks' card
+- [] Deleting a newly added phonics resource in the form stops you submitting the form
+  - Probably something going wrong with the fields controller cleanup
 - [] Add a CSVExportsController to dump the data from various tables for export
   - [] Will need to check what gem I used for the event site, that one's fast
 - [] Allow organisations to have multiple courses again
