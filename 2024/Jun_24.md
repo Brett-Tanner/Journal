@@ -460,7 +460,7 @@
 - [x] Fix students not having their 'first seasonal' status updated from spring, leading to repeater discounts not being applied
   - 12 students affected
   - [x] Add a note to the cron page on the wiki about updating first seasonal at the end of each event
-- Plan out SS replacement DB structure
+- Questions for new SS
   - [x] Student data import
   - [x] Bulk student deletion
   - [x] Medical Records
@@ -479,6 +479,11 @@
 
 ## June 27th
 
+- Questions for new SS
+  - [x] Student announcements
+  - [x] Attendance
+  - [x] School year
+  - [x] School year update
 - Add document submission form the event site
   - Unauthenticated users should be able to submit
   - Table with all the details accessible by SM of school submitted to, AMs
