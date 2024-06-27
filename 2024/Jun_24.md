@@ -408,10 +408,6 @@
 
 - _Lost 1.5 hours to online lessons_
 - [x] Learning how to do level check for online lessons
-- Need some way of doing the early bird discounts for parties
-  - They could be different per school
-  - Some schools (new ones) can do free events
-    - Just add a separate 0 cost price list for that event
 
 ## LMS
 
@@ -484,6 +480,22 @@
   - [x] Attendance
   - [x] School year
   - [x] School year update
+  - [x] Contract management
+  - [x] Lesson management
+  - [x] Instructor management
+
+## LMS
+
+- [x] Make test results entry use selects, not number fields
+- Added order by en_name to the children on test results index
+  - But seems to not apply correctly, was getting T > O > Q or O > T > Q depending on length of the T name
+  - [x] Think I needed :desc rather than :asc. should be fixed now
+- [x] Update file_paths to open in new tabs
+- [x] Try out the new method of masking guide images
+  - Works by putting the mask after the thing to be masked, as long as I fix the position with `at`
+
+## June 27th
+
 - Add document submission form the event site
   - Unauthenticated users should be able to submit
   - Table with all the details accessible by SM of school submitted to, AMs
@@ -491,13 +503,16 @@
   - Form needs student name, school, file and file category
   - Limit filetypes to jpg/jpeg/png/pdf/doc/docx/heic
     - On backend too
+- Need some way of doing the early bird discounts for parties
+  - They could be different per school
+  - Some schools (new ones) can do free events
+    - Just add a separate 0 cost price list for that event
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
 ## LMS
 
-- Added order by en_name to the children on test results index
-  - But seems to not apply correctly, was getting T > O > Q or O > T > Q depending on length of the T name
+- [] On category resources, the table headings are just the category now rather than the resource type
 - [] Missing English translations for user roles in the support messages
 - Add translations for school names
   - [] And find where I haven't used them/add the translation call
