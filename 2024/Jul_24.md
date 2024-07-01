@@ -2,13 +2,25 @@
 
 ## July 1st
 
-- Add document submission form the event site
-  - [] Create controller/routes
+- [x] Wildcard Futamatagawa SM and schedule time to fix tomorrow
+- [x] Identify & fix missing snack for special day afternoon
+- [x] Change some kid's name for Kamata SM
+- [x] Add document submission form to the event site
+  - [x] Create controller/routes
     - Email sent to SM on submission
-      - [] Basically just says ' a {category} document has been submitted' with a link to the index
-  - [] Create views
-    - [] Index is table with all the details accessible by SM of school submitted to, AMs
-    - [] Translations for index & form/new
+      - [x] Create DocumentUpload mailer
+        - [x] And spec
+        - [x] And preview
+      - [x] Basically just says 'a {category} document has been submitted' with a link to the index
+  - [x] Create views
+    - [x] Create policy, scope & tests for index
+    - [x] Index is table with all the details accessible by SM of school submitted to, AMs
+      - [x] Create or re-use the nav to filter by school
+    - [x] Figure out a way to show the signed in nav bar on index rather than signed out
+      - Split into unathenticated layout explicitly used in controller
+    - [x] Add KU logo to new form like for new sign ups
+    - [x] Give admins/SMs/AMs a button to access the index
+    - [x] Translations for index & form/new
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -18,19 +30,49 @@
 
 ## LMS
 
+- [x] Add temp drawing SVG
+- [x] KindyPhonic has lesson plans, the button is highlighted but no link to download
+  - Since I'm rendering both PhonicsClass & KindyPhonic in that col, it was overlapping and preventing the link from being clicked
+- [x] On category resources, the table headings are just the category now rather than the resource type
+- [x] Try sorting kids on test result page with Ruby since AR doesn't want to help
+- [x] Missing English translations for user roles in the support messages
+- [x] Find where I haven't translated school names & add the translation call
+  - Also correct 'Ikebukuro'
+  - I'll do most of this as I see missing translations I think
+- [x] Move some stuff out of the admin nav into an 'Admin tasks' card
+  - [x] Tidy up plans index/show since we actually link to it now
+- [x] Deleting a newly added phonics resource in the form stops you submitting the form
+  - Probably something going wrong with the fields controller cleanup
+  - Was checking if the lesson was a new resource, not the PhonicsResource
+  - Led to the wrong cleanup logic being used
+
+## July 2nd
+
+- Identify & fix missing snack for special day afternoon
+  - [] Get a list of all the affected students
+  - [] recalculate their invoices
+  - [] Send the lists of affected students to the SMs
+- Need some way of doing the early bird discounts for parties
+  - They could be different per school
+  - Some schools (new ones) can do free events
+    - Just add a separate 0 cost price list for that event
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
+- Add a CSVExportsController to dump the data from various tables for export
+  - Will need to check what gem I used for the event site, that one's fast
+  - [] Create policy & tests
+  - [] Controller & views
+- [] Monthly list of materials by lesson
+  - Just a list of lesson titles and the materials they need for now
+  - Later on think about automatically generating the full list for a month
+  - Monthly materials controller
+- [] Add kana names to students
+- [] In Safari, exporting the lesson plan to PDFViewer downloads the login page instead
 - Attempt to reproduce Luis' issue with EnglishClass topics not saving #56
   - Couldn't reproduce, waiting on a video from Luis
-- [] Add a drawing SVG if Alex is done, or placeholder
-- [] On category resources, the table headings are just the category now rather than the resource type
-- [] Missing English translations for user roles in the support messages
-- Add translations for school names
-  - [] And find where I haven't used them/add the translation call
-- [] Add kana names to students, conditionally display en or kana name based on locale
-- [] Move some stuff out of the admin nav into an 'Admin tasks' card
-- [] Deleting a newly added phonics resource in the form stops you submitting the form
-  - Probably something going wrong with the fields controller cleanup
-- [] Add a CSVExportsController to dump the data from various tables for export
-  - [] Will need to check what gem I used for the event site, that one's fast
 - [] Allow organisations to have multiple courses again
   - [] Only show teachers the ones that've started
 - [] Add a weekly/monthly calendar view of missing lessons
@@ -43,10 +85,6 @@
 - [] Add a UI for viewing/rolling back to previous versions of students
 - [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
   - Noticed this on phonics class, with the associated phonics resources
-- [] Monthly list of materials by lesson
-  - Just a list of lesson titles and the materials they need for now
-  - Later on think about automatically generating the full list for a month
-  - Monthly materials controller
 - [] Provide a list of kids who could move up for each test
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
