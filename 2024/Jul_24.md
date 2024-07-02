@@ -21,12 +21,6 @@
     - [x] Add KU logo to new form like for new sign ups
     - [x] Give admins/SMs/AMs a button to access the index
     - [x] Translations for index & form/new
-- Need some way of doing the early bird discounts for parties
-  - They could be different per school
-  - Some schools (new ones) can do free events
-    - Just add a separate 0 cost price list for that event
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
 
 ## LMS
 
@@ -48,10 +42,43 @@
 
 ## July 2nd
 
+- [x] Translation for password length is inverted, change from SM
 - Identify & fix missing snack for special day afternoon
-  - [] Get a list of all the affected students
-  - [] recalculate their invoices
-  - [] Send the lists of affected students to the SMs
+  - [x] Get a list of all the affected students
+  - [x] recalculate their invoices
+  - [x] Send the lists of affected students to the SMs
+- [x] Add opengraph image to Event Site
+  - [x] Remember it needs to be exlcluded from .dockerignore or the whole site dies
+- DocumentUpload tweaks
+  - [x] Update translations with newly provided ones
+  - [x] Show ALL the schools
+  - [x] Add 'other description' field to be filled in if they select 'other' as document category
+    - [x] Validate its presence if category is 'other'
+  - [x] Hide & disable 'other description' field unless they select 'other'
+  - [x] use the 'other description' field as a fallback in index if the category is 'other'
+- Need some way of doing the early bird discounts for parties
+  - They could be different per school
+  - Some schools (new ones) can do free events
+    - Just add a separate 0 cost price list for that event
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+
+## LMS
+
+- [x] Fix unexpected formatting issue with levelled lesson grid
+- [x] Add opengraph title & description
+- Add a CSVExportsController to dump the data from various tables for export
+  - [x] Create policy & tests
+  - [] Controller & views
+    - [x] Index gives you links to just dump the whole table for each allowed model
+    - [] Allow filtering results by test, former level & new level
+- Attempt to reproduce Luis' issue with EnglishClass topics not saving #56
+  - Seems to happen when he releases the lesson
+  - Probably cos there's no guard clause in the code setting the topic
+  - [x] Add guard clause and test to verfiy it doesn't erase when released
+
+## July 3rd
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -62,17 +89,14 @@
 ## LMS
 
 - Add a CSVExportsController to dump the data from various tables for export
-  - Will need to check what gem I used for the event site, that one's fast
-  - [] Create policy & tests
-  - [] Controller & views
+  - Controller & views
+    - [] Allow filtering results by test, former level & new level
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
   - Monthly materials controller
 - [] Add kana names to students
 - [] In Safari, exporting the lesson plan to PDFViewer downloads the login page instead
-- Attempt to reproduce Luis' issue with EnglishClass topics not saving #56
-  - Couldn't reproduce, waiting on a video from Luis
 - [] Allow organisations to have multiple courses again
   - [] Only show teachers the ones that've started
 - [] Add a weekly/monthly calendar view of missing lessons
