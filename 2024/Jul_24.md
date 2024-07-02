@@ -84,6 +84,10 @@
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
     - [x] Allow filtering results by test
+    - [] Need to include student names, text versions of levels
+      - Names only for KU students
+    - [] Export all lessons as CSV as well
+      - May need to think about how to do it with aliased names for cols
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
