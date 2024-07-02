@@ -56,12 +56,6 @@
     - [x] Validate its presence if category is 'other'
   - [x] Hide & disable 'other description' field unless they select 'other'
   - [x] use the 'other description' field as a fallback in index if the category is 'other'
-- Need some way of doing the early bird discounts for parties
-  - They could be different per school
-  - Some schools (new ones) can do free events
-    - Just add a separate 0 cost price list for that event
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
 
 ## LMS
 
@@ -69,9 +63,8 @@
 - [x] Add opengraph title & description
 - Add a CSVExportsController to dump the data from various tables for export
   - [x] Create policy & tests
-  - [] Controller & views
+  - Controller & views
     - [x] Index gives you links to just dump the whole table for each allowed model
-    - [] Allow filtering results by test, former level & new level
 - Attempt to reproduce Luis' issue with EnglishClass topics not saving #56
   - Seems to happen when he releases the lesson
   - Probably cos there's no guard clause in the code setting the topic
@@ -90,7 +83,7 @@
 
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
-    - [] Allow filtering results by test, former level & new level
+    - [x] Allow filtering results by test
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
