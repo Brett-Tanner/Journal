@@ -72,6 +72,43 @@
 
 ## July 3rd
 
+- DocumentUpload tweaks
+  - [x] Update email translation
+  - [x] Add an 'uploaded_at' field to the table
+  - [x] Add filters by category
+  - [x] Enable deleting them
+  - [x] Reverse the order schools are displayed in when selecting from the dropdown
+
+## LMS
+
+- [x] Add grade method to student to calc from bday
+- [x] Create Curriculum tasks partial like Admin tasks
+  - [x] Add course/lesson matrix link
+  - [x] Move other related stuff over
+- [x] Add name & date (basics), grade cols to test_result
+  - [x] Add basics column to test as well so max can be set
+    - [x] Will need a form field on test to input the name & date points
+    - Add to all relevant views
+      - [x] Test index
+      - [x] Test result index
+      - [x] Student page in detailed results
+  - [x] Set the grade from student grade when creating the test (only when creating)
+  - [x] JS calc will need updating to take name/date score into account
+- Add a CSVExportsController to dump the data from various tables for export
+  - Controller & views
+    - [x] Allow filtering results by test
+    - [x] Export all lessons as CSV as well
+      - [x] Add filtering by type
+      - May need to think about how to do it with aliased names for cols
+
+## July 4th
+
+- [] Need to migrate in new test/result cols after deploying LMS
+- [] Add some missing kids for Monzen (to LMS)
+- [] Ikebukero has kids from Ikegami, give them the right ones
+- Fix curriculum's inability to count
+  - [] Download backups before & after migration
+  - [] Migrate the first score from listening to the new name/date column
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -83,11 +120,9 @@
 
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
-    - [x] Allow filtering results by test
     - [] Need to include student names, text versions of levels
       - Names only for KU students
-    - [] Export all lessons as CSV as well
-      - May need to think about how to do it with aliased names for cols
+- [] See if I can control the title of file download tabs to be filename, not url
 - [] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
   - Later on think about automatically generating the full list for a month
@@ -117,6 +152,8 @@
 - [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add a 'quit_chance' enum to students, next to the comments section
   - Revisit after SS meeting to decide what the enum values will be
+- [] Add filtering by date to Lesson search
+- [] Add filtering by unattached to lesson search
 - Implement notifications
   - [] When lessons haven't been updated in 2 years
   - [] When there are new (relevant) support messages
