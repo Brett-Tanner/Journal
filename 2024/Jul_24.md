@@ -103,12 +103,41 @@
 
 ## July 4th
 
-- [] Need to migrate in new test/result cols after deploying LMS
-- [] Add some missing kids for Monzen (to LMS)
-- [] Ikebukero has kids from Ikegami, give them the right ones
+- [x] Need to migrate in new test/result cols after deploying LMS
+- [x] Add some missing kids for Monzen (to LMS)
+- [x] Ikebukero has kids from Ikegami, give them the right ones
 - Fix curriculum's inability to count
-  - [] Download backups before & after migration
-  - [] Migrate the first score from listening to the new name/date column
+  - [x] Download backups
+  - [x] Migrate the first score from listening to the new name/date column
+  - [x] Delete all non-reading scores for Sky
+  - Probably need to manually add the grades for all existing test results
+    - Nope did it automatically cos the grade was nil
+- [x] HAML rework of CSV index
+  - [x] Add a button to download the emails of all parents who've registered for each event
+
+## LMS
+
+- [x] Monthly list of materials by lesson
+  - Just a list of lesson titles and the materials they need for now
+  - Later on think about automatically generating the full list for a month
+  - Monthly materials controller
+  - [x] Add MonthlyMaterialsPolicy & spec
+  - [x] Add views
+  - [x] Allow searching by course, week and weeks into future
+  - [x] Order by lesson type then week then day
+  - [x] Make the materials a ul, create a 'list_from' in application helper
+  - [x] Add translations
+  - [x] Give teachers access
+- [x] Sort the category resources displayed to teachers by filename
+- [x] Explicitly include csv gem in gemfile since postgres-copy requires it and won't be in stdlib from 3.4
+- [x] Currently no way to see what level test you're looking at on results screen
+- [x] Make the released checkbox when searching lessons a radio button instead
+
+## July 5th
+
+- Look through answers to SS questions and make notes (on wiki)
+  - [] Students
+- [] Come up with a tentative schedule/timeframes for adding features
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -122,11 +151,10 @@
   - Controller & views
     - [] Need to include student names, text versions of levels
       - Names only for KU students
+- There's no way to add category resources to courses lol. Luckily I'm not filtering by that either yet
+  - [] Add course resource fields partial to the category resource form
+  - [] Only show the resources teachers have access to through their plan
 - [] See if I can control the title of file download tabs to be filename, not url
-- [] Monthly list of materials by lesson
-  - Just a list of lesson titles and the materials they need for now
-  - Later on think about automatically generating the full list for a month
-  - Monthly materials controller
 - [] Add kana names to students
 - [] In Safari, exporting the lesson plan to PDFViewer downloads the login page instead
 - [] Allow organisations to have multiple courses again
@@ -135,6 +163,7 @@
   - Probably a method on the course that grabs all the course lessons and checks for missing based on weeks/days
   - Might also want to check for dups
   - [] Notify if upcoming missing lessons from a cron job
+- [] Add a way to upload lessons from a CSV
 - [] Automatically:
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
