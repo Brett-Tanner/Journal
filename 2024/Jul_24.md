@@ -136,8 +136,15 @@
 ## July 5th
 
 - Look through answers to SS questions and make notes (on wiki)
-  - [] Students
-- [] Come up with a tentative schedule/timeframes for adding features
+  - [x] Students
+  - [x] Contracts
+  - [x] Lessons
+  - [x] Schools
+  - [x] Settings
+- [x] Come up with a tentative schedule/timeframes for adding features
+
+## July 6th
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -147,6 +154,9 @@
 
 ## LMS
 
+- Create a new branch & start chipping away at the UI rework
+  - [] Side nav
+  - [] Top nav/subtitle for teacher page
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
     - [] Need to include student names, text versions of levels
