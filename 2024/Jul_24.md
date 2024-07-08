@@ -187,7 +187,8 @@
     - [] Move the day select partial there
       - Only keep the next/prev day buttons (and maybe week)
   - [] Side nav
-    - [] Uniformly align icons/text
+    - [x] Uniformly align icons/text
+      - [x] Match upload nav item to others
     - [] Add an unauthenticated layout which doesn't have the constrained body element
     - Individual user navs
       - [] Admin
