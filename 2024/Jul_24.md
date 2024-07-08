@@ -145,6 +145,32 @@
 
 ## July 6th
 
+## LMS
+
+- Create a new branch & start chipping away at the UI rework
+  - [x] Make subtitle partial a header element
+  - [x] Style login page for mobile
+  - [x] Add new icons
+    - Add placeholder icons for non-teacher navs
+      - [x] Admins
+    - [x] Manually edit new icons to fit in the middle of their viewbox and fill the entire viewbox
+  - [x] Dynamically recolor icons
+    - [x] Explore ways to recolor them without creating partials
+      - Not a thing
+    - [x] Create the partials
+  - Side nav
+    - [x] SVGs not created from main_nav_link are taller
+    - [x] Apply Alex's fixed heights
+      - Had to divide all by 2
+    - [x] Add the JS controller to slide it out
+
+## July 7th
+
+- There's no way to add category resources to courses lol. Luckily I'm not filtering by that either yet
+  - Oops I am for teachers, so they haven't been able to see them
+  - [] Add course resource fields partial to the category resource form
+- [] Separate SSID: 2312000217 from incorrect parent
+- [] delete "akikookihara0319@gmail.com" account
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -155,15 +181,30 @@
 ## LMS
 
 - Create a new branch & start chipping away at the UI rework
+  - Subtitle rework
+    - [] Move it to the layout
+    - [] Move notifications, lang toggle and sign out to header(subtitle)
+    - [] Move the day select partial there
+      - Only keep the next/prev day buttons (and maybe week)
   - [] Side nav
+    - [] Uniformly align icons/text
+    - [] Add an unauthenticated layout which doesn't have the constrained body element
+    - Individual user navs
+      - [] Admin
+        - [] Reorient uploads dropdown
+      - [] Teacher
+      - [] Writer
+      - [] School Manager
+      - [] OrgAdmin
+      - [] Parent
+      - [] Sales
+    - [] Upload selector
   - [] Top nav/subtitle for teacher page
+- [] Add placeholder values when fields are missing on lesson plans
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
     - [] Need to include student names, text versions of levels
       - Names only for KU students
-- There's no way to add category resources to courses lol. Luckily I'm not filtering by that either yet
-  - [] Add course resource fields partial to the category resource form
-  - [] Only show the resources teachers have access to through their plan
 - [] See if I can control the title of file download tabs to be filename, not url
 - [] Add kana names to students
 - [] In Safari, exporting the lesson plan to PDFViewer downloads the login page instead
