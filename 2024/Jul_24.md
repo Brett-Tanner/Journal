@@ -22,7 +22,7 @@
     - [x] Give admins/SMs/AMs a button to access the index
     - [x] Translations for index & form/new
 
-## LMS
+### LMS
 
 - [x] Add temp drawing SVG
 - [x] KindyPhonic has lesson plans, the button is highlighted but no link to download
@@ -57,7 +57,7 @@
   - [x] Hide & disable 'other description' field unless they select 'other'
   - [x] use the 'other description' field as a fallback in index if the category is 'other'
 
-## LMS
+### LMS
 
 - [x] Fix unexpected formatting issue with levelled lesson grid
 - [x] Add opengraph title & description
@@ -79,7 +79,7 @@
   - [x] Enable deleting them
   - [x] Reverse the order schools are displayed in when selecting from the dropdown
 
-## LMS
+### LMS
 
 - [x] Add grade method to student to calc from bday
 - [x] Create Curriculum tasks partial like Admin tasks
@@ -115,7 +115,7 @@
 - [x] HAML rework of CSV index
   - [x] Add a button to download the emails of all parents who've registered for each event
 
-## LMS
+### LMS
 
 - [x] Monthly list of materials by lesson
   - Just a list of lesson titles and the materials they need for now
@@ -145,7 +145,7 @@
 
 ## July 6th
 
-## LMS
+### LMS
 
 - Create a new branch & start chipping away at the UI rework
   - [x] Make subtitle partial a header element
@@ -164,13 +164,42 @@
       - Had to divide all by 2
     - [x] Add the JS controller to slide it out
 
-## July 7th
+## July 8th
 
 - There's no way to add category resources to courses lol. Luckily I'm not filtering by that either yet
   - Oops I am for teachers, so they haven't been able to see them
-  - [] Add course resource fields partial to the category resource form
-- [] Separate SSID: 2312000217 from incorrect parent
-- [] delete "akikookihara0319@gmail.com" account
+  - [x] Add course resource fields partial to the category resource form
+
+### LMS
+
+- Create a new branch for the new navs (teacher_ui)
+  - [x] Side nav
+    - [x] Uniformly align icons/text
+      - [x] Match upload nav item to others
+      - [x] Match theme select nav item to others
+    - Fix devise/welcome pages
+      - [x] Nav offsets
+      - [x] Locale toggle coloring
+    - Individual user navs
+      - [x] Admin
+        - [x] Reorient uploads dropdown
+        - [x] And theme select dropdown
+      - [x] Teacher
+      - [x] Writer
+      - [x] School Manager
+      - [x] OrgAdmin
+      - [x] Parent
+      - [x] Sales
+  - Subtitle rework
+    - [x] Move it to the layout, in a slot (optionally, rendering subtitle will still work)
+    - [x] Create special one for teacher page with date arrows
+    - [x] Move lang toggle in
+    - [x] And restyle
+  - [x] Do a sweep to look for formatting issues from the new layout
+  - [x] Fix it up on mobile
+
+## July 9th
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -178,29 +207,19 @@
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 
-## LMS
+### In office tasks
 
-- Create a new branch & start chipping away at the UI rework
-  - Subtitle rework
-    - [] Move it to the layout
-    - [] Move notifications, lang toggle and sign out to header(subtitle)
-    - [] Move the day select partial there
-      - Only keep the next/prev day buttons (and maybe week)
-  - [] Side nav
-    - [x] Uniformly align icons/text
-      - [x] Match upload nav item to others
-    - [] Add an unauthenticated layout which doesn't have the constrained body element
-    - Individual user navs
-      - [] Admin
-        - [] Reorient uploads dropdown
-      - [] Teacher
-      - [] Writer
-      - [] School Manager
-      - [] OrgAdmin
-      - [] Parent
-      - [] Sales
-    - [] Upload selector
-  - [] Top nav/subtitle for teacher page
+- [] Add all existing category resources to KU course
+- [] Upload the version of the event site with updated confirmation invoice text
+- [] Delete the SSIDs of all kids with invalid SSIDs from Leroy's CSV
+- [] Separate SSID: 2312000217 from incorrect parent
+- [] delete "akikookihara0319@gmail.com" account
+
+### LMS
+
+- Create another branch for the new lesson view
+  - [] Welcome page
+    - Has the three levels of course as icons
 - [] Add placeholder values when fields are missing on lesson plans
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
