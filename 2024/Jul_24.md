@@ -143,7 +143,7 @@
   - [x] Settings
 - [x] Come up with a tentative schedule/timeframes for adding features
 
-## July 6th
+## July 8th
 
 ### LMS
 
@@ -164,7 +164,7 @@
       - Had to divide all by 2
     - [x] Add the JS controller to slide it out
 
-## July 8th
+## July 9th
 
 - There's no way to add category resources to courses lol. Luckily I'm not filtering by that either yet
   - Oops I am for teachers, so they haven't been able to see them
@@ -198,7 +198,31 @@
   - [x] Do a sweep to look for formatting issues from the new layout
   - [x] Fix it up on mobile
 
-## July 9th
+## July 10th
+
+- Minus 3 hours to online lessons
+
+### LMS
+
+- [x] Fix disappearing support dropdown on teacher_ui branch
+  - And lesson_ui
+- Check changing the default background didn't break the Devise views
+  - [x] Fix for lesson_ui branch
+  - [x] Fix for teacher_ui branch
+- Create another branch for the new lesson view
+  - Welcome page
+    - [x] Add flipper to enable setting available levels by org
+      - [x] Figure out how to automatically create groups from organisations
+      - [x] Test by adding logos to the teacher page conditional on level being enabled
+    - Has the three levels of course as icons, linking to lesson index for each level
+      - [x] Create card class
+      - [x] Style the main element and links for mobile/desktop
+  - Lesson index
+    - [x] Create turbo response in controller
+    - [x] Modify the seeds to have only one of each lesson per day
+    - [x] And to seed the levels as features
+
+## July 11th
 
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
@@ -206,6 +230,7 @@
     - Just add a separate 0 cost price list for that event
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
+- [] Talk to Leroy about regular days in event site
 
 ### In office tasks
 
@@ -214,12 +239,17 @@
 - [] Delete the SSIDs of all kids with invalid SSIDs from Leroy's CSV
 - [] Separate SSID: 2312000217 from incorrect parent
 - [] delete "akikookihara0319@gmail.com" account
+- [] Add Alex's new notification svg to main
 
 ### LMS
 
 - Create another branch for the new lesson view
-  - [] Welcome page
-    - Has the three levels of course as icons
+  - Lesson index
+    - [] How do Daily Activity and Kindy Phonic's custom level enums work with filtering by level??
+    - [] Create turbo stream view
+      - [] Figure out how to handle the subtitle
+        - Making it a frame seems to leave it blank
+        - Maybe just have a conditional for what to show based on controller_name?
 - [] Add placeholder values when fields are missing on lesson plans
 - Add a CSVExportsController to dump the data from various tables for export
   - Controller & views
@@ -255,10 +285,10 @@
 - [] Add filtering by date to Lesson search
 - [] Add filtering by unattached to lesson search
 - Implement notifications
+  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
   - [] When lessons haven't been updated in 2 years
   - [] When there are new (relevant) support messages
   - [] Manually send notifications to subsets of people
-- [] Use Flipper for feature flags
 
 ### Event Site
 
