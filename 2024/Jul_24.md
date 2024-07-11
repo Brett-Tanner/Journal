@@ -224,40 +224,48 @@
 
 ## July 11th
 
+- [x] Add school name to the test result export
+- [x] Change the title/opengraph title for the document upload page
+
+### In office tasks
+
+- [x] Add all existing category resources to KU course
+- [x] Upload the version of the event site with updated confirmation invoice text
+- [x] Delete the SSIDs of all kids with invalid SSIDs from Leroy's CSV
+- [x] Separate SSID: 2312000217 from incorrect parent
+- [x] delete "akikookihara0319@gmail.com" account
+- [x] Talk to Leroy about regular days in event site
+- [x] Chat with Junya to clarify what some of the SS stuff is
+
+### LMS
+
+- [x] Fix some rounded color bleed on navs
+- [x] Separate evening into keep_up/specialist features
+- Lesson index
+  - [x] Get the list of lessons to display
+  - [x] Level nav
+  - [x] Add in the universal stuff like brush up or snack
+
+## July 12th
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
     - Just add a separate 0 cost price list for that event
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
-- [] Talk to Leroy about regular days in event site
-
-### In office tasks
-
-- [] Add all existing category resources to KU course
-- [] Upload the version of the event site with updated confirmation invoice text
-- [] Delete the SSIDs of all kids with invalid SSIDs from Leroy's CSV
-- [] Separate SSID: 2312000217 from incorrect parent
-- [] delete "akikookihara0319@gmail.com" account
-- [] Add Alex's new notification svg to main
+- [] Add Alex's new notification svg once I merge all the UI stuff
 
 ### LMS
 
-- Create another branch for the new lesson view
-  - Lesson index
-    - [] How do Daily Activity and Kindy Phonic's custom level enums work with filtering by level??
-    - [] Create turbo stream view
-      - [] Figure out how to handle the subtitle
-        - Making it a frame seems to leave it blank
-        - Maybe just have a conditional for what to show based on controller_name?
+- Lesson index
+  - [] Figure out how to handle the subtitle
+  - [] Once you get here, add the changes to extend the white bg full width & adjust for mobile
+    - Making it a frame seems to leave it blank
+    - Maybe just have a conditional for what to show based on controller_name?
 - [] Add placeholder values when fields are missing on lesson plans
-- Add a CSVExportsController to dump the data from various tables for export
-  - Controller & views
-    - [] Need to include student names, text versions of levels
-      - Names only for KU students
 - [] See if I can control the title of file download tabs to be filename, not url
-- [] Add kana names to students
-- [] In Safari, exporting the lesson plan to PDFViewer downloads the login page instead
+  - Could probably do it with a custom controller/view with an embed tag
 - [] Allow organisations to have multiple courses again
   - [] Only show teachers the ones that've started
 - [] Add a weekly/monthly calendar view of missing lessons
