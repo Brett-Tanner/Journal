@@ -248,6 +248,28 @@
 
 ## July 12th
 
+### LMS
+
+- Lesson index
+  - [x] Add the textless keep up/specialist svgs
+  - [x] Conditionally show arrival/brush up etc only for kindy/ele
+  - [x] Make sure daily activity shows up in the elementary list
+    - [x] Migrate the levels up 1 to match the others (so kindy is 1, ele is land_1 which is included in ele filter)
+  - [x] Merge main into lesson_ui
+  - [x] Figure out how to handle the subtitle
+    - Needed to use turbo streams instead of frames, not with, when updating multiple things from a single response
+  - [x] Once you get here, add the changes to extend the white bg full width & adjust for mobile
+- Add the modal for lesson details/resources
+  - [x] Add the dialog element to the page & style
+  - [x] Add the controller action and base turbo stream view
+- Split out the teacher lessons/views into their own controller
+  - [x] New controller
+  - [x] Update all the paths
+- Add the modal for lesson details/resources
+  - [x] Add the tabbed one for phonics
+
+## July 15th
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -258,11 +280,10 @@
 
 ### LMS
 
-- Lesson index
-  - [] Figure out how to handle the subtitle
-  - [] Once you get here, add the changes to extend the white bg full width & adjust for mobile
-    - Making it a frame seems to leave it blank
-    - Maybe just have a conditional for what to show based on controller_name?
+- Add the modal for lesson details/resources
+  - [] Add the tabbed one for english class
+  - [] Add the tabbed one for daily activity subtypes
+  - [] Add the views for category resources
 - [] Add placeholder values when fields are missing on lesson plans
 - [] See if I can control the title of file download tabs to be filename, not url
   - Could probably do it with a custom controller/view with an embed tag
