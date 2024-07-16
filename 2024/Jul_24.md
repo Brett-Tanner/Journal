@@ -268,7 +268,35 @@
 - Add the modal for lesson details/resources
   - [x] Add the tabbed one for phonics
 
-## July 15th
+## July 16th
+
+### LMS
+
+- Add the modal for lesson details/resources
+  - [x] Add KindyPhonic
+    - [x] And color the bottom border for phonics/kindy phonics properly
+  - [x] Add the tabbed one for english class
+    - [x] Extract logic for title color to helper
+    - [x] Extract tabs to partial
+      - Can these actually just mean the card itself should just be a generic partial used for all lessons?
+        - [] Extract header to partial
+        - [] Extract resource list & guide to partial
+  - [x] Add the tabbed one for daily activity subtypes
+  - [x] Add the tabbed one for stand show speak
+    - Didn't go with tabs since it's just the guide for each
+  - [x] Add the views for category resources
+    - Probably better to link them to a separate page, the existing teacher resources controller
+  - [x] Add Daily Gathering after DailyActivity
+  - [x] Switch to main and constrain exercise to all levels/kindy/ele, then deploy & merge back into lesson_ui
+  - [x] Add tabbed exercise card
+    - [x] Include all levels in all the scopes
+  - [x] Add evening class cards
+  - [x] Pretty sure I can condense all the send methods in teacher_lessons_controller except maybe stand_show_speak & phonics
+  - [x] Close modals when you click outside them
+  - [] Do a mobile styling pass
+    - [x] Extract common code for guides/resources from lesson partials
+
+## July 17th
 
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
@@ -281,9 +309,9 @@
 ### LMS
 
 - Add the modal for lesson details/resources
-  - [] Add the tabbed one for english class
-  - [] Add the tabbed one for daily activity subtypes
-  - [] Add the views for category resources
+  - [] Do a mobile styling pass
+  - [] Add cards to evening courses, they'll probably just link directly to guides for now
+    - Depends on Daniel sending me the evening schedule
 - [] Add placeholder values when fields are missing on lesson plans
 - [] See if I can control the title of file download tabs to be filename, not url
   - Could probably do it with a custom controller/view with an embed tag
