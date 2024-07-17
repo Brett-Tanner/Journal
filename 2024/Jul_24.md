@@ -278,9 +278,6 @@
   - [x] Add the tabbed one for english class
     - [x] Extract logic for title color to helper
     - [x] Extract tabs to partial
-      - Can these actually just mean the card itself should just be a generic partial used for all lessons?
-        - [] Extract header to partial
-        - [] Extract resource list & guide to partial
   - [x] Add the tabbed one for daily activity subtypes
   - [x] Add the tabbed one for stand show speak
     - Didn't go with tabs since it's just the guide for each
@@ -294,9 +291,29 @@
   - [x] Pretty sure I can condense all the send methods in teacher_lessons_controller except maybe stand_show_speak & phonics
   - [x] Close modals when you click outside them
   - [] Do a mobile styling pass
-    - [x] Extract common code for guides/resources from lesson partials
+    - [x] Extract guide section to partial
+    - [x] Extract resource list to partial
 
 ## July 17th
+
+### LMS
+
+- Github Issues
+  - [x] Move old english classes to evening classes
+  - [x] Show count of students by category on index
+- Add the modal for lesson details/resources
+  - Do a mobile styling pass
+    - [x] Login page spacing
+    - [x] Teacher homepage
+    - Resources card
+      - [x] Header
+      - [x] Guide/resources
+      - [x] Size
+      - [x] Stand show speak
+      - [x] Tabs
+- [x] Add cards to evening courses, blank links until they actually give me stuff
+
+## July 18th
 
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
@@ -304,17 +321,21 @@
     - Just add a separate 0 cost price list for that event
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
+- [] SMs need a test school on event site for training
+  - Will need to exclude it from the real scope
 - [] Add Alex's new notification svg once I merge all the UI stuff
 
 ### LMS
 
-- Add the modal for lesson details/resources
-  - [] Do a mobile styling pass
-  - [] Add cards to evening courses, they'll probably just link directly to guides for now
-    - Depends on Daniel sending me the evening schedule
-- [] Add placeholder values when fields are missing on lesson plans
 - [] See if I can control the title of file download tabs to be filename, not url
-  - Could probably do it with a custom controller/view with an embed tag
+  - This works
+
+```
+    %h1 HI THERE
+
+    %embed{ type: @file.content_type, src: url_for(@file) }
+```
+
 - [] Allow organisations to have multiple courses again
   - [] Only show teachers the ones that've started
 - [] Add a weekly/monthly calendar view of missing lessons
@@ -322,7 +343,7 @@
   - Might also want to check for dups
   - [] Notify if upcoming missing lessons from a cron job
 - [] Add a way to upload lessons from a CSV
-- [] Automatically:
+- Automatically:
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
 - [] Add a UI for viewing/rolling back to previous versions of students
