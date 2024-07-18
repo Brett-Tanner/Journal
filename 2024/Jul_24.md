@@ -315,6 +315,18 @@
 
 ## July 18th
 
+### LMS
+
+- [x] See if I can control the title of file download tabs to be filename, not url
+- [x] Allow organisations to have multiple courses again
+  - [x] Add tests checking that multiple courses work
+- [x] Scope phonics resources by the current week (on lesson_ui branch)
+- Add a weekly/monthly calendar view of missing lessons
+  - [x] Add the table and display logic
+  - [] Allow filtering by date
+
+## July 19th
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -327,21 +339,8 @@
 
 ### LMS
 
-- [] See if I can control the title of file download tabs to be filename, not url
-  - This works
-
-```
-    %h1 HI THERE
-
-    %embed{ type: @file.content_type, src: url_for(@file) }
-```
-
-- [] Allow organisations to have multiple courses again
-  - [] Only show teachers the ones that've started
-- [] Add a weekly/monthly calendar view of missing lessons
-  - Probably a method on the course that grabs all the course lessons and checks for missing based on weeks/days
-  - Might also want to check for dups
-  - [] Notify if upcoming missing lessons from a cron job
+- Add a weekly/monthly calendar view of missing lessons
+  - [] Allow filtering by date
 - [] Add a way to upload lessons from a CSV
 - Automatically:
   - [] Create default teacher and class when new schools create
