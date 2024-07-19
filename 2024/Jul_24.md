@@ -290,7 +290,7 @@
   - [x] Add evening class cards
   - [x] Pretty sure I can condense all the send methods in teacher_lessons_controller except maybe stand_show_speak & phonics
   - [x] Close modals when you click outside them
-  - [] Do a mobile styling pass
+  - [x] Do a mobile styling pass
     - [x] Extract guide section to partial
     - [x] Extract resource list to partial
 
@@ -323,10 +323,34 @@
 - [x] Scope phonics resources by the current week (on lesson_ui branch)
 - Add a weekly/monthly calendar view of missing lessons
   - [x] Add the table and display logic
-  - [] Allow filtering by date
 
 ## July 19th
 
+- [x] New LMS timeline stuff for Leroy
+
+### LMS
+
+- [x] Courseable should be on the organisation, not users
+- Add a weekly/monthly calendar view of missing lessons
+  - [x] Only show released lessons
+  - [x] Allow filtering by date
+  - [x] Allow filtering by org
+- [x] Move the code fetching phonics resources to the controller, same with the regular resources
+- [x] Basic missing lessons styling on lesson_ui branch
+- Support pages styling
+  - [x] Index
+    - [x] Request summary partials
+    - [x] Add priority col to support request
+  - [x] Show
+    - [x] Mobile views
+  - Form
+    - [x] Add priority to form & controller
+    - [x] Add images to form & controller
+    - [x] Overall layout
+
+## July 22nd
+
+- [] Possible issue with Magome SM link to old summer school 2023
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -339,8 +363,19 @@
 
 ### LMS
 
-- Add a weekly/monthly calendar view of missing lessons
-  - [] Allow filtering by date
+- Support pages styling
+  - [] Form
+    - Add images to form & controller
+      - [] Validate images are of correct type
+    - [] Priority toggles
+      - The big colored things should be the labels (probably)
+    - [] Select box
+    - [] File upload
+- [] Settings page creation
+- [] Settings page styling
+- [] Textless icons from Alex
+- [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
+  - A guy on the Syntax podcast mentioned this mattered
 - [] Add a way to upload lessons from a CSV
 - Automatically:
   - [] Create default teacher and class when new schools create
