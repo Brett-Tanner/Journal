@@ -350,6 +350,28 @@
 
 ## July 22nd
 
+- [x] Come up with a way to stop parents registering blank invoices
+
+### LMS
+
+- Support pages styling
+  - [x] Form
+    - Add images to form & controller
+      - [x] Validate images are of correct type
+      - [x] Add image attachments to support messages
+      - [x] Show them in request/message views
+    - [x] Priority toggles
+    - [x] File upload
+  - [x] Separate the index into active/resolved
+
+## July 23rd
+
+- Come up with a way to stop parents registering blank invoices
+  - [] And show them in index
+  - [] And show them in the list so they can be deleted if they exist
+  - [] Fix the one Leroy messaged me about
+  - [] Fix 6964
+  - [] Delete the spare 'Kokono Teshima'
 - [] Possible issue with Magome SM link to old summer school 2023
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
@@ -363,14 +385,10 @@
 
 ### LMS
 
-- Support pages styling
-  - [] Form
-    - Add images to form & controller
-      - [] Validate images are of correct type
-    - [] Priority toggles
-      - The big colored things should be the labels (probably)
-    - [] Select box
-    - [] File upload
+- Tutorials Section
+  - [] Merge Jayson's changes
+    - [] Seed rickroll
+  - [] Style them
 - [] Settings page creation
 - [] Settings page styling
 - [] Textless icons from Alex
