@@ -351,6 +351,7 @@
 ## July 22nd
 
 - [x] Come up with a way to stop parents registering blank invoices
+- [x] Remove ability to create orphans
 
 ### LMS
 
@@ -367,11 +368,10 @@
 ## July 23rd
 
 - Come up with a way to stop parents registering blank invoices
-  - [] And show them in index
   - [] And show them in the list so they can be deleted if they exist
   - [] Fix the one Leroy messaged me about
   - [] Fix 6964
-  - [] Delete the spare 'Kokono Teshima'
+  - [] Delete the orphaned 'Kokono Teshima's
 - [] Possible issue with Magome SM link to old summer school 2023
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
