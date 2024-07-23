@@ -368,15 +368,44 @@
 ## July 23rd
 
 - Come up with a way to stop parents registering blank invoices
-  - [] And show them in the list so they can be deleted if they exist
-  - [] Fix the one Leroy messaged me about
-  - [] Fix 6964
-  - [] Delete the orphaned 'Kokono Teshima's
-- [] Possible issue with Magome SM link to old summer school 2023
+  - [x] And show them in the list so they can be deleted if they exist
+  - [x] Fix the one Leroy messaged me about
+  - [x] Fix 6964
+  - [x] Delete the orphaned 'Kokono Teshima's
+- [x] Possible issue with Magome SM link to old summer school 2023
+
+### LMS
+
+- Add a list of blobs, sorted by file size, or by file size x download count
+  - [x] Add the route, and update policies/tests
+  - [x] Create the view/action
+- [x] Make the pdf_image field flex-col so it doesn't disappear if a big image is uploaded
+  - [x] Add a small info with image size, filetypes
+  - [x] Stop the rendering error when there's a validation error and they're sent back, caused by uploaded image not being persisted
+- Tutorials Section
+  - [x] Merge Jayson's changes
+    - Can push with to the PR `git push git@github.com:JaysonPye/materials.git HEAD:main`
+    - [x] Seed rickroll
+    - Refactor VideoTutorial link conversion to be done in model
+      - [x] Add tests
+      - [x] Refactor to pass
+    - [x] Tidy forms
+      - [x] Use the VideoTutorial valid hosts constants to provide guidance on form
+      - [x] Use string interpolation to render correct forms
+    - [x] Fix the failing tests
+      - [x] Figure out the stimulus generator messed up my index.js again
+      - [x] Change Tutorial Category name to title in tests
+
+## July 23rd
+
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
     - Just add a separate 0 cost price list for that event
+- [] Need a separate column for food allergy, boolean
+  - [] After Summer School, change it so allergy kids can't see the option for lunch
+  - Set by a radio button
+  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
 - [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
 - [] SMs need a test school on event site for training
@@ -386,11 +415,16 @@
 ### LMS
 
 - Tutorials Section
-  - [] Merge Jayson's changes
-    - [] Seed rickroll
-  - [] Style them
-- [] Settings page creation
-- [] Settings page styling
+  - [] Styling
+    - [] Remove the 'TurboModal' stimulus controller and use my lesson modals
+      - [] Refactor a bit to make the modal more general
+      - e.g. make the id/classes more generic, create a partial
+  - [] Add TutorialPolicy & tests
+- [] Add pictures page to DailyActivity plans
+  - [] Add the has many and form fields/controller stuff
+  - [] Add to list of attributes on model
+- [] Create Exercise template
+  - [] Refactor the code for PDF templates to be more reusable across different types
 - [] Textless icons from Alex
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
   - A guy on the Syntax podcast mentioned this mattered
@@ -399,6 +433,7 @@
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
 - [] Add a UI for viewing/rolling back to previous versions of students
+  - [] Remove limit on versions of students stored
 - [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
   - Noticed this on phonics class, with the associated phonics resources
 - [] Provide a list of kids who could move up for each test
@@ -409,7 +444,6 @@
 - [] Refactor the PDF generation
   - The endless 'draw\_\_\_\_' methods seem like they could be extracted
   - Probably different versions for plaintext, lists and links
-- [] Replace icons for aerobics, dance and jumping exercise subtypes when I get them
 - [] Add a 'quit_chance' enum to students, next to the comments section
   - Revisit after SS meeting to decide what the enum values will be
 - [] Add filtering by date to Lesson search
