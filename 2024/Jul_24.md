@@ -398,6 +398,22 @@
 
 ## July 23rd
 
+- [x] Fix invisible fonts in event site confirmation PDF
+  - This took 2.5 hours, turned out to be an obscure edge case in the new version of Prawn
+- [x] Chase down issues Luis is having with viewing resources
+  - [x] Info from Jayson lead me to noticing PPTx files can't be embedded plain in browsers
+
+### LMS
+
+- Tutorials Section
+  - [x] Add attached SVG to TutorialCategory
+  - [x] Add 'sanitized_svg' helper to display SVGs from ActiveRecord
+  - [x] Fix the update links for tutorials, turns out they actually did need to be set manually
+
+## July 24th
+
+- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
+  - Can propose changes to some others though
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -416,10 +432,15 @@
 
 - Tutorials Section
   - [] Styling
+    - [] Style new tutorial dropdown & new category link
+    - [] Show cards for each category on the tutorials page
     - [] Remove the 'TurboModal' stimulus controller and use my lesson modals
       - [] Refactor a bit to make the modal more general
       - e.g. make the id/classes more generic, create a partial
-  - [] Add TutorialPolicy & tests
+  - [] Add TutorialPolicy/TutorialCategoryPolicy & tests
+- [] Add conditional to files controller to download rather than embed if .pptx
+  - [] Find out what other filetypes this might apply to
+- [] Change the custom key generation for plans to put the lesson title first
 - [] Add pictures page to DailyActivity plans
   - [] Add the has many and form fields/controller stuff
   - [] Add to list of attributes on model
