@@ -412,8 +412,6 @@
 
 ## July 24th
 
-- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
-  - Can propose changes to some others though
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
   - Some schools (new ones) can do free events
@@ -426,27 +424,69 @@
 - [] Look into setting up emails for our new domains
 - [] SMs need a test school on event site for training
   - Will need to exclude it from the real scope
-- [] Add Alex's new notification svg once I merge all the UI stuff
 
 ### LMS
 
 - Tutorials Section
-  - [] Styling
-    - [] Style new tutorial dropdown & new category link
-    - [] Show cards for each category on the tutorials page
-    - [] Remove the 'TurboModal' stimulus controller and use my lesson modals
-      - [] Refactor a bit to make the modal more general
-      - e.g. make the id/classes more generic, create a partial
-  - [] Add TutorialPolicy/TutorialCategoryPolicy & tests
-- [] Add conditional to files controller to download rather than embed if .pptx
-  - [] Find out what other filetypes this might apply to
-- [] Change the custom key generation for plans to put the lesson title first
+  - [x] Update seeds to include the required svg on tutorial categories
+  - [x] And factory/tests to use it
+  - [x] Styling
+    - [x] Style new tutorial dropdown & new category link
+    - [x] Show cards for each category on the tutorials page
+    - [x] Remove the 'TurboModal' stimulus controller and use my lesson modals
+    - [x] Style modal header
+    - [x] Style FAQs section
+    - [x] Style Files section
+    - [x] Style Videos section
+      - [x] And figure out how to open the videos in a separate modal
+  - [x] Add TutorialPolicy/TutorialCategoryPolicy & tests
+  - [x] Add edit/delete buttons for admins on tutorial categories/tutorials
+  - [x] Remove the vestigal views for the old UI
+- [x] Roll back to the previous file controller implementation that just sends it for now
+- [x] Files index does not need to be human size for download count
+- [x] Last column should be 'bandwidth used'
+- [x] Update icons
+- [x] Override hover effect on resolved badge
+- [x] Stop videos playing when their dialog is minimized
+- [x] Push to live, run migrations, and turn on/create Flipper features
+  - [x] Lessons showing up multiple times
+    - Was policy scope duplicating it endlessly
+  - [x] Special lesson missing
+  - [x] Evening class stuff overlaps the SVG
+
+## July 28th
+
+** DO THIS FIRST BRETT**
+
+- Need some way of doing the early bird discounts for parties
+  - They could be different per school
+  - Some schools (new ones) can do free events
+    - Just add a separate 0 cost price list for that event
+- [] Need a separate column for food allergy, boolean
+  - [] After Summer School, change it so allergy kids can't see the option for lunch
+  - Set by a radio button
+  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+- [] SMs need a test school on event site for training
+  - Will need to exclude it from the real scope
+
+### LMS
+
+- [] Possible issue with bandwidth calc being too big?
+- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
+  - Can propose changes to some others though
 - [] Add pictures page to DailyActivity plans
   - [] Add the has many and form fields/controller stuff
   - [] Add to list of attributes on model
 - [] Create Exercise template
   - [] Refactor the code for PDF templates to be more reusable across different types
-- [] Textless icons from Alex
+- [] Add reviews to lessons
+  - [] Need stars and text
+  - [] Text pops up after star rating given
+  - [] on the teacher_lesson modal
+  - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
+    - Maybe show the score for active reviews and all? And have an index with all of them
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
   - A guy on the Syntax podcast mentioned this mattered
 - [] Add a way to upload lessons from a CSV
