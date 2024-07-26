@@ -412,19 +412,6 @@
 
 ## July 24th
 
-- Need some way of doing the early bird discounts for parties
-  - They could be different per school
-  - Some schools (new ones) can do free events
-    - Just add a separate 0 cost price list for that event
-- [] Need a separate column for food allergy, boolean
-  - [] After Summer School, change it so allergy kids can't see the option for lunch
-  - Set by a radio button
-  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
-- [] SMs need a test school on event site for training
-  - Will need to exclude it from the real scope
-
 ### LMS
 
 - Tutorials Section
@@ -456,13 +443,15 @@
 
 ## July 28th
 
-** DO THIS FIRST BRETT**
-
+- [x] People use the attendance sheet on iPads, and it goes off-screen on those
+- [] On a related note, we need a teacher account so SMs don't just log in teachers on iPads with their account
+  ** DO THIS FIRST BRETT**
 - Need some way of doing the early bird discounts for parties
   - They could be different per school
-  - Some schools (new ones) can do free events
-    - Just add a separate 0 cost price list for that event
+  - Some schools (new ones) can do free events - Just add a separate 0 cost price list for that event
+    ** DO THIS FIRST BRETT**
 - [] Need a separate column for food allergy, boolean
+  - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
   - Set by a radio button
   - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
@@ -473,6 +462,11 @@
 
 ### LMS
 
+- [x] Truncate goal/subheading text so it can't hide guides
+- [x] Stand Show Speak dialog should be just like the others
+  - The scripts are added as resources, the guide is just a general monthly one
+- [] Now that SSS is basically the same, really feel like I could just use the same partial for all lesson turboframes with some helpers
+- [] Add a category resource for evening class, resource types are conversation cards and actvities
 - [] Possible issue with bandwidth calc being too big?
 - [] Writers can't propose changes to at least lesson 354, form just resets with no errors
   - Can propose changes to some others though
