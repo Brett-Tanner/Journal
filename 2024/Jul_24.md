@@ -443,13 +443,46 @@
 
 ## July 28th
 
+- Deal with SM issues
+  - [x] Kid who was kindy/is now elementary needs extensions changed
+  - [x] August 5th PM has the wrong name
+  - [x] Kid needs to be linked with parent? Somehow created without SSID/link to a parent
+    - Ended up being Leroy's job
 - [x] People use the attendance sheet on iPads, and it goes off-screen on those
-- [] On a related note, we need a teacher account so SMs don't just log in teachers on iPads with their account
-  ** DO THIS FIRST BRETT**
-- Need some way of doing the early bird discounts for parties
-  - They could be different per school
-  - Some schools (new ones) can do free events - Just add a separate 0 cost price list for that event
-    ** DO THIS FIRST BRETT**
+- Add new seasonal days
+  - [x] Monzen 19-21
+  - [x] Monzen 22
+  - [x] Oi special day 31st
+- [x] Stop SMs shooting themselves in the foot by adding children without SSIDs
+- Add stuff I need to make parties work on the event site
+  - [x] Add a 'released' column to events so we can test/modify them first
+    - [x] Filter unreleased events out in customer/child controllers
+    - [x] Add the checkbox to the form & the param to the controller
+  - [x] Skip option creation and afternoon slot creation for party time slots
+  - [] Have early bird discount dates, they can be different per school
+    - [x] Add an early bird date & discount to the event table
+    - [x] Add the early bird fields to the form
+    - [x] Apply the early bird discount (as an adjustment) if before early bird date
+    - [x] Refactor adjustment tests
+      - use let to set change/reason
+      - lets me use the same find adj method for all
+  - [x] Some schools (new ones) can do free events
+    - Just add a separate free price list for that event
+    - [x] Create a 'Free Promo Event' price list to be used for these
+    - [x] Check doing that works as expected
+  - [x] Add seeds for parties
+
+### LMS
+
+- [x] Truncate goal/subheading text so it can't hide guides
+- [x] Stand Show Speak dialog should be just like the others
+  - The scripts are added as resources, the guide is just a general monthly one
+
+## July 29th
+
+- Add stuff I need to make parties work on the event site
+  - [] Kids shouldn't be able to be registered for multiple parties on the same event
+    - [] JS should uncheck all other slots
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -462,19 +495,18 @@
 
 ### LMS
 
-- [x] Truncate goal/subheading text so it can't hide guides
-- [x] Stand Show Speak dialog should be just like the others
-  - The scripts are added as resources, the guide is just a general monthly one
+- [] Next/prev day buttons don't target the frame
+- [] Language toggle gives you a white screen on lessons, just remove it?
 - [] Now that SSS is basically the same, really feel like I could just use the same partial for all lesson turboframes with some helpers
-- [] Add a category resource for evening class, resource types are conversation cards and actvities
-- [] Possible issue with bandwidth calc being too big?
-- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
-  - Can propose changes to some others though
 - [] Add pictures page to DailyActivity plans
   - [] Add the has many and form fields/controller stuff
   - [] Add to list of attributes on model
 - [] Create Exercise template
   - [] Refactor the code for PDF templates to be more reusable across different types
+- [] Add a category resource for evening class, resource types are conversation cards and actvities
+- [] Possible issue with bandwidth calc being too big?
+- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
+  - Can propose changes to some others though
 - [] Add reviews to lessons
   - [] Need stars and text
   - [] Text pops up after star rating given
