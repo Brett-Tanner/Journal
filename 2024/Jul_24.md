@@ -480,9 +480,40 @@
 
 ## July 29th
 
-- Add stuff I need to make parties work on the event site
-  - [] Kids shouldn't be able to be registered for multiple parties on the same event
-    - [] JS should uncheck all other slots
+- [x] Bring back staff ability to add kids, but make sure they're linked to a parent
+- Add new activities for summer school
+  - [x] Change dates/pics for Monzen
+  - [x] Ikegami 9/7
+  - [x] Togoshi 9/1
+  - [x] Nagahara 9/1
+
+### LMS
+
+- [x] Next/prev day buttons don't target the frame
+- [x] Language toggle gives you a white screen on lessons, just remove it?
+- [x] Monthly materials should default to 1 week from now
+- [x] Now that SSS is basically the same, really feel like I could just use the same partial for all lesson turboframes with some helpers
+- [x] Figure out how to stop the headings overlapping the icon
+- [x] Refactor the PDF generation
+  - [x] Create factory for body items
+  - [x] Extract footer logic to module
+  - [x] Create factory for header items
+- [x] Add pictures page to DailyActivity plans
+  - [x] Add to list of attributes on model
+  - [x] Add the form field
+  - [x] Add the page generation logic as a module
+  - [x] Refactor PDF footer component to include optional page numbers
+- Create Exercise template
+  - [x] Remove from list of skipped types
+  - [x] Add (temp) background image
+  - [x] Add missing fields
+    - [x] To model
+    - [x] Alias the ones that are egregiously different
+    - [x] Update factory
+    - [x] Update system & model specs to expect PDF
+
+## July 30th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -495,51 +526,59 @@
 
 ### LMS
 
-- [] Next/prev day buttons don't target the frame
-- [] Language toggle gives you a white screen on lessons, just remove it?
-- [] Now that SSS is basically the same, really feel like I could just use the same partial for all lesson turboframes with some helpers
-- [] Add pictures page to DailyActivity plans
-  - [] Add the has many and form fields/controller stuff
-  - [] Add to list of attributes on model
 - [] Create Exercise template
-  - [] Refactor the code for PDF templates to be more reusable across different types
-- [] Add a category resource for evening class, resource types are conversation cards and actvities
-- [] Possible issue with bandwidth calc being too big?
+  - [] Add header section & image
+  - [] Add language goals
+    - [] Extract language goals to component from DailyActivity
+  - [] Add body text
+  - [] Add body images
+    - [] Add to model
+    - [] Add to form
+  - [] Verify system & model specs pass
 - [] Writers can't propose changes to at least lesson 354, form just resets with no errors
   - Can propose changes to some others though
+- [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
+  - A guy on the Syntax podcast mentioned this mattered
+- [] Add a UI for viewing/rolling back to previous versions of students
+  - [] Remove limit on versions of students stored
+- [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
+  - Noticed this on phonics class, with the associated phonics resources
+- [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
+  - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
+  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
+- [] When updating upload progress, decrement failures if sum of all > total
+- Implement notifications
+  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
+  - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
+  - [] Manually send notifications to subsets of people
+  - [] When lessons haven't been updated in 2 years
+  - [] When there are new (relevant) support messages
+
+#### Jayson Stuff
+
+- [] Add event lessons
+  - [] They're gonna need an attached image to display
+  - [] Use the cards for teacher lessons as a template, same basic layout too
+  - Can probably be handled by same controller?
+  - [] Style to match Alex's mockup
+- [] Implement the lesson calendar
+  - Probably its own controller
+  - [] Needs a link on the teacher nav, using the calendar svg
+  - [] Style to match Alex's mockup
+- [] Add announcements
+  - [] Will need a message, validity period, maybe a link
+  - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
+- [] Provide a summary of kid's test results per test, like the input view but minimal, maybe sorted by the level they moved to and just showing name/prev level/score
+- [] Add a category resource for evening class, resource types are conversation cards and actvities
+- Automatically (for kidsUP):
+  - [] Create default teacher and class when new schools create
+  - [] Add uploaded students to their school's default class
 - [] Add reviews to lessons
   - [] Need stars and text
   - [] Text pops up after star rating given
   - [] on the teacher_lesson modal
   - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
     - Maybe show the score for active reviews and all? And have an index with all of them
-- [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
-  - A guy on the Syntax podcast mentioned this mattered
-- [] Add a way to upload lessons from a CSV
-- Automatically:
-  - [] Create default teacher and class when new schools create
-  - [] Add uploaded students to their school's default class
-- [] Add a UI for viewing/rolling back to previous versions of students
-  - [] Remove limit on versions of students stored
-- [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
-  - Noticed this on phonics class, with the associated phonics resources
-- [] Provide a list of kids who could move up for each test
-- [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
-  - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
-  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
-- [] When updating upload progress, decrement failures if sum of all > total
-- [] Refactor the PDF generation
-  - The endless 'draw\_\_\_\_' methods seem like they could be extracted
-  - Probably different versions for plaintext, lists and links
-- [] Add a 'quit_chance' enum to students, next to the comments section
-  - Revisit after SS meeting to decide what the enum values will be
-- [] Add filtering by date to Lesson search
-- [] Add filtering by unattached to lesson search
-- Implement notifications
-  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
-  - [] When lessons haven't been updated in 2 years
-  - [] When there are new (relevant) support messages
-  - [] Manually send notifications to subsets of people
 
 ### Event Site
 
