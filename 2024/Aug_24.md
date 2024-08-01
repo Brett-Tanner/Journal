@@ -2,6 +2,37 @@
 
 ## August 1st
 
+- [x] Get list of parent emails who've made a booking but didn't pick photo service
+  - [x] Enable parents to register for just photo service
+  - [x] Fix tests relating to event options
+- More new activities
+  - [x] Futamatagawa
+  - [x] Monzen
+  - [x] Shin-urayasu
+
+### LMS
+
+- [x] Use host whitelist for video tutorial uploads
+- [x] Remove the image component code from pdf_imageable
+  - [x] rework into ImageValidatable concern
+  - [x] Update the models that use it
+- Add the actual backgrounds
+  - [x] DailyActivity
+  - [x] Exercise
+- [x] Use the new image component in other plans
+  - [x] And in the image page component
+- [x] Add PDFBackground component
+- [x] Switch the Keep Up/Specialist icons
+- [x] Drop speaking from tests/results
+- [x] Bring the locale toggle back for lesson view
+
+## August 2nd
+
+- More new activities
+  - [] MinamiMachida
+  - [] Kamata
+  - [] Omori
+  - [] Shinkawasaki
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -14,11 +45,9 @@
 
 ### LMS
 
-- [] Use the new image component in other plans
-- [] And remove the similar code from pdf_imageable
-  - Maybe remove altogether
+- [] Add a 'Regenerate Guides' button for each lesson type (just me for now)
+- [] Add Exercise back to the list of types which skip generating guides for the moment
 - [] Writers can't propose changes to at least lesson 354, form just resets with no errors
-  - Can propose changes to some others though
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
   - A guy on the Syntax podcast mentioned this mattered
 - [] Add a UI for viewing/rolling back to previous versions of students
