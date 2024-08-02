@@ -29,13 +29,34 @@
 ## August 2nd
 
 - More new activities
-  - [] MinamiMachida
-  - [] Kamata
-  - [] Omori
-  - [] Shinkawasaki
+  - [x] MinamiMachida
+  - [x] Kamata
+  - [x] Omori
+  - [x] Shinkawasaki
+- [x] Fix kids being unable to register because of the orphan option check trying to access `registerable` on a hash
+- [x] Add Daniel's activity attendance count by school table
+  - [x] Haml refactor of activities chart page
+
+### LMS
+
+- [x] Add a 'Regenerate Guides' button for each lesson type (just me for now)
+- [x] Add Exercise back to the list of types which skip generating guides for the moment
+  - [x] Temporarily remove PDF expectations from tests
+- Github issues
+  - [x] #64 Writers can't propose changes to at least lesson 354, form just resets with no errors
+    - was because it was trying to add phonics resources by an attachment that was already in use on the main lesson
+    - solved by making the existing phonics resource attachments nil if a writer
+    - [x] Also ensured phonics resources and resources are copied from proposal
+    - [x] And extracted a comparable lesson partial
+  - [x] #66 test form not in main element
+
+## August 5th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
+  - [] When merging children the food allergy or not needs to be copied
+  - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
   - Set by a radio button
   - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
 - [] Try switching on force.ssl for both sites
@@ -45,9 +66,8 @@
 
 ### LMS
 
-- [] Add a 'Regenerate Guides' button for each lesson type (just me for now)
-- [] Add Exercise back to the list of types which skip generating guides for the moment
-- [] Writers can't propose changes to at least lesson 354, form just resets with no errors
+- Github issues
+  - [] #67 scope tests to organisations/courses somehow
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
   - A guy on the Syntax podcast mentioned this mattered
 - [] Add a UI for viewing/rolling back to previous versions of students
