@@ -52,6 +52,24 @@
 
 ## August 5th
 
+- [x] Diagnose & solve issues caused by mysterious disappearance of Shinjo photo service option
+  - [x] Fix the affected invoices so they're registered for the new one
+  - [x] Prevent options being deleted if registered for (but only with destroy)
+  - [x] Figure out how the heck the option got deleted in the first place
+    - If you call #delete(record) on an AR relation, it deletes it from the DB, not the relation
+- [x] Add the new photo service icon
+
+### LMS
+
+- [x] Remove ability to edit course_lessons/resources through course form, is insanity
+- Github issues
+  - #67 scope tests to organisations/courses somehow
+    - [x] Modify test scope to go thru course for school staff
+      - [x] Update seeds to take it into account
+      - Will want to only see current or past tests
+
+## August 6th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -66,12 +84,8 @@
 
 ### LMS
 
-- [x] Remove ability to edit course_lessons/resources through course form, is insanity
 - Github issues
   - [] #67 scope tests to organisations/courses somehow
-    - [x] Modify test scope to go thru course for school staff
-      - [x] Update seeds to take it into account
-      - Will want to only see current or past tests
     - [] Separate test index into current/past tests for school staff
     - [] Add accepts_nested_attributes to the form/controller/model for Test
     - [] Show the date range the test will be held over
