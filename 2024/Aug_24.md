@@ -66,8 +66,28 @@
 
 ### LMS
 
+- [x] Remove ability to edit course_lessons/resources through course form, is insanity
 - Github issues
   - [] #67 scope tests to organisations/courses somehow
+    - [x] Modify test scope to go thru course for school staff
+      - [x] Update seeds to take it into account
+      - Will want to only see current or past tests
+    - [] Separate test index into current/past tests for school staff
+    - [] Add accepts_nested_attributes to the form/controller/model for Test
+    - [] Show the date range the test will be held over
+- Calendar page
+  - [] Policy & tests
+  - [] Controller & view scaffold
+  - [] Styling
+- Notifications
+  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
+  - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
+  - [] Manually send notifications to subsets of people
+  - [] When lessons haven't been updated in 2 years
+  - [] When there are new (relevant) support messages
+- [] Add organisation ID to kids
+  - [] Form and strong params too
+  - [] And migrate the existing ones
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
   - A guy on the Syntax podcast mentioned this mattered
 - [] Add a UI for viewing/rolling back to previous versions of students
@@ -78,12 +98,6 @@
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] When updating upload progress, decrement failures if sum of all > total
-- Implement notifications
-  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
-  - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
-  - [] Manually send notifications to subsets of people
-  - [] When lessons haven't been updated in 2 years
-  - [] When there are new (relevant) support messages
 
 #### Jayson Stuff
 
