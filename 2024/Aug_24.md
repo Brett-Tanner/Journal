@@ -70,6 +70,22 @@
 
 ## August 6th
 
+### LMS
+
+- Github issues
+  - [x] #67 scope tests to organisations/courses somehow
+    - [x] Add accepts_nested_attributes to the form/controller/model for Test
+- Calendar page
+  - [x] Add a `#week_lessons` method to courseable
+  - [x] Controller & view scaffold
+  - [x] Make the lessons clickable buttons that reveal the lesson modal
+  - Styling
+    - [x] Columns/headers
+
+## August 7th
+
+- [] Migrate all exercises to 'All levels' before deploying new version
+  - [] Check no issues
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -84,15 +100,15 @@
 
 ### LMS
 
-- Github issues
-  - [] #67 scope tests to organisations/courses somehow
-    - [] Separate test index into current/past tests for school staff
-    - [] Add accepts_nested_attributes to the form/controller/model for Test
-    - [] Show the date range the test will be held over
 - Calendar page
-  - [] Policy & tests
-  - [] Controller & view scaffold
-  - [] Styling
+  - Styling
+    - [] Row headers
+    - [] Lesson buttons
+  - [] Add the key popover
+    - Try popover API
+  - [] Create a shared org nav
+    - [] Add the org nav to other places it could be used
+  - [] Add a way for the calendar buttons to go straight to the requested level
 - Notifications
   - From listening to podcasts these can often be different types with STI, if we even need that much complexity
   - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
