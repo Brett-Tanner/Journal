@@ -130,6 +130,9 @@
 
 ## August 9th
 
+- **THE LAST THING YOU PUSHED ON THE 8th CAUSED 2 PROBLEMS**
+  - Monthly materials is completely down, even for admins
+  - Calendar can't look forward or back a week
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
