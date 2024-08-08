@@ -102,8 +102,34 @@
 
 ## August 8th
 
-- [] Migrate all exercises to 'All levels' before deploying new version
-  - [] Check no issues
+- [x] Monthly materials search is broken
+
+### LMS
+
+- [x] Exercise needs to be kindy/ele, kindy can have exercises instead of daily activity sometimes
+- [x] Fix wrong day being passed to calendar buttons
+- [x] Sticky day header
+- [x] Switch keep up/specialist colors in tailwind
+- [x] Add to key list
+- [x] Skinnier empty cols
+- [x] Specialist & specialist advanced overlap
+- [x] Some rows not using custom row numbers when needed
+- [x] On monthly materials page, stop the links showing up for teachers. Just give them the lesson name
+- Notifications
+  - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
+  - Should have text and a link
+  - [x] Figure out how to use StoreModel & get a factory working
+  - Methods on User to
+    - [x] add notifications
+    - [x] mark as read
+    - [x] mark all read
+    - [x] delete
+    - [x] validation to delete when > certain amount of read
+  - Manually send notifications to subsets of people
+    - [x] Request spec to verify the targeted users get the notification
+
+## August 9th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -119,11 +145,17 @@
 ### LMS
 
 - Notifications
-  - From listening to podcasts these can often be different types with STI, if we even need that much complexity
-  - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
-  - [] Manually send notifications to subsets of people
+  - Manually send notifications to subsets of people
+    - [] Policy & tests
+    - [] Controller & views
   - [] When lessons haven't been updated in 2 years
+    - In a scheduled job
+    - Runs monthly
+    - Sends notification if not updated in 20 months
+    - Might need a separate column for when it's updated by a user, otherwise regenerating guides resets it
   - [] When there are new (relevant) support messages
+  - [] To parents when a child's test result becomes available
+- [] Style student/report/test pages
 - [] Add organisation ID to kids
   - [] Form and strong params too
   - [] And migrate the existing ones
@@ -140,20 +172,18 @@
 
 #### Jayson Stuff
 
+- [] Add ability to upload lessons from a CSV (for showcase)
+- [] Add a category resource (lesson_type) for evening class
+  - [] separate into conversation cards and actvities, maybe just by parsing the filename?
+- [] Add announcements
+  - [] Will need a message, validity period, maybe a link
+  - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
 - [] Add event lessons
   - [] They're gonna need an attached image to display
   - [] Use the cards for teacher lessons as a template, same basic layout too
   - Can probably be handled by same controller?
   - [] Style to match Alex's mockup
-- [] Implement the lesson calendar
-  - Probably its own controller
-  - [] Needs a link on the teacher nav, using the calendar svg
-  - [] Style to match Alex's mockup
-- [] Add announcements
-  - [] Will need a message, validity period, maybe a link
-  - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
 - [] Provide a summary of kid's test results per test, like the input view but minimal, maybe sorted by the level they moved to and just showing name/prev level/score
-- [] Add a category resource for evening class, resource types are conversation cards and actvities
 - Automatically (for kidsUP):
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
