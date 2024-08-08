@@ -84,6 +84,24 @@
 
 ## August 7th
 
+### LMS
+
+- Calendar page
+  - Styling
+    - [x] Row headers, type separators
+    - [x] Lesson buttons
+      - [x] Level dots
+  - [x] Add the key popover
+    - Try popover API
+  - [x] Highlight whole columns for odd ones
+  - [x] Create org nav
+    - [x] Add the styled org nav to other places it could be used
+  - [x] Add buttons to move forward a week
+  - [x] Add a way for the calendar buttons to go straight to the requested level
+  - [x] Admins can't access lessons from calendar
+
+## August 8th
+
 - [] Migrate all exercises to 'All levels' before deploying new version
   - [] Check no issues
 - [] Need a separate column for food allergy, boolean
@@ -100,15 +118,6 @@
 
 ### LMS
 
-- Calendar page
-  - Styling
-    - [] Row headers
-    - [] Lesson buttons
-  - [] Add the key popover
-    - Try popover API
-  - [] Create a shared org nav
-    - [] Add the org nav to other places it could be used
-  - [] Add a way for the calendar buttons to go straight to the requested level
 - Notifications
   - From listening to podcasts these can often be different types with STI, if we even need that much complexity
   - I think I want to just store them as JSONB on the User record, delete them once seen if they exceed a certain number
