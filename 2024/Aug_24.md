@@ -131,7 +131,37 @@
 ## August 9th
 
 - **THE LAST THING YOU PUSHED ON THE 8th CAUSED 2 PROBLEMS**
-  - Monthly materials is completely down, even for admins
+  - [x] Monthly materials is completely down, even for admins
+    - Was calling `#any?` on @lessons when it could be nil, changed to just `if @lessons`
+- [x] Add another million activities for Futamatagawa/Todoroki
+
+### LMS
+
+- Notifications
+  - Manually send notifications to subsets of people
+    - [x] Policy & tests
+    - [x] Controller
+      - [x] Create the job
+      - [x] add a notifications queue
+      - [x] Pass the manual creation tests
+      - [x] Pass the user read/destroy tests
+  - [] Views
+    - [x] New
+    - [x] Index
+      - [x] If an admin, show the last 10 completed notification jobs
+      - [x] Add created_at to Notification
+      - [x] Add 'Mark all as read', bulk delete links
+      - [x] Simplify notifiable API to allow single/bulk deletion with same method
+    - [x] Taskbar icon
+      - [x] Fix URL check failing on empty string
+
+## Obon!
+
+9 day holiday.
+
+## August 19th
+
+- **THE LAST THING YOU PUSHED ON THE 8th CAUSED 2 PROBLEMS**
   - Calendar can't look forward or back a week
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
@@ -148,16 +178,19 @@
 ### LMS
 
 - Notifications
-  - Manually send notifications to subsets of people
-    - [] Policy & tests
-    - [] Controller & views
+  - [] Views
+    - [] Popover
+      - [] Add turbo response for update
+      - [] Add turbo response for destroy
+  - [] When there are new (relevant) support messages
+  - [] To parents when a child's test result becomes available
+    - Will need to check if they have a parent (where associated)
   - [] When lessons haven't been updated in 2 years
     - In a scheduled job
     - Runs monthly
     - Sends notification if not updated in 20 months
     - Might need a separate column for when it's updated by a user, otherwise regenerating guides resets it
-  - [] When there are new (relevant) support messages
-  - [] To parents when a child's test result becomes available
+- [] Update built queries for lessons to use the ? syntax, not string interpolation
 - [] Style student/report/test pages
 - [] Add organisation ID to kids
   - [] Form and strong params too
