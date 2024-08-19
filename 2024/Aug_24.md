@@ -161,8 +161,31 @@
 
 ## August 19th
 
+### LMS
+
+- Notifications
+  - [x] Views
+    - [x] Popover
+      - [x] Make the X submit to mark it read
+        - Need all notifications so index is correct
+      - [x] Add turbo response for marking it read
+        - Just re-render the popover
+      - [x] Add link to index at bottom
+  - [x] To parents when a child's test result becomes available
+  - [x] Auto-mark notifications read when link is followed
+    - Probably needs to direct to show action first, which updates the notification and redirects
+  - [x] When there are new (relevant) support messages
+    - [x] Add `#participants` to support request
+      - Returns an AR relation of Users who've commented or who sumbitted the request
+    - [x] Notify admins & sales when new request created
+    - [x] Notify participants when new message added to request
+      - Other than the person who messaged
+
+## August 20th
+
 - **THE LAST THING YOU PUSHED ON THE 8th CAUSED 2 PROBLEMS**
   - Calendar can't look forward or back a week
+  - It's a problem with those weeks specifically
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -177,19 +200,6 @@
 
 ### LMS
 
-- Notifications
-  - [] Views
-    - [] Popover
-      - [] Add turbo response for update
-      - [] Add turbo response for destroy
-  - [] When there are new (relevant) support messages
-  - [] To parents when a child's test result becomes available
-    - Will need to check if they have a parent (where associated)
-  - [] When lessons haven't been updated in 2 years
-    - In a scheduled job
-    - Runs monthly
-    - Sends notification if not updated in 20 months
-    - Might need a separate column for when it's updated by a user, otherwise regenerating guides resets it
 - [] Update built queries for lessons to use the ? syntax, not string interpolation
 - [] Style student/report/test pages
 - [] Add organisation ID to kids
