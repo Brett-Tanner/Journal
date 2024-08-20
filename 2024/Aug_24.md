@@ -186,6 +186,17 @@
 - **THE LAST THING YOU PUSHED ON THE 8th CAUSED 2 PROBLEMS**
   - Calendar can't look forward or back a week
   - It's a problem with those weeks specifically
+  - [x] Was not handling SpecialLesson
+- [x] Fix exercise thumbnail not being generated
+- Coaching Jayson
+  - [x] Fix testing setup
+  - [x] Add evening class category resources
+    - [x] Write tests for evening lesson_category
+  - [] Lesson CSV upload
+    - [x] Write system spec
+    - [x] Write LessonUploadPolicy & spec
+    - [x] Create new action and view
+    - [] Add the JS StudentUploadController
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -200,7 +211,31 @@
 
 ### LMS
 
-- [] Update built queries for lessons to use the ? syntax, not string interpolation
+- [x] Finish using the new lesson_order_hash to order lessons for kindy/ele
+- Update built queries for lessons to use the ? syntax, not string interpolation
+  - [x] Day lessons
+  - [x] Week lessons
+    - [x] Fix the mismatched number of conditions and `?` in week query
+    - [x] Write a spec for week lessons
+    - [x] Change all references to `week_lessons` to `week_course_lessons` to accurately represent what it returns
+  - [x] Available tests
+
+## August 21st
+
+- [] Need a separate column for food allergy, boolean
+  - Talk to leroy about it
+  - [] After Summer School, change it so allergy kids can't see the option for lunch
+  - [] When merging children the food allergy or not needs to be copied
+  - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
+  - Set by a radio button
+  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+- [] SMs need a test school on event site for training
+  - Will need to exclude it from the real scope
+
+### LMS
+
 - [] Style student/report/test pages
 - [] Add organisation ID to kids
   - [] Form and strong params too
