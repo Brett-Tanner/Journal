@@ -197,17 +197,6 @@
     - [x] Write LessonUploadPolicy & spec
     - [x] Create new action and view
     - [] Add the JS StudentUploadController
-- [] Need a separate column for food allergy, boolean
-  - Talk to leroy about it
-  - [] After Summer School, change it so allergy kids can't see the option for lunch
-  - [] When merging children the food allergy or not needs to be copied
-  - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
-  - Set by a radio button
-  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
-- [] SMs need a test school on event site for training
-  - Will need to exclude it from the real scope
 
 ### LMS
 
@@ -222,6 +211,45 @@
 
 ## August 21st
 
+### LMS
+
+- [x] Should I be including StoreModel::NestedAttributes on User for notifications?
+  - No, removed it
+  - Never gonna be adding notifications to a specific user from their form
+- [x] Change lesson_order_hash to lesson_type_order (an array)
+- New customer form
+  - [x] Write some basic factory/validity tests to scaffold how I want it all to work
+    - Chooses the correct model using `StoreModel.one_of` as the factory, using `field_type`
+  - Create FormTemplateFields
+    - [x] FieldAttributes to hold/validate all the potential options
+      - In the form, these will be part of the form for each field type
+      - Can get the type of each attribute I allow like `FieldAttributes.new.type_for_attribute(:required).type` then use that to decide which field type to create
+    - [x] TextField
+    - [x] Textarea
+    - [x] Checkbox
+  - Create FormTemplate
+    - Probably just a fields jsonb column then titles/descriptions/org_id
+    - Use StoreModel for the fields column to ensure it has
+      - attribute name
+      - field type
+      - order
+      - explanation (optional)
+      - field options
+    - [x] Create migration & factory
+    - [x] Test fields can be added
+      - [x] Refactor field models to have input_type attr, which is used in form_helper
+        - But still set by default
+    - [x] And that their errors show up on FormTemplate
+
+## August 22nd
+
+- [] Add button to release/hide all of an event
+- [] [This kid](https://kids-up.app/en/events/173?child=12422)
+  - is registered for some activities but they aren't checked
+  - and the invoice cost is 0
+  - Might be the registrations changed ownership when the SSID was added but invoice didn't
+  - [] Figure out what happened & write a test for it
+  - [] Fix
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -236,6 +264,30 @@
 
 ### LMS
 
+- [] Put the general category materials behind a feature flag for the expo & hide in:
+  - [] Teacher lessons
+  - [] Teacher resources
+- New customer form
+  - [] Create FormTemplate
+    - [] Create policy & tests
+    - [] Create controller & views
+  - [] Create FormSubmission
+    - Associated with:
+      - the parent who submitted it
+      - staff who created it
+      - the form it's a submission for
+    - Main content is jsonb column with the answers keyed by the attribute they were answering
+  - [] Create basic models for the courses etc., just so I can run the calculation
+  - [] Create a model for Contracts
+    - [] If Submission#template_id is 1 or some other dumb condition like that;
+      - Give a button to create a contract from it
+      - which calculates & stores the adjusted contract from the submission
+    - [] Calculates the fees based on form selections
+      - [] For courses, first month is least of unit price \* selected days remaining or the regular monthly cost
+      - [] Needs to add a bunch of other costs, like snack, textbook
+      - [] SMs should be able to manually adjust calculated values
+        - But only per item, not the total
+    - [] Needs to be printable as a PDF for signing, or some way to electronically sign
 - [] Style student/report/test pages
 - [] Add organisation ID to kids
   - [] Form and strong params too
@@ -254,8 +306,6 @@
 #### Jayson Stuff
 
 - [] Add ability to upload lessons from a CSV (for showcase)
-- [] Add a category resource (lesson_type) for evening class
-  - [] separate into conversation cards and actvities, maybe just by parsing the filename?
 - [] Add announcements
   - [] Will need a message, validity period, maybe a link
   - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
