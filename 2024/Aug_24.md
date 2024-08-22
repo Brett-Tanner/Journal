@@ -243,6 +243,33 @@
 
 ## August 22nd
 
+### LMS
+
+- New customer form
+  - [x] Add `data` attribute to `InputAttributes`
+    - Nah, complex & security risk when not even sure it's needed
+  - [x] Create FormTemplate
+    - [x] Create policy & tests
+    - [x] Create controller & views
+      - [x] Form/new/edit
+        - [x] Field fields
+        - [x] input attribute fields
+      - [x] Create/update/destroy
+  - Create FormSubmission
+    - Associated with:
+      - the parent who submitted it
+      - staff who created it
+      - the form it's a submission for
+    - Main content is jsonb column with the answers keyed by the attribute they were answering
+    - When creating a new one, select from the available form templates to base it off
+    - Will then auto-generate a form based on the template
+    - [x] Generate migration & create factory
+    - [x] Create & test FormSubmissionPolicy
+    - Create views & controller
+      - [x] Index, with links to create from each template
+
+## August 23rd
+
 - [] Add button to release/hide all of an event
 - [] [This kid](https://kids-up.app/en/events/173?child=12422)
   - is registered for some activities but they aren't checked
@@ -268,15 +295,22 @@
   - [] Teacher lessons
   - [] Teacher resources
 - New customer form
-  - [] Create FormTemplate
-    - [] Create policy & tests
-    - [] Create controller & views
   - [] Create FormSubmission
     - Associated with:
       - the parent who submitted it
       - staff who created it
       - the form it's a submission for
     - Main content is jsonb column with the answers keyed by the attribute they were answering
+    - When creating a new one, select from the available form templates to base it off
+    - Will then auto-generate a form based on the template
+    - [] Remember to add 'locked' boolean column
+    - [] Create views & controller
+      - [] Form/new/show
+        - Form generated from template fields
+      - [] Create/update/destroy
+  - [] Refactor existing input types into `SingleInput`
+    - Will need a `MultiInput` later for select/radio
+  - [] Will need to process the field `name` to ensure downcased and underscored
   - [] Create basic models for the courses etc., just so I can run the calculation
   - [] Create a model for Contracts
     - [] If Submission#template_id is 1 or some other dumb condition like that;
@@ -288,8 +322,12 @@
       - [] SMs should be able to manually adjust calculated values
         - But only per item, not the total
     - [] Needs to be printable as a PDF for signing, or some way to electronically sign
+- [] ['Shallowify'](https://guides.rubyonrails.org/routing.html?ref=blog.bullettrain.co#shallow-nesting) all the nested routes
 - [] Style student/report/test pages
 - [] Add organisation ID to kids
+  - [] Add automatically when uploading from CSV
+  - [] Use in policies
+  - [] Make student ID unique within org, not school
   - [] Form and strong params too
   - [] And migrate the existing ones
 - [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
