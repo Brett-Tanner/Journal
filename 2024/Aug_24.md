@@ -270,6 +270,39 @@
 
 ## August 23rd
 
+- [x] Bump some dependencies to fix security vulnerabilities
+- [x] Create accounts for 3 staff who need to see all document uploads
+- [x] Add & test out the halloween banners locally
+  - Refactor login & welcome splash pages
+    - [x] to HAML
+    - [x] get the image to be correctly sized
+    - [x] un-snake the ids
+  - Maybe think up a way to add them without needing to update the code
+  - Probably needs to be a model?
+  - Or they could be uploaded as resources through the current file upload dialog
+- [x] Run Leroy through creating the halloween parties
+
+### LMS
+
+- New customer form
+  - Create FormSubmission
+    - Associated with:
+      - the parent who submitted it
+      - staff who created it
+      - the form it's a submission for
+    - Main content is jsonb column with the answers keyed by the attribute they were answering
+    - When creating a new one, select from the available form templates to base it off
+    - Will then auto-generate a form based on the template
+    - [x] Remember to add 'locked' boolean column
+    - [x] Create views & controller
+      - [x] Form/new/show
+        - Form generated from template fields
+      - [x] Create/update
+        - [x] Add code to fill in the existing fields when editing
+    - [x] Clean up the index display now I have something to look at
+
+## August 27th
+
 - [] Add button to release/hide all of an event
 - [] [This kid](https://kids-up.app/en/events/173?child=12422)
   - is registered for some activities but they aren't checked
@@ -296,21 +329,12 @@
   - [] Teacher resources
 - New customer form
   - [] Create FormSubmission
-    - Associated with:
-      - the parent who submitted it
-      - staff who created it
-      - the form it's a submission for
-    - Main content is jsonb column with the answers keyed by the attribute they were answering
-    - When creating a new one, select from the available form templates to base it off
-    - Will then auto-generate a form based on the template
-    - [] Remember to add 'locked' boolean column
-    - [] Create views & controller
-      - [] Form/new/show
-        - Form generated from template fields
-      - [] Create/update/destroy
+    - [] Show/destroy
   - [] Refactor existing input types into `SingleInput`
     - Will need a `MultiInput` later for select/radio
   - [] Will need to process the field `name` to ensure downcased and underscored
+  - [] Create a test form template that matches the new child registration one
+    - [] Seed it
   - [] Create basic models for the courses etc., just so I can run the calculation
   - [] Create a model for Contracts
     - [] If Submission#template_id is 1 or some other dumb condition like that;
