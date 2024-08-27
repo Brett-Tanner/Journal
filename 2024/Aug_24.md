@@ -323,7 +323,9 @@
   - and the invoice cost is 0
   - Might be the registrations changed ownership when the SSID was added but invoice didn't
   - [] Figure out what happened & write a test for it
-  - [] Fix
+    - Something went wrong with the merge
+    - He ended up with registrations from the first summer school and the current orphaned on a deleted invoice together
+  - [x] Fix
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
