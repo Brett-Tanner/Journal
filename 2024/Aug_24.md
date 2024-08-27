@@ -303,6 +303,20 @@
 
 ## August 27th
 
+- [x] Endless attempts to get our new brilliant SSO system to work
+
+### LMS
+
+- New customer form
+  - [x] Create FormSubmission
+    - [x] Show/destroy
+  - [x] Refactor existing input types into `SingleInput`
+    - [x] And update the partials
+    - [x] Add a `MultiInput` for select/radio
+      - [x] Add the template form partials
+
+## August 28th
+
 - [] Add button to release/hide all of an event
 - [] [This kid](https://kids-up.app/en/events/173?child=12422)
   - is registered for some activities but they aren't checked
@@ -328,10 +342,11 @@
   - [] Teacher lessons
   - [] Teacher resources
 - New customer form
-  - [] Create FormSubmission
-    - [] Show/destroy
-  - [] Refactor existing input types into `SingleInput`
-    - Will need a `MultiInput` later for select/radio
+  - Add a `MultiInput` for select/radio
+    - [] Still some issues with deserializing the custom type
+    - [] Add the partial to display it on the submission form
+    - [] Add the partial to display the responses on the Submission show page
+    - [] Extract the reusable/shared code from Single/MultiInput
   - [] Will need to process the field `name` to ensure downcased and underscored
   - [] Create a test form template that matches the new child registration one
     - [] Seed it
