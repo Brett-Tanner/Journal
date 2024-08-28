@@ -317,15 +317,27 @@
 
 ## August 28th
 
-- [] Add button to release/hide all of an event
-- [] [This kid](https://kids-up.app/en/events/173?child=12422)
+- [x] Upload new seasonal site version with halloween banners
+- [x] Make the early bird discount apply to each party attended
+- [x] Hide everything expect the 1 course if event is party (has non-zero early bird)
+- [x] Add early bird adjustments to JS calc (probably be creating an adjustment in the controller)
+  - [x] Add a negative check to the JS calc
+- [This kid](https://kids-up.app/en/events/173?child=12422)
   - is registered for some activities but they aren't checked
   - and the invoice cost is 0
-  - Might be the registrations changed ownership when the SSID was added but invoice didn't
-  - [] Figure out what happened & write a test for it
-    - Something went wrong with the merge
-    - He ended up with registrations from the first summer school and the current orphaned on a deleted invoice together
   - [x] Fix
+- [x] Meeting w/Jack & Leroy to discuss prep for me potentially leaving
+
+### Leaving prep
+
+- [x] Add list of kids who have > 5, 10 etc. for badges
+
+### LMS
+
+- [x] Fix the incorrect dates on teacher calendar (days are right but date number is +1)
+
+## August 29th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -337,6 +349,19 @@
 - [] Look into setting up emails for our new domains
 - [] SMs need a test school on event site for training
   - Will need to exclude it from the real scope
+
+### Leaving prep
+
+- [] Make it possible for Admins to remove/change ssids
+- [] Remove kids from parents/delete them
+  - [] Also change schools
+- [] Apply changes to all events with same name
+  - [] Including to release/hide all of an event
+- [] Add default times for time slots
+- [] Hide images uploaded after n months from select box
+- [] Add ability to create admin accounts to both
+- [] Clean up event#show (and also make it invoice#new, which it should always have been)
+- [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
 
 ### LMS
 
