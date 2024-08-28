@@ -338,6 +338,7 @@
 
 ## August 29th
 
+- [] Remove the morning Kanji from the activity names on reg page (all)
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
