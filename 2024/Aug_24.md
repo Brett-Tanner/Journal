@@ -145,7 +145,7 @@
       - [x] add a notifications queue
       - [x] Pass the manual creation tests
       - [x] Pass the user read/destroy tests
-  - [] Views
+  - Views
     - [x] New
     - [x] Index
       - [x] If an admin, show the last 10 completed notification jobs
@@ -338,7 +338,35 @@
 
 ## August 29th
 
-- [] Remove the morning Kanji from the activity names on reg page (all)
+- [x] Remove the morning Kanji from the activity names on reg page (all)
+- [x] Add the new welcome splash images, with avif/png versions
+- [x] Completely remove the see more thing on the bottom blue bar
+- [x] Remove the don't apply for afternoon text
+- [x] Add Action Text to the event model so we can have the text with link etc.
+- [x] Remove price list table if it's a party
+  - Do it by checking for an early bird discount
+- [x] Don't render the coupon dropdown if it's a party
+- [x] After Leroy tried to make the goal for all events something like 3 trillion, prevent him doing that again
+  - The DB column can only handle up to the max value of a 4-byte int
+- [x] General assistance/troubleshooting of Leroy's attempts to make the event
+
+### Leaving prep
+
+- Make it possible for Admins to
+  - [x] remove/change ssids
+  - [x] remove kids from parents/delete them
+- Allow admins to create other admins
+  - [x] Update policy
+  - [x] And controller/views
+- [x] Delete the activity list portion of the event sheet, and simplify the queries in the controller
+  - [x] Refactor index to HAML
+    - [x] Extract activity list bootstrap accordion to partial
+    - [x] Change Bootstrap accordion to regular details element
+    - [x] Use the filter_header partial
+
+## August 30th
+
+- [] Bump both apps to Rails 7.2.1
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -353,20 +381,20 @@
 
 ### Leaving prep
 
-- [] Make it possible for Admins to remove/change ssids
-- [] Remove kids from parents/delete them
-  - [] Also change schools
-- [] Apply changes to all events with same name
+- [] Refactor event_child to HAML
+  - [] Remove redundant 'view' link when invoice is changed, we already have the summary in a modal right there
+- [] Allow applying changes to all events with same name
   - [] Including to release/hide all of an event
 - [] Add default times for time slots
 - [] Hide images uploaded after n months from select box
 - [] Add ability to create admin accounts to both
 - [] Clean up event#show (and also make it invoice#new, which it should always have been)
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+- [] Finally figure out how to get swap working on EB docker
 
 ### LMS
 
-- [] Put the general category materials behind a feature flag for the expo & hide in:
+- [] Put the general category materials behind a feature flag for the expo & hide for both showcase orgs in:
   - [] Teacher lessons
   - [] Teacher resources
 - New customer form
