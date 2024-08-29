@@ -349,6 +349,12 @@
 - [x] After Leroy tried to make the goal for all events something like 3 trillion, prevent him doing that again
   - The DB column can only handle up to the max value of a 4-byte int
 - [x] General assistance/troubleshooting of Leroy's attempts to make the event
+- [x] The JS for the total event cost has been changing the event name to Summer 2023 this whole time lol
+- [x] Formatting on description
+  - [x] Left align in editor so doesn't happen again
+- [x] Change the opengraph title, just delete the seasonal bit
+- [x] Send leroy sample change/confirm emails from party
+- [x] Make the course summary say event instead
 
 ### Leaving prep
 
