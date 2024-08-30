@@ -2,6 +2,8 @@
 
 ## September 2nd
 
+- [] Add `#party?` to Event, so I can change the current check later without needing to find/replace
+  - [] Change all occurrences of checking for the early bird discount
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
