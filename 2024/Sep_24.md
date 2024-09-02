@@ -2,8 +2,19 @@
 
 ## September 2nd
 
-- [] Add `#party?` to Event, so I can change the current check later without needing to find/replace
-  - [] Change all occurrences of checking for the early bird discount
+- [x] Add `#party?` to Event, so I can change the current check later without needing to find/replace
+  - [x] Change all occurrences of checking for the early bird discount
+
+### Leaving prep
+
+- [x] Hide images uploaded after n months from select box
+  - [x] Add tests for BlogGroupable
+  - [x] Refactor the BlogGroupable concern for readability
+- Registration Page
+  - [x] Refactor the view to HAML
+
+## September 3rd
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -18,10 +29,19 @@
 
 ### Leaving prep
 
-- [] Hide images uploaded after n months from select box
-- [] Add ability to create admin accounts to both
-- [] Clean up event#show (and also make it invoice#new, which it should always have been)
+- Registration Page
+  - [] Replace BS modals with real dialogs, so sick of messing around with their attributes
+  - [] Extract various components into partials
+  - [] Simplify the ids for turbo frames? Shouldn't need the child ID
+    - Same for the list of registrations
+  - [] Change the BS accordion stuff to just be details elements
+  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
+  - [] Refactor the controller to be less of a mess/remove filtering from view
+  - [] Copy the missing translations
+  - [] Write a JS enabled system spec to check it all works
+    - For god knows what reason the controller can't find the event when I try to write this (despite it 100% being there and accessible in the spec code), so I guess I'll skip this for now
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+- [] Add ability for admins to create admin accounts to LMS
 - [] Finally figure out how to get swap working on EB docker
 
 ### LMS
