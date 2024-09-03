@@ -15,6 +15,9 @@
 
 ## September 3rd
 
+- [x] Check out Kindy Special Lessons appearing on the wrong row of the calendar
+  - Seems to be caused bt having multiple Special Lessons on the same day
+  - Was actually because I was missing a specified row for kindy Special Lessons
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -30,13 +33,44 @@
 ### Leaving prep
 
 - Registration Page
-  - [] Replace BS modals with real dialogs, so sick of messing around with their attributes
-  - [] Extract various components into partials
+  - Extract various components into partials, move existing ones to invoices folder
+    - [x] Header
+    - [x] Event Options
+    - [x] More Info
+    - [x] Parent Messages
+    - [x] Price Footer
+  - [x] Make a 'modal confirm' partial and use it when responding to reworked view
+    - To avoid breaking existing functionality
+  - [x] Replace BS modals with real dialogs, so sick of messing around with their attributes
+    - [x] Copy & modify the dialog controller from LMS so I can actually open it when clicked
+    - [x] Fix modal exceeding screen width on mobile
+  - [x] Fix price bar running around the screen
+
+## September 4th
+
+- [] Need a separate column for food allergy, boolean
+  - Talk to leroy about it
+  - [] After Summer School, change it so allergy kids can't see the option for lunch
+  - [] When merging children the food allergy or not needs to be copied
+  - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
+  - Set by a radio button
+  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
+- [] Try switching on force.ssl for both sites
+- [] Look into setting up emails for our new domains
+- [] SMs need a test school on event site for training
+  - Will need to exclude it from the real scope
+
+### Leaving prep
+
+- Registration Page
   - [] Simplify the ids for turbo frames? Shouldn't need the child ID
     - Same for the list of registrations
   - [] Change the BS accordion stuff to just be details elements
   - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
   - [] Refactor the controller to be less of a mess/remove filtering from view
+    - [] Come up with better variable names, like all_registered_slots, registered_slots and unregistered_slots are so confusing
+    - [] Clean up logic in the confirm controller method too, especially around the ignored stuff
+  - [] Deal with the mess of an 'add slot' partial
   - [] Copy the missing translations
   - [] Write a JS enabled system spec to check it all works
     - For god knows what reason the controller can't find the event when I try to write this (despite it 100% being there and accessible in the spec code), so I guess I'll skip this for now
