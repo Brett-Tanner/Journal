@@ -18,17 +18,6 @@
 - [x] Check out Kindy Special Lessons appearing on the wrong row of the calendar
   - Seems to be caused bt having multiple Special Lessons on the same day
   - Was actually because I was missing a specified row for kindy Special Lessons
-- [] Need a separate column for food allergy, boolean
-  - Talk to leroy about it
-  - [] After Summer School, change it so allergy kids can't see the option for lunch
-  - [] When merging children the food allergy or not needs to be copied
-  - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
-  - Set by a radio button
-  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
-- [] Try switching on force.ssl for both sites
-- [] Look into setting up emails for our new domains
-- [] SMs need a test school on event site for training
-  - Will need to exclude it from the real scope
 
 ### Leaving prep
 
