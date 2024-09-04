@@ -37,6 +37,30 @@
 
 ## September 4th
 
+- [x] Styling discussion with Alex
+
+### Leaving prep
+
+- Registration Page
+  - [x] Copy missing translations that affect the events/show page
+  - [?] Simplify the ids for turbo frames? Shouldn't need the child ID
+    - Same for the list of registrations
+    - Works fine on new version but not current one, so leave it for later
+  - [x] Change the BS accordion stuff to just be details elements
+  - Deal with the mess of an 'add slot' partial
+    - Convert to HAML
+      - [x] Separate out morning and afternoon
+      - [x] Morning part
+      - [x] Afternoon part
+  - Identify & fix in-view DB access
+    - [x] Price Footer
+
+### LMS
+
+- [x] Identify and fix cause of category resources repeating for teachers
+
+## September 5th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -52,19 +76,19 @@
 ### Leaving prep
 
 - Registration Page
-  - [] Simplify the ids for turbo frames? Shouldn't need the child ID
-    - Same for the list of registrations
-  - [] Change the BS accordion stuff to just be details elements
-  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
-  - [] Refactor the controller to be less of a mess/remove filtering from view
+  - Identify & fix in-view DB access
+    - [] Afternoon Reg Form
+  - Refactor the controller to be less of a mess/remove filtering from view
     - [] Come up with better variable names, like all_registered_slots, registered_slots and unregistered_slots are so confusing
     - [] Clean up logic in the confirm controller method too, especially around the ignored stuff
-  - [] Deal with the mess of an 'add slot' partial
+  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
   - [] Copy the missing translations
   - [] Write a JS enabled system spec to check it all works
     - For god knows what reason the controller can't find the event when I try to write this (despite it 100% being there and accessible in the spec code), so I guess I'll skip this for now
+  - [] There are some methods on models that should be helpers, like `#date` on TimeSlot
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
 - [] Add ability for admins to create admin accounts to LMS
+- [] Write custom popover API js since Apple can't be bothered adding new HTML features
 - [] Finally figure out how to get swap working on EB docker
 
 ### LMS
