@@ -61,6 +61,42 @@
 
 ## September 5th
 
+- [x] Change all the afternoons marked outdoor to seasonal
+
+### Leaving prep
+
+- Registration Page
+  - Identify & fix in-view DB access
+    - [x] Afternoon Reg Card
+    - [x] Event Cost
+    - [x] Realise the registered slots where being fetched in the view without `includes`, leading to N+1 queries
+  - Refactor the controller to be less of a mess/remove filtering from view
+    - [x] Extract NewInvoiceable concern to encapsulate data fetching for the new action
+    - Eliminate unnecessary instance variables, and add new ones if needed
+      - [x] Choose between @member and @non_member prices in controller & assign to @price_list
+      - [x] Add a 'for_registration_page' scope to TimeSlot to DRY the includes etc for that
+    - [x] Create 'new-' prefixed controllers and use them in new views
+      - [x] Then roll them back, better to have test first. Also should start by completely reworking it, not altering first
+
+### LMS
+
+- [x] Put the general category materials behind a feature flag for the expo & hide for both showcase orgs in:
+  - [x] Teacher lessons
+  - [x] Teacher resources
+- [x] Hide empty lesson types on calendar
+- Add translations
+  - [x] Nav
+    - [x] Fix upload selector styling with JA text
+  - [x] Teacher homepage
+  - [x] Teacher lesson index
+  - [x] Extract level translations to a levels top level file
+  - [x] Teacher lesson show
+    - [x] Add subtype translations to lesson files
+  - [x] Notifications
+
+## September 6th
+
+- [] Let staff make registrations for kids at online school events
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -76,15 +112,17 @@
 ### Leaving prep
 
 - Registration Page
-  - Identify & fix in-view DB access
-    - [] Afternoon Reg Form
-  - Refactor the controller to be less of a mess/remove filtering from view
-    - [] Come up with better variable names, like all_registered_slots, registered_slots and unregistered_slots are so confusing
+  - Eliminate unnecessary instance variables, and add new ones if needed
     - [] Clean up logic in the confirm controller method too, especially around the ignored stuff
-  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
-  - [] Copy the missing translations
+    - []
   - [] Write a JS enabled system spec to check it all works
-    - For god knows what reason the controller can't find the event when I try to write this (despite it 100% being there and accessible in the spec code), so I guess I'll skip this for now
+  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
+    - [] Use the fact there's only one price list instance variable now
+    - [] Rename `others_cost` to `siblings_event_cost`
+    - [] Alter the JS to preserve commas in the calculated total price
+  - [] Refactor radio partial to Haml
+    - [] See if the branches can be combined
+  - [] Copy the missing translations
   - [] There are some methods on models that should be helpers, like `#date` on TimeSlot
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
 - [] Add ability for admins to create admin accounts to LMS
@@ -93,9 +131,8 @@
 
 ### LMS
 
-- [] Put the general category materials behind a feature flag for the expo & hide for both showcase orgs in:
-  - [] Teacher lessons
-  - [] Teacher resources
+- Add translations
+  - [] Support Requests
 - New customer form
   - Add a `MultiInput` for select/radio
     - [] Still some issues with deserializing the custom type
