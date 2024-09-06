@@ -96,7 +96,33 @@
 
 ## September 6th
 
-- [] Let staff make registrations for kids at online school events
+- [x] Let staff make registrations for kids at online school events
+- [x] Make the JS sort controller able to sort multiple tables on one page
+  - Right now it always sorts the first one
+
+### Leaving prep
+
+- Registration Page
+  - [x] Clean up confirm action logic
+    - [x] Lead to me completely removing the ignore_slots/opts args from calc_cost & doing it automatically in model
+  - [x] Write a JS enabled system spec to check it all works
+    - [x] And once for the new version, hopefully few changes
+  - [x] Copy the missing translations
+  - Simplify JS
+    - [x] Ensure there are commas in the JS costs and initial cost
+    - [x] Use the fact there's only one price list instance variable now
+      - [x] Don't need member anymore
+    - [x] Rename `others_cost` to `siblings_event_cost`
+    - [x] Alter the JS to preserve commas in the calculated total price
+  - [x] Refactor radio partial to Haml
+    - [x] Combine the conditional branches, setting the different values at the start of the partial
+    - [x] Move all the time option logic into a time option partial
+  - Check TimeSlot, Option, Event & Invoice models for methods that should be helpers
+    - [x] TimeSlot
+    - [x] Setsumeikai
+
+## September 9th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -111,19 +137,8 @@
 
 ### Leaving prep
 
-- Registration Page
-  - Eliminate unnecessary instance variables, and add new ones if needed
-    - [] Clean up logic in the confirm controller method too, especially around the ignored stuff
-    - []
-  - [] Write a JS enabled system spec to check it all works
-  - [] Completely refactor the form/JS setup to have all the inputs just point directly at the form
-    - [] Use the fact there's only one price list instance variable now
-    - [] Rename `others_cost` to `siblings_event_cost`
-    - [] Alter the JS to preserve commas in the calculated total price
-  - [] Refactor radio partial to Haml
-    - [] See if the branches can be combined
-  - [] Copy the missing translations
-  - [] There are some methods on models that should be helpers, like `#date` on TimeSlot
+- [] Look into adding photo service button to floating price bar
+  - Leroy said ideally only if not registered
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
 - [] Add ability for admins to create admin accounts to LMS
 - [] Write custom popover API js since Apple can't be bothered adding new HTML features
