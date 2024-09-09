@@ -123,6 +123,23 @@
 
 ## September 9th
 
+- [x] Fix incorrect name_date arg erroring attendance sheets for activities
+- [x] Chase down error when editing some student's party bookings
+  - Was day helper not existing, needed `en_day`
+  - [x] Add `#has?` to regular schedule as replacement
+  - [x] And tests for `#has?`
+- [x] Fix the lesson topic being parsed incorrectly on the form
+  - [x] Add tests
+
+### Leaving prep
+
+- Activity attendance list
+  - Haml refactor
+    - [x] Base partial
+    - [x] Row partial
+
+## September 10th
+
 - [] Need a separate column for food allergy, boolean
   - Talk to leroy about it
   - [] After Summer School, change it so allergy kids can't see the option for lunch
@@ -137,6 +154,8 @@
 
 ### Leaving prep
 
+- Activity attendance list
+  - [] Chase down in-view queries/clean up controller
 - [] Look into adding photo service button to floating price bar
   - Leroy said ideally only if not registered
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
