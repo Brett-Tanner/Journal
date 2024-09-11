@@ -160,6 +160,21 @@
 
 ## September 11th
 
+### Leaving prep
+
+- [x] Look into adding photo service button to floating price bar
+  - [x] Get a draft going on the Invoice#new page
+  - Need the visuals reworked though
+- [x] Fix duplicate departure options
+  - Was cos I overwrote `Option#departure?` to include both types
+- [x] Test adding a new school
+  - [x] Add the ability to delete schools so I can remove it after
+  - [x] Add notes about array inputs being comma separated, if they still are
+  - [x] Write docs for it
+- [x] Default setsu calendar to adding unknown schools to the end
+
+## September 12th
+
 - [] Fix whatever error the guy who message afterhours is seeing, once I get a URL
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
@@ -172,12 +187,12 @@
 
 ### Leaving prep
 
-- [] Look into adding photo service button to floating price bar
-  - Leroy said ideally only if not registered
-- [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+- [] Add ability to delete areas
 - [] Add ability for admins to create admin accounts to LMS
 - [] Write custom popover API js since Apple can't be bothered adding new HTML features
 - [] Finally figure out how to get swap working on EB docker
+- [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+- [] Will need to change the child switcher links to point at new invoice path
 - Get Jayson credentials
   - [] AWS
   - [] New company docker
@@ -187,7 +202,6 @@
   - [] Cloudflare wiki
   - [] LMS & event site Dockerhub
     - And change the targets in code
-- [] Maybe add a UI to look at/search versions
 
 ### LMS
 
