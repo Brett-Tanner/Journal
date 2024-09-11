@@ -161,17 +161,14 @@
 ## September 11th
 
 - [] Fix whatever error the guy who message afterhours is seeing, once I get a URL
-- [] Need a separate column for food allergy, boolean
+- [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
+  - Set by a radio button
+  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
   - [] After Summer School, change it so allergy kids can't see the option for lunch
   - [] When merging children the food allergy or not needs to be copied
   - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
-  - Set by a radio button
-  - Parents get a splash on their page & kid's page telling them to update, redirected if they try to register
-- [] Try switching on force.ssl for both sites
 - [] Look into setting up emails for our new domains
-- [] SMs need a test school on event site for training
-  - Will need to exclude it from the real scope
 
 ### Leaving prep
 
@@ -204,12 +201,8 @@
   - [] Make student ID unique within org, not school
   - [] Form and strong params too
   - [] And migrate the existing ones
-- [] Fonts might look weird cos I'm just making them bold, not using the actual bold version
-  - A guy on the Syntax podcast mentioned this mattered
 - [] Add a UI for viewing/rolling back to previous versions of students
   - [] Remove limit on versions of students stored
-- [] Might need to reverse the lesson form/fields relationship at some point, partial locals are an issue
-  - Noticed this on phonics class, with the associated phonics resources
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
@@ -226,7 +219,10 @@
   - [] Use the cards for teacher lessons as a template, same basic layout too
   - Can probably be handled by same controller?
   - [] Style to match Alex's mockup
-- [] Provide a summary of kid's test results per test, like the input view but minimal, maybe sorted by the level they moved to and just showing name/prev level/score
+- [] Provide a summary of kid's test results per test
+  - For curriculum team/admins to look at
+  - like the input view but minimal
+  - maybe sorted by the level they moved to and just showing name/prev level/score
 - Automatically (for kidsUP):
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
@@ -243,8 +239,9 @@
   - Like the table Admins get at the top when they log in
 - Extract PDF generation into a concern
   - [] Generate it in a SQ job when the invoice is modified
+    - [] Though this might cause issues with ordering, so will need a new queue to ensure pdf jobs performed first
     - [] And make it available to download from the invoice partial
-  - [] Refactor to use the cost info object
+  - [] Refactor to use the cost info object returned by Invoice#calc_cost
 
 #### Future Plans
 
