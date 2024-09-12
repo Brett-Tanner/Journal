@@ -175,6 +175,35 @@
 
 ## September 12th
 
+- [x] Ignore my beautiful summary page to redirect to the ugly complete page on the main site when setsu inquiry made
+- [x] Add some text to the event site confirmation emails
+
+### Expo prep
+
+- Add an API on the LMS to receive form submissions & email Nakagawa san
+  - [x] Add the controller & non-DB model
+  - [x] Create the mailer
+    - [x] Create a job to send the mail
+- [x] Also need to set up an inquiries@vision-up.biz email address, which forwards to Nakagawa san
+- [x] Add age ranges to level cards for teacher page k3-6, ele6-12
+- [x] Make sure the cards don't fill the whole screen when there're less than 4
+- [x] Check how Luis keeps getting the fun colorscheme on org 3
+- [x] make monthly materials default to current week, not blank
+- [x] Add priority label to support requests form
+- [x] Also send emails when a support request is made
+
+### Leaving prep
+
+- [x] Add SchoolsController#index to allow reordering school display order on one page
+  - [x] Add `position` col to schools
+  - [x] Use the position attr in the setsu calendar to sort
+  - [x] Figure out the way to deploy with minimal disruption
+- [x] Add ability to delete areas
+  - [x] Change policy to allow admins to delete areas
+  - [x] Refactor area related views to Haml
+
+## September 13th
+
 - [] Fix whatever error the guy who message afterhours is seeing, once I get a URL
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
@@ -185,18 +214,22 @@
   - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
 - [] Look into setting up emails for our new domains
 
+### Expo prep
+
+- Add an API on the LMS to receive form submissions & email Nakagawa san
+  - [] Allow it to receive requests without auth/CORS issues
+- [] Write custom popover API js since Apple can't be bothered adding new HTML features
+
 ### Leaving prep
 
-- [] Add ability to delete areas
 - [] Add ability for admins to create admin accounts to LMS
-- [] Write custom popover API js since Apple can't be bothered adding new HTML features
-- [] Finally figure out how to get swap working on EB docker
 - [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+- [] Finally figure out how to get swap working on EB docker
 - [] Will need to change the child switcher links to point at new invoice path
 - Get Jayson credentials
   - [] AWS
   - [] New company docker
-  - [] Comapny github
+  - [] Company github
   - [] Company cloudflare
 - Move stuff I've been hosting to company accounts
   - [] Cloudflare wiki
