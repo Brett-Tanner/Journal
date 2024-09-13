@@ -204,6 +204,39 @@
 
 ## September 13th
 
+### Expo prep
+
+- [x] Add a polyfill for Popover
+
+### Leaving prep
+
+- [x] Add ability for admins to create admin accounts to LMS
+  - [x] And to edit themselves
+  - [x] And destroy themselves
+  - [x] Update the policy & specs
+- Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
+  - [x] Refactor the templates to use `picture` rather than `background-image` CSS property
+  - [x] Allow uploading splash images from frontend
+  - [x] Haml refactor for upload page
+  - [x] Set the splash image in controller from latest uploaded splash
+    - [x] Add to BlobGroupable & rename to BlobFindable
+- Move stuff I've been hosting to company accounts
+  - [x] Cloudflare wiki
+  - [x] LMS & event site Dockerhub
+    - [x] And change the targets in code
+- [x] Fix vision-up.app emails going to spam
+  - Was missing an MX record for SES in Cloudflare
+
+### LMS
+
+- Add translations
+  - [x] Support Requests
+  - [x] Students
+  - [x] Tests
+  - [x] Lesson Calendar
+
+## September 17th
+
 - [] Fix whatever error the guy who message afterhours is seeing, once I get a URL
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
@@ -218,30 +251,24 @@
 
 - Add an API on the LMS to receive form submissions & email Nakagawa san
   - [] Allow it to receive requests without auth/CORS issues
-- [] Write custom popover API js since Apple can't be bothered adding new HTML features
 
 ### Leaving prep
 
-- [] Add ability for admins to create admin accounts to LMS
-- [] Figure out how to get the splash/login working with just an image/picture tag rather than bg-image
-- [] Finally figure out how to get swap working on EB docker
-- [] Will need to change the child switcher links to point at new invoice path
+- Was missing an MX record for SES in Cloudflare
 - Get Jayson credentials
   - [] AWS
   - [] New company docker
   - [] Company github
   - [] Company cloudflare
-- Move stuff I've been hosting to company accounts
-  - [] Cloudflare wiki
-  - [] LMS & event site Dockerhub
-    - And change the targets in code
+- [] Style the photo service button on footer once designed by Alex
+  - [] Will need to change the child switcher links to point at new invoice path
 
 ### LMS
 
-- Add translations
-  - [] Support Requests
-- [] ['Shallowify'](https://guides.rubyonrails.org/routing.html?ref=blog.bullettrain.co#shallow-nesting) all the nested routes
-- [] Style student/report/test pages
+- Styling
+  - [] Test results
+  - [] Tests
+  - [] Students
 - [] Add organisation ID to kids
   - [] Add automatically when uploading from CSV
   - [] Use in policies
