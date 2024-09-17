@@ -237,7 +237,21 @@
 
 ## September 17th
 
-- [] Fix whatever error the guy who message afterhours is seeing, once I get a URL
+### Leaving prep
+
+- [x] Planning what to do with Jayson
+
+### LMS
+
+- Styling
+  - Test results
+    - [x] Header
+    - [x] Body
+  - Students
+    - [x] Search form
+
+## September 18th
+
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
   - Set by a radio button
@@ -254,7 +268,11 @@
 
 ### Leaving prep
 
-- Was missing an MX record for SES in Cloudflare
+- [] Give event site a 'toggle first seasonal' button
+  - Gets the name of the latest seasonal with `#seasonal?`, then a list of their ids
+  - Get all the children who attended
+  - If they're marked first seasonal toggle it to false
+  - [] Add to the wiki under 'creating events' cos it needs to be done before each seasonal
 - Get Jayson credentials
   - [] AWS
   - [] New company docker
@@ -266,15 +284,10 @@
 ### LMS
 
 - Styling
-  - [] Test results
+  - Students
+    - [] Count summary
+    - [] Student profile
   - [] Tests
-  - [] Students
-- [] Add organisation ID to kids
-  - [] Add automatically when uploading from CSV
-  - [] Use in policies
-  - [] Make student ID unique within org, not school
-  - [] Form and strong params too
-  - [] And migrate the existing ones
 - [] Add a UI for viewing/rolling back to previous versions of students
   - [] Remove limit on versions of students stored
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
@@ -288,6 +301,13 @@
 - [] Add announcements
   - [] Will need a message, validity period, maybe a link
   - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
+- [] Add organisation ID to kids
+  - [] Add automatically when uploading from CSV
+  - [] Use in policies
+  - [] Make student ID unique within org, not school
+  - [] Form and strong params too
+  - [] And migrate the existing ones
+  - [] In future will need a way for other orgs to bulk assign students to a class
 - [] Add event lessons
   - [] They're gonna need an attached image to display
   - [] Use the cards for teacher lessons as a template, same basic layout too
