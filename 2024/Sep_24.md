@@ -252,6 +252,24 @@
 
 ## September 18th
 
+### Leaving prep
+
+- Training Jayson
+  - [x] Overview/walkthrough of LMS
+  - [x] Discussion on importing lessons from CSV, likely to not be needed at least in current form
+  - [x] Prep/instructions for adding announcements
+- [x] Make copy of journal so Leroy can show people the task list
+
+### LMS
+
+- Styling
+  - Students
+    - [x] Count summary
+    - [x] Student profile
+    - [x] Update test summary contents
+
+## September 19th
+
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
   - Set by a radio button
@@ -284,9 +302,9 @@
 ### LMS
 
 - Styling
-  - Students
-    - [] Count summary
-    - [] Student profile
+  - Splash pages
+    - [] Splash
+    - [] Login
   - [] Tests
 - [] Add a UI for viewing/rolling back to previous versions of students
   - [] Remove limit on versions of students stored
@@ -297,7 +315,6 @@
 
 #### Jayson Stuff
 
-- [] Add ability to upload lessons from a CSV (for showcase)
 - [] Add announcements
   - [] Will need a message, validity period, maybe a link
   - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
@@ -307,6 +324,8 @@
   - [] Make student ID unique within org, not school
   - [] Form and strong params too
   - [] And migrate the existing ones
+  - [] Create default teacher and class when new schools create
+  - [] Add uploaded students to their school's default class
   - [] In future will need a way for other orgs to bulk assign students to a class
 - [] Add event lessons
   - [] They're gonna need an attached image to display
@@ -317,9 +336,6 @@
   - For curriculum team/admins to look at
   - like the input view but minimal
   - maybe sorted by the level they moved to and just showing name/prev level/score
-- Automatically (for kidsUP):
-  - [] Create default teacher and class when new schools create
-  - [] Add uploaded students to their school's default class
 - [] Add reviews to lessons
   - [] Need stars and text
   - [] Text pops up after star rating given
