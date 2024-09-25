@@ -268,7 +268,53 @@
     - [x] Student profile
     - [x] Update test summary contents
 
-## September 19th
+## September 25th
+
+- [x] Merge Mike's vision-up promo site code back to main
+  - [x] Resolve conflicts
+  - [x] Run a linter on it
+  - [x] Add a file as an example of how to build the form
+
+### Jayson Stuff
+
+- Add announcements
+  - [x] Wrote system spec
+  - [x] Created model, migration & factory
+  - [x] Wrote policy & policy spec
+- [x] Set Jayson up to pull from KUJP-Code repo
+
+## September 27th
+
+### Jayson Stuff
+
+- Add announcements
+  - [] Add controllers/views
+- [] Add organisation ID to kids
+  - [] Add automatically when uploading from CSV
+  - [] Use in policies
+  - [] Make student ID unique within org, not school
+  - [] Form and strong params too
+  - [] And migrate the existing ones
+  - [] Create default teacher and class when new schools create
+  - [] Add uploaded students to their school's default class
+  - [] In future will need a way for other orgs to bulk assign students to a class
+- [] Add event lessons
+  - [] They're gonna need an attached image to display
+  - [] Use the cards for teacher lessons as a template, same basic layout too
+  - Can probably be handled by same controller?
+  - [] Style to match Alex's mockup
+- [] Provide a summary of kid's test results per test
+  - For curriculum team/admins to look at
+  - like the input view but minimal
+  - maybe sorted by the level they moved to and just showing name/prev level/score
+- [] Add reviews to lessons
+  - [] Need stars and text
+  - [] Text pops up after star rating given
+  - [] on the teacher_lesson modal
+  - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
+    - Maybe show the score for active reviews and all? And have an index with all of them
+
+### General
 
 - [] Need a separate boolean column for whether the kid has a food allergy
   - Talk to leroy about it
@@ -312,36 +358,6 @@
   - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
   - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] When updating upload progress, decrement failures if sum of all > total
-
-#### Jayson Stuff
-
-- [] Add announcements
-  - [] Will need a message, validity period, maybe a link
-  - [] Shown conditionally based on User attributes, preferably only attributes w/out joins
-- [] Add organisation ID to kids
-  - [] Add automatically when uploading from CSV
-  - [] Use in policies
-  - [] Make student ID unique within org, not school
-  - [] Form and strong params too
-  - [] And migrate the existing ones
-  - [] Create default teacher and class when new schools create
-  - [] Add uploaded students to their school's default class
-  - [] In future will need a way for other orgs to bulk assign students to a class
-- [] Add event lessons
-  - [] They're gonna need an attached image to display
-  - [] Use the cards for teacher lessons as a template, same basic layout too
-  - Can probably be handled by same controller?
-  - [] Style to match Alex's mockup
-- [] Provide a summary of kid's test results per test
-  - For curriculum team/admins to look at
-  - like the input view but minimal
-  - maybe sorted by the level they moved to and just showing name/prev level/score
-- [] Add reviews to lessons
-  - [] Need stars and text
-  - [] Text pops up after star rating given
-  - [] on the teacher_lesson modal
-  - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
-    - Maybe show the score for active reviews and all? And have an index with all of them
 
 ### Event Site
 
