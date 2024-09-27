@@ -285,10 +285,29 @@
 
 ## September 27th
 
+- [x] Summer photo kids, kanji kana eng school membership and SSID
+- [x] Various minor fixes
+- [x] Exempt inquiry controller CSRF, other issues we can find in log
+  - May need to whitelist mike.vision-up.biz and non subdomain version
+
 ### Jayson Stuff
 
 - Add announcements
-  - [] Add controllers/views
+  - [x] Create new/edit/form partial
+  - [x] Fill out controller
+  - [x] Add index
+  - [x] Add shared partial to display them
+  - [x] Add update & delete actions
+
+## September 30th
+
+- Various minor fixes
+  - [] Calendar lesson types/heading
+  - [] Classes
+  - [] Tests
+
+### Jayson Stuff
+
 - [] Add organisation ID to kids
   - [] Add automatically when uploading from CSV
   - [] Use in policies
