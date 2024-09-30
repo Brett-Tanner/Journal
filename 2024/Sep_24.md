@@ -301,6 +301,14 @@
 
 ## September 30th
 
+- Translations
+  - [x] Calendar lesson types/heading
+  - [x] Classes
+  - [x] Tests
+- [x] Style login page
+  - [x] Add splash image
+- [x] Style splash page
+
 ### Jayson Stuff
 
 - Bumping versions/code scanning

@@ -1,11 +1,6 @@
 # October 2024
 
-## October 1st
-
-- Various minor fixes
-  - [] Calendar lesson types/heading
-  - [] Classes
-  - [] Tests
+## October 2nd
 
 ### Jayson Stuff
 
@@ -39,6 +34,7 @@
   - [] on the teacher_lesson modal
   - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
     - Maybe show the score for active reviews and all? And have an index with all of them
+- [] Add a way to upload splash images for LMS through frontend similar to seasonal site and have it automatically displayed, except you'll need a way to mark them active/inactive/have multiple possible images on rotation
 
 ### General
 
