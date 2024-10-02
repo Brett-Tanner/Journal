@@ -2,14 +2,30 @@
 
 ## October 2nd
 
+- [x] Add a redirect to new confirmation page on succesffuly inquiry submission from .biz
+- Bumping versions/code scanning
+  - [x] Event site webrick & puma
+  - [x] Event site solidqueue
+  - Mission control for both
+    - [x] Event site
+    - [x] LMS
+- [x] Add button to update first seasonal after each event
+- [x] Add whether they have photo service to the event attendance sheet
+- [x] Fix missing english translations for lesson types on LMS calendar
+- [x] Editing setsumeikai inquiries seems to cause an error (3337, but all seem to do it)
+- [x] Add translation for Ueno, Kanamecho
+- [x] Try helping Mike troubleshoot the main site going down
+  - Was the storage volume filling completely cos of too many assets
+
+## October 3rd
+
 ### Jayson Stuff
 
 - [] Run through changing Options w/Leroy
-- Bumping versions/code scanning
-  - [] Event site webrick & puma
-  - [] Event site solidqueue
-- [] Add button to update first seasonal after each event
-- [] Switch to new booking page (Alex photo button style)
+- [] Button to download list of photo kids + siblings
+  - Copy the query from the event sheet, found a way to do it all in one query there
+  - [] For parties, it needs to include the name of the party the attended as well
+- [] Switch seasonal site to new booking page (Alex photo button style)
 - [] Add organisation ID to kids
   - [] Add automatically when uploading from CSV
   - [] Use in policies
@@ -45,7 +61,6 @@
   - [] After Summer School, change it so allergy kids can't see the option for lunch
   - [] When merging children the food allergy or not needs to be copied
   - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
-- [] Look into setting up emails for our new domains
 
 ### Expo prep
 
