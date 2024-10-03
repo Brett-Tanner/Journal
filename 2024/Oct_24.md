@@ -21,17 +21,29 @@
 
 ### Jayson Stuff
 
-- [] Run through changing Options w/Leroy
+- [x] Run through changing Options w/Leroy
+- [x] Create TimeSlot::SNACK_COST to avoid random 165 values all over
+  - [x] Fix ordering bug in new invoiceable
+- [x] Add inline_svg to LMS
+- [x] Seems to be issue with tutorial category modal, at least with seed data
+- [x] in '\_resources_list' partial, we're using @lesson instance var rather than passing as local
+- [x] Fix Jayson's tests failing cos he doesn't have poppler to generate PDF previews
+- [x] Make jobs visible to plebs on event site
+- [x] Add Alex's new Photo Service APNG
+- [x] Switch seasonal site to new booking page
+
+# October 9th
+
 - [] Button to download list of photo kids + siblings
   - Copy the query from the event sheet, found a way to do it all in one query there
-  - [] For parties, it needs to include the name of the party the attended as well
-- [] Switch seasonal site to new booking page (Alex photo button style)
+  - Needs to be a CSV of name, katakana_name, en_name, school name, category and SSID
+  - [] For parties, it needs to include the name of the party they attended as well
 - [] Add organisation ID to kids
-  - [] Add automatically when uploading from CSV
+  - [] And migrate the existing ones
+  - [] Form and strong params too
   - [] Use in policies
   - [] Make student ID unique within org, not school
-  - [] Form and strong params too
-  - [] And migrate the existing ones
+  - [] Add automatically when uploading from CSV
   - [] Create default teacher and class when new schools create
   - [] Add uploaded students to their school's default class
   - [] In future will need a way for other orgs to bulk assign students to a class
@@ -50,7 +62,9 @@
   - [] on the teacher_lesson modal
   - [] Button on the lesson page to mark all reviews acted on, they won't count to the current score
     - Maybe show the score for active reviews and all? And have an index with all of them
-- [] Add a way to upload splash images for LMS through frontend similar to seasonal site and have it automatically displayed, except you'll need a way to mark them active/inactive/have multiple possible images on rotation
+- [] Add a way to upload splash images for LMS through frontend similar to seasonal site and have it automatically displayed,
+  - except you'll need a way to mark them active/inactive/have multiple possible images on rotation
+  - so probably make it more of a resource wrapping ActiveStorage rather than just automatically grabbing the latest image from a folder
 
 ### General
 
