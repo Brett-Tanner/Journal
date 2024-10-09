@@ -34,19 +34,23 @@
 
 # October 9th
 
-- [] Button to download list of photo kids + siblings
-  - Copy the query from the event sheet, found a way to do it all in one query there
+- [x] Button to download list of photo kids + siblings
   - Needs to be a CSV of name, katakana_name, en_name, school name, category and SSID
-  - [] For parties, it needs to include the name of the party they attended as well
-- [] Add organisation ID to kids
-  - [] And migrate the existing ones
-  - [] Form and strong params too
-  - [] Use in policies
-  - [] Make student ID unique within org, not school
-  - [] Add automatically when uploading from CSV
+  - [x] For parties, it needs to include the name of the party they attended as well
+- [x] Look into email delivery issues
+- Add organisation ID to kids
+  - [x] Create migration
+    - [x] And migrate the existing ones
+  - [x] Form and strong params too
+  - [x] Use in policies
+  - [x] Make student ID unique within org, not school
+
+# October 10th
+
+- Add organisation ID to kids
+  - [] Add to values uploaded from CSV
+  - [] Add uploaded students to their school's only class if KU student
   - [] Create default teacher and class when new schools create
-  - [] Add uploaded students to their school's default class
-  - [] In future will need a way for other orgs to bulk assign students to a class
 - [] Add event lessons
   - [] They're gonna need an attached image to display
   - [] Use the cards for teacher lessons as a template, same basic layout too
@@ -65,6 +69,7 @@
 - [] Add a way to upload splash images for LMS through frontend similar to seasonal site and have it automatically displayed,
   - except you'll need a way to mark them active/inactive/have multiple possible images on rotation
   - so probably make it more of a resource wrapping ActiveStorage rather than just automatically grabbing the latest image from a folder
+- [] In future will need a way for other orgs to bulk assign students to a class
 
 ### General
 
