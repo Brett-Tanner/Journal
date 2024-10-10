@@ -47,10 +47,14 @@
 
 # October 10th
 
+- [x] Bang head against email wall for another hour and a half
+- [x] Set up Jayson's AWS creds/EB CLI
 - Add organisation ID to kids
-  - [] Add to values uploaded from CSV
-  - [] Add uploaded students to their school's only class if KU student
-  - [] Create default teacher and class when new schools create
+  - [x] Add uploaded students to their school's only class if KU student
+  - [x] Create default teacher and class when new schools create
+
+# October 11th
+
 - [] Add event lessons
   - [] They're gonna need an attached image to display
   - [] Use the cards for teacher lessons as a template, same basic layout too
@@ -81,60 +85,22 @@
   - [] When merging children the food allergy or not needs to be copied
   - [] When finding by SSID, make them select food allergy or not in addition to first seasonal or not
 
-### Expo prep
-
-- Add an API on the LMS to receive form submissions & email Nakagawa san
-  - [] Allow it to receive requests without auth/CORS issues
-
 ### Leaving prep
 
-- [] Give event site a 'toggle first seasonal' button
-  - Gets the name of the latest seasonal with `#seasonal?`, then a list of their ids
-  - Get all the children who attended
-  - If they're marked first seasonal toggle it to false
-  - [] Add to the wiki under 'creating events' cos it needs to be done before each seasonal
-- Get Jayson credentials
-  - [] AWS
-  - [] New company docker
-  - [] Company github
-  - [] Company cloudflare
 - [] Style the photo service button on footer once designed by Alex
   - [] Will need to change the child switcher links to point at new invoice path
 
 ### LMS
 
-- Styling
-  - Splash pages
-    - [] Splash
-    - [] Login
-  - [] Tests
 - [] Add a UI for viewing/rolling back to previous versions of students
   - [] Remove limit on versions of students stored
 - [] Delete the 'LessonUses' controller and move it to CourseLessons#index, since that's what it really is
-  - [] See if there's anything stopping me just using a CourseLesson form, rather than `fields_for` in a form
-  - [] Add the date fields and CourseLesson update/create actions to enable adding lessons to courses easily
 - [] When updating upload progress, decrement failures if sum of all > total
-
-### Event Site
-
-- [] Need to add event summary stats to the charts
-  - Like the table Admins get at the top when they log in
-- Extract PDF generation into a concern
-  - [] Generate it in a SQ job when the invoice is modified
-    - [] Though this might cause issues with ordering, so will need a new queue to ensure pdf jobs performed first
-    - [] And make it available to download from the invoice partial
-  - [] Refactor to use the cost info object returned by Invoice#calc_cost
+- [] Star-based review system on lessons for teachers
+- [] Delist LMS from google search
 
 #### Future Plans
 
-- [] Add a table showing a summary of inquiries per month and type, as well as total per month [like this](https://docs.google.com/spreadsheets/d/1fcCN4togDFfhgDeuver5Ts-Javrq_s-RI0b_qRcJc3k/edit#gid=1456240236)
-- [] Allow for varying price list courses by automatically determining max/intervals in invoice calc
-- [] Overwrite the sign in path properly as well
-  - Can use `stored__location_for` to redirect to originally requested page
-- [] Uncomment `config.force_ssl` in production, we're already redirecting to HTTPS and the other stuff is good
-- [] Investigate what happens if you upload a new asset with the same key as an existing one
-- [] When importing the historical setsu/inquiries, try insert/upsert_all with record_timestamps: false to set our own created at
-- [] In August 2022, RDS certificate [expires](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html#UsingWithRDS.SSL-certificate-rotation-updating). Will need to rotate to avoid connectivity issues.
 - [] Add button to generate photo service armband PDF for parties
   - Printable template with kids' names and a color which shows their photo status
 
